@@ -1,0 +1,40 @@
+{
+  "status": "DEVELOPMENT_ONLY",
+  "models": [
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "cases": 1,
+      "correct": 0,
+      "errors": 1,
+      "structured_failures": 0,
+      "p50_latency_ms": 206.07790000030946,
+      "p95_latency_ms": 206.07790000030946,
+      "reported_actual_cost_usd": null,
+      "catalog_estimated_cost_usd": 0.0,
+      "providers_reported": [],
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram": "N/A: remote service",
+      "by_language": {
+        "en": {
+          "cases": 1,
+          "correct": 0
+        },
+        "ru": {
+          "cases": 0,
+          "correct": 0
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "cases": 1,
+          "correct": 0
+        }
+      }
+    }
+  ],
+  "stop_reason": "HTTP_401",
+  "final_holdout": "NOT RUN"
+}

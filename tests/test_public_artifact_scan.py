@@ -51,3 +51,17 @@ def test_binary_plot_allowed_and_unreadable_text_flagged(tmp_path):
     text = tmp_path / 'unknown.txt'
     text.write_bytes(b'\xffbroken')
     assert scanner.inspect_file(tmp_path, text, set())[0]['rule'] == 'unreadable_text_requires_review'
+
+
+def test_lowercase_provider_keys_are_used_for_exact_leak_detection(tmp_path, monkeypatch):
+    names = ('mercury_api_key', 'openrouter_api_key', 'jev_api_key', 'LM_API_TOKEN')
+    secrets = {name: 'synthetic-value-' + str(i) for i, name in enumerate(names)}
+    for name in scanner.KEY_NAMES:
+        monkeypatch.delenv(name, raising=False)
+    (tmp_path / '.env').write_text('\n'.join(name + '=' + value for name, value in secrets.items()), encoding='utf-8')
+    assert scanner.configured_secret_values(tmp_path) == set(secrets.values())
+    public = tmp_path / 'raw.txt'
+    public.write_text(secrets['jev_api_key'], encoding='utf-8')
+    findings = scanner.inspect_file(tmp_path, public, scanner.configured_secret_values(tmp_path))
+    assert findings == [{'path': 'raw.txt', 'rule': 'configured_secret_exact_match', 'line': 1}]
+    assert secrets['jev_api_key'] not in str(findings)

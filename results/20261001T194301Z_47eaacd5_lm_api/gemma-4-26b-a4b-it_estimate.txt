@@ -1,0 +1,8 @@
+
+Model: gemma-4-26b-a4b-it
+Context Length: 4 096
+GPU Offload: 70%
+Estimated GPU Memory:   12.11 GiB
+Estimated Total Memory: 16.49 GiB
+
+Estimate: This model may be loaded based on your resource guardrails settings.

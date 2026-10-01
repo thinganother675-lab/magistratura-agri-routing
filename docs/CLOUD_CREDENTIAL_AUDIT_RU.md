@@ -46,3 +46,14 @@
 Машиночитаемая запись проверки: `results/audit_20261001/credential_audit.json`. В ней только имена конфигурации, boolean presence, hashes несекретных исследовательских файлов и агрегаты старых запросов. Старые результаты не изменены. Секреты и приватные записи Obsidian в аудит не скопированы.
 
 Точный исследовательский worklog Obsidian в двух зарегистрированных локальных vaults при ограниченном read-only поиске не найден. Найденная заметка об университете содержит прежние задачи поступления и не является журналом этого эксперимента; произвольная заметка не редактировалась.
+
+## Обновление после локальной настройки ключей, 20:15 UTC
+
+Первичный аудит выше описывает состояние до добавления ключей и остаётся исторической записью. Пользователь настроил project .env; значения не печатались и не хешировались. Новый HOME-only resolver home_config.py поддерживает строго разрешённые aliases, не изменяя сентябрьский configured_models().
+
+- LM Studio: project_env:LOCAL_API_KEY, native models HTTP200, 242 реальных API inference requests. Имя токена maga не используется как значение credential.
+- Mercury: project_env:mercury_api_key, direct Inception mercury-2.5, DEV36 выполнен без повтора первых12. Known usage 19819 input /6463 output, coverage34/36; known estimate $0.00176221 плюс два запроса с неизвестным usage/cost. Invoice/quota ownership evidence отсутствует.
+- Jev: project_env:jev_api_key, version jev-1.13.0, 12 actual typed-decision requests; 6697 input /1022 output, estimate $0.000281274. Jev теперь использован в отдельном HOME DEV sidecar comparison; в старых сентябрьских исследовательских runs его по-прежнему не было.
+- OpenRouter: project_env:openrouter_api_key, присутствует, но HTTP401 на key check и первом :free inference attempt. Успешного model response нет. Пользователь поручил пропустить этот provider; paid fallback не выполнялся.
+
+Новые конфигурации подтверждают использование локально заданных credentials. Они не устанавливают, что сентябрьский Mercury key принадлежал тому же аккаунту: в исследовательском record нет fingerprint/identity исходного секрета. Секреты не копируются в Git и в Obsidian.

@@ -17,6 +17,8 @@ KEY_NAMES = {
     'CLOUD_API_KEY', 'LOCAL_API_KEY', 'INCEPTION_API_KEY', 'MERCURY_API_KEY',
     'JEV_API_KEY', 'OPENAI_API_KEY', 'ANTHROPIC_API_KEY', 'HF_TOKEN',
     'HUGGING_FACE_HUB_TOKEN', 'GITHUB_TOKEN', 'GH_TOKEN',
+    'LM_API_TOKEN', 'OPENROUTER_API_KEY', 'mercury_api_key',
+    'openrouter_api_key', 'jev_api_key', 'local_api_key', 'lm_api_token',
 }
 PATTERNS = {
     'private_key_block': re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----'),
