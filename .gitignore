@@ -1,0 +1,62 @@
+# Local environments, dependencies and build products
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+pytest-cache-files-*/
+node_modules/
+build/
+dist/
+
+# Downloaded models, runtime binaries and disposable caches
+models/
+*.gguf
+*.safetensors
+*.onnx
+*.pt
+*.pth
+.cache/
+.runtime/
+.lmstudio/
+
+# Credentials and machine-local authentication
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+credentials.json
+credentials.*.json
+*service-account*.json
+.aws/
+.ssh/
+.auth/
+.sessions/
+.browser/
+browser-data/
+user-data/
+cookies.txt
+cookies.json
+storage_state.json
+storage-state.json
+
+# OS/editor temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.bak
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Unused upstream discovery checkout (not part of measured experiments)
+data/raw/agrillm/
