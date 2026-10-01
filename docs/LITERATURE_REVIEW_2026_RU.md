@@ -58,6 +58,55 @@
 
 Модель «cloud» в результатах означает указанный Mercury ID, а не произвольную frontier-модель. Общая гипотеза для OpenAI/Claude/Gemini пока не проверена. Usage из каждого raw ответа сохранён; применена консервативная uncached цена. Локальные вызовы имеют нулевой cloud bill, но CPU/RAM/энергия не бесплатны.
 
+## Дополнение 01.10.2026: GPU-эксперимент и научная база
+
+Это дополнение сохраняет исторические сведения 30.09.2026. Упоминания CPU, 7,73 GiB RAM и статуса старых моделей выше относятся к прошлой машине; актуальный домашний ПК описан отдельно в `HOME_PC_ENVIRONMENT_RU.md`. Исторические результаты и старый test90 не пересчитаны. Новый независимый confirmatory holdout пока не запускался; результаты выбора домашней модели являются development/pilot evidence.
+
+Собрана структурированная база **69 уникальных научных кандидатов**: `results/literature_20261001/papers.json`, CSV и `CANDIDATES_RU.md`. У каждой записи проверены существование первичного источника, точное название и дата библиографической записи; для **26** проверена аннотация либо отдельные методы/ограничения. Подтверждённые proceedings/publisher версии указаны для **9** работ. Остальные консервативно обозначены как препринты с непроверенным статусом последующей публикации. Это не означает, что они нигде не рецензировались. Полные тексты всех 69 работ не прочитаны: пул удовлетворяет цели поиска кандидатов, но ещё не составляет окончательные 50+ источников обзорной статьи. Model cards, software, университетская новость и API-документация в эти 69 не входят.
+
+Работы сгруппированы по routing/cascades, uncertainty/abstention, tools/RAG, agriculture и practical local inference. ArXiv и published version одного исследования учитываются один раз. Дата отсечения — 01.10.2026 по первой библиографической записи; перед цитированием утверждений из latest version нужно проверить дату конкретной версии. Часть 2023 работ старше трёх лет на дату отсечения и оставлена только как обоснованный prior art; основу текущего обзора следует составить из 2024–2026.
+
+### Проверенное ядро для экспериментальной статьи
+
+| Работа / первичный источник | Статус, подтверждённый в этой проверке | Практический вывод |
+|---|---|---|
+| [FrugalGPT](https://arxiv.org/abs/2305.05176), Chen et al., 2023 | Препринт; последующая публикация здесь не проверена | Общая идея каскада известна; считать стоимость всех его ступеней. |
+| [RouteLLM](https://proceedings.iclr.cc/paper_files/paper/2025/hash/5503a7c69d48a2f86fc00b3dc09de686-Abstract-Conference.html), Ong et al., 2025 | ICLR 2025 | Preference routing требует проверки переноса в агрономию и русский язык. |
+| [Hybrid LLM](https://arxiv.org/abs/2404.14618), Ding et al., 2024 | Проверен препринт | Гибрид small/large model не доказывает преимущество конкретной домашней конфигурации. |
+| [A Unified Approach to Routing and Cascading for LLMs](https://proceedings.mlr.press/v267/dekoninck25a.html), Dekoninck et al., 2025 | ICML 2025, PMLR 267 | Routing до генерации и cascade после ответа различаются; качество estimator критично. |
+| [RouterBench](https://arxiv.org/abs/2403.12031), Hu et al., 2024 | Проверен препринт | Сравнивать стратегии на одной paired матрице ответов и показывать диагностический oracle. |
+| [Large Language Model Routing with Benchmark Datasets](https://arxiv.org/abs/2309.15789), Shnitzer et al., 2023 | Проверен препринт | Нужна domain transfer проверка, а не выбор по общей таблице benchmarks. |
+| [AutoMix](https://arxiv.org/abs/2310.12963), Aggarwal et al., 2023 | Проверен препринт | Self-verification шумна и сама добавляет latency/cost. |
+| [GraphRouter](https://openreview.net/forum?id=eU39PDsZtT), Feng et al., 2025 | ICLR 2025 | Смена моделей меняет query/model отношения; прежняя калибровка не автоматически сохраняется. |
+| [Universal Model Routing](https://openreview.net/forum?id=ka82fvJ5f1), Jitkrittum et al., 2026 | ICLR 2026 | Отдельная задача — перенос router на ранее не наблюдавшиеся модели. |
+| [MixLLM](https://aclanthology.org/2025.naacl-long.545/), Wang et al., 2025 | NAACL 2025 | Рассматривать quality, стоимость и latency одновременно. |
+| [Can LLMs Express Their Uncertainty?](https://arxiv.org/abs/2306.13063), Xiong et al., 2023 | Проверен препринт | Verbal confidence часто завышен; JSON confidence не является вероятностью корректности. |
+| [Rank-Calibration](https://arxiv.org/abs/2404.03163), Huang et al., 2024 | Проверен препринт | Разделять discrimination/ranking и probability calibration. |
+| [Know Your Limits](https://arxiv.org/abs/2407.18418), Wen et al., 2024 | Препринт с отметкой TACL; publisher версия ещё не сверена | Abstention требует измерять answerability и ошибочные отказы. |
+| [Semantic Entropy Probes](https://arxiv.org/abs/2406.15927), Kossen et al., 2024 | Проверен препринт | Метод требует hidden states; обычный LM Studio JSON не реализует его. |
+| [UCCI](https://arxiv.org/abs/2605.18796), Kotte, 2026 | Препринт | Isotonic calibration на отдельной выборке; H100/NER результат не переносится на нашу задачу. |
+| [AgXQA](https://www.sciencedirect.com/science/article/pii/S0168169924007403), Kpodo et al., 2024 | Computers and Electronics in Agriculture, DOI 10.1016/j.compag.2024.109349 | Внешнее extractive irrigation QA; нужен предметный контроль gold/span и free-form scoring. |
+| [DEW / FLOW](https://www.sciencedirect.com/science/article/pii/S0168169926001286), Kpodo et al., 2026 | Computers and Electronics in Agriculture, DOI 10.1016/j.compag.2026.111533 | DEW: 419 water-management вопросов в 24 доменах — кандидат для снижения synthetic dependence. |
+| [AgriAgent](https://arxiv.org/abs/2601.08308), 2026 | Проверен препринт | Contract-driven agricultural tool orchestration — близкий prior art. |
+| [AgroTools](https://arxiv.org/abs/2605.22366), 2026 | Проверен препринт | Agricultural executable tools уже benchmarked; различать process и outcome ошибки. |
+| [AgriGPT](https://arxiv.org/abs/2508.08632), Yang et al., 2025 | Проверен препринт и части HTML | Domain tuning, Tri-RAG и curated benchmark не доказывают русский перенос. |
+| [AgroGPT](https://openaccess.thecvf.com/content/WACV2025/papers/Awais_AgroGPT_Efficient_Agricultural_Vision-Language_Model_with_Expert_Tuning_WACV_2025_paper.pdf), Awais et al., 2025 | WACV 2025 | Visual QA — отдельная задача; не смешивать с text-only агрометеорологией. |
+| [PLLaMa](https://arxiv.org/abs/2401.01600), Yang et al., 2024 | Проверен препринт | Возможный малый domain baseline, но лицензия release и RU/tool capabilities требуют проверки. |
+
+Эта таблица даёт больше 15 содержательных научных источников-кандидатов для статьи; окончательная библиография зависит от допустимости препринтов и проверки полных текстов. Из публикаций нельзя вывести наши пороги success margin или гарантировать гипотезу до нового paired holdout.
+
+### Что следует измерять после выбора домашней модели
+
+Главное сравнение остаётся `tools+cloud` против `tools+local+cloud`: именно оно выделяет добавочную пользу локальной ступени. Отдельно нужны `cloud-only` и `local-only`. Для численных задач correctness должен определять детерминированный инструмент с проверкой единиц и входов. Принятие локального ответа должно опираться на заранее зафиксированные eligibility/validation правила и dev/calibration данные. Валидный JSON проверяет формат, но не смысл. При `CLOUD_AVAILABLE=false` показывать coverage, correct abstention и wrong answers отдельно. Для latency учитывать local generation, verifier, queue и cloud escalation; высокий decode tok/s сам по себе не означает низкую end-to-end latency.
+
+Обоснованный небольшой вклад — reproducible tools-first ablation, practical GPU/CPU offload на 16 GB и русские missingness/unit/rule задачи. Learned router, conformal guarantees, полноценный Russian agricultural benchmark или новизна самой каскадной идеи в этой работе пока не подтверждены.
+
+### Официальная возможность РГАУ-МСХА в декабре 2026
+
+[Официальная новость от 18.06.2026](https://www.timacad.ru/stati/konkurs-studencheskikh-proektov-po-primeneniiu-iskusstvennogo-intellekta-v-reshenii-problem-selskogo-khoziaistva-2026), [Положение](https://www.timacad.ru/legacy-uploads/files/20260727/1785149423_pologen-k-18.pdf) и [Информационное письмо](https://www.timacad.ru/legacy-uploads/files/20260727/1785149428_info-pismo-18.pdf) проверены 01.10.2026. Даты: заявки до **11.12.2026**, очная конференция **18.12.2026**, статьи до **29.12.2026**. Допуск в положение §1.4: студенты 1–2 курсов **09.03.02 / 09.03.03** программ топ-уровня ИИ. Это бакалаврские направления; **право участия магистрантов не подтверждено**. Требуется индустриальный соруководитель; очный этап доступен отобранным работам. Следующий организационный шаг — уточнить у руководителя/организаторов допуск магистрантов; автоматически подавать заявку нельзя.
+
+По информационному письму сборник планируется бесплатным, с размещением eLIBRARY и рецензированием для включения в РИНЦ; фактическое последующее включение ещё не подтверждено. Формат: **3–5 страниц, не более 10 источников**, русский `.doc/.docx`, основной шрифт Times New Roman 14, интервал 1, поля 2 см; обязательны англоязычные данные об авторах/названии/аннотации/ключевых словах, оригинальность от 70%. Это отличается от задания преподавателя **6–8 страниц / ≥15 источников**; нужны две адаптированные версии, если участие согласуют. Текстовые условия PDF извлечены; screenshot rendering веб-инструмента вернул ошибку, поэтому визуальная проверка страницы не заявляется.
+
 ## GitHub и reuse
 
 Снимок API: data/github_snapshot.json. [RouteLLM](https://github.com/lm-sys/RouteLLM): Apache-2.0, 5 561 stars, последнее pushed_at в snapshot — август 2024; доступность в 2026 не означает активную разработку. Из него полезны структура paired evaluation и threshold calibration; тяжёлые routers/старые pretrained пары не импортировались. [llama.cpp](https://github.com/ggml-org/llama.cpp): MIT, активное обновление 30.09.2026; используется официальный CPU runtime. [AgXQA repo](https://github.com/MSU-CECO/agxqa_benchmark_v1): Apache-2.0 repository license, data loader и provenance адаптированы самостоятельно.

@@ -1,0 +1,71 @@
+# Какие модели Hugging Face имеет смысл добавить на HOME PC
+
+Проверено 01.10.2026. Это отдельный список кандидатов к загрузке, составленный по авторским карточкам, техническим отчётам и GGUF от авторов, bartowski или Unsloth. **Новых весов в рамках этой проверки не скачивали; загрузка в память и inference всех перечисленных файлов — NOT RUN.** Результаты уже установленных моделей находятся в `ALL_LOCAL_MODELS_HOME_PC_RU.md` и `LOCAL_MODEL_COMPARISON_RU.md`.
+
+Предлагаю начать с **Qwen3.5-4B Q8_0** и **Phi-4-mini-instruct Q8_0**: они добавляют малый multilingual baseline и компактный tool/JSON baseline при большом запасе памяти. Третий отдельный эксперимент — **нативный BitNet b1.58 2B4T на CPU**, если нужна проверка минимальной памяти и работы без GPU. Это выбор научных ролей для следующего development pilot, а не утверждение, что новые модели лучше уже измеренных GPT-OSS, Gemma или Qwen.
+
+## Основание и ограничения оценок
+
+Измеренный ПК: Ryzen 7 8700F, RTX 5060 Ti **16 311 MiB VRAM**, **31.62 GiB RAM**. При hardware snapshot на C было **77.74 GiB свободно**; перед загрузкой этот остаток надо измерить снова. LM Studio 0.4.25.0. Первые проверки предлагаем делать text-only, context **4096**, parallel **1**, одна модель в памяти. Умножение active parameters MoE на bits не даёт размер всех весов.
+
+Размер GGUF ниже подтверждён публичным HF API: GB = 10^9 bytes, GiB = 2^30 bytes. **VRAM и RAM — мои планировочные диапазоны, не измерения и не обещание fit.** VRAM включает модель, оценочный cache/state и backend buffers при полном GPU offload; для BitNet выбран CPU путь. RAM в таблице — дополнительная память модели в CPU режиме с resident weights, cache и buffers, без Windows и других приложений. При GPU offload host allocation зависит от mmap, backend и staging и может быть другим. Эти диапазоны нельзя сравнивать напрямую с измеренным total system RAM прежних прогонов.
+
+Полные base/quant revisions, имена файлов, bytes, SHA256, даты карточек и ссылки зафиксированы в `results/model_shortlist_20261001/primary_sources_registry.json` и `download_candidates.tsv`. Все собранные revisions имеют `lastModified` не позднее 01.10.2026. GGUF revision не доказывает точный upstream commit, использованный конвертером: перед воспроизводимым запуском дополнительно сохранять GGUF metadata и tokenizer/chat template. API и config запрашивались без credentials; base config Tiny Aya оказался gated и не обходился.
+
+## Приоритетный список
+
+| № | Модель и роль | Параметры / лицензия base | Предлагаемый файл: GB / GiB | VRAM, GiB, оценка | RAM CPU, GiB, оценка | Совместимость конкретного файла с текущим LM Studio |
+|---|---|---|---:|---:|---:|---|
+| **1** | [Qwen3.5-4B](https://huggingface.co/Qwen/Qwen3.5-4B): малый multilingual Q8 для RU/EN QA и routing | 4B language model; полный HF release ~4.66B с дополнительными компонентами; Apache-2.0 | [bartowski Q8_0](https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF): **4.62 / 4.30** | **5–7** | **6–9** | Семейство и 4B есть в [официальном каталоге](https://lmstudio.ai/models/qwen3.5); этот revision **NOT TESTED** |
+| **2** | [Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct): отдельная архитектура для typed tool choice / missing inputs | 3.8B dense; MIT | [bartowski Q8_0](https://huggingface.co/bartowski/microsoft_Phi-4-mini-instruct-GGUF): **4.08 / 3.80** | **5–7** | **6–9** | GGUF опубликован; поддержка именно текущим runtime **UNKNOWN**, load **NOT RUN** |
+| **3** | [BitNet b1.58-2B-4T](https://huggingface.co/microsoft/bitnet-b1.58-2B-4T): CPU / native ternary baseline | В названии 2B, logical BF16 metadata **2.413B**; MIT | [Авторский I2_S GGUF](https://huggingface.co/microsoft/bitnet-b1.58-2B-4T-gguf): **1.19 / 1.11** | **0**, выбран CPU путь | **2–5** | Нужен отдельный **bitnet.cpp**; LM Studio support **UNKNOWN**, Windows build **NOT RUN** |
+| 4 | [Tiny Aya Global](https://huggingface.co/CohereLabs/tiny-aya-global): языковая диверсификация, русский явно в списке | 3.35B dense; **CC-BY-NC-4.0** | [Авторский Q8_0](https://huggingface.co/CohereLabs/tiny-aya-global-GGUF): **3.57 / 3.33** | **4–6** | **5–8** | cohere2 GGUF есть; текущий LM Studio runtime **UNKNOWN** |
+| 5 | [Gemma 4 E4B IT](https://huggingface.co/google/gemma-4-E4B-it): малая effective compute, Q8 вместо уже имеющихся больших Gemma | **4.5B effective / ~8B stored** из-за PLE; Apache-2.0 | [Unsloth Q8_0](https://huggingface.co/unsloth/gemma-4-E4B-it-GGUF): **8.19 / 7.63** | **9–12** | **10–14** | E4B есть в [официальном каталоге](https://lmstudio.ai/models/gemma-4); этот quant revision **NOT TESTED** |
+| 6 | [SmolLM3-3B](https://huggingface.co/HuggingFaceTB/SmolLM3-3B): независимый малый dense control | ~3.08B по metadata; Apache-2.0 | [bartowski Q8_0](https://huggingface.co/bartowski/HuggingFaceTB_SmolLM3-3B-GGUF): **3.28 / 3.05** | **4–6** | **5–8** | smollm3 GGUF есть; текущий runtime **UNKNOWN** |
+| 7 | [Granite 4.0 H-Tiny](https://huggingface.co/ibm-granite/granite-4.0-h-tiny): hybrid MoE / tool-use control | **7B total / 1B active**, Mamba2 + attention; Apache-2.0 | [Авторский Q8_0](https://huggingface.co/ibm-granite/granite-4.0-h-tiny-GGUF): **7.39 / 6.88** | **8–11** | **9–13** | granitehybrid/Mamba2 support в установленном runtime **UNKNOWN**; не выводить из успеха Granite 4.1 8B |
+| 8 | [Qwen3-30B-A3B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507): экспериментальная очень низкая precision MoE | **30.5B total / 3.3B active**; Apache-2.0 | [Unsloth UD-IQ1_S](https://huggingface.co/unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF): **9.05 / 8.42** | **10–13** | **11–16** | Семейство Qwen3 представлено в каталоге; конкретный **IQ1/runtime UNKNOWN**, load **NOT RUN** |
+| 9 | [Qwen3.5-35B-A3B](https://huggingface.co/Qwen/Qwen3.5-35B-A3B): только дополнительная precision ablation уже установленного checkpoint | ~35B total / 3B active; Apache-2.0 | [Unsloth UD-IQ2_M](https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF): **11.39 / 10.61** | **12–15**, небольшой запас GPU | **13–18** | Семейство уже работало локально в Q4; **этот IQ2 quant NOT TESTED** |
+
+Первые три файла вместе: **9 894 543 904 bytes = 9.89 GB = 9.22 GiB**. Первые два GPU кандидата: **8.11 GiB**. Все девять — **52.76 GB = 49.14 GiB** только весов. Загрузка всего списка сразу не оправдана: staging/cache и второй экземпляр при копировании способны исчерпать диск. Не нужны BF16, полный набор quantizations, vision projector или MTP draft для первого text-only pilot.
+
+У Phi quant card не заполняет поле license; MIT подтверждается авторской base card. У Tiny Aya base repository требует принятия условий доступа, тогда как авторский GGUF открыт; CC-BY-NC-4.0 остаётся ограничением и для GGUF. Его научная роль здесь — некоммерческое языковое сравнение. Перед использованием в коммерческом MVP требуется отдельно проверить разрешённость такого использования по условиям автора.
+
+## Зачем эти три идут первыми
+
+**Qwen3.5-4B Q8_0.** Текущий 9B Q8 уже измерен, но малый 4B ещё не представлен. Он позволяет проверить, хватает ли более дешёвой по памяти локальной ступени для простых RU/EN вопросов, распознавания недостатка входов и корректной эскалации. Авторская карточка описывает multilingual coverage и hybrid attention; этого недостаточно для вывода о русском agricultural accuracy. Для controlled pilot фиксировать thinking mode, template и output budget. [Авторская карточка](https://huggingface.co/Qwen/Qwen3.5-4B), [GGUF](https://huggingface.co/bartowski/Qwen_Qwen3.5-4B-GGUF).
+
+**Phi-4-mini-instruct Q8_0.** Карточка Microsoft явно включает русский и документирует отдельный function-calling format с JSON описаниями tools. Это подходит для проверки выбора детерминированного инструмента и его аргументов при малом размере. Function calling не равен гарантии валидного JSON под нашей schema; результат надо проверить на DEV. Численные GDD/VPD/ET0 по-прежнему вычисляют существующие инструменты. [Карточка](https://huggingface.co/microsoft/Phi-4-mini-instruct), [технический отчёт](https://arxiv.org/abs/2503.01743).
+
+**BitNet b1.58 2B4T.** Проверять отдельным CPU development baseline, а не заменять им уже измеренную GPU local ступень. Авторский путь — [bitnet.cpp](https://github.com/microsoft/BitNet), для Windows описаны clang ≥18, CMake ≥3.22 и Visual Studio C++ tooling. На этой машине сборка и скорость не проверялись. HF card предупреждает, что обычный Transformers путь не обеспечивает заявленные kernel speedups. Русский и agricultural knowledge — отдельные непроверенные риски, поэтому модель не объявляется главным RU кандидатом. [Авторская карточка](https://huggingface.co/microsoft/bitnet-b1.58-2B-4T), [отчёт](https://arxiv.org/abs/2504.12285).
+
+Если хочется оставаться только в LM Studio и исследовать русский язык, третьим GPU кандидатом после проверки runtime можно выбрать **Tiny Aya Global Q8_0** вместо CPU BitNet. Это другая роль: multilingual coverage, а не kernel/memory эксперимент. [Tiny Aya report](https://arxiv.org/abs/2603.11510) и авторская карточка подтверждают языковое назначение; наши RU QA и JSON метрики для этого файла отсутствуют.
+
+## «1 бит» обозначает разные вещи
+
+У **нативного BitNet** модель обучена с ternary weights {-1, 0, +1}; 1.58 = log2(3), activations W1.58A8. Это не post-training сжатие обычного Qwen. I2_S хранит ternary representation для специализированных kernels, но GGUF целиком также содержит embeddings, metadata и другие компоненты. Поэтому авторский файл занимает **1.11 GiB**, а не простое P × 1.58 / 8. Packed U8 tensor elements в HF sidebar нельзя считать числом логических параметров: BF16 metadata содержит **2 412 820 480**. Сходство с full precision в авторских benchmarks не доказывает качество русских аграрных ответов на HOME PC.
+
+У **Qwen3-30B-A3B-Instruct-2507 UD-IQ1_S** исходная модель обычная; крайне низкая precision добавлена **после обучения**. Весь файл mixed precision: название IQ1 не означает 1 bit на каждый параметр. Подтверждены альтернативы того же Unsloth release:
+
+| Quantization | Bytes | GB / GiB | Роль |
+|---|---:|---:|---|
+| UD-TQ1_0 | 8 094 142 880 | 8.09 / 7.54 | Наиболее агрессивный вариант; повышенный риск quality loss, не первый выбор |
+| **UD-IQ1_S** | **9 045 725 600** | **9.05 / 8.42** | Один кандидат для small-pilot проверки «очень низкой precision» |
+| UD-IQ1_M | 9 685 733 792 | 9.69 / 9.02 | Альтернатива S; не скачивать оба до измерения первого |
+
+Это память, а не результат качества. Заявленные в [base card](https://huggingface.co/Qwen/Qwen3-30B-A3B-Instruct-2507) benchmark scores относятся к другой precision/setup и не переносятся на IQ1. Для нашей задачи деградация чисел, русских терминов, missing-input detection и JSON может оказаться важнее сохранения общей fluency. Начать с IQ1 только как дополнительного quantization исследования, если оно действительно нужно; 4B Q8 — более простой первый эксперимент. [Точные GGUF файлы](https://huggingface.co/unsloth/Qwen3-30B-A3B-Instruct-2507-GGUF).
+
+Для уже установленной **Qwen3.5-35B-A3B** в проверенном Unsloth release **IQ1 файла не найдено**; минимальные опубликованные варианты здесь IQ2. Предложенный IQ2_M **не является 1-bit моделью**. Проверка Q4 versus IQ2 имеет смысл только как отдельный DEV precision/offload experiment. Разные calibration data, converter и template могут смешать эффект precision с другими факторами; сохранять их и не называть такое сравнение чистой ablation без контроля.
+
+## Резерв и аграрная модель
+
+**Gemma E4B** имеет 4.5B effective compute, но ~8B stored parameters из-за per-layer embeddings, поэтому Q8 требует **7.63 GiB весов**. Это всё ещё разумно для 16 GB GPU, но не столь компактно, как название «4B» предполагает. Small Gemma — полезный резерв для качества/latency; семейство уже представлено измеренными 12B и 26B, поэтому приоритет ниже. [Google card](https://huggingface.co/google/gemma-4-E4B-it), [Gemma 4 report](https://arxiv.org/abs/2607.02770).
+
+**SmolLM3** даёт другой dense baseline. Русский был в training/evaluation, но автор отдельно отмечает меньше training tokens, чем для основных языков. Это хороший 3B control, а не доказанный лучший RU ответчик. **Granite H-Tiny** даёт Mamba2/MoE architecture и документированный tool calling, но русский отсутствует в объявленном supported-language списке карточки; использовать прежде всего как EN/tool control. Active 1B не сокращает 7B хранения. [SmolLM3 card](https://huggingface.co/HuggingFaceTB/SmolLM3-3B), [Granite card](https://huggingface.co/ibm-granite/granite-4.0-h-tiny).
+
+**PLLaMa-7B-instruct — отдельный отложенный domain baseline, не рекомендация немедленной загрузки.** Есть [научный paper 2024](https://arxiv.org/abs/2401.01600), plant-science continued pretraining на >1.5 млн статей и [авторские веса](https://huggingface.co/Xianjun/PLLaMa-7b-instruct). Однако Apache-2.0 в HF metadata соседствует с незаполненным license section карточки и базой LLaMA-2; понятные условия именно производных весов надо выяснить. Trusted GGUF release и Russian score не подтверждены. 7B Q4 потенциально помещается, но назвать конкретный безопасный к загрузке quantized release сейчас нельзя. 13B добавлять не нужно. См. `MODEL_RESEARCH_2026_RU.md`.
+
+## Как использовать список в исследовании
+
+Сначала восстановить controlled authenticated LM Studio API для уже установленных моделей. Текущие CLI output errors и нестабильный bilingual повтор могут быть связаны с template/settings/transport; скачивание новых весов само по себе это не исправляет. Затем добавить максимум **две GPU Q8 модели**, провести одинаковый smoke 6–12 DEV cases, и расширять только кандидат, прошедший русский QA, missing inputs и structured-output checks. Нативный BitNet или одна IQ1 MoE — отдельный дополнительный baseline, если исследовательский вопрос требует CPU/precision сравнения.
+
+При каждой следующей загрузке выбрать **один точный файл** из manifest и зафиксировать revision/SHA256, свободный диск, фактический runtime, context 4096, GPU offload и resource peaks. Успешная загрузка не доказывает качество. После smoke сохранить actual bytes, load success, TTFT, tok/s, latency, malformed outputs и task correctness в новой timestamped results directory. Не включать новые модели в confirmatory holdout после просмотра его ответов. Final holdout и protocol freeze текущего HOME-PC исследования здесь не менялись.

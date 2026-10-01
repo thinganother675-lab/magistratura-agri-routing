@@ -1,0 +1,84 @@
+{
+  "run_id": "20261001_181425Z_b95ae6f4_cli",
+  "started_utc": "2026-10-01T18:14:25.630949+00:00",
+  "state": "stopped_after_uncertain_load",
+  "phase": "development_only",
+  "transport": "cli",
+  "dataset_split": "old_dev",
+  "sample_ids": [
+    "controlled_compound_reasoning_6_0",
+    "agxqa_300",
+    "controlled_missing_data_6_0",
+    "controlled_numeric_6_0",
+    "controlled_rule_interpretation_6_0",
+    "controlled_tool_selection_6_0"
+  ],
+  "dataset_sha256": "03ce1fd188fbd46d2a69fed37ac0f773be3008a814b93c6d646ed8c6aa30e3ca",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "context": 4096,
+  "parallel": 1,
+  "reasoning": "requested off; verify observed channels per raw response",
+  "temperature": "CLI default UNKNOWN",
+  "max_tokens": "CLI default UNKNOWN",
+  "cloud_calls": 0,
+  "historical_test_used_for_selection": false,
+  "models": {
+    "qwen3-coder-next": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3-coder-next",
+        "format": "gguf",
+        "displayName": "Qwen3 Coder Next UD",
+        "publisher": "unsloth",
+        "path": "unsloth/Qwen3-Coder-Next-GGUF/Qwen3-Coder-Next-UD-Q3_K_S.gguf",
+        "sizeBytes": 33320267776,
+        "indexedModelIdentifier": "unsloth/Qwen3-Coder-Next-GGUF/Qwen3-Coder-Next-UD-Q3_K_S.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "512x2.5B",
+        "architecture": "qwen3next",
+        "quantization": {
+          "name": "Q3_K_S",
+          "bits": 3
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.35",
+      "load_success": false,
+      "preflight_estimate_returncode": 0,
+      "load_attempted": true,
+      "headroom_before_load": {
+        "ram_available_gib": 21.02740478515625,
+        "gpu_free_mib": 15061.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 1.9386711120605469,
+        "gpu_free_mib": 14948.0
+      },
+      "resource_guard_stop": {
+        "ram_available_gib": 1.9386711120605469,
+        "gpu_free_mib": 14948.0
+      },
+      "phase_error": {
+        "type": "RuntimeError"
+      },
+      "vram_mib_peak_sampled_total": 11777.0,
+      "ram_gib_peak_sampled_system_used": 27.651451110839844,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 15,
+      "resource_poll_errors": [],
+      "summary": null,
+      "unload_success": true
+    }
+  },
+  "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+  "latency_kind": "measured CLI process wall time",
+  "note": "CLI diagnostics cannot establish a frozen HTTP protocol",
+  "resource_guard": {
+    "enabled": true,
+    "min_ram_gib_during_load": 2,
+    "min_gpu_free_mib_during_load": 512
+  },
+  "finished_utc": "2026-10-01T18:14:43.207002+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-10-01T19:13:44.8195899Z",
+  "gpu_csv": "NVIDIA GeForce RTX 5060 Ti, 617.14, 16311, 1066, 14987",
+  "ram_available_bytes": null,
+  "disk_C_free_bytes": 75707674624,
+  "lmstudio_loaded_models": null,
+  "own_local_benchmark_finished": true,
+  "new_cloud_calls": 0,
+  "status": "PARTIAL: CIM permission denied; RAM and empty PowerShell array were not captured",
+  "superseded_by": "home_pc_end_verified_2026-10-01.json"
+}

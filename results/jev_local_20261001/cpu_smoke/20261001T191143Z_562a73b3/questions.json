@@ -1,0 +1,18 @@
+{
+  "route": {
+    "type": "choice",
+    "instructions": "Select the appropriate deterministic agricultural calculator. If essential numerical inputs are missing, choose abstain. For conceptual nonnumeric agriculture questions choose qa.",
+    "criteria": {
+      "gdd": "Growing degree days from daily minimum and maximum temperature and a base temperature.",
+      "vpd": "Vapor pressure deficit from air temperature and relative humidity.",
+      "et0": "Reference evapotranspiration using radiation, temperature, humidity, wind and location.",
+      "precipitation": "Sum rainfall or calculate rainfall minus specified water demand.",
+      "abstain": "Ask for missing essential measurements; do not infer or fabricate missing inputs.",
+      "qa": "Agricultural conceptual explanation which needs no numerical weather calculation."
+    }
+  },
+  "missing_data": {
+    "type": "noul",
+    "instructions": "Is this request for a numerical weather calculation missing an essential input? Conceptual explanations do not require weather measurements."
+  }
+}

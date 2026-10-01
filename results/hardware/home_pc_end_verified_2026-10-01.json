@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-10-01T19:14:35.190921+00:00",
+  "status": "VERIFIED",
+  "gpu_csv": "NVIDIA GeForce RTX 5060 Ti, 617.14, 16311, 1066, 14987",
+  "ram_source": "Windows GlobalMemoryStatusEx",
+  "ram_total_bytes": 33951571968,
+  "ram_available_bytes": 21963747328,
+  "disk_C_free_bytes": 75710660608,
+  "lmstudio_loaded_models": [],
+  "new_cloud_calls": 0
+}

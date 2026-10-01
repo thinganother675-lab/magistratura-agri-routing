@@ -1,0 +1,296 @@
+[
+  {
+    "utc": "2026-10-01T18:04:04.783129+00:00",
+    "vram_mib_total": 1006.0,
+    "gpu_util_percent": 1.0,
+    "ram_gib_system_used": 10.449264526367188
+  },
+  {
+    "utc": "2026-10-01T18:04:04.817815+00:00",
+    "vram_mib_total": 1006.0,
+    "gpu_util_percent": 1.0,
+    "ram_gib_system_used": 10.530132293701172
+  },
+  {
+    "utc": "2026-10-01T18:04:05.370012+00:00",
+    "vram_mib_total": 1006.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 10.734466552734375
+  },
+  {
+    "utc": "2026-10-01T18:04:05.914245+00:00",
+    "vram_mib_total": 1754.0,
+    "gpu_util_percent": 5.0,
+    "ram_gib_system_used": 10.963428497314453
+  },
+  {
+    "utc": "2026-10-01T18:04:06.459276+00:00",
+    "vram_mib_total": 1219.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 12.568187713623047
+  },
+  {
+    "utc": "2026-10-01T18:04:07.014290+00:00",
+    "vram_mib_total": 1219.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 16.827510833740234
+  },
+  {
+    "utc": "2026-10-01T18:04:07.569499+00:00",
+    "vram_mib_total": 1188.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 18.644901275634766
+  },
+  {
+    "utc": "2026-10-01T18:04:08.117992+00:00",
+    "vram_mib_total": 1188.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 18.475807189941406
+  },
+  {
+    "utc": "2026-10-01T18:04:08.672496+00:00",
+    "vram_mib_total": 1093.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 18.305622100830078
+  },
+  {
+    "utc": "2026-10-01T18:04:09.244264+00:00",
+    "vram_mib_total": 1093.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 18.142433166503906
+  },
+  {
+    "utc": "2026-10-01T18:04:09.804243+00:00",
+    "vram_mib_total": 1093.0,
+    "gpu_util_percent": 1.0,
+    "ram_gib_system_used": 14.199073791503906
+  },
+  {
+    "utc": "2026-10-01T18:04:10.354277+00:00",
+    "vram_mib_total": 1093.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 11.95901870727539
+  },
+  {
+    "utc": "2026-10-01T18:04:10.899338+00:00",
+    "vram_mib_total": 8761.0,
+    "gpu_util_percent": 97.0,
+    "ram_gib_system_used": 12.250186920166016
+  },
+  {
+    "utc": "2026-10-01T18:04:11.439383+00:00",
+    "vram_mib_total": 8753.0,
+    "gpu_util_percent": 30.0,
+    "ram_gib_system_used": 13.91958999633789
+  },
+  {
+    "utc": "2026-10-01T18:04:11.995318+00:00",
+    "vram_mib_total": 8753.0,
+    "gpu_util_percent": 27.0,
+    "ram_gib_system_used": 15.58993911743164
+  },
+  {
+    "utc": "2026-10-01T18:04:12.554989+00:00",
+    "vram_mib_total": 8752.0,
+    "gpu_util_percent": 26.0,
+    "ram_gib_system_used": 17.311458587646484
+  },
+  {
+    "utc": "2026-10-01T18:04:13.114669+00:00",
+    "vram_mib_total": 8753.0,
+    "gpu_util_percent": 26.0,
+    "ram_gib_system_used": 19.066036224365234
+  },
+  {
+    "utc": "2026-10-01T18:04:13.664544+00:00",
+    "vram_mib_total": 10669.0,
+    "gpu_util_percent": 4.0,
+    "ram_gib_system_used": 19.026504516601562
+  },
+  {
+    "utc": "2026-10-01T18:04:14.225905+00:00",
+    "vram_mib_total": 10670.0,
+    "gpu_util_percent": 2.0,
+    "ram_gib_system_used": 19.044910430908203
+  },
+  {
+    "utc": "2026-10-01T18:04:14.789400+00:00",
+    "vram_mib_total": 10652.0,
+    "gpu_util_percent": 2.0,
+    "ram_gib_system_used": 19.11547088623047
+  },
+  {
+    "utc": "2026-10-01T18:04:15.340901+00:00",
+    "vram_mib_total": 10590.0,
+    "gpu_util_percent": 3.0,
+    "ram_gib_system_used": 19.17565155029297
+  },
+  {
+    "utc": "2026-10-01T18:04:15.899582+00:00",
+    "vram_mib_total": 10586.0,
+    "gpu_util_percent": 2.0,
+    "ram_gib_system_used": 19.17889404296875
+  },
+  {
+    "utc": "2026-10-01T18:04:16.441608+00:00",
+    "vram_mib_total": 10586.0,
+    "gpu_util_percent": 3.0,
+    "ram_gib_system_used": 19.169300079345703
+  },
+  {
+    "utc": "2026-10-01T18:04:16.994643+00:00",
+    "vram_mib_total": 10586.0,
+    "gpu_util_percent": 3.0,
+    "ram_gib_system_used": 19.232093811035156
+  },
+  {
+    "utc": "2026-10-01T18:04:17.539488+00:00",
+    "vram_mib_total": 10585.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.245471954345703
+  },
+  {
+    "utc": "2026-10-01T18:04:18.079588+00:00",
+    "vram_mib_total": 10972.0,
+    "gpu_util_percent": 4.0,
+    "ram_gib_system_used": 19.056312561035156
+  },
+  {
+    "utc": "2026-10-01T18:04:18.622300+00:00",
+    "vram_mib_total": 10973.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.108684539794922
+  },
+  {
+    "utc": "2026-10-01T18:04:19.181279+00:00",
+    "vram_mib_total": 11056.0,
+    "gpu_util_percent": 70.0,
+    "ram_gib_system_used": 19.471782684326172
+  },
+  {
+    "utc": "2026-10-01T18:04:19.728196+00:00",
+    "vram_mib_total": 11058.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.11635971069336
+  },
+  {
+    "utc": "2026-10-01T18:04:20.274680+00:00",
+    "vram_mib_total": 11058.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.211994171142578
+  },
+  {
+    "utc": "2026-10-01T18:04:20.819549+00:00",
+    "vram_mib_total": 11054.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.49724578857422
+  },
+  {
+    "utc": "2026-10-01T18:04:21.369524+00:00",
+    "vram_mib_total": 11054.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.235137939453125
+  },
+  {
+    "utc": "2026-10-01T18:04:21.914573+00:00",
+    "vram_mib_total": 11054.0,
+    "gpu_util_percent": 1.0,
+    "ram_gib_system_used": 19.521011352539062
+  },
+  {
+    "utc": "2026-10-01T18:04:22.471181+00:00",
+    "vram_mib_total": 11054.0,
+    "gpu_util_percent": 96.0,
+    "ram_gib_system_used": 19.483116149902344
+  },
+  {
+    "utc": "2026-10-01T18:04:23.029679+00:00",
+    "vram_mib_total": 11040.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.543006896972656
+  },
+  {
+    "utc": "2026-10-01T18:04:23.574613+00:00",
+    "vram_mib_total": 10980.0,
+    "gpu_util_percent": 96.0,
+    "ram_gib_system_used": 19.611988067626953
+  },
+  {
+    "utc": "2026-10-01T18:04:24.119822+00:00",
+    "vram_mib_total": 10980.0,
+    "gpu_util_percent": 96.0,
+    "ram_gib_system_used": 19.618484497070312
+  },
+  {
+    "utc": "2026-10-01T18:04:24.659677+00:00",
+    "vram_mib_total": 10979.0,
+    "gpu_util_percent": 28.0,
+    "ram_gib_system_used": 19.6253662109375
+  },
+  {
+    "utc": "2026-10-01T18:04:25.199664+00:00",
+    "vram_mib_total": 10979.0,
+    "gpu_util_percent": 94.0,
+    "ram_gib_system_used": 19.237377166748047
+  },
+  {
+    "utc": "2026-10-01T18:04:25.749682+00:00",
+    "vram_mib_total": 10979.0,
+    "gpu_util_percent": 91.0,
+    "ram_gib_system_used": 19.461376190185547
+  },
+  {
+    "utc": "2026-10-01T18:04:26.286766+00:00",
+    "vram_mib_total": 10979.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.269760131835938
+  },
+  {
+    "utc": "2026-10-01T18:04:26.824847+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 3.0,
+    "ram_gib_system_used": 19.55588150024414
+  },
+  {
+    "utc": "2026-10-01T18:04:27.363800+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.388919830322266
+  },
+  {
+    "utc": "2026-10-01T18:04:27.914719+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.576831817626953
+  },
+  {
+    "utc": "2026-10-01T18:04:28.479455+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 96.0,
+    "ram_gib_system_used": 19.547142028808594
+  },
+  {
+    "utc": "2026-10-01T18:04:29.020865+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 0.0,
+    "ram_gib_system_used": 19.60610580444336
+  },
+  {
+    "utc": "2026-10-01T18:04:29.579786+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 96.0,
+    "ram_gib_system_used": 19.577529907226562
+  },
+  {
+    "utc": "2026-10-01T18:04:30.120009+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.62024688720703
+  },
+  {
+    "utc": "2026-10-01T18:04:30.340416+00:00",
+    "vram_mib_total": 10981.0,
+    "gpu_util_percent": 95.0,
+    "ram_gib_system_used": 19.371826171875
+  }
+]
