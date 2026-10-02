@@ -4,7 +4,7 @@
 
 | Направление | Статус / основной документ | Проверяемое свидетельство |
 |---|---|---|
-| PRIVATE backup Apartman36 | DONE: [Git backup](GITHUB_APARTMAN_BACKUP_RU.md), [laptop continuation](CROSS_MACHINE_CONTINUATION_20261002_RU.md) | [security/remote verification](../results/20261002_170213Z_daddf688_backup_audit/) |
+| PRIVATE backup Apartman36 | DONE: [verified new delivery](DELIVERY_20261002_RU.md), [Git backup](GITHUB_APARTMAN_BACKUP_RU.md), [laptop continuation](CROSS_MACHINE_CONTINUATION_20261002_RU.md) | Scientific commit5910bd1 pushed/privateverified19:43UTC/24historic+newblobs exact; subsequentmetadatareceipt preservesverification |
 | Старое offline воспроизведение | PASS, сохранены source/data/protocol SHA и историческая статистика | `scripts/check_reproducibility.py`; исходный add40a8 остаётся ancestor |
 | Jev/Laya/rule pre-inference | DONE: [architecture](PREROUTING_ARCHITECTURE_20261002_RU.md), [actual six-arm comparison](PREROUTING_COMPARISON_20261002_RU.md) | [216 raw decisions](../results/20261002_180119Z_76283d02_prerouting_dev/raw_decisions.jsonl), [group-aware analysis](../results/20261002_180119Z_76283d02_prerouting_dev/analysis_20261002_181438Z_c3905087/summary.json) |
 | Qwen4B Q8 / Phi-mini Q8 / native BitNet | DONE smoke: [manifest/results/no-rerun commands](REQUESTED_LOCAL_BASELINES_20261002_RU.md) | Qwen3/12, Phi3/12, corrected native0/12; original native0/12 COMPATIBILITY_LIMITED сохранён отдельно; remaining24 NOT RUN по gate |

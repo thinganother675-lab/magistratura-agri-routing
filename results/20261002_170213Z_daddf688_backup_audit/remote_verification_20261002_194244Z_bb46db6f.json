@@ -1,0 +1,66 @@
+{
+  "verified_utc": "2026-10-02T19:42:44.388702+00:00",
+  "status": "PASS",
+  "identity": "Apartman36",
+  "destination": "https://github.com/Apartman36/magistratura-agri-routing",
+  "visibility": "private",
+  "private": true,
+  "remote_main_sha": "add40a8b81a7894915e357fa27623551b23304a1",
+  "remote_tree_blob_count": 614,
+  "important_artifacts": {
+    "data/benchmark.jsonl": {
+      "blob_sha": "61ff0c9094760cfa8c4a4c70dc6ce3cb56f2c4e6",
+      "size_bytes": 299253,
+      "match": true
+    },
+    "data/home_holdout_20261001.jsonl": {
+      "blob_sha": "4092138f2a608cb85dbec115c14d047a3cbe2895",
+      "size_bytes": 150582,
+      "match": true
+    },
+    "experiments/HOME_PROTOCOL_2026-10-01.json": {
+      "blob_sha": "9e1fd2c2b488bc4e752e479eb386ee8e2ae7c686",
+      "size_bytes": 10026,
+      "match": true
+    },
+    "experiments/HOME_RECOVERY_2026-10-02.json": {
+      "blob_sha": "6f0f35b11dce53c22b03594379b17c66a812235f",
+      "size_bytes": 3957,
+      "match": true
+    },
+    "results/20261002_043909Z_5d0044d9_final/raw_decisions.jsonl": {
+      "blob_sha": "6e4148e9440a7d208a74745ca293f3db9fe35939",
+      "size_bytes": 173112,
+      "match": true
+    },
+    "results/20261002_045739Z_06b07e40_final_continuation/raw_decisions.jsonl": {
+      "blob_sha": "074c48255ebc612c17f6eafb6c5da111d4b23d92",
+      "size_bytes": 5341321,
+      "match": true
+    },
+    "results/analysis_input_reconciled_20261002_052358Z_804ced2b/raw_decisions.jsonl": {
+      "blob_sha": "9673e77b2f8302382d39ffabdf958984a1465505",
+      "size_bytes": 5514432,
+      "match": true
+    },
+    "results/analysis_input_reconciled_20261002_052358Z_804ced2b/analysis_20261002_052438Z_2c0beea8/statistics_reporting_corrected.json": {
+      "blob_sha": "c57ac03a92aec28e77d01c85f86202e36697274c",
+      "size_bytes": 72414,
+      "match": true
+    },
+    "outputs/home_pc_final_20261002_analytics7b4c/home_pc_models_final150_20261002.xlsx": {
+      "blob_sha": "646eef77abb98ed83ce9468351bdac1e84b79954",
+      "size_bytes": 45682,
+      "match": true
+    }
+  },
+  "origin_preserved": true,
+  "origin_visibility_observed": "public",
+  "visibility_changed_on_original": false,
+  "upstream": "apartman/main",
+  "historical_commit_is_ancestor": true,
+  "credential_values_or_fingerprints_persisted": false,
+  "transport": "Existing Git Credential Manager; REST credential used internally only",
+  "force_push": false,
+  "publication_type": "PRIVATE research backup; not public dataset release"
+}
