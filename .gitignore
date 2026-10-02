@@ -64,3 +64,6 @@ data/raw/agrillm/
 # Original CLI load logs contain machine-local command hints. Public redacted
 # copies are retained beside them; prediction journals are unaffected.
 results/20261001*_lm_api/*_load.txt
+
+# Disposable workbook export inspection transcript; concise validated evidence stays tracked.
+outputs/**/*.xlsx.inspect.ndjson

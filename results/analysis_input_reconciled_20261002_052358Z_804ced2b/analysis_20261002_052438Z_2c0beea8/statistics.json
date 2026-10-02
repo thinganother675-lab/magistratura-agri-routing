@@ -1,0 +1,2324 @@
+{
+  "status": "COMPLETE_FROZEN_CONTROLLED_RUN",
+  "target_n": 150,
+  "source_groups": 25,
+  "statistics": {
+    "bootstrap_seed": 20261001,
+    "repeats": 5000,
+    "unit": "sample.group",
+    "estimand": "per-row mean"
+  },
+  "summary": {
+    "local": {
+      "target_n": 150,
+      "measured_n": 150,
+      "recorded_not_run_n": 0,
+      "missing_n": 0,
+      "measurement_coverage": 1.0,
+      "correct": 102,
+      "quality": 0.68,
+      "quality_cluster": {
+        "estimate": 0.68,
+        "ci95": [
+          0.49373733108108114,
+          0.8650910364145656
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "wilson_descriptive_ci95": [
+        0.6016560026038712,
+        0.7493547094236214
+      ],
+      "critical_errors": 32,
+      "critical_error_rate": 0.21333333333333335,
+      "error_decisions": 0,
+      "error_decision_rate": 0.0,
+      "call_errors": 0,
+      "degraded_provider_decisions": 0,
+      "qa_measured_n": 40,
+      "qa_em_correct": 36,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "route_counts": {
+        "LOCAL_MODEL": 150
+      },
+      "action_counts": {
+        "ANSWER": 132,
+        "ASK_FOR_DATA": 18
+      },
+      "answer_coverage": 0.88,
+      "ask_coverage": 0.0,
+      "abstention_rate": 0.0,
+      "action_coverage_denominator": "measured decisions; missing and NOT_RUN remain separately reported",
+      "selective_error_rate": 0.36363636363636365,
+      "gold_abstain_measured_n": 0,
+      "correct_abstention_rate": null,
+      "correct_abstention_status": "UNKNOWN: no measured gold ABSTAIN",
+      "cloud_calls": 0,
+      "local_calls": 150,
+      "tool_calls": 0,
+      "cloud_call_rate_measured": 0.0,
+      "latency_measured_end_to_end": {
+        "known_n": 150,
+        "mean_s": 1.5081780820000055,
+        "p50_s": 1.4219394000001557,
+        "p95_s": 2.3487365600001793
+      },
+      "providers": {
+        "local": {
+          "calls": 150,
+          "input_tokens_known_sum": 76582,
+          "output_tokens_known_sum": 5749,
+          "total_tokens_reported_known_sum": 82331,
+          "reasoning_tokens_reported_known_sum": 0,
+          "input_usage_coverage_n": 150,
+          "output_usage_coverage_n": 150,
+          "total_usage_coverage_n": 150,
+          "reasoning_usage_coverage_n": 150,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 150,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": 0.5775431000001845,
+          "client_ttft_coverage_n": 150,
+          "client_first_answer_delta_median_s": 0.5775431000001845,
+          "approx_tps_median": 46.65461747024627,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        },
+        "cloud": {
+          "calls": 0,
+          "input_tokens_known_sum": null,
+          "output_tokens_known_sum": null,
+          "total_tokens_reported_known_sum": null,
+          "reasoning_tokens_reported_known_sum": null,
+          "input_usage_coverage_n": 0,
+          "output_usage_coverage_n": 0,
+          "total_usage_coverage_n": 0,
+          "reasoning_usage_coverage_n": 0,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 0,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        }
+      },
+      "cloud_cost_known_total_usd": 0.0,
+      "cloud_cost_usage_complete": true,
+      "cloud_cost_per_1000_measured_usd": 0.0,
+      "cloud_cost_per_1000_known_lower_bound_usd": null,
+      "cost_rate_denominator": "all frozen target cases; includes any attempted calls in NOT_RUN decisions",
+      "cost_limitation": "provider token estimate; unknown usage is not zero; invoice and electricity/depreciation costs unavailable",
+      "gold_abstain_target_n": 0,
+      "gold_abstain_measurement_coverage": null
+    },
+    "cloud": {
+      "target_n": 150,
+      "measured_n": 150,
+      "recorded_not_run_n": 0,
+      "missing_n": 0,
+      "measurement_coverage": 1.0,
+      "correct": 130,
+      "quality": 0.8666666666666667,
+      "quality_cluster": {
+        "estimate": 0.8666666666666667,
+        "ci95": [
+          0.757564935064935,
+          0.9452081549657534
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "wilson_descriptive_ci95": [
+        0.803019825502258,
+        0.9120019952944858
+      ],
+      "critical_errors": 0,
+      "critical_error_rate": 0.0,
+      "error_decisions": 16,
+      "error_decision_rate": 0.10666666666666667,
+      "call_errors": 16,
+      "degraded_provider_decisions": 0,
+      "qa_measured_n": 40,
+      "qa_em_correct": 37,
+      "qa_em": 0.925,
+      "qa_f1_mean": 0.9755952380952382,
+      "route_counts": {
+        "CLOUD_MODEL": 150
+      },
+      "action_counts": {
+        "ANSWER": 115,
+        "NO_OUTPUT": 16,
+        "ASK_FOR_DATA": 19
+      },
+      "answer_coverage": 0.7666666666666667,
+      "ask_coverage": 0.0,
+      "abstention_rate": 0.0,
+      "action_coverage_denominator": "measured decisions; missing and NOT_RUN remain separately reported",
+      "selective_error_rate": 0.02608695652173913,
+      "gold_abstain_measured_n": 0,
+      "correct_abstention_rate": null,
+      "correct_abstention_status": "UNKNOWN: no measured gold ABSTAIN",
+      "cloud_calls": 150,
+      "local_calls": 0,
+      "tool_calls": 0,
+      "cloud_call_rate_measured": 1.0,
+      "latency_measured_end_to_end": {
+        "known_n": 150,
+        "mean_s": 4.757638408000012,
+        "p50_s": 1.446151800000166,
+        "p95_s": 38.11506436999909
+      },
+      "providers": {
+        "local": {
+          "calls": 0,
+          "input_tokens_known_sum": null,
+          "output_tokens_known_sum": null,
+          "total_tokens_reported_known_sum": null,
+          "reasoning_tokens_reported_known_sum": null,
+          "input_usage_coverage_n": 0,
+          "output_usage_coverage_n": 0,
+          "total_usage_coverage_n": 0,
+          "reasoning_usage_coverage_n": 0,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 0,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        },
+        "cloud": {
+          "calls": 150,
+          "input_tokens_known_sum": 86561,
+          "output_tokens_known_sum": 25027,
+          "total_tokens_reported_known_sum": 111588,
+          "reasoning_tokens_reported_known_sum": 667,
+          "input_usage_coverage_n": 142,
+          "output_usage_coverage_n": 142,
+          "total_usage_coverage_n": 142,
+          "reasoning_usage_coverage_n": 142,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": false,
+          "known_cost_estimate_usd": 0.00721649,
+          "known_cost_coverage_n": 142,
+          "unknown_cost_calls": 8,
+          "errors": 16,
+          "error_types": {
+            "ValueError": 2,
+            "ReadTimeout": 8,
+            "JSONDecodeError": 6
+          },
+          "malformed_calls": 8,
+          "timeout_calls": 8,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        }
+      },
+      "cloud_cost_known_total_usd": 0.00721649,
+      "cloud_cost_usage_complete": false,
+      "cloud_cost_per_1000_measured_usd": null,
+      "cloud_cost_per_1000_known_lower_bound_usd": 0.048109933333333334,
+      "cost_rate_denominator": "all frozen target cases; includes any attempted calls in NOT_RUN decisions",
+      "cost_limitation": "provider token estimate; unknown usage is not zero; invoice and electricity/depreciation costs unavailable",
+      "gold_abstain_target_n": 0,
+      "gold_abstain_measurement_coverage": null
+    },
+    "tool_cloud": {
+      "target_n": 150,
+      "measured_n": 150,
+      "recorded_not_run_n": 0,
+      "missing_n": 0,
+      "measurement_coverage": 1.0,
+      "correct": 139,
+      "quality": 0.9266666666666666,
+      "quality_cluster": {
+        "estimate": 0.9266666666666666,
+        "ci95": [
+          0.8846153846153846,
+          0.9672131147540983
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "wilson_descriptive_ci95": [
+        0.8734642066329596,
+        0.9585611848396149
+      ],
+      "critical_errors": 0,
+      "critical_error_rate": 0.0,
+      "error_decisions": 5,
+      "error_decision_rate": 0.03333333333333333,
+      "call_errors": 5,
+      "degraded_provider_decisions": 0,
+      "qa_measured_n": 40,
+      "qa_em_correct": 32,
+      "qa_em": 0.8,
+      "qa_f1_mean": 0.8928174603174603,
+      "route_counts": {
+        "CLOUD_MODEL": 100,
+        "DETERMINISTIC_TOOL": 30,
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ANSWER": 125,
+        "ASK_FOR_DATA": 20,
+        "NO_OUTPUT": 5
+      },
+      "answer_coverage": 0.8333333333333334,
+      "ask_coverage": 0.0,
+      "abstention_rate": 0.0,
+      "action_coverage_denominator": "measured decisions; missing and NOT_RUN remain separately reported",
+      "selective_error_rate": 0.048,
+      "gold_abstain_measured_n": 0,
+      "correct_abstention_rate": null,
+      "correct_abstention_status": "UNKNOWN: no measured gold ABSTAIN",
+      "cloud_calls": 100,
+      "local_calls": 0,
+      "tool_calls": 30,
+      "cloud_call_rate_measured": 0.6666666666666666,
+      "latency_measured_end_to_end": {
+        "known_n": 150,
+        "mean_s": 2.6817471826666814,
+        "p50_s": 1.2766502000001765,
+        "p95_s": 3.3395643350000737
+      },
+      "providers": {
+        "local": {
+          "calls": 0,
+          "input_tokens_known_sum": null,
+          "output_tokens_known_sum": null,
+          "total_tokens_reported_known_sum": null,
+          "reasoning_tokens_reported_known_sum": null,
+          "input_usage_coverage_n": 0,
+          "output_usage_coverage_n": 0,
+          "total_usage_coverage_n": 0,
+          "reasoning_usage_coverage_n": 0,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 0,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        },
+        "cloud": {
+          "calls": 100,
+          "input_tokens_known_sum": 55437,
+          "output_tokens_known_sum": 14134,
+          "total_tokens_reported_known_sum": 69571,
+          "reasoning_tokens_reported_known_sum": 1442,
+          "input_usage_coverage_n": 96,
+          "output_usage_coverage_n": 96,
+          "total_usage_coverage_n": 96,
+          "reasoning_usage_coverage_n": 96,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": false,
+          "known_cost_estimate_usd": 0.00433758,
+          "known_cost_coverage_n": 96,
+          "unknown_cost_calls": 4,
+          "errors": 5,
+          "error_types": {
+            "ReadTimeout": 4,
+            "IncompleteCompletion": 1
+          },
+          "malformed_calls": 0,
+          "timeout_calls": 4,
+          "incomplete_calls": 1,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        }
+      },
+      "cloud_cost_known_total_usd": 0.00433758,
+      "cloud_cost_usage_complete": false,
+      "cloud_cost_per_1000_measured_usd": null,
+      "cloud_cost_per_1000_known_lower_bound_usd": 0.028917199999999997,
+      "cost_rate_denominator": "all frozen target cases; includes any attempted calls in NOT_RUN decisions",
+      "cost_limitation": "provider token estimate; unknown usage is not zero; invoice and electricity/depreciation costs unavailable",
+      "gold_abstain_target_n": 0,
+      "gold_abstain_measurement_coverage": null
+    },
+    "hybrid": {
+      "target_n": 150,
+      "measured_n": 150,
+      "recorded_not_run_n": 0,
+      "missing_n": 0,
+      "measurement_coverage": 1.0,
+      "correct": 133,
+      "quality": 0.8866666666666667,
+      "quality_cluster": {
+        "estimate": 0.8866666666666667,
+        "ci95": [
+          0.7476098901098902,
+          0.9859154929577465
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "wilson_descriptive_ci95": [
+        0.825997250162395,
+        0.928025760859626
+      ],
+      "critical_errors": 0,
+      "critical_error_rate": 0.0,
+      "error_decisions": 0,
+      "error_decision_rate": 0.0,
+      "call_errors": 0,
+      "degraded_provider_decisions": 0,
+      "qa_measured_n": 40,
+      "qa_em_correct": 36,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "route_counts": {
+        "LOCAL_MODEL": 80,
+        "DETERMINISTIC_TOOL": 30,
+        "CLOUD_MODEL": 20,
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ANSWER": 129,
+        "ASK_FOR_DATA": 21
+      },
+      "answer_coverage": 0.86,
+      "ask_coverage": 0.0,
+      "abstention_rate": 0.0,
+      "action_coverage_denominator": "measured decisions; missing and NOT_RUN remain separately reported",
+      "selective_error_rate": 0.12403100775193798,
+      "gold_abstain_measured_n": 0,
+      "correct_abstention_rate": null,
+      "correct_abstention_status": "UNKNOWN: no measured gold ABSTAIN",
+      "cloud_calls": 20,
+      "local_calls": 80,
+      "tool_calls": 30,
+      "cloud_call_rate_measured": 0.13333333333333333,
+      "latency_measured_end_to_end": {
+        "known_n": 150,
+        "mean_s": 0.843529490666671,
+        "p50_s": 1.094321300000047,
+        "p95_s": 1.5606822049999882
+      },
+      "providers": {
+        "local": {
+          "calls": 80,
+          "input_tokens_known_sum": 39476,
+          "output_tokens_known_sum": 2649,
+          "total_tokens_reported_known_sum": 42125,
+          "reasoning_tokens_reported_known_sum": 0,
+          "input_usage_coverage_n": 80,
+          "output_usage_coverage_n": 80,
+          "total_usage_coverage_n": 80,
+          "reasoning_usage_coverage_n": 80,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 80,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": 0.2797053000001597,
+          "client_ttft_coverage_n": 80,
+          "client_first_answer_delta_median_s": 0.2797053000001597,
+          "approx_tps_median": 47.964045814516766,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        },
+        "cloud": {
+          "calls": 20,
+          "input_tokens_known_sum": 10781,
+          "output_tokens_known_sum": 2401,
+          "total_tokens_reported_known_sum": 13182,
+          "reasoning_tokens_reported_known_sum": 241,
+          "input_usage_coverage_n": 20,
+          "output_usage_coverage_n": 20,
+          "total_usage_coverage_n": 20,
+          "reasoning_usage_coverage_n": 20,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.00079139,
+          "known_cost_coverage_n": 20,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        }
+      },
+      "cloud_cost_known_total_usd": 0.00079139,
+      "cloud_cost_usage_complete": true,
+      "cloud_cost_per_1000_measured_usd": 0.005275933333333333,
+      "cloud_cost_per_1000_known_lower_bound_usd": null,
+      "cost_rate_denominator": "all frozen target cases; includes any attempted calls in NOT_RUN decisions",
+      "cost_limitation": "provider token estimate; unknown usage is not zero; invoice and electricity/depreciation costs unavailable",
+      "gold_abstain_target_n": 0,
+      "gold_abstain_measurement_coverage": null
+    },
+    "offline": {
+      "target_n": 150,
+      "measured_n": 150,
+      "recorded_not_run_n": 0,
+      "missing_n": 0,
+      "measurement_coverage": 1.0,
+      "correct": 114,
+      "quality": 0.76,
+      "quality_cluster": {
+        "estimate": 0.76,
+        "ci95": [
+          0.5862014056665934,
+          0.9117776057791536
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "wilson_descriptive_ci95": [
+        0.6857086062445537,
+        0.8213068666840466
+      ],
+      "critical_errors": 0,
+      "critical_error_rate": 0.0,
+      "error_decisions": 0,
+      "error_decision_rate": 0.0,
+      "call_errors": 0,
+      "degraded_provider_decisions": 0,
+      "qa_measured_n": 40,
+      "qa_em_correct": 36,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "route_counts": {
+        "LOCAL_MODEL": 80,
+        "DETERMINISTIC_TOOL": 30,
+        "ABSTAIN": 20,
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ANSWER": 110,
+        "ABSTAIN": 20,
+        "ASK_FOR_DATA": 20
+      },
+      "answer_coverage": 0.7333333333333333,
+      "ask_coverage": 0.0,
+      "abstention_rate": 0.13333333333333333,
+      "action_coverage_denominator": "measured decisions; missing and NOT_RUN remain separately reported",
+      "selective_error_rate": 0.14545454545454545,
+      "gold_abstain_measured_n": 0,
+      "correct_abstention_rate": null,
+      "correct_abstention_status": "UNKNOWN: no measured gold ABSTAIN",
+      "cloud_calls": 0,
+      "local_calls": 80,
+      "tool_calls": 30,
+      "cloud_call_rate_measured": 0.0,
+      "latency_measured_end_to_end": {
+        "known_n": 150,
+        "mean_s": 0.6554113033333305,
+        "p50_s": 1.0422746499998539,
+        "p95_s": 1.45750910500019
+      },
+      "providers": {
+        "local": {
+          "calls": 80,
+          "input_tokens_known_sum": 39476,
+          "output_tokens_known_sum": 2649,
+          "total_tokens_reported_known_sum": 42125,
+          "reasoning_tokens_reported_known_sum": 0,
+          "input_usage_coverage_n": 80,
+          "output_usage_coverage_n": 80,
+          "total_usage_coverage_n": 80,
+          "reasoning_usage_coverage_n": 80,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 80,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": 0.2792215000000624,
+          "client_ttft_coverage_n": 80,
+          "client_first_answer_delta_median_s": 0.2792215000000624,
+          "approx_tps_median": 48.00300784908465,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        },
+        "cloud": {
+          "calls": 0,
+          "input_tokens_known_sum": null,
+          "output_tokens_known_sum": null,
+          "total_tokens_reported_known_sum": null,
+          "reasoning_tokens_reported_known_sum": null,
+          "input_usage_coverage_n": 0,
+          "output_usage_coverage_n": 0,
+          "total_usage_coverage_n": 0,
+          "reasoning_usage_coverage_n": 0,
+          "reasoning_observed_calls": 0,
+          "reasoning_token_limitation": "reasoning is a reported subset of completion tokens; never added again to output or total tokens; missing reasoning usage is UNKNOWN",
+          "usage_complete": true,
+          "known_cost_estimate_usd": 0.0,
+          "known_cost_coverage_n": 0,
+          "unknown_cost_calls": 0,
+          "errors": 0,
+          "error_types": {},
+          "malformed_calls": 0,
+          "timeout_calls": 0,
+          "incomplete_calls": 0,
+          "transport_calls": 0,
+          "client_ttft_median_s": null,
+          "client_ttft_coverage_n": 0,
+          "client_first_answer_delta_median_s": null,
+          "approx_tps_median": null,
+          "timing_limitation": "client streaming approximation; cloud backend TTFT/TPS UNKNOWN"
+        }
+      },
+      "cloud_cost_known_total_usd": 0.0,
+      "cloud_cost_usage_complete": true,
+      "cloud_cost_per_1000_measured_usd": 0.0,
+      "cloud_cost_per_1000_known_lower_bound_usd": null,
+      "cost_rate_denominator": "all frozen target cases; includes any attempted calls in NOT_RUN decisions",
+      "cost_limitation": "provider token estimate; unknown usage is not zero; invoice and electricity/depreciation costs unavailable",
+      "gold_abstain_target_n": 0,
+      "gold_abstain_measurement_coverage": null
+    }
+  },
+  "paired": {
+    "hybrid_minus_tool_cloud": {
+      "a": "hybrid",
+      "b": "tool_cloud",
+      "paired_n": 150,
+      "target_n": 150,
+      "status": "COMPLETE",
+      "quality_a_minus_b": {
+        "estimate": -0.04,
+        "ci95": [
+          -0.1764795552367288,
+          0.05833485401459852
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "critical_error_a_minus_b": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_b_minus_a": {
+        "estimate": 0.5333333333333333,
+        "ci95": [
+          0.24239811912225717,
+          0.7414634146341463
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_all_target": 0.5333333333333333,
+      "latency_a_minus_b_seconds": {
+        "estimate": -1.8382176920000104,
+        "ci95": [
+          -3.6595263670264493,
+          -0.07902968618569889
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "mcnemar_descriptive": {
+        "n": 150,
+        "both_correct": 126,
+        "both_wrong": 4,
+        "wins": 7,
+        "losses": 13,
+        "discordant": 20,
+        "quality_difference": -0.04,
+        "pvalue": 0.26317596435546875,
+        "limitation": "independent pairs required; descriptive unadjusted p for correlated variants or multiple comparisons"
+      },
+      "critical_interval_limitation": "zero observed discordances can yield degenerate bootstrap CI; does not prove absent population risk"
+    },
+    "local_minus_cloud": {
+      "a": "local",
+      "b": "cloud",
+      "paired_n": 150,
+      "target_n": 150,
+      "status": "COMPLETE",
+      "quality_a_minus_b": {
+        "estimate": -0.18666666666666668,
+        "ci95": [
+          -0.36923913043478257,
+          -0.01428068410462784
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "critical_error_a_minus_b": {
+        "estimate": 0.21333333333333335,
+        "ci95": [
+          0.05441781363708276,
+          0.42657575757575755
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_b_minus_a": {
+        "estimate": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_all_target": 1.0,
+      "latency_a_minus_b_seconds": {
+        "estimate": -3.249460326000006,
+        "ci95": [
+          -5.341244138287515,
+          -0.9775706734576881
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "mcnemar_descriptive": {
+        "n": 150,
+        "both_correct": 96,
+        "both_wrong": 14,
+        "wins": 6,
+        "losses": 34,
+        "discordant": 40,
+        "quality_difference": -0.18666666666666668,
+        "pvalue": 8.364584573428147e-06,
+        "limitation": "independent pairs required; descriptive unadjusted p for correlated variants or multiple comparisons"
+      },
+      "critical_interval_limitation": null
+    },
+    "hybrid_minus_cloud": {
+      "a": "hybrid",
+      "b": "cloud",
+      "paired_n": 150,
+      "target_n": 150,
+      "status": "COMPLETE",
+      "quality_a_minus_b": {
+        "estimate": 0.02,
+        "ci95": [
+          -0.11644406392694061,
+          0.17949640287769772
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "critical_error_a_minus_b": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_b_minus_a": {
+        "estimate": 0.8666666666666667,
+        "ci95": [
+          0.6982758620689655,
+          0.9719140355282154
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_all_target": 0.8666666666666667,
+      "latency_a_minus_b_seconds": {
+        "estimate": -3.9141089173333405,
+        "ci95": [
+          -5.95883661861483,
+          -1.7736437121709938
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "mcnemar_descriptive": {
+        "n": 150,
+        "both_correct": 118,
+        "both_wrong": 5,
+        "wins": 15,
+        "losses": 12,
+        "discordant": 27,
+        "quality_difference": 0.02,
+        "pvalue": 0.7011080384254456,
+        "limitation": "independent pairs required; descriptive unadjusted p for correlated variants or multiple comparisons"
+      },
+      "critical_interval_limitation": "zero observed discordances can yield degenerate bootstrap CI; does not prove absent population risk"
+    },
+    "tool_cloud_minus_cloud": {
+      "a": "tool_cloud",
+      "b": "cloud",
+      "paired_n": 150,
+      "target_n": 150,
+      "status": "COMPLETE",
+      "quality_a_minus_b": {
+        "estimate": 0.06,
+        "ci95": [
+          -0.03389830508474576,
+          0.18461538461538463
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "critical_error_a_minus_b": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_b_minus_a": {
+        "estimate": 0.3333333333333333,
+        "ci95": [
+          0.15981676316904392,
+          0.5812015503875969
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_all_target": 0.3333333333333333,
+      "latency_a_minus_b_seconds": {
+        "estimate": -2.07589122533333,
+        "ci95": [
+          -4.28689086929881,
+          0.5866224973986972
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "mcnemar_descriptive": {
+        "n": 150,
+        "both_correct": 123,
+        "both_wrong": 4,
+        "wins": 16,
+        "losses": 7,
+        "discordant": 23,
+        "quality_difference": 0.06,
+        "pvalue": 0.0931396484375,
+        "limitation": "independent pairs required; descriptive unadjusted p for correlated variants or multiple comparisons"
+      },
+      "critical_interval_limitation": "zero observed discordances can yield degenerate bootstrap CI; does not prove absent population risk"
+    },
+    "offline_minus_hybrid": {
+      "a": "offline",
+      "b": "hybrid",
+      "paired_n": 150,
+      "target_n": 150,
+      "status": "COMPLETE",
+      "quality_a_minus_b": {
+        "estimate": -0.12666666666666668,
+        "ci95": [
+          -0.2844845107933838,
+          -0.025806451612903226
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "critical_error_a_minus_b": {
+        "estimate": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_b_minus_a": {
+        "estimate": 0.13333333333333333,
+        "ci95": [
+          0.02808596447178459,
+          0.3017241379310345
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "cloud_call_reduction_all_target": 0.13333333333333333,
+      "latency_a_minus_b_seconds": {
+        "estimate": -0.18811818733334046,
+        "ci95": [
+          -0.43596057711638386,
+          -0.029775090191651008
+        ],
+        "n": 150,
+        "n_groups": 25,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null,
+        "contrast": "a minus b, pairs aligned by caller"
+      },
+      "mcnemar_descriptive": {
+        "n": 150,
+        "both_correct": 114,
+        "both_wrong": 17,
+        "wins": 0,
+        "losses": 19,
+        "discordant": 19,
+        "quality_difference": -0.12666666666666668,
+        "pvalue": 3.814697265625e-06,
+        "limitation": "independent pairs required; descriptive unadjusted p for correlated variants or multiple comparisons"
+      },
+      "critical_interval_limitation": "zero observed discordances can yield degenerate bootstrap CI; does not prove absent population risk"
+    }
+  },
+  "category": [
+    {
+      "method": "local",
+      "category": "compound_reasoning",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 8,
+      "quality": 0.4,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.2881320400000162
+    },
+    {
+      "method": "local",
+      "category": "extractive_qa",
+      "target_n": 40,
+      "measured_n": 40,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 36,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 40,
+      "route_counts": {
+        "LOCAL_MODEL": 40
+      },
+      "action_counts": {
+        "ANSWER": 40
+      },
+      "qa_measured_n": 40,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "latency_mean_s": 1.2320740400000205
+    },
+    {
+      "method": "local",
+      "category": "missing_data",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 18,
+      "quality": 0.9,
+      "critical_errors": 2,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ASK_FOR_DATA": 18,
+        "ANSWER": 2
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.9440476449999096
+    },
+    {
+      "method": "local",
+      "category": "numeric",
+      "target_n": 30,
+      "measured_n": 30,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 0,
+      "quality": 0.0,
+      "critical_errors": 30,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 30,
+      "route_counts": {
+        "LOCAL_MODEL": 30
+      },
+      "action_counts": {
+        "ANSWER": 30
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.9108919466667051
+    },
+    {
+      "method": "local",
+      "category": "rule_interpretation",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.3034776899999998
+    },
+    {
+      "method": "local",
+      "category": "tool_selection",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.4451922400000172
+    },
+    {
+      "method": "cloud",
+      "category": "compound_reasoning",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 16,
+      "quality": 0.8,
+      "critical_errors": 0,
+      "error_decisions": 4,
+      "call_errors": 4,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 16,
+        "NO_OUTPUT": 4
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 10.451638579999974
+    },
+    {
+      "method": "cloud",
+      "category": "extractive_qa",
+      "target_n": 40,
+      "measured_n": 40,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 37,
+      "quality": 0.925,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 40,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 40
+      },
+      "action_counts": {
+        "ANSWER": 40
+      },
+      "qa_measured_n": 40,
+      "qa_em": 0.925,
+      "qa_f1_mean": 0.9755952380952382,
+      "latency_mean_s": 1.62809839250001
+    },
+    {
+      "method": "cloud",
+      "category": "missing_data",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 18,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ASK_FOR_DATA": 18,
+        "NO_OUTPUT": 2
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.6602206699999895
+    },
+    {
+      "method": "cloud",
+      "category": "numeric",
+      "target_n": 30,
+      "measured_n": 30,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 23,
+      "quality": 0.7666666666666667,
+      "critical_errors": 0,
+      "error_decisions": 6,
+      "call_errors": 6,
+      "cloud_calls": 30,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 30
+      },
+      "action_counts": {
+        "ANSWER": 23,
+        "NO_OUTPUT": 6,
+        "ASK_FOR_DATA": 1
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 3.544660383333356
+    },
+    {
+      "method": "cloud",
+      "category": "rule_interpretation",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 18,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "NO_OUTPUT": 2,
+        "ANSWER": 18
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 7.291947475000029
+    },
+    {
+      "method": "cloud",
+      "category": "tool_selection",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 18,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "NO_OUTPUT": 2,
+        "ANSWER": 18
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.705293975000041
+    },
+    {
+      "method": "tool_cloud",
+      "category": "compound_reasoning",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 18,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 18,
+        "NO_OUTPUT": 2
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 5.539100895000002
+    },
+    {
+      "method": "tool_cloud",
+      "category": "extractive_qa",
+      "target_n": 40,
+      "measured_n": 40,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 32,
+      "quality": 0.8,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 40,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 40
+      },
+      "action_counts": {
+        "ANSWER": 38,
+        "NO_OUTPUT": 2
+      },
+      "qa_measured_n": 40,
+      "qa_em": 0.8,
+      "qa_f1_mean": 0.8928174603174603,
+      "latency_mean_s": 4.373063612500016
+    },
+    {
+      "method": "tool_cloud",
+      "category": "missing_data",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.774500007442839e-05
+    },
+    {
+      "method": "tool_cloud",
+      "category": "numeric",
+      "target_n": 30,
+      "measured_n": 30,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 30,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "DETERMINISTIC_TOOL": 30
+      },
+      "action_counts": {
+        "ANSWER": 30
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 6.559333335947789e-05
+    },
+    {
+      "method": "tool_cloud",
+      "category": "rule_interpretation",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 19,
+      "quality": 0.95,
+      "critical_errors": 0,
+      "error_decisions": 1,
+      "call_errors": 1,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 19,
+        "NO_OUTPUT": 1
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.273127700000009
+    },
+    {
+      "method": "tool_cloud",
+      "category": "tool_selection",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.5546019149999553
+    },
+    {
+      "method": "hybrid",
+      "category": "compound_reasoning",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 8,
+      "quality": 0.4,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.2271146800000565
+    },
+    {
+      "method": "hybrid",
+      "category": "extractive_qa",
+      "target_n": 40,
+      "measured_n": 40,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 36,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 40,
+      "route_counts": {
+        "LOCAL_MODEL": 40
+      },
+      "action_counts": {
+        "ANSWER": 40
+      },
+      "qa_measured_n": 40,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "latency_mean_s": 1.2212734199999773
+    },
+    {
+      "method": "hybrid",
+      "category": "missing_data",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 5.0340000029791554e-05
+    },
+    {
+      "method": "hybrid",
+      "category": "numeric",
+      "target_n": 30,
+      "measured_n": 30,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 30,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "DETERMINISTIC_TOOL": 30
+      },
+      "action_counts": {
+        "ANSWER": 30
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 5.881999998867589e-05
+    },
+    {
+      "method": "hybrid",
+      "category": "rule_interpretation",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.1922552300000007
+    },
+    {
+      "method": "hybrid",
+      "category": "tool_selection",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 19,
+      "quality": 0.95,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 20,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 19,
+        "ASK_FOR_DATA": 1
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.4644158600000083
+    },
+    {
+      "method": "offline",
+      "category": "compound_reasoning",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 8,
+      "quality": 0.4,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.2248877150000113
+    },
+    {
+      "method": "offline",
+      "category": "extractive_qa",
+      "target_n": 40,
+      "measured_n": 40,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 36,
+      "quality": 0.9,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 40,
+      "route_counts": {
+        "LOCAL_MODEL": 40
+      },
+      "action_counts": {
+        "ANSWER": 40
+      },
+      "qa_measured_n": 40,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9533333333333335,
+      "latency_mean_s": 1.2453827674999842
+    },
+    {
+      "method": "offline",
+      "category": "missing_data",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "action_counts": {
+        "ASK_FOR_DATA": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.918999998153595e-05
+    },
+    {
+      "method": "offline",
+      "category": "numeric",
+      "target_n": 30,
+      "measured_n": 30,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 30,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "DETERMINISTIC_TOOL": 30
+      },
+      "action_counts": {
+        "ANSWER": 30
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 5.107666668967188e-05
+    },
+    {
+      "method": "offline",
+      "category": "rule_interpretation",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 20,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 20,
+      "route_counts": {
+        "LOCAL_MODEL": 20
+      },
+      "action_counts": {
+        "ANSWER": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 1.199759469999981
+    },
+    {
+      "method": "offline",
+      "category": "tool_selection",
+      "target_n": 20,
+      "measured_n": 20,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 0,
+      "quality": 0.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 0,
+      "route_counts": {
+        "ABSTAIN": 20
+      },
+      "action_counts": {
+        "ABSTAIN": 20
+      },
+      "qa_measured_n": 0,
+      "qa_em": null,
+      "qa_f1_mean": null,
+      "latency_mean_s": 4.6250000002601156e-05
+    }
+  ],
+  "language": [
+    {
+      "method": "local",
+      "language": "en",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 49,
+      "quality": 0.6533333333333333,
+      "critical_errors": 16,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 75,
+      "route_counts": {
+        "LOCAL_MODEL": 75
+      },
+      "action_counts": {
+        "ANSWER": 66,
+        "ASK_FOR_DATA": 9
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.85,
+      "qa_f1_mean": 0.9233333333333335,
+      "latency_mean_s": 1.522252001333339
+    },
+    {
+      "method": "local",
+      "language": "ru",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 53,
+      "quality": 0.7066666666666667,
+      "critical_errors": 16,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 75,
+      "route_counts": {
+        "LOCAL_MODEL": 75
+      },
+      "action_counts": {
+        "ANSWER": 66,
+        "ASK_FOR_DATA": 9
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.95,
+      "qa_f1_mean": 0.9833333333333334,
+      "latency_mean_s": 1.494104162666672
+    },
+    {
+      "method": "cloud",
+      "language": "en",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 65,
+      "quality": 0.8666666666666667,
+      "critical_errors": 0,
+      "error_decisions": 8,
+      "call_errors": 8,
+      "cloud_calls": 75,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 75
+      },
+      "action_counts": {
+        "ANSWER": 57,
+        "NO_OUTPUT": 8,
+        "ASK_FOR_DATA": 10
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.95,
+      "qa_f1_mean": 0.975,
+      "latency_mean_s": 5.484975089333321
+    },
+    {
+      "method": "cloud",
+      "language": "ru",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 65,
+      "quality": 0.8666666666666667,
+      "critical_errors": 0,
+      "error_decisions": 8,
+      "call_errors": 8,
+      "cloud_calls": 75,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 75
+      },
+      "action_counts": {
+        "NO_OUTPUT": 8,
+        "ANSWER": 58,
+        "ASK_FOR_DATA": 9
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.9,
+      "qa_f1_mean": 0.9761904761904763,
+      "latency_mean_s": 4.030301726666703
+    },
+    {
+      "method": "tool_cloud",
+      "language": "en",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 71,
+      "quality": 0.9466666666666667,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "cloud_calls": 50,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 50,
+        "DETERMINISTIC_TOOL": 15,
+        "ASK_FOR_DATA": 10
+      },
+      "action_counts": {
+        "ANSWER": 63,
+        "ASK_FOR_DATA": 10,
+        "NO_OUTPUT": 2
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.85,
+      "qa_f1_mean": 0.8861111111111111,
+      "latency_mean_s": 2.7040582253333407
+    },
+    {
+      "method": "tool_cloud",
+      "language": "ru",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 68,
+      "quality": 0.9066666666666666,
+      "critical_errors": 0,
+      "error_decisions": 3,
+      "call_errors": 3,
+      "cloud_calls": 50,
+      "local_calls": 0,
+      "route_counts": {
+        "CLOUD_MODEL": 50,
+        "DETERMINISTIC_TOOL": 15,
+        "ASK_FOR_DATA": 10
+      },
+      "action_counts": {
+        "ANSWER": 62,
+        "ASK_FOR_DATA": 10,
+        "NO_OUTPUT": 3
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.75,
+      "qa_f1_mean": 0.8995238095238095,
+      "latency_mean_s": 2.659436140000022
+    },
+    {
+      "method": "hybrid",
+      "language": "en",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 65,
+      "quality": 0.8666666666666667,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 10,
+      "local_calls": 40,
+      "route_counts": {
+        "LOCAL_MODEL": 40,
+        "DETERMINISTIC_TOOL": 15,
+        "ASK_FOR_DATA": 10,
+        "CLOUD_MODEL": 10
+      },
+      "action_counts": {
+        "ANSWER": 65,
+        "ASK_FOR_DATA": 10
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.85,
+      "qa_f1_mean": 0.9233333333333335,
+      "latency_mean_s": 0.8394721493333509
+    },
+    {
+      "method": "hybrid",
+      "language": "ru",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 68,
+      "quality": 0.9066666666666666,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 10,
+      "local_calls": 40,
+      "route_counts": {
+        "CLOUD_MODEL": 10,
+        "DETERMINISTIC_TOOL": 15,
+        "LOCAL_MODEL": 40,
+        "ASK_FOR_DATA": 10
+      },
+      "action_counts": {
+        "ANSWER": 64,
+        "ASK_FOR_DATA": 11
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.95,
+      "qa_f1_mean": 0.9833333333333334,
+      "latency_mean_s": 0.8475868319999912
+    },
+    {
+      "method": "offline",
+      "language": "en",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 55,
+      "quality": 0.7333333333333333,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 40,
+      "route_counts": {
+        "LOCAL_MODEL": 40,
+        "DETERMINISTIC_TOOL": 15,
+        "ASK_FOR_DATA": 10,
+        "ABSTAIN": 10
+      },
+      "action_counts": {
+        "ANSWER": 55,
+        "ASK_FOR_DATA": 10,
+        "ABSTAIN": 10
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.85,
+      "qa_f1_mean": 0.9233333333333335,
+      "latency_mean_s": 0.6561366093333466
+    },
+    {
+      "method": "offline",
+      "language": "ru",
+      "target_n": 75,
+      "measured_n": 75,
+      "measurement_coverage": 1.0,
+      "not_run_n": 0,
+      "missing_n": 0,
+      "correct": 59,
+      "quality": 0.7866666666666666,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "cloud_calls": 0,
+      "local_calls": 40,
+      "route_counts": {
+        "ABSTAIN": 10,
+        "DETERMINISTIC_TOOL": 15,
+        "LOCAL_MODEL": 40,
+        "ASK_FOR_DATA": 10
+      },
+      "action_counts": {
+        "ABSTAIN": 10,
+        "ANSWER": 55,
+        "ASK_FOR_DATA": 10
+      },
+      "qa_measured_n": 20,
+      "qa_em": 0.95,
+      "qa_f1_mean": 0.9833333333333334,
+      "latency_mean_s": 0.6546859973333146
+    }
+  ],
+  "hypothesis": {
+    "primary_contrast": "hybrid minus tool_cloud",
+    "criteria": {
+      "quality_noninferiority": {
+        "value": -0.1764795552367288,
+        "threshold": -0.05,
+        "operator": ">=",
+        "status": "FAIL"
+      },
+      "additional_cloud_call_reduction": {
+        "value": 0.5333333333333333,
+        "threshold": 0.1,
+        "operator": ">=",
+        "status": "PASS"
+      },
+      "critical_error_difference": {
+        "value": 0.0,
+        "threshold": 0,
+        "operator": "<=",
+        "status": "PASS"
+      },
+      "hybrid_p95_latency": {
+        "value": 1.5606822049999882,
+        "threshold": 10,
+        "operator": "<=",
+        "status": "PASS"
+      }
+    },
+    "supported_on_frozen_controlled_sample": false,
+    "status": "EVALUATED",
+    "interpretation": "Failure to demonstrate noninferiority is not proof of inferiority; no agronomic/generalization claim."
+  },
+  "actual_cloud_attempts_manifest": 270,
+  "cloud_traces_journaled": 270,
+  "unjournaled_cloud_attempts_unknown_usage_cost": 0,
+  "actual_local_attempts_manifest": 310,
+  "local_traces_journaled": 310,
+  "unjournaled_local_attempts_unknown_usage": 0,
+  "resource_peak_total_scope": {
+    "vram_mib_peak_sampled_total": 13758.0,
+    "ram_gib_peak_sampled_system_used": 24.754192352294922,
+    "samples": 2862,
+    "resource_scope": "sampled total peaks across two execution segments; entire GPU/system, not private allocation",
+    "resource_poll_errors": null,
+    "poll_error_log_status": "UNKNOWN: interrupted original error log unavailable"
+  },
+  "resource_limitation": "sampled total GPU/system memory, not per-policy private allocations",
+  "model_load_metadata": {
+    "actual_offloaded_layers": "UNKNOWN",
+    "preflight_headroom": {
+      "ram_available_gib": 22.270870208740234,
+      "gpu_free_mib": 15409.0
+    },
+    "headroom_before_load": {
+      "ram_available_gib": 22.261978149414062,
+      "gpu_free_mib": 15409.0
+    },
+    "headroom_latest": {
+      "ram_available_gib": 7.828582763671875,
+      "gpu_free_mib": 2696.0
+    },
+    "cold_load_wall_s": 8.767373899999711,
+    "load_success": true,
+    "own_instance_id": "home-final-recovery-571eac4c-gemma26",
+    "native_model_metadata": {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gemma-4-26b-a4b-it",
+      "display_name": "Gemma 4 26B A4B Instruct UD",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "IQ4_NL_XL",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 16847892149,
+      "params_string": "26B-A4B",
+      "loaded_instances": [
+        {
+          "id": "home-final-recovery-571eac4c-gemma26",
+          "config": {
+            "context_length": 4096,
+            "eval_batch_size": 2048,
+            "physical_batch_size": 512,
+            "parallel": 1,
+            "flash_attention": true,
+            "context_checkpoints": 32,
+            "reasoning_budget_message": "",
+            "speculative_draft_mtp": false,
+            "speculative_draft_simple": false,
+            "speculative_draft_model": "",
+            "speculative_draft_max_tokens": 3,
+            "speculative_draft_min_tokens": 0,
+            "speculative_draft_min_continue_probability": 0,
+            "num_experts": 8,
+            "offload_kv_cache_to_gpu": true
+          }
+        }
+      ],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    "actual_load_config": {
+      "context_length": 4096,
+      "eval_batch_size": 2048,
+      "physical_batch_size": 512,
+      "parallel": 1,
+      "flash_attention": true,
+      "context_checkpoints": 32,
+      "reasoning_budget_message": "",
+      "speculative_draft_mtp": false,
+      "speculative_draft_simple": false,
+      "speculative_draft_model": "",
+      "speculative_draft_max_tokens": 3,
+      "speculative_draft_min_tokens": 0,
+      "speculative_draft_min_continue_probability": 0,
+      "num_experts": 8,
+      "offload_kv_cache_to_gpu": true
+    },
+    "unload_success": true,
+    "load_original_sha256": "0e25994a3abec77f0e26740891b50760c66939b8b82640a2afdbddc56ec7da76",
+    "load_public_sha256": "12fc025a3b91a0a2e9466ecaf1d23300e8de526155737f90261d44bc643c3819",
+    "metadata_scope": "continuation load only; both cold loads are preserved in segment_metadata"
+  },
+  "prices_and_provider": {
+    "model": "mercury-2.5",
+    "base_url": "https://api.inceptionlabs.ai/v1",
+    "temperature": 0,
+    "max_tokens": 512,
+    "reasoning_effort": "instant",
+    "response_format": "json_object",
+    "timeout_s": 60,
+    "input_usd_per_m": 0.04,
+    "output_usd_per_m": 0.15,
+    "price_date": "2026-10-01"
+  },
+  "provider_invoice_obtained": false,
+  "scientific_limitations": [
+    "AI-assisted QA translations: human validation PENDING",
+    "Manual audit PENDING",
+    "Wilson/McNemar descriptive under correlated source/family variants",
+    "Substring grounding is neither calibrated confidence nor factual correctness"
+  ],
+  "provenance": {
+    "run": "results\\analysis_input_reconciled_20261002_052358Z_804ced2b",
+    "raw_sha256": "70cdc82fe4d9f01a09b10287304c6a7f7f25f61d13c3fbdab91c1cf7c0a6e922",
+    "manifest_sha256": "406ae3e3f3058b1e10ecac772921d5e902e7afc1bfabae129a77b5786d0ee5d8",
+    "dataset_sha256": "3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03",
+    "protocol_sha256": "795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c",
+    "analyzer_sha256": "9053e78b3cd632fa5e09a6e7ed0a77b48799131d38e5473467f01237cb29d5d2",
+    "analysis_created_utc": "2026-10-02T05:24:38.579471+00:00",
+    "home_stats_sha256": "03bcba308280b8eeb617c2c0ef4d2582cd9ba5b6cb8f4782d65b4351aa1d6727"
+  }
+}

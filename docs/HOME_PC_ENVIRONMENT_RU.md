@@ -1,5 +1,17 @@
 # Окружение HOME PC
 
+## Актуальное дополнение 02.10.2026
+
+Повторный аппаратный аудит: Ryzen 7 8700F, 8 ядер / 16 потоков; RTX 5060 Ti, 16 311 MiB; RAM 31.62 GiB; Windows 11 Pro, build 26300; NVIDIA driver 617.14. На диске C перед final свободно 68.15 GiB. Snapshot: `results/hardware/home_pc_before_final_20261002.json`. CUDA compatibility 13.4 из драйвера не доказывает наличие установленного toolkit.
+
+LM Studio 0.4.25+1. Авторизованный API `http://127.0.0.1:1234` работает: inventory `/api/v1/models`, inference `/v1/chat/completions`. Пользователь настроил LOCAL_API_KEY в ignored .env; значение не сохранено в отчётах. CLI commit: 69d945a. API DEV: 242 запроса для 13 текстовых моделей. Выбран Gemma 26B IQ4_NL_XL с context 4096, parallel 1 и requested GPU offload 0.70. Actual GPU layers остаются UNKNOWN; backend decode TPS извлечена отдельно из журналов только для DEV01.10, не для final02.10.
+
+Финальный сбор завершён в двух сегментах из-за Windows manifest replacement failure. Суммарно 310 локальных и 270 облачных вызовов, без повторов первых шести заданий. Измеренные общие пики: GPU 13 758 MiB, system RAM 24.754 GiB. Это total устройства/системы, не private allocation модели. Две cold loads: 14.778 и 8.767 с; file cache и другие приложения не изолированы. LOCAL reasoning tokens = 0 в сохранённых final traces. После завершения собственный model instance выгружен; `lms ps --json` вернул `[]`.
+
+Утром 02.10 сервер был выключен; `lms server start` восстановил порт 1234 с прежней авторизацией. Начальный snapshot ниже остаётся историческим: его ранние HTTP NOT RUN/empty credentials не описывают последующие API-прогоны. До final прошли 213 tests, после изменений — 241 PASS за 18.96 с. Validation: `results/delivery_validation_20261002_053454Z_64877e39/validation.json`; frozen SHA и все 16 файлов оригинального прерванного сегмента сохранились. Линтер в проекте не настроен.
+
+## Первоначальный аппаратный и CLI snapshot 01.10.2026
+
 Проверено 01.10.2026 на домашнем ПК. Snapshot: `results/hardware/home_pc_2026-10-01.json`. Исторические характеристики ноутбука в сентябрьских manifests сохранены.
 
 | Компонент | Обнаружено |

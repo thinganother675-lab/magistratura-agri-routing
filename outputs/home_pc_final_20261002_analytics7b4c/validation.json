@@ -1,0 +1,488 @@
+{
+  "createdUtc": "2026-10-02T05:35:42.118Z",
+  "output": "C:\\Users\\hustlePC\\Codex\\magistratura\\outputs\\home_pc_final_20261002_analytics7b4c\\home_pc_models_final150_20261002.xlsx",
+  "sheets": [
+    "Модели DEV",
+    "FINAL150",
+    "Все серии"
+  ],
+  "runAggregates": 45,
+  "modelRows": 16,
+  "localModelsMeasured": 13,
+  "localModelsNotRun": 2,
+  "computedChecks": {
+    "apiRequests": 242,
+    "apiInput": 113332,
+    "apiOutput": 17259,
+    "apiReasoning": 9083,
+    "cliRequests": 339,
+    "cliInput": 135133,
+    "cliOutput": 39087
+  },
+  "finalStatus": "COMPLETE_FROZEN_CONTROLLED_RUN",
+  "finalUsage": {
+    "local": {
+      "calls": 310,
+      "inputKnown": 155534,
+      "outputKnown": 11047,
+      "inputCoverage": 310,
+      "outputCoverage": 310,
+      "costKnown": 0,
+      "unknownCostCalls": 0
+    },
+    "cloud": {
+      "calls": 270,
+      "inputKnown": 152779,
+      "outputKnown": 41562,
+      "inputCoverage": 258,
+      "outputCoverage": 258,
+      "costKnown": 0.012345459999999999,
+      "unknownCostCalls": 12
+    }
+  },
+  "rawVerification": [
+    {
+      "family": "API",
+      "run": "20261001T194301Z_47eaacd5_lm_api",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 6,
+      "inputKnown": 2903,
+      "outputKnown": 2539,
+      "reasoningKnown": 2452
+    },
+    {
+      "family": "API",
+      "run": "20261001T194606Z_8e662ec9_lm_api",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 12,
+      "inputKnown": 5764,
+      "outputKnown": 408,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T194807Z_f5edc9b3_lm_api",
+      "model": "qwen3.8-27b",
+      "n": 36,
+      "inputKnown": 16486,
+      "outputKnown": 1109,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T194807Z_f5edc9b3_lm_api",
+      "model": "qwen3.5-35b-a3b",
+      "n": 13,
+      "inputKnown": 6124,
+      "outputKnown": 411,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195351Z_61a2f68c_lm_api",
+      "model": "gpt-oss-20b",
+      "n": 13,
+      "inputKnown": 6437,
+      "outputKnown": 4515,
+      "reasoningKnown": 4181
+    },
+    {
+      "family": "API",
+      "run": "20261001T195351Z_61a2f68c_lm_api",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 36,
+      "inputKnown": 17016,
+      "outputKnown": 1307,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3.5-9b",
+      "n": 12,
+      "inputKnown": 5588,
+      "outputKnown": 425,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "gemma-4-12b-it",
+      "n": 12,
+      "inputKnown": 5764,
+      "outputKnown": 481,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "minicpm5-1b",
+      "n": 12,
+      "inputKnown": 5289,
+      "outputKnown": 711,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "webworld-8b-i1",
+      "n": 12,
+      "inputKnown": 5493,
+      "outputKnown": 371,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "granite-4.1-8b",
+      "n": 12,
+      "inputKnown": 5254,
+      "outputKnown": 555,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "dr-venus-4b-rl",
+      "n": 6,
+      "inputKnown": 2782,
+      "outputKnown": 2523,
+      "reasoningKnown": 2450
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3-vl-8b-instruct",
+      "n": 12,
+      "inputKnown": 5445,
+      "outputKnown": 313,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3-8b-deepseek-v3.2-speciale-distill",
+      "n": 12,
+      "inputKnown": 5493,
+      "outputKnown": 281,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3-omni-30b-a3b-instruct",
+      "n": 12,
+      "inputKnown": 5493,
+      "outputKnown": 407,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+      "n": 0,
+      "inputKnown": 0,
+      "outputKnown": 0,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T195754Z_57e25698_lm_api",
+      "model": "qwen3-coder-next",
+      "n": 0,
+      "inputKnown": 0,
+      "outputKnown": 0,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T200228Z_379d1493_lm_api",
+      "model": "qwen3.8-27b",
+      "n": 12,
+      "inputKnown": 5927,
+      "outputKnown": 413,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "API",
+      "run": "20261001T200228Z_379d1493_lm_api",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 12,
+      "inputKnown": 6074,
+      "outputKnown": 490,
+      "reasoningKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_171700Z_39c83511_cli",
+      "model": "qwen3.5-9b",
+      "n": 12,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_171700Z_39c83511_cli",
+      "model": "gemma-4-12b-it",
+      "n": 12,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_171700Z_39c83511_cli",
+      "model": "qwen3.8-27b",
+      "n": 12,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_171700Z_39c83511_cli",
+      "model": "qwen3.5-35b-a3b",
+      "n": 12,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_172204Z_9a16b3ba_cli",
+      "model": "qwen3.5-9b",
+      "n": 12,
+      "inputKnown": 5588,
+      "outputKnown": 348
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_172204Z_9a16b3ba_cli",
+      "model": "gemma-4-12b-it",
+      "n": 12,
+      "inputKnown": 5764,
+      "outputKnown": 406
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_172204Z_9a16b3ba_cli",
+      "model": "qwen3.8-27b",
+      "n": 36,
+      "inputKnown": 16486,
+      "outputKnown": 1100
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_172204Z_9a16b3ba_cli",
+      "model": "qwen3.5-35b-a3b",
+      "n": 36,
+      "inputKnown": 16486,
+      "outputKnown": 1248
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_172853Z_ede0f9c9_cli",
+      "model": "gpt-oss-20b",
+      "n": 6,
+      "inputKnown": 2983,
+      "outputKnown": 2469
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_173130Z_dc97b1d6_cli",
+      "model": "gpt-oss-20b",
+      "n": 36,
+      "inputKnown": 16004,
+      "outputKnown": 14529
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_174226Z_192df863_cli",
+      "model": "gpt-oss-20b",
+      "n": 12,
+      "inputKnown": 5282,
+      "outputKnown": 1784
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "minicpm5-1b",
+      "n": 7,
+      "inputKnown": 3195,
+      "outputKnown": 315
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "webworld-8b-i1",
+      "n": 10,
+      "inputKnown": 4664,
+      "outputKnown": 1181
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "granite-4.1-8b",
+      "n": 6,
+      "inputKnown": 2708,
+      "outputKnown": 2053
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "dr-venus-4b-rl",
+      "n": 12,
+      "inputKnown": 5474,
+      "outputKnown": 10449
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "qwen3-vl-8b-instruct",
+      "n": 12,
+      "inputKnown": 5450,
+      "outputKnown": 315
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "qwen3-8b-deepseek-v3.2-speciale-distill",
+      "n": 9,
+      "inputKnown": 4231,
+      "outputKnown": 127
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 12,
+      "inputKnown": 5764,
+      "outputKnown": 348
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "qwen3-omni-30b-a3b-instruct",
+      "n": 12,
+      "inputKnown": 5498,
+      "outputKnown": 416
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+      "n": 1,
+      "inputKnown": 539,
+      "outputKnown": 37
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_180022Z_4c3f0d40_cli",
+      "model": "qwen3-coder-next",
+      "n": 0,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_181115Z_5bff1166_cli",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 36,
+      "inputKnown": 17016,
+      "outputKnown": 1123
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_181425Z_b95ae6f4_cli",
+      "model": "qwen3-coder-next",
+      "n": 0,
+      "inputKnown": 0,
+      "outputKnown": 0
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_181635Z_1a6b892a_cli",
+      "model": "qwen3.8-27b",
+      "n": 12,
+      "inputKnown": 5927,
+      "outputKnown": 409
+    },
+    {
+      "family": "CLI",
+      "run": "20261001_181635Z_1a6b892a_cli",
+      "model": "gemma-4-26b-a4b-it",
+      "n": 12,
+      "inputKnown": 6074,
+      "outputKnown": 430
+    }
+  ],
+  "finalRawChecks": [
+    {
+      "method": "local",
+      "uniqueMeasured": 150,
+      "correct": 102,
+      "critical": 32
+    },
+    {
+      "method": "cloud",
+      "uniqueMeasured": 150,
+      "correct": 130,
+      "critical": 0
+    },
+    {
+      "method": "tool_cloud",
+      "uniqueMeasured": 150,
+      "correct": 139,
+      "critical": 0
+    },
+    {
+      "method": "hybrid",
+      "uniqueMeasured": 150,
+      "correct": 133,
+      "critical": 0
+    },
+    {
+      "method": "offline",
+      "uniqueMeasured": 150,
+      "correct": 114,
+      "critical": 0
+    }
+  ],
+  "sourceHashes": {
+    "results/20261001_api_tables_35768dbf/summary.json": "913a95088da812e60292482dda6da2adc5197d3cf683a6644efbbda41997f3b9",
+    "results/20261001_inventory_summary_3f4378ba/summary.json": "bdc4ca56caf64520a9f295dc4b5e689e2ca7ee8408839ec72e7a139216dd7fbd",
+    "results/20261001_200720Z_e2dad72a_mercurydev36/summary.json": "67286f7438d1c482b3b0b7bfb0bd1b34f24812b5a2856a05ef4b0479bacfef65",
+    "results/20261001_200150Z_881eb739_jevdev/summary.json": "5be7563d0f8fc492a14973ff0c682ae342bf0c58dce051ec43f503f8826c8634",
+    "results/analysis_input_reconciled_20261002_052358Z_804ced2b/analysis_20261002_052438Z_2c0beea8/statistics_reporting_corrected.json": "34af7a364be4e4d3c226128343a65332e158a3b325c4cd091e3b06133cb14638",
+    "results\\analysis_input_reconciled_20261002_052358Z_804ced2b\\manifest.json": "406ae3e3f3058b1e10ecac772921d5e902e7afc1bfabae129a77b5786d0ee5d8",
+    "results\\analysis_input_reconciled_20261002_052358Z_804ced2b\\raw_decisions.jsonl": "70cdc82fe4d9f01a09b10287304c6a7f7f25f61d13c3fbdab91c1cf7c0a6e922",
+    "results\\analysis_input_reconciled_20261002_052358Z_804ced2b\\analysis_20261002_052438Z_2c0beea8\\provider_observations.json": "867bacaafcf00702ef311b91df9ccec1d3c7a9fb7a103fdab9eb7b2a5d59f3d4",
+    "outputs/home_pc_final_20261002_analytics7b4c/backend_log_metrics.json": "35487d8a59e88a935556905a9550ef8232e50736ee870e5cd905f82d4d97dea4"
+  },
+  "backendLog": {
+    "matchedRequests": 242,
+    "completeSeries": 17,
+    "logSha256": "0d655f88ed04660cc6e632d41f3076a607e66258d18e65b55f7befb6bca8b948",
+    "contextCacheCounterExactN": 210,
+    "contextCacheCounterMissingN": 1,
+    "actualOffloadedLayers": "UNKNOWN",
+    "backendTtft": "UNKNOWN"
+  },
+  "formulaErrorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "recalculationBoundaryChecked": true,
+  "exportReimportChecked": true,
+  "nativeExcelApplicationNotOpened": true,
+  "previews": [
+    "models_quality.png",
+    "models_timing_memory.png",
+    "models_controls.png",
+    "typed_decisions.png",
+    "final_quality.png",
+    "final_calls_latency.png",
+    "final_tokens.png",
+    "final_stream_cost.png",
+    "final_resources_hypothesis.png",
+    "runs_first.png",
+    "runs_last.png",
+    "runs_resources.png",
+    "definitions.png",
+    "final_segments.png"
+  ]
+}

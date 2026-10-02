@@ -88,6 +88,11 @@ def test_original_running_snapshot_audit_goes_outside_original_and_ignores_tmp_c
 
 def test_combined_unique_union_preserves_source_bytes_and_cumulative_calls_once(segments):
     module, original, continuation, output = segments
+    segment_manifest = module.read(continuation / "manifest.json")
+    segment_manifest.update(phase="HOME_FINAL_CONTINUATION", summary={"local": {"n": 2}}, segment_start=2,
+                            completed_segment_cases=2, remaining_n=2, target_segment_decisions=10,
+                            completed_sample_groups=4, segment_call_counts={"local": 6, "cloud": 4})
+    (continuation / "manifest.json").write_text(json.dumps(segment_manifest), encoding="utf-8")
     before = [{p.name: p.read_bytes() for p in directory.iterdir()} for directory in (original, continuation)]
     module.reconcile(original, continuation, output)
     manifest = module.read(output / "manifest.json")
@@ -96,6 +101,11 @@ def test_combined_unique_union_preserves_source_bytes_and_cumulative_calls_once(
     assert manifest["resource_summary"]["vram_mib_peak_sampled_total"] == 11.
     assert manifest["resource_summary"]["resource_poll_errors"] is None
     assert manifest["interruption_gap_sampled_s"] == 60.
+    assert manifest["phase"] == "HOME_FINAL_RECONCILED" and manifest["total_completed_cases"] == 4
+    assert manifest["total_unique_policy_decisions"] == 20 and "summary" not in manifest
+    assert all(key not in manifest for key in ("segment_start", "completed_segment_cases", "remaining_n", "target_segment_decisions", "segment_call_counts", "original_call_baseline"))
+    preserved = manifest["segment_metadata"][1]["segment_manifest_fields"]
+    assert preserved["summary"] == {"local": {"n": 2}} and preserved["segment_start"] == 2
     assert (output / "protocol_copy.json").read_bytes() == (original / "protocol_copy.json").read_bytes()
     for directory, expected in zip((original, continuation), before):
         assert {p.name: p.read_bytes() for p in directory.iterdir()} == expected

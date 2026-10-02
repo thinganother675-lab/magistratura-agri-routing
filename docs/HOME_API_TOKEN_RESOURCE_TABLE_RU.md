@@ -31,3 +31,7 @@ Temperature=0, top_p=1, seed=42, max_tokens=512, strict JSON schema; context=409
 TTFT и скорость измерены клиентом по SSE. Client TPS приблизителен и исключает первый межтокенный интервал; он не равен старому backend decode tok/s. VRAM/RAM включают другие процессы. Число фактически выгруженных на GPU слоёв UNKNOWN; requested ratio приведён явно.
 
 Catalog size Gemma26 — 16847892149 bytes суммарных артефактов: основной GGUF 14556687680, mmproj 2291200608 и config 3861 bytes. Это размер model directory, а не только одного файла весов. SHA256 каждого файла сохранён в results/hardware/selected_gemma26_fingerprint_20261001.json; сами веса в Git не добавляются.
+
+## Скорость backend из логов — 02.10.2026
+
+После основной таблицы отдельно извлечены native decode/prompt TPS из серверных логов для 242/242 собственных API requests. [Связь с raw и отдельная таблица backend](HOME_API_BACKEND_LOG_METRICS_RU.md). Например, полные DEV36: Gemma 26 backend median 33.53 tok/s против client approximate 42.98; Qwen 27 backend 13.545 против client approximate 14.36. Исходные client-колонки остаются клиентскими; input usage не заменяется uncached prompt counts из логов. Actual GPU layers и native TTFT UNKNOWN. Final 02.10 не наследует эти DEV-метрики.

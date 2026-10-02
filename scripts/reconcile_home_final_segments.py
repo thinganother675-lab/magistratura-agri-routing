@@ -171,6 +171,9 @@ def inspect_segment(directory):
                "cold_load_wall_s": (manifest.get("local_load_metadata") or {}).get("cold_load_wall_s"),
                "started_utc": manifest.get("started_utc"), "finished_utc": manifest.get("finished_utc"),
                "local_load_metadata": manifest.get("local_load_metadata"),
+               "segment_manifest_fields": {key: value for key, value in manifest.items()
+                                           if key in ("phase", "summary", "completed_sample_groups", "filesystem_only_replace_retry_deadline_s")
+                                           or key.startswith(("segment_", "completed_segment_", "original_", "remaining_", "target_segment_"))},
                "manifest_tmp_is_evidence_only": "Any stale .tmp counter is excluded; only matching finished HTTP events and raw traces establish incurred calls"}
     return summary, rows, manifest, protocol, samples
 
@@ -225,8 +228,16 @@ def reconcile(original, continuation, output):
     if resources[0]["last_sample_utc"] and resources[1]["first_sample_utc"]:
         gap = (datetime.fromisoformat(resources[1]["first_sample_utc"]) - datetime.fromisoformat(resources[0]["last_sample_utc"])).total_seconds()
     manifest = copy.deepcopy(manifest_b)
-    manifest.update(run_id="HOME_FINAL_MANUALLY_RECONCILED_" + uuid.uuid4().hex[:8], state="completed_with_errors" if any(trace.get("error") for row in rows for trace in row["result"].get("trace", [])) else "completed",
+    for key in list(manifest):
+        if key in ("summary", "completed_sample_groups", "filesystem_only_replace_retry_deadline_s") or key.startswith(("segment_", "completed_segment_", "original_", "remaining_", "target_segment_")):
+            del manifest[key]
+    manifest.update(run_id="HOME_FINAL_MANUALLY_RECONCILED_" + uuid.uuid4().hex[:8], phase="HOME_FINAL_RECONCILED",
+                    state="completed_with_errors" if any(trace.get("error") for row in rows for trace in row["result"].get("trace", [])) else "completed",
                     target_n=len(samples), holdout_ids=[s["id"] for s in samples], policies=list(METHODS),
+                    total_completed_cases=len(samples), total_unique_policy_decisions=len(rows),
+                    authoritative_statistics={"source": "frozen analyzer output statistics.json in the new analysis_* directory",
+                                              "scope": "exact union of all frozen sample-policy decisions",
+                                              "inherited_segment_summary": "omitted; segment-only summary is preserved within segment_metadata"},
                     cloud_calls_actual=left["finished_calls"]["cloud"] + right["finished_calls"]["cloud"],
                     local_calls_actual=left["finished_calls"]["local"] + right["finished_calls"]["local"],
                     call_counter_scope="reconciled_unique_all_target", resource_summary=summary,
@@ -238,6 +249,8 @@ def reconcile(original, continuation, output):
                                     "original_rows": len(rows_a), "continuation_rows": len(rows_b), "union_rows": len(rows),
                                     "unique_union_pairs": len(rows), "scores_recomputed_and_matched": True,
                                     "source_files_immutable": True, "source_sha256": [left["source_sha256"], right["source_sha256"]]})
+    if isinstance(manifest.get("local_load_metadata"), dict):
+        manifest["local_load_metadata"]["metadata_scope"] = "continuation load only; both cold loads are preserved in segment_metadata"
     output = Path(output).resolve()
     if output.is_relative_to(Path(original).resolve()) or output.is_relative_to(Path(continuation).resolve()):
         raise ValueError("Combined analysis input must stay outside immutable source directories")

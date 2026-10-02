@@ -1,5 +1,16 @@
 # Сравнение локальных моделей HOME PC
 
+## Актуальный API-этап и final — 02.10.2026
+
+Ниже сохранён первоначальный CLI DEV-анализ 01.10. Его temperature/max_tokens неизвестны; он не объединяется с последующими HTTP сериями. Актуальные controlled API цифры и token/resource coverage: [API comparison](LOCAL_MODEL_API_COMPARISON_RU.md), [таблица токенов/ресурсов](HOME_API_TOKEN_RESOURCE_TABLE_RU.md), [backend log metrics](HOME_API_BACKEND_LOG_METRICS_RU.md).
+
+В API DEV36 Qwen 27B получил 25/36, Gemma 26B — 22/36; p50 3.030 и 1.532 с соответственно. Для дальнейшего каскада выбран практичный Gemma 26B reader по заранее заданным DEV-критериям; это не универсальное превосходство модели. Qwen 35B-A3B оставлен partial13 по RAM guard, GPT-OSS partial13 после четырёх output-budget errors. Две небезопасные API-конфигурации NOT RUN. Общий API inventory: 13 измеренных текстовых моделей из 15.
+
+Новый holdout150 выполнен после freeze, 750 уникальных решений. Гибрид 133/150, TOOLS+CLOUD 139/150; облачных вызовов 20 против 100. Совокупная гипотеза не подтверждена по условию сохранения качества. [Итоги и ограничения](FINAL_EXPERIMENT_RESULTS_RU.md). Приведённые далее ранние NOT RUN и projection являются датированными промежуточными состояниями.
+
+## Первоначальный CLI DEV-этап — исторический snapshot
+
+
 01.10.2026. Только development: старый test90 не использован для выбора модели. Основные generative кандидаты были установлены до сессии. Полный inventory smoke и отдельный typed decision аналог Jev документируются отдельно.
 
 Основной machine-readable анализ: `results/20261001_home_analysis_d9a7acb8/analysis.json`. Raw и ресурсы сохраняются в отдельных timestamped CLI runs.
