@@ -1,19 +1,42 @@
-# HOME-PC development status — 1 October 2026
+# Независимый HOME-PC эксперимент: замороженный протокол
 
-**STATUS: NOT FROZEN. FINAL HOLDOUT: NOT RUN. Selected IDs: NOT ASSIGNED; n = 0.**
+**FROZEN. Фактическая фиксация UTC: 2026-10-02T04:34:45.748327+00:00. Финальная inference ещё NOT RUN на момент фиксации.**
+Имя файла с 01.10 обозначает начало HOME-этапа; протокол заморожен 02.10.2026, без заднего датирования. Предыдущие draft-файлы сохранены побайтово в `experiments/draft_archive_20261002/`. Это локальная предварительная фиксация, не внешняя preregistration.
 
-Этот файл честно фиксирует незавершённый этап. Он не является confirmatory protocol и не заменяет неизменённый `data/protocol_frozen.json` от 30.09.2026.
+Машинный источник всех параметров: `experiments/HOME_PROTOCOL_2026-10-01.json` (SHA256 `795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c`). Точный prompt: `experiments/HOME_SYSTEM_PROMPT_2026-10-01.txt`. Исторические test90 и `data/protocol_frozen.json` остаются неизменными. Драйвер отклоняет несовпадение hashes; однократный durable claim запрещает автоматический повтор или resume.
 
-Выполнены clone/проверка commit 2a2037d, восстановление среды, сверка исторических hashes/statistics, hardware/model inventory, локальные CLI DEV-прогоны, отдельная валидация инструментов и новая статистика. Пользователь разрешил smoke всех 15 текстовых моделей и скачивание открытого аналога Jev для отдельного сравнения.
+## Выбор до создания holdout
 
-Окончательная локальная модель не выбрана. GPT-OSS 20B и Qwen3.8 27B — кандидаты; первый показал нестабильность и языковой разрыв на малом paired QA probe. Cloud baseline планируется Mercury 2.5. Prompt — исходный SYSTEM_PROMPT; context 4096, parallel 1; routing draft — context-aware home_policy v2.
+Настройка прекращена 01.10.2026 в 20:11 UTC; holdout создан в 20:20:43 UTC. Выбрана `gemma-4-26b-a4b-it`, IQ4_NL_XL, как практический reader после инструментов: controlled DEV36 22/36, p50 1.532 s, p95 2.440 s; paired bilingual probe EN4/6 RU5/6 как Qwen27 при меньшей задержке. Qwen27 выше по общему DEV25/36, но медленнее. Новая выборка и её gold не использовались для последующей настройки; модель/thresholds больше не меняются.
 
-Обновление после всех установленных text candidates: Gemma4 26B-A4B — предварительный быстрый bilingual context reader (EN4/6, RU5/6, p501.810 s); общий DEV36 score21/36. Это development selection, не final freeze.
+Local: endpoint127.0.0.1:1234, context4096, parallel1, requested GPU ratio0.70, temperature0, top_p1, seed42, max_tokens512, reasoning_effort none, строгая schema пяти полей action/answer/numeric/unit/tool. Main GGUF14556687680bytes SHA`c1ac61e3af04b40c7688dfe0686c54d68ff5ed26178a56f0b18c8a0e2b94db83`; catalog16847892149bytes включает mmproj/config. Actual GPU layers UNKNOWN; нулевое reasoning проверяется по измеряемым channels.
 
-Temperature/output budget/reasoning/schema и пороги должны быть окончательно проверены на controlled DEV. CLI temperature/max_tokens UNKNOWN; requested reasoning off не гарантирует отсутствие reasoning. Новый authenticated HTTP pilot и cloud pilot NOT RUN.
+Cloud: Mercury2.5, Inception API, исходный SYSTEM_PROMPT и parse_output, temperature0, max_tokens512, reasoning_effort instant, json_object, timeout60s. Незавершённый finish_reason считается ошибкой. Цена $0.04/M input и $0.15/M output проверена 01.10 и повторно 02.10 на официальной странице; cached discount не применяется. OpenRouter SKIPPED по указанию пользователя; Jev — отдельный typed DEV baseline и не подменяет основной cloud.
 
-Primary contrast draft: hybrid минус tools+cloud. Planning criteria: quality margin −5 п.п., cloud reduction ≥10 п.п., отсутствие дополнительного critical error, p95 ≤10 s. Эти критерии **не frozen**.
+## Выборка и scoring
 
-До freeze нужны authenticated LM Studio HTTP access, cloud credential/access, controlled DEV validation и окончательные holdout IDs/hashes. Новый final run не выполнялся. Финальный протокол фиксируется до использования его результатов.
+150IDs и их порядок находятся в JSON. Dataset SHA`3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03`, source registry SHA`cee18b0a44fbd93d50ae84072f6afef9e0ceb5516ae6caecaa96a66150866abd`. 75EN/75RU; QA40, numerical30, missing20, tool selection20, rule20, compound20. 110 synthetic controlled cases; QA20fact pairs из5documents. Всего25source/family groups. Exact overlap с историческими данными0; lexical Jaccard threshold0.8 не доказывает semantic OOD. Независимые Decimal reference formulas и source registry сохранены. Переводы AI-assisted, human validation PENDING. Labels не исправляются по результатам inference.
 
-Подробный draft: `docs/FINAL_EXPERIMENT_PROTOCOL_RU.md`. Сырые DEV-результаты: `results/20261001_*_cli/`. Итоговый документ явно отделяет DEV, replay, плановые значения и NOT RUN.
+Scoring неизменён: action; QA strict span EM и вторично token F1; numerical1%relative или0.02absolute плюс unit; exact controlled labels/tool. Ошибки входят в denominator; NOT_RUN отдельно, не imputed correct/zero. Critical error согласно неизменённому scorer: numeric или missing_data, action ANSWER и неправильный результат. Empty/malformed/ABSTAIN снижают correctness, но не считаются critical; rule/compound сюда не входят. Это узкий operational proxy, не оценка полевого вреда. Описание исправлено до любого inference; прежняя локальная версия сохранена в draft_archive_20261002, код/data/criteria не менялись.
+
+## Пять живых политик
+
+- LOCAL ONLY: один local вызов на каждый запрос.
+- CLOUD ONLY: один cloud вызов на каждый запрос.
+- TOOLS+CLOUD: исходный hard gate, затем cloud.
+- TOOLS→LOCAL→CLOUD: hard gate; при supplied context local и исходный grounded substring validator; при отсутствии принятой опоры cloud. Без context сразу cloud.
+- OFFLINE: та же tools/local логика, CLOUD_AVAILABLE=false; при отсутствии опоры ABSTAIN.
+
+Hard gate ожидается для30numerical и20missing, но ожидаемый route/gold не передаются provider. Все750policy decisions исполняются живьём в deterministic shuffled порядке seed20261001; responses между политиками не переиспользуются. Никаких warmups, response cache replay или paid retries. Grounded substring подтверждает буквальную опору, не семантическую правильность.
+
+## Критерии и статистика до результата
+
+Основной contrast hybrid−tools+cloud. Успех требует одновременно: нижняя paired95%CI качества ≥−5п.п.; сокращение cloud calls ≥10п.п. от всех150запросов; верхняя95%CI прироста critical errors ≤0; hybrid p95≤10s. Каждый критерий сообщается отдельно. Невыполнение noninferiority criterion не объявляется доказанной inferior quality. Эти границы — исследовательский выбор.
+
+Whole-group paired percentile bootstrap5000, seed20261001, unit sample.group; per-row weighted estimand. Wilson и McNemar описательные из-за коррелированных вариантов. Показываются category/language results, quality CI/effects, routes, coverage, ASK/ABSTAIN, ошибки, mean/p50/p95 end-to-end wall time, first delta/answer TTFT и approximate client tok/s с явным coverage, tokens и whole-device/system resources. Reasoning tokens входят в output, не прибавляются второй раз. Нет gold ABSTAIN: правильность abstention UNKNOWN. Offline goal — измеренное graceful degradation.
+
+## Бюджет, безопасность записи и воспроизводимость
+
+До450cloud calls по6000input+512output: консервативная planning estimate $0.14256; cap $0.25. Timeout usage/charge UNKNOWN сохраняется с резервом; invoice не получен. HTTP401/402/403/429/5xx прекращают последующие cloud calls, независимая local/offline работа продолжается. Memory guards baseline≥3GiB RAM/1024MiB GPU free, live≥2GiB/512MiB; при local stop облачный hybrid может деградировать, offline ABSTAIN фиксируется. Только собственный LM Studio instance выгружается.
+
+До запуска213tests PASS, holdout validation PASS, hashes/statistics старого эксперимента PASS. Hashes scientific code/prompt/data/weights, schedule, hardware, config, raw responses, usage, latency, error logs и resource samples сохраняются в новом каталоге с фактической датой 02.10.2026. Секреты не публикуются. После freeze settings не меняются; bugs/partial run раскрываются, повтор не запускается автоматически. Ручная таблица30examples и bootstrap/plots создаются после единственного run без повторных provider вызовов.

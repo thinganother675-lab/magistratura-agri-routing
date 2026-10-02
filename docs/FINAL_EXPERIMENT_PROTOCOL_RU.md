@@ -1,49 +1,42 @@
-# Протокол нового независимого эксперимента
+# Независимый HOME-PC эксперимент: замороженный протокол
 
-01.10.2026. **DRAFT / NOT FROZEN / FINAL NOT RUN.** Это проект протокола. Исторический `data/protocol_frozen.json` и старые результаты test90 остаются неизменными. Локальные прогоны HOME PC относятся к development.
+**FROZEN. Фактическая фиксация UTC: 2026-10-02T04:34:45.748327+00:00. Финальная inference ещё NOT RUN на момент фиксации.**
+Имя файла с 01.10 обозначает начало HOME-этапа; протокол заморожен 02.10.2026, без заднего датирования. Предыдущие draft-файлы сохранены побайтово в `experiments/draft_archive_20261002/`. Это локальная предварительная фиксация, не внешняя preregistration.
 
-## Выбор моделей и настройки
+Машинный источник всех параметров: `experiments/HOME_PROTOCOL_2026-10-01.json` (SHA256 `795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c`). Точный prompt: `experiments/HOME_SYSTEM_PROMPT_2026-10-01.txt`. Исторические test90 и `data/protocol_frozen.json` остаются неизменными. Драйвер отклоняет несовпадение hashes; однократный durable claim запрещает автоматический повтор или resume.
 
-Окончательная локальная модель **не выбрана**. GPT-OSS 20B Q8_0 получил 28/36 на первом расширенном DEV, однако повторная парная QA-проверка дала EN 4/6 и RU 2/6. Это показывает необходимость контролируемого повторного DEV, проверки перевода и устранения ошибок CLI. Qwen3.8 27B остаётся кандидатом с 25/36 и нулём ошибок транспорта/формата на этом срезе. Расширенный smoke всех 15 установленных текстовых LLM документируется отдельно.
+## Выбор до создания holdout
 
-После расширенного сравнения предварительный bilingual context reader — Gemma4 26B-A4B IQ4_NL_XL: paired EN4/6, RU5/6, как Qwen27, при p501.810 против3.268 s. Общий DEV36 Gemma21/36 ниже GPT28/36; это выбор под роль после tools, а не универсального победителя. Окончательный выбор зависит от controlled DEV и ручной проверки gold.
+Настройка прекращена 01.10.2026 в 20:11 UTC; holdout создан в 20:20:43 UTC. Выбрана `gemma-4-26b-a4b-it`, IQ4_NL_XL, как практический reader после инструментов: controlled DEV36 22/36, p50 1.532 s, p95 2.440 s; paired bilingual probe EN4/6 RU5/6 как Qwen27 при меньшей задержке. Qwen27 выше по общему DEV25/36, но медленнее. Новая выборка и её gold не использовались для последующей настройки; модель/thresholds больше не меняются.
 
-Для облачного сравнения планируется один `mercury-2.5` через Inception. Новый доступ и billing credential пока не проверены. Исторические облачные прогоны не повторяются ради leaderboard. Цены, проверенные 01.10.2026: $0.04/M input, $0.15/M output; cached discount в планировании не применяется. [Официальные модели и цены](https://docs.inceptionlabs.ai/get-started/models).
+Local: endpoint127.0.0.1:1234, context4096, parallel1, requested GPU ratio0.70, temperature0, top_p1, seed42, max_tokens512, reasoning_effort none, строгая schema пяти полей action/answer/numeric/unit/tool. Main GGUF14556687680bytes SHA`c1ac61e3af04b40c7688dfe0686c54d68ff5ed26178a56f0b18c8a0e2b94db83`; catalog16847892149bytes включает mmproj/config. Actual GPU layers UNKNOWN; нулевое reasoning проверяется по измеряемым channels.
 
-Предложенные настройки HTTP DEV: исходный `SYSTEM_PROMPT` из неизменённого `models.py`, temperature 0, seed 42 local, context 4096, parallel 1, max_tokens 512. Окончательные лимиты ответа и reasoning необходимо выбрать на DEV. Реальное отключение reasoning у GPT-OSS не подтверждено. `json_object` и, если доступна, фиксированная JSON schema проверяются до freeze. Native tool calling и самозаявленная confidence не заменяют валидатор.
+Cloud: Mercury2.5, Inception API, исходный SYSTEM_PROMPT и parse_output, temperature0, max_tokens512, reasoning_effort instant, json_object, timeout60s. Незавершённый finish_reason считается ошибкой. Цена $0.04/M input и $0.15/M output проверена 01.10 и повторно 02.10 на официальной странице; cached discount не применяется. OpenRouter SKIPPED по указанию пользователя; Jev — отдельный typed DEV baseline и не подменяет основной cloud.
 
-В CLI temperature и max_tokens неизвестны. Поэтому CLI-результаты нельзя считать исполнением этих HTTP settings. Установленный сервер требует отдельного LM Studio token; HTTP inference с ним **NOT RUN**.
+## Выборка и scoring
 
-## Маршрутизация и детерминированные инструменты
+150IDs и их порядок находятся в JSON. Dataset SHA`3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03`, source registry SHA`cee18b0a44fbd93d50ae84072f6afef9e0ceb5516ae6caecaa96a66150866abd`. 75EN/75RU; QA40, numerical30, missing20, tool selection20, rule20, compound20. 110 synthetic controlled cases; QA20fact pairs из5documents. Всего25source/family groups. Exact overlap с историческими данными0; lexical Jaccard threshold0.8 не доказывает semantic OOD. Независимые Decimal reference formulas и source registry сохранены. Переводы AI-assisted, human validation PENDING. Labels не исправляются по результатам inference.
 
-Новая development policy v2 находится отдельно в `home_policy.py`; исторический router не изменён. Сначала выполняется исходный deterministic hard gate. При наличии context вызывается локальный reader и проверяется опора ответа на supplied context. Без context запрос сразу планируется к облаку: прежний verifier не умеет принять такой локальный ответ. Offline при отсутствии support возвращается ABSTAIN.
+Scoring неизменён: action; QA strict span EM и вторично token F1; numerical1%relative или0.02absolute плюс unit; exact controlled labels/tool. Ошибки входят в denominator; NOT_RUN отдельно, не imputed correct/zero. Critical error согласно неизменённому scorer: numeric или missing_data, action ANSWER и неправильный результат. Empty/malformed/ABSTAIN снижают correctness, но не считаются critical; rule/compound сюда не входят. Это узкий operational proxy, не оценка полевого вреда. Описание исправлено до любого inference; прежняя локальная версия сохранена в draft_archive_20261002, код/data/criteria не менялись.
 
-Проверка substring подтверждает только буквальную опору, а не factual correctness или calibrated confidence. Формулы GDD/VPD/ET₀/rain deficit остаются детерминированными. Открытый аналог Jev исследуется как отдельный typed decision baseline; его классификацию нельзя смешивать с generative QA correctness.
+## Пять живых политик
 
-## Новая выборка
+- LOCAL ONLY: один local вызов на каждый запрос.
+- CLOUD ONLY: один cloud вызов на каждый запрос.
+- TOOLS+CLOUD: исходный hard gate, затем cloud.
+- TOOLS→LOCAL→CLOUD: hard gate; при supplied context local и исходный grounded substring validator; при отсутствии принятой опоры cloud. Без context сразу cloud.
+- OFFLINE: та же tools/local логика, CLOUD_AVAILABLE=false; при отсутствии опоры ABSTAIN.
 
-**Selected IDs: NOT ASSIGNED; selected n = 0; target n = 150.** Окончательная выборка не создаётся до готовности модели, prompts, scoring и routing. Предложенный состав: 40 QA, 30 numeric, 20 missing input, 20 tool selection, 20 rule, 20 compound. Из QA возможны 20 EN/RU source pairs; переводы одного источника считаются одной статистической группой. Это план, а не выполненный dataset.
+Hard gate ожидается для30numerical и20missing, но ожидаемый route/gold не передаются provider. Все750policy decisions исполняются живьём в deterministic shuffled порядке seed20261001; responses между политиками не переиспользуются. Никаких warmups, response cache replay или paid retries. Grounded substring подтверждает буквальную опору, не семантическую правильность.
 
-В AgXQA осталось 35 неиспользованных paragraph groups. Отсутствие document identity не позволяет доказать независимость на уровне документа. Предпочтительны новые источники и независимо проверяемые примеры. Для synthetic cases сохраняются source, seed, генератор и явная synthetic label. Новые значения старых templates не означают semantic OOD. RU translation требует метода и статуса независимой проверки.
+## Критерии и статистика до результата
 
-Перед freeze исключаются exact/near duplicates всех исторических splits и новых DEV probes. Ответы holdout не используются для настройки. До запуска сохраняются окончательные IDs и hashes.
+Основной contrast hybrid−tools+cloud. Успех требует одновременно: нижняя paired95%CI качества ≥−5п.п.; сокращение cloud calls ≥10п.п. от всех150запросов; верхняя95%CI прироста critical errors ≤0; hybrid p95≤10s. Каждый критерий сообщается отдельно. Невыполнение noninferiority criterion не объявляется доказанной inferior quality. Эти границы — исследовательский выбор.
 
-## Сравнение и статистика
+Whole-group paired percentile bootstrap5000, seed20261001, unit sample.group; per-row weighted estimand. Wilson и McNemar описательные из-за коррелированных вариантов. Показываются category/language results, quality CI/effects, routes, coverage, ASK/ABSTAIN, ошибки, mean/p50/p95 end-to-end wall time, first delta/answer TTFT и approximate client tok/s с явным coverage, tokens и whole-device/system resources. Reasoning tokens входят в output, не прибавляются второй раз. Нет gold ABSTAIN: правильность abstention UNKNOWN. Offline goal — измеренное graceful degradation.
 
-Основные политики: LOCAL ONLY, CLOUD ONLY, TOOLS + CLOUD, TOOLS → LOCAL → CLOUD. Offline оценивается отдельно. Если политики реконструируются из одной сохранённой пары local/cloud outputs, latency обязательно называется reconstructed. Выводы о live performance требуют реального последовательного исполнения политик по заранее выбранному порядку. Облако повторно не вызывается ради пересчёта статистики.
+## Бюджет, безопасность записи и воспроизводимость
 
-Сохраняются raw responses, ошибки, model ID/quantization, runtime, prompts, generation settings, request hashes, usage, latency, TTFT, tok/s, VRAM/RAM. Неизвестные значения остаются null. Ошибки входят в denominator.
+До450cloud calls по6000input+512output: консервативная planning estimate $0.14256; cap $0.25. Timeout usage/charge UNKNOWN сохраняется с резервом; invoice не получен. HTTP401/402/403/429/5xx прекращают последующие cloud calls, независимая local/offline работа продолжается. Memory guards baseline≥3GiB RAM/1024MiB GPU free, live≥2GiB/512MiB; при local stop облачный hybrid может деградировать, offline ABSTAIN фиксируется. Только собственный LM Studio instance выгружается.
 
-Исходный scoring: action, strict span EM/token F1, exact labels, numeric tolerance 1% relative / 0.02 absolute и unit. Его ограничения раскрыты в `TOOL_VALIDATION_HOME_PC_RU.md`. Изменение scoring возможно только как новая версия до final. Таблица 20–40 final examples требует независимого ручного аудита; DEV-таблица не заменяет его.
-
-Основной contrast — hybrid минус tools+cloud. Планируется paired group bootstrap, 5000 повторов, seed 20261001; группы отражают source paragraph, translated pair или controlled family. Wilson и McNemar при зависимых вариантах используются описательно. Отсутствие значимости не доказывает equivalence. Основные результаты: effect size и CI, category correctness, coverage, escalation/abstention, mean/p50/p95, reliability и cost.
-
-**Предложенные критерии, ещё не frozen:** lower paired 95% CI качества ≥ −5 п.п.; сокращение cloud calls ≥ 10 п.п. от всех запросов относительно tools+cloud; upper CI прироста critical errors ≤ 0; p95 end-to-end ≤ 10 s. Это исследовательские planning choices, а не агрономические стандарты. N=150 может оказаться недостаточным для точной noninferiority оценки; неопределённость должна быть показана.
-
-## Стоимость и порядок запуска
-
-Для 150 cloud requests по 6000 input + 512 output tokens плановая оценка — **$0.04752**; DEV 36 при том же допущении — **$0.0114048**. Это расчёт по указанным лимитам и ценам, не счёт. При других settings estimate пересчитывается. Предлагается guard $1/run и отсутствие автоматических оплачиваемых retries. Электричество и амортизация GPU не измерены и не объявляются бесплатными.
-
-Порядок: controlled HTTP smoke; небольшой paired cloud DEV pilot; окончательный выбор модели и настроек; проверка источников и scoring; создание независимой выборки; запись IDs/hashes; реальный freeze с timestamp **до** выполнения; один final run без последующей настройки по его ответам.
-
-`experiments/PROTOCOL_FREEZE_2026-10-01.md` сейчас содержит только статус NOT FROZEN. Имя файла не делает протокол зарегистрированным или выполненным.
+До запуска213tests PASS, holdout validation PASS, hashes/statistics старого эксперимента PASS. Hashes scientific code/prompt/data/weights, schedule, hardware, config, raw responses, usage, latency, error logs и resource samples сохраняются в новом каталоге с фактической датой 02.10.2026. Секреты не публикуются. После freeze settings не меняются; bugs/partial run раскрываются, повтор не запускается автоматически. Ручная таблица30examples и bootstrap/plots создаются после единственного run без повторных provider вызовов.
