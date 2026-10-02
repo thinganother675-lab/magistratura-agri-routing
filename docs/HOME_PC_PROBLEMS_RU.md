@@ -5,7 +5,7 @@
 | Проблема | Проверенное состояние | Решение / ограничение |
 |---|---|---|
 | OpenRouter | Key check и первый free inference HTTP401; успешных responses 0. | SKIPPED по пользователю. Paid fallback и повторов нет. |
-| GitHub push | Remote `thinganother675-lab/magistratura-agri-routing`; ранее push HTTP403 с Git credential Apartman36. gh не авторизован. | Локальные commits сохранены; окончательный normal push проверяется после проверки файлов. Публичный read не предоставляет write. Без прав публикация заблокирована. |
+| GitHub push | Окончательный normal push commit `d41e90d` получил HTTP403: GitHub отказал аккаунту Apartman36. Remote main после попытки `2a2037d`; gh не авторизован. | **NOT PUSHED**. Все результаты сохранены локально в Git. Нужен write-доступ текущему аккаунту или локальная авторизация аккаунтом владельца; публичный read не даёт write. История не переписывалась. |
 | Qwen 35B-A3B | API partial13/36, available RAM 1.86 GiB ниже guard 2 GiB при requested GPU0.55. | Полный API DEV36 NOT RUN; own instance выгружен. Этот профиль не признан устойчивым для длинного прогона. |
 | Две тяжёлые конфигурации | Qwen 35 Uncensored и Coder Next раньше нарушили memory guard. | API inference NOT RUN; запросы не повторяли в небезопасном состоянии. |
 | GPT-OSS / DR Venus | По 4 length errors на max512; большая часть output занята reasoning. | Ошибки и partial N включены в DEV. Лимиты не подбирались по final answers. |
