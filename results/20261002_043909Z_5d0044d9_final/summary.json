@@ -1,0 +1,1241 @@
+{
+  "run_id": "20261002_043909Z_5d0044d9_final",
+  "phase": "HOME_FINAL",
+  "policies": {
+    "local": {
+      "target_n": 150,
+      "n": 6,
+      "n_records": 6,
+      "not_run": 144,
+      "correct": 3,
+      "quality": 0.5,
+      "critical_errors": 2,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 1.6387046000000207,
+      "latency_p50_s": 1.5119231000001037,
+      "latency_p95_s": 2.287469824999903,
+      "routes": {
+        "LOCAL_MODEL": 6
+      },
+      "calls": {
+        "cloud": 0,
+        "local": 6,
+        "tool": 0
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": null,
+        "coverage": 0
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 3088,
+            "coverage": 6
+          },
+          "completion_tokens": {
+            "total": 197,
+            "coverage": 6
+          },
+          "total_tokens": {
+            "total": 3285,
+            "coverage": 6
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.6181093000000146,
+          "coverage": 6
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.6181093000000146,
+          "coverage": 6
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 46.9894818005324,
+          "coverage": 6
+        }
+      },
+      "by_category": {
+        "numeric": {
+          "n": 2,
+          "correct": 0
+        },
+        "tool_selection": {
+          "n": 2,
+          "correct": 2
+        },
+        "rule_interpretation": {
+          "n": 1,
+          "correct": 1
+        },
+        "compound_reasoning": {
+          "n": 1,
+          "correct": 0
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 3,
+          "correct": 1
+        },
+        "ru": {
+          "n": 3,
+          "correct": 2
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0020",
+        "home_final_20261001_0056",
+        "home_final_20261001_0047",
+        "home_final_20261001_0112",
+        "home_final_20261001_0049",
+        "home_final_20261001_0111",
+        "home_final_20261001_0092",
+        "home_final_20261001_0077",
+        "home_final_20261001_0046",
+        "home_final_20261001_0136",
+        "home_final_20261001_0014",
+        "home_final_20261001_0065",
+        "home_final_20261001_0071",
+        "home_final_20261001_0137",
+        "home_final_20261001_0015",
+        "home_final_20261001_0106",
+        "home_final_20261001_0079",
+        "home_final_20261001_0060",
+        "home_final_20261001_0057",
+        "home_final_20261001_0149",
+        "home_final_20261001_0001",
+        "home_final_20261001_0132",
+        "home_final_20261001_0013",
+        "home_final_20261001_0043",
+        "home_final_20261001_0113",
+        "home_final_20261001_0023",
+        "home_final_20261001_0078",
+        "home_final_20261001_0027",
+        "home_final_20261001_0081",
+        "home_final_20261001_0028",
+        "home_final_20261001_0039",
+        "home_final_20261001_0041",
+        "home_final_20261001_0064",
+        "home_final_20261001_0108",
+        "home_final_20261001_0075",
+        "home_final_20261001_0012",
+        "home_final_20261001_0036",
+        "home_final_20261001_0086",
+        "home_final_20261001_0040",
+        "home_final_20261001_0068",
+        "home_final_20261001_0143",
+        "home_final_20261001_0119",
+        "home_final_20261001_0003",
+        "home_final_20261001_0146",
+        "home_final_20261001_0147",
+        "home_final_20261001_0073",
+        "home_final_20261001_0021",
+        "home_final_20261001_0134",
+        "home_final_20261001_0083",
+        "home_final_20261001_0148",
+        "home_final_20261001_0032",
+        "home_final_20261001_0048",
+        "home_final_20261001_0087",
+        "home_final_20261001_0126",
+        "home_final_20261001_0121",
+        "home_final_20261001_0138",
+        "home_final_20261001_0016",
+        "home_final_20261001_0124",
+        "home_final_20261001_0008",
+        "home_final_20261001_0142",
+        "home_final_20261001_0084",
+        "home_final_20261001_0011",
+        "home_final_20261001_0122",
+        "home_final_20261001_0018",
+        "home_final_20261001_0009",
+        "home_final_20261001_0094",
+        "home_final_20261001_0114",
+        "home_final_20261001_0101",
+        "home_final_20261001_0058",
+        "home_final_20261001_0053",
+        "home_final_20261001_0038",
+        "home_final_20261001_0072",
+        "home_final_20261001_0140",
+        "home_final_20261001_0035",
+        "home_final_20261001_0107",
+        "home_final_20261001_0130",
+        "home_final_20261001_0026",
+        "home_final_20261001_0141",
+        "home_final_20261001_0135",
+        "home_final_20261001_0093",
+        "home_final_20261001_0006",
+        "home_final_20261001_0052",
+        "home_final_20261001_0117",
+        "home_final_20261001_0033",
+        "home_final_20261001_0085",
+        "home_final_20261001_0002",
+        "home_final_20261001_0045",
+        "home_final_20261001_0061",
+        "home_final_20261001_0131",
+        "home_final_20261001_0109",
+        "home_final_20261001_0120",
+        "home_final_20261001_0025",
+        "home_final_20261001_0088",
+        "home_final_20261001_0050",
+        "home_final_20261001_0144",
+        "home_final_20261001_0103",
+        "home_final_20261001_0051",
+        "home_final_20261001_0089",
+        "home_final_20261001_0105",
+        "home_final_20261001_0063",
+        "home_final_20261001_0031",
+        "home_final_20261001_0099",
+        "home_final_20261001_0076",
+        "home_final_20261001_0062",
+        "home_final_20261001_0150",
+        "home_final_20261001_0102",
+        "home_final_20261001_0034",
+        "home_final_20261001_0129",
+        "home_final_20261001_0059",
+        "home_final_20261001_0080",
+        "home_final_20261001_0019",
+        "home_final_20261001_0125",
+        "home_final_20261001_0118",
+        "home_final_20261001_0007",
+        "home_final_20261001_0090",
+        "home_final_20261001_0010",
+        "home_final_20261001_0044",
+        "home_final_20261001_0017",
+        "home_final_20261001_0098",
+        "home_final_20261001_0115",
+        "home_final_20261001_0110",
+        "home_final_20261001_0029",
+        "home_final_20261001_0055",
+        "home_final_20261001_0005",
+        "home_final_20261001_0030",
+        "home_final_20261001_0022",
+        "home_final_20261001_0133",
+        "home_final_20261001_0097",
+        "home_final_20261001_0074",
+        "home_final_20261001_0054",
+        "home_final_20261001_0116",
+        "home_final_20261001_0004",
+        "home_final_20261001_0069",
+        "home_final_20261001_0123",
+        "home_final_20261001_0070",
+        "home_final_20261001_0082",
+        "home_final_20261001_0128",
+        "home_final_20261001_0024",
+        "home_final_20261001_0091",
+        "home_final_20261001_0104",
+        "home_final_20261001_0095",
+        "home_final_20261001_0139",
+        "home_final_20261001_0037",
+        "home_final_20261001_0042"
+      ]
+    },
+    "cloud": {
+      "target_n": 150,
+      "n": 6,
+      "n_records": 6,
+      "not_run": 144,
+      "correct": 4,
+      "quality": 0.6666666666666666,
+      "critical_errors": 0,
+      "error_decisions": 2,
+      "call_errors": 2,
+      "latency_mean_s": 11.396729366666628,
+      "latency_p50_s": 1.5534040000000005,
+      "latency_p95_s": 45.91512504999997,
+      "routes": {
+        "CLOUD_MODEL": 6
+      },
+      "calls": {
+        "cloud": 6,
+        "local": 0,
+        "tool": 0
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 0.00027788,
+        "coverage": 5
+      },
+      "cloud_unknown_cost_calls": 1,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 3047,
+            "coverage": 5
+          },
+          "completion_tokens": {
+            "total": 1040,
+            "coverage": 5
+          },
+          "total_tokens": {
+            "total": 4087,
+            "coverage": 5
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "first_answer_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": null,
+          "coverage": 0
+        }
+      },
+      "by_category": {
+        "numeric": {
+          "n": 2,
+          "correct": 2
+        },
+        "tool_selection": {
+          "n": 2,
+          "correct": 1
+        },
+        "rule_interpretation": {
+          "n": 1,
+          "correct": 0
+        },
+        "compound_reasoning": {
+          "n": 1,
+          "correct": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 3,
+          "correct": 2
+        },
+        "ru": {
+          "n": 3,
+          "correct": 2
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0020",
+        "home_final_20261001_0056",
+        "home_final_20261001_0047",
+        "home_final_20261001_0112",
+        "home_final_20261001_0049",
+        "home_final_20261001_0111",
+        "home_final_20261001_0092",
+        "home_final_20261001_0077",
+        "home_final_20261001_0046",
+        "home_final_20261001_0136",
+        "home_final_20261001_0014",
+        "home_final_20261001_0065",
+        "home_final_20261001_0071",
+        "home_final_20261001_0137",
+        "home_final_20261001_0015",
+        "home_final_20261001_0106",
+        "home_final_20261001_0079",
+        "home_final_20261001_0060",
+        "home_final_20261001_0057",
+        "home_final_20261001_0149",
+        "home_final_20261001_0001",
+        "home_final_20261001_0132",
+        "home_final_20261001_0013",
+        "home_final_20261001_0043",
+        "home_final_20261001_0113",
+        "home_final_20261001_0023",
+        "home_final_20261001_0078",
+        "home_final_20261001_0027",
+        "home_final_20261001_0081",
+        "home_final_20261001_0028",
+        "home_final_20261001_0039",
+        "home_final_20261001_0041",
+        "home_final_20261001_0064",
+        "home_final_20261001_0108",
+        "home_final_20261001_0075",
+        "home_final_20261001_0012",
+        "home_final_20261001_0036",
+        "home_final_20261001_0086",
+        "home_final_20261001_0040",
+        "home_final_20261001_0068",
+        "home_final_20261001_0143",
+        "home_final_20261001_0119",
+        "home_final_20261001_0003",
+        "home_final_20261001_0146",
+        "home_final_20261001_0147",
+        "home_final_20261001_0073",
+        "home_final_20261001_0021",
+        "home_final_20261001_0134",
+        "home_final_20261001_0083",
+        "home_final_20261001_0148",
+        "home_final_20261001_0032",
+        "home_final_20261001_0048",
+        "home_final_20261001_0087",
+        "home_final_20261001_0126",
+        "home_final_20261001_0121",
+        "home_final_20261001_0138",
+        "home_final_20261001_0016",
+        "home_final_20261001_0124",
+        "home_final_20261001_0008",
+        "home_final_20261001_0142",
+        "home_final_20261001_0084",
+        "home_final_20261001_0011",
+        "home_final_20261001_0122",
+        "home_final_20261001_0018",
+        "home_final_20261001_0009",
+        "home_final_20261001_0094",
+        "home_final_20261001_0114",
+        "home_final_20261001_0101",
+        "home_final_20261001_0058",
+        "home_final_20261001_0053",
+        "home_final_20261001_0038",
+        "home_final_20261001_0072",
+        "home_final_20261001_0140",
+        "home_final_20261001_0035",
+        "home_final_20261001_0107",
+        "home_final_20261001_0130",
+        "home_final_20261001_0026",
+        "home_final_20261001_0141",
+        "home_final_20261001_0135",
+        "home_final_20261001_0093",
+        "home_final_20261001_0006",
+        "home_final_20261001_0052",
+        "home_final_20261001_0117",
+        "home_final_20261001_0033",
+        "home_final_20261001_0085",
+        "home_final_20261001_0002",
+        "home_final_20261001_0045",
+        "home_final_20261001_0061",
+        "home_final_20261001_0131",
+        "home_final_20261001_0109",
+        "home_final_20261001_0120",
+        "home_final_20261001_0025",
+        "home_final_20261001_0088",
+        "home_final_20261001_0050",
+        "home_final_20261001_0144",
+        "home_final_20261001_0103",
+        "home_final_20261001_0051",
+        "home_final_20261001_0089",
+        "home_final_20261001_0105",
+        "home_final_20261001_0063",
+        "home_final_20261001_0031",
+        "home_final_20261001_0099",
+        "home_final_20261001_0076",
+        "home_final_20261001_0062",
+        "home_final_20261001_0150",
+        "home_final_20261001_0102",
+        "home_final_20261001_0034",
+        "home_final_20261001_0129",
+        "home_final_20261001_0059",
+        "home_final_20261001_0080",
+        "home_final_20261001_0019",
+        "home_final_20261001_0125",
+        "home_final_20261001_0118",
+        "home_final_20261001_0007",
+        "home_final_20261001_0090",
+        "home_final_20261001_0010",
+        "home_final_20261001_0044",
+        "home_final_20261001_0017",
+        "home_final_20261001_0098",
+        "home_final_20261001_0115",
+        "home_final_20261001_0110",
+        "home_final_20261001_0029",
+        "home_final_20261001_0055",
+        "home_final_20261001_0005",
+        "home_final_20261001_0030",
+        "home_final_20261001_0022",
+        "home_final_20261001_0133",
+        "home_final_20261001_0097",
+        "home_final_20261001_0074",
+        "home_final_20261001_0054",
+        "home_final_20261001_0116",
+        "home_final_20261001_0004",
+        "home_final_20261001_0069",
+        "home_final_20261001_0123",
+        "home_final_20261001_0070",
+        "home_final_20261001_0082",
+        "home_final_20261001_0128",
+        "home_final_20261001_0024",
+        "home_final_20261001_0091",
+        "home_final_20261001_0104",
+        "home_final_20261001_0095",
+        "home_final_20261001_0139",
+        "home_final_20261001_0037",
+        "home_final_20261001_0042"
+      ]
+    },
+    "tool_cloud": {
+      "target_n": 150,
+      "n": 6,
+      "n_records": 6,
+      "not_run": 144,
+      "correct": 6,
+      "quality": 1.0,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 1.5715558333333395,
+      "latency_p50_s": 1.392565549999972,
+      "latency_p95_s": 3.4095982750000644,
+      "routes": {
+        "CLOUD_MODEL": 4,
+        "DETERMINISTIC_TOOL": 2
+      },
+      "calls": {
+        "cloud": 4,
+        "local": 0,
+        "tool": 2
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 0.00019018,
+        "coverage": 4
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 2362,
+            "coverage": 4
+          },
+          "completion_tokens": {
+            "total": 638,
+            "coverage": 4
+          },
+          "total_tokens": {
+            "total": 3000,
+            "coverage": 4
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "first_answer_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": null,
+          "coverage": 0
+        }
+      },
+      "by_category": {
+        "numeric": {
+          "n": 2,
+          "correct": 2
+        },
+        "tool_selection": {
+          "n": 2,
+          "correct": 2
+        },
+        "rule_interpretation": {
+          "n": 1,
+          "correct": 1
+        },
+        "compound_reasoning": {
+          "n": 1,
+          "correct": 1
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 3,
+          "correct": 3
+        },
+        "ru": {
+          "n": 3,
+          "correct": 3
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0020",
+        "home_final_20261001_0056",
+        "home_final_20261001_0047",
+        "home_final_20261001_0112",
+        "home_final_20261001_0049",
+        "home_final_20261001_0111",
+        "home_final_20261001_0092",
+        "home_final_20261001_0077",
+        "home_final_20261001_0046",
+        "home_final_20261001_0136",
+        "home_final_20261001_0014",
+        "home_final_20261001_0065",
+        "home_final_20261001_0071",
+        "home_final_20261001_0137",
+        "home_final_20261001_0015",
+        "home_final_20261001_0106",
+        "home_final_20261001_0079",
+        "home_final_20261001_0060",
+        "home_final_20261001_0057",
+        "home_final_20261001_0149",
+        "home_final_20261001_0001",
+        "home_final_20261001_0132",
+        "home_final_20261001_0013",
+        "home_final_20261001_0043",
+        "home_final_20261001_0113",
+        "home_final_20261001_0023",
+        "home_final_20261001_0078",
+        "home_final_20261001_0027",
+        "home_final_20261001_0081",
+        "home_final_20261001_0028",
+        "home_final_20261001_0039",
+        "home_final_20261001_0041",
+        "home_final_20261001_0064",
+        "home_final_20261001_0108",
+        "home_final_20261001_0075",
+        "home_final_20261001_0012",
+        "home_final_20261001_0036",
+        "home_final_20261001_0086",
+        "home_final_20261001_0040",
+        "home_final_20261001_0068",
+        "home_final_20261001_0143",
+        "home_final_20261001_0119",
+        "home_final_20261001_0003",
+        "home_final_20261001_0146",
+        "home_final_20261001_0147",
+        "home_final_20261001_0073",
+        "home_final_20261001_0021",
+        "home_final_20261001_0134",
+        "home_final_20261001_0083",
+        "home_final_20261001_0148",
+        "home_final_20261001_0032",
+        "home_final_20261001_0048",
+        "home_final_20261001_0087",
+        "home_final_20261001_0126",
+        "home_final_20261001_0121",
+        "home_final_20261001_0138",
+        "home_final_20261001_0016",
+        "home_final_20261001_0124",
+        "home_final_20261001_0008",
+        "home_final_20261001_0142",
+        "home_final_20261001_0084",
+        "home_final_20261001_0011",
+        "home_final_20261001_0122",
+        "home_final_20261001_0018",
+        "home_final_20261001_0009",
+        "home_final_20261001_0094",
+        "home_final_20261001_0114",
+        "home_final_20261001_0101",
+        "home_final_20261001_0058",
+        "home_final_20261001_0053",
+        "home_final_20261001_0038",
+        "home_final_20261001_0072",
+        "home_final_20261001_0140",
+        "home_final_20261001_0035",
+        "home_final_20261001_0107",
+        "home_final_20261001_0130",
+        "home_final_20261001_0026",
+        "home_final_20261001_0141",
+        "home_final_20261001_0135",
+        "home_final_20261001_0093",
+        "home_final_20261001_0006",
+        "home_final_20261001_0052",
+        "home_final_20261001_0117",
+        "home_final_20261001_0033",
+        "home_final_20261001_0085",
+        "home_final_20261001_0002",
+        "home_final_20261001_0045",
+        "home_final_20261001_0061",
+        "home_final_20261001_0131",
+        "home_final_20261001_0109",
+        "home_final_20261001_0120",
+        "home_final_20261001_0025",
+        "home_final_20261001_0088",
+        "home_final_20261001_0050",
+        "home_final_20261001_0144",
+        "home_final_20261001_0103",
+        "home_final_20261001_0051",
+        "home_final_20261001_0089",
+        "home_final_20261001_0105",
+        "home_final_20261001_0063",
+        "home_final_20261001_0031",
+        "home_final_20261001_0099",
+        "home_final_20261001_0076",
+        "home_final_20261001_0062",
+        "home_final_20261001_0150",
+        "home_final_20261001_0102",
+        "home_final_20261001_0034",
+        "home_final_20261001_0129",
+        "home_final_20261001_0059",
+        "home_final_20261001_0080",
+        "home_final_20261001_0019",
+        "home_final_20261001_0125",
+        "home_final_20261001_0118",
+        "home_final_20261001_0007",
+        "home_final_20261001_0090",
+        "home_final_20261001_0010",
+        "home_final_20261001_0044",
+        "home_final_20261001_0017",
+        "home_final_20261001_0098",
+        "home_final_20261001_0115",
+        "home_final_20261001_0110",
+        "home_final_20261001_0029",
+        "home_final_20261001_0055",
+        "home_final_20261001_0005",
+        "home_final_20261001_0030",
+        "home_final_20261001_0022",
+        "home_final_20261001_0133",
+        "home_final_20261001_0097",
+        "home_final_20261001_0074",
+        "home_final_20261001_0054",
+        "home_final_20261001_0116",
+        "home_final_20261001_0004",
+        "home_final_20261001_0069",
+        "home_final_20261001_0123",
+        "home_final_20261001_0070",
+        "home_final_20261001_0082",
+        "home_final_20261001_0128",
+        "home_final_20261001_0024",
+        "home_final_20261001_0091",
+        "home_final_20261001_0104",
+        "home_final_20261001_0095",
+        "home_final_20261001_0139",
+        "home_final_20261001_0037",
+        "home_final_20261001_0042"
+      ]
+    },
+    "hybrid": {
+      "target_n": 150,
+      "n": 6,
+      "n_records": 6,
+      "not_run": 144,
+      "correct": 5,
+      "quality": 0.8333333333333334,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 0.9354352333333509,
+      "latency_p50_s": 1.0845058500000277,
+      "latency_p95_s": 1.9442415500001289,
+      "routes": {
+        "LOCAL_MODEL": 2,
+        "DETERMINISTIC_TOOL": 2,
+        "CLOUD_MODEL": 2
+      },
+      "calls": {
+        "cloud": 2,
+        "local": 2,
+        "tool": 2
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 8.108e-05,
+        "coverage": 2
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 1097,
+            "coverage": 2
+          },
+          "completion_tokens": {
+            "total": 65,
+            "coverage": 2
+          },
+          "total_tokens": {
+            "total": 1162,
+            "coverage": 2
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 1112,
+            "coverage": 2
+          },
+          "completion_tokens": {
+            "total": 244,
+            "coverage": 2
+          },
+          "total_tokens": {
+            "total": 1356,
+            "coverage": 2
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.2632909500000551,
+          "coverage": 2
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.2632909500000551,
+          "coverage": 2
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 49.095656875096225,
+          "coverage": 2
+        }
+      },
+      "by_category": {
+        "numeric": {
+          "n": 2,
+          "correct": 2
+        },
+        "tool_selection": {
+          "n": 2,
+          "correct": 2
+        },
+        "rule_interpretation": {
+          "n": 1,
+          "correct": 1
+        },
+        "compound_reasoning": {
+          "n": 1,
+          "correct": 0
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 3,
+          "correct": 2
+        },
+        "ru": {
+          "n": 3,
+          "correct": 3
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0020",
+        "home_final_20261001_0056",
+        "home_final_20261001_0047",
+        "home_final_20261001_0112",
+        "home_final_20261001_0049",
+        "home_final_20261001_0111",
+        "home_final_20261001_0092",
+        "home_final_20261001_0077",
+        "home_final_20261001_0046",
+        "home_final_20261001_0136",
+        "home_final_20261001_0014",
+        "home_final_20261001_0065",
+        "home_final_20261001_0071",
+        "home_final_20261001_0137",
+        "home_final_20261001_0015",
+        "home_final_20261001_0106",
+        "home_final_20261001_0079",
+        "home_final_20261001_0060",
+        "home_final_20261001_0057",
+        "home_final_20261001_0149",
+        "home_final_20261001_0001",
+        "home_final_20261001_0132",
+        "home_final_20261001_0013",
+        "home_final_20261001_0043",
+        "home_final_20261001_0113",
+        "home_final_20261001_0023",
+        "home_final_20261001_0078",
+        "home_final_20261001_0027",
+        "home_final_20261001_0081",
+        "home_final_20261001_0028",
+        "home_final_20261001_0039",
+        "home_final_20261001_0041",
+        "home_final_20261001_0064",
+        "home_final_20261001_0108",
+        "home_final_20261001_0075",
+        "home_final_20261001_0012",
+        "home_final_20261001_0036",
+        "home_final_20261001_0086",
+        "home_final_20261001_0040",
+        "home_final_20261001_0068",
+        "home_final_20261001_0143",
+        "home_final_20261001_0119",
+        "home_final_20261001_0003",
+        "home_final_20261001_0146",
+        "home_final_20261001_0147",
+        "home_final_20261001_0073",
+        "home_final_20261001_0021",
+        "home_final_20261001_0134",
+        "home_final_20261001_0083",
+        "home_final_20261001_0148",
+        "home_final_20261001_0032",
+        "home_final_20261001_0048",
+        "home_final_20261001_0087",
+        "home_final_20261001_0126",
+        "home_final_20261001_0121",
+        "home_final_20261001_0138",
+        "home_final_20261001_0016",
+        "home_final_20261001_0124",
+        "home_final_20261001_0008",
+        "home_final_20261001_0142",
+        "home_final_20261001_0084",
+        "home_final_20261001_0011",
+        "home_final_20261001_0122",
+        "home_final_20261001_0018",
+        "home_final_20261001_0009",
+        "home_final_20261001_0094",
+        "home_final_20261001_0114",
+        "home_final_20261001_0101",
+        "home_final_20261001_0058",
+        "home_final_20261001_0053",
+        "home_final_20261001_0038",
+        "home_final_20261001_0072",
+        "home_final_20261001_0140",
+        "home_final_20261001_0035",
+        "home_final_20261001_0107",
+        "home_final_20261001_0130",
+        "home_final_20261001_0026",
+        "home_final_20261001_0141",
+        "home_final_20261001_0135",
+        "home_final_20261001_0093",
+        "home_final_20261001_0006",
+        "home_final_20261001_0052",
+        "home_final_20261001_0117",
+        "home_final_20261001_0033",
+        "home_final_20261001_0085",
+        "home_final_20261001_0002",
+        "home_final_20261001_0045",
+        "home_final_20261001_0061",
+        "home_final_20261001_0131",
+        "home_final_20261001_0109",
+        "home_final_20261001_0120",
+        "home_final_20261001_0025",
+        "home_final_20261001_0088",
+        "home_final_20261001_0050",
+        "home_final_20261001_0144",
+        "home_final_20261001_0103",
+        "home_final_20261001_0051",
+        "home_final_20261001_0089",
+        "home_final_20261001_0105",
+        "home_final_20261001_0063",
+        "home_final_20261001_0031",
+        "home_final_20261001_0099",
+        "home_final_20261001_0076",
+        "home_final_20261001_0062",
+        "home_final_20261001_0150",
+        "home_final_20261001_0102",
+        "home_final_20261001_0034",
+        "home_final_20261001_0129",
+        "home_final_20261001_0059",
+        "home_final_20261001_0080",
+        "home_final_20261001_0019",
+        "home_final_20261001_0125",
+        "home_final_20261001_0118",
+        "home_final_20261001_0007",
+        "home_final_20261001_0090",
+        "home_final_20261001_0010",
+        "home_final_20261001_0044",
+        "home_final_20261001_0017",
+        "home_final_20261001_0098",
+        "home_final_20261001_0115",
+        "home_final_20261001_0110",
+        "home_final_20261001_0029",
+        "home_final_20261001_0055",
+        "home_final_20261001_0005",
+        "home_final_20261001_0030",
+        "home_final_20261001_0022",
+        "home_final_20261001_0133",
+        "home_final_20261001_0097",
+        "home_final_20261001_0074",
+        "home_final_20261001_0054",
+        "home_final_20261001_0116",
+        "home_final_20261001_0004",
+        "home_final_20261001_0069",
+        "home_final_20261001_0123",
+        "home_final_20261001_0070",
+        "home_final_20261001_0082",
+        "home_final_20261001_0128",
+        "home_final_20261001_0024",
+        "home_final_20261001_0091",
+        "home_final_20261001_0104",
+        "home_final_20261001_0095",
+        "home_final_20261001_0139",
+        "home_final_20261001_0037",
+        "home_final_20261001_0042"
+      ]
+    },
+    "offline": {
+      "target_n": 150,
+      "n": 6,
+      "n_records": 6,
+      "not_run": 144,
+      "correct": 3,
+      "quality": 0.5,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 0.4100906666666712,
+      "latency_p50_s": 5.984999995689577e-05,
+      "latency_p95_s": 1.302389925,
+      "routes": {
+        "LOCAL_MODEL": 2,
+        "DETERMINISTIC_TOOL": 2,
+        "ABSTAIN": 2
+      },
+      "calls": {
+        "cloud": 0,
+        "local": 2,
+        "tool": 2
+      },
+      "abstentions": 2,
+      "cost_usd": {
+        "total": null,
+        "coverage": 0
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 1097,
+            "coverage": 2
+          },
+          "completion_tokens": {
+            "total": 65,
+            "coverage": 2
+          },
+          "total_tokens": {
+            "total": 1162,
+            "coverage": 2
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.39326345000006313,
+          "coverage": 2
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.39326345000006313,
+          "coverage": 2
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 47.11498689839822,
+          "coverage": 2
+        }
+      },
+      "by_category": {
+        "numeric": {
+          "n": 2,
+          "correct": 2
+        },
+        "tool_selection": {
+          "n": 2,
+          "correct": 0
+        },
+        "rule_interpretation": {
+          "n": 1,
+          "correct": 1
+        },
+        "compound_reasoning": {
+          "n": 1,
+          "correct": 0
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 3,
+          "correct": 2
+        },
+        "ru": {
+          "n": 3,
+          "correct": 1
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0020",
+        "home_final_20261001_0056",
+        "home_final_20261001_0047",
+        "home_final_20261001_0112",
+        "home_final_20261001_0049",
+        "home_final_20261001_0111",
+        "home_final_20261001_0092",
+        "home_final_20261001_0077",
+        "home_final_20261001_0046",
+        "home_final_20261001_0136",
+        "home_final_20261001_0014",
+        "home_final_20261001_0065",
+        "home_final_20261001_0071",
+        "home_final_20261001_0137",
+        "home_final_20261001_0015",
+        "home_final_20261001_0106",
+        "home_final_20261001_0079",
+        "home_final_20261001_0060",
+        "home_final_20261001_0057",
+        "home_final_20261001_0149",
+        "home_final_20261001_0001",
+        "home_final_20261001_0132",
+        "home_final_20261001_0013",
+        "home_final_20261001_0043",
+        "home_final_20261001_0113",
+        "home_final_20261001_0023",
+        "home_final_20261001_0078",
+        "home_final_20261001_0027",
+        "home_final_20261001_0081",
+        "home_final_20261001_0028",
+        "home_final_20261001_0039",
+        "home_final_20261001_0041",
+        "home_final_20261001_0064",
+        "home_final_20261001_0108",
+        "home_final_20261001_0075",
+        "home_final_20261001_0012",
+        "home_final_20261001_0036",
+        "home_final_20261001_0086",
+        "home_final_20261001_0040",
+        "home_final_20261001_0068",
+        "home_final_20261001_0143",
+        "home_final_20261001_0119",
+        "home_final_20261001_0003",
+        "home_final_20261001_0146",
+        "home_final_20261001_0147",
+        "home_final_20261001_0073",
+        "home_final_20261001_0021",
+        "home_final_20261001_0134",
+        "home_final_20261001_0083",
+        "home_final_20261001_0148",
+        "home_final_20261001_0032",
+        "home_final_20261001_0048",
+        "home_final_20261001_0087",
+        "home_final_20261001_0126",
+        "home_final_20261001_0121",
+        "home_final_20261001_0138",
+        "home_final_20261001_0016",
+        "home_final_20261001_0124",
+        "home_final_20261001_0008",
+        "home_final_20261001_0142",
+        "home_final_20261001_0084",
+        "home_final_20261001_0011",
+        "home_final_20261001_0122",
+        "home_final_20261001_0018",
+        "home_final_20261001_0009",
+        "home_final_20261001_0094",
+        "home_final_20261001_0114",
+        "home_final_20261001_0101",
+        "home_final_20261001_0058",
+        "home_final_20261001_0053",
+        "home_final_20261001_0038",
+        "home_final_20261001_0072",
+        "home_final_20261001_0140",
+        "home_final_20261001_0035",
+        "home_final_20261001_0107",
+        "home_final_20261001_0130",
+        "home_final_20261001_0026",
+        "home_final_20261001_0141",
+        "home_final_20261001_0135",
+        "home_final_20261001_0093",
+        "home_final_20261001_0006",
+        "home_final_20261001_0052",
+        "home_final_20261001_0117",
+        "home_final_20261001_0033",
+        "home_final_20261001_0085",
+        "home_final_20261001_0002",
+        "home_final_20261001_0045",
+        "home_final_20261001_0061",
+        "home_final_20261001_0131",
+        "home_final_20261001_0109",
+        "home_final_20261001_0120",
+        "home_final_20261001_0025",
+        "home_final_20261001_0088",
+        "home_final_20261001_0050",
+        "home_final_20261001_0144",
+        "home_final_20261001_0103",
+        "home_final_20261001_0051",
+        "home_final_20261001_0089",
+        "home_final_20261001_0105",
+        "home_final_20261001_0063",
+        "home_final_20261001_0031",
+        "home_final_20261001_0099",
+        "home_final_20261001_0076",
+        "home_final_20261001_0062",
+        "home_final_20261001_0150",
+        "home_final_20261001_0102",
+        "home_final_20261001_0034",
+        "home_final_20261001_0129",
+        "home_final_20261001_0059",
+        "home_final_20261001_0080",
+        "home_final_20261001_0019",
+        "home_final_20261001_0125",
+        "home_final_20261001_0118",
+        "home_final_20261001_0007",
+        "home_final_20261001_0090",
+        "home_final_20261001_0010",
+        "home_final_20261001_0044",
+        "home_final_20261001_0017",
+        "home_final_20261001_0098",
+        "home_final_20261001_0115",
+        "home_final_20261001_0110",
+        "home_final_20261001_0029",
+        "home_final_20261001_0055",
+        "home_final_20261001_0005",
+        "home_final_20261001_0030",
+        "home_final_20261001_0022",
+        "home_final_20261001_0133",
+        "home_final_20261001_0097",
+        "home_final_20261001_0074",
+        "home_final_20261001_0054",
+        "home_final_20261001_0116",
+        "home_final_20261001_0004",
+        "home_final_20261001_0069",
+        "home_final_20261001_0123",
+        "home_final_20261001_0070",
+        "home_final_20261001_0082",
+        "home_final_20261001_0128",
+        "home_final_20261001_0024",
+        "home_final_20261001_0091",
+        "home_final_20261001_0104",
+        "home_final_20261001_0095",
+        "home_final_20261001_0139",
+        "home_final_20261001_0037",
+        "home_final_20261001_0042"
+      ]
+    }
+  }
+}
