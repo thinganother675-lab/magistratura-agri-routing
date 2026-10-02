@@ -1,0 +1,38 @@
+{
+  "repo": "unsloth/Qwen3.5-4B-GGUF",
+  "revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "filename": "Qwen3.5-4B-Q8_0.gguf",
+  "size": 4482403488,
+  "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+  "license": "apache-2.0",
+  "model_key": "qwen3.5-4b",
+  "gpu": "max",
+  "local_path": "C:\\Users\\hustlePC\\.lmstudio\\models\\magistratura\\Qwen3.5-4B-GGUF\\Qwen3.5-4B-Q8_0.gguf",
+  "measured_size": 4482403488,
+  "measured_sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+  "inventory": {
+    "type": "llm",
+    "modelKey": "qwen3.5-4b",
+    "format": "gguf",
+    "displayName": "Qwen3.5 4B",
+    "publisher": "magistratura",
+    "path": "magistratura/Qwen3.5-4B-GGUF/Qwen3.5-4B-Q8_0.gguf",
+    "sizeBytes": 5816478560,
+    "indexedModelIdentifier": "magistratura/Qwen3.5-4B-GGUF/Qwen3.5-4B-Q8_0.gguf",
+    "deviceIdentifier": null,
+    "paramsString": "4B",
+    "architecture": "qwen35",
+    "quantization": {
+      "name": "Q8_0",
+      "bits": 8
+    },
+    "vision": true,
+    "trainedForToolUse": true,
+    "maxContextLength": 262144
+  },
+  "measured_utc": "2026-10-02T19:20:16.472003+00:00",
+  "status": "CHECKSUM_VERIFIED_CATALOG_READY_INFERENCE_NOT_RUN",
+  "catalog_resolution": "background inventory became ready whilecorrectedBitCPUtrialran; no daemon/catalog restart performed"
+}

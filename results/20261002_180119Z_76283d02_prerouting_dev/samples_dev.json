@@ -1,0 +1,982 @@
+[
+  {
+    "id": "controlled_compound_reasoning_6_0",
+    "group": "controlled_compound_reasoning_6",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        11,
+        11,
+        5,
+        8,
+        0
+      ],
+      "daily_max": [
+        27,
+        25,
+        19,
+        22,
+        22
+      ],
+      "daily_rain": [
+        8,
+        8,
+        9,
+        7,
+        3
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_300",
+    "group": "0490a009ac5c904ba7adb5f87400a03fd98eaa6f768a0c2afdd5602d123084e5",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "what should be changed on internal combustion engines when checking to see if they're operational?",
+    "context": "Internal combustion engines need quite a bit more attention.  Change engine oil and all filters.  Check engine hours and refer to the manufactures service interval on valve adjustments and other service that may be needed.  It would also be a good idea to run the Nebraska Extension App IrrigatePump to see where your well stacks up against the Nebraska Pumping Plant Criteria.  This will give you an idea on the efficiency of the power unit and pump.  In the current economic climate we want to be as efficient as possible.\n\n",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "engine oil and all filters"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_6_0",
+    "group": "controlled_missing_data_6",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        13,
+        12,
+        6
+      ],
+      "tmax": [
+        26,
+        23,
+        22
+      ],
+      "temperature_unit": "F",
+      "base": 10
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_6_0",
+    "group": "controlled_numeric_6",
+    "split": "dev",
+    "category": "numeric",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        8,
+        8,
+        11
+      ],
+      "tmax": [
+        21,
+        17,
+        22
+      ],
+      "base": 5,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 28.5,
+      "unit": "degC day"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_6_0",
+    "group": "controlled_rule_interpretation_6",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": -2,
+      "scenario_threshold": 2,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_6_0",
+    "group": "controlled_tool_selection_6",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: только выбери инструмент, чтобы оценить тепловую сумму по tmin/tmax и base; не рассчитывай.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_7_0",
+    "group": "controlled_compound_reasoning_7",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "en",
+    "input": "Scenario 7: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        10,
+        10,
+        2,
+        0,
+        8
+      ],
+      "daily_max": [
+        25,
+        27,
+        22,
+        23,
+        30
+      ],
+      "daily_rain": [
+        3,
+        8,
+        2,
+        9,
+        2
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_141",
+    "group": "0f2ec5054f8f7d806128134eaf46daf0a1b23ef6bcead549092b22e39f1fa03f",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "In 2019 out of 15 reports, what percentage of Nebraska fields were considered wet late?",
+    "context": "Average percent of fields by year fitting into the six categories. The dry years 2020, ‘21 and ‘22 are different than the other years.\nIn 2019, out of 15 reports, 20% were ranked good, 7% were fair, 40% were wet late, 7% were wet early, 0% were wet all season, and 27% were very wet all season. ",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "40%"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_7_0",
+    "group": "controlled_missing_data_7",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        4,
+        8,
+        5
+      ],
+      "tmax": [
+        14,
+        18,
+        19
+      ],
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_7_0",
+    "group": "controlled_numeric_7",
+    "split": "dev",
+    "category": "numeric",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        11,
+        10,
+        4
+      ],
+      "tmax": [
+        23,
+        25,
+        20
+      ],
+      "base": 10,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 16.5,
+      "unit": "degC day"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_7_0",
+    "group": "controlled_rule_interpretation_7",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "en",
+    "input": "Scenario 7: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": 8,
+      "scenario_threshold": 0,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_7_0",
+    "group": "controlled_tool_selection_7",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "en",
+    "input": "Scenario 7: select only the tool for accumulated heat from daily minimum/maximum temperatures and a base; do not calculate.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_8_0",
+    "group": "controlled_compound_reasoning_8",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "ru",
+    "input": "Из исходных величин: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        8,
+        10,
+        3,
+        3,
+        11
+      ],
+      "daily_max": [
+        20,
+        19,
+        24,
+        23,
+        30
+      ],
+      "daily_rain": [
+        9,
+        10,
+        3,
+        8,
+        2
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_358",
+    "group": "14b48824acdc1a7c8fb739f015772082d0874dd4a963c9242f65ec817910ecfc",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "where can you find descriptions of the working principles of pressure regulators and provides guidelines for selecting a regulator?",
+    "context": "The Nebraska Extension NebGuide G888, Flow Control Devices for Center Pivot Irrigation Systems, describes the working principles of pressure regulators and provides guidelines for selecting a regulator. When regulators stop functioning properly, due to a worn out diaphragm and/or spring, they no longer provide the desired constant outlet pressure, and consequently flow rate.",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "The Nebraska Extension NebGuide G888, Flow Control Devices for Center Pivot Irrigation Systems"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_8_0",
+    "group": "controlled_missing_data_8",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "ru",
+    "input": "Из исходных величин, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        4,
+        11,
+        5
+      ],
+      "tmax": [
+        15,
+        20,
+        21
+      ],
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_8_0",
+    "group": "controlled_numeric_8",
+    "split": "dev",
+    "category": "numeric",
+    "language": "ru",
+    "input": "Из исходных величин, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        8,
+        9,
+        12
+      ],
+      "tmax": [
+        17,
+        21,
+        28
+      ],
+      "base": 0,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 47.5,
+      "unit": "degC day"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_8_0",
+    "group": "controlled_rule_interpretation_8",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "ru",
+    "input": "Из исходных величин: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": -2,
+      "scenario_threshold": -1,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_8_0",
+    "group": "controlled_tool_selection_8",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "ru",
+    "input": "Из исходных величин: только выбери инструмент, чтобы оценить тепловую сумму по tmin/tmax и base; не рассчитывай.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_7_1",
+    "group": "controlled_compound_reasoning_7",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "en",
+    "input": "Scenario 7: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        3,
+        5,
+        0,
+        7,
+        12
+      ],
+      "daily_max": [
+        23,
+        19,
+        30,
+        29,
+        28
+      ],
+      "daily_rain": [
+        2,
+        10,
+        7,
+        7,
+        0
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_362",
+    "group": "18d4de05d33b0d601b19a4e045eb777d0ead95c79da743d07a6ddb8ab6db8770",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "what can be a cause of non-uniform water application?",
+    "context": "The broken gooseneck on this pivot, as shown in the video, is one cause of non-uniform water application. Walking the irrigation span to visually inspect it can help identify issues before crop yield is affected.\n\n",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "broken gooseneck"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_7_1",
+    "group": "controlled_missing_data_7",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 27,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_7_1",
+    "group": "controlled_numeric_7",
+    "split": "dev",
+    "category": "numeric",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 18,
+      "rh": 55,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.9287951411972183,
+      "unit": "kPa"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_7_1",
+    "group": "controlled_rule_interpretation_7",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "en",
+    "input": "Scenario 7: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": 8,
+      "scenario_threshold": -2,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_7_1",
+    "group": "controlled_tool_selection_7",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "en",
+    "input": "Scenario 7: select only the tool for vapour pressure deficit from temperature and relative humidity; do not calculate.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_6_1",
+    "group": "controlled_compound_reasoning_6",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        1,
+        4,
+        6,
+        4,
+        2
+      ],
+      "daily_max": [
+        23,
+        29,
+        18,
+        20,
+        21
+      ],
+      "daily_rain": [
+        8,
+        9,
+        5,
+        8,
+        9
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_55",
+    "group": "278050882b0b5e9c8d1cf81d6a400e912f07a083df130bc55db62c8d1cbc781c",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "what do many irrigators already use to make good data-driven decisions?",
+    "context": "Many irrigators already use soil water monitoring equipment or ET data to make good data-driven decisions. The only thing they need to do is continue what is working and hone their analysis skills.\n\n",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "soil water monitoring equipment or ET data"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_6_1",
+    "group": "controlled_missing_data_6",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 19,
+      "temperature_unit": "F",
+      "rh": 10
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_6_1",
+    "group": "controlled_numeric_6",
+    "split": "dev",
+    "category": "numeric",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 13,
+      "rh": 81,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.28457647152382537,
+      "unit": "kPa"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_6_1",
+    "group": "controlled_rule_interpretation_6",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": -5,
+      "scenario_threshold": 2,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_6_1",
+    "group": "controlled_tool_selection_6",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: только выбери инструмент, чтобы оценить дефицит давления пара по температуре и RH; не рассчитывай.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_7_2",
+    "group": "controlled_compound_reasoning_7",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "en",
+    "input": "Scenario 7: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        4,
+        7,
+        4,
+        7,
+        8
+      ],
+      "daily_max": [
+        20,
+        18,
+        25,
+        28,
+        21
+      ],
+      "daily_rain": [
+        4,
+        1,
+        7,
+        0,
+        0
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_490",
+    "group": "2e76070e2462b020443cbe1638ee6d871a26423ba41e2c1f987de66049734334",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "what were deposited in ancient stream valleys and generally have higher porosity than the Brule siltstone that is common elsewhere in western Nebraska?",
+    "context": "The sand and sandstone units in the Brule Formation were deposited in ancient stream valleys and generally have higher porosity than the Brule siltstone that is common elsewhere in western Nebraska. More than 140 wells currently source all of their water from Brule sand-sandstone units and generally have good water quality.",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "sand and sandstone units in the Brule Formation"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_7_2",
+    "group": "controlled_missing_data_7",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate et0.",
+    "context": "",
+    "inputs": {
+      "temperature": 15,
+      "g": 0,
+      "u2": 3,
+      "es": 2.4,
+      "ea": 1.3,
+      "delta": 0.15,
+      "gamma": 0.066,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_7_2",
+    "group": "controlled_numeric_7",
+    "split": "dev",
+    "category": "numeric",
+    "language": "en",
+    "input": "Controlled scenario 7: calculate et0.",
+    "context": "",
+    "inputs": {
+      "temperature": 15,
+      "rn": 6,
+      "g": 0,
+      "u2": 1,
+      "es": 2.4,
+      "ea": 1.3,
+      "delta": 0.15,
+      "gamma": 0.066,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 2.491507297433317,
+      "unit": "mm/day"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_7_2",
+    "group": "controlled_rule_interpretation_7",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "en",
+    "input": "Scenario 7: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": 4,
+      "scenario_threshold": 3,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_7_2",
+    "group": "controlled_tool_selection_7",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "en",
+    "input": "Scenario 7: select only the tool for FAO-56 reference evapotranspiration; do not calculate.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  }
+]

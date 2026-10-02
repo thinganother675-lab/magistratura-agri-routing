@@ -121,3 +121,11 @@ Small grouped holdout и shared synthetic templates; EN AgXQA против не�
 Антоний: policies, model/runtime metadata, cost/latency, воспроизводимость. Денис: task/gold/provenance, domain limits, error analysis и scientific references. Вместе: фиксированный protocol, statistical interpretation, manuscript и ответы руководителю.
 
 Готовность: УДК установлен; краткий title; аннотация 200–300 знаков; полный methods/results/conclusions; ≥15 проверенных научных ссылок без Wikipedia/GitHub; 6–8 сверстанных страниц; таблицы сверены с raw; exploratory и NOT RUN ограничения видны. Обзор можно готовить параллельно с этим узким текстом; завершение чтения всего пула кандидатов не блокирует анализ уже выполненного CPU эксперимента. HOME final comparison выполнено с раскрытым техническим продолжением; до manuscript submission необходимы human audit и≥15прочитанных научных ссылок. DEV comparison отдельно.
+
+## Дополнение 02.10.2026: английский empirical case study
+
+Подготовлены [рабочий manuscript](../manuscript/english_routing_20261002.md), standalone TeX и [nearest-work matrix](NEAREST_WORK_20261002_RU.md): 17 работ прочитаны по релевантным method/evaluation/limitations разделам, плюс проверенная библиографическая запись AgXQA — 18 scientific references. Это ядро empirical статьи, не завершённый обзор50 источников.
+
+Защищаемый вклад: инструментальная абляция и отрицательный результат local-stage non-inferiority на конкретном домашнем runtime; не изобретение routing и не доказательство farm safety. Новое Jev/Laya pre-inference сравнение остаётся DEV/exploratory. Старые150 уже просмотрены и не будут новым test после guard tuning. [Blinded review40](../results/20261002_170443Z_21722066_dataset_literature/human_review_pack/) human_review=false; требуется независимая проверка Antonii/Denis и source-grouped внешний набор. Kaggle40 общих английских инструкций не пригодны для сельскохозяйственного holdout.
+
+[arXiv readiness](ARXIV_READINESS_20261002_RU.md): NOT READY FOR SUBMISSION; endorsement, author approval, human gold/scorer validation и manuscript license ещё не решены. AI assistance раскрыта, Anastasia не добавлена в coauthors. Русская краткая аннотация преподавателя и English arXiv abstract — разные требования; статья и возможная будущая диссертация также разделены.

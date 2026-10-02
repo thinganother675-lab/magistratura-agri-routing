@@ -1,0 +1,12 @@
+{
+  "phase": "INFRASTRUCTURE_STARTUP_FAILURE_BEFORE_ANY_MEASUREMENT",
+  "observed_error": "ModuleNotFoundError: No module named 'httpx'",
+  "cause": "CPU-only Laya worker imported the full project routing module, transitively importing an HTTP adapter absent from its isolated environment",
+  "recorded_decisions": 0,
+  "provider_attempts": 0,
+  "known_cost_usd": 0,
+  "preserve_original_files": true,
+  "repair": "Pass only the approved router-question contract from the saved protocol to the isolated worker; no HTTP dependency installation or model changes",
+  "continuation": "New timestamped run after code validation; no benchmark case or provider call repeated",
+  "human_review": false
+}

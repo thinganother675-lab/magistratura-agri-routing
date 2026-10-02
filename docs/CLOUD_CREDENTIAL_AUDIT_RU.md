@@ -1,6 +1,14 @@
 # Аудит облачной аутентификации — 1 октября 2026
 
-## Текущее состояние после final — 02.10.2026
+## Вечернее продолжение — 02.10.2026
+
+Новый отдельный DEV36 использовал `project_env:mercury_api_key` (98 генеративных attempts / 90 returned responses) и `project_env:jev_api_key` (36 hosted-router attempts / 36 responses, `jev-1.13.0`). Usage/cost Mercury неизвестны для восьми ReadTimeout; два других generation errors имеют полученные usage. Полный учёт в [сравнении pre-routing](PREROUTING_COMPARISON_20261002_RU.md). Это новая серия, не изменение утреннего final150 или сентябрьских результатов.
+
+Exact `project_env:openrouter_api_key_2` оказался management/provisioning key. Для разрешённой настройки создан один ordinary child того же аккаунта в ignored `.env` под именем `OPENROUTER_INFERENCE_KEY_ZERO_20261002`: paid limit0, срок09.10.2026. Исходный key сохранён. Три completion attempts закончились HTTP401/403/404, successful generations0; для последнего подтверждены training/ZDR exclusions. Другие16 текстовых моделей NOT RUN, privacy не ослаблялась. [Полный per-model audit](OPENROUTER_SCREEN_20261002_RU.md). Account aggregate usage0 не доказывает per-attempt tokens/cost: их coverage0/3, UNKNOWN. Значения и fingerprints всех secrets исключены из evidence.
+
+Историческая принадлежность Mercury credential конкретному пользователю или billing account по-прежнему **UNKNOWN**; новая локальная настройка не доказывает совпадение со старым ключом. Все последующие статусы находятся в [индексе продолжения](CONTINUATION_20261002_INDEX_RU.md).
+
+## Историческое состояние после final150 — утро 02.10.2026
 
 Новые HOME эксперименты Mercury выполнены с локально заданным `project_env:mercury_api_key`; LM Studio использует `project_env:LOCAL_API_KEY`. Финальный журнал подтверждает 270 Mercury calls, 258 полученных ответов с model `mercury-2.5`; input/output usage известен для 258, 12 ReadTimeout имеют неизвестные usage/cost. Известная оценка $0.01234546. Invoice, баланс, квота и identity платёжного аккаунта не получены. Провайдер предупредил о замене запрошенной temperature 0 на фактическую 1 во всех полученных raw responses.
 

@@ -1,0 +1,369 @@
+{
+  "started_utc": "2026-10-02T19:17:31.082018+00:00",
+  "run_id": "20261002T191731Z_61e3e23d_bitnet_native_dev",
+  "state": "PARTIAL_SCREEN_REJECTED",
+  "phase": "exploratory_development_only",
+  "model": {
+    "repo": "microsoft/bitnet-b1.58-2B-4T-gguf",
+    "revision": "a1f2f1c765812aa8af3f6eda4a313707064bba15",
+    "filename": "ggml-model-i2_s.gguf",
+    "size": 1187801280,
+    "sha256": "4221b252fdd5fd25e15847adfeb5ee88886506ba50b8a34548374492884c2162",
+    "license": "mit",
+    "quantization": "I2_S native ternary W1.58A8"
+  },
+  "server_sha256": "e29579d83c1f80f1ce4bd3949cabe6f12420d1f471e7beee17f07aea34436dd9",
+  "harness_sha256": "046d3c14f8dc3b792d607cfef6ba0d7a8c95c33c047c620c0304b530de443a57",
+  "sample_ids": [
+    "controlled_compound_reasoning_6_0",
+    "agxqa_300",
+    "controlled_missing_data_6_0",
+    "controlled_numeric_6_0",
+    "controlled_rule_interpretation_6_0",
+    "controlled_tool_selection_6_0",
+    "controlled_compound_reasoning_7_0",
+    "agxqa_141",
+    "controlled_missing_data_7_0",
+    "controlled_numeric_7_0",
+    "controlled_rule_interpretation_7_0",
+    "controlled_tool_selection_7_0",
+    "controlled_compound_reasoning_8_0",
+    "agxqa_358",
+    "controlled_missing_data_8_0",
+    "controlled_numeric_8_0",
+    "controlled_rule_interpretation_8_0",
+    "controlled_tool_selection_8_0",
+    "controlled_compound_reasoning_7_1",
+    "agxqa_362",
+    "controlled_missing_data_7_1",
+    "controlled_numeric_7_1",
+    "controlled_rule_interpretation_7_1",
+    "controlled_tool_selection_7_1",
+    "controlled_compound_reasoning_6_1",
+    "agxqa_55",
+    "controlled_missing_data_6_1",
+    "controlled_numeric_6_1",
+    "controlled_rule_interpretation_6_1",
+    "controlled_tool_selection_6_1",
+    "controlled_compound_reasoning_7_2",
+    "agxqa_490",
+    "controlled_missing_data_7_2",
+    "controlled_numeric_7_2",
+    "controlled_rule_interpretation_7_2",
+    "controlled_tool_selection_7_2"
+  ],
+  "n_planned": 36,
+  "cloud_calls": 0,
+  "runtime": "official microsoft/BitNet bitnet.cpp; isolated LLVM-MinGW Windows build",
+  "runtime_commit": "0b341e582afbf9e1011f24744b554c96a3477eb5",
+  "llama_submodule_commit": "390c307752ab78fd8189f359d6954c9ba1be74af",
+  "cpu_threads": 4,
+  "threads_batch": 4,
+  "context": 4096,
+  "parallel": 1,
+  "runtime_override": {
+    "protocol": {
+      "version": "BITNET_HF_RUNTIME_OVERRIDE_V1",
+      "state": "FROZEN_AFTER_PARITY_PENDING_ROOT_REVIEW",
+      "created_utc": "2026-10-02T19:09:31.149525+00:00",
+      "phase": "DEV_CONFIGURATION_CHANGE_NOT_NEW_HOLDOUT",
+      "original_weight_sha256": "4221b252fdd5fd25e15847adfeb5ee88886506ba50b8a34548374492884c2162",
+      "parity_report": "results\\20261002T170300Z_02a39af9_requested_local_metadata\\bitnet_tokenizer_diagnostic\\native_tokenizer_parity_v1.json",
+      "parity_report_sha256": "f89aea08b60d112aa646cbe84b8c6b6721270f8c5fca5c967ec62c0061031456",
+      "reference_revision": "04c3b9ad9361b824064a1f25ea60a8be9599b127",
+      "runtime_overrides": "tokenizer.ggml.pre=str:llama-bpe,tokenizer.ggml.eos_token_id=int:128009,tokenizer.ggml.add_bos_token=bool:false,tokenizer.ggml.add_eos_token=bool:false",
+      "template_file": "results\\20261002T170300Z_02a39af9_requested_local_metadata\\bitnet_tokenizer_diagnostic\\official_chat_template_v1.jinja",
+      "template_sha256": "dae57a011117d68afc11906cd5bfe7124df8027a2fcfe5134a7184aaba26fc1b",
+      "parameters": {
+        "cpu_threads": 4,
+        "threads_batch": 4,
+        "context": 4096,
+        "parallel": 1,
+        "gpu_layers": 0,
+        "temperature": 0,
+        "seed": 42,
+        "max_tokens": 512,
+        "top_p": 1,
+        "warmup": false,
+        "response_cache": false,
+        "prefix_kv_cache": "runtime default enabled; usage.cache_n and prompt_n recorded"
+      },
+      "extension_rule": "DEV12 correct>=6/12 and completion errors<=2/12 then append remaining24 once; no repeats",
+      "legacy_smoke_preserved": "results/20261002T185320Z_1027a4c6_bitnet_native_dev",
+      "quality_trial": "NOT_RUN_WAITING_ROOT_GRANT"
+    },
+    "protocol_file": "results\\20261002T170300Z_02a39af9_requested_local_metadata\\bitnet_tokenizer_diagnostic\\BITNET_RUNTIME_OVERRIDE_PROTOCOL_V1.json",
+    "protocol_sha256": "bf45935675582766742acb3f87136580ddc4b5c9ac3b5b6246d51e587f1dbbbc"
+  },
+  "gpu_offload_requested_layers": 0,
+  "actual_offload": "Confirm from own runtime startup log; CPU native baseline",
+  "build_metadata": {
+    "utc": "2026-10-02T18:50:28.761070+00:00",
+    "status": "NATIVE_CPU_BINARY_BUILD_VERIFIED_INFERENCE_NOT_RUN",
+    "runtime_commit": "0b341e582afbf9e1011f24744b554c96a3477eb5",
+    "llama_commit": "390c307752ab78fd8189f359d6954c9ba1be74af",
+    "portable_toolchain": "LLVM-MinGW20260922 UCRT x86_64; Clang23.1.2",
+    "alternative_count": 1,
+    "corrections": [
+      "sandbox subprocess ABI check stopped; same native Ninja verified with1.13.2",
+      "nested LLAMA_BUILD_COMMON and TOOLS enabled",
+      "Windows API target _WIN32_WINNT and WINVER0x0A00 exposes CreateFile2"
+    ],
+    "compiler_flags": [
+      "Release",
+      "march=native",
+      "BITNET_X86_TL2=OFF",
+      "GGML_CUDA=OFF",
+      "GGML_OPENMP=OFF",
+      "GGML_BLAS=OFF",
+      "BUILD_SHARED_LIBS=OFF",
+      "LLAMA_BUILD_UI=OFF",
+      "LLAMA_BUILD_SERVER=ON",
+      "LLAMA_BUILD_COMMON=ON",
+      "LLAMA_BUILD_TOOLS=ON",
+      "parallel_build=4",
+      "static_link",
+      "_WIN32_WINNT=0x0A00",
+      "WINVER=0x0A00"
+    ],
+    "weights": {
+      "file": ".runtime/bitnet/models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf",
+      "bytes": 1187801280,
+      "sha256": "4221b252fdd5fd25e15847adfeb5ee88886506ba50b8a34548374492884c2162",
+      "verified_by_download": true
+    },
+    "binaries": {
+      "llama-server.exe": {
+        "bytes": 16142848,
+        "sha256": "e29579d83c1f80f1ce4bd3949cabe6f12420d1f471e7beee17f07aea34436dd9"
+      },
+      "llama-cli.exe": {
+        "bytes": 15220736,
+        "sha256": "02aff41731f2311f25c5c553ebe5dee7fd6afb00a1fd92d0ed11330aa2727c5b"
+      }
+    },
+    "no_os_driver_global_toolchain_changes": true,
+    "inference": "NOT_RUN_WAITING_EXCLUSIVE_WINDOW"
+  },
+  "backend_server_args": [
+    "C:\\Users\\hustlePC\\Codex\\magistratura\\.runtime\\bitnet\\build-mingw\\bin\\llama-server.exe",
+    "-m",
+    "C:\\Users\\hustlePC\\Codex\\magistratura\\.runtime\\bitnet\\models\\BitNet-b1.58-2B-4T\\ggml-model-i2_s.gguf",
+    "--alias",
+    "bitnet-native-i2s",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "1235",
+    "-c",
+    "4096",
+    "-t",
+    "4",
+    "-tb",
+    "4",
+    "-np",
+    "1",
+    "-ngl",
+    "0",
+    "--no-warmup",
+    "--override-kv",
+    "tokenizer.ggml.pre=str:llama-bpe,tokenizer.ggml.eos_token_id=int:128009,tokenizer.ggml.add_bos_token=bool:false,tokenizer.ggml.add_eos_token=bool:false",
+    "--chat-template-file",
+    "C:\\Users\\hustlePC\\Codex\\magistratura\\results\\20261002T170300Z_02a39af9_requested_local_metadata\\bitnet_tokenizer_diagnostic\\official_chat_template_v1.jinja"
+  ],
+  "hidden_warmups": 0,
+  "request_retries": 0,
+  "extension_rule": "DEV12 correct>=6 and completion errors<=2, then remaining24 without repeats",
+  "request_parameters": {
+    "model": "bitnet-native-i2s",
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "max_tokens": 512,
+    "response_format": {
+      "type": "json_schema",
+      "json_schema": {
+        "name": "agro_route_answer",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "properties": {
+            "action": {
+              "type": "string",
+              "enum": [
+                "ANSWER",
+                "ASK_FOR_DATA",
+                "ABSTAIN"
+              ]
+            },
+            "answer": {
+              "type": "string"
+            },
+            "numeric": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "unit": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tool": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "action",
+            "answer",
+            "numeric",
+            "unit",
+            "tool"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "data_sha256": "03ce1fd188fbd46d2a69fed37ac0f773be3008a814b93c6d646ed8c6aa30e3ca",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "latency_scope": "Measured streaming HTTP wall time; model loads and resource snapshots excluded",
+  "limitations": [
+    "Native CPU runtime differs from LM Studio GPU runtime",
+    "Exploratory DEV, not independent final test",
+    "No concurrent downloads/builds/model inference permitted"
+  ],
+  "source_snapshot": {
+    "scripts\\local_baselines_20261002.py": {
+      "sha256": "046d3c14f8dc3b792d607cfef6ba0d7a8c95c33c047c620c0304b530de443a57",
+      "snapshot": "source_snapshot/local_baselines_20261002.py"
+    },
+    "scripts\\home_lm_api_benchmark.py": {
+      "sha256": "31735e5005413ee42c5ca54129060595447b5e6e7c057e13e201378505509b44",
+      "snapshot": "source_snapshot/home_lm_api_benchmark.py"
+    },
+    "scripts\\home_pc_benchmark.py": {
+      "sha256": "7bcf558c9e191e2f84abc5810ee13e7ef85315c806b999f807a1b35e0bdc9d38",
+      "snapshot": "source_snapshot/home_pc_benchmark.py"
+    },
+    "src\\agro_route\\models.py": {
+      "sha256": "86a39859b6aff7b77c83e98e337ef946cec1706f380e4fd04b474cb05c7446cb",
+      "snapshot": "source_snapshot/models.py"
+    },
+    "src\\agro_route\\routing.py": {
+      "sha256": "4013fe302954c9ae3b16a62d4ce6a9ec33ce07a998743fcd72a910e37bc4fa4a",
+      "snapshot": "source_snapshot/routing.py"
+    },
+    "src\\agro_route\\evaluation.py": {
+      "sha256": "a8231e1ee13b70b08d8f9b93a3d1802bef9e38242589fd77bfa1a0af8f99ecdb",
+      "snapshot": "source_snapshot/evaluation.py"
+    },
+    "src\\agro_route\\tools.py": {
+      "sha256": "4b0a4524a12b92e8fae78cf174765b000eadd70882efdb113ab5a073c2f17f04",
+      "snapshot": "source_snapshot/tools.py"
+    },
+    "src\\agro_route\\home_config.py": {
+      "sha256": "897508dd09ba3d845bf12f619ef4254c908f7b7a96f19663a5f6bf00641a1d70",
+      "snapshot": "source_snapshot/home_config.py"
+    }
+  },
+  "own_server_pid": 6532,
+  "cold_load_wall_s": 1.0372697999991942,
+  "own_process_memory": {
+    "Id": 6532,
+    "ProcessName": "llama-server",
+    "WorkingSet64": 1608794112,
+    "PeakWorkingSet64": 1632014336
+  },
+  "own_server_cleanup_confirmed": true,
+  "resources": {
+    "vram_mib_peak_sampled_total": 841.0,
+    "ram_gib_peak_sampled_system_used": 11.6875,
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "samples": 34,
+    "resource_poll_errors": []
+  },
+  "summary": {
+    "n": 12,
+    "correct": 0,
+    "quality": 0.0,
+    "errors": 0,
+    "latency_mean_s": 1.3285200583335002,
+    "latency_p50_s": 1.1804065500000434,
+    "latency_p95_s": 1.9544098100024705,
+    "client_first_delta_p50_s": 0.281308949997765,
+    "client_first_answer_delta_p50_s": 0.281308949997765,
+    "client_completion_tps_approx_p50": 33.40888362819339,
+    "client_timing_coverage": {
+      "first_delta": 12,
+      "first_answer_delta": 12,
+      "approx_tps": 12
+    },
+    "reasoning_tokens_reported": {
+      "total": 0,
+      "coverage": 0
+    },
+    "token_totals": {
+      "prompt_tokens": {
+        "total": 5151,
+        "coverage": 12
+      },
+      "completion_tokens": {
+        "total": 362,
+        "coverage": 12
+      },
+      "total_tokens": {
+        "total": 5513,
+        "coverage": 12
+      }
+    },
+    "usage_coverage_n": 12,
+    "reasoning_observed_n": 0,
+    "by_category": {
+      "compound_reasoning": {
+        "n": 2,
+        "correct": 0
+      },
+      "extractive_qa": {
+        "n": 2,
+        "correct": 0
+      },
+      "missing_data": {
+        "n": 2,
+        "correct": 0
+      },
+      "numeric": {
+        "n": 2,
+        "correct": 0
+      },
+      "rule_interpretation": {
+        "n": 2,
+        "correct": 0
+      },
+      "tool_selection": {
+        "n": 2,
+        "correct": 0
+      }
+    },
+    "by_language": {
+      "en": {
+        "n": 7,
+        "correct": 0
+      },
+      "ru": {
+        "n": 5,
+        "correct": 0
+      }
+    }
+  },
+  "finished_utc": "2026-10-02T19:17:49.075121+00:00"
+}

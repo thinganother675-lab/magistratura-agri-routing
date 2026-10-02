@@ -1,0 +1,33 @@
+{
+  "revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+  "files": [
+    {
+      "split": "train",
+      "url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-train-2024-06-11.jsonl",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-02T17:25:37.381715+00:00",
+      "bytes": 1587312,
+      "sha256": "72da2aaa34d90ce32f28c6d461f258dc9ec712f0af8ff3b5041ceb1528817d85",
+      "matches_anonymous_main_bytes": true
+    },
+    {
+      "split": "validation",
+      "url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-validation-2024-06-11.jsonl",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-02T17:25:38.475485+00:00",
+      "bytes": 373698,
+      "sha256": "386181aa34e6b71faa3474868008cc7b8bed7143da0218f22e546cdfc4ebc583",
+      "matches_anonymous_main_bytes": true
+    },
+    {
+      "split": "test",
+      "url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-test-2024-06-11.jsonl",
+      "http_status": 200,
+      "retrieved_utc": "2026-10-02T17:25:39.473652+00:00",
+      "bytes": 349119,
+      "sha256": "505fa18e7d7e7b6f86f090ae8c1172d5fd29ba5f6845a82107eb49df59c32a8b",
+      "matches_anonymous_main_bytes": true
+    }
+  ],
+  "human_review": false
+}

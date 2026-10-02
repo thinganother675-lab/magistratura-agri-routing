@@ -1,5 +1,15 @@
 # Окружение HOME PC
 
+## Заключительная проверка продолжения — 02.10.2026, 19:28 UTC
+
+Повторный Windows CIM/NVIDIA audit после всех timed compact trials: Ryzen 7 8700F **8 cores /16 threads**, Windows 11 Pro **10.0.26300**, visible RAM **31.62 GiB**, RTX 5060 Ti **16 311 MiB**, driver **617.14**. Свободно на C **196.13 GiB** в момент этой проверки; прежние дисковые значения ниже относятся к своим датам. Toolkit по-прежнему UNKNOWN. [Машиночитаемый snapshot](../results/hardware/home_pc_continuation_verified_20261002.json); первая sandbox CIM попытка получила ACCESS_DENIED и сохранена отдельно, повторный разрешённый read подтвердил CPU/OS.
+
+LM Studio **0.4.25+1**, CLI **69d945a**, authenticated `http://127.0.0.1:1234` native API HTTP200. После cleanup inventory **23 entries**, loaded instances `[]`. Добавлены точные `qwen3.5-4b` Q8_0 и `phi-4-mini-instruct` Q8_0; native BitNet находится отдельно в ignored `.runtime` и исполняется на CPU. [Конечный LM snapshot](../results/20261002T170300Z_02a39af9_requested_local_metadata/final_lm_state_snapshot.json). Qwen research namespace `magistratura` — hard-link import того же pinned unsloth file, не новая модель или quantization; SHA и исходная provenance сохранены. Для Qwen main4,482,403,488B плюс mmproj1,334,075,072B; input text-only.
+
+Три новые семьи получили fixed DEV12: Qwen3/12, Phi3/12, BitNet с проверенной official runtime configuration0/12. Remaining24 NOT RUN по предварительному gate. Исходный BitNet12 с legacy GGUF template сохранён отдельно как COMPATIBILITY_LIMITED; два CPU profiles не объединяются. Native portable LLVM-MinGW build проверен, CUDA OFF / GPU layers0, own process RSS отдельно от system RAM. Полные tokens, TTFT, decode TPS, requested/actual offload и resource scopes: [compact baseline report](REQUESTED_LOCAL_BASELINES_20261002_RU.md).
+
+Одна локальная inference последовательно; downloads/builds и workbook export были разделены с timed windows. Qwen app descriptor всё ещё показывает active/downloading, но original314,093,791B partial не рос в восьмисекундных проверках до/после timed run. Собственные transfer clients остановлены; полной неактивности внутреннего job это не доказывает, остаточный риск явно сохранён. Daemon/app restart и пользовательские диалоги не изменялись. Собственные native CPU servers остановлены и проверены. Новые source/test changes проверяются заключительной suite; старые численные записи ниже сохранены как этапы исследования.
+
 ## Актуальное дополнение 02.10.2026
 
 Повторный аппаратный аудит: Ryzen 7 8700F, 8 ядер / 16 потоков; RTX 5060 Ti, 16 311 MiB; RAM 31.62 GiB; Windows 11 Pro, build 26300; NVIDIA driver 617.14. На диске C перед final свободно 68.15 GiB. Snapshot: `results/hardware/home_pc_before_final_20261002.json`. CUDA compatibility 13.4 из драйвера не доказывает наличие установленного toolkit.

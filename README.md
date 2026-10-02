@@ -105,3 +105,5 @@ Completed analysis не перезаписывается. Для повторн�
 MVP не включает trained/calibrated router, retrieval index, external agronomist workflow, crop-specific recommendation или production hosting. Все thresholds crop-independent либо заданы formal scenario. Правильность фрагмента в контексте не гарантирована substring check. Общий выигрыш tools+local+cloud необходимо сравнивать с tools+cloud, прежде чем утверждать вклад local LLM.
 
 Инструкции переноса и восстановления окружения: [CROSS_MACHINE_SETUP_RU.md](docs/CROSS_MACHINE_SETUP_RU.md).
+
+Продолжение 02.10.2026: [единый индекс](docs/CONTINUATION_20261002_INDEX_RU.md) объединяет PRIVATE backup на Apartman36, новые pre-inference Jev/Laya/rule DEV сравнения, Q8/BitNet baseline, все21 OpenRouter outcomes, Kaggle/source-overlap audit, blinded human-review pack и английский manuscript. Исторический final150 уже наблюдался; новый DEV не заменяет его независимым подтверждением. Исходный origin сохранён, upstream намеренно `apartman/main`. Подача на arXiv и человеческая проверка NOT RUN.

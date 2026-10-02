@@ -1,0 +1,288 @@
+{"utc": "2026-10-02T18:01:47.928625+00:00", "event": "started", "provider": "cloud", "attempt_id": "8e113a647143456aafb41ae74a5bd346"}
+{"utc": "2026-10-02T18:01:50.182351+00:00", "event": "finished", "provider": "cloud", "attempt_id": "8e113a647143456aafb41ae74a5bd346", "error": null, "cost_usd": 9.685999999999999e-05}
+{"utc": "2026-10-02T18:01:50.207363+00:00", "event": "started", "provider": "jev", "attempt_id": "9dcad1a06cf84051b79c0f24bdfb3c12"}
+{"utc": "2026-10-02T18:01:51.090290+00:00", "event": "finished", "provider": "jev", "attempt_id": "9dcad1a06cf84051b79c0f24bdfb3c12", "error": null, "cost_usd": 3.9018e-05}
+{"utc": "2026-10-02T18:01:51.103140+00:00", "event": "started", "provider": "cloud", "attempt_id": "fb6bb87d24c24c0c91b9cf0a8e218be5"}
+{"utc": "2026-10-02T18:01:52.770534+00:00", "event": "finished", "provider": "cloud", "attempt_id": "fb6bb87d24c24c0c91b9cf0a8e218be5", "error": null, "cost_usd": 8.621e-05}
+{"utc": "2026-10-02T18:01:53.707310+00:00", "event": "started", "provider": "cloud", "attempt_id": "40999910078f41e4a357f1aeb5116236"}
+{"utc": "2026-10-02T18:01:55.242370+00:00", "event": "finished", "provider": "cloud", "attempt_id": "40999910078f41e4a357f1aeb5116236", "error": null, "cost_usd": 7.565000000000001e-05}
+{"utc": "2026-10-02T18:01:56.198607+00:00", "event": "started", "provider": "cloud", "attempt_id": "838dd8c7316d4a6cb7be18ded30d5cc6"}
+{"utc": "2026-10-02T18:01:57.935702+00:00", "event": "finished", "provider": "cloud", "attempt_id": "838dd8c7316d4a6cb7be18ded30d5cc6", "error": null, "cost_usd": 6.98e-05}
+{"utc": "2026-10-02T18:01:59.682244+00:00", "event": "started", "provider": "cloud", "attempt_id": "c7799268437b4d298a83f402d3dacfb4"}
+{"utc": "2026-10-02T18:02:01.077575+00:00", "event": "finished", "provider": "cloud", "attempt_id": "c7799268437b4d298a83f402d3dacfb4", "error": null, "cost_usd": 3.936e-05}
+{"utc": "2026-10-02T18:02:01.128730+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:02:03.867050+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:02:03.884855+00:00", "event": "started", "provider": "cloud", "attempt_id": "9623e8be2b6a43b28b103808ccaebc4a"}
+{"utc": "2026-10-02T18:02:05.062393+00:00", "event": "finished", "provider": "cloud", "attempt_id": "9623e8be2b6a43b28b103808ccaebc4a", "error": null, "cost_usd": 3.8230000000000005e-05}
+{"utc": "2026-10-02T18:02:05.082000+00:00", "event": "started", "provider": "jev", "attempt_id": "48668696446c496ea91160014cf36b3a"}
+{"utc": "2026-10-02T18:02:05.897385+00:00", "event": "finished", "provider": "jev", "attempt_id": "48668696446c496ea91160014cf36b3a", "error": null, "cost_usd": 3.5826e-05}
+{"utc": "2026-10-02T18:02:05.907001+00:00", "event": "started", "provider": "cloud", "attempt_id": "384fa26a18a34c718247446723eee1d1"}
+{"utc": "2026-10-02T18:02:09.079213+00:00", "event": "finished", "provider": "cloud", "attempt_id": "384fa26a18a34c718247446723eee1d1", "error": {"type": "IncompleteCompletion", "finish_reason": "length"}, "cost_usd": 0.00010243}
+{"utc": "2026-10-02T18:02:09.094508+00:00", "event": "started", "provider": "cloud", "attempt_id": "f71ee7b1d72642a887360322e432e36c"}
+{"utc": "2026-10-02T18:02:10.811964+00:00", "event": "finished", "provider": "cloud", "attempt_id": "f71ee7b1d72642a887360322e432e36c", "error": null, "cost_usd": 4.785e-05}
+{"utc": "2026-10-02T18:02:10.826974+00:00", "event": "started", "provider": "jev", "attempt_id": "307aa35570f442ddab1612750d493efe"}
+{"utc": "2026-10-02T18:02:11.297073+00:00", "event": "finished", "provider": "jev", "attempt_id": "307aa35570f442ddab1612750d493efe", "error": null, "cost_usd": 3.402e-05}
+{"utc": "2026-10-02T18:02:12.790213+00:00", "event": "started", "provider": "jev", "attempt_id": "eff167db62e247d18f5eac6ea132f411"}
+{"utc": "2026-10-02T18:02:13.142056+00:00", "event": "finished", "provider": "jev", "attempt_id": "eff167db62e247d18f5eac6ea132f411", "error": null, "cost_usd": 3.3936e-05}
+{"utc": "2026-10-02T18:02:14.835777+00:00", "event": "started", "provider": "cloud", "attempt_id": "0323e854d0e74b51852a8f3e7ab2e12a"}
+{"utc": "2026-10-02T18:02:16.111915+00:00", "event": "finished", "provider": "cloud", "attempt_id": "0323e854d0e74b51852a8f3e7ab2e12a", "error": null, "cost_usd": 3.9909999999999996e-05}
+{"utc": "2026-10-02T18:02:16.126302+00:00", "event": "started", "provider": "cloud", "attempt_id": "3bfbf838ac944f13961df720224bd784"}
+{"utc": "2026-10-02T18:03:16.654309+00:00", "event": "finished", "provider": "cloud", "attempt_id": "3bfbf838ac944f13961df720224bd784", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:03:16.671349+00:00", "event": "started", "provider": "jev", "attempt_id": "a57512ee71dd4f80a88dcc7b19f6f06c"}
+{"utc": "2026-10-02T18:03:17.541655+00:00", "event": "finished", "provider": "jev", "attempt_id": "a57512ee71dd4f80a88dcc7b19f6f06c", "error": null, "cost_usd": 3.5826e-05}
+{"utc": "2026-10-02T18:03:17.556252+00:00", "event": "started", "provider": "cloud", "attempt_id": "2ca9c7b3d1eb4553b3ad059d6baf0cfa"}
+{"utc": "2026-10-02T18:03:18.906720+00:00", "event": "finished", "provider": "cloud", "attempt_id": "2ca9c7b3d1eb4553b3ad059d6baf0cfa", "error": null, "cost_usd": 3.576e-05}
+{"utc": "2026-10-02T18:03:20.113632+00:00", "event": "started", "provider": "cloud", "attempt_id": "ef6208efda1745558a7c5b4264381aa1"}
+{"utc": "2026-10-02T18:03:21.446180+00:00", "event": "finished", "provider": "cloud", "attempt_id": "ef6208efda1745558a7c5b4264381aa1", "error": null, "cost_usd": 3.536e-05}
+{"utc": "2026-10-02T18:03:22.646196+00:00", "event": "started", "provider": "cloud", "attempt_id": "44197f89dfce4636ae055195a186f6a6"}
+{"utc": "2026-10-02T18:03:23.962034+00:00", "event": "finished", "provider": "cloud", "attempt_id": "44197f89dfce4636ae055195a186f6a6", "error": null, "cost_usd": 3.906e-05}
+{"utc": "2026-10-02T18:03:24.949550+00:00", "event": "started", "provider": "jev", "attempt_id": "ec8cf6e5cb4d437cb4c46bb1f37eb42a"}
+{"utc": "2026-10-02T18:03:25.859682+00:00", "event": "finished", "provider": "jev", "attempt_id": "ec8cf6e5cb4d437cb4c46bb1f37eb42a", "error": null, "cost_usd": 3.3558e-05}
+{"utc": "2026-10-02T18:03:26.751462+00:00", "event": "started", "provider": "cloud", "attempt_id": "fe00a60dfc144149be8e69d3d8a4d292"}
+{"utc": "2026-10-02T18:03:28.206336+00:00", "event": "finished", "provider": "cloud", "attempt_id": "fe00a60dfc144149be8e69d3d8a4d292", "error": null, "cost_usd": 3.703e-05}
+{"utc": "2026-10-02T18:03:28.227782+00:00", "event": "started", "provider": "cloud", "attempt_id": "85d87e584467425bb4f0d2cd778c6dc5"}
+{"utc": "2026-10-02T18:03:29.561450+00:00", "event": "finished", "provider": "cloud", "attempt_id": "85d87e584467425bb4f0d2cd778c6dc5", "error": null, "cost_usd": 4.164e-05}
+{"utc": "2026-10-02T18:03:29.578524+00:00", "event": "started", "provider": "cloud", "attempt_id": "d1990f8a99204e2ca281a8f3cb489b87"}
+{"utc": "2026-10-02T18:03:31.301558+00:00", "event": "finished", "provider": "cloud", "attempt_id": "d1990f8a99204e2ca281a8f3cb489b87", "error": null, "cost_usd": 3.6729999999999996e-05}
+{"utc": "2026-10-02T18:03:31.324036+00:00", "event": "started", "provider": "cloud", "attempt_id": "71c276552f3d4978a6c448e28c3ca443"}
+{"utc": "2026-10-02T18:03:33.006344+00:00", "event": "finished", "provider": "cloud", "attempt_id": "71c276552f3d4978a6c448e28c3ca443", "error": null, "cost_usd": 8.595e-05}
+{"utc": "2026-10-02T18:03:33.019130+00:00", "event": "started", "provider": "cloud", "attempt_id": "55c36c97def14f01b0c625c359b04552"}
+{"utc": "2026-10-02T18:03:34.424083+00:00", "event": "finished", "provider": "cloud", "attempt_id": "55c36c97def14f01b0c625c359b04552", "error": null, "cost_usd": 8.689e-05}
+{"utc": "2026-10-02T18:03:35.324308+00:00", "event": "started", "provider": "jev", "attempt_id": "f67e06278e8e44d6a82539366274390a"}
+{"utc": "2026-10-02T18:03:36.506049+00:00", "event": "finished", "provider": "jev", "attempt_id": "f67e06278e8e44d6a82539366274390a", "error": null, "cost_usd": 3.5868e-05}
+{"utc": "2026-10-02T18:03:36.519389+00:00", "event": "started", "provider": "cloud", "attempt_id": "e6bd40a77c3f4f5e99ad52d00844a97f"}
+{"utc": "2026-10-02T18:03:38.181140+00:00", "event": "finished", "provider": "cloud", "attempt_id": "e6bd40a77c3f4f5e99ad52d00844a97f", "error": null, "cost_usd": 7.698999999999999e-05}
+{"utc": "2026-10-02T18:03:39.080872+00:00", "event": "started", "provider": "cloud", "attempt_id": "185e1b7b4814493dab7815cdd178ff17"}
+{"utc": "2026-10-02T18:03:40.721692+00:00", "event": "finished", "provider": "cloud", "attempt_id": "185e1b7b4814493dab7815cdd178ff17", "error": null, "cost_usd": 8.05e-05}
+{"utc": "2026-10-02T18:03:40.741123+00:00", "event": "started", "provider": "cloud", "attempt_id": "444e3f53b30a422998679f3e59c6634c"}
+{"utc": "2026-10-02T18:03:42.246036+00:00", "event": "finished", "provider": "cloud", "attempt_id": "444e3f53b30a422998679f3e59c6634c", "error": null, "cost_usd": 4.036e-05}
+{"utc": "2026-10-02T18:03:43.962400+00:00", "event": "started", "provider": "cloud", "attempt_id": "51f75896a4d540d2bbaccf8fbb52373d"}
+{"utc": "2026-10-02T18:03:45.181008+00:00", "event": "finished", "provider": "cloud", "attempt_id": "51f75896a4d540d2bbaccf8fbb52373d", "error": null, "cost_usd": 3.792e-05}
+{"utc": "2026-10-02T18:03:45.227634+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:03:46.931379+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:03:46.955792+00:00", "event": "started", "provider": "jev", "attempt_id": "a92abe45858d4c178d7b2d20c784ec39"}
+{"utc": "2026-10-02T18:03:47.940842+00:00", "event": "finished", "provider": "jev", "attempt_id": "a92abe45858d4c178d7b2d20c784ec39", "error": null, "cost_usd": 3.5658e-05}
+{"utc": "2026-10-02T18:03:47.945804+00:00", "event": "started", "provider": "cloud", "attempt_id": "48adbd2bd64a433da7a8bbeb2cd67faa"}
+{"utc": "2026-10-02T18:03:49.505809+00:00", "event": "finished", "provider": "cloud", "attempt_id": "48adbd2bd64a433da7a8bbeb2cd67faa", "error": null, "cost_usd": 3.544e-05}
+{"utc": "2026-10-02T18:03:49.519554+00:00", "event": "started", "provider": "cloud", "attempt_id": "ae4d44adb522432883ec6d5420594918"}
+{"utc": "2026-10-02T18:03:50.855769+00:00", "event": "finished", "provider": "cloud", "attempt_id": "ae4d44adb522432883ec6d5420594918", "error": null, "cost_usd": 3.6870000000000004e-05}
+{"utc": "2026-10-02T18:03:52.300876+00:00", "event": "started", "provider": "jev", "attempt_id": "17f5d3d01abb46daa0139109d0cf1a2a"}
+{"utc": "2026-10-02T18:03:52.640795+00:00", "event": "finished", "provider": "jev", "attempt_id": "17f5d3d01abb46daa0139109d0cf1a2a", "error": null, "cost_usd": 3.2591999999999996e-05}
+{"utc": "2026-10-02T18:03:53.362112+00:00", "event": "started", "provider": "jev", "attempt_id": "69d0065b7fbc45dcb1adbb589871738d"}
+{"utc": "2026-10-02T18:03:53.753583+00:00", "event": "finished", "provider": "jev", "attempt_id": "69d0065b7fbc45dcb1adbb589871738d", "error": null, "cost_usd": 3.297e-05}
+{"utc": "2026-10-02T18:03:55.250700+00:00", "event": "started", "provider": "jev", "attempt_id": "4d7f97ed091348828f9d55bb4b8a6d71"}
+{"utc": "2026-10-02T18:03:55.590825+00:00", "event": "finished", "provider": "jev", "attempt_id": "4d7f97ed091348828f9d55bb4b8a6d71", "error": null, "cost_usd": 3.2802e-05}
+{"utc": "2026-10-02T18:03:55.600929+00:00", "event": "started", "provider": "cloud", "attempt_id": "bf8ad7d3cee74603b13cbfbb1b61f2a3"}
+{"utc": "2026-10-02T18:03:56.845802+00:00", "event": "finished", "provider": "cloud", "attempt_id": "bf8ad7d3cee74603b13cbfbb1b61f2a3", "error": null, "cost_usd": 3.6899999999999996e-05}
+{"utc": "2026-10-02T18:03:57.585773+00:00", "event": "started", "provider": "cloud", "attempt_id": "728b5c134a4e47048bd3671eb5934318"}
+{"utc": "2026-10-02T18:03:58.875873+00:00", "event": "finished", "provider": "cloud", "attempt_id": "728b5c134a4e47048bd3671eb5934318", "error": null, "cost_usd": 3.595e-05}
+{"utc": "2026-10-02T18:03:58.890906+00:00", "event": "started", "provider": "cloud", "attempt_id": "3040803d7e1a401485832a0f8bbc70ee"}
+{"utc": "2026-10-02T18:04:00.080849+00:00", "event": "finished", "provider": "cloud", "attempt_id": "3040803d7e1a401485832a0f8bbc70ee", "error": null, "cost_usd": 3.549e-05}
+{"utc": "2026-10-02T18:04:00.100938+00:00", "event": "started", "provider": "cloud", "attempt_id": "12711b9cd1fb4bbf919e939342192d58"}
+{"utc": "2026-10-02T18:04:01.435873+00:00", "event": "finished", "provider": "cloud", "attempt_id": "12711b9cd1fb4bbf919e939342192d58", "error": null, "cost_usd": 3.5850000000000004e-05}
+{"utc": "2026-10-02T18:04:01.453846+00:00", "event": "started", "provider": "cloud", "attempt_id": "89cba0e832ca463db4307207cb33fae3"}
+{"utc": "2026-10-02T18:04:02.745784+00:00", "event": "finished", "provider": "cloud", "attempt_id": "89cba0e832ca463db4307207cb33fae3", "error": null, "cost_usd": 3.485e-05}
+{"utc": "2026-10-02T18:04:02.762148+00:00", "event": "started", "provider": "jev", "attempt_id": "3a5f3174b7f74970a1624f8e3367e71d"}
+{"utc": "2026-10-02T18:04:03.596193+00:00", "event": "finished", "provider": "jev", "attempt_id": "3a5f3174b7f74970a1624f8e3367e71d", "error": null, "cost_usd": 3.1668e-05}
+{"utc": "2026-10-02T18:04:03.605910+00:00", "event": "started", "provider": "cloud", "attempt_id": "fc538360128b43a6baea3248fa763e82"}
+{"utc": "2026-10-02T18:04:04.980775+00:00", "event": "finished", "provider": "cloud", "attempt_id": "fc538360128b43a6baea3248fa763e82", "error": null, "cost_usd": 3.543e-05}
+{"utc": "2026-10-02T18:04:06.288668+00:00", "event": "started", "provider": "cloud", "attempt_id": "a186b18437c04e7aa1f43ac4e3285556"}
+{"utc": "2026-10-02T18:04:07.725786+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a186b18437c04e7aa1f43ac4e3285556", "error": null, "cost_usd": 4.638e-05}
+{"utc": "2026-10-02T18:04:07.746228+00:00", "event": "started", "provider": "cloud", "attempt_id": "61ad4ff86c8b4c87af8a5d7e759e6e7f"}
+{"utc": "2026-10-02T18:04:09.127091+00:00", "event": "finished", "provider": "cloud", "attempt_id": "61ad4ff86c8b4c87af8a5d7e759e6e7f", "error": null, "cost_usd": 3.453e-05}
+{"utc": "2026-10-02T18:04:09.140788+00:00", "event": "started", "provider": "cloud", "attempt_id": "acd139bf5e794ce69b45c765cfeb4087"}
+{"utc": "2026-10-02T18:04:10.536391+00:00", "event": "finished", "provider": "cloud", "attempt_id": "acd139bf5e794ce69b45c765cfeb4087", "error": null, "cost_usd": 3.752e-05}
+{"utc": "2026-10-02T18:04:10.555717+00:00", "event": "started", "provider": "cloud", "attempt_id": "8e8d945ca3df450ea1d1b29379a90a0f"}
+{"utc": "2026-10-02T18:04:12.140745+00:00", "event": "finished", "provider": "cloud", "attempt_id": "8e8d945ca3df450ea1d1b29379a90a0f", "error": null, "cost_usd": 8.361e-05}
+{"utc": "2026-10-02T18:04:12.160737+00:00", "event": "started", "provider": "jev", "attempt_id": "f4f70670409b4398afa78596e0d58096"}
+{"utc": "2026-10-02T18:04:12.910714+00:00", "event": "finished", "provider": "jev", "attempt_id": "f4f70670409b4398afa78596e0d58096", "error": null, "cost_usd": 3.876600000000001e-05}
+{"utc": "2026-10-02T18:04:12.918938+00:00", "event": "started", "provider": "cloud", "attempt_id": "1d0db24380d644a48894e1ee632c4245"}
+{"utc": "2026-10-02T18:04:14.661954+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1d0db24380d644a48894e1ee632c4245", "error": null, "cost_usd": 8.081000000000001e-05}
+{"utc": "2026-10-02T18:04:14.688436+00:00", "event": "started", "provider": "cloud", "attempt_id": "e564df2826be4f3396a6b6d46f93f0b2"}
+{"utc": "2026-10-02T18:05:15.244931+00:00", "event": "finished", "provider": "cloud", "attempt_id": "e564df2826be4f3396a6b6d46f93f0b2", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:05:17.109969+00:00", "event": "started", "provider": "cloud", "attempt_id": "1da1f14419744fe29c3d87feceafd5f2"}
+{"utc": "2026-10-02T18:05:18.839941+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1da1f14419744fe29c3d87feceafd5f2", "error": null, "cost_usd": 9.722e-05}
+{"utc": "2026-10-02T18:05:18.861493+00:00", "event": "started", "provider": "cloud", "attempt_id": "197f8a90e30343a688d3c39af36501e0"}
+{"utc": "2026-10-02T18:05:20.209920+00:00", "event": "finished", "provider": "cloud", "attempt_id": "197f8a90e30343a688d3c39af36501e0", "error": null, "cost_usd": 4.028e-05}
+{"utc": "2026-10-02T18:05:20.229868+00:00", "event": "started", "provider": "cloud", "attempt_id": "1c63b74822464d38959e5161c1cf62df"}
+{"utc": "2026-10-02T18:05:21.589947+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1c63b74822464d38959e5161c1cf62df", "error": null, "cost_usd": 3.8879999999999994e-05}
+{"utc": "2026-10-02T18:05:22.353105+00:00", "event": "started", "provider": "cloud", "attempt_id": "cf38f20834224cb59e1281ca8a6ce5ea"}
+{"utc": "2026-10-02T18:05:23.586367+00:00", "event": "finished", "provider": "cloud", "attempt_id": "cf38f20834224cb59e1281ca8a6ce5ea", "error": null, "cost_usd": 3.849e-05}
+{"utc": "2026-10-02T18:05:23.605750+00:00", "event": "started", "provider": "jev", "attempt_id": "350babd6cfff4874a4be75e17423369a"}
+{"utc": "2026-10-02T18:05:24.652761+00:00", "event": "finished", "provider": "jev", "attempt_id": "350babd6cfff4874a4be75e17423369a", "error": null, "cost_usd": 3.4314e-05}
+{"utc": "2026-10-02T18:05:24.661065+00:00", "event": "started", "provider": "cloud", "attempt_id": "a0a4661af69e4fa2a62b1bbacfd7eaa5"}
+{"utc": "2026-10-02T18:05:25.888033+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a0a4661af69e4fa2a62b1bbacfd7eaa5", "error": null, "cost_usd": 4.195e-05}
+{"utc": "2026-10-02T18:05:25.939855+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:05:27.975289+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:05:29.517816+00:00", "event": "started", "provider": "jev", "attempt_id": "9718ccd9af5a430e9425049fdcdefc22"}
+{"utc": "2026-10-02T18:05:29.892020+00:00", "event": "finished", "provider": "jev", "attempt_id": "9718ccd9af5a430e9425049fdcdefc22", "error": null, "cost_usd": 3.3390000000000004e-05}
+{"utc": "2026-10-02T18:05:30.609632+00:00", "event": "started", "provider": "jev", "attempt_id": "02ee34fbde554249a21f8de2c6d48afe"}
+{"utc": "2026-10-02T18:05:31.024755+00:00", "event": "finished", "provider": "jev", "attempt_id": "02ee34fbde554249a21f8de2c6d48afe", "error": null, "cost_usd": 3.3642e-05}
+{"utc": "2026-10-02T18:05:32.504574+00:00", "event": "started", "provider": "jev", "attempt_id": "2b4d3a5dd7344f45907b2edcb3fe8691"}
+{"utc": "2026-10-02T18:05:32.839605+00:00", "event": "finished", "provider": "jev", "attempt_id": "2b4d3a5dd7344f45907b2edcb3fe8691", "error": null, "cost_usd": 3.5574e-05}
+{"utc": "2026-10-02T18:05:32.852854+00:00", "event": "started", "provider": "cloud", "attempt_id": "fa3a7e054ed74f7f88e2668fdc312761"}
+{"utc": "2026-10-02T18:05:34.687478+00:00", "event": "finished", "provider": "cloud", "attempt_id": "fa3a7e054ed74f7f88e2668fdc312761", "error": null, "cost_usd": 3.393e-05}
+{"utc": "2026-10-02T18:05:34.739581+00:00", "event": "started", "provider": "cloud", "attempt_id": "33995458825245fcbfab6d4f0adb3373"}
+{"utc": "2026-10-02T18:06:35.339389+00:00", "event": "finished", "provider": "cloud", "attempt_id": "33995458825245fcbfab6d4f0adb3373", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:06:35.360315+00:00", "event": "started", "provider": "cloud", "attempt_id": "5de7e0f97ee549d18ed219fe798228bd"}
+{"utc": "2026-10-02T18:06:36.616415+00:00", "event": "finished", "provider": "cloud", "attempt_id": "5de7e0f97ee549d18ed219fe798228bd", "error": null, "cost_usd": 3.5130000000000004e-05}
+{"utc": "2026-10-02T18:06:38.194309+00:00", "event": "started", "provider": "cloud", "attempt_id": "1cbe62911e2e43c496c868d82abdcee7"}
+{"utc": "2026-10-02T18:07:38.766258+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1cbe62911e2e43c496c868d82abdcee7", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:07:38.778256+00:00", "event": "started", "provider": "cloud", "attempt_id": "d799253e8dd344f393e6346593e45d87"}
+{"utc": "2026-10-02T18:07:39.898342+00:00", "event": "finished", "provider": "cloud", "attempt_id": "d799253e8dd344f393e6346593e45d87", "error": null, "cost_usd": 3.599e-05}
+{"utc": "2026-10-02T18:07:40.608255+00:00", "event": "started", "provider": "cloud", "attempt_id": "170a40d85e3f47fa8ad784913da908b2"}
+{"utc": "2026-10-02T18:07:42.103227+00:00", "event": "finished", "provider": "cloud", "attempt_id": "170a40d85e3f47fa8ad784913da908b2", "error": null, "cost_usd": 4.106999999999999e-05}
+{"utc": "2026-10-02T18:07:42.803227+00:00", "event": "started", "provider": "cloud", "attempt_id": "0b40eb5b827d498ab6573d4bec4c2be0"}
+{"utc": "2026-10-02T18:07:44.733793+00:00", "event": "finished", "provider": "cloud", "attempt_id": "0b40eb5b827d498ab6573d4bec4c2be0", "error": null, "cost_usd": 8.531999999999999e-05}
+{"utc": "2026-10-02T18:07:44.758337+00:00", "event": "started", "provider": "jev", "attempt_id": "ed1abb9e107b4d6c8e8d00ffe30fa02b"}
+{"utc": "2026-10-02T18:07:45.722342+00:00", "event": "finished", "provider": "jev", "attempt_id": "ed1abb9e107b4d6c8e8d00ffe30fa02b", "error": null, "cost_usd": 3.3264000000000005e-05}
+{"utc": "2026-10-02T18:07:45.738233+00:00", "event": "started", "provider": "cloud", "attempt_id": "ff523adea03a4b94978ec7fa8d0a58b8"}
+{"utc": "2026-10-02T18:07:47.168259+00:00", "event": "finished", "provider": "cloud", "attempt_id": "ff523adea03a4b94978ec7fa8d0a58b8", "error": null, "cost_usd": 3.889e-05}
+{"utc": "2026-10-02T18:07:48.998218+00:00", "event": "started", "provider": "cloud", "attempt_id": "094d033b1cae425294f404618b1cc3f3"}
+{"utc": "2026-10-02T18:07:50.573487+00:00", "event": "finished", "provider": "cloud", "attempt_id": "094d033b1cae425294f404618b1cc3f3", "error": null, "cost_usd": 7.473999999999999e-05}
+{"utc": "2026-10-02T18:07:50.591926+00:00", "event": "started", "provider": "cloud", "attempt_id": "be1cf225f1644f72803d28f66d9515bc"}
+{"utc": "2026-10-02T18:07:52.256035+00:00", "event": "finished", "provider": "cloud", "attempt_id": "be1cf225f1644f72803d28f66d9515bc", "error": null, "cost_usd": 7.412e-05}
+{"utc": "2026-10-02T18:07:52.273721+00:00", "event": "started", "provider": "cloud", "attempt_id": "b204032b4d0348ecb3df8f66940d6146"}
+{"utc": "2026-10-02T18:07:53.993540+00:00", "event": "finished", "provider": "cloud", "attempt_id": "b204032b4d0348ecb3df8f66940d6146", "error": null, "cost_usd": 8.717000000000001e-05}
+{"utc": "2026-10-02T18:07:54.008101+00:00", "event": "started", "provider": "jev", "attempt_id": "ff84737695264a9782cb352b71eb0d8a"}
+{"utc": "2026-10-02T18:07:54.838117+00:00", "event": "finished", "provider": "jev", "attempt_id": "ff84737695264a9782cb352b71eb0d8a", "error": null, "cost_usd": 3.5868e-05}
+{"utc": "2026-10-02T18:07:54.851129+00:00", "event": "started", "provider": "cloud", "attempt_id": "df71d0d8dc364410b7fc015d7117b861"}
+{"utc": "2026-10-02T18:07:56.442820+00:00", "event": "finished", "provider": "cloud", "attempt_id": "df71d0d8dc364410b7fc015d7117b861", "error": null, "cost_usd": 7.851e-05}
+{"utc": "2026-10-02T18:07:56.458170+00:00", "event": "started", "provider": "cloud", "attempt_id": "3b31bb4cfd404d8886cf7ecdbc8b9565"}
+{"utc": "2026-10-02T18:07:57.768104+00:00", "event": "finished", "provider": "cloud", "attempt_id": "3b31bb4cfd404d8886cf7ecdbc8b9565", "error": null, "cost_usd": 3.599e-05}
+{"utc": "2026-10-02T18:07:57.824121+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:07:59.685988+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:07:59.724195+00:00", "event": "started", "provider": "jev", "attempt_id": "a0771aa9cc2e4460bd9eba055df5bfc5"}
+{"utc": "2026-10-02T18:08:00.150819+00:00", "event": "finished", "provider": "jev", "attempt_id": "a0771aa9cc2e4460bd9eba055df5bfc5", "error": null, "cost_usd": 3.3054e-05}
+{"utc": "2026-10-02T18:08:00.187821+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:08:01.424814+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:08:02.224434+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:08:03.486251+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:08:04.287763+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:08:05.572819+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:08:05.637762+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:08:06.824335+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:08:08.172830+00:00", "event": "started", "provider": "jev", "attempt_id": "47f231ff268f46ea8947ece608d4a416"}
+{"utc": "2026-10-02T18:08:08.928311+00:00", "event": "finished", "provider": "jev", "attempt_id": "47f231ff268f46ea8947ece608d4a416", "error": null, "cost_usd": 3.1668e-05}
+{"utc": "2026-10-02T18:08:10.366146+00:00", "event": "started", "provider": "jev", "attempt_id": "e18f3fbe195d44738035bf6f3b507f1a"}
+{"utc": "2026-10-02T18:08:10.732836+00:00", "event": "finished", "provider": "jev", "attempt_id": "e18f3fbe195d44738035bf6f3b507f1a", "error": null, "cost_usd": 3.1962e-05}
+{"utc": "2026-10-02T18:08:10.745232+00:00", "event": "started", "provider": "cloud", "attempt_id": "358d8f2cbe724cad863713723e48be2f"}
+{"utc": "2026-10-02T18:08:24.577697+00:00", "event": "finished", "provider": "cloud", "attempt_id": "358d8f2cbe724cad863713723e48be2f", "error": null, "cost_usd": 3.5170000000000004e-05}
+{"utc": "2026-10-02T18:08:24.597832+00:00", "event": "started", "provider": "cloud", "attempt_id": "5855cb8a6c9f467ba2e7ca7c3b58bf6e"}
+{"utc": "2026-10-02T18:09:25.237059+00:00", "event": "finished", "provider": "cloud", "attempt_id": "5855cb8a6c9f467ba2e7ca7c3b58bf6e", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:09:25.917007+00:00", "event": "started", "provider": "jev", "attempt_id": "7be50cd8cfaf4e4d86fa2f495dfd8feb"}
+{"utc": "2026-10-02T18:09:26.847099+00:00", "event": "finished", "provider": "jev", "attempt_id": "7be50cd8cfaf4e4d86fa2f495dfd8feb", "error": null, "cost_usd": 3.2844e-05}
+{"utc": "2026-10-02T18:09:26.857025+00:00", "event": "started", "provider": "cloud", "attempt_id": "804807de67d040afa75851d99f9fa33d"}
+{"utc": "2026-10-02T18:09:28.341940+00:00", "event": "finished", "provider": "cloud", "attempt_id": "804807de67d040afa75851d99f9fa33d", "error": null, "cost_usd": 3.5210000000000003e-05}
+{"utc": "2026-10-02T18:09:28.365792+00:00", "event": "started", "provider": "cloud", "attempt_id": "f4e030e60806449e9ba4dba1baf43e2d"}
+{"utc": "2026-10-02T18:09:29.858374+00:00", "event": "finished", "provider": "cloud", "attempt_id": "f4e030e60806449e9ba4dba1baf43e2d", "error": null, "cost_usd": 3.414e-05}
+{"utc": "2026-10-02T18:09:30.546930+00:00", "event": "started", "provider": "cloud", "attempt_id": "0e96950e2aee4c89939ce262c124018f"}
+{"utc": "2026-10-02T18:09:31.801927+00:00", "event": "finished", "provider": "cloud", "attempt_id": "0e96950e2aee4c89939ce262c124018f", "error": null, "cost_usd": 3.223e-05}
+{"utc": "2026-10-02T18:09:32.441914+00:00", "event": "started", "provider": "cloud", "attempt_id": "60ea2f37b3d44ad4b6f2203d84011ec3"}
+{"utc": "2026-10-02T18:09:34.292221+00:00", "event": "finished", "provider": "cloud", "attempt_id": "60ea2f37b3d44ad4b6f2203d84011ec3", "error": null, "cost_usd": 5.325e-05}
+{"utc": "2026-10-02T18:09:34.306912+00:00", "event": "started", "provider": "cloud", "attempt_id": "9b4128e345314ce2a5e180af07bc1dc9"}
+{"utc": "2026-10-02T18:09:35.571673+00:00", "event": "finished", "provider": "cloud", "attempt_id": "9b4128e345314ce2a5e180af07bc1dc9", "error": null, "cost_usd": 3.926e-05}
+{"utc": "2026-10-02T18:09:36.250071+00:00", "event": "started", "provider": "jev", "attempt_id": "6c3f502b7d074a049cd4d93cd1c13f42"}
+{"utc": "2026-10-02T18:09:37.051852+00:00", "event": "finished", "provider": "jev", "attempt_id": "6c3f502b7d074a049cd4d93cd1c13f42", "error": null, "cost_usd": 3.1542000000000004e-05}
+{"utc": "2026-10-02T18:09:37.066966+00:00", "event": "started", "provider": "cloud", "attempt_id": "08e7db8180ad49678f8df5cb69b65a61"}
+{"utc": "2026-10-02T18:09:38.776622+00:00", "event": "finished", "provider": "cloud", "attempt_id": "08e7db8180ad49678f8df5cb69b65a61", "error": null, "cost_usd": 3.670999999999999e-05}
+{"utc": "2026-10-02T18:09:38.796915+00:00", "event": "started", "provider": "cloud", "attempt_id": "c57d81889ce9480e9341e99220956118"}
+{"utc": "2026-10-02T18:09:40.031949+00:00", "event": "finished", "provider": "cloud", "attempt_id": "c57d81889ce9480e9341e99220956118", "error": null, "cost_usd": 3.225e-05}
+{"utc": "2026-10-02T18:09:40.049744+00:00", "event": "started", "provider": "cloud", "attempt_id": "a748486983034c7bb1ade4b6421c4d71"}
+{"utc": "2026-10-02T18:09:41.323057+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a748486983034c7bb1ade4b6421c4d71", "error": null, "cost_usd": 3.4049999999999994e-05}
+{"utc": "2026-10-02T18:09:41.341835+00:00", "event": "started", "provider": "cloud", "attempt_id": "89540a54cbfe48d7accfbe538a090c88"}
+{"utc": "2026-10-02T18:09:43.036938+00:00", "event": "finished", "provider": "cloud", "attempt_id": "89540a54cbfe48d7accfbe538a090c88", "error": null, "cost_usd": 8.088e-05}
+{"utc": "2026-10-02T18:09:43.971782+00:00", "event": "started", "provider": "jev", "attempt_id": "2bb5765445bf4c85a63e19fa6fd548df"}
+{"utc": "2026-10-02T18:09:44.791868+00:00", "event": "finished", "provider": "jev", "attempt_id": "2bb5765445bf4c85a63e19fa6fd548df", "error": null, "cost_usd": 3.8934000000000004e-05}
+{"utc": "2026-10-02T18:09:44.801776+00:00", "event": "started", "provider": "cloud", "attempt_id": "83a41b405eaf412784a344c302d6d4a6"}
+{"utc": "2026-10-02T18:09:47.176714+00:00", "event": "finished", "provider": "cloud", "attempt_id": "83a41b405eaf412784a344c302d6d4a6", "error": null, "cost_usd": 0.00010208}
+{"utc": "2026-10-02T18:09:47.191740+00:00", "event": "started", "provider": "cloud", "attempt_id": "f2909b0ac55a4c41a63aa3050b5a2f9a"}
+{"utc": "2026-10-02T18:09:48.806736+00:00", "event": "finished", "provider": "cloud", "attempt_id": "f2909b0ac55a4c41a63aa3050b5a2f9a", "error": null, "cost_usd": 7.541e-05}
+{"utc": "2026-10-02T18:09:48.826082+00:00", "event": "started", "provider": "cloud", "attempt_id": "bfa548a749de4b1d90b00753a991e80c"}
+{"utc": "2026-10-02T18:09:50.641679+00:00", "event": "finished", "provider": "cloud", "attempt_id": "bfa548a749de4b1d90b00753a991e80c", "error": null, "cost_usd": 9.347999999999999e-05}
+{"utc": "2026-10-02T18:09:51.623136+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:09:53.331567+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:09:53.366587+00:00", "event": "started", "provider": "cloud", "attempt_id": "1c0a3316208e447c9b42e240d82c3112"}
+{"utc": "2026-10-02T18:10:53.948838+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1c0a3316208e447c9b42e240d82c3112", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:10:54.673465+00:00", "event": "started", "provider": "cloud", "attempt_id": "c14ad69eb80e45f9865c712adb0c54a9"}
+{"utc": "2026-10-02T18:10:56.248939+00:00", "event": "finished", "provider": "cloud", "attempt_id": "c14ad69eb80e45f9865c712adb0c54a9", "error": null, "cost_usd": 3.096e-05}
+{"utc": "2026-10-02T18:10:56.975905+00:00", "event": "started", "provider": "cloud", "attempt_id": "bd6e6b2c96a64ad586c575009e47148d"}
+{"utc": "2026-10-02T18:10:58.392103+00:00", "event": "finished", "provider": "cloud", "attempt_id": "bd6e6b2c96a64ad586c575009e47148d", "error": null, "cost_usd": 3.458e-05}
+{"utc": "2026-10-02T18:10:58.410890+00:00", "event": "started", "provider": "jev", "attempt_id": "cd3e0a079bae457fbf6eebe7bcb41442"}
+{"utc": "2026-10-02T18:10:59.271048+00:00", "event": "finished", "provider": "jev", "attempt_id": "cd3e0a079bae457fbf6eebe7bcb41442", "error": null, "cost_usd": 3.2844e-05}
+{"utc": "2026-10-02T18:10:59.280672+00:00", "event": "started", "provider": "cloud", "attempt_id": "cb891ee7da9d4ec9947f5f4ee32fed73"}
+{"utc": "2026-10-02T18:11:00.525900+00:00", "event": "finished", "provider": "cloud", "attempt_id": "cb891ee7da9d4ec9947f5f4ee32fed73", "error": null, "cost_usd": 3.659e-05}
+{"utc": "2026-10-02T18:11:01.905867+00:00", "event": "started", "provider": "jev", "attempt_id": "0c35f9dd23df421fa7b14021ffecccba"}
+{"utc": "2026-10-02T18:11:02.370725+00:00", "event": "finished", "provider": "jev", "attempt_id": "0c35f9dd23df421fa7b14021ffecccba", "error": null, "cost_usd": 3.3012e-05}
+{"utc": "2026-10-02T18:11:03.791294+00:00", "event": "started", "provider": "jev", "attempt_id": "b152e92fb27e410295a13c8555ce9a49"}
+{"utc": "2026-10-02T18:11:04.291170+00:00", "event": "finished", "provider": "jev", "attempt_id": "b152e92fb27e410295a13c8555ce9a49", "error": null, "cost_usd": 3.3012e-05}
+{"utc": "2026-10-02T18:11:04.305848+00:00", "event": "started", "provider": "cloud", "attempt_id": "507e8490e9224342a9c92f52bf9c6275"}
+{"utc": "2026-10-02T18:11:05.640809+00:00", "event": "finished", "provider": "cloud", "attempt_id": "507e8490e9224342a9c92f52bf9c6275", "error": null, "cost_usd": 3.66e-05}
+{"utc": "2026-10-02T18:11:07.160928+00:00", "event": "started", "provider": "cloud", "attempt_id": "06b546837eb54b7fb0642bfb59a32f84"}
+{"utc": "2026-10-02T18:11:08.400768+00:00", "event": "finished", "provider": "cloud", "attempt_id": "06b546837eb54b7fb0642bfb59a32f84", "error": null, "cost_usd": 3.7539999999999996e-05}
+{"utc": "2026-10-02T18:11:08.418619+00:00", "event": "started", "provider": "jev", "attempt_id": "e818e42189ff4eb0adb0fbdd36e48511"}
+{"utc": "2026-10-02T18:11:08.740825+00:00", "event": "finished", "provider": "jev", "attempt_id": "e818e42189ff4eb0adb0fbdd36e48511", "error": null, "cost_usd": 3.5826e-05}
+{"utc": "2026-10-02T18:11:08.750769+00:00", "event": "started", "provider": "cloud", "attempt_id": "847b82d92c7e4df390df4bd49f414408"}
+{"utc": "2026-10-02T18:11:09.991300+00:00", "event": "finished", "provider": "cloud", "attempt_id": "847b82d92c7e4df390df4bd49f414408", "error": null, "cost_usd": 3.595e-05}
+{"utc": "2026-10-02T18:11:10.010776+00:00", "event": "started", "provider": "cloud", "attempt_id": "d521b37c7eca4ce5b57a47da07f70c1f"}
+{"utc": "2026-10-02T18:11:12.125909+00:00", "event": "finished", "provider": "cloud", "attempt_id": "d521b37c7eca4ce5b57a47da07f70c1f", "error": null, "cost_usd": 3.5079999999999996e-05}
+{"utc": "2026-10-02T18:11:12.140710+00:00", "event": "started", "provider": "cloud", "attempt_id": "b53352ff96ee4b069017ba8ebfcb248b"}
+{"utc": "2026-10-02T18:11:13.535760+00:00", "event": "finished", "provider": "cloud", "attempt_id": "b53352ff96ee4b069017ba8ebfcb248b", "error": null, "cost_usd": 3.715e-05}
+{"utc": "2026-10-02T18:11:13.557072+00:00", "event": "started", "provider": "cloud", "attempt_id": "4b7f10265c094b86bce5d93356dd8e3c"}
+{"utc": "2026-10-02T18:11:14.726227+00:00", "event": "finished", "provider": "cloud", "attempt_id": "4b7f10265c094b86bce5d93356dd8e3c", "error": null, "cost_usd": 3.876000000000001e-05}
+{"utc": "2026-10-02T18:11:14.740710+00:00", "event": "started", "provider": "cloud", "attempt_id": "90b031a1e90a40fa87a63087b0db20d9"}
+{"utc": "2026-10-02T18:12:15.383264+00:00", "event": "finished", "provider": "cloud", "attempt_id": "90b031a1e90a40fa87a63087b0db20d9", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:12:15.405013+00:00", "event": "started", "provider": "cloud", "attempt_id": "f5fad46538ec4fb3b55ca5dda1694076"}
+{"utc": "2026-10-02T18:12:16.755150+00:00", "event": "finished", "provider": "cloud", "attempt_id": "f5fad46538ec4fb3b55ca5dda1694076", "error": null, "cost_usd": 3.6299999999999995e-05}
+{"utc": "2026-10-02T18:12:18.091298+00:00", "event": "started", "provider": "jev", "attempt_id": "c9a24f70c45444a1841e93c22701ff3b"}
+{"utc": "2026-10-02T18:12:19.004968+00:00", "event": "finished", "provider": "jev", "attempt_id": "c9a24f70c45444a1841e93c22701ff3b", "error": null, "cost_usd": 3.385200000000001e-05}
+{"utc": "2026-10-02T18:12:19.024922+00:00", "event": "started", "provider": "jev", "attempt_id": "26cdba5bdfd04edc92524095fead9024"}
+{"utc": "2026-10-02T18:12:19.363513+00:00", "event": "finished", "provider": "jev", "attempt_id": "26cdba5bdfd04edc92524095fead9024", "error": null, "cost_usd": 3.5784e-05}
+{"utc": "2026-10-02T18:12:19.374946+00:00", "event": "started", "provider": "cloud", "attempt_id": "b3ce31104af440389ea4c6598b156494"}
+{"utc": "2026-10-02T18:12:21.130015+00:00", "event": "finished", "provider": "cloud", "attempt_id": "b3ce31104af440389ea4c6598b156494", "error": null, "cost_usd": 6.3e-05}
+{"utc": "2026-10-02T18:12:22.960493+00:00", "event": "started", "provider": "cloud", "attempt_id": "a1592d32aedf4a0dad0fc97d9e806b4f"}
+{"utc": "2026-10-02T18:13:23.516919+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a1592d32aedf4a0dad0fc97d9e806b4f", "error": {"type": "ReadTimeout", "http_status": null}, "cost_usd": null}
+{"utc": "2026-10-02T18:13:23.539150+00:00", "event": "started", "provider": "cloud", "attempt_id": "d4f6d1bae2944517aee151198b4ea10d"}
+{"utc": "2026-10-02T18:13:25.604308+00:00", "event": "finished", "provider": "cloud", "attempt_id": "d4f6d1bae2944517aee151198b4ea10d", "error": null, "cost_usd": 9.871000000000001e-05}
+{"utc": "2026-10-02T18:13:25.619188+00:00", "event": "started", "provider": "cloud", "attempt_id": "de08df1fda654a098e0b1d89bc09e4e1"}
+{"utc": "2026-10-02T18:13:28.269148+00:00", "event": "finished", "provider": "cloud", "attempt_id": "de08df1fda654a098e0b1d89bc09e4e1", "error": {"type": "IncompleteCompletion", "finish_reason": "length"}, "cost_usd": 0.00010156}
+{"utc": "2026-10-02T18:13:28.282350+00:00", "event": "started", "provider": "cloud", "attempt_id": "794c809cc0af4d4785f148152f3ab58d"}
+{"utc": "2026-10-02T18:13:29.354362+00:00", "event": "finished", "provider": "cloud", "attempt_id": "794c809cc0af4d4785f148152f3ab58d", "error": null, "cost_usd": 3.9240000000000004e-05}
+{"utc": "2026-10-02T18:13:29.374093+00:00", "event": "started", "provider": "jev", "attempt_id": "18628d4a4ba84b1eb48e0133af93ee99"}
+{"utc": "2026-10-02T18:13:30.282323+00:00", "event": "finished", "provider": "jev", "attempt_id": "18628d4a4ba84b1eb48e0133af93ee99", "error": null, "cost_usd": 3.4524000000000004e-05}
+{"utc": "2026-10-02T18:13:30.294090+00:00", "event": "started", "provider": "cloud", "attempt_id": "1ac6db2d9d9945b9bd42a6c104b11697"}
+{"utc": "2026-10-02T18:13:31.809058+00:00", "event": "finished", "provider": "cloud", "attempt_id": "1ac6db2d9d9945b9bd42a6c104b11697", "error": null, "cost_usd": 4.048e-05}
+{"utc": "2026-10-02T18:13:31.874064+00:00", "event": "started", "provider": "local"}
+{"utc": "2026-10-02T18:13:33.573882+00:00", "event": "finished", "provider": "local", "error": null}
+{"utc": "2026-10-02T18:13:34.398941+00:00", "event": "started", "provider": "cloud", "attempt_id": "6b6abb11787341618b15ccff8736b94d"}
+{"utc": "2026-10-02T18:13:35.638872+00:00", "event": "finished", "provider": "cloud", "attempt_id": "6b6abb11787341618b15ccff8736b94d", "error": null, "cost_usd": 3.882e-05}
+{"utc": "2026-10-02T18:13:36.446965+00:00", "event": "started", "provider": "cloud", "attempt_id": "4e537b00ff1e4018a3e6e65936a49997"}
+{"utc": "2026-10-02T18:13:37.703775+00:00", "event": "finished", "provider": "cloud", "attempt_id": "4e537b00ff1e4018a3e6e65936a49997", "error": null, "cost_usd": 4.3150000000000005e-05}
+{"utc": "2026-10-02T18:13:37.725052+00:00", "event": "started", "provider": "jev", "attempt_id": "f0f50e5557a948c1aa241d91ca9fdd80"}
+{"utc": "2026-10-02T18:13:38.628929+00:00", "event": "finished", "provider": "jev", "attempt_id": "f0f50e5557a948c1aa241d91ca9fdd80", "error": null, "cost_usd": 3.3684000000000005e-05}
+{"utc": "2026-10-02T18:13:40.163883+00:00", "event": "started", "provider": "jev", "attempt_id": "b3ac840dbbd84cfa82234369f4fb7496"}
+{"utc": "2026-10-02T18:13:40.498928+00:00", "event": "finished", "provider": "jev", "attempt_id": "b3ac840dbbd84cfa82234369f4fb7496", "error": null, "cost_usd": 3.3936e-05}
+{"utc": "2026-10-02T18:13:42.833970+00:00", "event": "started", "provider": "cloud", "attempt_id": "3caffb1ae77c4f6f989e569b07ade55c"}
+{"utc": "2026-10-02T18:13:45.868945+00:00", "event": "finished", "provider": "cloud", "attempt_id": "3caffb1ae77c4f6f989e569b07ade55c", "error": null, "cost_usd": 3.6299999999999995e-05}
+{"utc": "2026-10-02T18:13:45.881798+00:00", "event": "started", "provider": "cloud", "attempt_id": "a6f8db10d7244ed9ba27dbe7afc9091a"}
+{"utc": "2026-10-02T18:13:47.108706+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a6f8db10d7244ed9ba27dbe7afc9091a", "error": null, "cost_usd": 3.563e-05}
+{"utc": "2026-10-02T18:13:47.855168+00:00", "event": "started", "provider": "cloud", "attempt_id": "7bc3f9db127a4182b4c4a2c8e1567eec"}
+{"utc": "2026-10-02T18:13:48.954420+00:00", "event": "finished", "provider": "cloud", "attempt_id": "7bc3f9db127a4182b4c4a2c8e1567eec", "error": null, "cost_usd": 3.631e-05}
+{"utc": "2026-10-02T18:13:48.968933+00:00", "event": "started", "provider": "cloud", "attempt_id": "01ec194f762f436ca36b25b918bf1750"}
+{"utc": "2026-10-02T18:13:50.326844+00:00", "event": "finished", "provider": "cloud", "attempt_id": "01ec194f762f436ca36b25b918bf1750", "error": null, "cost_usd": 3.6270000000000003e-05}
+{"utc": "2026-10-02T18:13:50.347058+00:00", "event": "started", "provider": "jev", "attempt_id": "c8d7ee4b30ff4a91bedef1babf27d794"}
+{"utc": "2026-10-02T18:13:51.182222+00:00", "event": "finished", "provider": "jev", "attempt_id": "c8d7ee4b30ff4a91bedef1babf27d794", "error": null, "cost_usd": 3.2802e-05}
+{"utc": "2026-10-02T18:13:51.190496+00:00", "event": "started", "provider": "cloud", "attempt_id": "22549fd8e4de486f9e658a58c72c935e"}
+{"utc": "2026-10-02T18:13:52.238811+00:00", "event": "finished", "provider": "cloud", "attempt_id": "22549fd8e4de486f9e658a58c72c935e", "error": null, "cost_usd": 3.571e-05}
+{"utc": "2026-10-02T18:13:52.890036+00:00", "event": "started", "provider": "cloud", "attempt_id": "a9b3c8bdca8348a28878ed0c0ec59577"}
+{"utc": "2026-10-02T18:13:54.304848+00:00", "event": "finished", "provider": "cloud", "attempt_id": "a9b3c8bdca8348a28878ed0c0ec59577", "error": null, "cost_usd": 3.575e-05}
+{"utc": "2026-10-02T18:13:54.324430+00:00", "event": "started", "provider": "jev", "attempt_id": "fc2efd1162e54456ac6da86305b1ed82"}
+{"utc": "2026-10-02T18:13:54.703877+00:00", "event": "finished", "provider": "jev", "attempt_id": "fc2efd1162e54456ac6da86305b1ed82", "error": null, "cost_usd": 3.1668e-05}
+{"utc": "2026-10-02T18:13:54.713920+00:00", "event": "started", "provider": "cloud", "attempt_id": "387242669a154baab38e7fe2d67bc712"}
+{"utc": "2026-10-02T18:13:56.153989+00:00", "event": "finished", "provider": "cloud", "attempt_id": "387242669a154baab38e7fe2d67bc712", "error": null, "cost_usd": 3.797e-05}
+{"utc": "2026-10-02T18:13:56.803799+00:00", "event": "started", "provider": "cloud", "attempt_id": "e549b1d608de42da9d8a7b2a07c4bd48"}
+{"utc": "2026-10-02T18:13:58.288846+00:00", "event": "finished", "provider": "cloud", "attempt_id": "e549b1d608de42da9d8a7b2a07c4bd48", "error": null, "cost_usd": 3.815e-05}
+{"utc": "2026-10-02T18:13:58.304221+00:00", "event": "started", "provider": "cloud", "attempt_id": "69b003e2bf15453bbf172d610684d8be"}
+{"utc": "2026-10-02T18:13:59.698949+00:00", "event": "finished", "provider": "cloud", "attempt_id": "69b003e2bf15453bbf172d610684d8be", "error": null, "cost_usd": 3.827e-05}
+{"utc": "2026-10-02T18:13:59.716820+00:00", "event": "started", "provider": "cloud", "attempt_id": "effa8d68cec447ee93348ad24222219f"}
+{"utc": "2026-10-02T18:14:00.978740+00:00", "event": "finished", "provider": "cloud", "attempt_id": "effa8d68cec447ee93348ad24222219f", "error": null, "cost_usd": 3.743e-05}

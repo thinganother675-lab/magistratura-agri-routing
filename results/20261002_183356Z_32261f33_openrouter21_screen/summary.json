@@ -1,0 +1,1295 @@
+{
+  "completed_utc": "2026-10-02T18:34:01.545254+00:00",
+  "status": "PARTIAL",
+  "stop_reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+  "generation_attempts": 1,
+  "successful_generations": 0,
+  "rows": [
+    {
+      "requested_display_name": "inclusionAI: Ling 3.1 Flash",
+      "resolved_model_id": "inclusionai/ling-3.1-flash",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "AUTH_BLOCKED",
+      "reason": "All attempts retained; no provider/model fallback or retries; unequal N not ranked together",
+      "attempts": 1,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": 0.0,
+      "errors": 1,
+      "structured_failures": 0,
+      "mean_latency_seconds": 0.14497669999400387,
+      "p50_latency_seconds": 0.14497669999400387,
+      "p95_latency_seconds": 0.14497669999400387,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 1,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 1,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "novita",
+      "test_scope": "CONNECTIVITY/FORMAT_PROBE_ONLY; NOT FULL BENCHMARK"
+    },
+    {
+      "requested_display_name": "Apodex: Apodex 1.1 Mini (free)",
+      "resolved_model_id": "apodex/apodex-1.1-mini:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "novita/bf16"
+    },
+    {
+      "requested_display_name": "Space Bunny Alpha",
+      "resolved_model_id": "stealth/space-bunny-alpha",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "EXPLORATORY_PREVIEW",
+      "context_length": 1000000,
+      "modalities": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "stealth"
+    },
+    {
+      "requested_display_name": "inclusionAI: Ling 3.0 Flash Sante (free)",
+      "resolved_model_id": "inclusionai/ling-3.0-flash-sante:free",
+      "scope": "HEALTH_DOMAIN_TRANSFER_SMOKE",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "novita"
+    },
+    {
+      "requested_display_name": "Qwen: Qwen3.8 27B (free)",
+      "resolved_model_id": "qwen/qwen3.8-27b:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "modelrun/fp4"
+    },
+    {
+      "requested_display_name": "Dots Studio: Dots3-Note Preview (free)",
+      "resolved_model_id": "dots-studio/dots-3-note-preview:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "EXPLORATORY_PREVIEW",
+      "context_length": 512000,
+      "modalities": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "atlas-cloud/fp8"
+    },
+    {
+      "requested_display_name": "LiquidAI: LFM2.5-2.6B (free)",
+      "resolved_model_id": "liquid/lfm-2.5-2.6b:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 65536,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "liquid/fp8"
+    },
+    {
+      "requested_display_name": "NVIDIA: Nemotron 3.5 Lightning (free)",
+      "resolved_model_id": "nvidia/nemotron-3.5-lightning:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 1000000,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "nvidia/nvfp4"
+    },
+    {
+      "requested_display_name": "Thinking Machines: Inkling Small (free)",
+      "resolved_model_id": "thinkingmachines/inkling-small:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 1048576,
+      "modalities": {
+        "modality": "text+image+audio->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "thinkingmachines/nvfp4"
+    },
+    {
+      "requested_display_name": "Poolside: Laguna S 2.1 (free)",
+      "resolved_model_id": "poolside/laguna-s-2.1:free",
+      "scope": "CODING_SPECIALIZED_SMOKE",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "poolside/fp4"
+    },
+    {
+      "requested_display_name": "Thinking Machines: Inkling (free)",
+      "resolved_model_id": "thinkingmachines/inkling:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 1048576,
+      "modalities": {
+        "modality": "text+image+audio->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "audio"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "thinkingmachines/nvfp4"
+    },
+    {
+      "requested_display_name": "Poolside: Laguna XS 2.1 (free)",
+      "resolved_model_id": "poolside/laguna-xs-2.1:free",
+      "scope": "CODING_SPECIALIZED_SMOKE",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "poolside/fp8"
+    },
+    {
+      "requested_display_name": "Cohere: North Mini Code (free)",
+      "resolved_model_id": "cohere/north-mini-code:free",
+      "scope": "CODING_SPECIALIZED_SMOKE",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 256000,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Cohere",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "cohere"
+    },
+    {
+      "requested_display_name": "NVIDIA: Nemotron 3.5 Content Safety (free)",
+      "resolved_model_id": "nvidia/nemotron-3.5-content-safety:free",
+      "scope": null,
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 128000,
+      "modalities": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "SPECIALIZED_NOT_COMPARABLE",
+      "reason": "Content-safety classifier is not a general agricultural answer generator",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": null
+    },
+    {
+      "requested_display_name": "NVIDIA: Nemotron 3 Ultra (free)",
+      "resolved_model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 1000000,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "nvidia"
+    },
+    {
+      "requested_display_name": "NVIDIA: Nemotron 3 Nano Omni (free)",
+      "resolved_model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 256000,
+      "modalities": {
+        "modality": "text+image+audio+video->text",
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "nvidia"
+    },
+    {
+      "requested_display_name": "Google: Gemma 4 26B A4B (free)",
+      "resolved_model_id": "google/gemma-4-26b-a4b-it:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemma",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "google-ai-studio"
+    },
+    {
+      "requested_display_name": "Google: Gemma 4 31B (free)",
+      "resolved_model_id": "google/gemma-4-31b-it:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text+image+video->text",
+        "input_modalities": [
+          "image",
+          "text",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemma",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "google-ai-studio"
+    },
+    {
+      "requested_display_name": "Google: Lyria 3 Pro Preview",
+      "resolved_model_id": "google/lyria-3-pro-preview",
+      "scope": null,
+      "identity_stability": "EXPLORATORY_PREVIEW",
+      "context_length": 1048576,
+      "modalities": {
+        "modality": "text+image->text+audio",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "PAID_NOT_AUTHORIZED",
+      "reason": "Ancillary media fee in description despite zero token prices; no request",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": null
+    },
+    {
+      "requested_display_name": "Google: Lyria 3 Clip Preview",
+      "resolved_model_id": "google/lyria-3-clip-preview",
+      "scope": null,
+      "identity_stability": "EXPLORATORY_PREVIEW",
+      "context_length": 1048576,
+      "modalities": {
+        "modality": "text+image->text+audio",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "PAID_NOT_AUTHORIZED",
+      "reason": "Ancillary media fee in description despite zero token prices; no request",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": null
+    },
+    {
+      "requested_display_name": "NVIDIA: Nemotron 3 Super (free)",
+      "resolved_model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+      "scope": "GENERAL_TEXT_DEV",
+      "identity_stability": "FIXED_CATALOG_ALIAS; remote weight/version immutability UNKNOWN",
+      "context_length": 262144,
+      "modalities": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "status": "NOT_RUN",
+      "reason": "AUTH_BLOCKED: single authentication rejection; no retry",
+      "attempts": 0,
+      "successful_generations": 0,
+      "correct": 0,
+      "accuracy_all_attempts": null,
+      "errors": 0,
+      "structured_failures": 0,
+      "mean_latency_seconds": null,
+      "p50_latency_seconds": null,
+      "p95_latency_seconds": null,
+      "known_input_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "known_output_tokens": {
+        "known_sum": null,
+        "coverage_n": 0
+      },
+      "reported_cost_known_sum_usd": null,
+      "unknown_cost_events": 0,
+      "ttft_seconds": null,
+      "tokens_per_second": null,
+      "resource_vram_ram_gpu_offload": "NOT_APPLICABLE: remote service; actual allocation UNKNOWN",
+      "providers_reported": [],
+      "by_language": {
+        "en": {
+          "n": 0,
+          "correct": 0
+        },
+        "ru": {
+          "n": 0,
+          "correct": 0
+        }
+      },
+      "endpoint_pinned": "nvidia"
+    }
+  ],
+  "paid_spend_cap_usd": 0,
+  "known_reported_cost_usd": 0,
+  "unknown_cost_events": 1,
+  "quota_after": {
+    "retrieved_utc": "2026-10-02T18:34:01.545254+00:00",
+    "http_status": 200,
+    "limit": 0,
+    "limit_remaining": 0,
+    "limit_reset": null,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "is_free_tier": true,
+    "free_model_daily_requests": {
+      "used": 0,
+      "limit": 50,
+      "remaining": 50
+    },
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    },
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "include_byok_in_limit": true,
+    "expires_at": "2026-10-09T23:59:59.000Z"
+  },
+  "requests_count_note": "Generation attempts plus initial catalogue metadata GETs, fresh pre-inference metadata GETs and3 additional quota GETs; all metadata excluded from per-generation latency",
+  "metadata_requests_initial": 23,
+  "metadata_requests_screening": 26,
+  "generative_cloud_calls": 1,
+  "hosted_router_calls": 0,
+  "verification_calls": 0,
+  "retries": 0,
+  "limitations": [
+    "No fresh confirmatory holdout",
+    "Unequal N: probes are not full benchmarks",
+    "Free-tier queue latency is a service condition",
+    "Model weights/actual remote quantization UNKNOWN",
+    "Account privacy preferences preserved, no override",
+    "Initial metadata Lyria classification corrected before any inference"
+  ],
+  "resume": "Do not repeat this metadata execution claim. A new versioned trial after quota reset must explicitly preserve all prior attempts and sample IDs.",
+  "total_external_requests": 50
+}
