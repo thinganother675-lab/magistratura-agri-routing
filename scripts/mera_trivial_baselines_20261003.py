@@ -29,8 +29,8 @@ def aggregate(items, refs):
     rows = []
     unresolved = []
     for item in items:
-        gold, valid, _ = choice_set(refs[item.item_id], item.options)
-        if not valid:
+        gold, _, _ = choice_set(refs[item.item_id], item.options)
+        if not gold:
             unresolved.append(item.item_id); continue
         rows.append(baseline_expectations(len(item.options), len(gold)))
     methods = ('all_available_options', 'uniform_single_option', 'uniform_nonempty_subset')
