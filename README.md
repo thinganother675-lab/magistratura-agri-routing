@@ -1,5 +1,23 @@
 # Agro Route Lab
 
+**Ресурсный этап, вечер 03.10.2026:** [Qwen9 vs Qwen27: системы](docs/QWEN9_VS_QWEN27_SYSTEMS_ANALYSIS_RU.md),
+[парный DEV-анализ](docs/QWEN9_VS_QWEN27_DEV_ANALYSIS_20261003_RU.md),
+[Study C](docs/STUDY_C_RESULTS_20261003_RU.md),
+[subscription CLI baselines и effort](docs/CLI_PRODUCT_BASELINES_20261003_RU.md).
+Qwen9 сохраняет 94% наблюдаемого EM Qwen27 (141/289 vs 150/289), а в отдельном
+TELEMETRY40 native-профиле его p50 ниже в 5,338 раза. Qwen27 лучше в model-only
+Study C; V1 отказ по RAM сохранён. Это DEV / systems characterization, не
+подтверждённая non-inferiority. [Ограничения](docs/RESOURCE_SESSION_LIMITATIONS_20261003_RU.md),
+[новый draft-протокол](experiments/next_resource_protocol_20261003.json) и
+[source-bound claims](manuscript/CLAIM_PROVENANCE_RESOURCE_SESSION_20261003.json)
+разделяют историческое качество, телеметрию, симуляцию и product harness.
+[Единственный backup](docs/BACKUP_AGRICULTURAL_BENCHMARK_20261003_RU.md) пока NOT_READY.
+MERA scorer WAITING_FOR_MAINTAINER; private TEST не запускался. Новый paid API
+расход отсутствует; подписка обозначена SUBSCRIPTION_INCLUDED.
+[Лист решений Дениса](docs/DENIS_DECISION_SHEET_20261003_RU.md) и
+[пакет будущей редакции Claude](outputs/claude_paper_editor_package/README.md)
+готовятся для совместного согласования; редактура/публикация не запускались.
+
 **Следующий этап, 03.10.2026:** [разделение исследований A / B / C](docs/NEXT_RESEARCH_STAGE_20261003_RU.md).
 HOME150 сохраняется замороженным. Новый агрономический эталон предпочтительно
 берётся из экспертного ruTXTAgroBench; [аудит прав и метрик](docs/MERA_RUTXTAGROBENCH_AUDIT_RU.md)

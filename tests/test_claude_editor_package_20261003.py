@@ -40,6 +40,20 @@ def fixture(root):
             "cli_aggregates": ("results/20261003_cli_fixture/dev60_summary.json",)}
 
 
+def historical_fixture(root):
+    register = {name: {"analysis_file": "results/synthetic_history/summary.json", "run_id": "synthetic_home150",
+                       "sha256": "c" * 64, "code_commit": "b" * 40, "scope": "SYNTHETIC_HISTORY"}
+                for name in ("home150", "home_manifest")}
+    data = {"source_register": register,
+            "key_claims": [{"claim_id": "home150_n", "source_id": "home150", "value": 150,
+                            "json_pointer": "/target_n", "run_id": "synthetic_home150"},
+                           {"claim_id": "dev_count", "source_id": "study_c", "value": 27}],
+            "derived_claims": [{"claim_id": "home150_policy_count", "value": 5,
+                                "derivation": {"operation": "length", "operands": [{"source_id": "home_manifest", "json_pointer": "/policies"}]}}],
+            "numeric_claim_catalogs": {"synthetic_excluded": [123456789]}}
+    return write(root, BUILDER.HISTORICAL_SOURCE, json.dumps(data))
+
+
 def test_package_preserves_manuscripts_numbers_hashes_and_statuses(tmp_path):
     config = fixture(tmp_path)
     manifest = BUILDER.build_package(tmp_path, **config)
@@ -161,6 +175,48 @@ def test_unverified_bibliography_addendum_is_not_allowlisted(tmp_path):
     config["bibliography_addendum"] = "docs/UNVERIFIED_RESOURCE_REFERENCES.md"
     write(tmp_path, config["bibliography_addendum"], "synthetic unverified references")
     with pytest.raises(ValueError, match="verified resource bibliography"):
+        BUILDER.build_package(tmp_path, **config)
+    assert not (tmp_path / config["output"]).exists()
+
+
+def test_preserved_pre_alias_archive_is_excluded_while_final_table_is_copied(tmp_path):
+    config = fixture(tmp_path)
+    archive = write(tmp_path, "results/20261003_resource_analysis/final_model_table_before_status_aliases.csv",
+                    "model,quality_status\nsynthetic,OLD_CLASSIFICATION\n")
+    archive_bytes = archive.read_bytes()
+    final = write(tmp_path, "results/20261003_resource_analysis/final_model_table.csv",
+                  "model,quality_status,latency_status\nsynthetic,DEV,SYSTEMS_TELEMETRY\n")
+    manifest = BUILDER.build_package(tmp_path, **config)
+    output = tmp_path / config["output"]
+    assert archive.read_bytes() == archive_bytes
+    assert not (output / "tables/dev" / archive.name).exists()
+    assert all(row["source"] != archive.relative_to(tmp_path).as_posix() for row in manifest["files"])
+    assert (output / "tables/dev/final_model_table.csv").read_bytes() == final.read_bytes()
+    assert (output / "tables/dev/domains.csv").is_file()
+
+
+def test_historical_home150_projection_preserves_scalars_and_excludes_catalogs(tmp_path):
+    config = fixture(tmp_path)
+    original = historical_fixture(tmp_path)
+    original_bytes = original.read_bytes()
+    manifest = BUILDER.build_package(tmp_path, **config)
+    row = next(row for row in manifest["files"] if row["role"] == "historical_provenance")
+    copied = (tmp_path / config["output"] / row["path"]).read_bytes()
+    summary = json.loads(copied)
+    assert row["status"] == "HISTORICAL" and row["copy_mode"] == "PROJECTION_NUMBERS_UNCHANGED"
+    assert summary["key_claims"][0]["value"] == 150
+    assert summary["derived_claims"][0]["value"] == 5
+    assert all(claim["status"] == "HISTORICAL" for claim in summary["key_claims"] + summary["derived_claims"])
+    assert set(summary["source_register"]) == {"home150", "home_manifest"}
+    assert b"numeric_claim_catalogs" not in copied and b"dev_count" not in copied and b"123456789" not in copied
+    assert original.read_bytes() == original_bytes
+
+
+def test_alternative_historical_source_cannot_capture_unlisted_provenance(tmp_path):
+    config = fixture(tmp_path)
+    config["historical_provenance"] = "manuscript/CLAIM_PROVENANCE_UNLISTED.json"
+    write(tmp_path, config["historical_provenance"], '{"synthetic":true}')
+    with pytest.raises(ValueError, match="frozen historical HOME150"):
         BUILDER.build_package(tmp_path, **config)
     assert not (tmp_path / config["output"]).exists()
 

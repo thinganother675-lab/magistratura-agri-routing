@@ -11,6 +11,7 @@ import csv
 import hashlib
 import io
 import json
+import math
 from pathlib import Path
 import re
 import subprocess
@@ -35,6 +36,11 @@ SECRET_PATTERNS = (
     re.compile(r'''(?im)^[ \t]*["']?[A-Z_]*(?:API_KEY|TOKEN|SECRET|PASSWORD)[A-Z_0-9]*["']?[ \t]*[:=][ \t]*["']?[A-Za-z0-9_.+/-]{16,}(?=['"\s,;}]|$)'''),
 )
 CLAIM_FIELDS = {"claim_id", "statement", "run", "run_id", "study_run_id", "data_path", "file", "field", "analysis_field", "value", "code_commit", "commit", "source_commit", "data_sha256", "status", "limitations"}
+HISTORICAL_SOURCE = "manuscript/CLAIM_PROVENANCE_20261003.json"
+HISTORICAL_IDS = {"home150", "home_manifest"}
+HISTORICAL_SOURCE_FIELDS = {"analysis_file", "run_id", "sha256", "scope", "code_commit", "archive_commit", "exact_execution_HEAD", "code_commit_role"}
+HISTORICAL_KEY_FIELDS = {"claim_id", "claim_ru", "source_id", "run_id", "analysis_file", "json_pointer", "value", "unit", "sha256", "code_commit", "scope", "interpretation"}
+HISTORICAL_DERIVED_FIELDS = {"claim_id", "claim_ru", "value", "unit", "derivation", "source_sha256", "code_commits"}
 
 
 def digest(data: bytes) -> str:
@@ -117,11 +123,48 @@ def provenance_projection(data: bytes) -> bytes:
     return (json.dumps(summary, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
 
 
+def historical_provenance_projection(data: bytes) -> bytes:
+    """Preserve HOME150 aggregate claims; exclude catalogs and per-item content."""
+    source = json.loads(data.decode("utf-8-sig"))
+    register = source.get("source_register", {})
+    if any(identifier not in register for identifier in HISTORICAL_IDS):
+        raise ValueError("Historical HOME150 source register missing")
+    records = {identifier: {key: value for key, value in register[identifier].items() if key in HISTORICAL_SOURCE_FIELDS}
+               for identifier in sorted(HISTORICAL_IDS)}
+    key_claims, derived_claims, identifiers = [], [], []
+    for group, fields, target in (("key_claims", HISTORICAL_KEY_FIELDS, key_claims),
+                                  ("derived_claims", HISTORICAL_DERIVED_FIELDS, derived_claims)):
+        for row in source.get(group, []):
+            if not isinstance(row, dict) or not str(row.get("claim_id", "")).startswith("home150_"):
+                continue
+            if group == "key_claims" and row.get("source_id") not in HISTORICAL_IDS:
+                continue
+            if group == "derived_claims" and any(item.get("source_id") not in HISTORICAL_IDS for item in row.get("derivation", {}).get("operands", [])):
+                raise ValueError("Historical derived claim uses unlisted source")
+            value = row.get("value")
+            if not isinstance(value, (int, float, bool, str)) or (isinstance(value, float) and not math.isfinite(value)) or (isinstance(value, str) and len(value) > 128):
+                raise ValueError("Historical aggregate scalar value required")
+            identifiers.append(row["claim_id"])
+            target.append({**{key: value for key, value in row.items() if key in fields}, "status": "HISTORICAL"})
+    if not key_claims or not derived_claims or len(set(identifiers)) != len(identifiers):
+        raise ValueError("Historical aggregate claims missing or duplicate")
+    summary = {"schema_version": 1, "purpose": "HISTORICAL_HOME150_EDITORIAL_ONLY_DO_NOT_CHANGE_NUMBERS",
+               "status": "HISTORICAL", "source_register": records, "key_claims": key_claims,
+               "derived_claims": derived_claims,
+               "limitations": ["Historical HOME150 evidence only; does not promote current DEV or systems observations.",
+                               "Source paths and hashes are references; benchmark items and numeric catalogs are excluded."]}
+    result = (json.dumps(summary, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
+    scan_fields(summary)
+    scan_text(result.decode("utf-8"))
+    return result
+
+
 def build_package(root: Path, *, systems_dir: str | Path, provenance: str | Path,
                   limitations: str | Path, output: str | Path,
                   source_commit: str, cli_aggregates: tuple[str | Path, ...] = (),
                   study_c_summary: str | Path | None = None,
-                  bibliography_addendum: str | Path | None = None) -> dict:
+                  bibliography_addendum: str | Path | None = None,
+                  historical_provenance: str | Path | None = None) -> dict:
     root = root.resolve()
     if not re.fullmatch(r"[0-9a-f]{40}", source_commit):
         raise ValueError("Full source commit SHA required")
@@ -146,6 +189,8 @@ def build_package(root: Path, *, systems_dir: str | Path, provenance: str | Path
             raise ValueError("Only explicit verified resource bibliography addendum allowed")
         if role == "provenance" and not (path.parent == root / "manuscript" and path.name.startswith("CLAIM_PROVENANCE") and path.suffix == ".json"):
             raise ValueError("Claim provenance must be in manuscript directory")
+        if role == "historical_provenance" and rel != HISTORICAL_SOURCE:
+            raise ValueError("Only the frozen historical HOME150 provenance source allowed")
         if role == "limitations" and not (path.parent == root / "docs" and path.suffix == ".md"):
             raise ValueError("Limitations must be an explicit workspace docs Markdown file")
         if role == "dev_table" and not (path.parent == root / "results/20261003_resource_analysis" and path.suffix == ".csv"):
@@ -173,7 +218,15 @@ def build_package(root: Path, *, systems_dir: str | Path, provenance: str | Path
         add(bibliography_addendum, "references/VERIFIED_RESOURCE_BIBLIOGRAPHY_20261003_RU.md", "bibliography_addendum", "SUPPLEMENTARY")
     add(limitations, "LIMITATIONS.md", "limitations", "SUPPLEMENTARY")
     add(provenance, "provenance/CLAIM_PROVENANCE_SUMMARY.json", "provenance", "SUPPLEMENTARY", provenance_projection)
+    historical_source = historical_provenance or HISTORICAL_SOURCE
+    if historical_provenance is not None or (root / HISTORICAL_SOURCE).is_file():
+        add(historical_source, "provenance/HISTORICAL_CLAIM_PROVENANCE_SUMMARY.json", "historical_provenance",
+            "HISTORICAL", historical_provenance_projection)
     for path in sorted((root / "results/20261003_resource_analysis").glob("*.csv")):
+        if path.name == "final_model_table_before_status_aliases.csv":
+            # Preserve this historical archive in the workspace, outside the
+            # editor's final tables; it is not the final evidence appendix.
+            continue
         status = "SUPPLEMENTARY" if path.name == "final_model_table.csv" else "SIMULATED" if path.name.startswith("cascade") else "DEV"
         add(path, "tables/dev/" + path.name, "dev_table", status)
     add(systems / "systems_summary.json", "summaries/systems_summary.json", "systems_summary", "SYSTEMS_TELEMETRY")
@@ -265,13 +318,14 @@ def main():
     parser.add_argument("--source-commit")
     parser.add_argument("--study-c-summary")
     parser.add_argument("--bibliography-addendum", help="Optional explicit docs/VERIFIED_RESOURCE_BIBLIOGRAPHY_20261003_RU.md")
+    parser.add_argument("--historical-provenance", help="Optional exact historical HOME150 provenance; included by default when present")
     parser.add_argument("--cli-aggregate", action="append", default=[])
     args = parser.parse_args()
     revision = args.source_commit or "HEAD"
     commit = subprocess.run(["git", "-C", str(args.root), "rev-parse", "--verify", revision + "^{commit}"], check=True, capture_output=True, text=True).stdout.strip()
     manifest = build_package(args.root, systems_dir=args.systems_dir, provenance=args.provenance, limitations=args.limitations,
                              output=args.output, source_commit=commit, cli_aggregates=tuple(args.cli_aggregate), study_c_summary=args.study_c_summary,
-                             bibliography_addendum=args.bibliography_addendum)
+                             bibliography_addendum=args.bibliography_addendum, historical_provenance=args.historical_provenance)
     print(json.dumps({"output": args.output, "files": len(manifest["files"]), "assembly_head": commit, "claude_editing_run": False}))
 
 
