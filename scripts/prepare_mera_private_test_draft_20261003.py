@@ -67,7 +67,7 @@ def main(study_dir, cloud_analysis):
         "primary_cloud": {
             "model_id": "mercury-2.5", "provider": "Inception Labs direct", "endpoint": "https://api.inceptionlabs.ai/v1/chat/completions",
             "status": "PROVISIONAL_DEV_REFERENCE_NOT_FROZEN", "reasoning_effort": "instant",
-            "temperature": .5, "max_tokens": 512, "response_contract": "JSON object with choices array of Latin option letters",
+            "temperature": .5, "max_completion_tokens": 512, "response_contract": "JSON object with choices array of Latin option letters",
             "limitation": "CommonDEV60:56/60 error-free completions, four length truncations; protocol operational stability and provider weight revision unresolved",
             "selection_rationale": "Direct documented model/API identity chosen by operational12 gate before48 extension, not by privateTEST score",
             "full_dev293_run": False,
@@ -87,7 +87,7 @@ def main(study_dir, cloud_analysis):
             "primary_cloud_selected": gate(False, "Provisional direct baseline has four truncations; no author-confirmed stable frozen primary", cloud_path),
             "routing_rule_frozen": gate(False, "DEV proposal/grid exists, margin and final rule require author review", local_path),
             "server_scoring_resolved": gate(False, "Public option-A normalizer defect reproduced; production/server scorer version is undocumented"),
-            "official_workflow_verified": gate(False, "Actual private submission acceptance/scoring/results workflow has not been exercised or authorized"),
+            "official_workflow_verified": gate(False, "Official submission format, local dry-run, and documented score/result retrieval have not been sufficiently verified; this gate does not require a prior liveTEST submission"),
             "content_rights_understood": gate(False, "Dataset content and raw-output terms remain USE_WITH_RESTRICTIONS"),
             "antoniy_approval": gate(False, "No direct human protocol approval recorded"),
             "denis_approval": gate(False, "No direct human protocol approval recorded"),

@@ -289,10 +289,12 @@ def replay_cascade(local, cloud, expected_ids, *, threshold=None):
 
 
 def select_dev_routing_rule(local, cloud, expected_ids):
-    """A predeclared DEV objective; its5pp margin requires human confirmation.
+    """Exploratory DEV objective frozen before offline grid evaluation.
 
-    Each deployed routing decision remains reference-free. Open DEV scores
-    select a threshold from the fixed grid, never hidden TEST data.
+    This grid was declared after seeing screenDEV results, not preregistered
+    before model inference. Its5pp margin requires human confirmation. Each
+    deployed routing decision remains reference-free. Open DEV scores select
+    a threshold from the fixed grid, never hidden TEST data.
     """
     thresholds = [None, .5, .7, .8, .9, .95, .98, .99, 1.]
     cloud_summary = summarize_measurements(cloud, expected_ids)
