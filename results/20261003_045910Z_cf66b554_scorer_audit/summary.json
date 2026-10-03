@@ -1,0 +1,42 @@
+{
+  "run_id": "20261003_045910Z_cf66b554_scorer_audit",
+  "diagnostic_version": 2,
+  "actual_utc": "2026-10-03T04:59:11.267692+00:00",
+  "role": "POST_HOC_DIAGNOSTIC_ONLY_NOT_RESCORING",
+  "protected_inventory_scope": "Git-tracked historical data/protocol/source/test files plus all files in pre-20261003 results directories; concurrently authored untracked new scripts excluded",
+  "new_generations": 0,
+  "human_review": false,
+  "numeric_n": 30,
+  "historic_local_numeric_correct": 0,
+  "numeric_cause_counts": {
+    "arithmetic_or_formula": 30,
+    "unit": 0,
+    "schema_action": 0,
+    "formatting": 0,
+    "parsing": 0,
+    "incomplete_response": 0,
+    "evaluator_artifact": 0
+  },
+  "cause_counts_can_overlap": true,
+  "independent_numeric_gold_agreement": 30,
+  "compound_false_acceptance_by_method": {
+    "hybrid": 12,
+    "offline": 12
+  },
+  "compound_false_literal_would_pass_by_method": {
+    "local": 12,
+    "hybrid": 12,
+    "offline": 12
+  },
+  "interpretation_correction": "v2 distinguishes actual verifier acceptance (hybrid/offline) from fixed local outputs where literal grounding would have passed but was not applied. First diagnostic run preserved.",
+  "independent_compound_gold_agreement": 100,
+  "protected_historical_files": 873,
+  "protected_hashes_unchanged": true,
+  "historical_raw_path": "results/analysis_input_reconciled_20261002_052358Z_804ced2b/raw_decisions.jsonl",
+  "historical_raw_sha256": "70cdc82fe4d9f01a09b10287304c6a7f7f25f61d13c3fbdab91c1cf7c0a6e922",
+  "limitations": [
+    "No model reasoning trace: result error cannot uniquely identify arithmetic operation vs formula selection",
+    "No new scoring applied to HOME150",
+    "No agronomist or human review performed"
+  ]
+}

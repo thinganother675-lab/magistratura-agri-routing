@@ -1,0 +1,46 @@
+{
+  "actual_utc": "2026-10-03T05:09:51.777523+00:00",
+  "latest_software_validation": "software_validation_v2.json",
+  "supersedes": "delivery_manifest.json",
+  "files": {
+    "delivery_manifest.json": {
+      "bytes": 1292,
+      "sha256": "bfa1aa7cab6a6fa865c50f3db418911e55abf58af02b44616ac64f9648dec6c1"
+    },
+    "frozen_historical_hashes.json": {
+      "bytes": 160826,
+      "sha256": "bcf80602277ea710fbee8cf19dee27ca8298c3fae57e1b0a1393076bcdec9b12"
+    },
+    "home150_compound_diagnostics_v2.csv": {
+      "bytes": 21021,
+      "sha256": "479600673a83a5ecd33273af51fa5407a708e61b7cfe62e93b489d16a8c8ffed"
+    },
+    "home150_compound_diagnostics_v2.json": {
+      "bytes": 68225,
+      "sha256": "e2c3ed8bfb047b8a8a36b64ddeefe488dec4444dcf5e543a36d4d21baaf04215"
+    },
+    "home150_local_numeric_diagnostics_v2.csv": {
+      "bytes": 11710,
+      "sha256": "4e8727f7841471997274fc6cb915b2e818ca3bc7e69dc4b7e6fa1dec4de81786"
+    },
+    "home150_local_numeric_diagnostics_v2.json": {
+      "bytes": 30576,
+      "sha256": "9eb0cf928e21023f04441368ff9f8786f8a1ef049a741b475131701c95e79727"
+    },
+    "software_validation.json": {
+      "bytes": 2450,
+      "sha256": "0c5a9ab2e018f7da02284ffca855f2acd7d38efdcc422aee338b479b0c488905"
+    },
+    "software_validation_v2.json": {
+      "bytes": 2672,
+      "sha256": "418ae2bce808b6aa0c53b011f64d20bd4e403064f6b1badcf22c7fa97c4f01ad"
+    },
+    "summary.json": {
+      "bytes": 1767,
+      "sha256": "9f0114ad4d7b74b1b95ac1b8681acefda7c7905b36fa28f60ebd196bf3f4ffa0"
+    }
+  },
+  "manifest_self_hash_intentionally_excluded": true,
+  "historical_scores_changed": false,
+  "human_review": false
+}
