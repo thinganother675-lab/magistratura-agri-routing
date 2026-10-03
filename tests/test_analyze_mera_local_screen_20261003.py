@@ -34,6 +34,20 @@ def test_loader_rejects_context_mismatch_or_private_test():
     manifest["loads"][0]["load_config"]["context_length"] = 8192
     with pytest.raises(ValueError, match="configuration differs"):
         validate_manifest_protocol(manifest, protocol, "synthetic_protocol")
+
+
+def test_loader_rejects_missing_source_hash_and_missing_complete_load_metadata():
+    protocol, manifest = protocol_fixture(); del manifest["uncommitted_source_hashes"]
+    with pytest.raises(ValueError, match="runner source hash mismatch"):
+        validate_manifest_protocol(manifest, protocol, "synthetic_protocol")
+    protocol, manifest = protocol_fixture(); manifest["status"] = "COMPLETE"
+    manifest["loads"][0] = {"chunk_offset": 0}
+    protocol["fixed_reload_every_n"] = 10
+    with pytest.raises(ValueError, match="configuration/warmup"):
+        validate_manifest_protocol(manifest, protocol, "synthetic_protocol", 1)
+    manifest["loads"] = []
+    with pytest.raises(ValueError, match="fixed reload provenance"):
+        validate_manifest_protocol(manifest, protocol, "synthetic_protocol", 60)
     protocol, manifest = protocol_fixture(); manifest["private_test_run"] = True
     with pytest.raises(ValueError, match="Private TEST"):
         validate_manifest_protocol(manifest, protocol, "synthetic_protocol")

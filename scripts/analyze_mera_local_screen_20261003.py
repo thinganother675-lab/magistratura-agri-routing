@@ -63,17 +63,23 @@ def load_protocol(safe):
     return effective, hashes
 
 
-def validate_manifest_protocol(manifest, protocol, original_protocol_sha):
+def validate_manifest_protocol(manifest, protocol, original_protocol_sha, expected_n=None):
     if manifest.get("source_sha256") != protocol["source_sha256"] or manifest.get("protocol_sha256") != original_protocol_sha:
         raise ValueError("Model manifest source/protocol provenance mismatch")
     if manifest.get("private_test_run") is not False or manifest.get("classification") != "DEV":
         raise ValueError("Private TEST or non-DEV manifest rejected")
-    if "uncommitted_source_hashes" in manifest and manifest["uncommitted_source_hashes"] != protocol["uncommitted_source_hashes"]:
+    if manifest.get("uncommitted_source_hashes") != protocol["uncommitted_source_hashes"]:
         raise ValueError("Model manifest runner source hash mismatch")
     for load in manifest.get("loads", []):
         config = load.get("load_config")
         if config and any(config.get(k) != protocol[k] for k in ("context_length", "parallel", "speculative_draft_mtp")):
             raise ValueError("Actual model load configuration differs from common protocol")
+    if manifest.get("status") == "COMPLETE":
+        loads = manifest.get("loads", [])
+        if expected_n is not None and [x.get("chunk_offset") for x in loads] != list(range(0, expected_n, protocol["fixed_reload_every_n"])):
+            raise ValueError("Complete model lacks expected fixed reload provenance")
+        if any(not x.get("load_config") or x.get("warmup_latency_s") is None for x in loads):
+            raise ValueError("Complete model lacks actual load configuration/warmup provenance")
 
 
 def load_profiles(safe, stage):
@@ -90,7 +96,7 @@ def load_profiles(safe, stage):
         hashes[str(snapshot.relative_to(ROOT)).replace("\\", "/")] = expected_sha
     for path in sorted((safe / stage).glob("*_manifest.json")):
         manifest = read(path); metrics = path.parent / manifest["safe_rows"]
-        validate_manifest_protocol(manifest, protocol, protocol_hashes["protocol_frozen.json"])
+        validate_manifest_protocol(manifest, protocol, protocol_hashes["protocol_frozen.json"], len(expected_ids))
         if not metrics.exists() or digest(metrics.read_bytes()) != manifest["safe_rows_sha256"]:
             raise ValueError("Safe measurement source hash mismatch")
         rows = normalize_rows([json.loads(x) for x in metrics.read_text(encoding="utf-8").splitlines() if x])
@@ -173,6 +179,23 @@ def freeze_shortlist(safe):
     if (safe / "dev293").exists() and any((safe / "dev293").iterdir()):
         raise ValueError("Shortlist must be frozen before Stage2")
     shortlist = select_shortlist(profiles, protocol["dev60_ids"], maximum=5)
+    diagnostic = dict(shortlist)
+    amendment_path = safe / "dev_selection_amendment.json"
+    if amendment_path.exists():
+        amendment = read(amendment_path)
+        if amendment.get("status") != "DEV" or amendment.get("before_dev293") is not True or amendment.get("human_review") is not False:
+            raise ValueError("DEV selection amendment role/timing invalid")
+        selected = amendment["model_keys"]
+        if not 3 <= len(selected) <= 5 or len(selected) != len(set(selected)) or not set(selected).issubset(shortlist["pareto_models"]):
+            raise ValueError("Practical selection must retain3-5 complete Pareto candidates")
+        if amendment.get("stage1_source_hashes") != hashes:
+            raise ValueError("Selection amendment does not bind exact Stage1 sources")
+        shortlist.update(selected=selected, roles=amendment["roles"],
+                         selection_method="EXPLICIT_POST_DEV60_PRE_DEV293_PRACTICAL_SELECTION",
+                         selection_amendment_sha256=digest(amendment_path.read_bytes()),
+                         selection_amendment_path=str(amendment_path.relative_to(ROOT)).replace("\\", "/"),
+                         original_algorithm_diagnostic=diagnostic,
+                         practical_rationale=amendment["rationale"])
     shortlist.update(model_keys=shortlist["selected"], created_utc=now(), stage1_only=True,
                      source_hashes=hashes, protocol_hashes=protocol_hashes,
                      analysis_code_commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
@@ -181,6 +204,7 @@ def freeze_shortlist(safe):
                      resource_scope="sampled whole GPU and whole system RAM; ordinary apps not isolated; no per-model allocation claim",
                      reasoning_exceptions={p["model_key"]: p["reasoning_effort_requested"] for p in profiles}, private_test_run=False)
     write_new(safe / "shortlist_frozen.json", shortlist)
+    write_new(safe / "automated_shortlist_diagnostic.json", diagnostic)
     write_new(safe / "stage1_analysis.json", {"run_id": safe.name, "status": "DEV", "profiles": profiles,
               "shortlist": shortlist, "primary_metric": "STRICT_SET_EM/F1 on original parseable references",
               "lower_bound_companion_is_not_known_correctness": True, "source_hashes": hashes})
@@ -288,7 +312,7 @@ STRICT_SET_EM — точное совпадение множества; STRICT_S
 
 ## Замороженный shortlist
 
-Модели: {', '.join('`'+m+'`' for m in shortlist['model_keys'])}. Роли: `{json.dumps(shortlist['roles'], ensure_ascii=False)}`. Файл `shortlist_frozen.json` создан до DEV293, с hashes всех Stage1 manifests/rows и protocol amendments. Pareto: maximize EM/F1, minimize p95/invalid/errors/измеренные peaks. BALANCED — самый быстрый p95 среди Pareto в пределах10 п.п. от лучшего screen EM. Domination и отсутствие минимум3 не скрываются; partial не добавлялись ради количества.
+Модели: {', '.join('`'+m+'`' for m in shortlist['model_keys'])}. Роли: `{json.dumps(shortlist['roles'], ensure_ascii=False)}`. Файл `shortlist_frozen.json` создан до DEV293, с hashes всех Stage1 manifests/rows и protocol amendments. Pareto: maximize EM/F1, minimize p95/invalid/errors/измеренные peaks. Исходный automated selector сохранён в `automated_shortlist_diagnostic.json`; он включал MiniCPM1B как fastest/lowestresource несмотря на0/59 EM. Практические пять выбраны явно **после DEV60 и до DEV293**: `{json.dumps(shortlist.get('practical_rationale'), ensure_ascii=False)}`. Это объявленная разработческая поправка, а не заранее автоматический выбор и не человеческая научная валидация. Partial не добавлялись; zero-EM low-end reference сохранён в Stage1 без полного повторного293.
 
 ## Stage2: весь публичный DEV293
 
