@@ -1,0 +1,201 @@
+{
+  "run_id": "20261003_local_screen_571682f5_dev60_gpt-oss-20b",
+  "stage": "dev60",
+  "classification": "DEV",
+  "model_key": "gpt-oss-20b",
+  "gpu_requested": "max",
+  "actual_gpu_layers": null,
+  "source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "protocol_sha256": "8aec2d6fafb9228dddd434a72eae45903071ec4a3b49109667bec40bf01aca59",
+  "started_utc": "2026-10-03T08:27:25.923745+00:00",
+  "loads": [
+    {
+      "chunk_offset": 0,
+      "headroom_before": {
+        "ram_available_gib": 23.334739685058594,
+        "gpu_free_mib": 15126.0
+      },
+      "started_utc": "2026-10-03T08:27:26.098267+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 23.322582244873047,
+        "gpu_free_mib": 15126.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.169570922851562,
+        "gpu_free_mib": 4070.0
+      },
+      "load_latency_s": 11.172148199999356,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "num_experts": 4,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 11.475421905517578,
+        "gpu_free_mib": 3883.0
+      },
+      "warmup_latency_s": 2.918723000009777
+    }
+  ],
+  "status": "PARTIAL",
+  "private_test_run": false,
+  "code_commit": "3bbe24410cdc42d74edd2791cd7b5862e2848987",
+  "uncommitted_source_hashes": {
+    "scripts/mera_local_screen_20261003.py": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+    "src/agro_route/mera_screen_metrics_20261003.py": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567"
+  },
+  "timeout_count": 0,
+  "model_load_failure": false,
+  "safe_rows": "gpt-oss-20b_metrics.jsonl",
+  "quantization": {
+    "name": "Q8_0",
+    "bits_per_weight": 8
+  },
+  "model_size_bytes": 12109568811,
+  "architecture": "gpt-oss",
+  "native_model_metadata": {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "gpt-oss-20b",
+    "display_name": "GPT-OSS 20B",
+    "architecture": "gpt-oss",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 12109568811,
+    "params_string": "20B",
+    "loaded_instances": [
+      {
+        "id": "mera-screen-571682f5-gpt-oss-20b",
+        "config": {
+          "context_length": 2048,
+          "eval_batch_size": 2048,
+          "physical_batch_size": 512,
+          "parallel": 1,
+          "flash_attention": true,
+          "context_checkpoints": 32,
+          "reasoning_budget_message": "",
+          "speculative_draft_mtp": false,
+          "speculative_draft_simple": false,
+          "speculative_draft_model": "",
+          "speculative_draft_max_tokens": 3,
+          "speculative_draft_min_tokens": 0,
+          "speculative_draft_min_continue_probability": 0,
+          "num_experts": 4,
+          "offload_kv_cache_to_gpu": true
+        }
+      }
+    ],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  "load_config": {
+    "context_length": 2048,
+    "eval_batch_size": 2048,
+    "physical_batch_size": 512,
+    "parallel": 1,
+    "flash_attention": true,
+    "context_checkpoints": 32,
+    "reasoning_budget_message": "",
+    "speculative_draft_mtp": false,
+    "speculative_draft_simple": false,
+    "speculative_draft_model": "",
+    "speculative_draft_max_tokens": 3,
+    "speculative_draft_min_tokens": 0,
+    "speculative_draft_min_continue_probability": 0,
+    "num_experts": 4,
+    "offload_kv_cache_to_gpu": true
+  },
+  "reasoning_effort_requested": "low",
+  "stop_reason": {
+    "type": "IncompleteCompletion",
+    "finish_reason": "length",
+    "stream_done": true
+  },
+  "cleanup_success": true,
+  "finished_utc": "2026-10-03T08:27:47.298864+00:00",
+  "summary": {
+    "n_expected": 60,
+    "n_attempted": 1,
+    "n_completed": 0,
+    "n_response_received": 1,
+    "n_scored": 1,
+    "attempted_coverage": false,
+    "complete_coverage": false,
+    "strict_em_count": 0,
+    "strict_f1_sum": 0.0,
+    "strict_set_em": 0.0,
+    "strict_set_f1": 0.0,
+    "conservative_all_n_em": 0.0,
+    "reference_issues": 0,
+    "invalid_output": 1,
+    "json_contract_failure": 1,
+    "errors": 1,
+    "timeouts": 0,
+    "latency_p50_s": 5.056738100000075,
+    "latency_p95_s": 5.056738100000075,
+    "latency_mean_s": 5.056738100000075,
+    "ttft_p50_s": 0.12977820000378415,
+    "first_answer_p50_s": null,
+    "client_tps_p50": 103.93131780050338,
+    "backend_tps_p50": null,
+    "input_tokens": 301,
+    "output_tokens": 512,
+    "usage_coverage": 1,
+    "confidence_coverage": 0,
+    "by_domain": {
+      "Ботаника": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      }
+    },
+    "by_answer_cardinality": {
+      "single": {
+        "n": 0,
+        "strict_set_em": null,
+        "strict_set_f1": null,
+        "predicted_single_n": 0
+      },
+      "multiple": {
+        "n": 1,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0,
+        "predicted_single_n": 0
+      }
+    }
+  },
+  "resource_metrics": {
+    "vram_mib_peak_sampled_total": 12220.0,
+    "ram_gib_peak_sampled_system_used": 20.338695526123047,
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "samples": 35,
+    "resource_poll_errors": []
+  },
+  "actual_calls": 1,
+  "loads_n": 1,
+  "total_load_latency_s": 11.172148199999356,
+  "total_warmup_latency_s": 2.918723000009777,
+  "raw_sha256": "579e69eab6e60928ed07471c43094f9b8b14bb57d5324220f2bb920b90ddf32c",
+  "safe_rows_sha256": "6b41d3d15a949911d683f97ed63f4268a3ec2765f4bb5c5ecf77bd1c6736deaf"
+}

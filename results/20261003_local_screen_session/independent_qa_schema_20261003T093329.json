@@ -1,0 +1,218 @@
+{
+  "audit_utc": "2026-10-03T09:33:29.926782+00:00",
+  "audit_kind": "READ_ONLY_FINAL_RAW_OUTPUT_SCHEMA_AND_SSE_IDENTITY",
+  "status": "DEV",
+  "profiles": [
+    {
+      "model_key": "gemma-4-12b-it",
+      "stage": "dev293",
+      "status": "COMPLETE",
+      "successful_n": 293,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-12b-it": 2512
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "22f60d160ff2b7f829b4cb19e32c17657d47367a247044c7ebf26459f28db4e6",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "gemma-4-26b-a4b-it",
+      "stage": "dev293",
+      "status": "COMPLETE",
+      "successful_n": 293,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-26b-a4b-it": 2435
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "85b3d901d747e9a032730e39cd8fc7177061e17e08e7227ae489e79625b09296",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "stage": "dev293",
+      "status": "COMPLETE",
+      "successful_n": 293,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.5-9b": 2345
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "b87f865f5c656f5d8794b6716f28097674c582d3fb723f83cef2633f6960ea6e",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "qwen3.8-27b",
+      "stage": "dev293",
+      "status": "COMPLETE",
+      "successful_n": 293,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.8-27b": 2289
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "a8ca51becf852664bdaa1c465b7669f29c69b1bbff712c9f5edfa9ce33cdebff",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "unsloth/qwen3.5-4b",
+      "stage": "dev293",
+      "status": "COMPLETE",
+      "successful_n": 293,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-unsloth__qwen3.5-4b": 2457
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "6697b452bafe1d954b966a3c3f4545863d3862fc6a029b4c36b78c36a32d131b",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "gemma-4-12b-it",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-12b-it": 512
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "da770475727293df1d3b6a62a4778364f4dd409ea3147084964fcbb33dd32b2d",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "gemma-4-26b-a4b-it",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-26b-a4b-it": 504
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "aa98ba712519b9401bb972394083055bbdd0383b5dae0ba40442a94178a61c50",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "gpt-oss-20b",
+      "stage": "dev60",
+      "status": "PARTIAL",
+      "successful_n": 0,
+      "sse_returned_model_counts": {},
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "579e69eab6e60928ed07471c43094f9b8b14bb57d5324220f2bb920b90ddf32c",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "granite-4.1-8b",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-granite-4.1-8b": 521
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "7eb93f3c165f1bfab0fa61de188dd9639b0d4de03a861a377acd4b4e255e735f",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "minicpm5-1b",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-minicpm5-1b": 792
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "b3f9b1ed2a0c4fd435aaa38d2c1be698b1361b0a931f5c9716464474c77be55b",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "phi-4-mini-instruct",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-phi-4-mini-instruct": 686
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "17dc39c00e818e2e8dd5a9820542d4043b3f68586b4e764b0f68c3a9e701877b",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "qwen3.5-35b-a3b",
+      "stage": "dev60",
+      "status": "FAILED_LOAD",
+      "successful_n": 0,
+      "sse_returned_model_counts": {},
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.5-9b": 470
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "7acb6f284556784ff1c79b22c34f8bec8afea12c8bdb25c5de68a1e4c65dcac8",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "qwen3.8-27b",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.8-27b": 464
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "1d0fa8f2dc784f86e476b5c883a6df405d1b94ce4f52e52def824d46759bbe60",
+      "raw_unchanged_during_read": true
+    },
+    {
+      "model_key": "unsloth/qwen3.5-4b",
+      "stage": "dev60",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-unsloth__qwen3.5-4b": 504
+      },
+      "strict_raw_json_schema_failure_ids": [],
+      "nonzero_or_missing_choice_index_ids": [],
+      "sse_returned_model_disagreement_ids": [],
+      "raw_sha256": "a4e8de916acf4df35e4dfb1c3ff05a60c9f8b59a84690905b902d5b419079dae",
+      "raw_unchanged_during_read": true
+    }
+  ],
+  "all_raw_json_schema_valid": true,
+  "all_sse_model_identifiers_and_indices_match": true,
+  "schema_does_not_enforce_item_specific_option_membership_or_uniqueness": true,
+  "model_calls": 0,
+  "private_text_or_model_output_written": false
+}

@@ -1,0 +1,38 @@
+{
+  "utc": "2026-10-03T09:35:28.440374+00:00",
+  "classification": "DEV",
+  "private_test_run": false,
+  "capture_inference_calls": 0,
+  "after_settle_s": 2,
+  "native_loaded_instance_count": 0,
+  "native_loaded_instance_ids": [],
+  "lms_ps_loaded_count": 0,
+  "cli_installed_entry_count": 24,
+  "initial_cli_entry_count": 24,
+  "inventory_unchanged_on_stable_fields": true,
+  "ram_total_gib": 31.61986541748047,
+  "actual_resource_headroom": {
+    "ram_available_gib": 22.902359008789062,
+    "gpu_free_mib": 15289.0
+  },
+  "source_hashes": {
+    "scripts/mera_local_screen_20261003.py": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+    "src/agro_route/mera_screen_metrics_20261003.py": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567"
+  },
+  "source_matches_effective_amendment_03": true,
+  "shortlist_sha256": "1ff0f4d3df063efff07956f96d10ee6c935e605e251df8707b3bc91d128cc179",
+  "dev_source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "full_dev_terminal_model_count": 5,
+  "all_five_full_dev_runs_complete": true,
+  "stage2_attempted": 1465,
+  "stage2_completed": 1465,
+  "execution_commits": [
+    "39f18b3cb7825ac0ebb0d0c650408195bc263b3f",
+    "52c9e57254f65b26557f5e6e099835f81975d333",
+    "888b4707530a8a0c2efd3297a4fe10a9f1c4e3ca",
+    "8c7208b8e4f8b76c03d52c45872becef9eeaaaba",
+    "92cf970dec790c6ca0b195ede76a97894e91550e"
+  ],
+  "capture_code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "status": "PASS"
+}

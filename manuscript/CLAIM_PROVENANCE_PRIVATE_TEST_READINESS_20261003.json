@@ -1,0 +1,86 @@
+{
+  "status": "DEV",
+  "claims": [
+    {
+      "claim_id": "private_test_readiness_MERA_PRIVATE_TEST_READY",
+      "statement": "Fail-closed pending draft readiness inspection: MERA_PRIVATE_TEST_READY",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/MERA_PRIVATE_TEST_READY",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "private_test_readiness_blockers",
+      "statement": "Fail-closed pending draft readiness inspection: blockers",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/blockers",
+      "value": [
+        "PROTOCOL_NOT_FROZEN",
+        "PRIMARY_CLOUD_SELECTED",
+        "ROUTING_RULE_FROZEN",
+        "SERVER_SCORING_RESOLVED",
+        "OFFICIAL_WORKFLOW_VERIFIED",
+        "CONTENT_RIGHTS_UNDERSTOOD",
+        "ANTONIY_APPROVAL",
+        "DENIS_APPROVAL",
+        "EXPLICIT_SUBMISSION_AUTHORIZATION"
+      ],
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "private_test_readiness_inference_permitted",
+      "statement": "Fail-closed pending draft readiness inspection: inference_permitted",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/inference_permitted",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "private_test_readiness_submission_permitted",
+      "statement": "Fail-closed pending draft readiness inspection: submission_permitted",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/submission_permitted",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "private_test_readiness_private_test_run",
+      "statement": "Fail-closed pending draft readiness inspection: private_test_run",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/private_test_run",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "private_test_readiness_test_gold_dependency",
+      "statement": "Fail-closed pending draft readiness inspection: test_gold_dependency",
+      "study_run_id": "20261003_dev_protocol_readiness",
+      "data_path": "results/20261003_local_screen_session/private_test_readiness.json",
+      "analysis_field": "/test_gold_dependency",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+      "status": "DEV"
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "claim_count": 6
+  },
+  "human_confirmation": "PENDING"
+}

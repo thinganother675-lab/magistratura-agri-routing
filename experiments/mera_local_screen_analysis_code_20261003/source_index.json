@@ -1,0 +1,122 @@
+{
+  "classification": "DEV",
+  "indexed_code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "sources": [
+    {
+      "source_path": "scripts/analyze_mera_local_screen_20261003.py",
+      "archive_path": "scripts__analyze_mera_local_screen_20261003.py.txt",
+      "sha256": "d6f32191b03c7d8a63c4a377e0151bfdab65565311d0c938a6baf9b6195c6c6f",
+      "bytes": 41978,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "src/agro_route/mera_screen_analysis_20261003.py",
+      "archive_path": "src__agro_route__mera_screen_analysis_20261003.py.txt",
+      "sha256": "3ec396a213eca2ba649fedef1a26b55e34828ac0bb6a3fa3e670138250396ef5",
+      "bytes": 22076,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "src/agro_route/mera_private_test_guard_20261003.py",
+      "archive_path": "src__agro_route__mera_private_test_guard_20261003.py.txt",
+      "sha256": "28cdd96f2772f98750cfb9b1998cc758ef07848243fa5fd2b52a20024d63da28",
+      "bytes": 3240,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/prepare_mera_private_test_draft_20261003.py",
+      "archive_path": "scripts__prepare_mera_private_test_draft_20261003.py.txt",
+      "sha256": "82d81aad5fde353fed707fd4c7656458bb976ff8700b18de32d66915e71ded07",
+      "bytes": 9708,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/finalize_mera_cloud_20261003.py",
+      "archive_path": "scripts__finalize_mera_cloud_20261003.py.txt",
+      "sha256": "3e75e7f34ab31cbb840804f1d21442816aeeadb523044e218cecee2ba3f81860",
+      "bytes": 8075,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/mera_cloud_baseline_20261003.py",
+      "archive_path": "scripts__mera_cloud_baseline_20261003.py.txt",
+      "sha256": "24d7d320ca469748258b34ea5e5606dabe6151889d7064db8e74c59a764e9115",
+      "bytes": 16600,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/inspect_local_screen_gguf_20261003.py",
+      "archive_path": "scripts__inspect_local_screen_gguf_20261003.py.txt",
+      "sha256": "784b945d05acda4937cd2c6454fdd6c455cbad6e06e7abc879f50baf55aace86",
+      "bytes": 6970,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/hash_local_screen_weights_20261003.py",
+      "archive_path": "scripts__hash_local_screen_weights_20261003.py.txt",
+      "sha256": "5eaf625f6c841951bef0bd1495a776f4a4b2cc61025cd384cf81c50a1c8c2362",
+      "bytes": 2343,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/verify_screen_weight_upstreams_20261003.py",
+      "archive_path": "scripts__verify_screen_weight_upstreams_20261003.py.txt",
+      "sha256": "6308414394f4be7dfc37b919ab13633f855389efcb25f5d8ae81216fec8aec63",
+      "bytes": 3918,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/verify_screen_historical_identity_20261003.py",
+      "archive_path": "scripts__verify_screen_historical_identity_20261003.py.txt",
+      "sha256": "dc7a68cd45bf999501a5a1456c959f9c8671c5536515ed1ee069a0fdc3ee951b",
+      "bytes": 5468,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/record_screen_auxiliary_provenance_20261003.py",
+      "archive_path": "scripts__record_screen_auxiliary_provenance_20261003.py.txt",
+      "sha256": "557c0fbe8a6c1f7a3fa0f785e110b727aec0fd1204bc8fc1c3f89c61b26e1f14",
+      "bytes": 5694,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/recheck_mera_scorer_20261003.py",
+      "archive_path": "scripts__recheck_mera_scorer_20261003.py.txt",
+      "sha256": "51053a3f6ba82276ef45a421477246d107a6c6089ac30db3b6848e751ba738b9",
+      "bytes": 11280,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/mera_trivial_baselines_20261003.py",
+      "archive_path": "scripts__mera_trivial_baselines_20261003.py.txt",
+      "sha256": "18189575827cd8c5531a9c848255d67a2627d16703de02fbccfa609fdf1c14a7",
+      "bytes": 3811,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "src/agro_route/mera_set_baselines_20261003.py",
+      "archive_path": "src__agro_route__mera_set_baselines_20261003.py.txt",
+      "sha256": "dc8ab940ae3b6f3ae793f9839bbf183ba3758de7c32fb4dd5ab9c5c6e97b8289",
+      "bytes": 792,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/plot_mera_local_screen_20261003.py",
+      "archive_path": "scripts__plot_mera_local_screen_20261003.py.txt",
+      "sha256": "37cd1101b742e2d77c74cbfc52dcb52132e807bff9fd4fdad2e86687edc49624",
+      "bytes": 3978,
+      "working_equals_index_commit": true
+    },
+    {
+      "source_path": "scripts/session_security_20261003.py",
+      "archive_path": "scripts__session_security_20261003.py.txt",
+      "sha256": "414ad23b8aabfd0ef357b0b298612b1bc62a53d9e83768afb1cd4e1bdc49ac18",
+      "bytes": 6534,
+      "working_equals_index_commit": true
+    }
+  ],
+  "scope": "Exact current downstream analysis/audit code. Executed historical cloud snapshots and runner amendment chain retain their original code versions; this index does not rewrite them.",
+  "baseline_execution_code_archive": "experiments/mera_local_screen_code_20261003/source_index.json",
+  "evaluator_package_metadata": "results/20261003_local_screen_session/independent_qa_runtime_packages_20261003T092616.json",
+  "benchmark_questions_gold_or_model_outputs_in_archive": false
+}

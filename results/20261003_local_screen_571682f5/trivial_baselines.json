@@ -1,0 +1,62 @@
+{
+  "run_id": "20261003_local_screen_571682f5_trivial_baselines",
+  "status": "DEV",
+  "private_test_run": false,
+  "source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "code_sha256": {
+    "scripts/mera_trivial_baselines_20261003.py": "18189575827cd8c5531a9c848255d67a2627d16703de02fbccfa609fdf1c14a7",
+    "src/agro_route/mera_set_baselines_20261003.py": "dc8ab940ae3b6f3ae793f9839bbf183ba3758de7c32fb4dd5ab9c5c6e97b8289"
+  },
+  "dev60": {
+    "n_expected": 60,
+    "n_scored": 59,
+    "reference_issues": 1,
+    "unresolved_ids": [
+      374
+    ],
+    "methods": {
+      "all_available_options": {
+        "em": 0.0,
+        "f1": 0.4678100618778585
+      },
+      "uniform_single_option": {
+        "em": 0.17853107344632768,
+        "f1": 0.25763653483992466
+      },
+      "uniform_nonempty_subset": {
+        "em": 0.056530153523045815,
+        "f1": 0.3658079861959161
+      }
+    }
+  },
+  "dev293": {
+    "n_expected": 293,
+    "n_scored": 289,
+    "reference_issues": 4,
+    "unresolved_ids": [
+      222,
+      300,
+      317,
+      374
+    ],
+    "methods": {
+      "all_available_options": {
+        "em": 0.0,
+        "f1": 0.472862086010875
+      },
+      "uniform_single_option": {
+        "em": 0.17854671280276818,
+        "f1": 0.2631658153457461
+      },
+      "uniform_nonempty_subset": {
+        "em": 0.05947265577180685,
+        "f1": 0.3697766650973518
+      }
+    }
+  },
+  "model_calls": 0,
+  "random_samples_drawn": 0,
+  "gold_modified": false,
+  "interpretation": "All-options is a deterministic uninformed baseline; random metrics are analytical expectations over specified uniform distributions, not observed model runs. None uses answer content to choose predictions or tune parameters. F1 alone may reward overprediction; strict EM remains primary."
+}

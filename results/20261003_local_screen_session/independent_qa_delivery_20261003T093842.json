@@ -1,0 +1,38 @@
+{
+  "audit_utc": "2026-10-03T09:38:42.859392+00:00",
+  "audit_kind": "READ_ONLY_CSV_DELIVERY_AND_PRIVATE_TEST_READINESS",
+  "status": "DEV",
+  "checks": {
+    "all_csv_cells_match_frozen_analysis": true,
+    "domain_rows_unique_complete": true,
+    "private_readiness_blockers_independently_match": true,
+    "private_readiness_remains_false": true,
+    "private_protocol_guard_source_hash_matches": true,
+    "private_protocol_preparation_source_hash_matches": true,
+    "private_protocol_evidence_hashes_match": true,
+    "private_local_quality_and_identity_match": true
+  },
+  "all_checks_pass": true,
+  "csv_mismatches": [],
+  "csv_sha256": {
+    "stage1_models.csv": "e202a490b71704bf7831c81756625720722a1cba44fd2e8cc5c7e789b0c6a68c",
+    "stage2_models.csv": "7645ce517470df37ea0df294f592448c77ce5f6ace90b7d045707bde630f1342",
+    "stage2_domains.csv": "24e841d695b00620269fce1a7f63e223eeada040b84ec40c3f68486c9a36e357"
+  },
+  "private_protocol_sha256": "e9062f5fc1a944117b7de8d586b1805668d264634ef00a0a1f90a1e278f31a7d",
+  "private_readiness_sha256": "ce7f5802871ffed7b0e9fa5b6f315fbb3ad25d32f2e56df825d4a2f3c612b96f",
+  "independent_readiness_blockers": [
+    "PROTOCOL_NOT_FROZEN",
+    "PRIMARY_CLOUD_SELECTED",
+    "ROUTING_RULE_FROZEN",
+    "SERVER_SCORING_RESOLVED",
+    "OFFICIAL_WORKFLOW_VERIFIED",
+    "CONTENT_RIGHTS_UNDERSTOOD",
+    "ANTONIY_APPROVAL",
+    "DENIS_APPROVAL",
+    "EXPLICIT_SUBMISSION_AUTHORIZATION"
+  ],
+  "human_approval_or_authority_inferred": false,
+  "model_calls": 0,
+  "private_text_or_model_output_written": false
+}

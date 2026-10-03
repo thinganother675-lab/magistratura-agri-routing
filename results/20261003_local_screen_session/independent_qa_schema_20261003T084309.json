@@ -1,0 +1,117 @@
+{
+  "audit_utc": "2026-10-03T08:43:09.628755+00:00",
+  "audit_kind": "READ_ONLY_RAW_OUTPUT_SCHEMA_AND_SSE_METADATA",
+  "status": "DEV",
+  "profiles": [
+    {
+      "model_key": "gemma-4-12b-it",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-12b-it": 512
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "da770475727293df1d3b6a62a4778364f4dd409ea3147084964fcbb33dd32b2d"
+    },
+    {
+      "model_key": "gemma-4-26b-a4b-it",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-gemma-4-26b-a4b-it": 504
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "aa98ba712519b9401bb972394083055bbdd0383b5dae0ba40442a94178a61c50"
+    },
+    {
+      "model_key": "gpt-oss-20b",
+      "status": "PARTIAL",
+      "successful_n": 0,
+      "sse_returned_model_counts": {},
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "579e69eab6e60928ed07471c43094f9b8b14bb57d5324220f2bb920b90ddf32c"
+    },
+    {
+      "model_key": "granite-4.1-8b",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-granite-4.1-8b": 521
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "7eb93f3c165f1bfab0fa61de188dd9639b0d4de03a861a377acd4b4e255e735f"
+    },
+    {
+      "model_key": "minicpm5-1b",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-minicpm5-1b": 792
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "b3f9b1ed2a0c4fd435aaa38d2c1be698b1361b0a931f5c9716464474c77be55b"
+    },
+    {
+      "model_key": "phi-4-mini-instruct",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-phi-4-mini-instruct": 686
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "17dc39c00e818e2e8dd5a9820542d4043b3f68586b4e764b0f68c3a9e701877b"
+    },
+    {
+      "model_key": "qwen3.5-35b-a3b",
+      "status": "FAILED_LOAD",
+      "successful_n": 0,
+      "sse_returned_model_counts": {},
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.5-9b": 470
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "7acb6f284556784ff1c79b22c34f8bec8afea12c8bdb25c5de68a1e4c65dcac8"
+    },
+    {
+      "model_key": "qwen3.8-27b",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-qwen3.8-27b": 464
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "1d0fa8f2dc784f86e476b5c883a6df405d1b94ce4f52e52def824d46759bbe60"
+    },
+    {
+      "model_key": "unsloth/qwen3.5-4b",
+      "status": "COMPLETE",
+      "successful_n": 60,
+      "sse_returned_model_counts": {
+        "mera-screen-571682f5-unsloth__qwen3.5-4b": 504
+      },
+      "nonzero_choice_index_ids": [],
+      "strict_raw_json_schema_failure_ids": [],
+      "raw_sha256": "a4e8de916acf4df35e4dfb1c3ff05a60c9f8b59a84690905b902d5b419079dae"
+    }
+  ],
+  "per_item_output_text_written": false,
+  "source_text_written": false,
+  "audit_model_calls": 0,
+  "json_contract_scoring_flag_is_broader_than_exact_raw_schema": true
+}

@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-10-03T08:42:44.380254+00:00",
+  "status": "DEV",
+  "before_dev293": true,
+  "human_review": false,
+  "selection_actor": "Codex research agents under direct user autonomous-development authorization; not human scientific validation",
+  "model_keys": [
+    "qwen3.8-27b",
+    "qwen3.5-9b",
+    "unsloth/qwen3.5-4b",
+    "gemma-4-26b-a4b-it",
+    "gemma-4-12b-it"
+  ],
+  "roles": {
+    "HIGH_QUALITY": "qwen3.8-27b",
+    "FAST_BALANCED": "qwen3.5-9b",
+    "BALANCED": "qwen3.5-9b",
+    "PRACTICAL_SMALL": "unsloth/qwen3.5-4b",
+    "LOW_RESOURCE": "unsloth/qwen3.5-4b",
+    "F1_ALTERNATIVE": "gemma-4-26b-a4b-it",
+    "MIDDLE_RESOURCE": "gemma-4-12b-it"
+  },
+  "rationale": {
+    "selection_timing": "Explicit choice AFTER DEV60 observed scores and BEFORE DEV293; allfive complete Pareto candidates; preserves original automated selector separately",
+    "qwen3.8-27b": "Highest observed completeDEV60 EM38/59 and F1.7339; slower and near RAM guard, fullDEV feasibility still measured",
+    "qwen3.5-9b": "37/59 EM with p50.313s, practical latency-quality balance",
+    "unsloth/qwen3.5-4b": "19/59 EM, p50.237s, practical small normal instruct model",
+    "gemma-4-26b-a4b-it": "33/59 EM with F1.7303, alternative MoE quality behavior",
+    "gemma-4-12b-it": "25/59 EM, lower GPU/RAM than larger highquality candidates, middle resource alternative",
+    "minicpm5-1b": "Retained complete low-end reference0/59; not worth293 merely for fastest/lowest-resource Pareto extreme",
+    "phi-4-mini-instruct": "4/59 EM vs19/59 Qwen4 at nearly same p50; no useful role within ceiling5",
+    "granite-4.1-8b": "14/59 EM vs19/59 Qwen4 with similar request latency, no useful role within ceiling5",
+    "partials": "Qwen35 FAILED_LOAD0 and GPTOSS partial1 not ranked"
+  },
+  "stage1_source_hashes": {
+    ".runtime/mera/20261003_local_screen_571682f5/source_snapshots_amendment_03/mera_local_screen_20261003.py": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+    ".runtime/mera/20261003_local_screen_571682f5/source_snapshots_amendment_03/mera_screen_metrics_20261003.py": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567",
+    "results/20261003_local_screen_571682f5/dev60/gemma-4-12b-it_manifest.json": "1f396de422b6a45b0f6e4890a102ed2b71048444369518ba5c22bcbb5451b165",
+    "results/20261003_local_screen_571682f5/dev60/gemma-4-12b-it_metrics.jsonl": "2762611cbf5e625e3b341adab765853b2b83b26847a0e11804a34ad912e7b704",
+    "results/20261003_local_screen_571682f5/dev60/gemma-4-26b-a4b-it_manifest.json": "01c6d66e134f6bf1c15171985c36b74310ef885a2b79659d1ca9b54e042b65f9",
+    "results/20261003_local_screen_571682f5/dev60/gemma-4-26b-a4b-it_metrics.jsonl": "b29f476c5fa3dd415368b3b7605f7ae4aaa2ab743516c56b70d17ace607fb6a3",
+    "results/20261003_local_screen_571682f5/dev60/gpt-oss-20b_manifest.json": "3200aa8635120ff1ab3817ed298c8a9c4a050049d89406e081f5736b0a414d5e",
+    "results/20261003_local_screen_571682f5/dev60/gpt-oss-20b_metrics.jsonl": "6b41d3d15a949911d683f97ed63f4268a3ec2765f4bb5c5ecf77bd1c6736deaf",
+    "results/20261003_local_screen_571682f5/dev60/granite-4.1-8b_manifest.json": "8e985c9f24c9d422cbfc5eb0310a4bd89991cbe715ca4f18cdbc38ef769feddd",
+    "results/20261003_local_screen_571682f5/dev60/granite-4.1-8b_metrics.jsonl": "9123a40d18b2d443666c37d51dd520e58685dc69e018de7c47ad3b00a6d90dee",
+    "results/20261003_local_screen_571682f5/dev60/minicpm5-1b_manifest.json": "42ec5fb6a3aa3576e1461db9c3a532fc06149774e0b1e989c1c4ef14de94f34b",
+    "results/20261003_local_screen_571682f5/dev60/minicpm5-1b_metrics.jsonl": "bc2e034d94a615e1acefa89ebd3d284fe774d1ce745521133be4d54cc6fdef1c",
+    "results/20261003_local_screen_571682f5/dev60/phi-4-mini-instruct_manifest.json": "027c5c68d6a63a4a2572f82c53564433664035378ec09f18afdad04d3bbe5672",
+    "results/20261003_local_screen_571682f5/dev60/phi-4-mini-instruct_metrics.jsonl": "fa55e71bac8217d25c293a50badaa30235cc98536593e2a1fb22e1857f08c67a",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.5-35b-a3b_manifest.json": "48f3d17cbd2981ed334cddfdd022158568945e9fcec1345fd9b28b6b19e3aa84",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.5-35b-a3b_metrics.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.5-9b_manifest.json": "cd127727f319665617972d5175a7f1324d7e69d94d1f928b0d519c0847e1bc86",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.5-9b_metrics.jsonl": "e14a38c7ee84baca2ba8d1041b09823d8593b08dbf3ba4365db2e3b37f845413",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.8-27b_manifest.json": "cba3ba9268e291119b25e27ca4a3c5ab1cf48f8efcf06996fa8baf9f6b059d7a",
+    "results/20261003_local_screen_571682f5/dev60/qwen3.8-27b_metrics.jsonl": "5501c9f12721c3103af4c94ef3825e997c6caceb6e65d4b471e8771e49e75079",
+    "results/20261003_local_screen_571682f5/dev60/unsloth__qwen3.5-4b_manifest.json": "a2506b7393282dc3d627a2d9b97a7ba1beeafc35d50017e07e1357871e01314c",
+    "results/20261003_local_screen_571682f5/dev60/unsloth__qwen3.5-4b_metrics.jsonl": "f4ad520ffd9c71f2eb711ce1385429c663e9cf0655d06d0a68fce197e5979856"
+  },
+  "reviewer_qa_path": "results/20261003_local_screen_session/independent_qa_20261003T083607.json",
+  "reviewer_qa_sha256": "55b1e9be3233fce42606da614d69a7d2141e32c411d5494cb5fa749da83296f7",
+  "reviewer_scope": "Independent AI recomputation and software/source audit; not agronomic gold validation",
+  "private_test_run": false
+}

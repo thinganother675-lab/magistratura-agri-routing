@@ -1,0 +1,120 @@
+{
+  "status": "DEV_REPRODUCIBILITY_RECEIPT",
+  "utc": "2026-10-03T08:37:37.945782+00:00",
+  "candidate_count": 10,
+  "models": [
+    {
+      "model_key": "unsloth/qwen3.5-4b",
+      "relative_model_path": "unsloth/Qwen3.5-4B-GGUF/Qwen3.5-4B-Q8_0.gguf",
+      "bytes": 4482403488,
+      "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+      "quantization": {
+        "name": "Q8_0",
+        "bits": 8
+      },
+      "hash_duration_s": 3.9865607999963686
+    },
+    {
+      "model_key": "phi-4-mini-instruct",
+      "relative_model_path": "unsloth/Phi-4-mini-instruct-GGUF/Phi-4-mini-instruct.Q8_0.gguf",
+      "bytes": 4084611040,
+      "sha256": "26188c6050d525376a88b04514c236c5e28a36730f1e936f2a00314212b7ba42",
+      "quantization": {
+        "name": "Q8_0",
+        "bits": 8
+      },
+      "hash_duration_s": 3.330290600002627
+    },
+    {
+      "model_key": "qwen3.8-27b",
+      "relative_model_path": "unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf",
+      "bytes": 16464440224,
+      "sha256": "322e194ff79741c7baa497c240f677f54b201b0efab44ca8e50f122b39123482",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "hash_duration_s": 16.665181800010032
+    },
+    {
+      "model_key": "minicpm5-1b",
+      "relative_model_path": "openbmb/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q8_0.gguf",
+      "bytes": 1153529216,
+      "sha256": "0dc7638539067268774c275a14a6ec9c7e01f7eeb2cff606c8590361fa527e4c",
+      "quantization": {
+        "name": "Q8_0",
+        "bits": 8
+      },
+      "hash_duration_s": 0.9610713999863947
+    },
+    {
+      "model_key": "gemma-4-12b-it",
+      "relative_model_path": "unsloth/gemma-4-12b-it-GGUF/gemma-4-12b-it-Q4_K_S.gguf",
+      "bytes": 6764524960,
+      "sha256": "e6ba1b5d22ede511b45562d85a8e72251e7661a5046f13e2d99a48bf4e9d333f",
+      "quantization": {
+        "name": "Q4_K_S",
+        "bits": 4
+      },
+      "hash_duration_s": 5.477129500010051
+    },
+    {
+      "model_key": "granite-4.1-8b",
+      "relative_model_path": "unsloth/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+      "bytes": 5347915136,
+      "sha256": "0f45c1af986e9900bb3b6ba46a25937e1bb80426935bc242d88c9ca90e9f5c88",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits": 4
+      },
+      "hash_duration_s": 4.47502829998848
+    },
+    {
+      "model_key": "gpt-oss-20b",
+      "relative_model_path": "unsloth/gpt-oss-20b-GGUF/gpt-oss-20b-Q8_0.gguf",
+      "bytes": 12109567168,
+      "sha256": "bcd455d4034ec02f71a875b46cb17df44a97911d7258291973be4d21f98329f3",
+      "quantization": {
+        "name": "Q8_0",
+        "bits": 8
+      },
+      "hash_duration_s": 10.006307600007858
+    },
+    {
+      "model_key": "gemma-4-26b-a4b-it",
+      "relative_model_path": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+      "bytes": 14556687680,
+      "sha256": "c1ac61e3af04b40c7688dfe0686c54d68ff5ed26178a56f0b18c8a0e2b94db83",
+      "quantization": {
+        "name": "IQ4_NL_XL",
+        "bits": 4
+      },
+      "hash_duration_s": 11.808253700000932
+    },
+    {
+      "model_key": "qwen3.5-35b-a3b",
+      "relative_model_path": "unsloth/Qwen3.5-35B-A3B-GGUF/Qwen3.5-35B-A3B-UD-Q4_K_L.gguf",
+      "bytes": 20205632160,
+      "sha256": "b65bba850b65e989ac8c37978970b2fe2ed3aa404fcb8408c9b3f2df13e6ab0b",
+      "quantization": {
+        "name": "Q4_K_L",
+        "bits": 4
+      },
+      "hash_duration_s": 18.816594600008102
+    },
+    {
+      "model_key": "qwen3.5-9b",
+      "relative_model_path": "unsloth/Qwen3.5-9B-GGUF/Qwen3.5-9B-Q8_0.gguf",
+      "bytes": 9527502048,
+      "sha256": "809626574d0cb43d4becfa56169980da2bb448f2299270f7be443cb89d0a6ae4",
+      "quantization": {
+        "name": "Q8_0",
+        "bits": 8
+      },
+      "hash_duration_s": 9.326385899999877
+    }
+  ],
+  "weights_copied_or_modified": false,
+  "upstream_revision_claimed": false,
+  "scope": "Installed primary weight files; separate projector/runtime files are not attested"
+}
