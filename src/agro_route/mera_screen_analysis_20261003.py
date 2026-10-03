@@ -51,6 +51,51 @@ def percentile(values, fraction):
     return values[low] + (position - low) * (values[high] - values[low])
 
 
+def wilson_em_interval(successes, n):
+    """Descriptive95% binomial interval; DEV selection/dependence is not removed."""
+    if isinstance(n, bool) or not isinstance(n, int) or n < 0 or isinstance(successes, bool) or not isinstance(successes, int) or not 0 <= successes <= n:
+        raise ValueError("Wilson interval requires bounded integer counts")
+    if not n:
+        return {"n": 0, "successes": 0, "lower": None, "upper": None,
+                "method": "WILSON_95_DESCRIPTIVE", "independent_confirmatory_inference": False}
+    z = 1.959963984540054
+    p, z2 = successes / n, z * z
+    denominator = 1 + z2 / n
+    center = (p + z2 / (2 * n)) / denominator
+    radius = z * math.sqrt(p * (1 - p) / n + z2 / (4 * n * n)) / denominator
+    return {"n": n, "successes": successes, "lower": max(0., center - radius),
+            "upper": min(1., center + radius), "method": "WILSON_95_DESCRIPTIVE",
+            "independent_confirmatory_inference": False}
+
+
+def paired_correctness(left_rows, right_rows, expected_ids):
+    """Paired correctness discordance on the same DEV, without a p-value."""
+    assert_safe_measurements(left_rows); assert_safe_measurements(right_rows)
+    expected = list(expected_ids)
+    left, right = {r["item_id"]: r for r in left_rows}, {r["item_id"]: r for r in right_rows}
+    if not expected or len(expected) != len(set(expected)) or len(left) != len(left_rows) or len(right) != len(right_rows) or set(left) != set(expected) or set(right) != set(expected):
+        raise ValueError("Paired correctness requires full common DEV coverage")
+    counts = {"both_correct": 0, "left_only_correct": 0, "right_only_correct": 0, "both_incorrect": 0}
+    unresolved = 0
+    for item in expected:
+        a, b = left[item], right[item]
+        if (a["domain"], a.get("gold_valid"), a.get("gold_cardinality")) != (b["domain"], b.get("gold_valid"), b.get("gold_cardinality")):
+            raise ValueError("Paired DEV source annotations differ")
+        if not a.get("gold_valid"):
+            unresolved += 1
+            continue
+        # Use the same guards as the metric summary, including zero credit
+        # for any failed/invalid response; no recovered gold or output text.
+        summarize_measurements([a], [item]); summarize_measurements([b], [item])
+        key = "both_correct" if a["em"] and b["em"] else "left_only_correct" if a["em"] else "right_only_correct" if b["em"] else "both_incorrect"
+        counts[key] += 1
+    n = len(expected) - unresolved
+    return {"status": "DEV", "n_expected": len(expected), "n_scored": n,
+            "reference_issues": unresolved, **counts,
+            "em_difference_left_minus_right": (counts["left_only_correct"] - counts["right_only_correct"]) / n if n else None,
+            "independent_holdout": False, "confirmatory_p_value": None}
+
+
 def summarize_measurements(rows, expected_ids):
     """Invalid/error predictions score zero; unparseable gold stays unresolved."""
     assert_safe_measurements(rows)
@@ -262,7 +307,8 @@ def select_dev_routing_rule(local, cloud, expected_ids):
             "exploratory_em_margin": .05, "margin_human_confirmation": "PENDING",
             "cloud_only": cloud_summary, "local_only": local_summary,
             "selected_index": chosen[0] if chosen else None, "selected": chosen[1] if chosen else None,
-            "confidence_benefit_established": bool(chosen and chosen[1]["threshold"] is not None and chosen[1]["strict_set_em"] > grid[0]["strict_set_em"]),
+            "dev_observed_em_improvement_with_confidence": bool(chosen and chosen[1]["threshold"] is not None and chosen[1]["cloud_fraction_if_deployed"] < 1 and chosen[1]["strict_set_em"] > grid[0]["strict_set_em"]),
+            "confidence_benefit_established": False,
             "trivial_local_resolution_suffices_on_dev": bool(chosen and chosen[1]["cloud_calls_if_deployed"] == 0),
             "confirmatory_noninferiority_established": False, "private_test_run": False,
             "actual_requests_saved": 0}

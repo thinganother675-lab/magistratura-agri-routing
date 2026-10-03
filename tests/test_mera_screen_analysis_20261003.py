@@ -9,6 +9,7 @@ from agro_route.mera_screen_analysis_20261003 import (
     route_signal, select_shortlist, summarize_measurements, validate_claims,
     validate_comparable,
     select_dev_routing_rule,
+    wilson_em_interval, paired_correctness,
 )
 
 
@@ -173,6 +174,37 @@ def test_routing_grid_selects_threshold_on_dev_but_decisions_observable_only():
     assert result["selected"]["cloud_calls_if_deployed"] == 1
     assert result["exploratory_em_margin"] == .05
     assert result["margin_human_confirmation"] == "PENDING"
+    assert result["dev_observed_em_improvement_with_confidence"] is True
+    assert result["confidence_benefit_established"] is False
+
+
+def test_all_cloud_is_not_a_confidence_routing_benefit():
+    result = select_dev_routing_rule([measured(1, 0, option_token_confidence=.1)], [measured(1)], [1])
+    assert result["selected"]["cloud_fraction_if_deployed"] == 1
+    assert result["dev_observed_em_improvement_with_confidence"] is False
+    assert result["confidence_benefit_established"] is False
+
+
+def test_wilson_descriptive_interval_handles_zero_all_and_no_reference():
+    assert wilson_em_interval(0, 0)["lower"] is None
+    zero, all_ = wilson_em_interval(0, 59), wilson_em_interval(59, 59)
+    assert zero["lower"] == 0 and zero["upper"] == pytest.approx(.0611293705268)
+    assert all_["upper"] == 1 and all_["lower"] == pytest.approx(1 - zero["upper"])
+    assert all_["independent_confirmatory_inference"] is False
+    with pytest.raises(ValueError, match="bounded integer"):
+        wilson_em_interval(60, 59)
+
+
+def test_paired_correctness_counts_discordance_and_preserves_unresolved():
+    a = [measured(1), measured(2), measured(3, 0), measured(4, 0), measured(5, gold_valid=False, em=None, f1=None)]
+    b = [measured(1), measured(2, 0), measured(3), measured(4, 0), measured(5, gold_valid=False, em=None, f1=None)]
+    result = paired_correctness(a, b, range(1, 6))
+    assert [result[k] for k in ("both_correct", "left_only_correct", "right_only_correct", "both_incorrect")] == [1, 1, 1, 1]
+    assert result["n_scored"] == 4 and result["reference_issues"] == 1
+    assert result["em_difference_left_minus_right"] == 0
+    assert result["confirmatory_p_value"] is None and result["independent_holdout"] is False
+    with pytest.raises(ValueError, match="full common"):
+        paired_correctness(a[:-1], b, range(1, 6))
 
 
 def test_provenance_integrity_and_dev_not_promoted(tmp_path):

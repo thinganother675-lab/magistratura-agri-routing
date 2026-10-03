@@ -21,6 +21,7 @@ from agro_route.mera_screen_analysis_20261003 import (
     select_shortlist, summarize_measurements, validate_claims,
     validate_comparable,
     select_dev_routing_rule,
+    wilson_em_interval, paired_correctness,
 )
 from agro_route.mera_screen_metrics_20261003 import summarize
 
@@ -243,6 +244,8 @@ def finalize(safe, cloud_path):
     complete, stage2_excluded = validate_comparable(stage2, protocol["dev293_ids"], expected_stage="dev293")
     primary = min(complete, key=lambda p: (-p["summary"]["strict_set_em"], -p["summary"]["strict_set_f1"], p["summary"]["latency_p95_s"], p["model_key"]))["model_key"] if complete else None
     fast_balanced = min([p for p in complete if p["summary"]["strict_set_em"] >= max(q["summary"]["strict_set_em"] for q in complete) - .10], key=lambda p: (p["summary"]["latency_p95_s"], p["model_key"]))["model_key"] if complete else None
+    descriptive_uncertainty = {p["model_key"]: wilson_em_interval(p["summary"]["strict_em_count"], p["summary"]["n_scored"]) for p in complete}
+    paired_qwen27_qwen9 = paired_correctness(rows2["qwen3.8-27b"], rows2["qwen3.5-9b"], protocol["dev293_ids"]) if {"qwen3.8-27b", "qwen3.5-9b"}.issubset({p["model_key"] for p in complete}) else None
     _, rows1, _, _, _ = load_profiles(safe, "dev60")
     cascade = {}
     cloud_info = None
@@ -261,6 +264,9 @@ def finalize(safe, cloud_path):
               "shortlist_sha256": digest(shortlist_path.read_bytes()), "protocol_hashes": protocol_hashes,
               "source_hashes": {**stage1["source_hashes"], **hashes2},
               "primary_local": primary, "best_latency_quality": fast_balanced,
+              "descriptive_em_uncertainty": descriptive_uncertainty,
+              "paired_qwen27_minus_qwen9": paired_qwen27_qwen9,
+              "dev293_includes_screen60": True, "independent_holdout": False,
               "cascade_dev60": cascade, "cascade_status": "SIMULATED" if cascade else "UNAVAILABLE_NO_COMPLETE_COMMON_CLOUD",
               "cloud_source_sha256": digest(cloud_path.read_bytes()) if cloud_path else None,
               "private_test_run": False, "MERA_PRIVATE_TEST_READY": "NO",
@@ -300,21 +306,50 @@ def finalize(safe, cloud_path):
     claim("primary_local_dev_selection", "Primary local development recommendation, not independent validation", "/primary_local", primary)
     claim("best_latency_quality_dev_selection", "Latency-quality development recommendation within exploratory .10EM tolerance", "/best_latency_quality", fast_balanced)
     claim("actual_practical_shortlist", "Explicit practical selection afterDEV60 beforeDEV293", "/shortlist/model_keys", shortlist["model_keys"])
+    claim("dev293_includes_screen60", "Full public DEV293 includes selectionDEV60 and is not independent holdout", "/dev293_includes_screen60", True)
+    for key, interval in descriptive_uncertainty.items():
+        escaped = key.replace("~", "~0").replace("/", "~1")
+        for name in ("n", "successes", "lower", "upper", "independent_confirmatory_inference"):
+            claim(f"descriptive_ci_{key.replace('/', '_')}_{name}", "Descriptive Wilson95 EM interval; selection/dependence not accounted for: " + name, "/descriptive_em_uncertainty/" + escaped + "/" + name, interval[name])
+    if paired_qwen27_qwen9:
+        for name, value in paired_qwen27_qwen9.items():
+            claim("paired_qwen27_qwen9_" + name, "Paired publicDEV correctness discordance, no confirmatory inference: " + name, "/paired_qwen27_minus_qwen9/" + name, value)
     for key, replay in cascade.items():
         escaped = key.replace("~", "~0").replace("/", "~1")
         if replay["selected"]:
             for name in ("strict_set_em", "strict_set_f1", "cloud_calls_if_deployed", "relative_cloud_call_reduction_if_deployed", "threshold"):
                 claim(f"cascade_{key.replace('/', '_')}_{name}", "Saved commonDEV60 output replay: " + name, "/cascade_dev60/" + escaped + "/selected/" + name, replay["selected"][name], "SIMULATED")
-            for name in ("confidence_benefit_established", "trivial_local_resolution_suffices_on_dev"):
+            for name in ("confidence_benefit_established", "dev_observed_em_improvement_with_confidence", "trivial_local_resolution_suffices_on_dev"):
                 claim(f"cascade_{key.replace('/', '_')}_{name}", "Saved commonDEV60 output replay limitation: " + name, "/cascade_dev60/" + escaped + "/" + name, replay[name], "SIMULATED")
     provenance = {"run_id": safe.name, "created_utc": now(), "claims": claims,
                   "validation": validate_claims(claims, ROOT), "human_confirmation": "PENDING"}
     write_new(ROOT / "manuscript/CLAIM_PROVENANCE_LOCAL_SCREEN_20261003.json", provenance)
+    interval_lines = ["| Модель | EM, описательный Wilson95% |", "|---|---|"]
+    for key, interval in descriptive_uncertainty.items():
+        interval_lines.append(f"| `{key}` | {100*interval['lower']:.2f}–{100*interval['upper']:.2f}% |")
+    domain_lines = ["| Исходная дисциплина; N / scored | " + " | ".join('`'+p['model_key']+'` EM% / F1' for p in stage2) + " |", "|---|" + "---|" * len(stage2)]
+    if stage2:
+        for domain, metrics in stage2[0]["breakdown"]["domains"].items():
+            cells = []
+            for p in stage2:
+                s = p["breakdown"]["domains"][domain]
+                cells.append("UNKNOWN" if s["strict_set_em"] is None else f"{100*s['strict_set_em']:.2f} / {s['strict_set_f1']:.3f}")
+            domain_lines.append(f"| {domain}; {metrics['n_expected']} / {metrics['n_scored']} | " + " | ".join(cells) + " |")
+    cardinality_lines = ["| Модель | Single N/scored, EM/F1 | Multi N/scored, EM/F1 | Unresolved |", "|---|---|---|---|"]
+    for p in stage2:
+        cells = []
+        for group in ("single", "multi"):
+            s = p["breakdown"]["answer_cardinality"].get(group)
+            cells.append("UNKNOWN" if not s else f"{s['n_expected']}/{s['n_scored']}, {100*s['strict_set_em']:.2f}% / {s['strict_set_f1']:.3f}")
+        cardinality_lines.append(f"| `{p['model_key']}` | " + " | ".join(cells) + f" | {p['breakdown']['answer_cardinality'].get('unresolved_reference', {}).get('n_expected', 0)} |")
+    primary_replay = cascade.get(primary, {}).get("selected")
+    replay_excerpt = {k: primary_replay[k] for k in ("threshold", "strict_em_count", "n_scored", "strict_set_em", "strict_set_f1", "cloud_calls_if_deployed", "relative_cloud_call_reduction_if_deployed", "actual_requests_saved")} if primary_replay else None
+    partial_details = [{k: p[k] for k in ("model_key", "status", "stop_reason", "model_load_failure")} for p in result["stage1"] if p["status"] != "COMPLETE"]
     text = f"""# Локальный screen ruTXTAgroBench DEV: 3 октября 2026
 
 Статус: **DEV / DEVELOPMENT_ONLY**. Исторический HOME150 и исходные рукописи сохранены. Частный TEST не запускался, официальная серверная оценка отсутствует. Серия `{safe.name}`.
 
-Все десять кандидатов получили одну и ту же фиксированную выборку DEV60 по историческому selector: по шесть задач десяти исходных дисциплин, распределённых по ID без обращения к gold. System/JSON контракт, исходный prompt, контекст2048, reload каждые10 задач и синтетический warmup одинаковы; запрос temperature0, top_p1, seed42, max_tokens512. Off/low reasoning и GPU ratio по модели записаны как явные поддерживаемые исключения. Результаты полного DEV293 используются для разработки выбора, а не независимого подтверждения.
+Для десяти кандидатов назначена одна фиксированная выборка DEV60 по историческому selector: по шесть задач десяти исходных дисциплин, распределённых по ID без обращения к gold. Фактически восемь моделей завершили60/60, GPTOSS20 получил одну benchmarkзадачу без успешного завершения, Qwen35 не дошёл до benchmarkвызовов из-за loadguard. System/JSON контракт, исходный prompt, контекст2048, reload каждые10 задач и синтетический warmup одинаковы; запрос temperature0, top_p1, seed42, max_tokens512. Off/low reasoning и GPU ratio по модели записаны как явные поддерживаемые исключения. Результаты полного DEV293 используются для разработки выбора, а не независимого подтверждения.
 
 STRICT_SET_EM — точное совпадение множества; STRICT_SET_F1 — среднее per-question multilabel F1=2|intersection|/(|gold|+|prediction|). Только presentation normalization, латинский A сохраняется. Кириллические gold не исправлялись: знаменатель59/60 на screen и289/293 на полном DEV; original referenceissues видны. Conservative all-N — нижняя граница покрытия при нулевом вкладе unresolved, не известная истинная неправильность gold. Ошибки/незавершённые outputs дают0.
 
@@ -324,6 +359,8 @@ STRICT_SET_EM — точное совпадение множества; STRICT_S
 
 `n_attempted` включает ошибки; `n_completed` — полученные error-free завершённые responses. Partial проценты только описательны, не входят в основной ranking. Invalid обозначает непригодный набор/формат; ошибки исполнения отдельны. Published-compatible scorer сохраняется исключительно диагностически и не называется official MERA score.
 
+Причины неполного выполнения: `{json.dumps(partial_details, ensure_ascii=False)}`. Qwen35 не установил OOM: resourceguard потерял ответ `nvidia-smi` через10s во время load, после чего кандидат безопасно выгружен. GPTOSS20 завершил warmup, но первый benchmarkresponse исчерпал512tokens с reasoninglow; качественный ranking для него отсутствует. Native quant labels не гарантируют однородное хранение: GPTOSS descriptor `Q8_0` фактически имеет91.3723% storedtensor-elements MXFP4,8.5838% Q8_0 и0.0439% F32 по GGUF header; это не распределение активных параметров. Точные native IDs, bytes/checksums и actualtensor types — `installed_weight_checksums.json` и `installed_gguf_tensor_types.json`.
+
 ## Замороженный shortlist
 
 Модели: {', '.join('`'+m+'`' for m in shortlist['model_keys'])}. Роли: `{json.dumps(shortlist['roles'], ensure_ascii=False)}`. Файл `shortlist_frozen.json` создан до DEV293, с hashes всех Stage1 manifests/rows и protocol amendments. Pareto: maximize EM/F1, minimize p95/invalid/errors/измеренные peaks. Исходный automated selector сохранён в `automated_shortlist_diagnostic.json`; он включал MiniCPM1B как fastest/lowestresource несмотря на0/59 EM. Практические пять выбраны явно **после DEV60 и до DEV293**: `{json.dumps(shortlist.get('practical_rationale'), ensure_ascii=False)}`. Это объявленная разработческая поправка, а не заранее автоматический выбор и не человеческая научная валидация. Partial не добавлялись; zero-EM low-end reference сохранён в Stage1 без полного повторного293.
@@ -332,13 +369,23 @@ STRICT_SET_EM — точное совпадение множества; STRICT_S
 
 {table(stage2)}
 
-Предварительный primary local: **`{primary}`**. Лучший latency/quality: **`{fast_balanced}`**. Самая малая ресурсная роль screen: `{shortlist['roles'].get('LOW_RESOURCE', 'UNKNOWN')}`; пригодный небольшой вариант нужно оценивать совместно с качеством, MiniCPM1B остаётся low-end reference. Числа выше не доказывают перенос на private TEST. Full293 per-domain N/EM/F1 и single/multiple/unresolved находятся в `final_analysis.json` и `stage2_domains.csv`; названия дисциплин взяты буквально из meta.domain, категории не придуманы.
+Предварительный primary local: **`{primary}`**. Лучший latency/quality: **`{fast_balanced}`**. Практический небольшой вариант shortlist: `{shortlist['roles'].get('LOW_RESOURCE', 'UNKNOWN')}`; absolute low-resource reference — MiniCPM1B с0/59EM, Phi также меньше по RAM/VRAM, но4/59EM. Пригодность нельзя выводить только из памяти/скорости. Числа выше не доказывают перенос на private TEST. **DEV293 включает исходный DEV60 выбора shortlist**, поэтому независимого holdout и confirmatory validation нет.
 
-Ресурсы — sampled peak всей GPU и всей системной RAM на обычном хосте, не allocation отдельной модели. Request latency исключает reload/warmup: их отдельные amounts доступны в CSV/JSON. Requested GPU ratio не подтверждает actualoffload layers, если native API их не раскрывает. BackendTPS и TTFT публикуются только при фактическом измерении. Token logprobs, если есть, — lexicalconfidence; AUC по DEV диагностичен, калиброванной вероятности правильности и выбранного threshold нет.
+{chr(10).join(interval_lines)}
+
+Wilson95% intervals описывают binomial sampling uncertainty при условных предположениях; они не учитывают post-selection, зависимость/кластеризацию вопросов или переиспользование DEV60. Paired Qwen27(left) vsQwen9(right) на тех же289разбираемых оригинальных references: `{json.dumps(paired_qwen27_qwen9, ensure_ascii=False)}`. P-value и научное подтверждение превосходства не заявляются.
+
+{chr(10).join(domain_lines)}
+
+{chr(10).join(cardinality_lines)}
+
+Full293 per-domain N/EM/F1 и single/multiple/unresolved также находятся в `final_analysis.json` и `stage2_domains.csv`; названия дисциплин взяты буквально из meta.domain, категории не придуманы.
+
+Ресурсы — sampled peak всей GPU и всей системной RAM на обычном хосте, не allocation отдельной модели. Request latency исключает reload/warmup: их отдельные amounts доступны в CSV/JSON. Requested GPU ratio не подтверждает actualoffload layers, если native API их не раскрывает. BackendTPS и TTFT публикуются только при фактическом измерении. Token logprobs, если есть, — lexicalconfidence; AUC по DEV диагностичен, калиброванной вероятности правильности нет. Exploratory threshold grid ниже не заморожен для privateTEST.
 
 ## Cascade DEV replay
 
-Статус **{result['cascade_status']}**. Неразбираемый набор вариантов/transport/abstain → cloud; presentation-normalized plain Latin list может быть допустим даже без исходного JSON, поэтому это не проверка полной strict JSONschema. Дополнительный порог реальной lexicalconfidence выбирается только на DEV из объявленной сетки [None,.5,.7,.8,.9,.95,.98,.99,1]. Цель — минимальная доля cloud при EM не ниже cloud−5 п.п.; ties higherF1/lowerthreshold.5 п.п. — exploratory design choice, требующая подтверждения авторами для TEST; это не доказанное неухудшение и не агрономический норматив. Каждое routing decision использует только local observable signal, не gold. Результат primary: `{json.dumps(cascade.get(primary, {}).get('selected'), ensure_ascii=False)}`. Confidence benefit: `{cascade.get(primary, {}).get('confidence_benefit_established', False)}`; local-only suffices: `{cascade.get(primary, {}).get('trivial_local_resolution_suffices_on_dev', False)}`.
+Статус **{result['cascade_status']}**. Неразбираемый набор вариантов/transport/abstain → cloud; presentation-normalized plain Latin list может быть допустим даже без исходного JSON, поэтому это не проверка полной strict JSONschema. Дополнительный порог реальной lexicalconfidence выбирается только на DEV из объявленной сетки [None,.5,.7,.8,.9,.95,.98,.99,1]. Цель — минимальная доля cloud при EM не ниже cloud−5 п.п.; ties higherF1/lowerthreshold.5 п.п. — exploratory design choice, требующая подтверждения авторами для TEST; это не доказанное неухудшение и не агрономический норматив. Каждое routing decision использует только local observable signal, не gold. Результат primary: `{json.dumps(replay_excerpt, ensure_ascii=False)}`. Confidence benefit установлен: `{cascade.get(primary, {}).get('confidence_benefit_established', False)}`; local-only suffices на DEV: `{cascade.get(primary, {}).get('trivial_local_resolution_suffices_on_dev', False)}`. Если выбран thresholdNone и0cloudcalls при локальном EM выше cloud, это тривиальный local-only результат, не установленная польза confidence/cascade.
 
 Replay не вызывает моделей: фактически сэкономленных в этом screen запросов0. Возможное сокращение по сохранённым ответам относится только к общему DEV60; full293 cloud не выполнялся, full293 cascade качество неизвестно. Live cascade latency/cost savings не измерены.
 
