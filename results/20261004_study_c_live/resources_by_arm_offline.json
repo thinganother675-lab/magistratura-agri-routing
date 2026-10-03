@@ -1,0 +1,42 @@
+{
+  "utc": "2026-10-03T22:06:24.894013+00:00",
+  "scope": "whole_GPU / whole_system_RAM / named_LM_Studio_process_group_RSS; includes first and final task calls, excludes load and warmup",
+  "models": {
+    "qwen3.5-9b": {
+      "model_only": {
+        "n_calls": 27,
+        "gpu_memory_used_mib_peak_sampled": 11468.0,
+        "system_ram_used_gib_peak_sampled": 21.915607452392578,
+        "lmstudio_process_group_rss_mib_peak_sampled": 10788.078125,
+        "system_ram_available_gib_min_sampled": 9.70425796508789,
+        "gpu_memory_free_mib_min_sampled": 4585.0
+      },
+      "live_application_tools": {
+        "n_calls": 43,
+        "gpu_memory_used_mib_peak_sampled": 11468.0,
+        "system_ram_used_gib_peak_sampled": 22.02867889404297,
+        "lmstudio_process_group_rss_mib_peak_sampled": 10756.71484375,
+        "system_ram_available_gib_min_sampled": 9.5911865234375,
+        "gpu_memory_free_mib_min_sampled": 4585.0
+      }
+    },
+    "qwen3.8-27b": {
+      "model_only": {
+        "n_calls": 27,
+        "gpu_memory_used_mib_peak_sampled": 13438.0,
+        "system_ram_used_gib_peak_sampled": 26.847248077392578,
+        "lmstudio_process_group_rss_mib_peak_sampled": 16917.390625,
+        "system_ram_available_gib_min_sampled": 4.772617340087891,
+        "gpu_memory_free_mib_min_sampled": 2615.0
+      },
+      "live_application_tools": {
+        "n_calls": 43,
+        "gpu_memory_used_mib_peak_sampled": 13427.0,
+        "system_ram_used_gib_peak_sampled": 26.765586853027344,
+        "lmstudio_process_group_rss_mib_peak_sampled": 16915.9609375,
+        "system_ram_available_gib_min_sampled": 4.854278564453125,
+        "gpu_memory_free_mib_min_sampled": 2626.0
+      }
+    }
+  }
+}

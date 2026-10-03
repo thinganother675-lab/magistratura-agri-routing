@@ -1,0 +1,1045 @@
+{
+  "created_utc": "2026-10-03T22:04:35.859238+00:00",
+  "classification": "POST_HOC_PRESENTATION_CONTRACT_AUDIT_NO_RESCORE_NO_MODEL_CALLS",
+  "parser": "strict_json rejects duplicate/private keys, nonfinite literals, non-object JSON; documented fences allowed",
+  "schema": "Exact action-specific keysets, allowlisted tool ID, finite scalar numeric, unit string, reason string, unique string requested_fields.",
+  "frozen_scores_unchanged": true,
+  "models": {
+    "qwen3.5-9b": {
+      "model_only": {
+        "n": 27,
+        "strict_final_schema_valid": 22,
+        "reference_correct_and_schema_valid": 7,
+        "error_counts": {
+          "numeric_not_finite_scalar": 1,
+          "tool_not_allowlisted_id": 2,
+          "requested_fields_not_string_list": 2
+        }
+      },
+      "live_application_tools": {
+        "n": 27,
+        "strict_final_schema_valid": 19,
+        "reference_correct_and_schema_valid": 18,
+        "error_counts": {
+          "tool_not_allowlisted_id": 8,
+          "requested_fields_not_string_list": 1
+        }
+      }
+    },
+    "qwen3.8-27b": {
+      "model_only": {
+        "n": 27,
+        "strict_final_schema_valid": 27,
+        "reference_correct_and_schema_valid": 15,
+        "error_counts": {}
+      },
+      "live_application_tools": {
+        "n": 27,
+        "strict_final_schema_valid": 27,
+        "reference_correct_and_schema_valid": 25,
+        "error_counts": {}
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "study_c_001",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_001",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_002",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_002",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_003",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "numeric_not_finite_scalar"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_003",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_004",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_004",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_005",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_005",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_006",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_006",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_007",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_007",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_008",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_008",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_009",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_009",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_010",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_010",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_011",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_011",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_012",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_012",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_013",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_013",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_014",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_014",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_015",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_015",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_016",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_016",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_017",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_017",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_018",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_018",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_019",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_019",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_020",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_020",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_021",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_021",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_022",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id",
+        "requested_fields_not_string_list"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_022",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "requested_fields_not_string_list"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_023",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "requested_fields_not_string_list"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_023",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_024",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_024",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": false,
+      "schema_errors": [
+        "tool_not_allowlisted_id"
+      ],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_025",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_025",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_026",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_026",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_027",
+      "model_key": "qwen3.5-9b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_027",
+      "model_key": "qwen3.5-9b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_001",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_001",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_002",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_002",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_003",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_003",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_004",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_004",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_005",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_005",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_006",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_006",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_007",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_007",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_008",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_008",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_009",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_009",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_010",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_010",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_011",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_011",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_012",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_012",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_013",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_013",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_014",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_014",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_015",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_015",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_016",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_016",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_017",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_017",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_018",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_018",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_019",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_019",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_020",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_020",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_021",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_021",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_022",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_022",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_023",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_023",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_024",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_024",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_025",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_025",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_026",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_026",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    },
+    {
+      "id": "study_c_027",
+      "model_key": "qwen3.8-27b",
+      "arm": "model_only",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": false,
+      "reference_correct_and_schema_valid": false
+    },
+    {
+      "id": "study_c_027",
+      "model_key": "qwen3.8-27b",
+      "arm": "live_application_tools",
+      "strict_final_schema_valid": true,
+      "schema_errors": [],
+      "frozen_reference_correct": true,
+      "reference_correct_and_schema_valid": true
+    }
+  ]
+}

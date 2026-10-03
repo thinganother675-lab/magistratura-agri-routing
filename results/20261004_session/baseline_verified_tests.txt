@@ -1,0 +1,292 @@
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+........................................................................ [ 52%]
+........................................................................ [ 61%]
+........................................................................ [ 69%]
+........................................................................ [ 78%]
+........................................................................ [ 87%]
+............................F........................................... [ 95%]
+..................................                                       [100%]
+================================== FAILURES ===================================
+______ test_mocked_live_driver_journal_once_claim_and_independent_counts ______
+
+protocol_path = WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live_driver_journa0/protocol.json')
+execute = True
+root = WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live_driver_journa0')
+
+    def run(protocol_path, *, execute=False, root=ROOT):
+        root = Path(root)
+        protocol, samples, plan = validate_protocol(protocol_path, root)
+        if not execute:
+            return plan
+        local_key, local_source = resolve_api_key("local", env_path=root / ".env")
+        cloud_key, cloud_source = resolve_api_key("mercury", env_path=root / ".env")
+        if not local_key or not cloud_key:
+            raise RuntimeError("Both frozen-provider credentials must be configured")
+        secrets = (local_key, cloud_key)
+        claim = root / "results" / (".home_final_" + protocol["dataset_sha256"] + "_claim.json")
+        if claim.exists():
+            raise RuntimeError("This frozen dataset already has a final execution claim; no automatic repeat or resume")
+        client = httpx.Client(timeout=60, trust_env=False)
+        try:
+            before, weight_metadata, pre_headroom, estimate = preflight_local(protocol, client, local_key)
+            device = hardware()
+        except BaseException:
+            client.close()
+            raise
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%SZ") + "_" + uuid.uuid4().hex[:8] + "_final"
+        directory = root / "results" / run_id
+        try:
+            write_new(claim, {"run_id": run_id, "protocol_sha256": plan["protocol_sha256"], "claimed_utc": now(),
+                              "automatic_resume_allowed": False, "preflight_passed": True})
+            directory.mkdir(exist_ok=False)
+        except BaseException:
+            client.close()
+            raise
+        write_new(directory / "protocol_copy.json", protocol)
+        write_new(directory / "samples_home_final.json", samples)
+        write_new(directory / "schedule.json", schedule(samples))
+        (directory / "harness_source.py").write_bytes(Path(__file__).read_bytes())
+        (directory / "system_prompt.txt").write_text(SYSTEM_PROMPT, encoding="utf-8")
+        write_new(directory / "hardware.json", device)
+        write_new(directory / "weight_metadata.json", weight_metadata)
+        write_new(directory / "catalog_before.json", sanitize(before, secrets))
+        estimate_text = home.ANSI.sub("", estimate.stdout + "\n" + estimate.stderr)
+        for homepath in (str(Path.home()), str(Path.home()).replace("\\", "/")):
+            estimate_text = estimate_text.replace(homepath, "[USER_HOME]")
+        (directory / "load_estimate.txt").write_text(sanitize(estimate_text, secrets), encoding="utf-8")
+        manifest = {**plan, "run_id": run_id, "state": "running", "started_utc": now(), "sample_ids": protocol["holdout_ids"],
+                    "local": protocol["local"], "cloud": CLOUD, "policies": METHODS, "execution_seed": 20261001,
+                    "code_sha256": protocol["code_sha256"], "credential_sources": {"local": local_source, "cloud": cloud_source},
+                    "credential_values_persisted": False, "cloud_calls_actual": 0, "local_calls_actual": 0,
+                    "cloud_known_cost_estimate_usd": 0., "cloud_unknown_cost_calls": 0, "cloud_reserved_cost_estimate_usd": 0.,
+                    "local_energy_cost": "N/A; not measured", "provider_invoice_obtained": False,
+                    "cost_type": "uncached token price estimate; missingusage calls retain unknowncost and conservative planningreserve",
+                    "execution_context": "Sequential GPU and sequential policy HTTP calls; whole-system RAM/device VRAM includes other applications, host not isolated",
+                    "no_other_benchmark_gpu_activity": True, "local_load_metadata": {"actual_offloaded_layers": "UNKNOWN", "preflight_headroom": pre_headroom}}
+        write_new(directory / "manifest.json", manifest)
+        print("RESULTS_START " + directory.name, flush=True)
+        identifier = "home-final-" + uuid.uuid4().hex[:8] + "-gemma26"
+        meta = manifest["local_load_metadata"]
+        rows, load_attempted = [], False
+        local_logdir = root / ".runtime" / "home_final_logs" / run_id
+        local_logdir.mkdir(parents=True, exist_ok=False)
+        monitor = home.Monitor()
+        calls = None
+        try:
+            with monitor:
+                try:
+                    args = [home.LMS, "load", LOCAL["model"], "--context-length", "4096", "--parallel", "1",
+                            "--gpu", "0.70", "--identifier", identifier, "--yes"]
+                    load_attempted = True
+                    began = time.perf_counter()
+                    loaded = home.guarded_load(args, local_logdir / "load.txt", meta)
+                    meta.update(cold_load_wall_s=time.perf_counter() - began, load_success=loaded.returncode == 0)
+                    if loaded.returncode:
+                        raise RuntimeError("Guarded local load failed")
+                    catalog = api.native_models(client, local_key)
+                    matches = [(m, inst) for m in catalog for inst in m.get("loaded_instances", []) if inst.get("id") == identifier]
+                    if len(matches) != 1:
+                        raise RuntimeError("Own local instance not verified")
+                    native, instance = matches[0]
+                    allowed = ((native.get("capabilities") or {}).get("reasoning") or {}).get("allowed_options", [])
+                    if (native.get("quantization", {}).get("name") != LOCAL["quantization"] or "off" not in allowed
+                            or instance.get("config", {}).get("context_length") != 4096 or instance.get("config", {}).get("parallel") != 1):
+                        raise RuntimeError("Frozen local capability/configuration mismatch")
+                    meta.update(own_instance_id=identifier, native_model_metadata=sanitize(native, secrets), actual_load_config=instance["config"])
+                    local_fn = lambda req: {**api.api_call(client, local_key, identifier, req, "none"), "provider": "local", "model": LOCAL["model"]}
+                    local_failure = None
+                except (RuntimeError, ValueError, OSError, home.subprocess.TimeoutExpired, httpx.HTTPError) as exc:
+                    meta["load_error"] = {"type": type(exc).__name__}
+                    local_fn = lambda req: None
+                    local_failure = {"type": "local_load_failure", "error_type": type(exc).__name__}
+                    if load_attempted:
+                        unloaded = home.command([home.LMS, "unload", identifier])
+                        meta["unload_after_failure_success"] = unloaded.returncode == 0 and not any(p["identifier"] == identifier for p in home.cli_json("ps", "--json"))
+                        if not meta["unload_after_failure_success"]:
+                            raise RuntimeError("Uncertain local load cleanup; stop entire final before paidcalls")
+                        load_attempted = False
+                model = Model(CLOUD["base_url"], CLOUD["model"], cloud_key, .04, .15, timeout=60)
+                def stop_local():
+                    nonlocal load_attempted
+                    if load_attempted:
+                        unloaded = home.command([home.LMS, "unload", identifier])
+                        meta["unload_on_local_stop_success"] = unloaded.returncode == 0 and not any(p["identifier"] == identifier for p in home.cli_json("ps", "--json"))
+                        if not meta["unload_on_local_stop_success"]:
+                            raise RuntimeError("Local stop cleanup failed; stop entire final")
+                        load_attempted = False
+                calls = Calls(local_fn, lambda req: strict_cloud_record(model.call(req)), manifest, directory, secrets,
+                              plan["max_planning_cost_per_call_usd"], headroom=home.resource_headroom, on_local_stop=stop_local)
+                calls.local_stop = local_failure
+                with (directory / "attempts.jsonl").open("x", encoding="utf-8"):
+                    pass
+                update(directory / "manifest.json", sanitize(manifest, secrets))
+                ordered = {entry["sample_id"]: entry["methods"] for entry in schedule(samples)}
+                with (directory / "raw_decisions.jsonl").open("x", encoding="utf-8") as journal:
+                    for index, sample in enumerate(samples):
+                        for method in ordered[sample["id"]]:
+                            calls.sample_id, calls.method = sample["id"], method
+>                           result = measured_decision(public_request(sample), method, calls.local, calls.cloud)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+scripts\run_home_final.py:530:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\run_home_final.py:209: in measured_decision
+    first = local(request)
+            ^^^^^^^^^^^^^^
+scripts\run_home_final.py:326: in local
+    return self.call("local", request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+scripts\run_home_final.py:287: in call
+    update(self.directory / "manifest.json", sanitize(self.manifest, self.secrets))
+scripts\run_home_final.py:73: in update
+    temporary.replace(path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live_driver_journa0/results/20261003_214140Z_3c6d45f7_final/manifest.tmp')
+target = WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live_driver_journa0/results/20261003_214140Z_3c6d45f7_final/manifest.json')
+
+    def replace(self, target):
+        """
+        Rename this path to the target path, overwriting if that path exists.
+
+        The target path may be absolute or relative. Relative paths are
+        interpreted relative to the current working directory, *not* the
+        directory of the Path object.
+
+        Returns the new Path instance pointing to the target path.
+        """
+>       os.replace(self, target)
+E       PermissionError: [WinError 5] Отказано в доступе: 'C:\\Users\\hustlePC\\Codex\\magistratura\\.runtime\\session_20261004\\pytest_baseline_elevated\\test_mocked_live_driver_journa0\\results\\20261003_214140Z_3c6d45f7_final\\manifest.tmp' -> 'C:\\Users\\hustlePC\\Codex\\magistratura\\.runtime\\session_20261004\\pytest_baseline_elevated\\test_mocked_live_driver_journa0\\results\\20261003_214140Z_3c6d45f7_final\\manifest.json'
+
+..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1376: PermissionError
+
+During handling of the above exception, another exception occurred:
+
+frozen = (WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live...ut_extractive_qa_5', 'group': 'family_extractive_qa_2', 'split': 'home_final', 'category': 'extractive_qa', ...}, ...])
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001C6547BE4B0>
+
+    def test_mocked_live_driver_journal_once_claim_and_independent_counts(frozen, monkeypatch):
+        root, path, _, _ = frozen
+        state = {"identifier": None, "local": 0, "cloud": 0}
+        native = {"key": final.LOCAL["model"], "size_bytes": 16847892149, "quantization": {"name": "IQ4_NL_XL"},
+                  "capabilities": {"reasoning": {"allowed_options": ["off", "on"]}}, "loaded_instances": []}
+        def catalog(*args):
+            value = deepcopy(native)
+            if state["identifier"]:
+                value["loaded_instances"] = [{"id": state["identifier"], "config": {"context_length": 4096, "parallel": 1}}]
+            return [value]
+        def command(args, *rest):
+            if "unload" in args: state["identifier"] = None
+            return SimpleNamespace(returncode=0, stdout="safe", stderr="")
+        def load(args, log, meta):
+            state["identifier"] = args[args.index("--identifier") + 1]
+            log.write_text("safe\n", encoding="utf-8")
+            return SimpleNamespace(returncode=0)
+        def local_call(*args):
+            state["local"] += 1
+            return record()
+        class Cloud:
+            def __init__(self, *args, **kwargs): pass
+            def call(self, request):
+                assert set(request) <= {"input", "context", "inputs"}
+                state["cloud"] += 1
+                return {**record(provider="cloud", cost=.00001), "raw": {"choices": [{"finish_reason": "stop"}]},
+                        "usage": {"prompt_tokens": 100, "completion_tokens": 10}}
+        class Monitor:
+            rows = []
+            def __enter__(self): return self
+            def __exit__(self, *args): pass
+            def summary(self): return {"vram_mib_peak_sampled_total": 1, "ram_gib_peak_sampled_system_used": 1}
+        monkeypatch.setattr(final, "resolve_api_key", lambda provider, **kw: ("MOCK_SECRET_"+provider, "mock:"+provider))
+        monkeypatch.setattr(final, "hardware", lambda: {"mock": True})
+        monkeypatch.setattr(final.api, "native_models", catalog)
+        monkeypatch.setattr(final.api, "api_call", local_call)
+        monkeypatch.setattr(final.home, "command", command)
+        monkeypatch.setattr(final.home, "guarded_load", load)
+        monkeypatch.setattr(final.home, "cli_json", lambda *args: [])
+        monkeypatch.setattr(final.home, "Monitor", Monitor)
+        monkeypatch.setattr(final.home, "resource_headroom", lambda: {"ram_available_gib": 10, "gpu_free_mib": 5000})
+        monkeypatch.setattr(final, "Model", Cloud)
+>       directory = final.run(path, root=root, execute=True)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_run_home_final.py:299:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+scripts\run_home_final.py:574: in run
+    update(directory / "manifest.json", sanitize(manifest, secrets))
+scripts\run_home_final.py:72: in update
+    write_new(temporary, value)
+scripts\run_home_final.py:65: in write_new
+    with Path(path).open("x", encoding="utf-8") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/hustlePC/Codex/magistratura/.runtime/session_20261004/pytest_baseline_elevated/test_mocked_live_driver_journa0/results/20261003_214140Z_3c6d45f7_final/manifest.tmp')
+mode = 'x', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileExistsError: [Errno 17] File exists: 'C:\\Users\\hustlePC\\Codex\\magistratura\\.runtime\\session_20261004\\pytest_baseline_elevated\\test_mocked_live_driver_journa0\\results\\20261003_214140Z_3c6d45f7_final\\manifest.tmp'
+
+..\..\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py:1013: FileExistsError
+---------------------------- Captured stdout call -----------------------------
+RESULTS_START 20261003_214140Z_3c6d45f7_final
+{"case": 1, "target_n": 150, "local_calls": 3, "cloud_calls": 2, "known_cloud_cost_usd": 1.1e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 2, "target_n": 150, "local_calls": 6, "cloud_calls": 4, "known_cloud_cost_usd": 2.2e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 3, "target_n": 150, "local_calls": 9, "cloud_calls": 6, "known_cloud_cost_usd": 3.2999999999999996e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 4, "target_n": 150, "local_calls": 12, "cloud_calls": 8, "known_cloud_cost_usd": 4.399999999999999e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 5, "target_n": 150, "local_calls": 15, "cloud_calls": 10, "known_cloud_cost_usd": 5.499999999999999e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 6, "target_n": 150, "local_calls": 18, "cloud_calls": 12, "known_cloud_cost_usd": 6.599999999999999e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 7, "target_n": 150, "local_calls": 21, "cloud_calls": 14, "known_cloud_cost_usd": 7.699999999999999e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 8, "target_n": 150, "local_calls": 24, "cloud_calls": 16, "known_cloud_cost_usd": 8.799999999999998e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 9, "target_n": 150, "local_calls": 27, "cloud_calls": 18, "known_cloud_cost_usd": 9.899999999999998e-05, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 10, "target_n": 150, "local_calls": 30, "cloud_calls": 20, "known_cloud_cost_usd": 0.00010999999999999998, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 11, "target_n": 150, "local_calls": 33, "cloud_calls": 22, "known_cloud_cost_usd": 0.00012099999999999997, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 12, "target_n": 150, "local_calls": 36, "cloud_calls": 24, "known_cloud_cost_usd": 0.00013199999999999998, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 13, "target_n": 150, "local_calls": 39, "cloud_calls": 26, "known_cloud_cost_usd": 0.00014299999999999998, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 14, "target_n": 150, "local_calls": 42, "cloud_calls": 28, "known_cloud_cost_usd": 0.00015399999999999998, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 15, "target_n": 150, "local_calls": 45, "cloud_calls": 30, "known_cloud_cost_usd": 0.00016499999999999997, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 16, "target_n": 150, "local_calls": 48, "cloud_calls": 32, "known_cloud_cost_usd": 0.00017599999999999997, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 17, "target_n": 150, "local_calls": 51, "cloud_calls": 34, "known_cloud_cost_usd": 0.00018699999999999996, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 18, "target_n": 150, "local_calls": 54, "cloud_calls": 36, "known_cloud_cost_usd": 0.00019799999999999996, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 19, "target_n": 150, "local_calls": 57, "cloud_calls": 38, "known_cloud_cost_usd": 0.00020899999999999996, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 20, "target_n": 150, "local_calls": 60, "cloud_calls": 40, "known_cloud_cost_usd": 0.00021999999999999995, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 21, "target_n": 150, "local_calls": 63, "cloud_calls": 42, "known_cloud_cost_usd": 0.00023099999999999995, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 22, "target_n": 150, "local_calls": 66, "cloud_calls": 44, "known_cloud_cost_usd": 0.00024199999999999995, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 23, "target_n": 150, "local_calls": 69, "cloud_calls": 46, "known_cloud_cost_usd": 0.00025299999999999997, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 24, "target_n": 150, "local_calls": 72, "cloud_calls": 48, "known_cloud_cost_usd": 0.000264, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 25, "target_n": 150, "local_calls": 75, "cloud_calls": 50, "known_cloud_cost_usd": 0.00027500000000000007, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 26, "target_n": 150, "local_calls": 78, "cloud_calls": 52, "known_cloud_cost_usd": 0.0002860000000000001, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 27, "target_n": 150, "local_calls": 81, "cloud_calls": 54, "known_cloud_cost_usd": 0.00029700000000000017, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 28, "target_n": 150, "local_calls": 84, "cloud_calls": 56, "known_cloud_cost_usd": 0.0003080000000000002, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 29, "target_n": 150, "local_calls": 87, "cloud_calls": 58, "known_cloud_cost_usd": 0.0003190000000000003, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 30, "target_n": 150, "local_calls": 90, "cloud_calls": 60, "known_cloud_cost_usd": 0.0003300000000000003, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 31, "target_n": 150, "local_calls": 93, "cloud_calls": 62, "known_cloud_cost_usd": 0.0003410000000000004, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 32, "target_n": 150, "local_calls": 96, "cloud_calls": 64, "known_cloud_cost_usd": 0.0003520000000000004, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 33, "target_n": 150, "local_calls": 99, "cloud_calls": 66, "known_cloud_cost_usd": 0.0003630000000000005, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 34, "target_n": 150, "local_calls": 102, "cloud_calls": 68, "known_cloud_cost_usd": 0.0003740000000000005, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 35, "target_n": 150, "local_calls": 105, "cloud_calls": 70, "known_cloud_cost_usd": 0.0003850000000000006, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 36, "target_n": 150, "local_calls": 108, "cloud_calls": 72, "known_cloud_cost_usd": 0.0003960000000000006, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 37, "target_n": 150, "local_calls": 111, "cloud_calls": 74, "known_cloud_cost_usd": 0.0004070000000000007, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 38, "target_n": 150, "local_calls": 114, "cloud_calls": 76, "known_cloud_cost_usd": 0.00041800000000000073, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 39, "target_n": 150, "local_calls": 117, "cloud_calls": 78, "known_cloud_cost_usd": 0.0004290000000000008, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 40, "target_n": 150, "local_calls": 120, "cloud_calls": 80, "known_cloud_cost_usd": 0.00044000000000000083, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 41, "target_n": 150, "local_calls": 123, "cloud_calls": 82, "known_cloud_cost_usd": 0.0004510000000000009, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 42, "target_n": 150, "local_calls": 126, "cloud_calls": 84, "known_cloud_cost_usd": 0.00046200000000000093, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 43, "target_n": 150, "local_calls": 129, "cloud_calls": 86, "known_cloud_cost_usd": 0.000473000000000001, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+{"case": 44, "target_n": 150, "local_calls": 132, "cloud_calls": 88, "known_cloud_cost_usd": 0.00048400000000000103, "unknown_cost_calls": 0, "local_stopped": false, "cloud_stopped": false}
+=========================== short test summary info ===========================
+FAILED tests/test_run_home_final.py::test_mocked_live_driver_journal_once_claim_and_independent_counts
+1 failed, 825 passed in 18.66s

@@ -1,0 +1,69 @@
+{
+  "model": "qwen3.5-35b-a3b",
+  "status": "PARTIAL_OR_BLOCKED",
+  "created_utc": "2026-10-03T21:59:52.414855+00:00",
+  "finished_utc": "2026-10-03T22:00:39.138441+00:00",
+  "elapsed_s": 46.71929469998577,
+  "stop": {
+    "type": "RuntimeError",
+    "reason": "RESOURCE_OBSERVATION_FAILED",
+    "utc": "2026-10-03T22:00:04.205404+00:00"
+  },
+  "cleanup": {
+    "success": true,
+    "receipts": [
+      {
+        "instance_id": "qwen3.5-35b-a3b",
+        "status": 200,
+        "utc": "2026-10-03T22:00:24.176960+00:00"
+      }
+    ]
+  },
+  "metrics": {
+    "n_expected": 60,
+    "n_attempted": 0,
+    "n_completed": 0,
+    "n_response_received": 0,
+    "n_scored": 0,
+    "attempted_coverage": false,
+    "complete_coverage": false,
+    "strict_em_count": 0,
+    "strict_f1_sum": 0,
+    "strict_set_em": null,
+    "strict_set_f1": null,
+    "conservative_all_n_em": 0.0,
+    "reference_issues": 0,
+    "invalid_output": 0,
+    "json_contract_failure": 0,
+    "errors": 0,
+    "timeouts": 0,
+    "latency_p50_s": null,
+    "latency_p95_s": null,
+    "latency_mean_s": null,
+    "ttft_p50_s": null,
+    "first_answer_p50_s": null,
+    "client_tps_p50": null,
+    "backend_tps_p50": null,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "usage_coverage": 0,
+    "confidence_coverage": 0,
+    "by_domain": {},
+    "by_answer_cardinality": {
+      "single": {
+        "n": 0,
+        "strict_set_em": null,
+        "strict_set_f1": null,
+        "predicted_single_n": 0
+      },
+      "multiple": {
+        "n": 0,
+        "strict_set_em": null,
+        "strict_set_f1": null,
+        "predicted_single_n": 0
+      }
+    }
+  },
+  "paid_api_calls": 0,
+  "private_test_run": false
+}

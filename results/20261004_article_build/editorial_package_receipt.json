@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-03T22:33:48.356005+00:00",
+  "directory": "outputs/claude_article_editor_20261004",
+  "zip": "outputs/claude_article_editor_20261004.zip",
+  "zip_sha256": "13d03414b6a000b541c3cc530becc17da778cb606dc666b455b244b7b8dd298f",
+  "files": 31,
+  "bytes": 430179,
+  "claude_editor_launched": false,
+  "restricted_raw_exported": false
+}
