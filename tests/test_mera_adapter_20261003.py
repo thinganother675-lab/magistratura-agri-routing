@@ -69,6 +69,17 @@ def test_router_is_reference_free_and_missing_confidence_routes_cloud():
     with pytest.raises(ValueError): route_local({**result, "nested": {"gold": "A"}})
 
 
+@pytest.mark.parametrize("value", [True, False, "0.99", -0.1, 1.1, math.inf])
+def test_malformed_confidence_is_not_inference_evidence(value):
+    assert route_local({"valid_options": True, "option_token_confidence": value}, threshold=.8) == "cloud"
+
+
+@pytest.mark.parametrize("value", [True, "0.8", -0.1, math.nan])
+def test_malformed_threshold_is_not_a_frozen_policy(value):
+    with pytest.raises(ValueError):
+        route_local({"valid_options": True, "option_token_confidence": .9}, threshold=value)
+
+
 def test_submission_schema_is_exact_and_requires_complete_test():
     p = [{"item_id": 7, "prediction": "B", "split": "test"}]
     assert submission_object(p, [7]) == {"data": {"test": [{"outputs": "B", "meta": {"id": 7}}]}}

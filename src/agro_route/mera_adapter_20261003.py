@@ -167,11 +167,15 @@ def diagnostic_set_scores(reference, prediction, options):
 def route_local(result, *, threshold=None):
     """Reference-free rule. Confidence is lexical certainty, not truth probability."""
     forbid_gold(result)
+    if threshold is not None and (isinstance(threshold, bool) or not isinstance(threshold, (int, float))
+                                  or not math.isfinite(threshold) or not 0 <= threshold <= 1):
+        raise ValueError("Confidence threshold must be a finite probability")
     if result.get("error") or not result.get("valid_options"):
         return "cloud"
     if threshold is not None:
         value = result.get("option_token_confidence")
-        if value is None or not math.isfinite(value) or value < threshold:
+        if (isinstance(value, bool) or not isinstance(value, (int, float))
+                or not math.isfinite(value) or not 0 <= value <= 1 or value < threshold):
             return "cloud"
     return "local"
 

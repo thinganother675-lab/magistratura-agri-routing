@@ -47,6 +47,11 @@ def test_prose_letter_confidence_not_used_for_routing():
     assert row["option_token_confidence"] is None
 
 
+@pytest.mark.parametrize("value", [True, False])
+def test_boolean_logprob_does_not_create_confidence(value):
+    assert runner.token_confidence({"content": [{"token": "A", "logprob": value}]}) is None
+
+
 def test_model_output_normalization_preserves_wrong_choice():
     row = call_mock("C, A", local=False)
     assert row["prediction"] == "A, C" and row["prediction_raw"] == "C, A"

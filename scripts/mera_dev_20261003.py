@@ -63,7 +63,8 @@ def token_confidence(logprobs):
     values = []
     for row in (logprobs if isinstance(logprobs, dict) else {}).get("content", []) or []:
         token, value = row.get("token", "").strip().strip(",;"), row.get("logprob")
-        if token in tuple("ABCDEFGH") and isinstance(value, (int, float)) and math.isfinite(value) and value <= 0:
+        if (token in tuple("ABCDEFGH") and isinstance(value, (int, float))
+                and not isinstance(value, bool) and math.isfinite(value) and value <= 0):
             values.append(value)
     return math.exp(sum(values) / len(values)) if values else None
 
