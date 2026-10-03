@@ -1,0 +1,58 @@
+{
+  "gemma-4-26b-a4b-it": {
+    "inference_baseline_commit": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80",
+    "state": "SOURCE_ARCHIVED_AFTER_EXPLORATORY_DEV_EXECUTION; not pre-TEST freeze",
+    "sources": {
+      "scripts/mera_dev_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/gemma-4-26b-a4b-it__mera_dev_20261003.py.txt",
+        "sha256": "80aa273eed43fd95af526e251947cc0f7f25db7c3f3a883d4ab864d39f974734"
+      },
+      "src/agro_route/mera_adapter_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/gemma-4-26b-a4b-it__mera_adapter_20261003.py.txt",
+        "sha256": "765ac64e973e7801ea4c469d476ee74e59322bfed3a6011b9496a3577abdb223"
+      }
+    }
+  },
+  "mercury-2": {
+    "inference_baseline_commit": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80",
+    "state": "SOURCE_ARCHIVED_AFTER_EXPLORATORY_DEV_EXECUTION; not pre-TEST freeze",
+    "sources": {
+      "scripts/mera_dev_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/mercury-2__mera_dev_20261003.py.txt",
+        "sha256": "fdce9a4653c1d0680fcafda31c34eb6d680e1e097b935216ac911ea4c8985f37"
+      },
+      "src/agro_route/mera_adapter_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/mercury-2__mera_adapter_20261003.py.txt",
+        "sha256": "18b6d0d64b593680ee5d5e0faca6d8285dd490c0e917f08815e9b1b46df5ed39"
+      }
+    }
+  },
+  "mercury-2_instant-256": {
+    "inference_baseline_commit": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80",
+    "state": "SOURCE_ARCHIVED_AFTER_EXPLORATORY_DEV_EXECUTION; not pre-TEST freeze",
+    "sources": {
+      "scripts/mera_dev_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/mercury-2_instant-256__mera_dev_20261003.py.txt",
+        "sha256": "1f423442426aab395e6a4ce75bb7c6c90b48052fa7b04170df29c0b4cf687672"
+      },
+      "src/agro_route/mera_adapter_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/mercury-2_instant-256__mera_adapter_20261003.py.txt",
+        "sha256": "18b6d0d64b593680ee5d5e0faca6d8285dd490c0e917f08815e9b1b46df5ed39"
+      }
+    }
+  },
+  "qwen3.8-27b": {
+    "inference_baseline_commit": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80",
+    "state": "SOURCE_ARCHIVED_AFTER_EXPLORATORY_DEV_EXECUTION; not pre-TEST freeze",
+    "sources": {
+      "scripts/mera_dev_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/qwen3.8-27b__mera_dev_20261003.py.txt",
+        "sha256": "fdce9a4653c1d0680fcafda31c34eb6d680e1e097b935216ac911ea4c8985f37"
+      },
+      "src/agro_route/mera_adapter_20261003.py": {
+        "archive_file": "experiments/mera_code_archive_20261003/qwen3.8-27b__mera_adapter_20261003.py.txt",
+        "sha256": "18b6d0d64b593680ee5d5e0faca6d8285dd490c0e917f08815e9b1b46df5ed39"
+      }
+    }
+  }
+}

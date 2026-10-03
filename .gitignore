@@ -23,6 +23,12 @@ models/
 .runtime/
 .lmstudio/
 
+# MERA source questions, DEV labels, model text and official submission logs.
+# Kept local: official permission to test is not a redistribution license.
+data/mera/
+results/**/mera_restricted/
+*_mera_submission.zip
+
 # Credentials and machine-local authentication
 .env
 .env.*
