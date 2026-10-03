@@ -1,6 +1,6 @@
 {
   "checked_utc": "2026-10-03T22:30:33.185361+00:00",
-  "status": "READY_FOR_PRIVATE_GIT_DELIVERY",
+  "status": "COMPLETE_ARTIFACTS_TESTS_AND_DATA_PUSH_VERIFIED",
   "baseline_head": "af5742e7c294cd5f93155a3deb438f6d667351fe",
   "baseline_tests": {
     "sandbox": "633 passed,193 temp ACL errors",
@@ -38,5 +38,10 @@
   "final_human_consent": "PENDING",
   "secret_scan": "PASS:0 findings in selected source and nested archives; see delivery_secret_scan.json",
   "diff_review": "PASS:only README changed among preexisting tracked files; old data/protocols/results/source preserved",
-  "git_delivery_receipt": "results/20261004_session/git_delivery_20261004.json"
+  "git_delivery_receipt": "results/20261004_session/git_delivery_20261004.json",
+  "git_data_commit": "bc21196829b2d6e661717bb8c42b9ea1822e7d57",
+  "git_remote_sha_verified": "bc21196829b2d6e661717bb8c42b9ea1822e7d57",
+  "finalized_utc": "2026-10-03T22:39:14.988635+00:00",
+  "secret_scan_after_receipts": "PASS:changed receipt text rechecked before final commit",
+  "artifact_scope_manifest": "Snapshot of selected file hashes at the data commit; subsequent delivery receipt updates do not alter scientific artifacts"
 }
