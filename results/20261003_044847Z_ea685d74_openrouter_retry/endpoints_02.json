@@ -1,0 +1,76 @@
+{
+  "retrieved_utc": "2026-10-03T04:48:49.098138+00:00",
+  "url": "https://openrouter.ai/api/v1/models/apodex/apodex-1.1-mini:free/endpoints",
+  "http_status": 200,
+  "response": {
+    "data": {
+      "id": "apodex/apodex-1.1-mini:free",
+      "name": "Apodex: Apodex 1.1 Mini (free)",
+      "created": 1790875335,
+      "description": "Apodex 1.1 Mini is a reasoning-first model from Apodex, built for complex, long-horizon research and forecasting tasks. It works directly with files, data, code, and tools to produce verifiable results,...",
+      "architecture": {
+        "tokenizer": "Other",
+        "instruct_type": null,
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ]
+      },
+      "endpoints": [
+        {
+          "name": "Novita | apodex/apodex-1.1-mini-20261001:free",
+          "model_id": "apodex/apodex-1.1-mini:free",
+          "model_name": "Apodex: Apodex 1.1 Mini",
+          "context_length": 262144,
+          "pricing": {
+            "prompt": "0",
+            "completion": "0",
+            "discount": 0
+          },
+          "provider_name": "Novita",
+          "tag": "novita/bf16",
+          "quantization": "bf16",
+          "max_completion_tokens": 235929,
+          "max_prompt_tokens": null,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_tool_choice": {
+            "none": true,
+            "auto": true,
+            "required": false,
+            "function": false
+          },
+          "status": 0,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100,
+          "uptime_last_1d": 99.95467459397045,
+          "supports_implicit_caching": false,
+          "native_tools": {},
+          "supports_voice_cloning": false,
+          "supports_multiple_audio_references": false,
+          "supports_image_reference": false,
+          "latency_last_30m": null,
+          "throughput_last_30m": null
+        }
+      ]
+    }
+  }
+}
