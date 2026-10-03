@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-03T05:20:21.142288+00:00",
+  "status": "PASS",
+  "exit_code": 0,
+  "passed": 392,
+  "seconds": 31.27,
+  "command": ".venv/Scripts/python.exe -m pytest -q --basetemp .cache/pytest_final_20261003",
+  "baseline": {
+    "passed": 299,
+    "seconds": 54.21,
+    "status": "PASS",
+    "prior_failure": "WinError5 sandbox temporary-directory ACL; elevated rerun passed"
+  }
+}
