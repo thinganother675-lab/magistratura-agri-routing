@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-03T07:11:50.3432116Z",
+  "status": "PASS",
+  "code_commit": "6155f58f66d45a8d62e78ab15c637d94b33d8646",
+  "baseline_passed": 392,
+  "prior_full_suite_at_72b0c32_passed": 509,
+  "final_full_suite_passed": 521,
+  "duration_seconds": 20.8,
+  "command": ".\\.venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider --basetemp .runtime/mera/pytest_final_20261003_02",
+  "change": "Reject boolean/nonfinite/nonprobability confidence and malformed thresholds",
+  "new_regression_cases": 12,
+  "new_inference_calls": 0,
+  "historical_results_modified": false,
+  "dev_analysis_recomputed": false,
+  "source_sha256": {
+    "adapter": "2db616eecd091e6b9b0d59c40916761a22158c1fedd7a112331a5a4fcaad6a56",
+    "runner_tests": "e68b052ed1b3f911f0babfb92b39bdc4b3f14af3b118d4e95fa1fb0aa86b011b",
+    "runner": "6b195050d633580653e6e4fcad03ddecfa8f058625295a44acb3d5c8d96d8f01",
+    "adapter_tests": "fd883bf5ebf000cd37fa285fcc8489389325bf36c67552b78f3f7a5b5fd0c772"
+  }
+}
