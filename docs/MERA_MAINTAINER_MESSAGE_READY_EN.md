@@ -1,29 +1,35 @@
 # Ready message to MERA maintainers
 
-Status: **DRAFT_READY_FOR_AUTHOR_REVIEW / NOT_SENT**. Date: 3 October 2026.
+Status: **SENT_BY_AUTHOR_REPORTED / WAITING_FOR_MAINTAINER**. Date: 3 October 2026.
+Antoniy reported sending the prepared question in the continuation request. Delivery
+and any reply have not been independently inspected. The letter is retained as
+correspondence evidence; joint research authorship remains Antoniy Sarychev and
+Denis Shesternin. No duplicate message should be sent.
 Suggested address listed on the MERA website: `mera@a-ai.ru`.
 
-**Subject: ruTXTAgroBench: production EM/F1 and research usage clarification**
+**Subject: ruTXTAgroBench: option A normalization in EM/F1 scoring**
 
-Dear MERA team,
+Hello MERA team,
 
-We are Antoniy Sarychev and Denis Shesternin, first-year master's students at the Russian State Agrarian University – Moscow Timiryazev Agricultural Academy. We study local/cloud LLM routing for agricultural tasks and currently use the public ruTXTAgroBench DEV split for development. We have not run or submitted TEST, redistributed questions or reference answers, or trained models on the benchmark.
+I'm Antoniy Sarychev. I'm running local LLM benchmarks and started using the public ruTXTAgroBench DEV split.
 
-At `MERA_Industrial` commit `7752f19d1658ba80f5f34144895c26dd1bf5239d`, `agro_bench/utils.py::process_results` calls SQuAD EM/F1. Independently executing the original Transformers v4.57.1 functions on **synthetic option labels** gives EM=F1=1 for reference `A` versus an empty prediction, and for reference `A, C` versus prediction `C`. The normalizer removes `a` as an English article. The spelling `A,C` without a space behaves differently. Pending clarification, we report separate strict option-set metrics and do not describe them as official MERA scores.
+I found a scoring issue in `agro_bench/utils.py::process_results` at commit `7752f19d1658ba80f5f34144895c26dd1bf5239d`. It calls SQuAD EM/F1, whose normalizer removes `a` as an English article. Running the original Transformers v4.57.1 functions gives these results:
 
-Could you please clarify:
+- Reference `A`, empty prediction: EM = F1 = 1.
+- Reference `A, C`, prediction `C`: EM = F1 = 1.
+- Reference `A,C`, prediction `C`: EM = F1 = 0.
 
-1. Does the private evaluation service use this same normalization code? Is Latin option A preserved in production scoring? Can you identify the deployed version/commit or an intended fix?
-2. How are official EM/F1 defined for multiple correct options, and what is the canonical output format? How does the service handle Cyrillic А/В/Е appearing in a few DEV references?
-3. Can a private evaluation return per-item correctness without revealing reference answers? This is needed for paired comparisons of local, cloud, and cascade policies.
-4. Which license and usage terms apply to the ruTXTAgroBench question content separately from the code repository's MIT license? Is DEV-based development of fixed routing rules without training model weights permitted?
-5. May a small number of attributed question examples appear in an academic paper? If separate permission is required, how should we request it?
-6. May we redistribute our raw model predictions without questions or references—for example, selected option letters and item IDs—alongside aggregate metrics and run settings? Are there restrictions on such logs?
+These are synthetic option-label examples. They suggest that option A can disappear and whitespace can change the score. For my local measurements, I use exact option-set matching and set F1. I have not submitted predictions to the private evaluation server.
 
-All option-label examples above are synthetic and do not reproduce benchmark questions. Thank you for helping us use the benchmark correctly and reproducibly.
+I have three questions:
+
+1. Does the private evaluation server use this normalization, or does its scorer preserve option A?
+2. What are the official EM/F1 definitions and required answer format for questions with multiple correct options, including references that use Cyrillic option letters?
+3. What license and usage terms apply to the benchmark content and the publication of model predictions and small question examples in research papers?
+
+Thanks for your help.
 
 Best regards,
-Antoniy Sarychev, Denis Shesternin
-Russian State Agrarian University – Moscow Timiryazev Agricultural Academy, Moscow
+Antoniy Sarychev
 
 References: [MERA metric code](https://github.com/MERA-Evaluation/MERA_Industrial/blob/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/utils.py), [SQuAD normalization](https://github.com/huggingface/transformers/blob/v4.57.1/src/transformers/data/metrics/squad_metrics.py).

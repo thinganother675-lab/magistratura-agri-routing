@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-03T17:19:42.349177+00:00",
+  "monotonic_s": 133182.4650278,
+  "sample_acquisition_s": 0.0451879000174813,
+  "gpu_memory_used_mib": 1082.0,
+  "gpu_memory_free_mib": 14971.0,
+  "gpu_utilization_pct": 6.0,
+  "gpu_temperature_c": 33.0,
+  "gpu_power_w": 12.65,
+  "system_ram_used_gib": 11.768516540527344,
+  "system_ram_available_gib": 19.851348876953125,
+  "lmstudio_process_group_rss_mib": 1034.75390625,
+  "lmstudio_process_count": 6
+}

@@ -1,0 +1,390 @@
+{
+  "status": "SUPPLEMENTARY",
+  "plan_sha256": "fd35828af10b6f05fbb7354744f9ae1f260f6c7fb777e094f3cbe27e81f162a3",
+  "n": 10,
+  "profiles": {
+    "medium": {
+      "summary": {
+        "n_expected": 10,
+        "n_attempted": 10,
+        "n_completed": 10,
+        "n_response_received": 10,
+        "n_scored": 9,
+        "attempted_coverage": true,
+        "complete_coverage": true,
+        "strict_em_count": 3,
+        "strict_f1_sum": 5.3238095238095235,
+        "strict_set_em": 0.3333333333333333,
+        "strict_set_f1": 0.5915343915343915,
+        "conservative_all_n_em": 0.3,
+        "reference_issues": 1,
+        "invalid_output": 0,
+        "json_contract_failure": 6,
+        "errors": 0,
+        "timeouts": 0,
+        "latency_p50_s": 20.282998050010065,
+        "latency_p95_s": 27.619024245005857,
+        "latency_mean_s": 21.924858310003764,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 85065,
+        "output_tokens": 80,
+        "usage_coverage": 10,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8571428571428571
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Мелиоративное земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общая генетика": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общее земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Основы селекции": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8
+          },
+          "Растениеводство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Семеноводство и семеноведение": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Системы земледелия на различных агроландшафтах": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.6666666666666666
+          },
+          "Технологии возделывания сельскохозяйственных культур": {
+            "n": 1,
+            "n_scored": 0,
+            "reference_issues": 1,
+            "strict_set_em": null,
+            "strict_set_f1": null
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 6,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.6111111111111112,
+            "predicted_single_n": 5
+          },
+          "multiple": {
+            "n": 3,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.5523809523809524,
+            "predicted_single_n": 1
+          }
+        }
+      },
+      "tool_calls_n": 0,
+      "internal_reconnect_events_n": 40
+    },
+    "low": {
+      "summary": {
+        "n_expected": 10,
+        "n_attempted": 10,
+        "n_completed": 10,
+        "n_response_received": 10,
+        "n_scored": 9,
+        "attempted_coverage": true,
+        "complete_coverage": true,
+        "strict_em_count": 4,
+        "strict_f1_sum": 5.6571428571428575,
+        "strict_set_em": 0.4444444444444444,
+        "strict_set_f1": 0.6285714285714286,
+        "conservative_all_n_em": 0.4,
+        "reference_issues": 1,
+        "invalid_output": 0,
+        "json_contract_failure": 7,
+        "errors": 0,
+        "timeouts": 0,
+        "latency_p50_s": 17.30819715000689,
+        "latency_p95_s": 20.352210265005123,
+        "latency_mean_s": 17.27089432000066,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 85065,
+        "output_tokens": 73,
+        "usage_coverage": 10,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8571428571428571
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Мелиоративное земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общая генетика": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общее земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Основы селекции": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8
+          },
+          "Растениеводство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Семеноводство и семеноведение": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Системы земледелия на различных агроландшафтах": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Технологии возделывания сельскохозяйственных культур": {
+            "n": 1,
+            "n_scored": 0,
+            "reference_issues": 1,
+            "strict_set_em": null,
+            "strict_set_f1": null
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 6,
+            "strict_set_em": 0.6666666666666666,
+            "strict_set_f1": 0.6666666666666666,
+            "predicted_single_n": 6
+          },
+          "multiple": {
+            "n": 3,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.5523809523809524,
+            "predicted_single_n": 1
+          }
+        }
+      },
+      "tool_calls_n": 0,
+      "internal_reconnect_events_n": 40
+    },
+    "high": {
+      "summary": {
+        "n_expected": 10,
+        "n_attempted": 10,
+        "n_completed": 10,
+        "n_response_received": 10,
+        "n_scored": 9,
+        "attempted_coverage": true,
+        "complete_coverage": true,
+        "strict_em_count": 5,
+        "strict_f1_sum": 6.6571428571428575,
+        "strict_set_em": 0.5555555555555556,
+        "strict_set_f1": 0.7396825396825397,
+        "conservative_all_n_em": 0.5,
+        "reference_issues": 1,
+        "invalid_output": 0,
+        "json_contract_failure": 2,
+        "errors": 0,
+        "timeouts": 0,
+        "latency_p50_s": 21.06247854998219,
+        "latency_p95_s": 23.92678924499487,
+        "latency_mean_s": 21.061230849992718,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 85065,
+        "output_tokens": 860,
+        "usage_coverage": 10,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8571428571428571
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Мелиоративное земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общая генетика": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общее земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Основы селекции": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8
+          },
+          "Растениеводство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Семеноводство и семеноведение": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Системы земледелия на различных агроландшафтах": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Технологии возделывания сельскохозяйственных культур": {
+            "n": 1,
+            "n_scored": 0,
+            "reference_issues": 1,
+            "strict_set_em": null,
+            "strict_set_f1": null
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 6,
+            "strict_set_em": 0.8333333333333334,
+            "strict_set_f1": 0.8333333333333334,
+            "predicted_single_n": 6
+          },
+          "multiple": {
+            "n": 3,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.5523809523809524,
+            "predicted_single_n": 1
+          }
+        }
+      },
+      "tool_calls_n": 0,
+      "internal_reconnect_events_n": 40
+    }
+  },
+  "interpretation": "descriptive effort sensitivity on10 gold-independent DEV items; do not promote selected profile to confirmatory or raw-model superiority",
+  "unsupported_efforts": [
+    "instant",
+    "none"
+  ],
+  "new_paid_api_spend": false,
+  "private_test_run": false,
+  "paired_em_counts": {
+    "low_vs_medium": {
+      "n": 9,
+      "both_correct": 3,
+      "medium_only_correct": 0,
+      "extra_effort_only_correct": 1,
+      "both_wrong": 5
+    },
+    "high_vs_medium": {
+      "n": 9,
+      "both_correct": 3,
+      "medium_only_correct": 0,
+      "extra_effort_only_correct": 2,
+      "both_wrong": 4
+    }
+  }
+}

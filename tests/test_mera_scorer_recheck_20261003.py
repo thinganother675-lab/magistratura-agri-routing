@@ -67,12 +67,15 @@ def test_function_extraction_rejects_unexpected_decorators():
         AUDIT.extract_functions("@remote_side_effect\ndef wanted(): return 1", {"wanted"}, {})
 
 
-def test_maintainer_drafts_remain_unsent_with_joint_authorship():
+def test_maintainer_letter_preserves_scoring_question_and_project_authorship():
     for language in ("RU", "EN"):
         content = (ROOT / f"docs/MERA_MAINTAINER_MESSAGE_READY_{language}.md").read_text(encoding="utf-8")
-        assert "NOT_SENT" in content
-        assert "Antoniy Sarychev" in content and "Denis Shesternin" in content
+        assert "Antoniy Sarychev" in content
+        # Correspondence sent personally by Antoniy is not the project author list.
+        assert "NOT_SENT" in content or "SENT_BY_AUTHOR_REPORTED" in content
         assert "7752f19d1658ba80f5f34144895c26dd1bf5239d" in content
+    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    assert "Sarychev" in citation and "Shesternin" in citation
 
 
 def test_recheck_claims_are_hash_bound_development_evidence():
