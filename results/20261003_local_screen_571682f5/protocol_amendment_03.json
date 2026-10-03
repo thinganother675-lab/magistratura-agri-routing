@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-03T08:13:29.420555+00:00",
+  "before_any_inference": true,
+  "reason": "Explicit60s streaming wall deadline in addition to httpx inactivity timeout; synthetic/model calls use same deadline.",
+  "original_protocol_sha256": "8aec2d6fafb9228dddd434a72eae45903071ec4a3b49109667bec40bf01aca59",
+  "previous_amendment_sha256": "15d520857ceba55d11382046c646cce28147f5669a34236731815685df903ff2",
+  "replacement_fields": {
+    "timeout_method": "60s HTTP read-inactivity plus wall deadline checked at every received SSE line; stream close on stop",
+    "uncommitted_source_hashes": {
+      "scripts/mera_local_screen_20261003.py": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+      "src/agro_route/mera_screen_metrics_20261003.py": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567"
+    }
+  }
+}

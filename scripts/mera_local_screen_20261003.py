@@ -62,6 +62,7 @@ PROTOCOL = {"context_length": 2048, "parallel": 1, "speculative_draft_mtp": Fals
             "preload_min_ram_gib": 3, "inference_min_ram_gib": 2,
             "preload_min_gpu_free_mib": 1024, "inference_min_gpu_free_mib": 512,
             "timeout_s": 60, "load_timeout_s": 240,
+            "timeout_method": "60s HTTP read-inactivity plus wall deadline checked at every received SSE line; stream close on stop",
             "reasoning_policy": "off where native off supported; GPT-OSS low (off unsupported); default otherwise",
             "strict_gold_policy": "presentation only; no Cyrillic transliteration; unresolved references retained and conservative all-N score reported",
             "claim_status": "DEV", "private_test_run": False,
@@ -142,6 +143,17 @@ def confidence_from_events(events):
             "confidence_method": "geometric mean of emitted Latin-choice-token probability; not probability of correctness"}
 
 
+class RequestWallTimeout(RuntimeError):
+    pass
+
+
+def request_guard(monitor, started):
+    if monitor.tripped.is_set():
+        raise RuntimeError("RESOURCE_GUARD")
+    if time.perf_counter() - started > PROTOCOL["timeout_s"]:
+        raise RequestWallTimeout("Total streaming wall deadline exceeded")
+
+
 class ResourceMonitor(guards.Monitor):
     """Same thresholds as historical guards; checks throughout streaming."""
     def __init__(self):
@@ -173,8 +185,7 @@ def call_model(client, key, identifier, prompt, reasoning, monitor):
             response.raise_for_status()
             def guarded_lines():
                 for line in response.iter_lines():
-                    if monitor.tripped.is_set():
-                        raise RuntimeError("RESOURCE_GUARD")
+                    request_guard(monitor, start)
                     yield line
             raw = native.consume_sse(guarded_lines(), start)
         record.update(raw=raw, usage=raw["usage"], timing=raw["timing"],
@@ -375,7 +386,7 @@ def run_one(client, key, safe, restricted, stage, model_key, ratio, items, refs,
                         break
                 if manifest.get("stop_reason"):
                     break
-            if len(rows) == len(items):
+            if len(rows) == len(items) and not manifest.get("stop_reason") and not any(r.get("error") for r in rows):
                 manifest["status"] = "COMPLETE"
     except (RuntimeError, ValueError, OSError, httpx.HTTPError, subprocess.TimeoutExpired) as exc:
         manifest.update(status="PARTIAL_RESOURCE_GUARD" if monitor.tripped.is_set() or "guard" in str(exc).lower() else "FAILED_LOAD" if not rows else "PARTIAL",
@@ -393,6 +404,7 @@ def run_one(client, key, safe, restricted, stage, model_key, ratio, items, refs,
                         actual_calls=len(rows), loads_n=len(manifest["loads"]),
                         total_load_latency_s=sum(x.get("load_latency_s", 0) for x in manifest["loads"]),
                         total_warmup_latency_s=sum(x.get("warmup_latency_s", 0) for x in manifest["loads"]))
+        manifest["timeout_count"] = manifest["summary"]["timeouts"]
         manifest["raw_sha256"] = sha256_bytes((raw_dir / (stem + "_raw.jsonl")).read_bytes()) if (raw_dir / (stem + "_raw.jsonl")).exists() else None
         manifest["safe_rows_sha256"] = sha256_bytes((target.parent / (stem + "_metrics.jsonl")).read_bytes()) if (target.parent / (stem + "_metrics.jsonl")).exists() else None
         write_new(target, native.redact(manifest, key))
@@ -411,12 +423,15 @@ def run(args):
         raise ValueError("Result directory must stay in results")
     restricted = ensure_restricted_path(ROOT / ".runtime/mera" / safe.name, ROOT)
     protocol = json.loads((safe / "protocol_frozen.json").read_text(encoding="utf-8"))
-    amendment = safe / "protocol_amendment_01.json"
-    if amendment.exists():
+    previous_amendment_hash = None
+    for amendment in sorted(safe.glob("protocol_amendment_*.json")):
         amendment_data = json.loads(amendment.read_text(encoding="utf-8"))
         if amendment_data["original_protocol_sha256"] != sha256_bytes((safe / "protocol_frozen.json").read_bytes()):
             raise ValueError("Protocol amendment parent mismatch")
+        if amendment_data.get("previous_amendment_sha256") != previous_amendment_hash:
+            raise ValueError("Protocol amendment chain mismatch")
         protocol.update(amendment_data["replacement_fields"])
+        previous_amendment_hash = sha256_bytes(amendment.read_bytes())
     for name, expected in protocol["uncommitted_source_hashes"].items():
         if sha256_bytes((ROOT / name).read_bytes()) != expected:
             raise ValueError("Frozen runner source changed: no inference permitted")

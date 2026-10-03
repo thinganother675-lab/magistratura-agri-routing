@@ -76,9 +76,11 @@ def summarize(rows, expected_ids):
     count = sum(r["strict_set_em"] for r in scored)
     f1_sum = sum(r["strict_set_f1"] for r in scored)
     mean = lambda xs: statistics.mean(xs) if xs else None
-    result = {"n_expected": len(expected_ids), "n_attempted": len(rows), "n_completed": len(rows),
+    completed_n = sum(bool(r.get("response_received")) and not r.get("error") for r in rows)
+    result = {"n_expected": len(expected_ids), "n_attempted": len(rows), "n_completed": completed_n,
         "n_response_received": sum(r.get("response_received", False) for r in rows),
-        "n_scored": len(scored), "complete_coverage": set(ids) == set(expected_ids),
+        "n_scored": len(scored), "attempted_coverage": set(ids) == set(expected_ids),
+        "complete_coverage": set(ids) == set(expected_ids) and completed_n == len(expected_ids),
         "strict_em_count": count, "strict_f1_sum": f1_sum,
         "strict_set_em": count / len(scored) if scored else None,
         "strict_set_f1": f1_sum / len(scored) if scored else None,

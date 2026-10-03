@@ -134,3 +134,22 @@ def test_monitor_fails_closed_missing_measurement(runner, monkeypatch):
     monitor.sample()
     assert monitor.tripped.is_set()
     assert monitor.trip["measurement_error_type"] == "RuntimeError"
+
+
+def test_final_item_error_is_attempted_not_completed():
+    last = fixture_row(2, prediction="")
+    last["error"] = {"type": "ReadTimeout"}
+    last["response_received"] = False
+    summary = summarize([fixture_row(1), last], [1, 2])
+    assert summary["attempted_coverage"]
+    assert not summary["complete_coverage"]
+    assert summary["n_attempted"] == 2
+    assert summary["n_completed"] == 1
+    assert summary["timeouts"] == 1
+
+
+def test_total_streaming_deadline(runner, monkeypatch):
+    monitor = runner.ResourceMonitor()
+    monkeypatch.setattr(runner.time, "perf_counter", lambda: 61)
+    with pytest.raises(runner.RequestWallTimeout):
+        runner.request_guard(monitor, 0)
