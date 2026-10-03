@@ -263,6 +263,7 @@ def finalize(safe, cloud_path):
               "stage2_excluded_from_primary_selection": stage2_excluded,
               "shortlist_sha256": digest(shortlist_path.read_bytes()), "protocol_hashes": protocol_hashes,
               "source_hashes": {**stage1["source_hashes"], **hashes2},
+              "auxiliary_identity_source_hashes": {path.relative_to(ROOT).as_posix(): digest(path.read_bytes()) for path in (safe / "installed_weight_checksums.json", safe / "installed_gguf_tensor_types.json", safe / "weight_upstream_identity.json") if path.exists()},
               "primary_local": primary, "best_latency_quality": fast_balanced,
               "descriptive_em_uncertainty": descriptive_uncertainty,
               "paired_qwen27_minus_qwen9": paired_qwen27_qwen9,
@@ -271,7 +272,7 @@ def finalize(safe, cloud_path):
               "cloud_source_sha256": digest(cloud_path.read_bytes()) if cloud_path else None,
               "private_test_run": False, "MERA_PRIVATE_TEST_READY": "NO",
               "confirmatory_validation": False, "metric_server_status": "UNKNOWN",
-              "routing_rule": "invalid format/transport/abstain -> cloud; no probability threshold selected",
+              "routing_rule": "Proposed primary format/transport/abstain fallback with confidence threshold None; exploratory DEV grid thresholds are not a frozen deployment rule",
               "paper_recommendation": "B_AS_NEXT_PRIMARY_DESIGN_AFTER_VALID_TEST; CURRENT_EMPIRICAL_CLAIMS_DEV_ONLY",
               "actual_cloud_calls_saved_by_replay": 0,
               "blockers": ["MERA production scorer/server version unknown", "rights remain USE_WITH_RESTRICTIONS", "official submission acceptance and per-item results unverified", "authors must approve frozen primary local/cloud/rule/protocol and separate TEST submission"]}
@@ -350,6 +351,8 @@ def finalize(safe, cloud_path):
 Статус: **DEV / DEVELOPMENT_ONLY**. Исторический HOME150 и исходные рукописи сохранены. Частный TEST не запускался, официальная серверная оценка отсутствует. Серия `{safe.name}`.
 
 Проверенный хост: Ryzen7 8700F, RAM31.620GiB, RTX5060Ti16GB (16311MiB); LMStudio0.4.25+1, endpoint `http://127.0.0.1:1234`. Установлены24inventory entries, назначены10generaltext конфигураций; один Qwen4 duplicate byte-identical и не считается отдельной архитектурой. Глобальный runtime `llama.cpp-win-x86_64-nvidia-cuda12-avx2@2.51.0`, per-model runtimeidentity UNKNOWN. Полный безопасный inventory, scope exclusions и измеренные SHA — `inventory_analysis.json`, `inventory_scope_review.json`, `installed_weight_checksums.json`; source-linked claims — `CLAIM_PROVENANCE_SCREEN_INVENTORY_20261003.json`.
+
+Идентичность оцениваемой конфигурации задаётся локальным GGUF SHA256, а не одним displayname. Upstream receipt `weight_upstream_identity.json` сопоставил8/10 GGUF с текущими public HF LFS hashes; два установленых Gemma не совпали с текущим revision/filename. Это не изменение весов во время исследования: все проверенные локальные bytes сохранены. Исторические HF revisions для Gemma проверяются отдельно; без такого соответствия нельзя обещать скачивание того же evaluated artifact по latest alias.
 
 Для десяти кандидатов назначена одна фиксированная выборка DEV60 по историческому selector: по шесть задач десяти исходных дисциплин, распределённых по ID без обращения к gold. Фактически восемь моделей завершили60/60, GPTOSS20 получил одну benchmarkзадачу без успешного завершения, Qwen35 не дошёл до benchmarkвызовов из-за loadguard. System/JSON контракт, исходный prompt, контекст2048, reload каждые10 задач и синтетический warmup одинаковы; запрос temperature0, top_p1, seed42, max_tokens512. Off/low reasoning и GPU ratio по модели записаны как явные поддерживаемые исключения. Результаты полного DEV293 используются для разработки выбора, а не независимого подтверждения.
 
