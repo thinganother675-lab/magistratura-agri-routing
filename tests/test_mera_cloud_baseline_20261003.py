@@ -7,7 +7,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
-from mera_cloud_baseline_20261003 import PROFILES, request, reserve_usd, selected_probe, safe_measurement
+from mera_cloud_baseline_20261003 import PROFILES, request, reserve_usd, selected_probe, safe_measurement, execution_status
 from agro_route.mera_adapter_20261003 import InferenceItem
 
 
@@ -54,3 +54,9 @@ def test_truncated_parseable_json_is_incomplete_and_scores_zero():
     assert row["strict_set_em"] == 0 and row["strict_set_f1"] == 0
     assert row["error"]["type"] == "IncompleteCompletion"
     assert row["prediction_valid"] is False
+
+
+def test_all_attempts_with_last_error_is_not_successfully_complete():
+    assert execution_status([{"response_received": True, "error": None}], 1) == "COMPLETE"
+    assert execution_status([{"response_received": True, "error": {"type": "IncompleteCompletion"}}], 1) == "ATTEMPT_COVERAGE_COMPLETE_WITH_FAILURES"
+    assert execution_status([], 1) == "PARTIAL"

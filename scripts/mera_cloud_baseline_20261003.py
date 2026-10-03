@@ -48,6 +48,12 @@ def append(handle, obj):
     handle.write(json.dumps(obj, ensure_ascii=False) + "\n"); handle.flush()
 
 
+def execution_status(rows, expected_n):
+    if len(rows) != expected_n:
+        return "PARTIAL"
+    return "COMPLETE" if all(r.get("response_received") and not r.get("error") for r in rows) else "ATTEMPT_COVERAGE_COMPLETE_WITH_FAILURES"
+
+
 def selected_probe(dev60):
     if len(dev60) != 60:
         raise ValueError("Exact common DEV60 required")
@@ -227,7 +233,7 @@ def run(args):
                 if len(rows) >= 6 and sum(not r["prediction_valid"] for r in rows[-6:]) >= 3:
                     manifest["stop_reason"] = "THREE_INVALID_LAST_SIX"; break
     finally:
-        manifest.update(finished_utc=now(), status="COMPLETE" if len(rows) == len(selected) else "PARTIAL",
+        manifest.update(finished_utc=now(), status=execution_status(rows, len(selected)),
                         actual_calls=len(rows), reserved_usd=reserved, known_cost_usd_estimate=sum(r["cost_usd_estimate"] or 0 for r in rows),
                         unknown_cost_calls=sum(r["cost_usd_estimate"] is None for r in rows), summary=summarize(rows, [i.item_id for i in selected]),
                         raw_sha256=sha256_bytes(raw_path.read_bytes()) if raw_path.exists() else None,

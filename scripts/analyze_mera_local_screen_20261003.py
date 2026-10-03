@@ -287,12 +287,26 @@ def finalize(safe, cloud_path):
         for i, p in enumerate(result[stage]):
             for name in ("n_attempted", "n_completed", "n_scored", "strict_set_em", "strict_set_f1", "latency_p50_s", "latency_p95_s", "peak_gpu_mib", "peak_ram_used_gib"):
                 claim(f"{stage}_{p['model_key'].replace('/', '_')}_{name}", f"{p['model_key']} {stage} {name}; public DEV development only", f"/{stage}/{i}/summary/{name}", p["summary"][name])
+            for name in ("n_expected", "n_response_received", "reference_issues", "invalid_output", "errors", "timeouts", "strict_em_count", "input_tokens", "output_tokens", "conservative_all_n_em"):
+                claim(f"{stage}_{p['model_key'].replace('/', '_')}_{name}", f"{p['model_key']} {stage} {name}; public DEV development only", f"/{stage}/{i}/summary/{name}", p["summary"][name])
+            for name in ("auc_correctness", "n_observed", "n_total"):
+                claim(f"{stage}_{p['model_key'].replace('/', '_')}_confidence_{name}", "Actual emitted-option lexical-confidence DEV diagnostic: " + name, f"/{stage}/{i}/confidence/{name}", p["confidence"][name])
+            if stage == "stage2":
+                for group_name in ("domains", "answer_cardinality"):
+                    for group, metrics in p["breakdown"][group_name].items():
+                        escaped_group = group.replace("~", "~0").replace("/", "~1")
+                        for name in ("n_expected", "n_scored", "reference_issues", "strict_set_em", "strict_set_f1"):
+                            claim(f"{stage}_{p['model_key'].replace('/', '_')}_{group_name}_{group}_{name}", "DEV293 original-label breakdown: " + name, f"/{stage}/{i}/breakdown/{group_name}/{escaped_group}/{name}", metrics[name])
     claim("primary_local_dev_selection", "Primary local development recommendation, not independent validation", "/primary_local", primary)
+    claim("best_latency_quality_dev_selection", "Latency-quality development recommendation within exploratory .10EM tolerance", "/best_latency_quality", fast_balanced)
+    claim("actual_practical_shortlist", "Explicit practical selection afterDEV60 beforeDEV293", "/shortlist/model_keys", shortlist["model_keys"])
     for key, replay in cascade.items():
         escaped = key.replace("~", "~0").replace("/", "~1")
         if replay["selected"]:
-            for name in ("strict_set_em", "strict_set_f1", "cloud_calls_if_deployed", "relative_cloud_call_reduction_if_deployed"):
+            for name in ("strict_set_em", "strict_set_f1", "cloud_calls_if_deployed", "relative_cloud_call_reduction_if_deployed", "threshold"):
                 claim(f"cascade_{key.replace('/', '_')}_{name}", "Saved commonDEV60 output replay: " + name, "/cascade_dev60/" + escaped + "/selected/" + name, replay["selected"][name], "SIMULATED")
+            for name in ("confidence_benefit_established", "trivial_local_resolution_suffices_on_dev"):
+                claim(f"cascade_{key.replace('/', '_')}_{name}", "Saved commonDEV60 output replay limitation: " + name, "/cascade_dev60/" + escaped + "/" + name, replay[name], "SIMULATED")
     provenance = {"run_id": safe.name, "created_utc": now(), "claims": claims,
                   "validation": validate_claims(claims, ROOT), "human_confirmation": "PENDING"}
     write_new(ROOT / "manuscript/CLAIM_PROVENANCE_LOCAL_SCREEN_20261003.json", provenance)
@@ -324,7 +338,7 @@ STRICT_SET_EM — точное совпадение множества; STRICT_S
 
 ## Cascade DEV replay
 
-Статус **{result['cascade_status']}**. Invalid/transport/abstain → cloud; дополнительный порог реальной lexicalconfidence выбирается только на DEV из объявленной сетки [None,.5,.7,.8,.9,.95,.98,.99,1]. Цель — минимальная доля cloud при EM не ниже cloud−5 п.п.; ties higherF1/lowerthreshold.5 п.п. — exploratory design choice, требующая подтверждения авторами для TEST; это не доказанное неухудшение и не агрономический норматив. Каждое routing decision использует только local observable signal, не gold. Результат primary: `{json.dumps(cascade.get(primary, {}).get('selected'), ensure_ascii=False)}`. Confidence benefit: `{cascade.get(primary, {}).get('confidence_benefit_established', False)}`; local-only suffices: `{cascade.get(primary, {}).get('trivial_local_resolution_suffices_on_dev', False)}`.
+Статус **{result['cascade_status']}**. Неразбираемый набор вариантов/transport/abstain → cloud; presentation-normalized plain Latin list может быть допустим даже без исходного JSON, поэтому это не проверка полной strict JSONschema. Дополнительный порог реальной lexicalconfidence выбирается только на DEV из объявленной сетки [None,.5,.7,.8,.9,.95,.98,.99,1]. Цель — минимальная доля cloud при EM не ниже cloud−5 п.п.; ties higherF1/lowerthreshold.5 п.п. — exploratory design choice, требующая подтверждения авторами для TEST; это не доказанное неухудшение и не агрономический норматив. Каждое routing decision использует только local observable signal, не gold. Результат primary: `{json.dumps(cascade.get(primary, {}).get('selected'), ensure_ascii=False)}`. Confidence benefit: `{cascade.get(primary, {}).get('confidence_benefit_established', False)}`; local-only suffices: `{cascade.get(primary, {}).get('trivial_local_resolution_suffices_on_dev', False)}`.
 
 Replay не вызывает моделей: фактически сэкономленных в этом screen запросов0. Возможное сокращение по сохранённым ответам относится только к общему DEV60; full293 cloud не выполнялся, full293 cascade качество неизвестно. Live cascade latency/cost savings не измерены.
 
