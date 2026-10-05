@@ -3,8 +3,9 @@
 # editable open, made hidden automation hang. Each document is opened read-only in
 # its own Word instance and re-saved with SaveAs2 to a temporary file that then
 # replaces the original.
+param([string[]]$Names = @('russian_resource_20261005_claude', 'english_resource_20261005_claude'))
 $root = Split-Path -Parent $PSScriptRoot
-foreach ($name in @('russian_resource_20261005_claude', 'english_resource_20261005_claude')) {
+foreach ($name in $Names) {
     $docx = [System.IO.Path]::Combine($root, 'manuscript', "$name.docx")
     $pdf = [System.IO.Path]::Combine($root, 'manuscript', "${name}_word.pdf")
     $tmp = [System.IO.Path]::Combine($env:TEMP, "$name.hyph.docx")

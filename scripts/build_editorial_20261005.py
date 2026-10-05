@@ -2,7 +2,7 @@
 
 Markdown is the single editable source; TeX and DOCX are rendered from it so the
 formats cannot drift. No factual content is generated here.
-Usage: python scripts/build_editorial_20261005.py [tex|docx|all]
+Usage: python scripts/build_editorial_20261005.py [tex|docx|all] [revision, e.g. r2]
 """
 from pathlib import Path
 import re
@@ -291,9 +291,9 @@ def build_docx(lang):
         later = [c for c in ppr if c.tag in {qn("w:spacing"), qn("w:ind"), qn("w:jc"), qn("w:outlineLvl"), qn("w:rPr")}]
         later[0].addprevious(flag) if later else ppr.append(flag)
     d.styles["Heading 2"].font.italic = ru
-    d.styles["Heading 1"].paragraph_format.space_before = Pt(10)
+    d.styles["Heading 1"].paragraph_format.space_before = Pt(8)
     d.styles["Heading 1"].paragraph_format.space_after = Pt(4)
-    d.styles["Heading 2"].paragraph_format.space_before = Pt(6)
+    d.styles["Heading 2"].paragraph_format.space_before = Pt(4)
     d.styles["Heading 2"].paragraph_format.space_after = Pt(2)
     if ru:
         d.styles["Heading 2"].paragraph_format.first_line_indent = Cm(1.25)
@@ -368,7 +368,8 @@ def build_docx(lang):
                     for r in cp.runs:
                         r.bold = j == 0
             spacer = d.add_paragraph()
-            spacer.paragraph_format.space_after = Pt(2)
+            spacer.paragraph_format.space_after = Pt(0)
+            spacer.paragraph_format.line_spacing = Pt(6)  # thin gap, not a full empty 14 pt line
         elif kind == "figure":
             cap, path = p
             png = (MS / path).resolve().with_suffix(".png")
@@ -415,7 +416,12 @@ def build_docx(lang):
 
 if __name__ == "__main__":
     what = sys.argv[1] if len(sys.argv) > 1 else "all"
-    for lang in ("ru", "en"):
+    langs = ("ru", "en")
+    if len(sys.argv) > 2:
+        # Revision suffix, e.g. "r2": build only the revised Russian manuscript.
+        DOCS["ru"] = MS / f"russian_resource_20261005_claude_{sys.argv[2]}.md"
+        langs = ("ru",)
+    for lang in langs:
         if what in ("tex", "all"):
             print(build_tex(lang))
         if what in ("docx", "all"):

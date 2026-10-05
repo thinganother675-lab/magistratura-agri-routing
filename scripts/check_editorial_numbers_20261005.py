@@ -14,6 +14,7 @@ MS = ROOT / "manuscript"
 PAIRS = {
     "ru": (MS / "russian_resource_20261004.md", MS / "russian_resource_20261005_claude.md"),
     "en": (MS / "english_resource_20261004.md", MS / "english_resource_20261005_claude.md"),
+    "ru_r2": (MS / "russian_resource_20261004.md", MS / "russian_resource_20261005_claude_r2.md"),
 }
 CUT = re.compile(r"^## (Литература|Список литературы|References)\s*$", re.M)
 
@@ -21,7 +22,8 @@ CUT = re.compile(r"^## (Литература|Список литературы|R
 def body(path, lang):
     text = CUT.split(path.read_text(encoding="utf-8"))[0]
     text = re.sub(r"(\d)[   ](\d{3})", r"\1\2", text)
-    text = text.replace(",", ".") if lang == "ru" else text.replace(",", "")
+    text = text.replace("10⁻⁸", "1e-8").replace("10⁻⁴", "1e-4")
+    text = text.replace(",", ".") if lang.startswith("ru") else text.replace(",", "")
     return text
 
 
@@ -87,10 +89,11 @@ def main():
     for name, ru, en, check in CLAIMS:
         ru_ok = ru.replace(",", ".") in texts["ru"].replace(" ", " ")
         en_ok = en.replace(",", "") in texts["en"]
+        r2_ok = ru.replace(",", ".") in texts["ru_r2"].replace(" ", " ")
         ev = None if check is None else bool(check())
-        row = {"claim": name, "ru_present": ru_ok, "en_present": en_ok,
+        row = {"claim": name, "ru_present": ru_ok, "ru_r2_present": r2_ok, "en_present": en_ok,
                "evidence_match": ev if ev is not None else "covered by 20261004 claim_to_evidence (text unchanged)"}
-        if not (ru_ok and en_ok) or ev is False:
+        if not (ru_ok and r2_ok and en_ok) or ev is False:
             report["status"] = "FAIL"
         report["claims"].append(row)
     out = ROOT / "results/20261005_editorial/numeric_fact_check.json"
