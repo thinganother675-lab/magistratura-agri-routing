@@ -1,0 +1,537 @@
+[
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "phi-4-mini-instruct",
+    "display_name": "Phi 4 Mini Instruct",
+    "architecture": "phi3",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 4084613579,
+    "params_string": "3B",
+    "loaded_instances": [],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": false
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "abenzerps",
+    "key": "qwen-image-2.1-uncensored",
+    "display_name": "Qwen Image 2.1 UC",
+    "architecture": "qwen_image21",
+    "quantization": {
+      "name": "Q6_K",
+      "bits_per_weight": 6
+    },
+    "size_bytes": 5876556576,
+    "params_string": null,
+    "loaded_instances": [],
+    "max_context_length": 4096,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": false
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "ggml-org",
+    "key": "qwen3-omni-30b-a3b-instruct",
+    "display_name": "Qwen3 Omni 30B A3B Instruct",
+    "architecture": "qwen3vlmoe",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 20764519520,
+    "params_string": "128x1.8B",
+    "loaded_instances": [],
+    "max_context_length": 65536,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "qwen3.8-27b",
+    "display_name": "Qwen3.8 27B UD",
+    "architecture": "qwen35",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 17392051472,
+    "params_string": "27B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "openbmb",
+    "key": "minicpm5-1b",
+    "display_name": "MiniCPM5 1B",
+    "architecture": "llama",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 1153529216,
+    "params_string": "1B",
+    "loaded_instances": [],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": false,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "gemma-4-12b-it",
+    "display_name": "Gemma 4 12B Instruct",
+    "architecture": "gemma4",
+    "quantization": {
+      "name": "Q4_K_S",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 6974047200,
+    "params_string": "12B",
+    "loaded_instances": [],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "mradermacher",
+    "key": "webworld-8b-i1",
+    "display_name": "WebWorld 8B I1",
+    "architecture": "qwen3",
+    "quantization": {
+      "name": "Q6_K",
+      "bits_per_weight": 6
+    },
+    "size_bytes": 6725900736,
+    "params_string": "8B",
+    "loaded_instances": [],
+    "max_context_length": 40960,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "mudler",
+    "key": "vibevoice.cpp-models",
+    "display_name": "Vibevoice Realtime 0.5B",
+    "architecture": "vibevoice",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 1699832128,
+    "params_string": null,
+    "loaded_instances": [],
+    "max_context_length": 4096,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": false
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "granite-4.1-8b",
+    "display_name": "Granite 4.1 8B",
+    "architecture": "granite",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 5347915136,
+    "params_string": "8B",
+    "loaded_instances": [],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  {
+    "type": "embedding",
+    "publisher": "nomic-ai",
+    "key": "text-embedding-nomic-embed-text-v2-moe",
+    "display_name": "Nomic Embed Text v2 MoE",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 512225120,
+    "params_string": "8x277M",
+    "loaded_instances": [],
+    "max_context_length": 512,
+    "format": "gguf"
+  },
+  {
+    "type": "embedding",
+    "publisher": "Qwen",
+    "key": "text-embedding-qwen3-embedding-8b",
+    "display_name": "Qwen3 Embedding 8B",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 8047105824,
+    "params_string": "8B",
+    "loaded_instances": [],
+    "max_context_length": 40960,
+    "format": "gguf"
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "gpt-oss-20b",
+    "display_name": "GPT-OSS 20B",
+    "architecture": "gpt-oss",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 12109568811,
+    "params_string": "20B",
+    "loaded_instances": [],
+    "max_context_length": 131072,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "inclusionAI",
+    "key": "dr-venus-4b-rl",
+    "display_name": "DR Venus 4B RL",
+    "architecture": "qwen3",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 2716067936,
+    "params_string": "4.4B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "gemma-4-26b-a4b-it",
+    "display_name": "Gemma 4 26B A4B Instruct UD",
+    "architecture": "gemma4",
+    "quantization": {
+      "name": "IQ4_NL_XL",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 16847892149,
+    "params_string": "26B-A4B",
+    "loaded_instances": [
+      {
+        "id": "preroute-reference-gemma26",
+        "config": {
+          "context_length": 4096,
+          "eval_batch_size": 2048,
+          "physical_batch_size": 512,
+          "parallel": 1,
+          "flash_attention": true,
+          "context_checkpoints": 32,
+          "reasoning_budget_message": "",
+          "speculative_draft_mtp": false,
+          "speculative_draft_simple": false,
+          "speculative_draft_model": "",
+          "speculative_draft_max_tokens": 3,
+          "speculative_draft_min_tokens": 0,
+          "speculative_draft_min_continue_probability": 0,
+          "num_experts": 8,
+          "offload_kv_cache_to_gpu": true
+        }
+      }
+    ],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "chris0173",
+    "key": "voxtral-4b-tts-2603",
+    "display_name": "Voxtral 4B TTS 2603",
+    "architecture": "llama",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 4695412096,
+    "params_string": "4B",
+    "loaded_instances": [],
+    "max_context_length": 65536,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": false
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "qwen3-coder-next",
+    "display_name": "Qwen3 Coder Next UD",
+    "architecture": "qwen3next",
+    "quantization": {
+      "name": "Q3_K_S",
+      "bits_per_weight": 3
+    },
+    "size_bytes": 33320267776,
+    "params_string": "512x2.5B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "HauhauCS",
+    "key": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+    "display_name": "Qwen3.6 35B A3B Uncensored HauhauCS Aggressive",
+    "architecture": "qwen35moe",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 22066041088,
+    "params_string": "35B-A3B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "qwen3.5-35b-a3b",
+    "display_name": "Qwen3.5 35B A3B UD",
+    "architecture": "qwen35moe",
+    "quantization": {
+      "name": "Q4_K_L",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 21991940602,
+    "params_string": "35B-A3B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "qwen3.5-9b",
+    "display_name": "Qwen3.5 9B",
+    "architecture": "qwen35",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 11351564064,
+    "params_string": "9B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "Qwen",
+    "key": "qwen3-vl-8b-instruct",
+    "display_name": "Qwen3VL 8B Instruct",
+    "architecture": "qwen3vl",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 9868549280,
+    "params_string": "8B",
+    "loaded_instances": [],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true
+    },
+    "description": null
+  },
+  {
+    "type": "llm",
+    "publisher": "TeichAI",
+    "key": "qwen3-8b-deepseek-v3.2-speciale-distill",
+    "display_name": "Qwen3 8B DeepSeek v3.2 Speciale Distill",
+    "architecture": "qwen3",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 5027786444,
+    "params_string": "8B",
+    "loaded_instances": [],
+    "max_context_length": 40960,
+    "format": "gguf",
+    "capabilities": {
+      "vision": false,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  {
+    "type": "embedding",
+    "publisher": "nomic-ai",
+    "key": "text-embedding-nomic-embed-text-v1.5",
+    "display_name": "Nomic Embed Text v1.5",
+    "quantization": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "size_bytes": 84106624,
+    "params_string": null,
+    "loaded_instances": [],
+    "max_context_length": 2048,
+    "format": "gguf"
+  }
+]

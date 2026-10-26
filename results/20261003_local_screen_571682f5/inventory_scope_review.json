@@ -1,0 +1,33 @@
+{
+  "classification": "DEV",
+  "installed_entry_count": 24,
+  "normal_general_text_candidate_count": 10,
+  "excluded_entry_count": 14,
+  "multimodal_capability_policy": "Explicitly requested Gemma/Qwen general instruct candidates are tested only as text; optional vision/audio-specific variants are excluded.",
+  "model_identity_limit": "Installed filenames and native metadata are measured identifiers; upstream immutable model revision is not asserted.",
+  "exclusions": {
+    "magistratura/qwen3.5-4b": "Byte-identical duplicate of unsloth/qwen3.5-4b Q8_0; both full-file SHA256 values recorded in inventory.json. One underlying model, not two architectures.",
+    "qwen-image-2.1-uncensored": "Image generation; not a text question-answering candidate.",
+    "qwen3-omni-30b-a3b-instruct": "Audio/vision-oriented multimodal variant; irrelevant modality adds a distinct runtime burden outside the normal text screen.",
+    "webworld-8b-i1": "Specialized agent/web-world fine-tune; deferred outside the ten requested normal general instruct candidates.",
+    "vibevoice.cpp-models": "Audio/TTS model.",
+    "text-embedding-nomic-embed-text-v2-moe": "Embedding model.",
+    "text-embedding-qwen3-embedding-8b": "Embedding model.",
+    "dr-venus-4b-rl": "Specialized reasoning RL fine-tune; deferred outside the ten normal general instruct candidates, not classified as uncensored.",
+    "voxtral-4b-tts-2603": "TTS model.",
+    "qwen3-coder-next": "Coder-specific model; task does not require code generation.",
+    "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive": "Aggressive/uncensored variant; a normal Qwen35B instruct candidate is installed.",
+    "qwen3-vl-8b-instruct": "Vision-specific variant; vision capability irrelevant to this text benchmark.",
+    "qwen3-8b-deepseek-v3.2-speciale-distill": "Specialized distilled reasoning fine-tune; normal Qwen instruct candidates available and predefined ten-candidate scope sufficient.",
+    "text-embedding-nomic-embed-text-v1.5": "Embedding model."
+  },
+  "first_completed_model_context_observation": {
+    "model": "gemma-4-12b-it",
+    "split": "DEV60",
+    "max_observed_input_tokens": 612,
+    "requested_output_budget": 512,
+    "max_observed_input_plus_requested_output_budget": 1124,
+    "loaded_context_length": 2048,
+    "scope": "This observation covers only Gemma12 DEV60; all-model full293 fit is checked by actual successful calls, not inferred from this one model."
+  }
+}

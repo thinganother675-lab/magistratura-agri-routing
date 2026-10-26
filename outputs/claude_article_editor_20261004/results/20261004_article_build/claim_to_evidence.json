@@ -1,0 +1,128 @@
+{
+  "version": "20261004_v1",
+  "status": "EDITORIAL_CLAIM_MAP_NOT_SUBMISSION_APPROVAL",
+  "scope": "One RU/EN work; development practical configuration study. Paths are repository relative; fields are RFC6901 JSON pointers. No restricted question, gold or answer text included.",
+  "claims": [
+    {
+      "id": "historical_dev293_quality",
+      "classification": "HISTORICAL_LIVE_DEV_REANALYSIS",
+      "claim": "Qwen9 141/289, set F1 0.6286208601087494; Qwen27 150/289, set F1 0.6467787114845939",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/historical_quality/qwen3.5-9b/em_count", "/historical_quality/qwen3.5-9b/n_scored", "/historical_quality/qwen3.5-9b/set_f1", "/historical_quality/qwen3.8-27b/em_count", "/historical_quality/qwen3.8-27b/n_scored", "/historical_quality/qwen3.8-27b/set_f1"]}],
+      "limits": "Strict local set metric, not unresolved production MERA scorer; no independence or size causality"
+    },
+    {
+      "id": "unresolved_references_and_sensitivity",
+      "classification": "DESCRIPTIVE_DENOMINATOR_POLICY",
+      "claim": "Four original references unresolved:222,300,317,374; conservative all293 sensitivity141/293 and150/293",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/unresolved_original_reference_ids", "/historical_quality/qwen3.5-9b/conservative_all_n_em", "/historical_quality/qwen3.8-27b/conservative_all_n_em"]}],
+      "limits": "Sensitivity is not gold correction or established true accuracy on unresolved labels"
+    },
+    {
+      "id": "historical_paired_uncertainty",
+      "classification": "DESCRIPTIVE_DEV_BOOTSTRAP",
+      "claim": "Both113,only9 28,only27 37,neither111; EM9-27=-0.031141868512110725; descriptive95%[-0.08304498269896193,0.02422145328719723]",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/paired_qwen9_qwen27_dev293", "/paired_bootstrap/em_left_minus_right", "/paired_bootstrap/em_interval", "/paired_bootstrap/f1_interval", "/paired_bootstrap/replicates", "/paired_bootstrap/seed", "/recomputed_bootstrap_matches_saved"]}],
+      "limits": "No equivalence/noninferiority;94% is141/150 ratio, not accuracy94%"
+    },
+    {
+      "id": "development_reuse",
+      "classification": "SELECTION_HISTORY",
+      "claim": "DEV60 included inDEV293; native40 alsoDEV subset; DEV60/native40 overlap20",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/dev60_is_subset_of_dev293", "/dev60_dev293_overlap_n", "/telemetry_dev60_overlap_n"]}],
+      "limits": "None is an independent confirmatory holdout"
+    },
+    {
+      "id": "native_same40_quality",
+      "classification": "RETROSPECTIVE_COMPATIBILITY_ON_HISTORICAL_LIVE_DEV",
+      "claim": "Native Qwen9 22/39 F1.7196581196581197; Qwen27 24/39 F1.7800976800976801",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/retrospective_telemetry_compatibility/qwen3.5-9b/retrospective_native40", "/retrospective_telemetry_compatibility/qwen3.8-27b/retrospective_native40", "/native40_model_paired"]}],
+      "limits": "Native40 has39parseable references; ID374 unresolved; descriptive repeatedDEV"
+    },
+    {
+      "id": "compatibility_and_answer_drift",
+      "classification": "OFFLINE_BYTE_AND_RECEIPT_AUDIT",
+      "claim": "Same80actual system/user inputs and saved weight receipts; parsed answers change1/40Q9 and2/40Q27",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/retrospective_telemetry_compatibility/qwen3.5-9b/same_prompt_and_system_bytes_n", "/retrospective_telemetry_compatibility/qwen3.8-27b/same_prompt_and_system_bytes_n", "/retrospective_telemetry_compatibility/qwen3.5-9b/weight_identity_receipt_matches", "/retrospective_telemetry_compatibility/qwen3.8-27b/weight_identity_receipt_matches", "/retrospective_telemetry_compatibility/qwen3.5-9b/changed_choice_sets_n", "/retrospective_telemetry_compatibility/qwen3.8-27b/changed_choice_sets_n", "/configuration_comparison"]}],
+      "limits": "Historical seed/schema/checkpoints/offload differ fromnative; installed weights not rehashed by this audit; cannot pairDEV293accuracy withnative40speed as identical-profile results"
+    },
+    {
+      "id": "native40_latency",
+      "classification": "SAVED_LIVE_SYSTEMS_MEASUREMENT",
+      "claim": "Native40 p50/p95 seconds Q9 .26866319999680854/.3439814299956196; Q27 1.4341586000082316/1.8291494099947156",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/telemetry_measurements/qwen3.5-9b/latency_s", "/telemetry_measurements/qwen3.8-27b/latency_s", "/telemetry_measurements/qwen3.5-9b/client_ttft_s", "/telemetry_measurements/qwen3.8-27b/client_ttft_s"]}],
+      "limits": "Load/warmup excluded; shortletter/JSON tasks; not universal longform speed"
+    },
+    {
+      "id": "native40_memory",
+      "classification": "SAMPLED_SYSTEM_RESOURCE_MEASUREMENT",
+      "claim": "Whole GPU requestpeaks11471/13287MiB; whole RAM20.85812759399414/28.470401763916016GiB",
+      "evidence": [{"path": "results/20261004_evidence_audit/analysis.json", "fields": ["/telemetry_measurements/qwen3.5-9b/resources/gpu_memory_used_mib_request_peaks/max", "/telemetry_measurements/qwen3.8-27b/resources/gpu_memory_used_mib_request_peaks/max", "/telemetry_measurements/qwen3.5-9b/resources/system_ram_used_gib_request_peaks/max", "/telemetry_measurements/qwen3.8-27b/resources/system_ram_used_gib_request_peaks/max"]}],
+      "limits": "Device/system scope, not private model allocation; actual GPU layers/energy unknown"
+    },
+    {
+      "id": "live_study_c_quality",
+      "classification": "NEW_LIVE_DEVELOPMENT_APPLICATION_TOOL_DISPATCH",
+      "claim": "Q9 complete7/27 modelonly→18/27tools, numeric1/16→16/16; Q27complete15/27→25/27,numeric6/16→16/16",
+      "evidence": [{"path": "results/20261004_study_c_live/summary.json", "fields": ["/models/qwen3.5-9b/model_only", "/models/qwen3.5-9b/live_application_tools", "/models/qwen3.8-27b/model_only", "/models/qwen3.8-27b/live_application_tools"]}],
+      "limits": "27reuseddevelopmentcases; typedtask/formulas/publicinputs; Q9nonnumeric6/11→2/11; no farm safety inference"
+    },
+    {
+      "id": "live_execution_completed",
+      "classification": "NEW_LIVE_DEVELOPMENT_APPLICATION_TOOL_DISPATCH",
+      "claim": "32numericexecutions;142HTTPmodelcalls includingwarmups;108armoutputs; completed2026-10-03T21:59:34.283086+00:00; all requestedmodelsunloaded",
+      "evidence": [{"path": "results/20261004_study_c_live/summary.json", "fields": ["/models/qwen3.5-9b/live_application_tools/numeric_executions", "/models/qwen3.8-27b/live_application_tools/numeric_executions", "/new_model_calls", "/finished_utc", "/elapsed_s", "/all_requested_models_unloaded", "/status", "/traces_sha256"]}],
+      "limits": "Application JSONdispatch, not nativefunctioncalls; latency sumsHTTP excludesdispatch/journaling; toolpath2requests512each vsmodelonly1"
+    },
+    {
+      "id": "live_tolerance_and_budget",
+      "classification": "VERSIONED_DESCRIPTIVE_CLARIFICATION_NO_RESCORE",
+      "claim": "Actual tolerance percase rather than universal1e-8; maxinput1559, maxinputplusoutput1628<2048; finalschemas separatelyaudited",
+      "evidence": [{"path": "results/20261004_study_c_live/protocol_clarifications_v2.json", "fields": ["/primary_tolerance_actual_per_case", "/primary_tolerance_correction", "/secondary_tolerance_actual", "/latency", "/token_budget", "/actual_input_tokens_max", "/schema"]}, {"path": "results/20261004_study_c_live/final_json_presentation_diagnostic_v2.json", "fields": ["/actual_input_plus_output_tokens_max", "/context2048_confirmed", "/models"]}],
+      "limits": "Posthocdiagnostics do not replace retained primaryscores or guarantee field validity"
+    },
+    {
+      "id": "mercury_development_coverage",
+      "classification": "HISTORICAL_REAL_API_REQUESTS",
+      "claim": "Combined60 reused12+extension48;56complete/60responses,4errors;EM31/59 F1.6576271186440678",
+      "evidence": [{"path": "results/20261003_cloud_budget_only_c1184a27/mercury25_instant512_t05_dev60_combined.json", "fields": ["/summary/n_attempted", "/summary/n_completed", "/summary/n_response_received", "/summary/errors", "/summary/strict_em_count", "/summary/n_scored", "/summary/strict_set_f1"]}, {"path": "results/20261003_cloud_budget_only_c1184a27/mercury25_instant512_t05_dev60_manifest.json", "fields": ["/prior_probe_calls", "/actual_attempts", "/actual_calls"]}],
+      "limits": "Supplementaryreference; savedrequests reused, no newpaidcalls"
+    },
+    {
+      "id": "routing_replay",
+      "classification": "SIMULATED_ON_SAVED_REAL_REQUESTS",
+      "claim": "MERA confidence escalation benefit not established; localonly37/59; no saved nonzero fixedthreshold improvesEM",
+      "evidence": [{"path": "results/20261003_resource_analysis/analysis.json", "fields": ["/qwen9_mercury_dev60_replay"]}],
+      "limits": "Replay is not livecascade latency/cost or measured request savings"
+    },
+    {
+      "id": "openrouter_home9",
+      "classification": "HISTORICAL_LIVE_PROVIDER_SCREEN",
+      "claim": "Ling4/9,hostedQwen27 5/9,Dots4/9 onHOMEDEV9; storedstatusNOT_RUN stale",
+      "evidence": [{"path": "results/openrouter_integrated_20261003/summary.json", "fields": ["/shared_dev/0/resolved_model_id", "/shared_dev/0/attempts", "/shared_dev/0/correct", "/shared_dev/0/test_status", "/shared_dev/1/resolved_model_id", "/shared_dev/1/attempts", "/shared_dev/1/correct", "/shared_dev/1/test_status", "/shared_dev/2/resolved_model_id", "/shared_dev/2/attempts", "/shared_dev/2/correct", "/shared_dev/2/test_status"]}],
+      "limits": "HOME notMERA; hostedname not proof oflocalweights/runtimeequivalence"
+    },
+    {
+      "id": "codex_cli_coverage",
+      "classification": "HISTORICAL_LIVE_SUBSCRIPTION_PRODUCT_HARNESS",
+      "claim": "gpt6luna medium60completed;EM36/59 F1.7351089588377724;46JSONviolations",
+      "evidence": [{"path": "results/20261003_cli_products/cli_products_analysis.json", "fields": ["/codex/model_selection", "/codex/summary/n_completed", "/codex/summary/strict_em_count", "/codex/summary/n_scored", "/codex/summary/strict_set_f1", "/codex/summary/json_contract_failure", "/codex/summary/latency_p50_s"]}],
+      "limits": "Backendrevisionunknown;startup/systemoverhead; subscription notzeroeconomiccost"
+    },
+    {
+      "id": "claude_access_not_quality",
+      "classification": "SUPPORTED_CLI_AUTH_STATUS_READ",
+      "claim": "CurrentCLIloggedinPro;0model/DEVrequests; historical403 inference not rechecked",
+      "evidence": [{"path": "results/20261004_session/claude_cli_compatibility.json", "fields": ["/logged_in", "/subscriptionType", "/model_requests", "/DEV_requests", "/inference_endpoint_rechecked", "/historical_inference_status", "/status"]}, {"path": "results/20261003_cli_products/cli_products_analysis.json", "fields": ["/claude/synthetic_attempts", "/claude/dev60_attempts", "/claude/status"]}],
+      "limits": "Authstatus alone does not verify inference or completed editorialreview"
+    },
+    {
+      "id": "optional35_guard_censoring",
+      "classification": "NEW_CONTROLLED_LOAD_ATTEMPT_WITHOUT_INFERENCE",
+      "claim": "Onecontrolledloadstoppedresourceobservationfailure;0DEVattempts;cleanupsuccess",
+      "evidence": [{"path": "results/20261004_study_c_live/optional35/summary.json", "fields": ["/stop/reason", "/metrics/n_attempted", "/metrics/n_scored", "/metrics/strict_set_em", "/cleanup/success", "/status"]}, {"path": "results/20261004_study_c_live/optional35/load.json", "fields": ["/error", "/latency_s", "/resource_errors"]}],
+      "limits": "Not evidence ofOOM,zeroaccuracy or modelincompetence; optionalbranchnotpublicationblocker"
+    }
+  ],
+  "delivery_status": "Final compilation and visualQA, tests, security/diff review, commit, push and remoteSHA are being finalized by the root worker; consult results/20261004_session/final_validation.json when available.",
+  "forbidden_overclaims": ["Qwen9 universally better", "94percent accuracy", "statistical equivalence established", "causal parametercount effect isolated", "DEV as privateTEST", "simulated routing savings as live measured savings", "device memory as modelprivate allocation", "auth status as successful Claude inference", "guard observation timeout as OOM", "deterministicformula agreement as farm deployment safety", "AI review as human approval"]
+}

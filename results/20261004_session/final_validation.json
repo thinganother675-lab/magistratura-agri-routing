@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-10-03T22:30:33.185361+00:00",
+  "status": "COMPLETE_ARTIFACTS_TESTS_AND_DATA_PUSH_VERIFIED",
+  "baseline_head": "af5742e7c294cd5f93155a3deb438f6d667351fe",
+  "baseline_tests": {
+    "sandbox": "633 passed,193 temp ACL errors",
+    "host": "825 passed,1 unchanged transient manifest replacement failure",
+    "targeted_recheck": "1 passed unmodified"
+  },
+  "final_tests": {
+    "started_utc": "2026-10-03T22:15:26.289355+00:00",
+    "finished_utc": "2026-10-03T22:15:50.570257+00:00",
+    "exit_code": 0,
+    "command": ".venv/Scripts/python.exe -X utf8 -m pytest -q --basetemp=.runtime/session_20261004/pytest_final_host",
+    "environment": "Windows host; sandbox tempfile ACL failures bypassed by authorized elevated execution",
+    "summary": [
+      "846 passed in 23.72s"
+    ],
+    "log": "results/20261004_session/final_tests.txt",
+    "configured_secrets_redacted": true
+  },
+  "manuscripts": {
+    "ru_pdf_pages": 8,
+    "en_pdf_pages": 7,
+    "ru_docx_word_pages": 8,
+    "scientific_references": 19,
+    "ru_abstract_characters": 264,
+    "all_pages_individually_visually_inspected_by": "GPT-6.1 Sol high agents; AI review only"
+  },
+  "scientific_code_review": "Two new live-runner failure paths independently reviewed against frozen measured source; original protocols/traces/scores and historical imported sources unchanged",
+  "private_test_run": false,
+  "new_paid_api_calls": 0,
+  "claude_editor_launched": false,
+  "optional_models": "35B-A3B single resource-observation failure before inference,cleaned;3.6-27B absent/deferred",
+  "source_rights": "Restricted MERA questions/gold/raw responses and full third-party snapshots retained locally, excluded from staged safe scope",
+  "submission": "NOT_RUN",
+  "license": "NOT_SELECTED",
+  "final_human_consent": "PENDING",
+  "secret_scan": "PASS:0 findings in selected source and nested archives; see delivery_secret_scan.json",
+  "diff_review": "PASS:only README changed among preexisting tracked files; old data/protocols/results/source preserved",
+  "git_delivery_receipt": "results/20261004_session/git_delivery_20261004.json",
+  "git_data_commit": "bc21196829b2d6e661717bb8c42b9ea1822e7d57",
+  "git_remote_sha_verified": "bc21196829b2d6e661717bb8c42b9ea1822e7d57",
+  "finalized_utc": "2026-10-03T22:39:14.988635+00:00",
+  "secret_scan_after_receipts": "PASS:changed receipt text rechecked before final commit",
+  "artifact_scope_manifest": "Snapshot of selected file hashes at the data commit; subsequent delivery receipt updates do not alter scientific artifacts"
+}

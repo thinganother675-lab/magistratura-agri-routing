@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-10-03T22:33:48.187952+00:00",
+  "status": "LOCAL_PORTABLE_SOURCE_COMPILE_PASS",
+  "server_arxiv_validation": "NOT_RUN",
+  "submission": "NOT_RUN",
+  "license": "NOT_SELECTED",
+  "archive": "results/20261004_article_build/english_preprint_source_20261004.tar.gz",
+  "sha256": "566ee9ed0b862d61a31fbb15be7c6a956ab0230243aae9d0168eee80cac41eee",
+  "pdf_pages": 7,
+  "extracted_text_identical_to_final_english_pdf": true,
+  "members": [
+    {
+      "path": "main.tex",
+      "sha256": "60726e1b32e5e705d00896cc11d3d72d3adefa0df0ab9fc9bcbe5054aa954ab9"
+    },
+    {
+      "path": "native40_tradeoff.pdf",
+      "sha256": "58795ad3d0095b9d036284ce5e38e57a261838781c00947ef0dbc6261a6a7ea1"
+    },
+    {
+      "path": "references_19.bib",
+      "sha256": "0bf0e23c9e35df328f88425ac1e304e18ef5ee4ad6a04fd017faaf83f47cb0a4"
+    }
+  ]
+}

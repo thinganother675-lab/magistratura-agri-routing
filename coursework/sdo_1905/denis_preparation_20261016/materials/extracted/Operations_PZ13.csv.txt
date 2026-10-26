@@ -1,0 +1,10 @@
+message_id;operation_id;feed_code;group_code;quantity_kg;status
+M01;OP-101;F01;G01;100;confirmed
+M02;OP-102;F02;G01;200;confirmed
+M03;OP-101;F01;G01;100;confirmed
+M04;OP-103;F01;G02;;confirmed
+M05;OP-104;F02;G02;50;pending
+M06;OP-105;F01;G02;120;confirmed
+M07;OP-105;F01;G02;130;confirmed
+M08;OP-106;F02;G01;80;confirmed
+M09;OP-107;F01;G01;30;confirmed

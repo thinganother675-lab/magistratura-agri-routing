@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\hustlePC\Codex\magistratura\scripts\laya_prerouter_worker.py", line 11, in <module>
+    from agro_route.prerouting import QUESTIONS
+  File "C:\Users\hustlePC\Codex\magistratura\src\agro_route\prerouting.py", line 17, in <module>
+    from .routing import hard_gate, identify_tool
+  File "C:\Users\hustlePC\Codex\magistratura\src\agro_route\routing.py", line 5, in <module>
+    from .models import public_request
+  File "C:\Users\hustlePC\Codex\magistratura\src\agro_route\models.py", line 5, in <module>
+    import httpx
+ModuleNotFoundError: No module named 'httpx'

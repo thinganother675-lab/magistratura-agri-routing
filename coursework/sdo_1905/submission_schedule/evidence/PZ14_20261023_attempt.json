@@ -1,0 +1,19 @@
+{
+  "pz": 14,
+  "at": "2026-10-23T14:05:14+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ14_Сарычев_ДЭ39-26.pdf",
+      "sha256": "60387068b91e429e7f78f0fc3cf96b9e39fa91840bbbe189eee5622b4ee285df",
+      "bytes": 198420
+    }
+  ],
+  "sha256_verified": true,
+  "status": "blocked_login_missing",
+  "reason": "Браузер доступен, но СДО открыло страницу Log in; имя пользователя подставлено, пароль пуст. Вход и загрузка PDF не выполнялись.",
+  "file_uploaded": false,
+  "save_clicked": false,
+  "login_clicked": false,
+  "screenshot": null
+}

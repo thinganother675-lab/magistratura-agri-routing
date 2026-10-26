@@ -1,0 +1,118 @@
+{
+  "status": "PREFIX_KV_CACHE_REUSE_OBSERVED_NO_RESPONSE_REPLAY",
+  "coverage": 12,
+  "cached_requests": 11,
+  "cached_tokens_total": 4309,
+  "all_token_arithmetic_exact": true,
+  "requests": [
+    {
+      "sample_id": "controlled_compound_reasoning_6_0",
+      "cache_n": 0,
+      "prompt_n": 576,
+      "predicted_n": 38,
+      "usage_prompt_tokens": 576,
+      "usage_completion_tokens": 38,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "agxqa_300",
+      "cache_n": 384,
+      "prompt_n": 148,
+      "predicted_n": 32,
+      "usage_prompt_tokens": 532,
+      "usage_completion_tokens": 32,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_missing_data_6_0",
+      "cache_n": 384,
+      "prompt_n": 81,
+      "predicted_n": 33,
+      "usage_prompt_tokens": 465,
+      "usage_completion_tokens": 33,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_numeric_6_0",
+      "cache_n": 417,
+      "prompt_n": 48,
+      "predicted_n": 33,
+      "usage_prompt_tokens": 465,
+      "usage_completion_tokens": 33,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_rule_interpretation_6_0",
+      "cache_n": 394,
+      "prompt_n": 103,
+      "predicted_n": 31,
+      "usage_prompt_tokens": 497,
+      "usage_completion_tokens": 31,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_tool_selection_6_0",
+      "cache_n": 395,
+      "prompt_n": 48,
+      "predicted_n": 32,
+      "usage_prompt_tokens": 443,
+      "usage_completion_tokens": 32,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_compound_reasoning_7_0",
+      "cache_n": 384,
+      "prompt_n": 167,
+      "predicted_n": 37,
+      "usage_prompt_tokens": 551,
+      "usage_completion_tokens": 37,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "agxqa_141",
+      "cache_n": 384,
+      "prompt_n": 133,
+      "predicted_n": 43,
+      "usage_prompt_tokens": 517,
+      "usage_completion_tokens": 43,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_missing_data_7_0",
+      "cache_n": 384,
+      "prompt_n": 68,
+      "predicted_n": 38,
+      "usage_prompt_tokens": 452,
+      "usage_completion_tokens": 38,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_numeric_7_0",
+      "cache_n": 411,
+      "prompt_n": 48,
+      "predicted_n": 33,
+      "usage_prompt_tokens": 459,
+      "usage_completion_tokens": 33,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_rule_interpretation_7_0",
+      "cache_n": 384,
+      "prompt_n": 81,
+      "predicted_n": 33,
+      "usage_prompt_tokens": 465,
+      "usage_completion_tokens": 33,
+      "arithmetic_exact": true
+    },
+    {
+      "sample_id": "controlled_tool_selection_7_0",
+      "cache_n": 388,
+      "prompt_n": 42,
+      "predicted_n": 32,
+      "usage_prompt_tokens": 430,
+      "usage_completion_tokens": 32,
+      "arithmetic_exact": true
+    }
+  ],
+  "source_raw_sha256": "25a8cd7160b6a4faa2a50e6f9af6b67ec80e5189d4856116440f8ad6cdfa6de3"
+}

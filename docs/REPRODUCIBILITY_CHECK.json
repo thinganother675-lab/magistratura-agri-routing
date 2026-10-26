@@ -1,0 +1,12 @@
+{
+  "final_run": "20260930T182756Z_6703e43b",
+  "dataset_and_protocol_hashes_match": true,
+  "core_model_policy_scoring_hashes_match": true,
+  "cached_statistics_exactly_reproduced": true,
+  "reproduction_folder": ".cache\\reproducibility\\statistics_e3399dba",
+  "post_start_changed_report_modules": [
+    "analysis.py",
+    "web.py"
+  ],
+  "note": "Additional reporting metrics and live UI validation/stages were added after test started; model prompt, core scoring, routing and thresholds unchanged."
+}

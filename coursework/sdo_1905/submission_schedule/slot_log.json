@@ -1,0 +1,253 @@
+{
+  "created_at": "2026-10-16T11:11:19.714722+03:00",
+  "events": [
+    {
+      "type": "rescheduled",
+      "at": "2026-10-16T11:21:53.881218+03:00",
+      "old_slots": 6,
+      "new_slots": 14,
+      "submitted_now": 0,
+      "reason": "Прямой запрос пользователя"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-16T13:10:22.092273+03:00",
+      "pz": 1,
+      "evidence": "evidence/PZ01_20261016_attempt.json",
+      "status": "Ответы на задание еще не представлены"
+    },
+    {
+      "type": "upload_diagnosis",
+      "at": "2026-10-16T14:11:02.444004+03:00",
+      "pz": 1,
+      "picker_opened": true,
+      "file_uploaded": false,
+      "evidence": "evidence/PZ01_20261016_diagnosis.json"
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-16T14:19:27.253529+03:00",
+      "pz": 1,
+      "sdo_status": "Отправлено для оценивания",
+      "evidence": "evidence/PZ01_20261016_submission.json",
+      "outside_old_window_explicitly_authorized": true
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-16T15:47:43+03:00",
+      "pz": 2,
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "пятница, 16 октября 2026, 15:49",
+      "evidence": "evidence/PZ02_20261016_submission.json"
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-16T17:18:06+03:00",
+      "pz": 3,
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "пятница, 16 октября 2026, 17:20",
+      "evidence": "evidence/PZ03_20261016_submission.json"
+    },
+    {
+      "type": "automation_paused",
+      "at": "2026-10-16T17:18:06+03:00",
+      "automation_id": "1905-1-6-16-19",
+      "reason": "Все три слота 16 октября завершены."
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-19T12:25:57.474013+03:00",
+      "pz": 4,
+      "reason": "login_required",
+      "evidence": "evidence/PZ04_20261019_attempt.json"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-19T14:51:52.356361+03:00",
+      "pz": 5,
+      "reason": "login_required",
+      "evidence": "evidence/PZ05_20261019_attempt.json"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-19T17:36:49.673699+03:00",
+      "pz": 6,
+      "reason": "login_required",
+      "evidence": "evidence/PZ06_20261019_attempt.json"
+    },
+    {
+      "type": "automation_paused",
+      "at": "2026-10-19T17:36:49.673699+03:00",
+      "automation_id": "1905-4-6-19",
+      "reason": "Последний слот разрешённой даты обработан; требуется вход."
+    },
+    {
+      "type": "rescheduled",
+      "at": "2026-10-20T09:53:00+03:00",
+      "revision": 3,
+      "reason": "Прямой запрос пользователя 20 октября; активный вход подтверждён.",
+      "remaining": 11
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-20T09:55:37+03:00",
+      "pz": 4,
+      "evidence": "evidence/PZ04_20261020_submission.json",
+      "sdo_status": "Отправлено для оценивания"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-20T12:14:00+03:00",
+      "pz": 5,
+      "reason": "browser_unavailable",
+      "evidence": "evidence/PZ05_20261020_attempt.json"
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-20T14:40:11+03:00",
+      "pz": 6,
+      "sdo_status": "Отправлено для оценивания",
+      "evidence": "evidence/PZ06_20261020_submission.json"
+    },
+    {
+      "type": "automation_paused",
+      "at": "2026-10-20T14:40:11+03:00",
+      "automation_id": "1905-7-9-20",
+      "reason": "Последний слот 20 октября завершён."
+    },
+    {
+      "type": "rescheduled_single_slot",
+      "at": "2026-10-20T16:07:03+03:00",
+      "pz": 5,
+      "scheduled_at": "2026-10-20T16:13:00+03:00",
+      "reason": "Прямое разрешение пользователя 20 октября: ПЗ-5 сегодня 16:13 вне старого окна, остальное расписание оставить без изменений."
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-20T16:14:20+03:00",
+      "pz": 5,
+      "sdo_status": "Отправлено для оценивания",
+      "evidence": "evidence/PZ05_20261020_submission.json"
+    },
+    {
+      "type": "automation_paused",
+      "at": "2026-10-20T16:14:20+03:00",
+      "automation_id": "1905-7-9-20",
+      "reason": "Дополнительный слот ПЗ-5 завершён."
+    },
+    {
+      "type": "submission_confirmed_screenshot_failed",
+      "pz": 7,
+      "submitted_at_sdo": "2026-10-21T10:22:00+03:00",
+      "evidence": "evidence/PZ07_20261021_submission.json",
+      "sdo_status": "Отправлено для оценивания"
+    },
+    {
+      "type": "screenshot_recovered",
+      "pz": 7,
+      "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ07_20261021_status.jpg"
+    },
+    {
+      "type": "submission_blocked",
+      "pz": 8,
+      "at": "2026-10-21T12:55:00+03:00",
+      "reason": "login_rejected",
+      "evidence": "evidence/PZ08_20261021_attempt.json"
+    },
+    {
+      "type": "submission_confirmed",
+      "pz": 9,
+      "at": "2026-10-21T15:13:52+03:00",
+      "evidence": "evidence/PZ09_20261021_submission.json"
+    },
+    {
+      "type": "automation_deleted",
+      "automation_id": "1905-10-12-21",
+      "at": "2026-10-21T15:13:52+03:00",
+      "reason": "Последний слот разрешённой даты завершён."
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-22T11:17:06+03:00",
+      "pz": 10,
+      "reason": "login_missing_outside_window",
+      "evidence": "evidence/PZ10_20261022_attempt.json"
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-22T11:27:10+03:00",
+      "pz": 10,
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "четверг, 22 октября 2026, 11:28",
+      "evidence": "evidence/PZ10_20261022_submission.json",
+      "outside_old_window_explicitly_authorized": true
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-22T13:09:29+03:00",
+      "pz": 11,
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "четверг, 22 октября 2026, 13:11",
+      "evidence": "evidence/PZ11_20261022_submission.json"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-22T16:02:10+03:00",
+      "pz": 12,
+      "reason": "login_missing",
+      "evidence": "evidence/PZ12_20261022_attempt.json"
+    },
+    {
+      "type": "automation_deleted",
+      "automation_id": "1905-13-14-22",
+      "at": "2026-10-22T16:02:40+03:00",
+      "reason": "Последний слот 22 октября обработан; ПЗ-12 заблокировано отсутствующим паролем."
+    },
+    {
+      "type": "submission_confirmed",
+      "at": "2026-10-22T16:12:59+03:00",
+      "pz": 12,
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "четверг, 22 октября 2026, 16:14",
+      "evidence": "evidence/PZ12_20261022_submission.json",
+      "outside_old_window_explicitly_authorized": true
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-23T11:20:06+03:00",
+      "pz": 13,
+      "reason": "browser_unavailable",
+      "evidence": "evidence/PZ13_20261023_attempt.json"
+    },
+    {
+      "type": "submission_blocked",
+      "at": "2026-10-23T14:05:14+03:00",
+      "pz": 14,
+      "reason": "login_missing",
+      "evidence": "evidence/PZ14_20261023_attempt.json"
+    },
+    {
+      "type": "automation_deleted",
+      "at": "2026-10-23T14:05:32+03:00",
+      "automation_id": "1905-4-6-19",
+      "reason": "Последний слот 23 октября обработан; ПЗ-14 заблокировано пустым паролем."
+    },
+    {
+      "type": "submission_confirmed",
+      "pz": 14,
+      "verified_at": "2026-10-23T14:33:15.343106+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ14_Сарычев_ДЭ39-26.pdf",
+          "sha256": "60387068b91e429e7f78f0fc3cf96b9e39fa91840bbbe189eee5622b4ee285df",
+          "bytes": 198420
+        }
+      ],
+      "sdo_status": "Отправлено для оценивания",
+      "sdo_last_modified": "2026-10-23T14:32:00+03:00",
+      "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ14_20261023_submitted.jpg"
+    }
+  ],
+  "note": "ПЗ-14 отправлено. ПЗ-8 и ПЗ-13 остаются неотправленными."
+}

@@ -1,0 +1,45 @@
+{
+  "protocol_id": "RESOURCE_CONSTRAINED_LOCAL_NEXT_DRAFT_20261003",
+  "status": "DRAFT_NOT_AUTHORIZED_CONFIRMATORY",
+  "authors": ["Antoniy Sarychev", "Denis Shesternin"],
+  "hypothesis": "Qwen3.5-9B retains most observed quality of Qwen3.8-27B while reducing measured latency and memory in practical GGUF configurations",
+  "decision_rule": "No winner threshold inferred after seeing DEV; independent testing requires predeclared quality loss margin and resource budgets",
+  "quality_loss_margin_pp": null,
+  "latency_budget_s": null,
+  "whole_gpu_budget_mib": null,
+  "whole_system_ram_budget_gib": null,
+  "quality_metric": "STRICT_SET_EM and STRICT_SET_F1 unless independent official scorer explicitly freezes another protocol",
+  "models": ["qwen3.5-9b Q8_0", "qwen3.8-27b UD-Q4_K_M"],
+  "baseline_choice_recommended": "Existing Mercury2.5 direct as provisional scientific API reference; Codex CLI effort medium supplementary product baseline",
+  "independent_holdout": false,
+  "benchmark_options": {
+    "primary": "MERA private TEST only after explicit separate human authorization and production scoring clarification",
+    "one_backup": "BhashaBench-Krishi English/test, NOT_READY; authorized terms/contact gate, acquired split/hash and overlap audit required"
+  },
+  "before_holdout": [
+    "Jointly approve quality margin, resource budgets and analysis rule",
+    "Freeze GGUF SHA, runtime, prompts, parser, numerical scorer and endpoint controls",
+    "Acquire independent rights/evaluator, audit overlap and freeze IDs without inspecting outcomes",
+    "Separate scientific API conditions from subscription product harness",
+    "Record actual inference tool calls separately from simulated replay",
+    "Predeclare confidence threshold from DEV without holdout adaptation"
+  ],
+  "systems": {
+    "basis": "TELEMETRY40 V2 complete; V1 failures preserved",
+    "future_replication": "different day or host, same controls and counterbalanced order, no correctness-dependent reruns",
+    "gpu_placement": "UNKNOWN unless documented and verified; requested ratio never treated as actual layers",
+    "cold_load": "future cold-cache protocol separately frozen; current two samples exploratory",
+    "energy": "NOT_ESTIMATED until attributable sufficient-rate power protocol exists"
+  },
+  "routing": {
+    "confidence": "Qwen9 lexical AUC descriptive DEV; no current demonstrated Mercury cascade improvement",
+    "learned_router": "NOT_TRAINED",
+    "tool_next": "bounded live tool-call experiment with untouched input arguments, correctness, failures and end-to-end latency; not agronomic recommendations"
+  },
+  "private_test_run": false,
+  "private_test_authorized": false,
+  "new_paid_api_spend_authorized_usd": 0,
+  "submission_authorized": false,
+  "publication_authorized": false,
+  "denis_answers_filled": false
+}

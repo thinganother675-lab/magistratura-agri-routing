@@ -1,0 +1,13 @@
+{
+  "all_passed": true,
+  "lab2_max_variable_difference": 4.814770804273394e-11,
+  "lab8_scenarios": 20,
+  "lab8_gams_original_runs": 60,
+  "lab8_transformed_runs": 20,
+  "lab8_max_objective_relative_difference": 1.3023283683159565e-10,
+  "lab8_max_q_absolute_difference_t": 4.098905801441788e-05,
+  "lab10_firms": 25,
+  "lab10_max_efficiency_difference": 4.919398222114069e-13,
+  "lab10_max_gams_peer_violation": 1.5420482668559998e-09,
+  "nlp_certificate_relative_tolerance": 1e-06
+}

@@ -1,0 +1,8 @@
+{
+  "tag": "tectonic@0.17.0",
+  "url": "https://github.com/tectonic-typesetting/tectonic/releases/download/tectonic%400.17.0/tectonic-0.17.0-x86_64-pc-windows-gnu.zip",
+  "archive_bytes": 12755716,
+  "sha256": "sha256:77a0ebba1cc54f6145dbc27377e253c9fffa07eab7c368ff9ef30c2d05557365",
+  "official_digest_match": true,
+  "global_path_modified": false
+}

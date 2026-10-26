@@ -1,0 +1,92 @@
+{
+  "local": {
+    "measured_n": 150,
+    "correct": 102,
+    "quality": 0.68,
+    "quality_ci95": [
+      0.49373733108108114,
+      0.8650910364145656
+    ],
+    "critical_errors": 32,
+    "critical_error_rate": 0.21333333333333335,
+    "cloud_calls": 0,
+    "local_calls": 150,
+    "tool_calls": 0,
+    "latency_mean_s": 1.5081780820000055,
+    "latency_p50_s": 1.4219394000001557,
+    "latency_p95_s": 2.3487365600001793,
+    "cloud_cost_known_usd": 0.0
+  },
+  "cloud": {
+    "measured_n": 150,
+    "correct": 130,
+    "quality": 0.8666666666666667,
+    "quality_ci95": [
+      0.757564935064935,
+      0.9452081549657534
+    ],
+    "critical_errors": 0,
+    "critical_error_rate": 0.0,
+    "cloud_calls": 150,
+    "local_calls": 0,
+    "tool_calls": 0,
+    "latency_mean_s": 4.757638408000012,
+    "latency_p50_s": 1.446151800000166,
+    "latency_p95_s": 38.11506436999909,
+    "cloud_cost_known_usd": 0.00721649
+  },
+  "tool_cloud": {
+    "measured_n": 150,
+    "correct": 139,
+    "quality": 0.9266666666666666,
+    "quality_ci95": [
+      0.8846153846153846,
+      0.9672131147540983
+    ],
+    "critical_errors": 0,
+    "critical_error_rate": 0.0,
+    "cloud_calls": 100,
+    "local_calls": 0,
+    "tool_calls": 30,
+    "latency_mean_s": 2.6817471826666814,
+    "latency_p50_s": 1.2766502000001765,
+    "latency_p95_s": 3.3395643350000737,
+    "cloud_cost_known_usd": 0.00433758
+  },
+  "hybrid": {
+    "measured_n": 150,
+    "correct": 133,
+    "quality": 0.8866666666666667,
+    "quality_ci95": [
+      0.7476098901098902,
+      0.9859154929577465
+    ],
+    "critical_errors": 0,
+    "critical_error_rate": 0.0,
+    "cloud_calls": 20,
+    "local_calls": 80,
+    "tool_calls": 30,
+    "latency_mean_s": 0.843529490666671,
+    "latency_p50_s": 1.094321300000047,
+    "latency_p95_s": 1.5606822049999882,
+    "cloud_cost_known_usd": 0.00079139
+  },
+  "offline": {
+    "measured_n": 150,
+    "correct": 114,
+    "quality": 0.76,
+    "quality_ci95": [
+      0.5862014056665934,
+      0.9117776057791536
+    ],
+    "critical_errors": 0,
+    "critical_error_rate": 0.0,
+    "cloud_calls": 0,
+    "local_calls": 80,
+    "tool_calls": 30,
+    "latency_mean_s": 0.6554113033333305,
+    "latency_p50_s": 1.0422746499998539,
+    "latency_p95_s": 1.45750910500019,
+    "cloud_cost_known_usd": 0.0
+  }
+}

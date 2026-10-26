@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-03T18:12:05.163638+00:00",
+  "audit_status": "INDEPENDENT_STRUCTURE_HASH_HISTORY_QA_SHARED_SAFETY_SCANNERS",
+  "valid": true,
+  "assembly_head": "ffe8699a7a928b2d5baff5814e7b48823a0cce98",
+  "manifest_sha256": "02e65a0c16122292082f49b30e93191bcf1f42282457ad136b3d582d60922eca",
+  "declared_files": 30,
+  "checked_files": 30,
+  "historical_git_copies_verified": 2,
+  "provenance_claims": 142,
+  "historical_aggregate_claims": 50,
+  "cli_aggregate_count": 2,
+  "role_counts": {
+    "manuscript": 2,
+    "bibliography": 1,
+    "bibliography_addendum": 1,
+    "limitations": 1,
+    "provenance": 1,
+    "historical_provenance": 1,
+    "dev_table": 6,
+    "systems_summary": 1,
+    "systems_table": 1,
+    "study_c_summary": 1,
+    "cli_aggregate": 2,
+    "figure": 10,
+    "editor_instructions": 2
+  },
+  "claude_editing_run": false,
+  "package_mutations": 0,
+  "scope_limitations": [
+    "Structural/content safety checks do not certify every free-text sentence against all possible benchmark corpora.",
+    "Assembly HEAD identifies packaging context; working source bytes are separately bound by SHA256."
+  ],
+  "errors": []
+}

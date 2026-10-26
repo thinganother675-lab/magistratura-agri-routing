@@ -1,0 +1,29 @@
+[
+  {
+    "pz": 1,
+    "source": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\originals\\Answer_PZ01.docx",
+    "sha256": "39a5adc72748735d612fdb2080a396a4dee9cb96109c5e44663184d8761c15d9",
+    "size": [
+      21.00086111111111,
+      29.70036111111111
+    ]
+  },
+  {
+    "pz": 2,
+    "source": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\originals\\Answer_PZ02.docx",
+    "sha256": "7dcfc8149473c150e83644dc708fc366f111b97aa3de087a5da4834879518ea7",
+    "size": [
+      21.00086111111111,
+      29.70036111111111
+    ]
+  },
+  {
+    "pz": 3,
+    "source": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\originals\\Answer_PZ03.docx",
+    "sha256": "c3b8d5f0c1e139672d302f9360abe022209234362a2e6dd84ef0173b3fb6bb3c",
+    "size": [
+      21.00086111111111,
+      29.70036111111111
+    ]
+  }
+]

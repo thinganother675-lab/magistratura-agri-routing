@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-03T22:04:35.909843+00:00",
+  "classification": "POSTRUN_SOFTWARE_REPAIR_NOT_USED_FOR_RECORDED_INFERENCE",
+  "frozen_source_sha256": "98a2cfe494ef1e4cded65cfe50782b430439605cd86f3e0cd12b0090f803dbef",
+  "current_source_sha256": "6470378c7bbb11c5b32f658e149214e1df75d61799f682de1091405bbab67a16",
+  "repairs": [
+    "None-safe output-budget detection retains missing-chat.end failures",
+    "Absent inference journal counted0 after early load failure"
+  ],
+  "targeted_tests": "20 PASS0.19s with fresh workspace basetemp under host execution; initial sandbox run19PASS1tmp_path ACL setup error.",
+  "rerun": false,
+  "retained_predictions_scores_and_protocol_unchanged": true
+}

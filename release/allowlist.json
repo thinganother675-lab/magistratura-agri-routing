@@ -1,0 +1,328 @@
+{
+  "version": "v0.1.0-research",
+  "policy": "Explicit individual paths. Additions require provenance review. Private Git history is never copied.",
+  "files": [
+    {
+      "source": "LICENSE",
+      "path": "LICENSE",
+      "classification": "THIRD-PARTY-REDISTRIBUTABLE",
+      "license": "Apache-2.0",
+      "provenance": "Official unmodified Apache Software Foundation license text, https://www.apache.org/licenses/LICENSE-2.0.txt, exact SHA256 independently checked"
+    },
+    {
+      "source": "NOTICE",
+      "path": "NOTICE",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "CITATION.cff",
+      "path": "CITATION.cff",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "THIRD_PARTY_NOTICES.md",
+      "path": "THIRD_PARTY_NOTICES.md",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "pyproject.toml",
+      "path": "pyproject.toml",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "requirements-lock.txt",
+      "path": "requirements-lock.txt",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": ".env.example",
+      "path": ".env.example",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": ".gitignore",
+      "path": ".gitignore",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/__init__.py",
+      "path": "src/agro_route/__init__.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/analysis.py",
+      "path": "src/agro_route/analysis.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/benchmark.py",
+      "path": "src/agro_route/benchmark.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/cli.py",
+      "path": "src/agro_route/cli.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/evaluation.py",
+      "path": "src/agro_route/evaluation.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/home_config.py",
+      "path": "src/agro_route/home_config.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/home_policy.py",
+      "path": "src/agro_route/home_policy.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/home_stats.py",
+      "path": "src/agro_route/home_stats.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/models.py",
+      "path": "src/agro_route/models.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/prerouting.py",
+      "path": "src/agro_route/prerouting.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/routing.py",
+      "path": "src/agro_route/routing.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/tools.py",
+      "path": "src/agro_route/tools.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/web.py",
+      "path": "src/agro_route/web.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/scoring_v2_dev.py",
+      "path": "src/agro_route/scoring_v2_dev.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "src/agro_route/static/index.html",
+      "path": "src/agro_route/static/index.html",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_lab.py",
+      "path": "tests/test_lab.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_home_stats.py",
+      "path": "tests/test_home_stats.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_home_policy.py",
+      "path": "tests/test_home_policy.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_prerouting.py",
+      "path": "tests/test_prerouting.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_public_release.py",
+      "path": "tests/test_public_release.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_openrouter_retry_20261003.py",
+      "path": "tests/test_openrouter_retry_20261003.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_openrouter_screen_20261002.py",
+      "path": "tests/test_openrouter_screen_20261002.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_scorer_v2_20261003.py",
+      "path": "tests/test_scorer_v2_20261003.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "tests/test_human_review_workflow_20261003.py",
+      "path": "tests/test_human_review_workflow_20261003.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/build_public_release.py",
+      "path": "scripts/build_public_release.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/public_smoke.py",
+      "path": "scripts/public_smoke.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/reproduce_public_aggregates.py",
+      "path": "scripts/reproduce_public_aggregates.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/openrouter_retry_20261003.py",
+      "path": "scripts/openrouter_retry_20261003.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/openrouter_screen_20261002.py",
+      "path": "scripts/openrouter_screen_20261002.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/home_pc_benchmark.py",
+      "path": "scripts/home_pc_benchmark.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "scripts/human_review_workflow_20261003.py",
+      "path": "scripts/human_review_workflow_20261003.py",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original project software, test logic, metadata or selected software documentation; external data and provider text excluded"
+    },
+    {
+      "source": "release/public_README.md",
+      "path": "README.md",
+      "classification": "PROJECT-OWNED",
+      "license": "Apache-2.0",
+      "provenance": "Original software-specific public reproduction guide"
+    },
+    {
+      "source": "data/public_sample/benchmark.jsonl",
+      "path": "data/public_sample/benchmark.jsonl",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Original formal smoke or measurements-only projection, no source/gold/provider response text; independent gold validation false"
+    },
+    {
+      "source": "data/public_sample/home150_measurements.jsonl",
+      "path": "data/public_sample/home150_measurements.jsonl",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Original formal smoke or measurements-only projection, no source/gold/provider response text; independent gold validation false"
+    },
+    {
+      "source": "data/public_sample/home150_expected_aggregates.json",
+      "path": "data/public_sample/home150_expected_aggregates.json",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Original formal smoke or measurements-only projection, no source/gold/provider response text; independent gold validation false"
+    },
+    {
+      "source": "data/public_sample/home150_provenance.json",
+      "path": "data/public_sample/home150_provenance.json",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Original formal smoke or measurements-only projection, no source/gold/provider response text; independent gold validation false"
+    },
+    {
+      "source": "data/public_sample/DATA_LICENSES.md",
+      "path": "data/public_sample/DATA_LICENSES.md",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Original formal smoke or measurements-only projection, no source/gold/provider response text; independent gold validation false"
+    },
+    {
+      "source": "data/public_sample/benchmark.jsonl",
+      "path": "data/benchmark.jsonl",
+      "classification": "PROJECT-OWNED",
+      "license": "CC0-1.0",
+      "provenance": "Safe smoke alias for legacy benchmark loader; no historical corpus"
+    }
+  ]
+}

@@ -1,0 +1,3091 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 1
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+C o m p i l a t i o n
+
+
+      Max phi with resource limits, expanded outputs, nonnegative intensities
+      and sum(lambda)=1. Report efficiency k=1/phi. Zero y2 of firm9 retained.
+      Output scale /1000 improves conditioning and changes neither phi nor k.
+      Official model-library dea.gms is a structural reference; its input
+      orientation is not silently substituted for the course's output model.
+   9  Sets i /f1*f25/,m /lawyers,economists/,r /legal,reengineering/;
+  10  Alias(i,j);
+INCLUDE    C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\models\dea-data.inc
+  12  Table d(i,*)
+  13                    y1          y2          x1          x2
+  14  f1              2456         166          26           8
+  15  f2              1377         244          16           7
+  16  f3              2369         222          25           9
+  17  f4              2361         271          25          10
+  18  f5              1471         398          16          10
+  19  f6              1954         185          20           8
+  20  f7              1932         310          21           9
+  21  f8              1869         171          20           7
+  22  f9              2464           0          26           5
+  23  f10              912         384          11           8
+  24  f11             1096         331          12           8
+  25  f12             1633         224          18           7
+  26  f13              921         411          11           9
+  27  f14             2591         357          27          12
+  28  f15             1932         345          20          10
+  29  f16             1400         186          16           6
+  30  f17             1566         371          16          10
+  31  f18             2194         545          23          14
+  32  f19             2162          93          24           6
+  33  f20             2794         158          29           9
+  34  f21             1447         342          16           9
+  35  f22             1536         495          16          12
+  36  f23             2542         578          25          16
+  37  f24             1465         343          16           9
+  38  f25             2708         264          27          11
+  39  ;
+  40  Parameter x(i,m),y(i,r),xref(m),yref(r),report(i,*),peers(i,j);
+  41  x(i,'lawyers')=d(i,'x1');x(i,'economists')=d(i,'x2');
+  42  y(i,'legal')=d(i,'y1')/1000;y(i,'reengineering')=d(i,'y2')/1000;
+  43  Positive Variable intensity(j);
+  44  Variable phi;
+  45  phi.lo=1;
+  46  Equations inputs(m),outputs(r),convexity;
+  47  inputs(m).. sum(j,x(j,m)*intensity(j)) =l= xref(m);
+  48  outputs(r).. sum(j,y(j,r)*intensity(j)) =g= phi*yref(r);
+  49  convexity.. sum(j,intensity(j)) =e= 1;
+  50  Model dea /all/;
+  51  option lp=cplex,limrow=0,limcol=0;
+  52  Scalar violation;
+  53  loop(i,
+  54   xref(m)=x(i,m);yref(r)=y(i,r);
+  55   intensity.l(j)=0;intensity.l(i)=1;phi.l=1;
+  56   solve dea using lp maximizing phi;
+  57   abort$(dea.modelstat<>1 or dea.solvestat<>1) 'DEA failed',i;
+  58   violation=max(0,smax(m,sum(j,x(j,m)*intensity.l(j))-xref(m)),
+  59    smax(r,phi.l*yref(r)-sum(j,y(j,r)*intensity.l(j))),
+  60    abs(sum(j,intensity.l(j))-1),-smin(j,intensity.l(j)));
+  61   abort$(violation>1e-7 or phi.l<1-1e-8) 'DEA invalid',i,violation;
+  62   report(i,'phi')=phi.l;report(i,'k')=1/phi.l;
+  63   report(i,'modelstat')=dea.modelstat;report(i,'solvestat')=dea.solvestat;
+  64   report(i,'violation')=violation;peers(i,j)=intensity.l(j);
+  65  );
+  66  File f /'../results/lab10_gams_dea.csv'/;
+  67  put f 'firm,phi,efficiency,modelstat,solvestat,max_violation' /;
+  68  loop(i,put ord(i):0:0 ',' report(i,'phi'):0:12 ',' report(i,'k'):0:12 ',' report(i,'modelstat'):0:0 ',' report(i,'solvestat'):0:0 ',' report(i,'violation'):0:12 /;);
+  69  putclose f;
+  70  File g /'../results/lab10_gams_peers.csv'/;
+  71  put g 'firm,peer,weight' /;
+  72  loop((i,j)$(peers(i,j)>1e-8),put ord(i):0:0 ',' ord(j):0:0 ',' peers(i,j):0:12 /;);
+  73  putclose g;
+  74  display report;
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 2
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  INCLVL  FILENAME
+
+     1        1 INPUT          0       0       0  C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\models\lab10.gms
+     2       11 INCLUDE        1      11       1  C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\models\dea-data.inc
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 3
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 4
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f1
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 5
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0005
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         7    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.06 ticks)
+
+
+Optimal solution found
+Objective:            1.000511
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           25.8017        26.0000          .          
+economists        -INF            8.0000         8.0000         0.0878      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.2991      
+reengineering          .              .            +INF           -1.5983      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.2980      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0005      
+f2           .              .            +INF           -0.1108      
+f3           .              .            +INF           -0.0248      
+f4           .              .            +INF           -0.0367      
+f5           .              .            +INF           -0.1000      
+f6           .              .            +INF           -0.1203      
+f7           .              .            +INF           -0.0149      
+f8           .              .            +INF           -0.0803      
+f9           .             0.5639        +INF             .          
+f10          .              .            +INF           -0.1140      
+f11          .              .            +INF           -0.1436      
+f12          .              .            +INF           -0.0662      
+f13          .              .            +INF           -0.1559      
+f14          .              .            +INF           -0.0061      
+f15          .              .            +INF           -0.0468      
+f16          .              .            +INF           -0.1088      
+f17          .              .            +INF           -0.1147      
+f18          .             0.2511        +INF             .          
+f19          .              .            +INF           -0.0295      
+f20          .             0.1850        +INF             .          
+f21          .              .            +INF           -0.1089      
+f22          .              .            +INF           -0.1011      
+f23          .              .            +INF           -0.0188      
+f24          .              .            +INF           -0.1019      
+f25          .              .            +INF           -0.0319      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0005        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 6
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 7
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f2
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 8
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0407
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        12    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.09 ticks)
+
+
+Optimal solution found
+Objective:            1.040712
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0487      
+economists        -INF            7.0000         7.0000         0.0856      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.5503      
+reengineering          .              .            +INF           -0.9926      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.3372      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0965      
+f2           .              .            +INF           -0.0407      
+f3           .              .            +INF           -0.1258      
+f4           .              .            +INF           -0.1672      
+f5           .              .            +INF           -0.0930      
+f6           .              .            +INF           -0.0620      
+f7           .              .            +INF           -0.0843      
+f8           .              .            +INF           -0.0370      
+f9           .             0.3267        +INF             .          
+f10          .             0.6134        +INF             .          
+f11          .             0.0499        +INF             .          
+f12          .              .            +INF           -0.0170      
+f13          .              .            +INF           -0.0539      
+f14          .              .            +INF           -0.2238      
+f15          .              .            +INF           -0.0865      
+f16          .             0.0100        +INF             .          
+f17          .              .            +INF           -0.0675      
+f18          .              .            +INF           -0.2323      
+f19          .              .            +INF           -0.0622      
+f20          .              .            +INF           -0.1500      
+f21          .              .            +INF           -0.0762      
+f22          .              .            +INF           -0.1322      
+f23          .              .            +INF           -0.2766      
+f24          .              .            +INF           -0.0653      
+f25          .              .            +INF           -0.1661      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0407        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 9
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.500E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 10
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f3
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 11
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0173
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        10    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.017300
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           25.0000        25.0000         0.0203      
+economists        -INF            9.0000         9.0000         0.0533      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3346      
+reengineering          .              .            +INF           -0.9340      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.0293      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0075      
+f2           .              .            +INF           -0.0391      
+f3           .              .            +INF           -0.0173      
+f4           .              .            +INF           -0.0275      
+f5           .              .            +INF           -0.0237      
+f6           .              .            +INF           -0.0358      
+f7           .             0.1006        +INF             .          
+f8           .              .            +INF           -0.0240      
+f9           .             0.5582        +INF             .          
+f10          .              .            +INF           -0.0156      
+f11          .              .            +INF           -0.0238      
+f12          .              .            +INF           -0.0128      
+f13          .              .            +INF           -0.0406      
+f14          .              .            +INF           -0.0175      
+f15          .              .            +INF           -0.0003      
+f16          .              .            +INF           -0.0323      
+f17          .              .            +INF           -0.0171      
+f18          .             0.0780        +INF             .          
+f19          .              .            +INF           -0.0268      
+f20          .              .            +INF           -0.0162      
+f21          .              .            +INF           -0.0307      
+f22          .              .            +INF           -0.0179      
+f23          .             0.2633        +INF             .          
+f24          .              .            +INF           -0.0238      
+f25          .              .            +INF           -0.0119      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0173        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 12
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.500E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 13
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f4
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f4
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 14
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0264
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         0    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.06 ticks)
+
+
+Optimal solution found
+Objective:            1.026373
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           25.0000        25.0000         0.0195      
+economists        -INF           10.0000        10.0000         0.0511      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3208      
+reengineering          .              .            +INF           -0.8954      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.0281      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0072      
+f2           .              .            +INF           -0.0375      
+f3           .              .            +INF           -0.0166      
+f4           .              .            +INF           -0.0264      
+f5           .              .            +INF           -0.0227      
+f6           .              .            +INF           -0.0343      
+f7           .             0.0488        +INF             .          
+f8           .              .            +INF           -0.0230      
+f9           .             0.4878        +INF             .          
+f10          .              .            +INF           -0.0149      
+f11          .              .            +INF           -0.0228      
+f12          .              .            +INF           -0.0123      
+f13          .              .            +INF           -0.0390      
+f14          .              .            +INF           -0.0168      
+f15          .              .            +INF           -0.0003      
+f16          .              .            +INF           -0.0309      
+f17          .              .            +INF           -0.0164      
+f18          .             0.1464        +INF             .          
+f19          .              .            +INF           -0.0257      
+f20          .              .            +INF           -0.0155      
+f21          .              .            +INF           -0.0295      
+f22          .              .            +INF           -0.0172      
+f23          .             0.3171        +INF             .          
+f24          .              .            +INF           -0.0228      
+f25          .              .            +INF           -0.0114      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0264        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 15
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 16
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f5
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f5
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 17
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0164
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        11    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.09 ticks)
+
+
+Optimal solution found
+Objective:            1.016442
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0337      
+economists        -INF           10.0000        10.0000         0.0514      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4327      
+reengineering          .              .            +INF           -0.9134      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0362      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0359      
+f2           .              .            +INF           -0.0435      
+f3           .              .            +INF           -0.0401      
+f4           .              .            +INF           -0.0502      
+f5           .              .            +INF           -0.0164      
+f6           .              .            +INF           -0.0338      
+f7           .              .            +INF           -0.0142      
+f8           .              .            +INF           -0.0319      
+f9           .              .            +INF           -0.0298      
+f10          .             0.4861        +INF             .          
+f11          .              .            +INF           -0.0025      
+f12          .              .            +INF           -0.0183      
+f13          .              .            +INF           -0.0229      
+f14          .              .            +INF           -0.0423      
+f15          .             0.2431        +INF             .          
+f16          .              .            +INF           -0.0351      
+f17          .             0.1087        +INF             .          
+f18          .              .            +INF           -0.0106      
+f19          .              .            +INF           -0.0596      
+f20          .              .            +INF           -0.0493      
+f21          .              .            +INF           -0.0266      
+f22          .              .            +INF           -0.0025      
+f23          .             0.1620        +INF             .          
+f24          .              .            +INF           -0.0179      
+f25          .              .            +INF           -0.0252      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0164        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 18
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.000E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 19
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f6
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f6
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 20
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         6    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           20.0000        20.0000         0.0498      
+economists        -INF            8.0000         8.0000         0.0125      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.5118      
+reengineering          .       2.775558E-17        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0953      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0417      
+f2           .              .            +INF           -0.0837      
+f3           .              .            +INF           -0.0489      
+f4           .              .            +INF           -0.0655      
+f5           .              .            +INF           -0.0732      
+f6           .             1.0000        +INF             .          
+f7           .              .            +INF           -0.0735      
+f8           .              .            +INF           -0.0310      
+f9           .              .            +INF             .          
+f10          .              .            +INF           -0.0854      
+f11          .              .            +INF           -0.0410      
+f12          .              .            +INF           -0.0522      
+f13          .              .            +INF           -0.0933      
+f14          .              .            +INF           -0.0724      
+f15          .              .            +INF           -0.0363      
+f16          .              .            +INF           -0.0594      
+f17          .              .            +INF           -0.0246      
+f18          .              .            +INF           -0.1016      
+f19          .              .            +INF           -0.0676      
+f20          .              .            +INF           -0.0305      
+f21          .              .            +INF           -0.0729      
+f22          .              .            +INF           -0.0650      
+f23          .              .            +INF           -0.0480      
+f24          .              .            +INF           -0.0637      
+f25          .              .            +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 21
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.100E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 22
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f7
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f7
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 23
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         7    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           21.0000        21.0000          .          
+economists        -INF            9.0000         9.0000         0.0886      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.2620      
+reengineering          .              .            +INF           -1.5928      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.2027      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0035      
+f2           .              .            +INF           -0.0734      
+f3           .              .            +INF           -0.0257      
+f4           .              .            +INF           -0.0383      
+f5           .              .            +INF           -0.0692      
+f6           .              .            +INF           -0.1047      
+f7           .             1.0000        +INF             .          
+f8           .              .            +INF           -0.0607      
+f9           .              .            +INF             .          
+f10          .              .            +INF           -0.0608      
+f11          .              .            +INF           -0.0970      
+f12          .              .            +INF           -0.0381      
+f13          .              .            +INF           -0.1040      
+f14          .              .            +INF           -0.0182      
+f15          .              .            +INF           -0.0328      
+f16          .              .            +INF           -0.0711      
+f17          .              .            +INF           -0.0873      
+f18          .              .            +INF             .          
+f19          .              .            +INF           -0.0196      
+f20          .              .            +INF           -0.0162      
+f21          .              .            +INF           -0.0761      
+f22          .              .            +INF           -0.0749      
+f23          .              .            +INF           -0.0334      
+f24          .              .            +INF           -0.0698      
+f25          .              .            +INF           -0.0471      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 24
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.000E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 25
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f8
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f8
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 26
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0160
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         9    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.015974
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           20.0000        20.0000         0.0466      
+economists        -INF            7.0000         7.0000         0.0319      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.5000      
+reengineering          .              .            +INF           -0.3830      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.1400      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0361      
+f2           .              .            +INF           -0.0475      
+f3           .              .            +INF           -0.0434      
+f4           .              .            +INF           -0.0605      
+f5           .              .            +INF           -0.0372      
+f6           .             0.0470        +INF             .          
+f7           .              .            +INF           -0.0417      
+f8           .              .            +INF           -0.0160      
+f9           .             0.4812        +INF             .          
+f10          .              .            +INF           -0.0251      
+f11          .             0.2500        +INF             .          
+f12          .              .            +INF           -0.0204      
+f13          .              .            +INF           -0.0421      
+f14          .              .            +INF           -0.0696      
+f15          .              .            +INF           -0.0135      
+f16          .              .            +INF           -0.0263      
+f17          .             0.2218        +INF             .          
+f18          .              .            +INF           -0.0734      
+f19          .              .            +INF           -0.0540      
+f20          .              .            +INF           -0.0419      
+f21          .              .            +INF           -0.0387      
+f22          .              .            +INF           -0.0313      
+f23          .              .            +INF           -0.0438      
+f24          .              .            +INF           -0.0293      
+f25          .              .            +INF           -0.0149      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0160        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 27
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 28
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f9
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           125
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f9
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 29
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         3    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.05 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           26.0000        26.0000         0.0365      
+economists        -INF            5.0000         5.0000         0.0104      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4058      
+reengineering          .              .            +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000          .          
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0345      
+f2           .              .            +INF           -0.0974      
+f3           .              .            +INF           -0.0438      
+f4           .              .            +INF           -0.0575      
+f5           .              .            +INF           -0.0906      
+f6           .              .            +INF           -0.0195      
+f7           .              .            +INF           -0.0753      
+f8           .              .            +INF           -0.0436      
+f9           .             1.0000        +INF             .          
+f10          .              .            +INF           -0.1143      
+f11          .              .            +INF           -0.0761      
+f12          .              .            +INF           -0.0665      
+f13          .              .            +INF           -0.1211      
+f14          .              .            +INF           -0.0579      
+f15          .              .            +INF           -0.0493      
+f16          .              .            +INF           -0.0777      
+f17          .              .            +INF           -0.0520      
+f18          .              .            +INF           -0.0941      
+f19          .              .            +INF           -0.0601      
+f20          .              .            +INF           -0.0172      
+f21          .              .            +INF           -0.0899      
+f22          .              .            +INF           -0.0851      
+f23          .              .            +INF           -0.0466      
+f24          .              .            +INF           -0.0826      
+f25          .              .            +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 30
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.100E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 31
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f10
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f10
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 32
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         3    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.07 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           11.0000        11.0000          .          
+economists        -INF            8.0000         8.0000         0.1250      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF             .          
+reengineering          .              .            +INF           -2.6042      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000          .          
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.5677      
+f2           .              .            +INF           -0.2396      
+f3           .              .            +INF           -0.5469      
+f4           .              .            +INF           -0.5443      
+f5           .              .            +INF           -0.2135      
+f6           .              .            +INF           -0.5182      
+f7           .              .            +INF           -0.3177      
+f8           .              .            +INF           -0.4297      
+f9           .              .            +INF           -0.6250      
+f10          .             1.0000        +INF             .          
+f11          .              .            +INF           -0.1380      
+f12          .              .            +INF           -0.2917      
+f13          .              .            +INF           -0.0547      
+f14          .              .            +INF           -0.5703      
+f15          .              .            +INF           -0.3516      
+f16          .              .            +INF           -0.2656      
+f17          .              .            +INF           -0.2839      
+f18          .              .            +INF           -0.3307      
+f19          .              .            +INF           -0.5078      
+f20          .              .            +INF           -0.7135      
+f21          .              .            +INF           -0.2344      
+f22          .              .            +INF           -0.2109      
+f23          .              .            +INF           -0.4948      
+f24          .              .            +INF           -0.2318      
+f25          .              .            +INF           -0.6875      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 33
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.200E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 34
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f11
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.015 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f11
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 35
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         7    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           12.0000        12.0000         0.0434      
+economists        -INF            8.0000         8.0000         0.0710      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.5662      
+reengineering          .              .            +INF           -1.1463      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0890      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0272      
+f2           .              .            +INF           -0.0434      
+f3           .              .            +INF           -0.0398      
+f4           .              .            +INF           -0.0591      
+f5           .              .            +INF           -0.0265      
+f6           .              .            +INF           -0.0290      
+f7           .              .            +INF           -0.0126      
+f8           .              .            +INF           -0.0222      
+f9           .              .            +INF             .          
+f10          .              .            +INF             .          
+f11          .             1.0000        +INF             .          
+f12          .              .            +INF           -0.0082      
+f13          .              .            +INF           -0.0349      
+f14          .              .            +INF           -0.0591      
+f15          .              .            +INF             .          
+f16          .              .            +INF           -0.0259      
+f17          .              .            +INF           -0.0037      
+f18          .              .            +INF           -0.0366      
+f19          .              .            +INF           -0.0485      
+f20          .              .            +INF           -0.0462      
+f21          .              .            +INF           -0.0334      
+f22          .              .            +INF           -0.0205      
+f23          .              .            +INF           -0.0305      
+f24          .              .            +INF           -0.0220      
+f25          .              .            +INF           -0.0285      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 36
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.800E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 37
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f12
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f12
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 38
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0068
+
+ RESOURCE USAGE, LIMIT          0.016 10000000000.000
+ ITERATION COUNT, LIMIT         9    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.02sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.006769
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           18.0000        18.0000         0.0292      
+economists        -INF            7.0000         7.0000         0.0719      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4449      
+reengineering          .              .            +INF           -1.2208      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0213      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0166      
+f2           .              .            +INF           -0.0379      
+f3           .              .            +INF           -0.0296      
+f4           .              .            +INF           -0.0453      
+f5           .              .            +INF           -0.0238      
+f6           .              .            +INF           -0.0418      
+f7           .             0.0184        +INF             .          
+f8           .              .            +INF           -0.0248      
+f9           .             0.4000        +INF             .          
+f10          .             0.4909        +INF             .          
+f11          .              .            +INF           -0.0120      
+f12          .              .            +INF           -0.0068      
+f13          .              .            +INF           -0.0349      
+f14          .              .            +INF           -0.0400      
+f15          .             0.0907        +INF             .          
+f16          .              .            +INF           -0.0266      
+f17          .              .            +INF           -0.0145      
+f18          .              .            +INF           -0.0143      
+f19          .              .            +INF           -0.0344      
+f20          .              .            +INF           -0.0353      
+f21          .              .            +INF           -0.0309      
+f22          .              .            +INF           -0.0202      
+f23          .              .            +INF           -0.0213      
+f24          .              .            +INF           -0.0217      
+f25          .              .            +INF           -0.0296      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0068        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 39
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.100E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 40
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f13
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f13
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 41
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         5    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           11.0000        11.0000         0.0409      
+economists        -INF            9.0000         9.0000          .          
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF             .          
+reengineering          .              .            +INF           -2.4331      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.5504      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -1.2092      
+f2           .              .            +INF           -0.6107      
+f3           .              .            +INF           -1.0321      
+f4           .              .            +INF           -0.9129      
+f5           .              .            +INF           -0.2360      
+f6           .              .            +INF           -0.9178      
+f7           .              .            +INF           -0.6545      
+f8           .              .            +INF           -0.9518      
+f9           .              .            +INF           -1.6131      
+f10          .              .            +INF           -0.0657      
+f11          .              .            +INF           -0.2355      
+f12          .              .            +INF           -0.7411      
+f13          .             1.0000        +INF             .          
+f14          .              .            +INF           -0.7854      
+f15          .              .            +INF           -0.5285      
+f16          .              .            +INF           -0.7518      
+f17          .              .            +INF           -0.3017      
+f18          .              .            +INF           -0.1645      
+f19          .              .            +INF           -1.3051      
+f20          .              .            +INF           -1.3513      
+f21          .              .            +INF           -0.3723      
+f22          .              .            +INF             .          
+f23          .              .            +INF           -0.1659      
+f24          .              .            +INF           -0.3698      
+f25          .              .            +INF           -1.0117      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 42
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.700E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 43
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f14
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.015 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f14
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 44
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0008
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        10    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000759
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           26.5896        27.0000          .          
+economists        -INF           12.0000        12.0000         0.0588      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.2318      
+reengineering          .              .            +INF           -1.1189      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.2953      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0106      
+f2           .              .            +INF           -0.1146      
+f3           .              .            +INF           -0.0269      
+f4           .              .            +INF           -0.0327      
+f5           .              .            +INF           -0.0969      
+f6           .              .            +INF           -0.1057      
+f7           .              .            +INF           -0.0297      
+f8           .              .            +INF           -0.0823      
+f9           .              .            +INF           -0.0181      
+f10          .              .            +INF           -0.1245      
+f11          .              .            +INF           -0.1412      
+f12          .              .            +INF           -0.0777      
+f13          .              .            +INF           -0.1510      
+f14          .              .            +INF           -0.0008      
+f15          .              .            +INF           -0.0493      
+f16          .              .            +INF           -0.1154      
+f17          .              .            +INF           -0.1051      
+f18          .             0.2215        +INF             .          
+f19          .              .            +INF           -0.0428      
+f20          .             0.5081        +INF             .          
+f21          .              .            +INF           -0.1063      
+f22          .              .            +INF           -0.0909      
+f23          .             0.2704        +INF             .          
+f24          .              .            +INF           -0.1010      
+f25          .              .            +INF           -0.0189      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0008        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 45
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.000E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 46
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f15
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f15
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 47
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        10    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.09 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           20.0000        20.0000         0.0212      
+economists        -INF           10.0000        10.0000         0.0549      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3458      
+reengineering          .              .            +INF           -0.9619      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.0277      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0084      
+f2           .              .            +INF           -0.0398      
+f3           .              .            +INF           -0.0183      
+f4           .              .            +INF           -0.0288      
+f5           .              .            +INF           -0.0237      
+f6           .              .            +INF           -0.0366      
+f7           .              .            +INF             .          
+f8           .              .            +INF           -0.0246      
+f9           .              .            +INF           -0.0007      
+f10          .              .            +INF           -0.0148      
+f11          .              .            +INF           -0.0234      
+f12          .              .            +INF           -0.0128      
+f13          .              .            +INF           -0.0406      
+f14          .              .            +INF           -0.0186      
+f15          .             1.0000        +INF             .          
+f16          .              .            +INF           -0.0327      
+f17          .              .            +INF           -0.0168      
+f18          .              .            +INF             .          
+f19          .              .            +INF           -0.0282      
+f20          .              .            +INF           -0.0176      
+f21          .              .            +INF           -0.0310      
+f22          .              .            +INF           -0.0176      
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.0238      
+f25          .              .            +INF           -0.0127      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 48
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 49
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f16
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f16
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 50
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        10    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000          .          
+economists        -INF            6.0000         6.0000         0.2185      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3171      
+reengineering          .              .            +INF           -2.9892      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.3113      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.1620      
+f2           .              .            +INF           -0.0525      
+f3           .              .            +INF           -0.2407      
+f4           .              .            +INF           -0.3153      
+f5           .              .            +INF           -0.2180      
+f6           .              .            +INF           -0.2644      
+f7           .              .            +INF           -0.1163      
+f8           .              .            +INF           -0.1146      
+f9           .              .            +INF             .          
+f10          .              .            +INF             .          
+f11          .              .            +INF           -0.1001      
+f12          .              .            +INF           -0.0311      
+f13          .              .            +INF           -0.1350      
+f14          .              .            +INF           -0.4224      
+f15          .              .            +INF           -0.2302      
+f16          .             1.0000        +INF             .          
+f17          .              .            +INF           -0.2685      
+f18          .              .            +INF           -0.4234      
+f19          .              .            +INF           -0.0363      
+f20          .              .            +INF           -0.2972      
+f21          .              .            +INF           -0.1744      
+f22          .              .            +INF           -0.3445      
+f23          .              .            +INF           -0.6515      
+f24          .              .            +INF           -0.1657      
+f25          .              .            +INF           -0.4448      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 51
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 52
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f17
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f17
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 53
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        11    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.09 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0331      
+economists        -INF           10.0000        10.0000         0.0506      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4257      
+reengineering          .              .            +INF           -0.8986      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0356      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0353      
+f2           .              .            +INF           -0.0428      
+f3           .              .            +INF           -0.0395      
+f4           .              .            +INF           -0.0494      
+f5           .              .            +INF           -0.0162      
+f6           .              .            +INF           -0.0332      
+f7           .              .            +INF           -0.0140      
+f8           .              .            +INF           -0.0314      
+f9           .              .            +INF           -0.0293      
+f10          .              .            +INF             .          
+f11          .              .            +INF           -0.0024      
+f12          .              .            +INF           -0.0180      
+f13          .              .            +INF           -0.0225      
+f14          .              .            +INF           -0.0416      
+f15          .              .            +INF             .          
+f16          .              .            +INF           -0.0346      
+f17          .             1.0000        +INF             .          
+f18          .              .            +INF           -0.0104      
+f19          .              .            +INF           -0.0586      
+f20          .              .            +INF           -0.0485      
+f21          .              .            +INF           -0.0261      
+f22          .              .            +INF           -0.0025      
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.0176      
+f25          .              .            +INF           -0.0248      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 54
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.300E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 55
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f18
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f18
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 56
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         3    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.07 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           23.0000        23.0000          .          
+economists        -INF           14.0000        14.0000         0.0303      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF             .          
+reengineering          .              .            +INF           -1.8349      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.5761      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.5138      
+f2           .              .            +INF           -0.3404      
+f3           .              .            +INF           -0.4413      
+f4           .              .            +INF           -0.3817      
+f5           .              .            +INF           -0.1486      
+f6           .              .            +INF           -0.4789      
+f7           .              .            +INF           -0.2798      
+f8           .              .            +INF           -0.4743      
+f9           .              .            +INF           -0.7275      
+f10          .              .            +INF           -0.1138      
+f11          .              .            +INF           -0.2110      
+f12          .              .            +INF           -0.3771      
+f13          .              .            +INF           -0.0945      
+f14          .              .            +INF           -0.2844      
+f15          .              .            +INF           -0.2459      
+f16          .              .            +INF           -0.4165      
+f17          .              .            +INF           -0.1982      
+f18          .             1.0000        +INF             .          
+f19          .              .            +INF           -0.5872      
+f20          .              .            +INF           -0.5587      
+f21          .              .            +INF           -0.2211      
+f22          .              .            +INF           -0.0312      
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.2193      
+f25          .              .            +INF           -0.4248      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 57
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.400E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 58
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f19
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.015 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f19
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 59
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0178
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         6    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.07 ticks)
+
+
+Optimal solution found
+Objective:            1.017784
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           23.4762        24.0000          .          
+economists        -INF            6.0000         6.0000         0.1592      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3485      
+reengineering          .              .            +INF           -2.6520      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.0627      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0401      
+f2           .              .            +INF           -0.0501      
+f3           .              .            +INF           -0.0811      
+f4           .              .            +INF           -0.1131      
+f5           .              .            +INF           -0.0864      
+f6           .              .            +INF           -0.1646      
+f7           .             0.1651        +INF             .          
+f8           .              .            +INF           -0.0722      
+f9           .             0.7217        +INF             .          
+f10          .             0.1132        +INF             .          
+f11          .              .            +INF           -0.0764      
+f12          .              .            +INF           -0.0139      
+f13          .              .            +INF           -0.0844      
+f14          .              .            +INF           -0.1233      
+f15          .              .            +INF           -0.0664      
+f16          .              .            +INF           -0.0367      
+f17          .              .            +INF           -0.1249      
+f18          .              .            +INF           -0.0814      
+f19          .              .            +INF           -0.0178      
+f20          .              .            +INF           -0.1027      
+f21          .              .            +INF           -0.0841      
+f22          .              .            +INF           -0.1249      
+f23          .              .            +INF           -0.1910      
+f24          .              .            +INF           -0.0752      
+f25          .              .            +INF           -0.1700      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0178        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 60
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.900E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 61
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f20
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f20
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 62
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         4    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.07 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           29.0000        29.0000         0.0100      
+economists        -INF            9.0000         9.0000         0.0594      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.2972      
+reengineering          .              .            +INF           -1.0737      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.1753      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0024      
+f2           .              .            +INF           -0.0800      
+f3           .              .            +INF           -0.0176      
+f4           .              .            +INF           -0.0268      
+f5           .              .            +INF           -0.0650      
+f6           .              .            +INF           -0.0713      
+f7           .              .            +INF           -0.0130      
+f8           .              .            +INF           -0.0521      
+f9           .              .            +INF             .          
+f10          .              .            +INF           -0.0773      
+f11          .              .            +INF           -0.0895      
+f12          .              .            +INF           -0.0454      
+f13          .              .            +INF           -0.1051      
+f14          .              .            +INF           -0.0050      
+f15          .              .            +INF           -0.0249      
+f16          .              .            +INF           -0.0760      
+f17          .              .            +INF           -0.0658      
+f18          .              .            +INF             .          
+f19          .              .            +INF           -0.0293      
+f20          .             1.0000        +INF             .          
+f21          .              .            +INF           -0.0728      
+f22          .              .            +INF           -0.0604      
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.0664      
+f25          .              .            +INF           -0.0106      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 63
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 64
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f21
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f21
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 65
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0275
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        11    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.09 ticks)
+
+
+Optimal solution found
+Objective:            1.027533
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0359      
+economists        -INF            9.0000         9.0000         0.0586      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4674      
+reengineering          .              .            +INF           -0.9463      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0734      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0224      
+f2           .              .            +INF           -0.0358      
+f3           .              .            +INF           -0.0328      
+f4           .              .            +INF           -0.0488      
+f5           .              .            +INF           -0.0219      
+f6           .              .            +INF           -0.0239      
+f7           .              .            +INF           -0.0104      
+f8           .              .            +INF           -0.0183      
+f9           .             0.0126        +INF             .          
+f10          .             0.3266        +INF             .          
+f11          .             0.1420        +INF             .          
+f12          .              .            +INF           -0.0068      
+f13          .              .            +INF           -0.0288      
+f14          .              .            +INF           -0.0488      
+f15          .             0.5188        +INF             .          
+f16          .              .            +INF           -0.0214      
+f17          .              .            +INF           -0.0031      
+f18          .              .            +INF           -0.0302      
+f19          .              .            +INF           -0.0400      
+f20          .              .            +INF           -0.0381      
+f21          .              .            +INF           -0.0275      
+f22          .              .            +INF           -0.0169      
+f23          .              .            +INF           -0.0252      
+f24          .              .            +INF           -0.0182      
+f25          .              .            +INF           -0.0235      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0275        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 66
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 67
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f22
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f22
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 68
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         5    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.07 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0069      
+economists        -INF           12.0000        12.0000         0.0265      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF             .          
+reengineering          .              .            +INF           -2.0202      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.5725      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.6275      
+f2           .              .            +INF           -0.3747      
+f3           .              .            +INF           -0.5339      
+f4           .              .            +INF           -0.4614      
+f5           .              .            +INF           -0.1430      
+f6           .              .            +INF           -0.5479      
+f7           .              .            +INF           -0.3287      
+f8           .              .            +INF           -0.5497      
+f9           .              .            +INF           -0.8834      
+f10          .              .            +INF           -0.0840      
+f11          .              .            +INF           -0.1980      
+f12          .              .            +INF           -0.4289      
+f13          .              .            +INF           -0.0560      
+f14          .              .            +INF           -0.3543      
+f15          .              .            +INF           -0.2776      
+f16          .              .            +INF           -0.4655      
+f17          .              .            +INF           -0.1976      
+f18          .              .            +INF             .          
+f19          .              .            +INF           -0.7083      
+f20          .              .            +INF           -0.6907      
+f21          .              .            +INF           -0.2297      
+f22          .             1.0000        +INF             .          
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.2277      
+f25          .              .            +INF           -0.5158      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 69
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.500E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 70
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f23
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f23
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 71
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         1    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.05 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           25.0000        25.0000         0.0400      
+economists        -INF           16.0000        16.0000          .          
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3934      
+reengineering          .              .            +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000          .          
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0738      
+f2           .              .            +INF           -0.0983      
+f3           .              .            +INF           -0.0681      
+f4           .              .            +INF           -0.0712      
+f5           .              .            +INF           -0.0613      
+f6           .              .            +INF           -0.0313      
+f7           .              .            +INF           -0.0800      
+f8           .              .            +INF           -0.0648      
+f9           .              .            +INF           -0.0707      
+f10          .              .            +INF           -0.0812      
+f11          .              .            +INF           -0.0488      
+f12          .              .            +INF           -0.0776      
+f13          .              .            +INF           -0.0777      
+f14          .              .            +INF           -0.0607      
+f15          .              .            +INF           -0.0400      
+f16          .              .            +INF           -0.0893      
+f17          .              .            +INF           -0.0239      
+f18          .              .            +INF           -0.0569      
+f19          .              .            +INF           -0.1095      
+f20          .              .            +INF           -0.0609      
+f21          .              .            +INF           -0.0708      
+f22          .              .            +INF           -0.0358      
+f23          .             1.0000        +INF             .          
+f24          .              .            +INF           -0.0637      
+f25          .              .            +INF           -0.0147      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 72
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 1.600E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 73
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f24
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.016 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f24
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 74
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0180
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         9    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.018005
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           16.0000        16.0000         0.0355      
+economists        -INF            9.0000         9.0000         0.0580      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.4631      
+reengineering          .              .            +INF           -0.9375      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000        -0.0728      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0222      
+f2           .              .            +INF           -0.0355      
+f3           .              .            +INF           -0.0325      
+f4           .              .            +INF           -0.0483      
+f5           .              .            +INF           -0.0217      
+f6           .              .            +INF           -0.0237      
+f7           .              .            +INF           -0.0103      
+f8           .              .            +INF           -0.0182      
+f9           .             0.0105        +INF             .          
+f10          .             0.2721        +INF             .          
+f11          .             0.2018        +INF             .          
+f12          .              .            +INF           -0.0067      
+f13          .              .            +INF           -0.0286      
+f14          .              .            +INF           -0.0483      
+f15          .             0.5157        +INF             .          
+f16          .              .            +INF           -0.0212      
+f17          .              .            +INF           -0.0030      
+f18          .              .            +INF           -0.0299      
+f19          .              .            +INF           -0.0397      
+f20          .              .            +INF           -0.0378      
+f21          .              .            +INF           -0.0273      
+f22          .              .            +INF           -0.0168      
+f23          .              .            +INF           -0.0249      
+f24          .              .            +INF           -0.0180      
+f25          .              .            +INF           -0.0233      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0180        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 75
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Range Statistics    SOLVE dea Using LP From line 56
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 2.700E+01] - Zero values observed as well
+Bound     [min, max] : [ 1.000E+00, 1.000E+00] - Zero values observed as well
+Matrix    [min, max] : [ 9.300E-02, 2.900E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 76
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Model Statistics    SOLVE dea Using LP From line 56
+
+
+LOOPS                                    i   f25
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES           26
+NON ZERO ELEMENTS           126
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  i f25
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 77
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+Solution Report     SOLVE dea Using LP From line 56
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dea                 OBJECTIVE  phi
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  56
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE                1.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT        10    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.08 ticks)
+
+
+Optimal solution found
+Objective:            1.000000
+
+
+---- EQU inputs  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+lawyers           -INF           27.0000        27.0000         0.0163      
+economists        -INF           11.0000        11.0000         0.0401      
+
+---- EQU outputs  
+
+                     LOWER          LEVEL          UPPER         MARGINAL
+
+legal                  .              .            +INF           -0.3016      
+reengineering          .              .            +INF           -0.6945      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU convexity          1.0000         1.0000         1.0000         0.1195      
+
+---- VAR intensity  
+
+           LOWER          LEVEL          UPPER         MARGINAL
+
+f1           .              .            +INF           -0.0075      
+f2           .              .            +INF           -0.0759      
+f3           .              .            +INF           -0.0186      
+f4           .              .            +INF           -0.0271      
+f5           .              .            +INF           -0.0609      
+f6           .              .            +INF           -0.0480      
+f7           .              .            +INF           -0.0242      
+f8           .              .            +INF           -0.0433      
+f9           .              .            +INF             .          
+f10          .              .            +INF           -0.0776      
+f11          .              .            +INF           -0.0752      
+f12          .              .            +INF           -0.0451      
+f13          .              .            +INF           -0.0963      
+f14          .              .            +INF           -0.0108      
+f15          .              .            +INF           -0.0238      
+f16          .              .            +INF           -0.0691      
+f17          .              .            +INF           -0.0510      
+f18          .              .            +INF           -0.0151      
+f19          .              .            +INF           -0.0341      
+f20          .              .            +INF             .          
+f21          .              .            +INF           -0.0669      
+f22          .              .            +INF           -0.0542      
+f23          .              .            +INF             .          
+f24          .              .            +INF           -0.0608      
+f25          .             1.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR phi                1.0000         1.0000        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:39 Page 78
+Laboratory 10 - variant 11 - output-oriented VRS DEA for 25 firms
+E x e c u t i o n
+
+
+----     74 PARAMETER report  
+
+            phi           k   modelstat   solvestat   violation
+
+f1        1.001       0.999       1.000       1.000
+f2        1.041       0.961       1.000       1.000
+f3        1.017       0.983       1.000       1.000
+f4        1.026       0.974       1.000       1.000 1.11022E-16
+f5        1.016       0.984       1.000       1.000 1.77636E-15
+f6        1.000       1.000       1.000       1.000
+f7        1.000       1.000       1.000       1.000
+f8        1.016       0.984       1.000       1.000 3.55271E-15
+f9        1.000       1.000       1.000       1.000
+f10       1.000       1.000       1.000       1.000
+f11       1.000       1.000       1.000       1.000
+f12       1.007       0.993       1.000       1.000
+f13       1.000       1.000       1.000       1.000
+f14       1.001       0.999       1.000       1.000 4.44089E-16
+f15       1.000       1.000       1.000       1.000 1.11022E-16
+f16       1.000       1.000       1.000       1.000 1.11022E-16
+f17       1.000       1.000       1.000       1.000
+f18       1.000       1.000       1.000       1.000
+f19       1.018       0.983       1.000       1.000 4.44089E-16
+f20       1.000       1.000       1.000       1.000
+f21       1.028       0.973       1.000       1.000 2.22045E-16
+f22       1.000       1.000       1.000       1.000
+f23       1.000       1.000       1.000       1.000
+f24       1.018       0.982       1.000       1.000
+f25       1.000       1.000       1.000       1.000
+
+
+**** REPORT FILE SUMMARY
+
+f C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\results\lab10_gams_dea.csv
+g C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\results\lab10_gams_peers.csv
+
+
+EXECUTION TIME       =        2.578 SECONDS      7 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\models\lab10.gms
+Output     C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\logs\lab10.lst

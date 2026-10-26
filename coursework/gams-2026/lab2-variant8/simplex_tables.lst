@@ -1,0 +1,315 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 1
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+C o m p i l a t i o n
+
+
+   2  * Standalone educational calculation in GAMS; no external numeric script.
+   3  * Quantity: centners/day; objective: thousand RUB/day.
+   4  * Tableau convention: -c in objective row, optimal when all >= 0.
+   5  Sets
+   6      r rows /rawmilk,mainline,creamline,assortment,obj/
+   7      i(r) constraints /rawmilk,mainline,creamline,assortment/
+   8      j columns /milk,kefir,cream,skim,sraw,sline,scream,sassort,rhs/
+   9      v(j) variables /milk,kefir,cream,skim,sraw,sline,scream,sassort/
+  10      p(j) products /milk,kefir,cream,skim/
+  11      enter(j), leave(r), basic(r,j)
+  12      it iteration_limit /it1*it100/;
+  13  Alias (j,k);
+  14  Parameters a(r,j), b(r), c(j), tab(r,j), prow(j), multiplier(r),
+  15             ratio(r), solution(j), usage(r), slack(r);
+  16  Scalars tol /1e-9/, iter /0/, eligible, enterOrder, leaveOrder,
+  17          minratio, pivot, revenueSimplex, revenueDiff, maxViolation,
+  18          basicError, expectedRevenue /321.517777777778/;
+  19   
+  20  a('rawmilk','milk')=1.01; a('rawmilk','kefir')=1.01;
+  21  a('rawmilk','cream')=9.45; a('rawmilk','skim')=0.31;
+  22  a('mainline','milk')=1/5; a('mainline','kefir')=1/6;
+  23  a('mainline','skim')=1/6;
+  24  a('creamline','cream')=1/0.3;
+  25  a('assortment','kefir')=1; a('assortment','skim')=-2;
+  26  b('rawmilk')=140; b('mainline')=21; b('creamline')=16;
+  27  b('assortment')=0;
+  28  c('milk')=2.4; c('kefir')=2.7; c('cream')=13.8; c('skim')=0.79;
+  29  basic('rawmilk','sraw')=yes; basic('mainline','sline')=yes;
+  30  basic('creamline','scream')=yes; basic('assortment','sassort')=yes;
+  31  tab(i,j)=a(i,j); tab(i,j)$basic(i,j)=1;
+  32  tab(i,'rhs')=b(i); tab('obj',v)=-c(v);
+  33   
+  34  File tables /simplex_tables.txt/;
+  35  put tables;
+  36  put 'COMPLETE PRIMAL SIMPLEX TABLEAUX - VARIANT 8'/;
+  37  put 'Units: centners/day; revenue thousand RUB/day.'/;
+  38  put 'Row: sum(tableau coefficients * variables) = RHS.'/;
+  39  put 'Objective row: z + sum(objective coefficients * variables) = RHS.'/;
+  40  put 'Bland order: milk,kefir,cream,skim,sraw,sline,scream,sassort.'/;
+  41  put 'Entering: first negative objective coefficient; leaving: minimum ratio,'/;
+  42  put 'ties: smallest ordered BASIC variable. Zero ratio pivots are allowed.'/;
+  43  put 'Round only the displayed tables; internal arithmetic uses full precision.'/;
+  44   
+  45  put /'TABLE 0 - INITIAL'/;
+  46  put 'Nonbasic: '; loop(v$(sum(i$basic(i,v),1)=0),put v.tl:12); put /;
+  47  put 'row':14 'basic':12; loop(j,put j.tl:15); put /;
+  48  loop(r,
+  49      put r.tl:14;
+  50      if(i(r),loop(j$basic(r,j),put j.tl:12); else put 'z':12;);
+  51      loop(j,put tab(r,j):15:6); put /;
+  52  );
+  53   
+  54  loop(it$(smin(v,tab('obj',v)) < -tol),
+  55      iter=iter+1;
+  56      enter(j)=no; leave(r)=no;
+  57      enterOrder=smin(v$(tab('obj',v)<-tol),ord(v));
+  58      enter(v)$(ord(v)=enterOrder)=yes;
+  59      multiplier(r)=sum(j$enter(j),tab(r,j));
+  60      eligible=sum(i$(multiplier(i)>tol),1);
+  61      abort$(eligible=0) 'Unbounded LP detected';
+  62      ratio(i)=inf;
+  63      ratio(i)$(multiplier(i)>tol)=max(0,tab(i,'rhs'))/multiplier(i);
+  64      minratio=smin(i,ratio(i));
+  65      leaveOrder=smin((i,v)$(basic(i,v) and abs(ratio(i)-minratio)<tol),ord(v));
+  66      leave(i)$(sum(v$(ord(v)=leaveOrder and basic(i,v)),1)>0)=yes;
+  67      pivot=sum(i$leave(i),multiplier(i));
+  68      abort$(abs(pivot)<tol or card(leave)<>1 or card(enter)<>1) 'Invalid pivot';
+  69      put /'PIVOT ':0 iter:0:0 ': enter ';
+  70      loop(j$enter(j),put j.tl:0);
+  71      put ', leave '; loop((i,j)$(leave(i) and basic(i,j)),put j.tl:0);
+  72      put ', pivot=' pivot:0:9 ', ratio=' minratio:0:9/;
+  73      put 'Eligible ratios: ';
+  74      loop(i$(multiplier(i)>tol),put i.tl:0 '=' ratio(i):0:9 '  '); put /;
+  75      prow(j)=sum(i$leave(i),tab(i,j))/pivot;
+  76      tab(r,j)=tab(r,j)-multiplier(r)*prow(j);
+  77      tab(i,j)$leave(i)=prow(j);
+  78      basic(i,j)$leave(i)=no;
+  79      basic(i,j)$(leave(i) and enter(j))=yes;
+  80   
+  81      basicError=0;
+  82      loop((i,k)$basic(i,k),
+  83          basicError=max(basicError,abs(tab(i,k)-1),
+  84              smax(r$(not sameas(i,r)),abs(tab(r,k))));
+  85      );
+  86      abort$(basicError>1e-7 or smin(i,tab(i,'rhs')) < -1e-7) 'Tableau invariant failed';
+  87      put /'TABLE ' iter:0:0/;
+  88      put 'Nonbasic: '; loop(v$(sum(i$basic(i,v),1)=0),put v.tl:12); put /;
+  89      put 'row':14 'basic':12; loop(j,put j.tl:15); put /;
+  90      loop(r,
+  91          put r.tl:14;
+  92          if(i(r),loop(j$basic(r,j),put j.tl:12); else put 'z':12;);
+  93          loop(j,put tab(r,j):15:6); put /;
+  94      );
+  95  );
+  96  abort$(smin(v,tab('obj',v)) < -tol) 'Iteration limit reached';
+  97  solution(v)=sum(i$basic(i,v),tab(i,'rhs'));
+  98  revenueSimplex=sum(p,c(p)*solution(p));
+  99  usage(i)=sum(p,a(i,p)*solution(p)); slack(i)=b(i)-usage(i);
+ 100  maxViolation=max(0,smax(i,usage(i)-b(i)),-smin(v,solution(v)));
+ 101  abort$(maxViolation>1e-7 or abs(revenueSimplex-tab('obj','rhs'))>1e-7)
+ 102      'Original constraints or objective do not match tableau';
+ 103   
+ 104  * Independent GAMS/CPLEX verification using exactly the same A, b, c.
+ 105  Positive Variables x(p);
+ 106  Variable z;
+ 107  Equations referenceObjective, referenceConstraints(i);
+ 108  referenceObjective.. z =e= sum(p,c(p)*x(p));
+ 109  referenceConstraints(i).. sum(p,a(i,p)*x(p)) =l= b(i);
+ 110  Model reference /referenceObjective,referenceConstraints/;
+ 111  option lp=cplex;
+ 112  solve reference using lp maximizing z;
+ 113  abort$(reference.modelstat<>1 or reference.solvestat<>1) 'Reference LP failed';
+ 114  revenueDiff=abs(revenueSimplex-z.l);
+ 115  abort$(revenueDiff>1e-7 or smax(p,abs(solution(p)-x.l(p)))>1e-7
+ 116      or abs(revenueSimplex-expectedRevenue)>1e-7) 'Simplex differs from lab2 LP';
+ 117   
+ 118  put /'FINAL TABLE = TABLE ' iter:0:0/;
+ 119  put 'solution (product and slack variables):'/;
+ 120  loop(v,put v.tl:14 solution(v):18:9/);
+ 121  put 'Revenue, thousand RUB/day: ' revenueSimplex:0:9/;
+ 122  put 'Resource':16 'Limit':16 'Used':16 'Remaining':16/;
+ 123  loop(i,put i.tl:16 b(i):16:9 usage(i):16:9 slack(i):16:9/);
+ 124  put 'Verification: original constraints and nonnegativity PASS'/;
+ 125  put 'Verification: objective = CPLEX LP = original lab2 LP PASS'/;
+ 126  put 'CPLEX objective difference: ' revenueDiff:0:12/;
+ 127  put 'Maximum original constraint violation: ' maxViolation:0:12/;
+ 128  putclose tables;
+ 129  display solution,revenueSimplex,slack,iter,revenueDiff,maxViolation;
+ 130   
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 2
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+Equation Listing    SOLVE reference Using LP From line 112
+
+
+---- referenceObjective  =E=  
+
+referenceObjective..  - 2.4*x(milk) - 2.7*x(kefir) - 13.8*x(cream) - 0.79*x(skim) + z =E= 0 ; (LHS = 0)
+     
+
+---- referenceConstraints  =L=  
+
+referenceConstraints(rawmilk)..  1.01*x(milk) + 1.01*x(kefir) + 9.45*x(cream) + 0.31*x(skim) =L= 140 ; (LHS = 0)
+     
+referenceConstraints(mainline)..  0.2*x(milk) + 0.166666666666667*x(kefir) + 0.166666666666667*x(skim) =L= 21 ; (LHS = 0)
+     
+referenceConstraints(creamline)..  3.33333333333333*x(cream) =L= 16 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 3
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+Column Listing      SOLVE reference Using LP From line 112
+
+
+---- x  
+
+x(milk)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2.4     referenceObjective
+        1.01    referenceConstraints(rawmilk)
+        0.2     referenceConstraints(mainline)
+
+x(kefir)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2.7     referenceObjective
+        1.01    referenceConstraints(rawmilk)
+        0.1667  referenceConstraints(mainline)
+        1       referenceConstraints(assortment)
+
+x(cream)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -13.8     referenceObjective
+        9.45    referenceConstraints(rawmilk)
+        3.3333  referenceConstraints(creamline)
+
+REMAINING ENTRY SKIPPED
+
+---- z  
+
+z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       referenceObjective
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 4
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+Range Statistics    SOLVE reference Using LP From line 112
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.600E+01, 1.400E+02] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.667E-01, 1.380E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 5
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+Model Statistics    SOLVE reference Using LP From line 112
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           2     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            15
+
+
+GENERATION TIME      =        0.047 SECONDS      6 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 6
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+Solution Report     SOLVE reference Using LP From line 112
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   reference           OBJECTIVE  z
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  112
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE              321.5178
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         3    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.01 ticks)
+
+
+Optimal solution found
+Objective:          321.517778
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU reference~          .              .              .             1.0000      
+
+---- EQU referenceConstraints  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+rawmilk           -INF          140.0000       140.0000         1.4603      
+mainline          -INF           21.0000        21.0000         5.5749      
+creamline         -INF           14.8642        16.0000          .          
+assortment        -INF             .              .             0.2959      
+
+---- VAR x  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+milk           .              .            +INF           -0.1899      
+kefir          .            84.0000        +INF             .          
+cream          .             4.4593        +INF             .          
+skim           .            42.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR z                 -INF          321.5178        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 11:42:22 Page 7
+Variant 8 laboratory 2.2 - complete primal simplex tableaux
+E x e c u t i o n
+
+
+----    129 PARAMETER solution  
+
+kefir  84.000,    cream   4.459,    skim   42.000,    scream  1.136
+
+
+----    129 PARAMETER revenueSimplex       =      321.518  
+
+----    129 PARAMETER slack  
+
+creamline 1.136
+
+
+----    129 PARAMETER iter                 =        4.000  
+            PARAMETER revenueDiff          =        0.000  
+            PARAMETER maxViolation         =        0.000  
+
+**** REPORT FILE SUMMARY
+
+tables C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\simplex_tables.txt
+
+
+EXECUTION TIME       =        0.579 SECONDS      6 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\simplex_tables.gms
+Output     C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\simplex_tables.lst

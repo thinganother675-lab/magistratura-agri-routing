@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "replay_status_counts": {
+    "first/SHOW_LAB2_VARIANT8/audit_lab2.lst": 1,
+    "remaining/lab8-variant8/audit_base.lst": 3,
+    "remaining/lab8-variant8/audit_scenarios.lst": 60,
+    "remaining/lab10-variant8/audit_lab10.lst": 25
+  },
+  "comparisons": [
+    {
+      "lab": "lab8-variant8",
+      "file": "results/base_results.csv",
+      "rows": 1,
+      "max_relative_difference": 0
+    },
+    {
+      "lab": "lab8-variant8",
+      "file": "results/scenario_results.csv",
+      "rows": 20,
+      "max_relative_difference": 0
+    },
+    {
+      "lab": "lab10-variant8",
+      "file": "efficiencies.csv",
+      "rows": 25,
+      "max_relative_difference": 0
+    },
+    {
+      "lab": "lab10-variant8",
+      "file": "spearman.csv",
+      "rows": 2,
+      "max_relative_difference": 0
+    },
+    {
+      "lab": "lab10-variant8",
+      "file": "input_data.csv",
+      "rows": 25,
+      "max_relative_difference": 0
+    }
+  ],
+  "first_report_and_model_unchanged": true,
+  "launcher_paths_verified": true,
+  "archives_valid": true
+}

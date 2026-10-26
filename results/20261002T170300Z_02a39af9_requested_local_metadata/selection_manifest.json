@@ -1,0 +1,55 @@
+{
+  "recorded_utc": "2026-10-02T17:16:21.718587+00:00",
+  "status": "PARTIAL_DOWNLOADS_CHECKPOINTED_FOR_ROOT_TIMED_WINDOW",
+  "q8_models": {
+    "qwen": {
+      "repo": "unsloth/Qwen3.5-4B-GGUF",
+      "revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+      "base_model": "Qwen/Qwen3.5-4B",
+      "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+      "filename": "Qwen3.5-4B-Q8_0.gguf",
+      "size": 4482403488,
+      "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+      "license": "apache-2.0",
+      "model_key": "qwen3.5-4b",
+      "gpu": "max"
+    },
+    "phi": {
+      "repo": "unsloth/Phi-4-mini-instruct-GGUF",
+      "revision": "78eb92a46fc37e6b524df991ed9aca9bc6aa7b80",
+      "base_model": "microsoft/Phi-4-mini-instruct",
+      "base_revision": "cfbefacb99257ffa30c83adab238a50856ac3083",
+      "filename": "Phi-4-mini-instruct.Q8_0.gguf",
+      "size": 4084611040,
+      "sha256": "26188c6050d525376a88b04514c236c5e28a36730f1e936f2a00314212b7ba42",
+      "license": "mit",
+      "model_key": "phi-4-mini-instruct",
+      "gpu": "max"
+    }
+  },
+  "selection_rationale": "Only faithful ordinary Q8_0 files of exact intended post-trained checkpoints considered. Unsloth repositories correctly match base identities and explicit Apache-2.0/MIT license metadata. Among matching repositories, downloads are 1024272 vs bartowski228651 for Qwen and117206 vs LMStudio-community8007 for Phi. Popularity is discovery evidence, not quality evidence. Model checksums will determine actual revision consistency after LM download.",
+  "mmproj_qwen": {
+    "filename": "mmproj-F32.gguf",
+    "size": 1334075072,
+    "sha256": "758b74e604c5374577c21026c5bdc3aec75560eccb4c67844c8f585d6ec74804",
+    "scientific_role": "LM Studio automatically downloaded companion; text tests use no image input"
+  },
+  "planned_protocol": {
+    "context": 4096,
+    "parallel": 1,
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "max_tokens": 512,
+    "strict_json_schema": true,
+    "reasoning": "none if native off capability exists; otherwise field absent; raw channels measured",
+    "hidden_warmups": 0,
+    "retries": 0,
+    "DEV12_then_append24": ">=6/12 correct, <=2 completion errors, safe resources; no repeat of first12",
+    "not_final_holdout": true
+  },
+  "disk_free_gib_before_rounded_from_GetPSDrive": 215.71,
+  "disk_free_bytes_measured_now": 228088967168,
+  "disk_measurement_utc": "2026-10-02T17:18:00.571961+00:00",
+  "last_checkpoint": "measurement_window_checkpoint.json"
+}

@@ -1,0 +1,8 @@
+
+Model: granite-4.1-8b
+Context Length: 4 096
+GPU Offload: 100%
+Estimated GPU Memory:   5.55 GiB
+Estimated Total Memory: 5.55 GiB
+
+Estimate: This model may be loaded based on your resource guardrails settings.

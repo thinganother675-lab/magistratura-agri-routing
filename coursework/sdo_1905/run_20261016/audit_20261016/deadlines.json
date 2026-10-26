@@ -1,0 +1,25 @@
+{
+  "checked_date": "2026-10-16",
+  "checked_around": "10:53 +03:00",
+  "source": "https://sdo.timacad.ru/course/view.php?id=1905",
+  "method": "DOM видимой страницы курса, все 20 элементов; отдельно состояние ответа ПЗ-14",
+  "visible_due": "22 декабря 2026, 00:00",
+  "timezone_note": "Время отображения СДО; часовой пояс профиля отдельно не менялся и не проверялся.",
+  "activities": 20,
+  "lectures": 5,
+  "practicals": 14,
+  "common_instruction": 1,
+  "opens_oct15": [
+    "Лекции 1–4",
+    "ПЗ 1–8",
+    "Общая инструкция"
+  ],
+  "opens_oct1": [
+    "Лекция 5",
+    "ПЗ 9–14"
+  ],
+  "no_future_opening_dates": true,
+  "hidden_cutoff_not_inspected": true,
+  "conclusion": "Все элементы уже открыты; отображаемый дедлайн пока не снят. Сообщение старосты сообщает разрешение выполнить за день, но не доказывает изменение скрытых настроек.",
+  "submission_performed": false
+}

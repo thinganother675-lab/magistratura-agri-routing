@@ -1,0 +1,193 @@
+{
+  "protocol_id": "mera_private_test_draft_20261003",
+  "protocol_status": "DRAFT_NOT_FROZEN",
+  "created_utc": "2026-10-03T09:35:34.446912+00:00",
+  "preparation_code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "preparation_source_sha256": "82d81aad5fde353fed707fd4c7656458bb976ff8700b18de32d66915e71ded07",
+  "dataset": "MERA-evaluation/ruTXTAgroBench",
+  "dataset_revision": "b00011342a8f5f1e7968edaa2f6d50545a1e8f79",
+  "planned_private_test_inputs": 2642,
+  "private_test_run": false,
+  "test_gold_dependency": false,
+  "evidence_classification": "DEV",
+  "human_review": false,
+  "source_evidence": {
+    "results/20261003_local_screen_571682f5/final_analysis.json": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44",
+    "results/20261003_cloud_budget_only_c1184a27/cloud_development_analysis.json": "05cb2fb86acf698c27ce210ecbca5b94bed5329e9a931deafc44aab9210786aa"
+  },
+  "primary_local": {
+    "model_key": "qwen3.8-27b",
+    "quantization_backend_label": {
+      "name": "Q4_K_M",
+      "bits_per_weight": 4
+    },
+    "status": "AGENT_DEV_RECOMMENDATION_PENDING_AUTHORS",
+    "selection": "Highest STRICT_SET_EM on parseable original DEV293 references; fullDEV includes screen60 and is not independent validation",
+    "quality_evidence": {
+      "n_scored": 289,
+      "strict_set_em": 0.5190311418685121,
+      "strict_set_f1": 0.6467787114845939
+    },
+    "proposed_parameters": {
+      "temperature": 0,
+      "top_p": 1,
+      "seed": 42,
+      "max_tokens": 512,
+      "stream": true,
+      "stream_options": {
+        "include_usage": true
+      },
+      "logprobs": true,
+      "top_logprobs": 1,
+      "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+          "name": "mera_choices",
+          "strict": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "choices": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "A",
+                    "B",
+                    "C",
+                    "D",
+                    "E",
+                    "F",
+                    "G",
+                    "H"
+                  ]
+                },
+                "minItems": 1,
+                "maxItems": 8
+              }
+            },
+            "required": [
+              "choices"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    },
+    "context_length": 2048,
+    "reasoning_effort_requested": "none",
+    "requested_gpu_ratio": "0.75",
+    "actual_gpu_layers": null,
+    "resource_policy": {
+      "sequential": true,
+      "fixed_reload_every_n": 10,
+      "parallel": 1,
+      "guards_must_remain_enabled": true
+    }
+  },
+  "primary_cloud": {
+    "model_id": "mercury-2.5",
+    "provider": "Inception Labs direct",
+    "endpoint": "https://api.inceptionlabs.ai/v1/chat/completions",
+    "status": "PROVISIONAL_DEV_REFERENCE_NOT_FROZEN",
+    "reasoning_effort": "instant",
+    "temperature": 0.5,
+    "max_completion_tokens": 512,
+    "response_contract": "JSON object with choices array of Latin option letters",
+    "limitation": "CommonDEV60:56/60 error-free completions, four length truncations; protocol operational stability and provider weight revision unresolved",
+    "selection_rationale": "Direct documented model/API identity chosen by operational12 gate before48 extension, not by privateTEST score",
+    "full_dev293_run": false
+  },
+  "routing_rule": {
+    "status": "PROPOSAL_NOT_FROZEN",
+    "fallback": "Unparseable choice-set output, transport error, or explicit abstention -> cloud",
+    "confidence_threshold": null,
+    "reference_fields_allowed_at_decision": false,
+    "development_grid": [
+      null,
+      0.5,
+      0.7,
+      0.8,
+      0.9,
+      0.95,
+      0.98,
+      0.99,
+      1.0
+    ],
+    "exploratory_dev_em_margin": 0.05,
+    "margin_human_confirmation": "PENDING",
+    "rationale": "Primary local validity-only DEV60 replay is trivially local-only; confidence benefit and live cascade savings not established",
+    "freeze_required_before_test": true
+  },
+  "scoring_policy": {
+    "development": "STRICT_SET_EM and question-level STRICT_SET_F1 with original gold preserved",
+    "production_server_status": "UNKNOWN",
+    "unresolved_reference_policy": "No semantic repair; report original parseability issues and denominators",
+    "official_score_must_remain_separate": true
+  },
+  "rights": {
+    "status": "USE_WITH_RESTRICTIONS",
+    "benchmark_content_redistribution": "BLOCKED_PENDING_OFFICIAL_TERMS",
+    "raw_outputs": "IGNORED_PRIVATE_RUNTIME_ONLY"
+  },
+  "gates": {
+    "primary_local_selected": {
+      "approved": true,
+      "rationale": "Completed comparable fullDEV supports agent selection; this is not author approval",
+      "authority": "AGENT_DEV_EVIDENCE_ONLY",
+      "evidence_path": "results/20261003_local_screen_571682f5/final_analysis.json",
+      "evidence_sha256": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44"
+    },
+    "primary_cloud_selected": {
+      "approved": false,
+      "rationale": "Provisional direct baseline has four truncations; no author-confirmed stable frozen primary",
+      "authority": "PENDING",
+      "evidence_path": "results/20261003_cloud_budget_only_c1184a27/cloud_development_analysis.json",
+      "evidence_sha256": "05cb2fb86acf698c27ce210ecbca5b94bed5329e9a931deafc44aab9210786aa"
+    },
+    "routing_rule_frozen": {
+      "approved": false,
+      "rationale": "DEV proposal/grid exists, margin and final rule require author review",
+      "authority": "PENDING",
+      "evidence_path": "results/20261003_local_screen_571682f5/final_analysis.json",
+      "evidence_sha256": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44"
+    },
+    "server_scoring_resolved": {
+      "approved": false,
+      "rationale": "Public option-A normalizer defect reproduced; production/server scorer version is undocumented",
+      "authority": "PENDING"
+    },
+    "official_workflow_verified": {
+      "approved": false,
+      "rationale": "Official submission format, local dry-run, and documented score/result retrieval have not been sufficiently verified; this gate does not require a prior liveTEST submission",
+      "authority": "PENDING"
+    },
+    "content_rights_understood": {
+      "approved": false,
+      "rationale": "Dataset content and raw-output terms remain USE_WITH_RESTRICTIONS",
+      "authority": "PENDING"
+    },
+    "antoniy_approval": {
+      "approved": false,
+      "rationale": "No direct human protocol approval recorded",
+      "authority": "PENDING"
+    },
+    "denis_approval": {
+      "approved": false,
+      "rationale": "No direct human protocol approval recorded",
+      "authority": "PENDING"
+    },
+    "explicit_submission_authorization": {
+      "approved": false,
+      "rationale": "No separate user authorization for privateTEST submission/scoring",
+      "authority": "PENDING"
+    }
+  },
+  "next_actions": [
+    "Authors review DEV model/rule recommendations and approve a stable cloud configuration",
+    "Send prepared maintainer question only with explicit messaging authorization",
+    "Resolve scoring/rights and verify official workflow",
+    "Freeze agreed protocol before any privateTEST exposure",
+    "Obtain separate explicit TEST submission authorization"
+  ]
+}

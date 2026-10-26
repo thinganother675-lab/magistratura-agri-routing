@@ -1,0 +1,14 @@
+{
+  "date_utc": "2026-09-30T18:41:14.118027+00:00",
+  "type": "live functional smoke, NOT statistically representative latency experiment",
+  "health": {
+    "ok": true,
+    "local_model": "Qwen3.5-2B-Q4_K_M",
+    "cloud_model": "mercury-2.5",
+    "cloud_configured": true,
+    "cloud_enabled": true
+  },
+  "checks": 13,
+  "passed": 13,
+  "known_cost_usd": 6.186000000000001e-05
+}

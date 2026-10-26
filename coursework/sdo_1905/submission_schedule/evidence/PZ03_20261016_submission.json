@@ -1,0 +1,26 @@
+{
+  "pz": 3,
+  "attempt_started_at": "2026-10-16T17:17:04+03:00",
+  "verified_at": "2026-10-16T17:18:06+03:00",
+  "submitted_at_sdo": "2026-10-16T17:20:00+03:00",
+  "sdo_last_modified": "пятница, 16 октября 2026, 17:20",
+  "clock_note": "Часы СДО опережают проверенные часы инструмента примерно на 2 минуты.",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93652",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ03_Сарычев_ДЭ39-26.docx",
+      "sha256": "c44656db05b0975ebccc16b5ffa4dd921e6c4c5193e534716b99b791be03aa00",
+      "bytes": 76506
+    }
+  ],
+  "sha256_verified": true,
+  "status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "file_uploaded": true,
+  "save_clicked": true,
+  "additional_submit_step_required": false,
+  "declaration_requested": false,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ03_20261016_submitted.jpg",
+  "errors": [],
+  "automation_status": "1905-1-6-16-19 PAUSED после последнего слота даты"
+}

@@ -1,0 +1,1 @@
+Редакция от 8 октября 2026 года. Начните с docs/coursework_commercial_proposal_20261007/submission/README_RU.md или outputs/coursework_variant3_20261007/AgroPlan_coursework.pdf. Распакуйте весь архив, чтобы работали относительные ссылки. Полный код прототипа и исходный PDF преподавателя в архив не включены. Для просмотра заданий сервер не нужен.

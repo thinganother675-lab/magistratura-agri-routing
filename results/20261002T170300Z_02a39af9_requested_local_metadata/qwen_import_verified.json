@@ -1,0 +1,58 @@
+{
+  "utc": "2026-10-02T19:16:39.058640+00:00",
+  "status": "CHECKSUM_VERIFIED_LM_CATALOG_BLOCKED_INFERENCE_NOT_RUN",
+  "source": {
+    "repo": "unsloth/Qwen3.5-4B-GGUF",
+    "revision": "e87f176479d0855a907a41277aca2f8ee7a09523",
+    "base_model": "Qwen/Qwen3.5-4B",
+    "base_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "filename": "Qwen3.5-4B-Q8_0.gguf",
+    "size": 4482403488,
+    "sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+    "license": "apache-2.0",
+    "model_key": "qwen3.5-4b",
+    "gpu": "max"
+  },
+  "main_actual_size": 4482403488,
+  "main_sha256": "10cc391b403021dd11c614679d2fd92f611c3681d29e29651b717316965d61e1",
+  "header": {
+    "gguf_version": 3,
+    "tensor_count": 426,
+    "tensor_type_counts": {
+      "0": 177,
+      "8": 249
+    },
+    "native_bitnet_i2_s_type36": 0,
+    "tensor_data_read": false,
+    "type36_source": "pinned official BitNet llama.cpp ggml/include/ggml.h GGML_TYPE_I2_S=36"
+  },
+  "header_identity": {
+    "general.architecture": "qwen35",
+    "general.name": "Qwen3.5-4B",
+    "qwen35.block_count": 32,
+    "qwen35.context_length": 262144,
+    "tokenizer.ggml.model": "gpt2",
+    "tokenizer.ggml.pre": "qwen35",
+    "tokenizer.ggml.eos_token_id": 248046,
+    "general.file_type": 7
+  },
+  "companion": {
+    "filename": "mmproj-F32.gguf",
+    "actual_size": 1334075072,
+    "sha256": "758b74e604c5374577c21026c5bdc3aec75560eccb4c67844c8f585d6ec74804"
+  },
+  "imports": [
+    {
+      "path": "C:\\Users\\hustlePC\\.lmstudio\\models\\unsloth\\Qwen3.5-4B-GGUF\\Qwen3.5-4B-Q8_0.gguf",
+      "nlink": 3
+    },
+    {
+      "path": "C:\\Users\\hustlePC\\.lmstudio\\models\\magistratura\\Qwen3.5-4B-GGUF\\Qwen3.5-4B-Q8_0.gguf",
+      "nlink": 3
+    }
+  ],
+  "same_physical_weights_hardlinks": true,
+  "original_app_partial_preserved": true,
+  "import_workaround_namespace": "magistratura/Qwen3.5-4B-GGUF; original HF source remains unsloth pinnedrevision",
+  "blocker": "Both CLI/native catalog exclude newvariant after successfulhardlink imports. Cause staleappjob INFERRED_NOT_PROVEN. No app restart; notclaimmodel incompatibility."
+}

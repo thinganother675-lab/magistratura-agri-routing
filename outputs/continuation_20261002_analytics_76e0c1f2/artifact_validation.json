@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "xlsx": "outputs/continuation_20261002_analytics_76e0c1f2/magistratura_continuation_20261002.xlsx",
+  "xlsx_sha256": "4275c85fc18a6a633bf852d5cfc6ed58d99da964751cb76a2babc8ce31c05090",
+  "old_xlsx_sha256": "002619615be4d8a7a0f58409c15e8c15d1e10a02490830ff78ee27b84f79a04c",
+  "formula_errors": 0,
+  "typed_reimport": {
+    "nonformula_typed_cells_checked": 2787,
+    "quality_formula_cells_checked": 45,
+    "result": "PASS"
+  },
+  "visual_previews_agent_reviewed": 13,
+  "sheets": {
+    "Маршруты DEV": 6,
+    "Новые локальные": 4,
+    "OpenRouter21": 21,
+    "История45": 45,
+    "Методика": 31
+  },
+  "human_review": false,
+  "new_confirmatory": "NOT RUN",
+  "legacy_bitnet_preserved": true,
+  "native_configurations_pooled": false
+}

@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-10-02T17:55:03.033482+00:00",
+  "source": "results\\analysis_input_reconciled_20261002_052358Z_804ced2b\\analysis_20261002_052438Z_2c0beea8\\statistics_reporting_corrected.json",
+  "source_sha256": "34af7a364be4e4d3c226128343a65332e158a3b325c4cd091e3b06133cb14638",
+  "contrast": "hybrid minus tool_cloud",
+  "estimate_pp": -4.0,
+  "ci95_pp": [
+    -17.64795552367288,
+    5.8334854014598525
+  ],
+  "research_noninferiority_margin_pp": -5.0,
+  "quality_criterion_met": false,
+  "paired_n": 150,
+  "groups": 25,
+  "bootstrap_repeats": 5000,
+  "seed": 20261001,
+  "human_review": false,
+  "interpretation": "Lower CI bound below -5 pp; failure to prove non-inferiority is not proof of statistically significant inferiority",
+  "files": [
+    {
+      "path": "manuscript\\figures\\historical_noninferiority_20261002.png",
+      "sha256": "a1196f6d3df46e616d4a307236ca4f2b35d618e6ab27801ebb62a5037a48fa60"
+    },
+    {
+      "path": "manuscript\\figures\\historical_noninferiority_20261002.svg",
+      "sha256": "0eddbb960adbea19b06bb506af67a5fc6345c8dcd8a5e25d04f161c9f79e25a5"
+    },
+    {
+      "path": "manuscript\\figures\\historical_noninferiority_20261002.pdf",
+      "sha256": "b45823c918a2039a2f92975b49bb6bac6657b0277299da2e26bcfce44060da63"
+    }
+  ]
+}

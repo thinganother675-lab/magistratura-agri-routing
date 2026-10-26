@@ -1,0 +1,632 @@
+{
+  "latency_kind": "reconstructed_trace_replay for model methods; measured tools",
+  "summary": [
+    {
+      "method": "local",
+      "n": 36,
+      "quality": 0.1111111111111111,
+      "quality_ci95": [
+        0.0,
+        0.2777777777777778
+      ],
+      "cloud_call_rate": 0.0,
+      "local_model_call_rate": 1.0,
+      "tool_call_rate": 0.0,
+      "latency_mean_ms": 1661.4986138889285,
+      "latency_p50_ms": 1589.672800000244,
+      "latency_p95_ms": 2393.5457750002342,
+      "cost_total_usd": 0.0,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.0,
+      "coverage_answer": 0.16666666666666666,
+      "selective_error_rate": 1.0,
+      "critical_error_rate": 0.1111111111111111,
+      "qa_token_f1": 0.1838025808614044,
+      "route_counts": {
+        "LOCAL_MODEL": 32,
+        "ABSTAIN": 4
+      }
+    },
+    {
+      "method": "cloud",
+      "n": 36,
+      "quality": 0.4722222222222222,
+      "quality_ci95": [
+        0.28121875,
+        0.6756955484896661
+      ],
+      "cloud_call_rate": 1.0,
+      "local_model_call_rate": 0.0,
+      "tool_call_rate": 0.0,
+      "latency_mean_ms": 993.0335361110818,
+      "latency_p50_ms": 841.1775500001113,
+      "latency_p95_ms": 1669.3830250001156,
+      "cost_total_usd": 0.0063665,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.17684722222222224,
+      "coverage_answer": 0.9722222222222222,
+      "selective_error_rate": 0.5428571428571428,
+      "critical_error_rate": 0.2777777777777778,
+      "qa_token_f1": 0.7860942249240122,
+      "route_counts": {
+        "CLOUD_MODEL": 36
+      }
+    },
+    {
+      "method": "rule",
+      "n": 36,
+      "quality": 0.3333333333333333,
+      "quality_ci95": [
+        0.0689080459770115,
+        0.6060606060606061
+      ],
+      "cloud_call_rate": 0.0,
+      "local_model_call_rate": 0.6666666666666666,
+      "tool_call_rate": 0.16666666666666666,
+      "latency_mean_ms": 1178.7561694444676,
+      "latency_p50_ms": 1291.7326000001594,
+      "latency_p95_ms": 2340.048325000339,
+      "cost_total_usd": 0.0,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.0,
+      "coverage_answer": 0.2222222222222222,
+      "selective_error_rate": 0.25,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.1838025808614044,
+      "route_counts": {
+        "LOCAL_MODEL": 20,
+        "DETERMINISTIC_TOOL": 6,
+        "ASK_FOR_DATA": 6,
+        "ABSTAIN": 4
+      }
+    },
+    {
+      "method": "cascade",
+      "n": 36,
+      "quality": 0.75,
+      "quality_ci95": [
+        0.5555555555555556,
+        0.8947368421052632
+      ],
+      "cloud_call_rate": 0.6666666666666666,
+      "local_model_call_rate": 0.6666666666666666,
+      "tool_call_rate": 0.16666666666666666,
+      "latency_mean_ms": 1804.0331694444883,
+      "latency_p50_ms": 2210.234749999472,
+      "latency_p95_ms": 3324.467074999802,
+      "cost_total_usd": 0.0041807500000000004,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.11613194444444445,
+      "coverage_answer": 0.8333333333333334,
+      "selective_error_rate": 0.3,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.7860942249240122,
+      "route_counts": {
+        "LOCAL_TO_CLOUD": 24,
+        "DETERMINISTIC_TOOL": 6,
+        "ASK_FOR_DATA": 6
+      }
+    },
+    {
+      "method": "tool_cloud",
+      "n": 36,
+      "quality": 0.75,
+      "quality_ci95": [
+        0.5555555555555556,
+        0.8947368421052632
+      ],
+      "cloud_call_rate": 0.6666666666666666,
+      "local_model_call_rate": 0.0,
+      "tool_call_rate": 0.16666666666666666,
+      "latency_mean_ms": 625.3853527777993,
+      "latency_p50_ms": 784.4657499999812,
+      "latency_p95_ms": 1332.9572249999728,
+      "cost_total_usd": 0.0041807500000000004,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.11613194444444445,
+      "coverage_answer": 0.8333333333333334,
+      "selective_error_rate": 0.3,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.7860942249240122,
+      "route_counts": {
+        "CLOUD_MODEL": 24,
+        "DETERMINISTIC_TOOL": 6,
+        "ASK_FOR_DATA": 6
+      }
+    },
+    {
+      "method": "offline",
+      "n": 36,
+      "quality": 0.3333333333333333,
+      "quality_ci95": [
+        0.0689080459770115,
+        0.6060606060606061
+      ],
+      "cloud_call_rate": 0.0,
+      "local_model_call_rate": 0.6666666666666666,
+      "tool_call_rate": 0.16666666666666666,
+      "latency_mean_ms": 1178.6675416666922,
+      "latency_p50_ms": 1291.3664500001687,
+      "latency_p95_ms": 2339.6039000001565,
+      "cost_total_usd": 0.0,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.0,
+      "coverage_answer": 0.16666666666666666,
+      "selective_error_rate": 0.0,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.0,
+      "route_counts": {
+        "ABSTAIN": 24,
+        "DETERMINISTIC_TOOL": 6,
+        "ASK_FOR_DATA": 6
+      }
+    }
+  ],
+  "category": [
+    {
+      "method": "local",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.3333333333333333
+    },
+    {
+      "method": "local",
+      "category": "numeric",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.3333333333333333
+    },
+    {
+      "method": "local",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.3333333333333333,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.5,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 0.16666666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.8333333333333334
+    },
+    {
+      "method": "cloud",
+      "category": "numeric",
+      "n": 6,
+      "quality": 0.16666666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.8333333333333334
+    },
+    {
+      "method": "cloud",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "numeric",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.3333333333333333,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.5,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "numeric",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.3333333333333333,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.5,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "numeric",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "compound_reasoning",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "extractive_qa",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "missing_data",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "numeric",
+      "n": 6,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "rule_interpretation",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "tool_selection",
+      "n": 6,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    }
+  ],
+  "language": [
+    {
+      "method": "local",
+      "language": "en",
+      "n": 16,
+      "quality": 0.0625,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.125
+    },
+    {
+      "method": "local",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.15,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.1
+    },
+    {
+      "method": "cloud",
+      "language": "en",
+      "n": 16,
+      "quality": 0.4375,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.1875
+    },
+    {
+      "method": "cloud",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.5,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.35
+    },
+    {
+      "method": "rule",
+      "language": "en",
+      "n": 16,
+      "quality": 0.25,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.4,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "language": "en",
+      "n": 16,
+      "quality": 0.625,
+      "cloud_call_rate": 0.75,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.85,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "language": "en",
+      "n": 16,
+      "quality": 0.625,
+      "cloud_call_rate": 0.75,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.85,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "language": "en",
+      "n": 16,
+      "quality": 0.25,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.4,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    }
+  ],
+  "paired": {
+    "local": {
+      "quality_difference": -0.3611111111111111,
+      "difference_ci95": [
+        -0.6410256410256411,
+        -0.047428571428572465
+      ],
+      "critical_difference_ci95": [
+        -0.34146341463414637,
+        0.0
+      ],
+      "wins": 3,
+      "losses": 16,
+      "mcnemar_exact_p": 0.004425048828125,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "rule": {
+      "quality_difference": -0.1388888888888889,
+      "difference_ci95": [
+        -0.5517468239564428,
+        0.30303030303030304
+      ],
+      "critical_difference_ci95": [
+        -0.5217638339920948,
+        -0.04756493506493536
+      ],
+      "wins": 10,
+      "losses": 15,
+      "mcnemar_exact_p": 0.42435622215270996,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "cascade": {
+      "quality_difference": 0.2777777777777778,
+      "difference_ci95": [
+        0.04756493506493507,
+        0.5217638339920947
+      ],
+      "critical_difference_ci95": [
+        -0.5217638339920948,
+        -0.04756493506493536
+      ],
+      "wins": 10,
+      "losses": 0,
+      "mcnemar_exact_p": 0.001953125,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "tool_cloud": {
+      "quality_difference": 0.2777777777777778,
+      "difference_ci95": [
+        0.04756493506493507,
+        0.5217638339920947
+      ],
+      "critical_difference_ci95": [
+        -0.5217638339920948,
+        -0.04756493506493536
+      ],
+      "wins": 10,
+      "losses": 0,
+      "mcnemar_exact_p": 0.001953125,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "offline": {
+      "quality_difference": -0.1388888888888889,
+      "difference_ci95": [
+        -0.5517468239564428,
+        0.30303030303030304
+      ],
+      "critical_difference_ci95": [
+        -0.5217638339920948,
+        -0.04756493506493536
+      ],
+      "wins": 10,
+      "losses": 15,
+      "mcnemar_exact_p": 0.42435622215270996,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    }
+  },
+  "language_pair_oracle_quality": 0.5555555555555556,
+  "oracle_note": "Gold-informed local/cloud upper bound without tools; not an executable router and not equal access to tool policies"
+}

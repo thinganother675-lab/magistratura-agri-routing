@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-03T07:04:12.249250+00:00",
+  "status": "PASS",
+  "development_code_commit": "72b0c32ebc1eb1b514adc3489a2e87231d299250",
+  "tests_observed_in_this_session": {
+    "baseline_passed": 392,
+    "final_passed": 509,
+    "final_duration_seconds": 26.56,
+    "command": ".\\.venv\\Scripts\\python.exe -m pytest -q -p no:cacheprovider --basetemp .runtime/mera/pytest_final_20261003_01",
+    "scope": "Full project suite; recorded from completed tool execution, not rerun by this writer",
+    "test_source_commit": "72b0c32ebc1eb1b514adc3489a2e87231d299250",
+    "areas": [
+      "adapter",
+      "normalization",
+      "gold isolation",
+      "split isolation",
+      "official-schema packaging with synthetic logs",
+      "remote aggregate ingestion with synthetic fixtures",
+      "restricted redistribution paths",
+      "usage accounting",
+      "deterministic formula contracts"
+    ]
+  },
+  "protected_historical_files_rechecked": 796,
+  "historical_sha256_failures": [],
+  "review40_files_in_protected_manifest": 0,
+  "executed_source_archives_verified_against_git": 8,
+  "restricted_raw_run_hashes_verified": 4,
+  "analysis_code_blob_hash_verified": true,
+  "study_c_development_cases": 27,
+  "study_c_model_experiment_run": false,
+  "generative_models_downloaded": 0,
+  "private_test_inputs_downloaded": false,
+  "private_gold_obtained": false,
+  "external_submissions": 0,
+  "leaderboard_publications": 0,
+  "messages_to_maintainers": 0,
+  "current_private_remote_verified": {
+    "repository": "https://github.com/Apartman36/magistratura-agri-routing",
+    "identity": "Apartman36",
+    "private": true,
+    "main_sha": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80"
+  },
+  "delivery_push_status": "NOT_PUSHED",
+  "safe_source_exclusion_scope": "MERA questions, DEV gold and full generation text remain ignored under .runtime/mera",
+  "human_design_claim_and_authorship_reviews": "PENDING",
+  "code_review_note": "Independent agent review performed; human authors retain final responsibility"
+}

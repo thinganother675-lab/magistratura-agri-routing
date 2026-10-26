@@ -1,0 +1,23 @@
+{
+  "pz": 5,
+  "at": "2026-10-19T14:51:52.356361+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+  "observed_url": "https://sdo.timacad.ru/login/index.php",
+  "status": "blocked_login_required",
+  "reason": "Требуется вход пользователя в СДО.",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ05_Сарычев_ДЭ39-26.docx",
+      "sha256": "ca48523fd49d75908cba44991391954e7faccf6d63de69e97e79bc4e2fee5908",
+      "bytes": 128505
+    }
+  ],
+  "sha256_verified": true,
+  "file_uploaded": false,
+  "save_clicked": false,
+  "screenshot": null,
+  "screenshot_note": "Страница входа содержит чувствительные поля; конечного статуса отправки нет.",
+  "errors": [
+    "После обновления сессии инструмента прежняя переменная вкладки недоступна; список вкладок пуст. Открыта новая вкладка СДО."
+  ]
+}

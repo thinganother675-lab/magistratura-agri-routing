@@ -1,0 +1,18 @@
+{
+  "status": "APPEND_ONLY_TABLE_PRESENTATION_REVISION",
+  "original_table_path": "results/20261003_resource_analysis/final_model_table_before_status_aliases.csv",
+  "original_table_sha256": "97da8df486e9d222b60737032d6f8107075f05b97d319d97a57a7d0fafa907eb",
+  "revised_table_path": "results/20261003_resource_analysis/final_model_table.csv",
+  "revised_table_sha256": "3351f1246e3c91b830cac771b4e456e97a1e88f51883ab20be2c3bdd607485e3",
+  "reason": "Explicit status/resource_status aliases and exact SHA; no scientific number changed",
+  "added_columns": [
+    "status",
+    "resource_status",
+    "resource_scope",
+    "exact_gguf_sha256"
+  ],
+  "original_numbers_unchanged": true,
+  "prior_qa_receipt": "results/20261003_resource_session/independent_systems_v2_qa.json",
+  "prior_qa_sha256": "aba47e3cd287fa18d51e1211e799881090a82def606773a20bc9038969eff53f",
+  "script_sha256": "1e6607bb0fef81adbe63311b3d4c37074278cbf6a19aebe9902ed4323be99e3d"
+}

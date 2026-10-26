@@ -1,0 +1,94 @@
+{
+  "type": "supplementary estimate; missing-usage upper endpoint is a planning assumption, NOT an invoice or guaranteed bound",
+  "unknown_cloud_calls": [
+    {
+      "id": "controlled_compound_reasoning_10_1",
+      "error": {
+        "type": "HTTPStatusError",
+        "http_status": 503
+      }
+    }
+  ],
+  "method": {
+    "cascade": {
+      "known_usage_cost_usd": 0.00248949,
+      "unknown_request_ids": [
+        "controlled_compound_reasoning_10_1"
+      ],
+      "planning_total_range_usd": [
+        0.00248949,
+        0.00264677
+      ],
+      "planning_per_1000_range_usd": [
+        0.027661,
+        0.029408555555555556
+      ]
+    },
+    "cloud": {
+      "known_usage_cost_usd": 0.00435224,
+      "unknown_request_ids": [
+        "controlled_compound_reasoning_10_1"
+      ],
+      "planning_total_range_usd": [
+        0.00435224,
+        0.00450952
+      ],
+      "planning_per_1000_range_usd": [
+        0.048358222222222226,
+        0.05010577777777778
+      ]
+    },
+    "local": {
+      "known_usage_cost_usd": 0,
+      "unknown_request_ids": [],
+      "planning_total_range_usd": [
+        0,
+        0
+      ],
+      "planning_per_1000_range_usd": [
+        0.0,
+        0.0
+      ]
+    },
+    "offline": {
+      "known_usage_cost_usd": 0,
+      "unknown_request_ids": [],
+      "planning_total_range_usd": [
+        0,
+        0
+      ],
+      "planning_per_1000_range_usd": [
+        0.0,
+        0.0
+      ]
+    },
+    "rule": {
+      "known_usage_cost_usd": 0.000712,
+      "unknown_request_ids": [],
+      "planning_total_range_usd": [
+        0.000712,
+        0.000712
+      ],
+      "planning_per_1000_range_usd": [
+        0.00791111111111111,
+        0.00791111111111111
+      ]
+    },
+    "tool_cloud": {
+      "known_usage_cost_usd": 0.00294341,
+      "unknown_request_ids": [
+        "controlled_compound_reasoning_10_1"
+      ],
+      "planning_total_range_usd": [
+        0.00294341,
+        0.00310069
+      ],
+      "planning_per_1000_range_usd": [
+        0.032704555555555556,
+        0.034452111111111114
+      ]
+    }
+  },
+  "known_cost_difference_cloud_minus_cascade": 0.0018627500000000003,
+  "note": "Same cached unknown-cost call is selected by cloud, tool_cloud and cascade; its cost cancels in their absolute difference. Local energy/compute not monetized."
+}

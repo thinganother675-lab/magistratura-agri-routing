@@ -1,0 +1,948 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 1
+Substitution and Structural Change (CHENERY,SEQ=33)
+C o m p i l a t i o n
+
+
+   2   
+      This model follows conventional input-output formulations for production
+      with nonlinear demand functions, import and export functions and production
+      functions for direct factor use.
+       
+       
+      Chenery, H B, and Raduchel, W J, Substitution and Structural Change.
+      In Chenery, H B, Ed, Structural Change and Development Policy. Oxford
+      University Press, New York and Oxford, 1979.
+       
+      Keywords: nonlinear programming, econometrics, economic development
+  15   
+  16  Set
+  17     i    'sectors'               / light-ind, food+agr, heavy-ind, services /
+  18     t(i) 'tradables'             / light-ind, food+agr, heavy-ind /
+  19     lmh  'possible elasticities' / low, medium, high /
+  20     sde  'other parameters'      / subst, distr, effic /;
+  21   
+  22  Alias (i,j);
+  23   
+  24  Table aio(i,i) 'input coefficients'
+  25                 light-ind  food+agr  heavy-ind  services
+  26     food+agr           .1
+  27     heavy-ind          .2        .1
+  28     services           .2        .3         .1          ;
+  29   
+  30  * In the next 3 tables data is specified for many different possible
+  31  * hypotheses about the economy. One particular subset is used for any
+  32  * individual model. See assignment statements below.
+  33   
+  34  Table pdat(lmh,*,sde,i) 'production data'
+  35                      light-ind  food+agr  heavy-ind  services
+  36     low.a.subst
+  37     low.a.distr           .915      .944      2.60     .80
+  38     low.a.effic          3.83      3.24       4.0     1.8
+  39     low.b.subst
+  40     low.b.distr           .276     1.034      2.60     .77
+  41     low.b.effic          2.551     3.39       4.0     1.77
+  42     medium.a.subst        .11       .29        .2      .05
+  43     medium.a.distr        .326      .443       .991    .00798
+  44     medium.a.effic       3.97      3.33       1.67    1.84
+  45     medium.b.subst        .22       .58        .4      .1
+  46     medium.b.distr        .41       .47        .92     .08
+  47     medium.b.effic       3.99      3.33       1.8     1.89
+  48     high.a.subst          .45      1.15        .4      .2
+  49     high.a.distr          .456      .483       .917    .23
+  50     high.a.effic         4.0       3.33       1.8     1.92
+  51     high.b.subst          .93      1.15        .8      .4
+  52     high.b.distr          .484      .483       .769    .344
+  53     high.b.effic         4.0       3.33       1.96    1.96   ;
+  54   
+  55  Table ddat(lmh,*,i) 'demand parameters'
+  56                              light-ind  food+agr  heavy-ind  services
+  57     (low,medium,high).ynot        100      230         220       450
+  58     medium.p-elas                -.674     -.246      -.587     -.352
+  59     high  .p-elas               -1        -1         -1        -1    ;
+  60   
+  61  Table tdat(lmh,*,t) 'trade parameters'
+  62                       light-ind  food+agr  heavy-ind
+  63     medium.alp            .005      .001      .01
+  64     high  .alp            .0025     .0005     .00178
+  65     (medium,high).gam    1.0       1.1       1.0
+  66     (medium,high).xsi     .005      .0157     .00178;
+  67   
+  68  Parameter
+  69     mew(t)  'intercept on import cost function'
+  70     xsi(t)  'slope of import cost function'
+  71     gam(t)  'intercept on export revenue function'
+  72     alp(t)  'slope of export revenue function'
+  73     ynot(i) 'demands in base year'
+  74     sig(i)  'elasticity of substitution capital to labor'
+  75     thet(i) 'price elasticity of demand'
+  76     rho(i)  'substitution parameter in production functions'
+  77     del(i)  'distribution parameter in production functions'
+  78     efy(i)  'efficiency parameter in production functions';
+  79   
+  80  Scalar
+  81     lbar    'total supply of labor' / 750 /
+  82     plab    'price of labor'        /   1 /
+  83     kbar    'capital stock'         / 500 /
+  84     dbar    'trade deficit'         /   0 /;
+  85   
+  86  Variable
+  87     x(i)    'quantity of output'
+  88     v(i)    'value added per unit output at current prices'
+  89     y(i)    'final consumption'
+  90     p(i)    'prices'
+  91     l(i)    'labor use per unit of output'
+  92     k(i)    'capital use per unit of output'
+  93     e(i)    'quantity of exports'
+  94     m(i)    'quantity of imports'
+  95     g(t)    'foreign exchange cost of imports'
+  96     h(t)    'foreign exchange value of exports'
+  97     pk      'nominal market price of capital'
+  98     pi      'factor price ratio'
+  99     pd      'price deflator'
+ 100     td      'total demand'
+ 101     vv(i)   'intermediate result';
+ 102   
+ 103  Positive Variable x, y, e, m, g, h, p, k, l, v;
+ 104   
+ 105  Equation
+ 106     dty     'total demand: definition'
+ 107     mb(i)   'material balance'
+ 108     tb      'trade balance'
+ 109     dg(t)   'definition of imports'
+ 110     dh(t)   'definition of exports'
+ 111     dem(i)  'demand equations'
+ 112     lc      'labor constraint'
+ 113     kc      'capital constraint'
+ 114     sup(i)  'supply equations'
+ 115     fpr     'factor price ratio definition'
+ 116     dvv(i)  'definition of vv'
+ 117     dl(i)   'definition of labor coefficient'
+ 118     dk(i)   'definition of capital coefficient'
+ 119     dv(i)   'value added';
+ 120   
+ 121  * The naming convention followed below is -
+ 122  * endogenous variables have 1 or 2 character names
+ 123  * exogenous parameters have 3 or more characters
+ 124   
+ 125  dty..    td   =e= sum(i, y(i));
+ 126   
+ 127  mb(i)..  x(i) =g= y(i) + sum(j, aio(i,j)*x(j)) + (e(i) - m(i))$t(i);
+ 128   
+ 129  tb..     sum(t, g(t)*m(t) - h(t)*e(t)) =l= dbar;
+ 130   
+ 131  dg(t)..  g(t) =e= mew(t) + xsi(t)*m(t);
+ 132   
+ 133  dh(t)..  h(t) =e= gam(t) - alp(t)*e(t);
+ 134   
+ 135  dem(i).. y(i) =e= ynot(i)*(pd*p(i))**thet(i);
+ 136   
+ 137  lc..     sum(i, l(i)*x(i)) =l= lbar;
+ 138   
+ 139  kc..     sum(i, k(i)*x(i)) =e= kbar;
+ 140   
+ 141  sup(i).. p(i) =e= sum(j, aio(j,i)*p(j)) + v(i);
+ 142   
+ 143  fpr..    pi   =e= pk/plab;
+ 144   
+ 145  dvv(i)$(sig(i) <> 0).. vv(i) =e= (pi*(1 - del(i))/del(i))**(-rho(i)/(1 + rho(i)));
+ 146   
+ 147  dl(i)..  l(i)*efy(i) =e= ((del(i)/vv(i) + (1 - del(i)))**(1/rho(i)))$(sig(i) <> 0) + 1$(sig(i) = 0);
+ 148   
+ 149  dk(i)..  k(i)*efy(i) =e= ((del(i) + (1 - del(i))*vv(i))**(1/rho(i)))$(sig(i) <> 0) + del(i)$(sig(i) = 0);
+ 150   
+ 151  dv(i)..  v(i) =e= pk*k(i) + plab*l(i);
+ 152   
+ 153  Model chenrad 'chenery raduchel model' / all /;
+ 154   
+ 155  * bounds for variables
+ 156  y.up(i)  = 2000;
+ 157  x.up(i)  = 2000;
+ 158  e.up(t)  =  400;
+ 159  m.up(t)  =  400;
+ 160  g.up(t)  =    4;
+ 161  h.up(t)  =    4;
+ 162  p.up(i)  =  100;
+ 163  p.lo(i)  =    0.1;
+ 164  l.up(i)  =    1;
+ 165  k.up(i)  =    1;
+ 166  pk.lo    =    0.25;
+ 167  pk.up    =    4;
+ 168  pi.lo    =    0.25;
+ 169  pi.up    =    4;
+ 170  v.up(i)  =  100;
+ 171  vv.lo(i) =    0.001;
+ 172   
+ 173  * select coefficient values for this run
+ 174  mew(t)  = 1.0;
+ 175  xsi(t)  = tdat("medium","xsi",t);
+ 176  gam(t)  = tdat("medium","gam",t);
+ 177  alp(t)  = tdat("medium","alp",t);
+ 178  ynot(i) = ddat("medium","ynot",i);
+ 179  thet(i) = ddat("medium","p-elas",i);
+ 180  sig(i)  = pdat("medium","a","subst",i);
+ 181  del(i)  = pdat("medium","a","distr",i);
+ 182  efy(i)  = pdat("medium","a","effic",i);
+ 183  rho(i)$(sig(i) <> 0) = 1./sig(i) - 1.;
+ 184   
+ 185  * initial values for variables
+ 186  y.l(i) = 250;
+ 187  x.l(i) = 200;
+ 188  e.l(t) =   0;
+ 189  m.l(t) =   0;
+ 190  g.l(t) = mew(t) + xsi(t)*m.l(t);
+ 191  h.l(t) = gam(t) - alp(t)*e.l(t);
+ 192  pd.l   =   0.3;
+ 193  p.l(i) =   3;
+ 194  pk.l   =   3.5;
+ 195  pi.l   = pk.l/plab;
+ 196   
+ 197  vv.l(i)$sig(i) = (pi.l*(1 - del(i))/del(i))**(-rho(i)/(1 + rho(i)));
+ 198   
+ 199  l.l(i) = (((del(i)/vv.l(i) + (1 - del(i)))**(1/rho(i)))$(sig(i) <> 0)
+ 200           + 1$(sig(i) = 0))/efy(i);
+ 201   
+ 202  k.l(i) = (((del(i) + (1 - del(i))*vv.l(i))**(1/rho(i)))$(sig(i) <> 0)
+ 203           + del(i)$(sig(i) = 0))/efy(i);
+ 204   
+ 205  v.l(i) = pk.l*k.l(i) + plab*l.l(i);
+ 206   
+ 207  * add bounds to avoid function evaluation errors
+ 208  pd.lo   = 0.01;
+ 209  p.lo(i) = 0.1;
+ 210   
+ 211  solve chenrad using nlp maximizing td;
+ 212   
+ 213  Scalar
+ 214     cva 'total value added at current prices'
+ 215     rva 'real value added'
+ 216     fve 'foreign exchange value of exports'
+ 217     emp 'total employment'
+ 218     cli 'cost of living index';
+ 219   
+ 220  cva = sum(i, v.l(i)*x.l(i));
+ 221  fve = sum(t, e.l(t)*h.l(t));
+ 222  emp = sum(i, l.l(i)*x.l(i));
+ 223  cli = sum(i, p.l(i)*ynot(i))/sum(i, ynot(i));
+ 224  rva = cva/cli;
+ 225   
+ 226  display cli, cva, rva, fve, emp;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 2
+Substitution and Structural Change (CHENERY,SEQ=33)
+Equation Listing    SOLVE chenrad Using NLP From line 211
+
+
+---- dty  =E=  total demand: definition
+
+dty..  - y(light-ind) - y(food+agr) - y(heavy-ind) - y(services) + td =E= 0 ; (LHS = -1000, INFES = 1000 ****)
+     
+
+---- mb  =G=  material balance
+
+mb(light-ind)..  x(light-ind) - y(light-ind) - e(light-ind) + m(light-ind) =G= 0 ; (LHS = -50, INFES = 50 ****)
+     
+mb(food+agr)..  - 0.1*x(light-ind) + x(food+agr) - y(food+agr) - e(food+agr) + m(food+agr) =G= 0 ; (LHS = -70, INFES = 70 ****)
+     
+mb(heavy-ind)..  - 0.2*x(light-ind) - 0.1*x(food+agr) + x(heavy-ind) - y(heavy-ind) - e(heavy-ind) + m(heavy-ind) =G= 0 ; (LHS = -110, INFES = 110 ****)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- tb  =L=  trade balance
+
+tb..  - (1)*e(light-ind) - (1.1)*e(food+agr) - (1)*e(heavy-ind) + (1)*m(light-ind) + (1)*m(food+agr) + (1)*m(heavy-ind) + (0)*g(light-ind) + (0)*g(food+agr) + (0)*g(heavy-ind) + (0)*h(light-ind) + (0)*h(food+agr) + (0)*h(heavy-ind) =L= 0 ; (LHS = 0)
+     
+
+---- dg  =E=  definition of imports
+
+dg(light-ind)..  - 0.005*m(light-ind) + g(light-ind) =E= 1 ; (LHS = 1)
+     
+dg(food+agr)..  - 0.0157*m(food+agr) + g(food+agr) =E= 1 ; (LHS = 1)
+     
+dg(heavy-ind)..  - 0.00178*m(heavy-ind) + g(heavy-ind) =E= 1 ; (LHS = 1)
+     
+
+---- dh  =E=  definition of exports
+
+dh(light-ind)..  0.005*e(light-ind) + h(light-ind) =E= 1 ; (LHS = 1)
+     
+dh(food+agr)..  0.001*e(food+agr) + h(food+agr) =E= 1.1 ; (LHS = 1.1)
+     
+dh(heavy-ind)..  0.01*e(heavy-ind) + h(heavy-ind) =E= 1 ; (LHS = 1)
+     
+
+---- dem  =E=  demand equations
+
+dem(light-ind)..  y(light-ind) + (24.12010480029)*p(light-ind) + (241.2010480029)*pd =E= 0 ; (LHS = 142.640483084762, INFES = 142.640483084762 ****)
+     
+dem(food+agr)..  y(food+agr) + (19.3552163906424)*p(food+agr) + (193.552163906424)*pd =E= 0 ; (LHS = 13.9607757238735, INFES = 13.9607757238735 ****)
+     
+dem(heavy-ind)..  y(heavy-ind) + (45.793008252364)*p(heavy-ind) + (457.93008252364)*pd =E= 0 ; (LHS = 15.9641826966066, INFES = 15.9641826966066 ****)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- lc  =L=  labor constraint
+
+lc..  (0.283078383128534)*x(light-ind) + (0.383990781960791)*x(food+agr) + (0.309951359679435)*x(heavy-ind) + (0.580992426342466)*x(services) + (200)*l(light-ind) + (200)*l(food+agr) + (200)*l(heavy-ind) + (200)*l(services) =L= 750 ; (LHS = 311.602590222245)
+     
+
+---- kc  =E=  capital constraint
+
+kc..  (0.22769870931466)*x(light-ind) + (0.249861958624235)*x(food+agr) + (0.617797527645794)*x(heavy-ind) + (0.428786587425074)*x(services) + (200)*k(light-ind) + (200)*k(food+agr) + (200)*k(heavy-ind) + (200)*k(services) =E= 500 ; (LHS = 304.828956601953, INFES = 195.171043398047 ****)
+     
+
+---- sup  =E=  supply equations
+
+sup(light-ind)..  - v(light-ind) + p(light-ind) - 0.1*p(food+agr) - 0.2*p(heavy-ind) - 0.2*p(services) =E= 0 ; (LHS = 0.419976134270155, INFES = 0.419976134270155 ****)
+     
+sup(food+agr)..  - v(food+agr) + p(food+agr) - 0.1*p(heavy-ind) - 0.3*p(services) =E= 0 ; (LHS = 0.541492362854388, INFES = 0.541492362854388 ****)
+     
+sup(heavy-ind)..  - v(heavy-ind) + p(heavy-ind) - 0.1*p(services) =E= 0 ; (LHS = 0.227757293560285, INFES = 0.227757293560285 ****)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- fpr  =E=  factor price ratio definition
+
+fpr..  - pk + pi =E= 0 ; (LHS = 0)
+     
+
+---- dvv  =E=  definition of vv
+
+dvv(light-ind)..  (0.0436875569239901)*pi + vv(light-ind) =E= 0 ; (LHS = 0)
+     
+dvv(food+agr)..  (0.070842103793448)*pi + vv(food+agr) =E= 0 ; (LHS = 0)
+     
+dvv(heavy-ind)..  (3.60771667051511)*pi + vv(heavy-ind) =E= 0 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- dl  =E=  definition of labor coefficient
+
+dl(light-ind)..  3.97*l(light-ind) + (0.596567178260741)*vv(light-ind) =E= 0 ; (LHS = 0)
+     
+dl(food+agr)..  3.33*l(food+agr) + (1.03924002573065)*vv(food+agr) =E= 0 ; (LHS = 0)
+     
+dl(heavy-ind)..  1.67*l(heavy-ind) + (0.00717071812534077)*vv(heavy-ind) =E= 0 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- dk  =E=  definition of capital coefficient
+
+dk(light-ind)..  3.97*k(light-ind) - (0.170447765217355)*vv(light-ind) =E= 0 ; (LHS = 0)
+     
+dk(food+agr)..  3.33*k(food+agr) - (0.296925721637329)*vv(food+agr) =E= 0 ; (LHS = 0)
+     
+dk(heavy-ind)..  1.67*k(heavy-ind) - (0.00204877660724022)*vv(heavy-ind) =E= 0 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+
+---- dv  =E=  value added
+
+dv(light-ind)..  v(light-ind) - l(light-ind) - (3.5)*k(light-ind) - (0.22769870931466)*pk =E= 0 ; (LHS = 0)
+     
+dv(food+agr)..  v(food+agr) - l(food+agr) - (3.5)*k(food+agr) - (0.249861958624235)*pk =E= 0 ; (LHS = 0)
+     
+dv(heavy-ind)..  v(heavy-ind) - l(heavy-ind) - (3.5)*k(heavy-ind) - (0.617797527645794)*pk =E= 0 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 3
+Substitution and Structural Change (CHENERY,SEQ=33)
+Column Listing      SOLVE chenrad Using NLP From line 211
+
+
+---- x  quantity of output
+
+x(light-ind)
+                (.LO, .L, .UP, .M = 0, 200, 2000, 0)
+        1       mb(light-ind)
+       -0.1     mb(food+agr)
+       -0.2     mb(heavy-ind)
+       -0.2     mb(services)
+       (0.2831) lc
+       (0.2277) kc
+
+x(food+agr)
+                (.LO, .L, .UP, .M = 0, 200, 2000, 0)
+        1       mb(food+agr)
+       -0.1     mb(heavy-ind)
+       -0.3     mb(services)
+       (0.384)  lc
+       (0.2499) kc
+
+x(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 200, 2000, 0)
+        1       mb(heavy-ind)
+       -0.1     mb(services)
+       (0.31)   lc
+       (0.6178) kc
+
+REMAINING ENTRY SKIPPED
+
+---- v  value added per unit output at current prices
+
+v(light-ind)
+                (.LO, .L, .UP, .M = 0, 1.08002386572984, 100, 0)
+       -1       sup(light-ind)
+        1       dv(light-ind)
+
+v(food+agr)
+                (.LO, .L, .UP, .M = 0, 1.25850763714561, 100, 0)
+       -1       sup(food+agr)
+        1       dv(food+agr)
+
+v(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 2.47224270643972, 100, 0)
+       -1       sup(heavy-ind)
+        1       dv(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+
+---- y  final consumption
+
+y(light-ind)
+                (.LO, .L, .UP, .M = 0, 250, 2000, 0)
+       -1       dty
+       -1       mb(light-ind)
+        1       dem(light-ind)
+
+y(food+agr)
+                (.LO, .L, .UP, .M = 0, 250, 2000, 0)
+       -1       dty
+       -1       mb(food+agr)
+        1       dem(food+agr)
+
+y(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 250, 2000, 0)
+       -1       dty
+       -1       mb(heavy-ind)
+        1       dem(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+
+---- p  prices
+
+p(light-ind)
+                (.LO, .L, .UP, .M = 0.1, 3, 100, 0)
+      (24.1201) dem(light-ind)
+        1       sup(light-ind)
+
+p(food+agr)
+                (.LO, .L, .UP, .M = 0.1, 3, 100, 0)
+      (19.3552) dem(food+agr)
+       -0.1     sup(light-ind)
+        1       sup(food+agr)
+
+p(heavy-ind)
+                (.LO, .L, .UP, .M = 0.1, 3, 100, 0)
+      (45.793)  dem(heavy-ind)
+       -0.2     sup(light-ind)
+       -0.1     sup(food+agr)
+        1       sup(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+
+---- l  labor use per unit of output
+
+l(light-ind)
+                (.LO, .L, .UP, .M = 0, 0.283078383128534, 1, 0)
+     (200)      lc
+        3.97    dl(light-ind)
+       -1       dv(light-ind)
+
+l(food+agr)
+                (.LO, .L, .UP, .M = 0, 0.383990781960791, 1, 0)
+     (200)      lc
+        3.33    dl(food+agr)
+       -1       dv(food+agr)
+
+l(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 0.309951359679435, 1, 0)
+     (200)      lc
+        1.67    dl(heavy-ind)
+       -1       dv(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+
+---- k  capital use per unit of output
+
+k(light-ind)
+                (.LO, .L, .UP, .M = 0, 0.22769870931466, 1, 0)
+     (200)      kc
+        3.97    dk(light-ind)
+      (-3.5)    dv(light-ind)
+
+k(food+agr)
+                (.LO, .L, .UP, .M = 0, 0.249861958624235, 1, 0)
+     (200)      kc
+        3.33    dk(food+agr)
+      (-3.5)    dv(food+agr)
+
+k(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 0.617797527645794, 1, 0)
+     (200)      kc
+        1.67    dk(heavy-ind)
+      (-3.5)    dv(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+
+---- e  quantity of exports
+
+e(light-ind)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+       -1       mb(light-ind)
+      (-1)      tb
+        0.005   dh(light-ind)
+
+e(food+agr)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+       -1       mb(food+agr)
+      (-1.1)    tb
+        0.001   dh(food+agr)
+
+e(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+       -1       mb(heavy-ind)
+      (-1)      tb
+        0.01    dh(heavy-ind)
+
+
+---- m  quantity of imports
+
+m(light-ind)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+        1       mb(light-ind)
+       (1)      tb
+       -0.005   dg(light-ind)
+
+m(food+agr)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+        1       mb(food+agr)
+       (1)      tb
+       -0.0157  dg(food+agr)
+
+m(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 0, 400, 0)
+        1       mb(heavy-ind)
+       (1)      tb
+       -0.0018  dg(heavy-ind)
+
+
+---- g  foreign exchange cost of imports
+
+g(light-ind)
+                (.LO, .L, .UP, .M = 0, 1, 4, 0)
+       (0)      tb
+        1       dg(light-ind)
+
+g(food+agr)
+                (.LO, .L, .UP, .M = 0, 1, 4, 0)
+       (0)      tb
+        1       dg(food+agr)
+
+g(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 1, 4, 0)
+       (0)      tb
+        1       dg(heavy-ind)
+
+
+---- h  foreign exchange value of exports
+
+h(light-ind)
+                (.LO, .L, .UP, .M = 0, 1, 4, 0)
+       (0)      tb
+        1       dh(light-ind)
+
+h(food+agr)
+                (.LO, .L, .UP, .M = 0, 1.1, 4, 0)
+       (0)      tb
+        1       dh(food+agr)
+
+h(heavy-ind)
+                (.LO, .L, .UP, .M = 0, 1, 4, 0)
+       (0)      tb
+        1       dh(heavy-ind)
+
+
+---- pk  nominal market price of capital
+
+pk
+                (.LO, .L, .UP, .M = 0.25, 3.5, 4, 0)
+       -1       fpr
+      (-0.2277) dv(light-ind)
+      (-0.2499) dv(food+agr)
+      (-0.6178) dv(heavy-ind)
+      (-0.4288) dv(services)
+
+
+---- pi  factor price ratio
+
+pi
+                (.LO, .L, .UP, .M = 0.25, 3.5, 4, 0)
+        1       fpr
+       (0.0437) dvv(light-ind)
+       (0.0708) dvv(food+agr)
+       (3.6077) dvv(heavy-ind)
+       (0.0008) dvv(services)
+
+
+---- pd  price deflator
+
+pd
+                (.LO, .L, .UP, .M = 0.01, 0.3, +INF, 0)
+     (241.201)  dem(light-ind)
+     (193.5522) dem(food+agr)
+     (457.9301) dem(heavy-ind)
+     (547.9495) dem(services)
+
+
+---- td  total demand
+
+td
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       dty
+
+
+---- vv  intermediate result
+
+vv(light-ind)
+                (.LO, .L, .UP, .M = 0.001, 0.171804999139287, +INF, 0)
+        1       dvv(light-ind)
+       (0.5966) dl(light-ind)
+      (-0.1704) dk(light-ind)
+
+vv(food+agr)
+                (.LO, .L, .UP, .M = 0.001, 0.349221638418406, +INF, 0)
+        1       dvv(food+agr)
+       (1.0392) dl(food+agr)
+      (-0.2969) dk(food+agr)
+
+vv(heavy-ind)
+                (.LO, .L, .UP, .M = 0.001, 15.7837604335036, +INF, 0)
+        1       dvv(heavy-ind)
+       (0.0072) dl(heavy-ind)
+      (-0.002)  dk(heavy-ind)
+
+REMAINING ENTRY SKIPPED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 4
+Substitution and Structural Change (CHENERY,SEQ=33)
+Range Statistics    SOLVE chenrad Using NLP From line 211
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.000E+00, 7.500E+02] - Zero values observed as well
+Bound     [min, max] : [ 1.000E-03, 2.000E+03] - Zero values observed as well
+Matrix    [min, max] : [ 8.453E-04, 5.479E+02] - Zero values observed as well
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 5
+Substitution and Structural Change (CHENERY,SEQ=33)
+Model Statistics    SOLVE chenrad Using NLP From line 211
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          14     SINGLE EQUATIONS           39
+BLOCKS OF VARIABLES          15     SINGLE VARIABLES           44
+NON ZERO ELEMENTS           133     NON LINEAR N-Z             56
+CODE LENGTH                 194     CONSTANT POOL              43
+
+
+GENERATION TIME      =        0.015 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 6
+Substitution and Structural Change (CHENERY,SEQ=33)
+Solution Report     SOLVE chenrad Using NLP From line 211
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   chenrad             OBJECTIVE  td
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  CONOPT              FROM LINE  211
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      2 Locally Optimal
+**** OBJECTIVE VALUE             1058.9199
+
+ RESOURCE USAGE, LIMIT          0.453 10000000000.000
+ ITERATION COUNT, LIMIT        14    2147483647
+ EVALUATION ERRORS              0             0
+--- *** This solver runs with a demo license. No commercial use.
+ 
+ 
+    C O N O P T   version 4.39.2
+    Copyright (C) GAMS Software GmbH
+                  GAMS Development Corporation
+ 
+    Will use up to 4 threads.
+ 
+ 
+    The user model has 39 constraints and 44 variables
+    with 133 Jacobian elements, 56 of which are nonlinear.
+    The Hessian of the Lagrangian has 10 elements on the diagonal,
+    22 elements below the diagonal, and 35 nonlinear variables.
+ 
+    The post-triangular part of the model has 1 constraints and variables.
+    There are 27 definitional constraints and defined variables.
+ 
+    Preprocessed model has 11 constraints and 16 variables
+    with 54 Jacobian elements, 31 of which are nonlinear.
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+ 
+ CONOPT time Total                            0.031 seconds
+   of which: Function evaluations             0.001 =  3.2%
+             1st Derivative evaluations       0.001 =  3.2%
+             2nd Derivative evaluations       0.000 =  0.0%
+             Directional 2nd Deriv(Hess)      0.000 =  0.0%
+             Interval derivative evals        0.001 =  3.2%
+ 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU dty                 .              .              .             1.0000      
+
+  dty  total demand: definition
+
+---- EQU mb  material balance
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .            +INF           -0.9618      
+food+agr           .              .            +INF           -0.8692      
+heavy-ind          .              .            +INF           -1.2973      
+services           .              .            +INF           -0.8431      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU tb                -INF             .              .             0.9780      
+
+  tb  trade balance
+
+---- EQU dg  definition of imports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind         1.0000         1.0000         1.0000         EPS         
+food+agr          1.0000         1.0000         1.0000         EPS         
+heavy-ind         1.0000         1.0000         1.0000       -89.6847      
+
+---- EQU dh  definition of exports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind         1.0000         1.0000         1.0000         1.6171      
+food+agr          1.1000         1.1000         1.1000       103.3012      
+heavy-ind         1.0000         1.0000         1.0000         EPS         
+
+---- EQU dem  demand equations
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .             0.0382      
+food+agr           .              .              .             0.1308      
+heavy-ind          .              .              .            -0.2973      
+services           .              .              .             0.1569      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU lc                -INF          604.5509       750.0000          .          
+---- EQU kc               500.0000       500.0000       500.0000         1.9697      
+
+  lc  labor constraint
+  kc  capital constraint
+
+---- EQU sup  supply equations
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .            -1.1482      
+food+agr           .              .              .            -3.3972      
+heavy-ind          .              .              .            11.9539      
+services           .              .              .           -11.8345      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU fpr                 .              .              .            -1.1964      
+
+  fpr  factor price ratio definition
+
+---- EQU dvv  definition of vv
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .            -9.7984      
+food+agr           .              .              .           -64.0910      
+heavy-ind          .              .              .            -0.4460      
+services           .              .              .         -2625.0303      
+
+---- EQU dl  definition of labor coefficient
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .            -0.2892      
+food+agr           .              .              .            -1.0202      
+heavy-ind          .              .              .             7.1580      
+services           .              .              .            -6.4318      
+
+---- EQU dk  definition of capital coefficient
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .           -57.1608      
+food+agr           .              .              .          -216.3854      
+heavy-ind          .              .              .          -186.9674      
+services           .              .              .          -708.8783      
+
+---- EQU dv  value added
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .              .            -1.1482      
+food+agr           .              .              .            -3.3972      
+heavy-ind          .              .              .            11.9539      
+services           .              .              .           -11.8345      
+
+---- VAR x  quantity of output
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .           112.8799      2000.0000          .          
+food+agr           .           358.9316      2000.0000          .          
+heavy-ind          .           182.7982      2000.0000          .          
+services           .           638.1789      2000.0000          .          
+
+---- VAR v  value added per unit output at current prices
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             1.1937       100.0000          .          
+food+agr           .             1.3827       100.0000          .          
+heavy-ind          .             2.7806       100.0000          .          
+services           .             2.2959       100.0000          .          
+
+---- VAR y  final consumption
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .           111.2264      2000.0000          .          
+food+agr           .           242.0186      2000.0000          .          
+heavy-ind          .           216.0312      2000.0000          .          
+services           .           489.6436      2000.0000          .          
+
+---- VAR p  prices
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind         0.1000         2.4921       100.0000          .          
+food+agr          0.1000         2.3725       100.0000          .          
+heavy-ind         0.1000         3.0102       100.0000          .          
+services          0.1000         2.2959       100.0000          .          
+
+---- VAR l  labor use per unit of output
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             0.2862         1.0000          .          
+food+agr           .             0.3946         1.0000          .          
+heavy-ind          .             0.3173         1.0000          .          
+services           .             0.5838         1.0000          .          
+
+---- VAR k  capital use per unit of output
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             0.2269         1.0000          .          
+food+agr           .             0.2470         1.0000          .          
+heavy-ind          .             0.6158         1.0000          .          
+services           .             0.4280         1.0000          .          
+
+---- VAR e  quantity of exports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             1.6535       400.0000         EPS         
+food+agr           .           105.6250       400.0000         EPS         
+heavy-ind          .              .           400.0000        -0.3193      
+
+---- VAR m  quantity of imports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .              .           400.0000        -0.0162      
+food+agr           .              .           400.0000        -0.1088      
+heavy-ind          .            91.7021       400.0000          .          
+
+---- VAR g  foreign exchange cost of imports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             1.0000         4.0000          .          
+food+agr           .             1.0000         4.0000          .          
+heavy-ind          .             1.1632         4.0000          .          
+
+---- VAR h  foreign exchange value of exports
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind          .             0.9917         4.0000          .          
+food+agr           .             0.9944         4.0000          .          
+heavy-ind          .             1.0000         4.0000          .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR pk                 0.2500         4.0000         4.0000          .          
+---- VAR pi                 0.2500         4.0000         4.0000         8.1178      
+---- VAR pd                 0.0100         0.3427        +INF             .          
+---- VAR td                -INF         1058.9199        +INF             .          
+
+  pk  nominal market price of capital
+  pi  factor price ratio
+  pd  price deflator
+  td  total demand
+
+---- VAR vv  intermediate result
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+light-ind         0.0010         0.1526        +INF             .          
+food+agr          0.0010         0.3176        +INF             .          
+heavy-ind         0.0010        14.1846        +INF             .          
+services          0.0010         0.0027        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:22:42 Page 7
+Substitution and Structural Change (CHENERY,SEQ=33)
+E x e c u t i o n
+
+
+----    226 PARAMETER cli                  =        2.490  cost of living index
+            PARAMETER cva                  =     2604.551  total value added at current prices
+            PARAMETER rva                  =     1045.873  real value added
+            PARAMETER fve                  =      106.671  foreign exchange value of exports
+            PARAMETER emp                  =      604.551  total employment
+
+
+EXECUTION TIME       =        0.531 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\logs\chenery.gms
+Output     C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\logs\chenery.lst

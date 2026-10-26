@@ -1,0 +1,9 @@
+{
+  "scope": "all tracked plus nonignored untracked",
+  "files_checked": 177,
+  "findings": [],
+  "secret_values_printed": false,
+  "limitation": "Pattern and configured-secret checks do not prove absence of every possible secret.",
+  "observed_utc": "2026-10-01T17:58:04.5939572Z",
+  "exit_code": 0
+}

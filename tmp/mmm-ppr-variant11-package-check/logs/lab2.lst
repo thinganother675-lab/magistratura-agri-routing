@@ -1,0 +1,160 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:32 Page 1
+Laboratory 2 - variant 11 - milk production LP
+C o m p i l a t i o n
+
+
+      Draft calculation prepared at student's request, pending teacher's prior
+      approval of the mathematical formulation required by the course.
+      Units: centners/day, hours/day, RUB/day. Extra product: curd bars.
+      Run from this directory: gams lab2.gms
+   8  Set j /milk,kefir,cream,curd_bars/;
+   9  Parameter price(j) /milk 2400,kefir 2700,cream 13800,curd_bars 7500/,
+  10            input(j) /milk 1.01,kefir 1.01,cream 9.45,curd_bars 16/;
+  11  Positive Variable x(j);
+  12  Variable revenue;
+  13  Equations objective,raw,mkLine,creamLine,curdLine;
+  14  objective.. revenue =e= sum(j,price(j)*x(j));
+  15  raw.. sum(j,input(j)*x(j)) =l= 140;
+  16  mkLine.. x('milk')/5+x('kefir')/6 =l= 21;
+  17  creamLine.. x('cream')/0.3 =l= 16;
+  18  curdLine.. x('curd_bars')/0.25 =l= 17;
+  19  Model production /all/;
+  20  option lp=cplex,limrow=0,limcol=0;
+  21  solve production using lp maximizing revenue;
+  22  abort$(production.modelstat<>1 or production.solvestat<>1) 'LP failed';
+  23  Scalar violation;
+  24  violation=max(0,sum(j,input(j)*x.l(j))-140,
+  25   x.l('milk')/5+x.l('kefir')/6-21,x.l('cream')/.3-16,
+  26   x.l('curd_bars')/.25-17,-smin(j,x.l(j)));
+  27  abort$(violation>1e-7) 'Infeasible LP output',violation;
+  28  File f /'../results/lab2_gams.csv'/;
+  29  f.pw=32767;
+  30  put f 'product,x_centner,revenue_rub,modelstat,solvestat' /;
+  31  loop(j,put j.tl:0 ',' x.l(j):0:10 ',' revenue.l:0:10 ',' production.modelstat:0:0 ',' production.solvestat:0:0 /;);
+  32  putclose f;
+  33  File g /'../results/lab2_gams_resources.csv'/;
+  34  put g 'resource,used,available,shadow_price' /;
+  35  put 'raw,' sum(j,input(j)*x.l(j)):0:10 ',140,' raw.m:0:10 /;
+  36  put 'milk_kefir_hours,' (x.l('milk')/5+x.l('kefir')/6):0:10 ',21,' mkLine.m:0:10 /;
+  37  put 'cream_hours,' (x.l('cream')/.3):0:10 ',16,' creamLine.m:0:10 /;
+  38  put 'curd_hours,' (x.l('curd_bars')/.25):0:10 ',17,' curdLine.m:0:10 /;
+  39  putclose g;
+  40  display x.l,revenue.l,raw.m,mkLine.m,creamLine.m,curdLine.m;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:32 Page 2
+Laboratory 2 - variant 11 - milk production LP
+Range Statistics    SOLVE production Using LP From line 21
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.600E+01, 1.400E+02] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.667E-01, 1.380E+04]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:32 Page 3
+Laboratory 2 - variant 11 - milk production LP
+Model Statistics    SOLVE production Using LP From line 21
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           5     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            13
+
+
+GENERATION TIME      =        0.015 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:32 Page 4
+Laboratory 2 - variant 11 - milk production LP
+Solution Report     SOLVE production Using LP From line 21
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   production          OBJECTIVE  revenue
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  21
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE           358804.4444
+
+ RESOURCE USAGE, LIMIT          0.031 10000000000.000
+ ITERATION COUNT, LIMIT         2    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.03sec (det. 0.01 ticks)
+
+
+Optimal solution found
+Objective:       358804.444444
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objective           .              .              .             1.0000      
+---- EQU raw               -INF          140.0000       140.0000      1460.3175      
+---- EQU mkLine            -INF           21.0000        21.0000      7350.4762      
+---- EQU creamLine         -INF            4.4938        16.0000          .          
+---- EQU curdLine          -INF             .            17.0000          .          
+
+---- VAR x  
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+milk               .              .            +INF         -545.0159      
+kefir              .           126.0000        +INF             .          
+cream              .             1.3481        +INF             .          
+curd_bars          .              .            +INF       -15865.0794      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR revenue           -INF       358804.4444        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/07/26 17:37:32 Page 5
+Laboratory 2 - variant 11 - milk production LP
+E x e c u t i o n
+
+
+----     40 VARIABLE x.L  
+
+kefir 126.000,    cream   1.348
+
+
+----     40 VARIABLE revenue.L             =   358804.444  
+            EQUATION raw.M                 =     1460.317  
+            EQUATION mkLine.M              =     7350.476  
+            EQUATION creamLine.M           =        0.000  
+            EQUATION curdLine.M            =        0.000  
+
+**** REPORT FILE SUMMARY
+
+f C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\results\lab2_gams.csv
+g C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\results\lab2_gams_resources.csv
+
+
+EXECUTION TIME       =        0.234 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\models\lab2.gms
+Output     C:\sarychev\Codex\magistratura\coursework\mmm-ppr\variant-11\logs\lab2.lst

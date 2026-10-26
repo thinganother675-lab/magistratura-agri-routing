@@ -1,0 +1,11 @@
+{
+  "rows": 63,
+  "old_rows": 63,
+  "max_quantity_difference_t": 7.578137228847481E-09,
+  "max_revenue_difference_rub": 0.00018991157412528992,
+  "max_relative_quantity_difference": 6.579998768074802E-11,
+  "max_relative_revenue_difference": 6.625808751224554E-12,
+  "max_violation": 1.8E-10,
+  "max_spread": 5E-12,
+  "bad_status_count": 0
+}

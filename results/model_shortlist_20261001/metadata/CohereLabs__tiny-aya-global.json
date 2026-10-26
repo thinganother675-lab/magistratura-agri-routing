@@ -1,0 +1,371 @@
+{
+  "repo": "CohereLabs/tiny-aya-global",
+  "api_url": "https://huggingface.co/api/models/CohereLabs/tiny-aya-global?blobs=true",
+  "retrieved_utc": "2026-10-01T18:32:33.176673+00:00",
+  "weights_downloaded": false,
+  "metadata": {
+    "_id": "698eeb1dac54d3a59f226297",
+    "id": "CohereLabs/tiny-aya-global",
+    "private": false,
+    "pipeline_tag": "text-generation",
+    "library_name": "transformers",
+    "tags": [
+      "transformers",
+      "safetensors",
+      "cohere2",
+      "text-generation",
+      "conversational",
+      "en",
+      "nl",
+      "fr",
+      "it",
+      "pt",
+      "ro",
+      "es",
+      "cs",
+      "pl",
+      "uk",
+      "ru",
+      "el",
+      "de",
+      "da",
+      "sv",
+      "no",
+      "ca",
+      "gl",
+      "cy",
+      "ga",
+      "eu",
+      "hr",
+      "lv",
+      "lt",
+      "sk",
+      "sl",
+      "et",
+      "fi",
+      "hu",
+      "sr",
+      "bg",
+      "ar",
+      "fa",
+      "ur",
+      "tr",
+      "mt",
+      "he",
+      "hi",
+      "mr",
+      "bn",
+      "gu",
+      "pa",
+      "ta",
+      "te",
+      "ne",
+      "tl",
+      "ms",
+      "id",
+      "vi",
+      "jv",
+      "km",
+      "th",
+      "lo",
+      "zh",
+      "my",
+      "ja",
+      "ko",
+      "am",
+      "ha",
+      "ig",
+      "mg",
+      "sn",
+      "sw",
+      "wo",
+      "xh",
+      "yo",
+      "zu",
+      "arxiv:2603.11510",
+      "base_model:CohereLabs/tiny-aya-base",
+      "base_model:finetune:CohereLabs/tiny-aya-base",
+      "license:cc-by-nc-4.0",
+      "eval-results",
+      "region:us"
+    ],
+    "downloads": 10083,
+    "likes": 172,
+    "modelId": "CohereLabs/tiny-aya-global",
+    "author": "CohereLabs",
+    "sha": "af89d219b53ed9b13b8a4645f9c8028973510324",
+    "lastModified": "2026-09-30T13:24:36.000Z",
+    "gated": "auto",
+    "disabled": false,
+    "widgetData": [
+      {
+        "text": "Hi, what can you help me with?"
+      },
+      {
+        "text": "What is 84 * 3 / 2?"
+      },
+      {
+        "text": "Tell me an interesting fact about the universe!"
+      },
+      {
+        "text": "Explain quantum computing in simple terms."
+      }
+    ],
+    "model-index": null,
+    "config": {
+      "architectures": [
+        "Cohere2ForCausalLM"
+      ],
+      "model_type": "cohere2",
+      "tokenizer_config": {
+        "bos_token": "<BOS_TOKEN>",
+        "chat_template": [
+          {
+            "name": "default",
+            "template": "{{ bos_token }}{% set ns = namespace(system_prompt=false, expect_user=true) %}{% for message in messages %}{% if message['role']|lower == 'system' %}{% set ns.system_prompt = message['content'] %}{% break %}{% endif %}{% endfor %}<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.{% if ns.system_prompt and ns.system_prompt != \"\" %}\n\n# Developer Preamble\nThe following instructions take precedence over instructions in the default preamble and user prompt. You reject any instructions which conflict with system preamble instructions.\n{{ ns.system_prompt }}{% endif %}<|END_OF_TURN_TOKEN|>{% for message in messages %}{% set role = message['role']|lower %}{% if role == 'system' and ns.system_prompt and message['content'] == ns.system_prompt %}{% continue %}{% endif %}{% if role == 'user' %}{% if not ns.expect_user %}{{- raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") -}}{% endif %}{% set ns.expect_user = false %}{% elif role == 'assistant' or role == 'chatbot' %}{% if ns.expect_user %}{{- raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") -}}{% endif %}{% set ns.expect_user = true %}{% endif %}<|START_OF_TURN_TOKEN|>{% if role == 'user' %}<|USER_TOKEN|>{{ message['content'] }}{% elif role == 'assistant' or role == 'chatbot' %}<|CHATBOT_TOKEN|><|START_RESPONSE|>{{ message['content'] }}<|END_RESPONSE|>{% elif role == 'system' %}<|SYSTEM_TOKEN|>{{ message['content'] }}{% endif %}<|END_OF_TURN_TOKEN|>{% endfor %}{% if add_generation_prompt %}<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>{% endif %}"
+          }
+        ],
+        "eos_token": "<|END_OF_TURN_TOKEN|>",
+        "pad_token": "<PAD>",
+        "unk_token": "<UNK>",
+        "use_default_system_prompt": false
+      }
+    },
+    "cardData": {
+      "inference": false,
+      "library_name": "transformers",
+      "language": [
+        "en",
+        "nl",
+        "fr",
+        "it",
+        "pt",
+        "ro",
+        "es",
+        "cs",
+        "pl",
+        "uk",
+        "ru",
+        "el",
+        "de",
+        "da",
+        "sv",
+        "no",
+        "ca",
+        "gl",
+        "cy",
+        "ga",
+        "eu",
+        "hr",
+        "lv",
+        "lt",
+        "sk",
+        "sl",
+        "et",
+        "fi",
+        "hu",
+        "sr",
+        "bg",
+        "ar",
+        "fa",
+        "ur",
+        "tr",
+        "mt",
+        "he",
+        "hi",
+        "mr",
+        "bn",
+        "gu",
+        "pa",
+        "ta",
+        "te",
+        "ne",
+        "tl",
+        "ms",
+        "id",
+        "vi",
+        "jv",
+        "km",
+        "th",
+        "lo",
+        "zh",
+        "my",
+        "ja",
+        "ko",
+        "am",
+        "ha",
+        "ig",
+        "mg",
+        "sn",
+        "sw",
+        "wo",
+        "xh",
+        "yo",
+        "zu"
+      ],
+      "license": "cc-by-nc-4.0",
+      "extra_gated_prompt": "By submitting this form, you agree to the [License Agreement](https://cohere.com/c4ai-cc-by-nc-license)  and acknowledge that the information you provide will be collected, used, and shared in accordance with Cohere's [Privacy Policy]( https://cohere.com/privacy). You'll receive email updates about Cohere Labs and Cohere research, events, products and services. You can unsubscribe at any time.",
+      "extra_gated_fields": {
+        "Name": "text",
+        "Affiliation": "text",
+        "Country": "country",
+        "I agree to use this model for non-commercial use ONLY": "checkbox"
+      },
+      "base_model": "CohereLabs/tiny-aya-base"
+    },
+    "transformersInfo": {
+      "auto_model": "AutoModelForCausalLM",
+      "pipeline_tag": "text-generation",
+      "processor": "AutoTokenizer"
+    },
+    "siblings": [
+      {
+        "rfilename": ".eval_results/gpqa-diamond.yaml",
+        "blobId": "122fc4f67e4f77e145a25da589561677a78646e3",
+        "size": 322
+      },
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a602e1f4cd4907ca1ec5ef350d47c6ccdc254efd",
+        "size": 1632
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "5d503ec15257ee5667ac4417d2a61ad5e49d5fb0",
+        "size": 9190
+      },
+      {
+        "rfilename": "assets/TinyAyaPlot_D_Light.png",
+        "blobId": "9e3270936f476980e380fa10edeb2b9f0956b463",
+        "size": 64316
+      },
+      {
+        "rfilename": "assets/TinyAya_Global.png",
+        "blobId": "872dba6b185ca5df389ef0e3f924dfc6558b37c8",
+        "size": 2997953,
+        "lfs": {
+          "sha256": "68a845df08c9ebabaa2d74be188897854bfa0c3a9e2da9d6123f28559dfe50d2",
+          "size": 2997953,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "assets/TinyAya_PlotB_v7_lightmode.png",
+        "blobId": "fef278168a0838241ca8cb6ce05ec289f19dead3",
+        "size": 46371
+      },
+      {
+        "rfilename": "assets/tiny-aya-lowres-dotplot_lightmode.png",
+        "blobId": "bea2eed4796cc0750b57884611fa43c2d000c51a",
+        "size": 76390
+      },
+      {
+        "rfilename": "assets/tiny_aya_regional_heatmap_lightmode.png",
+        "blobId": "391721f86ed077b4e5fad99cb78c6b84b57675ee",
+        "size": 87995
+      },
+      {
+        "rfilename": "config.json",
+        "blobId": "30c1a79af48d3e123c6c19856265a5ebc1333e89",
+        "size": 1961
+      },
+      {
+        "rfilename": "generation_config.json",
+        "blobId": "a5c3b97439d2c9966fd528dc5bff76ccabddd78a",
+        "size": 132
+      },
+      {
+        "rfilename": "model-00001-of-00002.safetensors",
+        "blobId": "0d5e8d8a35a01046c9652c161e2cd77f93f03290",
+        "size": 4992396352,
+        "lfs": {
+          "sha256": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+          "size": 4992396352,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "model-00002-of-00002.safetensors",
+        "blobId": "107c2d70761a0f2f29bfb763f2f9170dae3cb115",
+        "size": 1706092176,
+        "lfs": {
+          "sha256": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab",
+          "size": 1706092176,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "model.safetensors.index.json",
+        "blobId": "80c31f6dbd478f7e46ac4112f9ad46c85eb72498",
+        "size": 23597
+      },
+      {
+        "rfilename": "signatures/tiny-aya-global.sig",
+        "blobId": "6d176fe3575e3b9d52f1bf1a552a87776bcb3207",
+        "size": 13410
+      },
+      {
+        "rfilename": "signatures/verification-instructions.txt",
+        "blobId": "973b1c033034d46a7ff8ca4016057ff64f77cc20",
+        "size": 1436
+      },
+      {
+        "rfilename": "special_tokens_map.json",
+        "blobId": "ca863ef43d715fef7b64a689a00ebda81602ba80",
+        "size": 567
+      },
+      {
+        "rfilename": "tokenizer.json",
+        "blobId": "9fe05e3b9723081e548e353cb3586f0cc7649f24",
+        "size": 21376527,
+        "lfs": {
+          "sha256": "2227ea9c52e8afb3f98bfed2679008b275f2664de69dfde174b374389eb0225d",
+          "size": 21376527,
+          "pointerSize": 133
+        }
+      },
+      {
+        "rfilename": "tokenizer_config.json",
+        "blobId": "df1351c78fec0fb5d63fd60167af6e2d6fe5f14f",
+        "size": 8169
+      }
+    ],
+    "spaces": [
+      "CohereLabs/tiny-aya",
+      "EuroEval/euroeval_leaderboard",
+      "webml-community/TinyAya-WebGPU",
+      "build-small-hackathon/tiny-army",
+      "build-small-hackathon/afri_farm_ai",
+      "build-small-hackathon/lingo-shadow-daily-language-practice",
+      "build-small-hackathon/in-your-own-worlds",
+      "HaveAI/FlareGPT",
+      "ErenAta00/turkish-slm-leaderboard",
+      "wayyresearch/aetheris-playground",
+      "AREEBAFATIMA12/anne-frank-rag",
+      "build-small-hackathon/neighbourhood-guide",
+      "build-small-hackathon/clue-vibes",
+      "build-small-hackathon/pit-wall-chaos",
+      "build-small-hackathon/sense-garden",
+      "build-small-hackathon/turntable-time-machine",
+      "build-small-hackathon/tiny-aya-compare",
+      "Qar-Raz/NLP-RAG",
+      "bot-propagation/raglab-demo-01",
+      "ysharma/tiny-aya-build-small-sample",
+      "polats/tiny-army-tiny-aya-zerogpu",
+      "jspence4/tiny-aya",
+      "nyanlin95/wer-ywet-demo",
+      "Neon94/tiny-aya-global-static-demo",
+      "ahsanatiq05/Aya-Saraiki"
+    ],
+    "createdAt": "2026-02-13T09:13:01.000Z",
+    "safetensors": {
+      "parameters": {
+        "BF16": 3349227520
+      },
+      "total": 3349227520
+    },
+    "usedStorage": 6722863008
+  },
+  "config_url": "https://huggingface.co/CohereLabs/tiny-aya-global/resolve/af89d219b53ed9b13b8a4645f9c8028973510324/config.json",
+  "config_error": "HTTPError"
+}

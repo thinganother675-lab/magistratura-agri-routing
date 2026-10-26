@@ -1,0 +1,48 @@
+{
+  "utc": "2026-10-02T18:50:28.761070+00:00",
+  "status": "NATIVE_CPU_BINARY_BUILD_VERIFIED_INFERENCE_NOT_RUN",
+  "runtime_commit": "0b341e582afbf9e1011f24744b554c96a3477eb5",
+  "llama_commit": "390c307752ab78fd8189f359d6954c9ba1be74af",
+  "portable_toolchain": "LLVM-MinGW20260922 UCRT x86_64; Clang23.1.2",
+  "alternative_count": 1,
+  "corrections": [
+    "sandbox subprocess ABI check stopped; same native Ninja verified with1.13.2",
+    "nested LLAMA_BUILD_COMMON and TOOLS enabled",
+    "Windows API target _WIN32_WINNT and WINVER0x0A00 exposes CreateFile2"
+  ],
+  "compiler_flags": [
+    "Release",
+    "march=native",
+    "BITNET_X86_TL2=OFF",
+    "GGML_CUDA=OFF",
+    "GGML_OPENMP=OFF",
+    "GGML_BLAS=OFF",
+    "BUILD_SHARED_LIBS=OFF",
+    "LLAMA_BUILD_UI=OFF",
+    "LLAMA_BUILD_SERVER=ON",
+    "LLAMA_BUILD_COMMON=ON",
+    "LLAMA_BUILD_TOOLS=ON",
+    "parallel_build=4",
+    "static_link",
+    "_WIN32_WINNT=0x0A00",
+    "WINVER=0x0A00"
+  ],
+  "weights": {
+    "file": ".runtime/bitnet/models/BitNet-b1.58-2B-4T/ggml-model-i2_s.gguf",
+    "bytes": 1187801280,
+    "sha256": "4221b252fdd5fd25e15847adfeb5ee88886506ba50b8a34548374492884c2162",
+    "verified_by_download": true
+  },
+  "binaries": {
+    "llama-server.exe": {
+      "bytes": 16142848,
+      "sha256": "e29579d83c1f80f1ce4bd3949cabe6f12420d1f471e7beee17f07aea34436dd9"
+    },
+    "llama-cli.exe": {
+      "bytes": 15220736,
+      "sha256": "02aff41731f2311f25c5c553ebe5dee7fd6afb00a1fd92d0ed11330aa2727c5b"
+    }
+  },
+  "no_os_driver_global_toolchain_changes": true,
+  "inference": "NOT_RUN_WAITING_EXCLUSIVE_WINDOW"
+}

@@ -1,0 +1,434 @@
+{
+  "date": "2026-10-09",
+  "status": "prepared-verified-draft",
+  "task1_words_with_headers_sources": 295,
+  "task7_summary_words": 144,
+  "data_audit_rows": 14,
+  "stages": 7,
+  "document_rows": 10,
+  "slides": 2,
+  "minimum_slide_font_pt": 24.0,
+  "slide_words": 106,
+  "reading_seconds_at_180_wpm": 35.3,
+  "financial": {
+    "base_hours": 624,
+    "reserve_hours": 151.4,
+    "investment": 1413800,
+    "net_season": 672000,
+    "payback_productive_seasons": 2.103869047619048,
+    "cumulative_after_three": 602200
+  },
+  "role_capacity_checks": [
+    {
+      "stage": 1,
+      "role": "РП",
+      "reserved_h_per_active_week": 9.6,
+      "available": 10
+    },
+    {
+      "stage": 1,
+      "role": "АГ",
+      "reserved_h_per_active_week": 7.2,
+      "available": 12
+    },
+    {
+      "stage": 1,
+      "role": "ИД",
+      "reserved_h_per_active_week": 4.8,
+      "available": 28
+    },
+    {
+      "stage": 1,
+      "role": "АМ",
+      "reserved_h_per_active_week": 4.8,
+      "available": 28
+    },
+    {
+      "stage": 1,
+      "role": "РМ",
+      "reserved_h_per_active_week": 0.0,
+      "available": 24
+    },
+    {
+      "stage": 1,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 0.0,
+      "available": 16
+    },
+    {
+      "stage": 1,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 2.4,
+      "available": 16
+    },
+    {
+      "stage": 1,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 4.8,
+      "available": 8
+    },
+    {
+      "stage": 2,
+      "role": "РП",
+      "reserved_h_per_active_week": 5.2,
+      "available": 10
+    },
+    {
+      "stage": 2,
+      "role": "АГ",
+      "reserved_h_per_active_week": 10.4,
+      "available": 12
+    },
+    {
+      "stage": 2,
+      "role": "ИД",
+      "reserved_h_per_active_week": 26.0,
+      "available": 28
+    },
+    {
+      "stage": 2,
+      "role": "АМ",
+      "reserved_h_per_active_week": 10.4,
+      "available": 28
+    },
+    {
+      "stage": 2,
+      "role": "РМ",
+      "reserved_h_per_active_week": 0.0,
+      "available": 24
+    },
+    {
+      "stage": 2,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 0.0,
+      "available": 16
+    },
+    {
+      "stage": 2,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 5.2,
+      "available": 16
+    },
+    {
+      "stage": 2,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 2.6,
+      "available": 8
+    },
+    {
+      "stage": 3,
+      "role": "РП",
+      "reserved_h_per_active_week": 5.0,
+      "available": 10
+    },
+    {
+      "stage": 3,
+      "role": "АГ",
+      "reserved_h_per_active_week": 5.0,
+      "available": 12
+    },
+    {
+      "stage": 3,
+      "role": "ИД",
+      "reserved_h_per_active_week": 5.0,
+      "available": 28
+    },
+    {
+      "stage": 3,
+      "role": "АМ",
+      "reserved_h_per_active_week": 25.0,
+      "available": 28
+    },
+    {
+      "stage": 3,
+      "role": "РМ",
+      "reserved_h_per_active_week": 5.0,
+      "available": 24
+    },
+    {
+      "stage": 3,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 0.0,
+      "available": 16
+    },
+    {
+      "stage": 3,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 5.0,
+      "available": 16
+    },
+    {
+      "stage": 3,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 0.0,
+      "available": 8
+    },
+    {
+      "stage": 4,
+      "role": "РП",
+      "reserved_h_per_active_week": 3.6,
+      "available": 10
+    },
+    {
+      "stage": 4,
+      "role": "АГ",
+      "reserved_h_per_active_week": 2.4,
+      "available": 12
+    },
+    {
+      "stage": 4,
+      "role": "ИД",
+      "reserved_h_per_active_week": 4.8,
+      "available": 28
+    },
+    {
+      "stage": 4,
+      "role": "АМ",
+      "reserved_h_per_active_week": 4.8,
+      "available": 28
+    },
+    {
+      "stage": 4,
+      "role": "РМ",
+      "reserved_h_per_active_week": 19.2,
+      "available": 24
+    },
+    {
+      "stage": 4,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 4.8,
+      "available": 16
+    },
+    {
+      "stage": 4,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 7.2,
+      "available": 16
+    },
+    {
+      "stage": 4,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 0.0,
+      "available": 8
+    },
+    {
+      "stage": 5,
+      "role": "РП",
+      "reserved_h_per_active_week": 2.6,
+      "available": 10
+    },
+    {
+      "stage": 5,
+      "role": "АГ",
+      "reserved_h_per_active_week": 6.5,
+      "available": 12
+    },
+    {
+      "stage": 5,
+      "role": "ИД",
+      "reserved_h_per_active_week": 2.6,
+      "available": 28
+    },
+    {
+      "stage": 5,
+      "role": "АМ",
+      "reserved_h_per_active_week": 6.5,
+      "available": 28
+    },
+    {
+      "stage": 5,
+      "role": "РМ",
+      "reserved_h_per_active_week": 3.9,
+      "available": 24
+    },
+    {
+      "stage": 5,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 2.6,
+      "available": 16
+    },
+    {
+      "stage": 5,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 7.8,
+      "available": 16
+    },
+    {
+      "stage": 5,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 1.3,
+      "available": 8
+    },
+    {
+      "stage": 6,
+      "role": "РП",
+      "reserved_h_per_active_week": 4.8,
+      "available": 10
+    },
+    {
+      "stage": 6,
+      "role": "АГ",
+      "reserved_h_per_active_week": 4.8,
+      "available": 12
+    },
+    {
+      "stage": 6,
+      "role": "ИД",
+      "reserved_h_per_active_week": 4.8,
+      "available": 28
+    },
+    {
+      "stage": 6,
+      "role": "АМ",
+      "reserved_h_per_active_week": 2.4,
+      "available": 28
+    },
+    {
+      "stage": 6,
+      "role": "РМ",
+      "reserved_h_per_active_week": 4.8,
+      "available": 24
+    },
+    {
+      "stage": 6,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 14.4,
+      "available": 16
+    },
+    {
+      "stage": 6,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 7.2,
+      "available": 16
+    },
+    {
+      "stage": 6,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 2.4,
+      "available": 8
+    },
+    {
+      "stage": 7,
+      "role": "РП",
+      "reserved_h_per_active_week": 2.5,
+      "available": 10
+    },
+    {
+      "stage": 7,
+      "role": "АГ",
+      "reserved_h_per_active_week": 2.5,
+      "available": 12
+    },
+    {
+      "stage": 7,
+      "role": "ИД",
+      "reserved_h_per_active_week": 2.5,
+      "available": 28
+    },
+    {
+      "stage": 7,
+      "role": "АМ",
+      "reserved_h_per_active_week": 3.75,
+      "available": 28
+    },
+    {
+      "stage": 7,
+      "role": "РМ",
+      "reserved_h_per_active_week": 2.5,
+      "available": 24
+    },
+    {
+      "stage": 7,
+      "role": "ЭК",
+      "reserved_h_per_active_week": 2.5,
+      "available": 16
+    },
+    {
+      "stage": 7,
+      "role": "ТЕСТ",
+      "reserved_h_per_active_week": 2.5,
+      "available": 16
+    },
+    {
+      "stage": 7,
+      "role": "ЮР",
+      "reserved_h_per_active_week": 0.0,
+      "available": 8
+    }
+  ],
+  "pdf_pages": 30,
+  "sections": {
+    "Введение": {
+      "start_page": 1,
+      "pages": 1
+    },
+    "Паспорт проекта": {
+      "start_page": 2,
+      "pages": 2
+    },
+    "Задание 1": {
+      "start_page": 4,
+      "pages": 1
+    },
+    "Задание 2": {
+      "start_page": 5,
+      "pages": 2
+    },
+    "Задание 3": {
+      "start_page": 7,
+      "pages": 6
+    },
+    "Задание 4": {
+      "start_page": 13,
+      "pages": 2
+    },
+    "Подробные этапы №4": {
+      "start_page": 15,
+      "pages": 7
+    },
+    "Задание 5": {
+      "start_page": 22,
+      "pages": 3
+    },
+    "Задание 6": {
+      "start_page": 25,
+      "pages": 2
+    },
+    "Задание 7": {
+      "start_page": 27,
+      "pages": 3
+    },
+    "Источники": {
+      "start_page": 30,
+      "pages": 1
+    }
+  },
+  "local_links": "passed",
+  "actual_client_comprehension_test": "not_performed",
+  "native_Excel_PowerPoint_execution": "not_performed",
+  "field_validation": "not_performed",
+  "files": {
+    "AgroPlan_coursework.pdf": {
+      "bytes": 2570853,
+      "sha256": "09cfe7905da7c20f2a28dc76ac24350fccfc2b969096d17f3bd926900b9f34e5"
+    },
+    "AgroPlan_brief.pdf": {
+      "bytes": 107043,
+      "sha256": "422bad5d0d0ed0e4ed1f1647bb54b885a6b8c6b1ff1806b45d2e12b9fe087b04"
+    },
+    "AgroPlan_tables.xlsx": {
+      "bytes": 24008,
+      "sha256": "9d26d7d3e46ee5d9aff7a08df85ab1a6d63d1caba595f3e00e9a20f2c4e8cc48"
+    },
+    "AgroPlan_brief.pptx": {
+      "bytes": 24741,
+      "sha256": "dc0ba8be720c7aab2917ea39aa3aab5d20aeafd6cf0f93d2a6a981e503ab4035"
+    },
+    "AgroPlan_project_plan.html": {
+      "bytes": 16996,
+      "sha256": "2a918887f149325fc0efe036c69dcad5c3b473657a4195f7b788e01ae243f23d"
+    }
+  },
+  "authors": "Антоний Сарычев",
+  "author_version": "antonii"
+}

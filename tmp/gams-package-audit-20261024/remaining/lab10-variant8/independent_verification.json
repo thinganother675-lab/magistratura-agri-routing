@@ -1,0 +1,229 @@
+{
+  "passed": true,
+  "method": "25 independent HiGHS primal LPs and 25 separate multiplier dual LPs; peer checks; ranks with ties and independent Monte Carlo",
+  "rows": [
+    {
+      "firm": 1,
+      "phi": 1.0000000000000002,
+      "efficiency": 0.9999999999999998,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 2,
+      "phi": 1.0000000000000007,
+      "efficiency": 0.9999999999999993,
+      "gams_difference": 6.661338147750939e-16,
+      "dual_gap": 6.661338147750939e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 3,
+      "phi": 1.00982622268583,
+      "efficiency": 0.9902693924310112,
+      "gams_difference": 8.881784197001252e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 3.3306690738754696e-16
+    },
+    {
+      "firm": 4,
+      "phi": 1.0059561343500514,
+      "efficiency": 0.9940791311403457,
+      "gams_difference": 6.661338147750939e-16,
+      "dual_gap": 1.3322676295501878e-15,
+      "peer_violation": 1.4210854715202004e-14
+    },
+    {
+      "firm": 5,
+      "phi": 1.0099556874194622,
+      "efficiency": 0.9901424512545695,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 9.992007221626409e-16
+    },
+    {
+      "firm": 6,
+      "phi": 1.0000000000000007,
+      "efficiency": 0.9999999999999993,
+      "gams_difference": 6.661338147750939e-16,
+      "dual_gap": 6.661338147750939e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 7,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 0.0,
+      "dual_gap": 0.0,
+      "peer_violation": 0
+    },
+    {
+      "firm": 8,
+      "phi": 0.9999999999999991,
+      "efficiency": 1.0000000000000009,
+      "gams_difference": 8.881784197001252e-16,
+      "dual_gap": 8.881784197001252e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 9,
+      "phi": 1.019163318506362,
+      "efficiency": 0.9811970091953006,
+      "gams_difference": 0.0,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 2.220446049250313e-16
+    },
+    {
+      "firm": 10,
+      "phi": 1.0103078561892187,
+      "efficiency": 0.9897973116549851,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 0.0,
+      "peer_violation": 8.881784197001252e-16
+    },
+    {
+      "firm": 11,
+      "phi": 1.0000000000000002,
+      "efficiency": 0.9999999999999998,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 12,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 1.9984014443252818e-15,
+      "dual_gap": 0.0,
+      "peer_violation": 1.9984014443252818e-15
+    },
+    {
+      "firm": 13,
+      "phi": 0.9999999999999998,
+      "efficiency": 1.0000000000000002,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 4.440892098500626e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 14,
+      "phi": 0.9999999999999993,
+      "efficiency": 1.0000000000000007,
+      "gams_difference": 6.661338147750939e-16,
+      "dual_gap": 5.551115123125783e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 15,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 0.0,
+      "dual_gap": 0.0,
+      "peer_violation": 0
+    },
+    {
+      "firm": 16,
+      "phi": 1.024961076966067,
+      "efficiency": 0.9756468050084858,
+      "gams_difference": 1.9984014443252818e-15,
+      "dual_gap": 2.220446049250313e-15,
+      "peer_violation": 1.5987211554602254e-14
+    },
+    {
+      "firm": 17,
+      "phi": 1.0074985864061843,
+      "efficiency": 0.9925572238935518,
+      "gams_difference": 6.661338147750939e-16,
+      "dual_gap": 0.0,
+      "peer_violation": 7.771561172376096e-16
+    },
+    {
+      "firm": 18,
+      "phi": 1.0000000000000002,
+      "efficiency": 0.9999999999999998,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 3.3306690738754696e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 19,
+      "phi": 0.9999999999999998,
+      "efficiency": 1.0000000000000002,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 20,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 0.0,
+      "dual_gap": 0.0,
+      "peer_violation": 0
+    },
+    {
+      "firm": 21,
+      "phi": 0.9999999999999998,
+      "efficiency": 1.0000000000000002,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 22,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 0.0,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 0
+    },
+    {
+      "firm": 23,
+      "phi": 1.0,
+      "efficiency": 1.0,
+      "gams_difference": 0.0,
+      "dual_gap": 0.0,
+      "peer_violation": 0
+    },
+    {
+      "firm": 24,
+      "phi": 1.0058490195026903,
+      "efficiency": 0.9941849925890645,
+      "gams_difference": 4.440892098500626e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 1.1102230246251565e-15
+    },
+    {
+      "firm": 25,
+      "phi": 1.0087832126197422,
+      "efficiency": 0.9912932605242976,
+      "gams_difference": 2.220446049250313e-16,
+      "dual_gap": 2.220446049250313e-16,
+      "peer_violation": 1.4210854715202004e-14
+    }
+  ],
+  "efficient_count": 16,
+  "statistics": [
+    {
+      "variable": "size",
+      "rho": 0.011455012404292168,
+      "p_t_approx": 0.9566607881169502,
+      "p_permutation_check": 0.95886,
+      "permutations": 49999,
+      "seed": 20261025,
+      "reject_at_0_05": false
+    },
+    {
+      "variable": "lawyer_share",
+      "rho": 0.013440083264261757,
+      "p_t_approx": 0.9491592073399648,
+      "p_permutation_check": 0.94922,
+      "permutations": 49999,
+      "seed": 20261025,
+      "reject_at_0_05": false
+    }
+  ],
+  "max_gams_difference": 1.9984014443252818e-15,
+  "max_dual_gap": 2.220446049250313e-15
+}

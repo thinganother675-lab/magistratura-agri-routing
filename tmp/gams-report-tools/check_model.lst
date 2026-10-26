@@ -1,0 +1,228 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+INCLUDE    C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\lab2.gms
+   2  Sets
+   3      j /milk, kefir, cream, skim/
+   4      r /rawmilk, mainline, creamline, assortment/;
+   5   
+   6  Parameters
+   7      price(j) /milk 2.4, kefir 2.7, cream 13.8, skim 0.79/
+   8      capacity(r) /rawmilk 140, mainline 21, creamline 16, assortment 0/;
+   9   
+  10  Table a(r,j)
+  11                    milk       kefir       cream        skim
+  12      rawmilk       1.01        1.01        9.45        0.31
+  13      mainline      0.20        0.00        0.00        0.00
+  14      creamline     0.00        0.00        0.00        0.00
+  15      assortment    0.00        1.00        0.00       -2.00;
+  16   
+  17  a('mainline','kefir') = 1/6;
+  18  a('mainline','skim') = 1/6;
+  19  a('creamline','cream') = 1/0.3;
+  20   
+  21  Positive Variable x(j);
+  22  Variable revenue;
+  23  Equations objective, resource(r);
+  24   
+  25  objective.. revenue =e= sum(j, price(j)*x(j));
+  26  resource(r).. sum(j, a(r,j)*x(j)) =l= capacity(r);
+  27   
+  28  Model dairy /all/;
+  29  option lp=cplex;
+  30  solve dairy using lp maximizing revenue;
+  31  display x.l, revenue.l;
+  32  abort$(dairy.modelstat <> 1 or dairy.solvestat <> 1) 'Status check failed';
+  33  abort$(abs(revenue.l-321.517777777778)>1e-8) 'Revenue check failed';
+  34  abort$(abs(x.l('milk'))>1e-8 or abs(x.l('kefir')-84)>1e-8
+  35      or abs(x.l('cream')-4214/945)>1e-8 or abs(x.l('skim')-42)>1e-8)
+  36      'Product check failed';
+  37  abort$(smax(r,sum(j,a(r,j)*x.l(j))-capacity(r))>1e-8) 'Feasibility failed';
+  38  File results /'C:/sarychev/Codex/magistratura/coursework/gams-2026/lab2-variant8/gams_result.csv'/;
+  39  put results 'milk,kefir,cream,skim,revenue_thousand_rub,modelstat,solvestat'/;
+  40  put x.l('milk'):0:12 ',' x.l('kefir'):0:12 ',' x.l('cream'):0:12 ','
+  41      x.l('skim'):0:12 ',' revenue.l:0:12 ',' dairy.modelstat:0:0 ',' dairy.solvestat:0:0/;
+  42  putclose results;
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  INCLVL  FILENAME
+
+     1        1 INPUT          0       0       0  C:\sarychev\Codex\magistratura\tmp\gams-report-tools\check_model.gms
+     2        1 INCLUDE        1       1       1  C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\lab2.gms
+
+
+COMPILATION TIME     =        0.032 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE dairy Using LP From line 30
+
+
+---- objective  =E=  
+
+objective..  - 2.4*x(milk) - 2.7*x(kefir) - 13.8*x(cream) - 0.79*x(skim) + revenue =E= 0 ; (LHS = 0)
+     
+
+---- resource  =L=  
+
+resource(rawmilk)..  1.01*x(milk) + 1.01*x(kefir) + 9.45*x(cream) + 0.31*x(skim) =L= 140 ; (LHS = 0)
+     
+resource(mainline)..  0.2*x(milk) + 0.166666666666667*x(kefir) + 0.166666666666667*x(skim) =L= 21 ; (LHS = 0)
+     
+resource(creamline)..  3.33333333333333*x(cream) =L= 16 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE dairy Using LP From line 30
+
+
+---- x  
+
+x(milk)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2.4     objective
+        1.01    resource(rawmilk)
+        0.2     resource(mainline)
+
+x(kefir)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2.7     objective
+        1.01    resource(rawmilk)
+        0.1667  resource(mainline)
+        1       resource(assortment)
+
+x(cream)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+      -13.8     objective
+        9.45    resource(rawmilk)
+        3.3333  resource(creamline)
+
+REMAINING ENTRY SKIPPED
+
+---- revenue  
+
+revenue
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       objective
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE dairy Using LP From line 30
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.600E+01, 1.400E+02] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.667E-01, 1.380E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE dairy Using LP From line 30
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           2     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            15
+
+
+GENERATION TIME      =        0.157 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE dairy Using LP From line 30
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dairy               OBJECTIVE  revenue
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  30
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE              321.5178
+
+ RESOURCE USAGE, LIMIT          0.078 10000000000.000
+ ITERATION COUNT, LIMIT         3    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.2.0.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.08sec (det. 0.01 ticks)
+
+
+Optimal solution found
+Objective:          321.517778
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objective           .              .              .             1.0000      
+
+---- EQU resource  
+
+                  LOWER          LEVEL          UPPER         MARGINAL
+
+rawmilk           -INF          140.0000       140.0000         1.4603      
+mainline          -INF           21.0000        21.0000         5.5749      
+creamline         -INF           14.8642        16.0000          .          
+assortment        -INF             .              .             0.2959      
+
+---- VAR x  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+milk           .              .            +INF           -0.1899      
+kefir          .            84.0000        +INF             .          
+cream          .             4.4593        +INF             .          
+skim           .            42.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR revenue           -INF          321.5178        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:00:26 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     31 VARIABLE x.L  
+
+kefir 84.000,    cream  4.459,    skim  42.000
+
+
+----     31 VARIABLE revenue.L             =      321.518  
+
+**** REPORT FILE SUMMARY
+
+results C:\sarychev\Codex\magistratura\coursework\gams-2026\lab2-variant8\gams_result.csv
+
+
+EXECUTION TIME       =        0.875 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\tmp\gams-report-tools\check_model.gms
+Output     C:\sarychev\Codex\magistratura\tmp\gams-report-tools\check_model.lst

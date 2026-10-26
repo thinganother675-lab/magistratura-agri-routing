@@ -1,0 +1,158 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:08:34 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  * Исходные данные
+   2  $include base_data.inc
+****                       $282
+**** 282  Unable to open include file
+****         Hint: Does the filename need to be quoted?
+   3   
+   4  Sets
+   5      reportProduct(j) / milk   'Молоко',
+****                    $120
+**** 120  Unknown identifier entered as set
+   6                         kefir  'Кефир',
+   7                         cream  'Сметана',
+   8                         yogurt 'Йогурт' /
+   9      reportResource(r) / raw   'Сырое молоко',
+****                     $120
+**** 120  Unknown identifier entered as set
+  10                          line1 'Первая линия',
+  11                          line2 'Вторая линия' /
+  12      reportUnit(r) / raw   'ц/сут',
+****                        $361
+**** 361  Values for domain 1 are unknown - no checking possible
+  13                      line1 'ч/сут',
+  14                      line2 'ч/сут' /;
+  15   
+  16  * Математическая модель
+  17  Positive Variable x(j);
+  18  Variable revenue;
+  19   
+  20  Equations
+  21      objective
+  22      resource(r);
+  23   
+  24  objective..   revenue =e= sum(j, price(j) * x(j));
+****                                       $140
+**** 140  Unknown symbol
+  25  resource(r).. sum(j, a(r,j) * x(j)) =l= capacity(r);
+****                       $140                      $140
+**** 140  Unknown symbol
+  26  x.lo(j) = lower(j);
+****                $140
+**** 140  Unknown symbol
+  27  x.up(j)$bounded(j) = upper(j);
+****                $140       $140
+**** 140  Unknown symbol
+  28  x.l(j) = initial(j);
+****                 $140
+**** 140  Unknown symbol
+  29  Model dairy /all/;
+  30   
+  31  * Настройка решателя и поиск оптимума
+  36  option lp=highs;
+  37  dairy.optfile=1;
+  38  solve dairy using lp maximizing revenue;
+****                                         $257
+**** 257  Solve statement not checked because of previous errors
+  39  abort$(dairy.modelstat<>1 or dairy.solvestat<>1) 'Оптимальное решение не найдено';
+  40  display x.l, revenue.l, resource.m;
+****                       $141        $141
+**** 141  Symbol declared but no values have been assigned. Check for missing
+****         data definition, assignment, data loading or implicit assignment
+****         via a solve statement. Suppress with $onImplicitAssign.
+****         A wild shot: You may have spurious commas in the explanatory
+****         text of a declaration. Check symbol reference list.
+  41   
+  42  * Результаты
+  44  File report /'results/base_result.csv'/;
+  45  report.pw=32767;
+  46  put report 'model_status;solve_status;revenue_rub_day';
+  47  loop(r, put ';cap_' r.tl:0);
+  48  loop(j, put ';price_' j.tl:0);
+  49  loop(j, put ';lower_' j.tl:0);
+  50  loop(j, put ';x_' j.tl:0);
+  51  put / dairy.modelstat:0:0 ';' dairy.solvestat:0:0 ';' revenue.l:0:8;
+  52  loop(r, put ';' capacity(r):0:8);
+  53  loop(j, put ';' price(j):0:8);
+  54  loop(j, put ';' lower(j):0:8);
+  55  loop(j, put ';' x.l(j):0:8);
+  56  putclose;
+  57   
+  58  Parameter usedResource(r);
+  59  usedResource(r) = sum(j, a(r,j) * x.l(j));
+  60  File readable /'results/lab2_summary.txt'/;
+  61  readable.pw = 32767;
+  62  put readable 'ИСХОДНАЯ МОДЕЛЬ' / 'Решение: оптимально' /;
+  63  put 'Максимальная выручка: ' revenue.l:0:2 ' руб./сут' / /;
+  64  put 'ВЫПУСК ПРОДУКЦИИ' /;
+  65  loop(j,
+  66      if(reportProduct(j), put reportProduct.te(j):0;
+  67      else put j.tl:0;);
+  68      put ': ' x.l(j):0:6 ' ц/сут';
+  69      put ' | минимум: ' x.lo(j):0:6;
+  70      if(bounded(j), put ' | максимум: ' x.up(j):0:6;
+  71      else put ' | максимум: не задан';);
+  72      put /;
+  73  );
+  74  put / 'РЕСУРСЫ: использовано / доступно' /;
+  75  loop(r,
+  76      if(reportResource(r), put reportResource.te(r):0;
+  77      else put r.tl:0;);
+  78      put ': ' usedResource(r):0:6 ' / ' capacity(r):0:6 ' ';
+  79      if(reportUnit(r), put reportUnit.te(r):0;
+  80      else put 'ед./сут';);
+  81      put ' | остаток: ' (capacity(r) - usedResource(r)):0:6 /;
+  82  );
+  83  putclose readable;
+  84  abort$(readable.errors) 'Ошибка записи текстового итога';
+  85   
+  86  put_utility 'log' / '========== ИСХОДНАЯ МОДЕЛЬ ==========';
+  87  put_utility 'log' / 'Решение: оптимально';
+  88  put_utility 'log' / 'Максимальная выручка: ' revenue.l:0:2 ' руб./сут';
+  89  loop(j,
+  90      if(reportProduct(j),
+  91          put_utility 'log' / reportProduct.te(j):0 ': ' x.l(j):0:6 ' ц/сут';
+  92      else
+  93          put_utility 'log' / j.tl:0 ': ' x.l(j):0:6 ' ц/сут';
+  94      );
+  95  );
+  96  put_utility 'log' / 'Ресурсы: использовано / доступно';
+  97  loop(r,
+  98      if(reportResource(r),
+  99          put_utility 'log' / reportResource.te(r):0 ': ' usedResource(r):0:2 ' / ' capacity(r):0:2 ' ' reportUnit.te(r):0;
+ 100      else
+ 101          put_utility 'log' / r.tl:0 ': ' usedResource(r):0:2 ' / ' capacity(r):0:2;
+ 102      );
+ 103  );
+ 104  put_utility 'log' / 'Текстовый итог: results/lab2_summary.txt';
+
+**** 14 ERROR(S)   0 WARNING(S)
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:08:34 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  INCLVL  FILENAME
+
+     1        1 INPUT          0       0       0  C:\sarychev\Codex\magistratura\tmp\denis-lab2-check\lab2.gms
+     2       43 IF DEXIST      1      43       0  C:\sarychev\Codex\magistratura\tmp\denis-lab2-check\results\
+     3       43 CALL           1      43       0  mkdir results
+
+
+COMPILATION TIME     =        0.140 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\tmp\denis-lab2-check\lab2.gms
+Output     C:\sarychev\Codex\magistratura\tmp\denis-lab2-check\denis.lst
+
+**** USER ERROR(S) ENCOUNTERED

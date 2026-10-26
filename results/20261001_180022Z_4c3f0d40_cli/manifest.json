@@ -1,0 +1,1122 @@
+{
+  "run_id": "20261001_180022Z_4c3f0d40_cli",
+  "started_utc": "2026-10-01T18:00:22.117579+00:00",
+  "state": "completed_with_model_failures",
+  "phase": "development_only",
+  "transport": "cli",
+  "dataset_split": "old_dev",
+  "sample_ids": [
+    "controlled_compound_reasoning_6_0",
+    "agxqa_300",
+    "controlled_missing_data_6_0",
+    "controlled_numeric_6_0",
+    "controlled_rule_interpretation_6_0",
+    "controlled_tool_selection_6_0",
+    "controlled_compound_reasoning_7_0",
+    "agxqa_141",
+    "controlled_missing_data_7_0",
+    "controlled_numeric_7_0",
+    "controlled_rule_interpretation_7_0",
+    "controlled_tool_selection_7_0"
+  ],
+  "dataset_sha256": "03ce1fd188fbd46d2a69fed37ac0f773be3008a814b93c6d646ed8c6aa30e3ca",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "context": 4096,
+  "parallel": 1,
+  "reasoning": "requested off; verify observed channels per raw response",
+  "temperature": "CLI default UNKNOWN",
+  "max_tokens": "CLI default UNKNOWN",
+  "cloud_calls": 0,
+  "historical_test_used_for_selection": false,
+  "models": {
+    "minicpm5-1b": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "minicpm5-1b",
+        "format": "gguf",
+        "displayName": "MiniCPM5 1B",
+        "publisher": "openbmb",
+        "path": "openbmb/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q8_0.gguf",
+        "sizeBytes": 1153529216,
+        "indexedModelIdentifier": "openbmb/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q8_0.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "1B",
+        "architecture": "llama",
+        "quantization": {
+          "name": "Q8_0",
+          "bits": 8
+        },
+        "vision": false,
+        "trainedForToolUse": false,
+        "maxContextLength": 131072
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 20.923259735107422,
+        "gpu_free_mib": 15066.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 19.32129669189453,
+        "gpu_free_mib": 13795.0
+      },
+      "load_s": 3.069733900000756,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "minicpm5-1b",
+          "format": "gguf",
+          "displayName": "MiniCPM5 1B",
+          "publisher": "openbmb",
+          "path": "openbmb/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q8_0.gguf",
+          "sizeBytes": 1153529216,
+          "indexedModelIdentifier": "openbmb/MiniCPM5-1B-GGUF/MiniCPM5-1B-Q8_0.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "1B",
+          "architecture": "llama",
+          "quantization": {
+            "name": "Q8_0",
+            "bits": 8
+          },
+          "identifier": "home-minicpm5-1b",
+          "ttlMs": null,
+          "lastUsedTime": 1790877624892,
+          "vision": false,
+          "trainedForToolUse": false,
+          "maxContextLength": 131072,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "early_stop": "four errors among first requests",
+      "vram_mib_peak_sampled_total": 2241.0,
+      "ram_gib_peak_sampled_system_used": 12.56277084350586,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 15,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 7,
+        "correct": 0,
+        "quality": 0.0,
+        "latency_mean_s": 0.4723459285714853,
+        "latency_p50_s": 0.4055596999996851,
+        "latency_p95_s": 0.7239425700001445,
+        "decode_tps_median": 249.78,
+        "ttft_median_s": 0.011,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 0
+          },
+          "extractive_qa": {
+            "n": 1,
+            "correct": 0
+          },
+          "missing_data": {
+            "n": 1,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 1,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 1,
+            "correct": 0
+          },
+          "tool_selection": {
+            "n": 1,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 2,
+            "correct": 0
+          },
+          "ru": {
+            "n": 5,
+            "correct": 0
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "webworld-8b-i1": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "webworld-8b-i1",
+        "format": "gguf",
+        "displayName": "WebWorld 8B I1",
+        "publisher": "mradermacher",
+        "path": "mradermacher/WebWorld-8B-i1-GGUF/WebWorld-8B.i1-Q6_K.gguf",
+        "sizeBytes": 6725900736,
+        "indexedModelIdentifier": "mradermacher/WebWorld-8B-i1-GGUF/WebWorld-8B.i1-Q6_K.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "8B",
+        "architecture": "qwen3",
+        "quantization": {
+          "name": "Q6_K",
+          "bits": 6
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 40960
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.106163024902344,
+        "gpu_free_mib": 14987.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 14.883319854736328,
+        "gpu_free_mib": 8350.0
+      },
+      "load_s": 20.398139199999605,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "webworld-8b-i1",
+          "format": "gguf",
+          "displayName": "WebWorld 8B I1",
+          "publisher": "mradermacher",
+          "path": "mradermacher/WebWorld-8B-i1-GGUF/WebWorld-8B.i1-Q6_K.gguf",
+          "sizeBytes": 6725900736,
+          "indexedModelIdentifier": "mradermacher/WebWorld-8B-i1-GGUF/WebWorld-8B.i1-Q6_K.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "8B",
+          "architecture": "qwen3",
+          "quantization": {
+            "name": "Q6_K",
+            "bits": 6
+          },
+          "identifier": "home-webworld-8b-i1",
+          "ttlMs": null,
+          "lastUsedTime": 1790877650354,
+          "vision": false,
+          "trainedForToolUse": true,
+          "maxContextLength": 40960,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "early_stop": "four errors among first requests",
+      "vram_mib_peak_sampled_total": 7810.0,
+      "ram_gib_peak_sampled_system_used": 17.347034454345703,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 85,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 10,
+        "correct": 2,
+        "quality": 0.2,
+        "latency_mean_s": 2.464915590000055,
+        "latency_p50_s": 1.756168500000058,
+        "latency_p95_s": 5.413884925000228,
+        "decode_tps_median": 55.805,
+        "ttft_median_s": 0.044,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 0
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 1,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 1,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 5,
+            "correct": 1
+          },
+          "ru": {
+            "n": 5,
+            "correct": 1
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "granite-4.1-8b": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "granite-4.1-8b",
+        "format": "gguf",
+        "displayName": "Granite 4.1 8B",
+        "publisher": "unsloth",
+        "path": "unsloth/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+        "sizeBytes": 5347915136,
+        "indexedModelIdentifier": "unsloth/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "8B",
+        "architecture": "granite",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 131072
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.537281036376953,
+        "gpu_free_mib": 15047.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 16.039939880371094,
+        "gpu_free_mib": 10080.0
+      },
+      "load_s": 5.807785100000729,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "granite-4.1-8b",
+          "format": "gguf",
+          "displayName": "Granite 4.1 8B",
+          "publisher": "unsloth",
+          "path": "unsloth/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+          "sizeBytes": 5347915136,
+          "indexedModelIdentifier": "unsloth/granite-4.1-8b-GGUF/granite-4.1-8b-Q4_K_M.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "8B",
+          "architecture": "granite",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-granite-4.1-8b",
+          "ttlMs": null,
+          "lastUsedTime": 1790877683043,
+          "vision": false,
+          "trainedForToolUse": true,
+          "maxContextLength": 131072,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "early_stop": "four errors among first requests",
+      "vram_mib_peak_sampled_total": 6834.0,
+      "ram_gib_peak_sampled_system_used": 16.28213882446289,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 77,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 6,
+        "correct": 2,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 5.714555416666674,
+        "latency_p50_s": 6.4512495499998295,
+        "latency_p95_s": 9.96037592499988,
+        "decode_tps_median": 64.135,
+        "ttft_median_s": 0.044,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 1,
+            "correct": 0
+          },
+          "extractive_qa": {
+            "n": 1,
+            "correct": 0
+          },
+          "missing_data": {
+            "n": 1,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 1,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 1,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 1,
+            "correct": 1
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 1,
+            "correct": 0
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "dr-venus-4b-rl": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "dr-venus-4b-rl",
+        "format": "gguf",
+        "displayName": "DR Venus 4B RL",
+        "publisher": "inclusionAI",
+        "path": "inclusionAI/DR-Venus-4B-RL-GGUF/DR-Venus-4B-RL.Q4_K_M.gguf",
+        "sizeBytes": 2716067936,
+        "indexedModelIdentifier": "inclusionAI/DR-Venus-4B-RL-GGUF/DR-Venus-4B-RL.Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "4.4B",
+        "architecture": "qwen3",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.616809844970703,
+        "gpu_free_mib": 15047.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 18.945167541503906,
+        "gpu_free_mib": 12591.0
+      },
+      "load_s": 11.296848599999976,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "dr-venus-4b-rl",
+          "format": "gguf",
+          "displayName": "DR Venus 4B RL",
+          "publisher": "inclusionAI",
+          "path": "inclusionAI/DR-Venus-4B-RL-GGUF/DR-Venus-4B-RL.Q4_K_M.gguf",
+          "sizeBytes": 2716067936,
+          "indexedModelIdentifier": "inclusionAI/DR-Venus-4B-RL-GGUF/DR-Venus-4B-RL.Q4_K_M.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "4.4B",
+          "architecture": "qwen3",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-dr-venus-4b-rl",
+          "ttlMs": null,
+          "lastUsedTime": 1790877731032,
+          "vision": false,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 4297.0,
+      "ram_gib_peak_sampled_system_used": 16.085159301757812,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 228,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 6,
+        "quality": 0.5,
+        "latency_mean_s": 9.249295591666547,
+        "latency_p50_s": 6.282724749999943,
+        "latency_p95_s": 23.025593920000112,
+        "decode_tps_median": 99.19999999999999,
+        "ttft_median_s": 0.026000000000000002,
+        "errors": 2,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 2
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 1
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 4
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "qwen3-vl-8b-instruct": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3-vl-8b-instruct",
+        "format": "gguf",
+        "displayName": "Qwen3VL 8B Instruct",
+        "publisher": "Qwen",
+        "path": "Qwen/Qwen3-VL-8B-Instruct-GGUF/Qwen3VL-8B-Instruct-Q8_0.gguf",
+        "sizeBytes": 9868549280,
+        "indexedModelIdentifier": "Qwen/Qwen3-VL-8B-Instruct-GGUF/Qwen3VL-8B-Instruct-Q8_0.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "8B",
+        "architecture": "qwen3vl",
+        "quantization": {
+          "name": "Q8_0",
+          "bits": 8
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.157737731933594,
+        "gpu_free_mib": 15046.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.37933349609375,
+        "gpu_free_mib": 5468.0
+      },
+      "load_s": 13.455952000000252,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "qwen3-vl-8b-instruct",
+          "format": "gguf",
+          "displayName": "Qwen3VL 8B Instruct",
+          "publisher": "Qwen",
+          "path": "Qwen/Qwen3-VL-8B-Instruct-GGUF/Qwen3VL-8B-Instruct-Q8_0.gguf",
+          "sizeBytes": 9868549280,
+          "indexedModelIdentifier": "Qwen/Qwen3-VL-8B-Instruct-GGUF/Qwen3VL-8B-Instruct-Q8_0.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "8B",
+          "architecture": "qwen3vl",
+          "quantization": {
+            "name": "Q8_0",
+            "bits": 8
+          },
+          "identifier": "home-qwen3-vl-8b-instruct",
+          "ttlMs": null,
+          "lastUsedTime": 1790877858044,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 11058.0,
+      "ram_gib_peak_sampled_system_used": 19.6253662109375,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 49,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 4,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 0.9284725250001884,
+        "latency_p50_s": 0.9643078000003698,
+        "latency_p95_s": 1.0362890549998611,
+        "decode_tps_median": 44.025,
+        "ttft_median_s": 0.0405,
+        "errors": 2,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 0
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 2
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 2
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "qwen3-8b-deepseek-v3.2-speciale-distill": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3-8b-deepseek-v3.2-speciale-distill",
+        "format": "gguf",
+        "displayName": "Qwen3 8B DeepSeek v3.2 Speciale Distill",
+        "publisher": "TeichAI",
+        "path": "TeichAI/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill-GGUF/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill.q4_k_m.gguf",
+        "sizeBytes": 5027786444,
+        "indexedModelIdentifier": "TeichAI/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill-GGUF/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill.q4_k_m.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "8B",
+        "architecture": "qwen3",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 40960
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 20.49181365966797,
+        "gpu_free_mib": 15051.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 15.760078430175781,
+        "gpu_free_mib": 10508.0
+      },
+      "load_s": 10.756955700000617,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "qwen3-8b-deepseek-v3.2-speciale-distill",
+          "format": "gguf",
+          "displayName": "Qwen3 8B DeepSeek v3.2 Speciale Distill",
+          "publisher": "TeichAI",
+          "path": "TeichAI/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill-GGUF/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill.q4_k_m.gguf",
+          "sizeBytes": 5027786444,
+          "indexedModelIdentifier": "TeichAI/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill-GGUF/Qwen3-8B-DeepSeek-v3.2-Speciale-Distill.q4_k_m.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "8B",
+          "architecture": "qwen3",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-qwen3-8b-deepseek-v3.2-speciale-distill",
+          "ttlMs": null,
+          "lastUsedTime": 1790877882648,
+          "vision": false,
+          "trainedForToolUse": true,
+          "maxContextLength": 40960,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "early_stop": "four errors among first requests",
+      "vram_mib_peak_sampled_total": 6343.0,
+      "ram_gib_peak_sampled_system_used": 16.442611694335938,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 40,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 9,
+        "correct": 5,
+        "quality": 0.5555555555555556,
+        "latency_mean_s": 0.9498198111110064,
+        "latency_p50_s": 0.6424010999999155,
+        "latency_p95_s": 2.351787419999709,
+        "decode_tps_median": 66.74,
+        "ttft_median_s": 0.039,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 2
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 1,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 1,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 1,
+            "correct": 1
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 4,
+            "correct": 2
+          },
+          "ru": {
+            "n": 5,
+            "correct": 3
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "gemma-4-26b-a4b-it": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "gemma-4-26b-a4b-it",
+        "format": "gguf",
+        "displayName": "Gemma 4 26B A4B Instruct UD",
+        "publisher": "unsloth",
+        "path": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+        "sizeBytes": 16847892149,
+        "indexedModelIdentifier": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "26B-A4B",
+        "architecture": "gemma4",
+        "quantization": {
+          "name": "IQ4_NL_XL",
+          "bits": 4
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.70",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 20.737422943115234,
+        "gpu_free_mib": 14986.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 6.017326354980469,
+        "gpu_free_mib": 2370.0
+      },
+      "load_s": 27.086924100000033,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "gemma-4-26b-a4b-it",
+          "format": "gguf",
+          "displayName": "Gemma 4 26B A4B Instruct UD",
+          "publisher": "unsloth",
+          "path": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+          "sizeBytes": 16847892149,
+          "indexedModelIdentifier": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "26B-A4B",
+          "architecture": "gemma4",
+          "quantization": {
+            "name": "IQ4_NL_XL",
+            "bits": 4
+          },
+          "identifier": "home-gemma-4-26b-a4b-it",
+          "ttlMs": null,
+          "lastUsedTime": 1790877921315,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 13991.0,
+      "ram_gib_peak_sampled_system_used": 26.787128448486328,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 85,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 1.693799199999982,
+        "latency_p50_s": 1.6155929999999898,
+        "latency_p95_s": 2.129324650000171,
+        "decode_tps_median": 33.42,
+        "ttft_median_s": 0.464,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 2
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 2
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 2
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 6
+          },
+          "ru": {
+            "n": 5,
+            "correct": 3
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "qwen3-omni-30b-a3b-instruct": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3-omni-30b-a3b-instruct",
+        "format": "gguf",
+        "displayName": "Qwen3 Omni 30B A3B Instruct",
+        "publisher": "ggml-org",
+        "path": "ggml-org/Qwen3-Omni-30B-A3B-Instruct-GGUF/Qwen3-Omni-30B-A3B-Instruct-Q4_K_M.gguf",
+        "sizeBytes": 20764519520,
+        "indexedModelIdentifier": "ggml-org/Qwen3-Omni-30B-A3B-Instruct-GGUF/Qwen3-Omni-30B-A3B-Instruct-Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "128x1.8B",
+        "architecture": "qwen3vlmoe",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 65536
+      },
+      "requested_offload": "0.60",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.484180450439453,
+        "gpu_free_mib": 15048.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 3.2864341735839844,
+        "gpu_free_mib": 1820.0
+      },
+      "load_s": 26.42460459999984,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "qwen3-omni-30b-a3b-instruct",
+          "format": "gguf",
+          "displayName": "Qwen3 Omni 30B A3B Instruct",
+          "publisher": "ggml-org",
+          "path": "ggml-org/Qwen3-Omni-30B-A3B-Instruct-GGUF/Qwen3-Omni-30B-A3B-Instruct-Q4_K_M.gguf",
+          "sizeBytes": 20764519520,
+          "indexedModelIdentifier": "ggml-org/Qwen3-Omni-30B-A3B-Instruct-GGUF/Qwen3-Omni-30B-A3B-Instruct-Q4_K_M.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "128x1.8B",
+          "architecture": "qwen3vlmoe",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-qwen3-omni-30b-a3b-instruct",
+          "ttlMs": null,
+          "lastUsedTime": 1790877971325,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 65536,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 14947.0,
+      "ram_gib_peak_sampled_system_used": 28.733558654785156,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 90,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 5,
+        "quality": 0.4166666666666667,
+        "latency_mean_s": 1.7856047333333056,
+        "latency_p50_s": 1.7324643500001002,
+        "latency_p95_s": 2.2405316899998975,
+        "decode_tps_median": 36.989999999999995,
+        "ttft_median_s": 0.5265,
+        "errors": 1,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 1
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 1
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 3
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+        "format": "gguf",
+        "displayName": "Qwen3.6 35B A3B Uncensored HauhauCS Aggressive",
+        "publisher": "HauhauCS",
+        "path": "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+        "sizeBytes": 22066041088,
+        "indexedModelIdentifier": "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "35B-A3B",
+        "architecture": "qwen35moe",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.55",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 21.636470794677734,
+        "gpu_free_mib": 15049.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 2.0051002502441406,
+        "gpu_free_mib": 2346.0
+      },
+      "load_s": 44.29210200000034,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+          "format": "gguf",
+          "displayName": "Qwen3.6 35B A3B Uncensored HauhauCS Aggressive",
+          "publisher": "HauhauCS",
+          "path": "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+          "sizeBytes": 22066041088,
+          "indexedModelIdentifier": "HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "35B-A3B",
+          "architecture": "qwen35moe",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+          "ttlMs": null,
+          "lastUsedTime": 1790878040556,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "resource_guard_stop": {
+        "ram_available_gib": 1.7643470764160156,
+        "gpu_free_mib": 2278.0
+      },
+      "phase_error": {
+        "type": "RuntimeError"
+      },
+      "vram_mib_peak_sampled_total": 13849.0,
+      "ram_gib_peak_sampled_system_used": 30.130714416503906,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 73,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 1,
+        "correct": 0,
+        "quality": 0.0,
+        "latency_mean_s": 3.5928320000002714,
+        "latency_p50_s": 3.5928320000002714,
+        "latency_p95_s": 3.5928320000002714,
+        "decode_tps_median": 31.12,
+        "ttft_median_s": 2.067,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 1,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "ru": {
+            "n": 1,
+            "correct": 0
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "qwen3-coder-next": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3-coder-next",
+        "format": "gguf",
+        "displayName": "Qwen3 Coder Next UD",
+        "publisher": "unsloth",
+        "path": "unsloth/Qwen3-Coder-Next-GGUF/Qwen3-Coder-Next-UD-Q3_K_S.gguf",
+        "sizeBytes": 33320267776,
+        "indexedModelIdentifier": "unsloth/Qwen3-Coder-Next-GGUF/Qwen3-Coder-Next-UD-Q3_K_S.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "512x2.5B",
+        "architecture": "qwen3next",
+        "quantization": {
+          "name": "Q3_K_S",
+          "bits": 3
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.40",
+      "load_success": false,
+      "preflight_estimate_returncode": 0,
+      "headroom_before_load": {
+        "ram_available_gib": 22.349117279052734,
+        "gpu_free_mib": 15048.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 11.93954086303711,
+        "gpu_free_mib": 2252.0
+      },
+      "phase_error": {
+        "type": "RuntimeError"
+      },
+      "vram_mib_peak_sampled_total": 13801.0,
+      "ram_gib_peak_sampled_system_used": 19.677696228027344,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 14,
+      "resource_poll_errors": [
+        {
+          "utc": "2026-10-01T18:08:13.156965+00:00",
+          "type": "nvidia_smi_nonzero",
+          "returncode": 255
+        }
+      ],
+      "summary": null,
+      "unload_success": true
+    }
+  },
+  "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+  "latency_kind": "measured CLI process wall time",
+  "note": "CLI diagnostics cannot establish a frozen HTTP protocol",
+  "resource_guard": {
+    "enabled": true,
+    "min_ram_gib_during_load": 2,
+    "min_gpu_free_mib_during_load": 512
+  },
+  "finished_utc": "2026-10-01T18:08:16.585433+00:00"
+}

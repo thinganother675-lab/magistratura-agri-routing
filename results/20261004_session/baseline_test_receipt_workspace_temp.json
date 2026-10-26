@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-03T21:40:21.1450029Z",
+  "exit_code": 1,
+  "command": ".venv/Scripts/python.exe -X utf8 -m pytest -q --basetemp=.runtime/session_20261004/pytest_baseline",
+  "head": "af5742e7c294cd5f93155a3deb438f6d667351fe",
+  "initial_default_temp_result": "633 passed, 193 fixture PermissionError, 2 warnings in 35.83s",
+  "initial_log": ".runtime/session_20261004/baseline_default_temp_failure.txt"
+}

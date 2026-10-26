@@ -1,0 +1,63 @@
+{
+  "sheets": [
+    "Модели DEV",
+    "FINAL150",
+    "Все серии"
+  ],
+  "freezePanes": [
+    {
+      "xSplit": "2",
+      "ySplit": "8",
+      "topLeftCell": "C9",
+      "activePane": "bottomRight",
+      "state": "frozen"
+    },
+    {
+      "xSplit": "2",
+      "ySplit": "8",
+      "topLeftCell": "C9",
+      "activePane": "bottomRight",
+      "state": "frozen"
+    },
+    {
+      "xSplit": "2",
+      "ySplit": "8",
+      "topLeftCell": "C9",
+      "activePane": "bottomRight",
+      "state": "frozen"
+    }
+  ],
+  "filterTables": [
+    {
+      "name": "ModelComparison",
+      "range": "A8:AE24"
+    },
+    {
+      "name": "FrozenPolicySummary",
+      "range": "A8:X13"
+    },
+    {
+      "name": "FinalProviderUsage",
+      "range": "A18:S28"
+    },
+    {
+      "name": "SavedSeries",
+      "range": "A8:AL53"
+    }
+  ],
+  "formulaErrorCells": [],
+  "cachedTotals": {
+    "apiRequests": 242,
+    "apiInput": 113332,
+    "apiOutput": 17259,
+    "apiReasoning": 9083,
+    "cliRequests": 339,
+    "cliInput": 135133,
+    "cliOutput": 39087
+  },
+  "unknownAndNotRunPreserved": true,
+  "finalQualityCachedValuesVerified": true,
+  "finalCostCoverageGuardVerified": true,
+  "finalSegmentsAndColdLoadsVerified": true,
+  "nativeExcelApplicationOpened": false
+}

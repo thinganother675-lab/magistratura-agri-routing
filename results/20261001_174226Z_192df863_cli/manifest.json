@@ -1,0 +1,124 @@
+{
+  "run_id": "20261001_174226Z_192df863_cli",
+  "started_utc": "2026-10-01T17:42:26.071654+00:00",
+  "state": "completed",
+  "phase": "development_only",
+  "transport": "cli",
+  "dataset_split": "custom_dev",
+  "sample_ids": [
+    "home_bilingual_en_agxqa_300",
+    "home_bilingual_ru_agxqa_300",
+    "home_bilingual_ru_agxqa_141",
+    "home_bilingual_en_agxqa_141",
+    "home_bilingual_en_agxqa_358",
+    "home_bilingual_ru_agxqa_358",
+    "home_bilingual_ru_agxqa_362",
+    "home_bilingual_en_agxqa_362",
+    "home_bilingual_en_agxqa_55",
+    "home_bilingual_ru_agxqa_55",
+    "home_bilingual_ru_agxqa_490",
+    "home_bilingual_en_agxqa_490"
+  ],
+  "dataset_sha256": "387854df81eef3b9e998c9327571700c295a923d059f697183d26fc072247f6b",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "context": 4096,
+  "parallel": 1,
+  "reasoning": "requested off; verify observed channels per raw response",
+  "temperature": "CLI default UNKNOWN",
+  "max_tokens": "CLI default UNKNOWN",
+  "cloud_calls": 0,
+  "historical_test_used_for_selection": false,
+  "models": {
+    "gpt-oss-20b": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "gpt-oss-20b",
+        "format": "gguf",
+        "displayName": "GPT-OSS 20B",
+        "publisher": "unsloth",
+        "path": "unsloth/gpt-oss-20b-GGUF/gpt-oss-20b-Q8_0.gguf",
+        "sizeBytes": 12109568811,
+        "indexedModelIdentifier": "unsloth/gpt-oss-20b-GGUF/gpt-oss-20b-Q8_0.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "20B",
+        "architecture": "gpt-oss",
+        "quantization": {
+          "name": "Q8_0",
+          "bits": 8
+        },
+        "vision": false,
+        "trainedForToolUse": true,
+        "maxContextLength": 131072
+      },
+      "requested_offload": "max",
+      "load_success": true,
+      "load_s": 6.48183280000012,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "gpt-oss-20b",
+          "format": "gguf",
+          "displayName": "GPT-OSS 20B",
+          "publisher": "unsloth",
+          "path": "unsloth/gpt-oss-20b-GGUF/gpt-oss-20b-Q8_0.gguf",
+          "sizeBytes": 12109568811,
+          "indexedModelIdentifier": "unsloth/gpt-oss-20b-GGUF/gpt-oss-20b-Q8_0.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "20B",
+          "architecture": "gpt-oss",
+          "quantization": {
+            "name": "Q8_0",
+            "bits": 8
+          },
+          "identifier": "home-gpt-oss-20b",
+          "ttlMs": null,
+          "lastUsedTime": 1790876552574,
+          "vision": false,
+          "trainedForToolUse": true,
+          "maxContextLength": 131072,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 12405.0,
+      "ram_gib_peak_sampled_system_used": 24.08212661743164,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 61,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 6,
+        "quality": 0.5,
+        "latency_mean_s": 2.1251368583333865,
+        "latency_p50_s": 2.168192900000122,
+        "latency_p95_s": 2.9067513700002108,
+        "decode_tps_median": 105.86,
+        "ttft_median_s": 0.0785,
+        "errors": 2,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 6
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 2
+          }
+        }
+      },
+      "unload_success": true
+    }
+  },
+  "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+  "latency_kind": "measured CLI process wall time",
+  "note": "CLI diagnostics cannot establish a frozen HTTP protocol",
+  "finished_utc": "2026-10-01T17:43:00.807385+00:00"
+}

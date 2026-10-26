@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-03T07:04:12.249250+00:00",
+  "analysis_file": "results/20261003_mera_agro_routing_3de88b82/dev_analysis.json",
+  "analysis_sha256": "38f858120b57719f021ee15c95dcd738da18ea14bc60d331cacc429286aab81e",
+  "analysis_code_commit": "72b0c32ebc1eb1b514adc3489a2e87231d299250",
+  "scope": "All counterfactual_grid entries; attribution annotation, no metric recomputation",
+  "counterfactual_local_profile": "gemma-4-26b-a4b-it",
+  "counterfactual_cloud_profile": "mercury-2_instant-256",
+  "cloud_parameters": {
+    "created_utc": "2026-10-03T06:44:12.004589+00:00",
+    "status": "DEV_COMPATIBILITY_REVISION_BEFORE_NEW_CALLS",
+    "reason": "Originalclouddefaultmedium consumed128tokensasreasoning;56/60lengthfinisheswithnoanswer. Not treated as cloud knowledge baseline. No TEST scores inspected.",
+    "preserve_original_manifest": "mercury-2_dev_manifest.json",
+    "model": "mercury-2",
+    "reasoning_effort": "instant",
+    "temperature": 0.75,
+    "max_completion_tokens": 256,
+    "same_60_DEV_ids": true,
+    "same_official_row_instruction": true,
+    "early_stop": "3 invalid outputs amongfirst6 calls",
+    "incremental_calls_max": 60,
+    "incremental_cost_typical_upper_usd": 0.02652,
+    "incremental_spend_cap_usd": 0.15,
+    "source": "https://docs.inceptionlabs.ai/capabilities/reasoning-efforts",
+    "request_schema": "https://docs.inceptionlabs.ai/api-reference/chat/create-a-chat-completion",
+    "source_hashes": {
+      "scripts/mera_dev_20261003.py": "1f423442426aab395e6a4ce75bb7c6c90b48052fa7b04170df29c0b4cf687672",
+      "src/agro_route/mera_adapter_20261003.py": "18b6d0d64b593680ee5d5e0faca6d8285dd490c0e917f08815e9b1b46df5ed39"
+    }
+  },
+  "original_medium128_profile_in_counterfactual": false,
+  "source_archives": "experiments/mera_code_archive_20261003/source_index.json",
+  "status": "COUNTERFACTUAL_CACHED_DEV_REPLAY_NOT_ACTUAL_REQUEST_SAVINGS"
+}

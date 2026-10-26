@@ -1,0 +1,31 @@
+{
+  "DEA_independent_max_phi_difference": 1.9984014443252818e-15,
+  "efficient_count": 16,
+  "minimum_efficiency": 0.975646805008484,
+  "tests": [
+    {
+      "predictor": "size",
+      "n": 25,
+      "rho": 0.011455012404292166,
+      "p_permutation": 0.95687,
+      "p_asymptotic": 0.9566607881169502,
+      "B": 199999,
+      "seed": 20261024,
+      "extreme_count": 191373,
+      "alpha": 0.05,
+      "reject": false
+    },
+    {
+      "predictor": "share",
+      "n": 25,
+      "rho": 0.013440083264261759,
+      "p_permutation": 0.94904,
+      "p_asymptotic": 0.9491592073399648,
+      "B": 199999,
+      "seed": 20261024,
+      "extreme_count": 189807,
+      "alpha": 0.05,
+      "reject": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "classification": "DEV",
+  "stage": "dev60",
+  "private_test_run": false,
+  "failed_or_partial": [
+    {
+      "model_key": "qwen3.5-35b-a3b",
+      "status": "FAILED_LOAD",
+      "benchmark_attempted": 0,
+      "benchmark_completed": 0,
+      "cause": "Guard's nvidia-smi memory.free subprocess raised TimeoutExpired with10s measurement timeout while LM Studio CLI displayed75% loading. Telemetry monitor independently recorded TimeoutExpired. Fail-closed cleanup stopped this load attempt.",
+      "requested_gpu_offload_ratio": "0.55",
+      "latest_successful_load_headroom_ram_gib": 16.908885955810547,
+      "latest_successful_load_headroom_gpu_free_mib": 15019.0,
+      "ram_or_vram_threshold_breach_verified": false,
+      "load_capability_or_model_quality_conclusion": "UNKNOWN; zero inference calls, no quality rank and no proven out-of-memory diagnosis.",
+      "cleanup_success": true,
+      "retry": "NOT_RUN; bounded fail-closed attempt retained, screen moved to next candidate.",
+      "evidence": "dev60/qwen3.5-35b-a3b_manifest.json; restricted dev60/qwen3.5-35b-a3b_load_000.txt"
+    },
+    {
+      "model_key": "gpt-oss-20b",
+      "status": "PARTIAL",
+      "benchmark_attempted": 1,
+      "benchmark_completed": 0,
+      "cause": "Synthetic warmup completed, but first benchmark request returned finish_reason length at the shared512 completion-token budget; answer incomplete.",
+      "reasoning_effort_requested": "low",
+      "reasoning_off_supported": false,
+      "request_latency_s": 5.056738100000075,
+      "load_capability_or_model_quality_conclusion": "Loaded successfully; usable agricultural quality under a larger reasoning budget UNKNOWN. This protocol produced no completed benchmark question and cannot enter the main ranking.",
+      "cleanup_success": true,
+      "retry": "NOT_RUN; no unplanned model-specific budget tuning.",
+      "evidence": "dev60/gpt-oss-20b_manifest.json; restricted dev60/gpt-oss-20b_raw.jsonl"
+    }
+  ],
+  "invalid_output_notes": {
+    "unsloth/qwen3.5-4b": "One schema-valid JSON prediction included a choice outside the actual question's supplied options; rejected with no semantic repair.",
+    "phi-4-mini-instruct": "One schema-valid JSON prediction included a choice outside the actual question's supplied options; rejected with no semantic repair.",
+    "minicpm5-1b": "Completed60 schema-valid responses but exact set match0/59; high set overlap alone is not useful exact correctness."
+  },
+  "latency_measurement_limits": "Per-question timings exclude loading and synthetic warmup. Fixed reload counts/times are saved separately. Streaming wall deadline is cooperative at received lines; a stalled read can last the separate60s read-inactivity timeout. No asynchronous hard-wall guarantee is claimed.",
+  "resource_measurement_limits": "Sampled whole GPU and whole system, including load/warmup and background apps. Load-failure peak values are incomplete because GPU measurement timed out; they do not establish model allocations or physical capacity."
+}

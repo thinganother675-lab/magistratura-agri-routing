@@ -1,0 +1,400 @@
+{
+  "run_id": "20261003_cloud_development",
+  "status": "DEV",
+  "private_test_run": false,
+  "created_utc": "2026-10-03T08:52:03.865767+00:00",
+  "code_commit": "92cf970dec790c6ca0b195ede76a97894e91550e",
+  "analysis_source_sha256": "3e75e7f34ab31cbb840804f1d21442816aeeadb523044e218cecee2ba3f81860",
+  "source_hashes": {
+    "results/20261003_cloud_baseline_7c019d4a/diagnostic_corrected.json": "d5b35e9c07a16f3204f8819d8effcb1b0e3db9030ae244cc0ec47c118d56e025",
+    "results/20261003_cloud_budget_only_c1184a27/mercury25_instant512_t05_dev60_combined.json": "31c495c4c27b114615d1e3933a345095f2599bcb10e3ba33979f2c025d4e5d78"
+  },
+  "profiles": {
+    "mercury25_instant256_t05": {
+      "summary": {
+        "n_expected": 12,
+        "n_attempted": 8,
+        "n_completed": 5,
+        "n_response_received": 7,
+        "n_scored": 8,
+        "attempted_coverage": false,
+        "complete_coverage": false,
+        "strict_em_count": 4,
+        "strict_f1_sum": 4.0,
+        "strict_set_em": 0.5,
+        "strict_set_f1": 0.5,
+        "conservative_all_n_em": 0.3333333333333333,
+        "reference_issues": 0,
+        "invalid_output": 3,
+        "json_contract_failure": 3,
+        "errors": 3,
+        "timeouts": 1,
+        "latency_p50_s": 1.3558472000004258,
+        "latency_p95_s": 39.81622769999591,
+        "latency_mean_s": 8.71763859999919,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 1845,
+        "output_tokens": 1190,
+        "usage_coverage": 7,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 2,
+            "n_scored": 2,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.5
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Мелиоративное земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Общая генетика": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общее земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Основы селекции": {
+            "n": 2,
+            "n_scored": 2,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.5
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 4,
+            "strict_set_em": 0.25,
+            "strict_set_f1": 0.25,
+            "predicted_single_n": 2
+          },
+          "multiple": {
+            "n": 4,
+            "strict_set_em": 0.75,
+            "strict_set_f1": 0.75,
+            "predicted_single_n": 0
+          }
+        }
+      },
+      "operational_gate_passed": false,
+      "known_cost_usd_estimate": 0.0002523,
+      "unknown_cost_calls": 1,
+      "original_manifest_sha256": "71a266bf7d66d11989279f70b80fdf18bbadb13f1a7cb0e12f2557abaa7b5243",
+      "original_rows_sha256": "6ce5f7d9396779d810a11c626dd387c8246359f5960af303b793930a8542fbb0",
+      "hidden_reasoning_tokens": 1120
+    },
+    "mercury2_medium1024_t05": {
+      "summary": {
+        "n_expected": 12,
+        "n_attempted": 12,
+        "n_completed": 10,
+        "n_response_received": 12,
+        "n_scored": 12,
+        "attempted_coverage": true,
+        "complete_coverage": false,
+        "strict_em_count": 4,
+        "strict_f1_sum": 7.0476190476190474,
+        "strict_set_em": 0.3333333333333333,
+        "strict_set_f1": 0.5873015873015873,
+        "conservative_all_n_em": 0.3333333333333333,
+        "reference_issues": 0,
+        "invalid_output": 2,
+        "json_contract_failure": 2,
+        "errors": 2,
+        "timeouts": 0,
+        "latency_p50_s": 1.6384560500009684,
+        "latency_p95_s": 2.8976822650023677,
+        "latency_mean_s": 1.813552491670028,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 5638,
+        "output_tokens": 6155,
+        "usage_coverage": 12,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 2,
+            "n_scored": 2,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.42857142857142855
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Мелиоративное земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          },
+          "Общая генетика": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Общее земледелие": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Основы селекции": {
+            "n": 2,
+            "n_scored": 2,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.8333333333333333
+          },
+          "Растениеводство": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.8571428571428571
+          },
+          "Семеноводство и семеноведение": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Системы земледелия на различных агроландшафтах": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.6666666666666666
+          },
+          "Технологии возделывания сельскохозяйственных культур": {
+            "n": 1,
+            "n_scored": 1,
+            "reference_issues": 0,
+            "strict_set_em": 0,
+            "strict_set_f1": 0.0
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 7,
+            "strict_set_em": 0.2857142857142857,
+            "strict_set_f1": 0.47619047619047616,
+            "predicted_single_n": 4
+          },
+          "multiple": {
+            "n": 5,
+            "strict_set_em": 0.4,
+            "strict_set_f1": 0.7428571428571429,
+            "predicted_single_n": 0
+          }
+        }
+      },
+      "operational_gate_passed": false,
+      "known_cost_usd_estimate": 0.00602575,
+      "unknown_cost_calls": 0,
+      "original_manifest_sha256": "3c451fe86ce6cf924eb750f094c7dc41695b74abcc2e714d58ac84176cfe71fd",
+      "original_rows_sha256": "fec18c3776962dc8483ec516e1c07ed20548fbd7ada8ffbd6a6dd4ef4c62e88b",
+      "hidden_reasoning_tokens": 6014
+    },
+    "mercury25_instant512_t05": {
+      "summary": {
+        "n_expected": 60,
+        "n_attempted": 60,
+        "n_completed": 56,
+        "n_response_received": 60,
+        "n_scored": 59,
+        "attempted_coverage": true,
+        "complete_coverage": false,
+        "strict_em_count": 31,
+        "strict_f1_sum": 38.8,
+        "strict_set_em": 0.5254237288135594,
+        "strict_set_f1": 0.6576271186440678,
+        "conservative_all_n_em": 0.5166666666666667,
+        "reference_issues": 1,
+        "invalid_output": 4,
+        "json_contract_failure": 4,
+        "errors": 4,
+        "timeouts": 0,
+        "latency_p50_s": 1.2287799499972607,
+        "latency_p95_s": 2.192460674996255,
+        "latency_mean_s": 1.5169153833339806,
+        "ttft_p50_s": null,
+        "first_answer_p50_s": null,
+        "client_tps_p50": null,
+        "backend_tps_p50": null,
+        "input_tokens": 15855,
+        "output_tokens": 9720,
+        "usage_coverage": 60,
+        "confidence_coverage": 0,
+        "by_domain": {
+          "Ботаника": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.8333333333333333
+          },
+          "Кормопроизводство и луговодство": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.16666666666666666,
+            "strict_set_f1": 0.3611111111111111
+          },
+          "Мелиоративное земледелие": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.3333333333333333,
+            "strict_set_f1": 0.4444444444444444
+          },
+          "Общая генетика": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.6666666666666666,
+            "strict_set_f1": 0.8611111111111112
+          },
+          "Общее земледелие": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.8333333333333334,
+            "strict_set_f1": 0.8333333333333334
+          },
+          "Основы селекции": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 1,
+            "strict_set_f1": 1.0
+          },
+          "Растениеводство": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.5
+          },
+          "Семеноводство и семеноведение": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.5
+          },
+          "Системы земледелия на различных агроландшафтах": {
+            "n": 6,
+            "n_scored": 6,
+            "reference_issues": 0,
+            "strict_set_em": 0.16666666666666666,
+            "strict_set_f1": 0.5666666666666667
+          },
+          "Технологии возделывания сельскохозяйственных культур": {
+            "n": 6,
+            "n_scored": 5,
+            "reference_issues": 1,
+            "strict_set_em": 0.6,
+            "strict_set_f1": 0.68
+          }
+        },
+        "by_answer_cardinality": {
+          "single": {
+            "n": 44,
+            "strict_set_em": 0.5,
+            "strict_set_f1": 0.6204545454545455,
+            "predicted_single_n": 32
+          },
+          "multiple": {
+            "n": 15,
+            "strict_set_em": 0.6,
+            "strict_set_f1": 0.7666666666666666,
+            "predicted_single_n": 5
+          }
+        }
+      },
+      "known_cost_usd_estimate": 0.0020922,
+      "execution_status": "ATTEMPT_COVERAGE_COMPLETE_WITH_FAILURES",
+      "unknown_cost_calls": 0,
+      "hidden_reasoning_tokens": 8450,
+      "returned_model_ids": [
+        "mercury-2.5"
+      ],
+      "requested_model": "mercury-2.5",
+      "temperature": 0.5,
+      "reasoning_effort": "instant",
+      "max_completion_tokens": 512,
+      "operational_dev12_gate_passed": true,
+      "operational_full60_error_free": false,
+      "primary_selection_before_extension_sha256": "4853e54cc1b8b0ad3f7d56f278015d3f244c4054ecd1cf978b8db8d8894c629f"
+    }
+  },
+  "actual_hosted_generation_attempts": 80,
+  "actual_received_responses": 79,
+  "actual_completed_responses": 71,
+  "known_cost_usd_estimate": 0.00837025,
+  "unknown_cost_calls": 1,
+  "provider_invoice_available": false,
+  "retries": 0,
+  "primary_cloud_recommendation": "mercury-2.5 direct Inception instant512 temperature.5",
+  "primary_cloud_status": "PROVISIONAL_DEV_REFERENCE_NOT_PRIVATE_TEST_READY",
+  "reason": "Legitimate direct provider ID, operational12 gate frozen before extension, common attempted60; full60 has4 length failures requiring prospective protocol decision, no more tuning here",
+  "confidence_logprobs": "NOT_MEASURED",
+  "MERA_scoring_submissions": 0,
+  "official_server_metric": "UNKNOWN",
+  "MERA_PRIVATE_TEST_READY": "NO",
+  "rights": "USE_WITH_RESTRICTIONS",
+  "full293_cloud_run": false,
+  "OpenRouter_supplement": {
+    "status": "NOT_RUN_FREE_QUOTA_GUARD",
+    "read_only_metadata_requests": 3,
+    "quota_remaining": 19,
+    "quota_limit": 50,
+    "quota_used": 31,
+    "key_limit_usd": 0,
+    "include_byok_in_limit": true,
+    "privacy_filtered_model_eligible": true,
+    "model_id": "qwen/qwen3.8-27b:free",
+    "canonical_slug": "qwen/qwen3.8-27b-20260814",
+    "provider_tag": "modelrun/fp4",
+    "quantization": "fp4",
+    "metadata_time_utc": "2026-10-03T08:38:33.010164+00:00",
+    "metadata_source": "targeted current /key + authenticated /models/user + one /models/<exactID>/endpoints; inlinePython allowlisted existing credential; no settings/inference",
+    "inference_calls": 0,
+    "reason": "remaining19 cannot support planned sameDEV60 or a bounded2642 TEST baseline; no account/key/limit changes"
+  }
+}

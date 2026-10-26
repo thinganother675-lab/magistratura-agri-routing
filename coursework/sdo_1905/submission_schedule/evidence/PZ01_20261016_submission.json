@@ -1,0 +1,29 @@
+{
+  "pz": 1,
+  "attempt_started_at": "2026-10-16T14:12:58+03:00",
+  "verified_at": "2026-10-16T14:19:27.253529+03:00",
+  "sdo_last_modified": "2026-10-16T14:20:00+03:00",
+  "authorization": "Прямое разовое разрешение пользователя отправить ПЗ-1 сейчас вне старого окна; остальное расписание оставить прежним.",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ01_Сарычев_ДЭ39-26.docx",
+      "sha256": "4e5bebd373d0fdd39457b2299fdf0ac3c3ec1aa8bc4117a4cf1e0a70c7cf811f",
+      "bytes": 92405
+    }
+  ],
+  "status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "file_selected": true,
+  "file_uploaded": true,
+  "save_clicked": true,
+  "additional_submit_step_required": false,
+  "declaration_requested": false,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ01_20261016_submitted.jpg",
+  "browser_notes": [
+    "Файловое поле успешно инициализировалось.",
+    "Штатный filechooser.setFiles выбрал нужный DOCX; имя проверено в поле до загрузки.",
+    "После «Загрузить этот файл» файл появился в файловом поле.",
+    "После «Сохранить» СДО сразу показало «Отправлено для оценивания»."
+  ]
+}

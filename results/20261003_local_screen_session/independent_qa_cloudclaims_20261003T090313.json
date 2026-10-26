@@ -1,0 +1,32 @@
+{
+  "audit_utc": "2026-10-03T09:03:13.356464+00:00",
+  "audit_kind": "READ_ONLY_CLOUD_CLAIM_PROVENANCE_AND_AGGREGATES",
+  "status": "DEV",
+  "analysis_sha256": "05cb2fb86acf698c27ce210ecbca5b94bed5329e9a931deafc44aab9210786aa",
+  "claims_sha256": "638d3094c54d45f9c5d73274f091dc6003ea5b37bbe3a0ff2496ad77269b4cbc",
+  "claims_n": 62,
+  "all_checks_pass": true,
+  "checks": {
+    "cloud_claim_ids_unique": true,
+    "all_claim_values_and_hashes_valid": true,
+    "all_claims_dev": true,
+    "aggregate_source_hashes_match": true,
+    "profiles_match_prior_independent_raw_recomputation": true,
+    "total_attempts_matches": true,
+    "total_completed_matches": true,
+    "total_known_cost_matches": true,
+    "unknown_cost_not_replaced_with_zero": true,
+    "primary_status_provisional": true,
+    "server_metric_unknown": true,
+    "no_test_or_merascoring_claimed": true,
+    "finalizer_source_hash_matches_live": true
+  },
+  "claim_mismatches": [],
+  "profile_mismatches": [],
+  "independent_attempts": 80,
+  "independent_completed": 71,
+  "independent_known_cost_estimate": 0.008370250000000001,
+  "independent_unknown_cost_calls": 1,
+  "private_text_or_model_output_written": false,
+  "model_calls": 0
+}

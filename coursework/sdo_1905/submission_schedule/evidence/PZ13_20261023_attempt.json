@@ -1,0 +1,18 @@
+{
+  "pz": 13,
+  "at": "2026-10-23T11:20:06+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ13_Сарычев_ДЭ39-26.docx",
+      "sha256": "7b9d0545e9ad0e1916490c16f856298cb3ad91f8374d6e06c59e9a08fbc0aa1a",
+      "bytes": 84345
+    }
+  ],
+  "sha256_verified": true,
+  "status": "blocked_browser_unavailable",
+  "reason": "В окне отправки браузерный инструмент не обнаружил доступных браузеров (повторная проверка также вернула пустой список). Страница задания не открывалась, файлы не загружались.",
+  "file_uploaded": false,
+  "save_clicked": false,
+  "screenshot": null
+}

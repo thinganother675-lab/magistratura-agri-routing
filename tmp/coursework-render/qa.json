@@ -1,0 +1,44 @@
+[
+  {
+    "variant": 3,
+    "lab": 2,
+    "pdf_pages": 4,
+    "word_pages": 4,
+    "identity_checked": true
+  },
+  {
+    "variant": 3,
+    "lab": 8,
+    "pdf_pages": 6,
+    "word_pages": 6,
+    "identity_checked": true
+  },
+  {
+    "variant": 3,
+    "lab": 10,
+    "pdf_pages": 5,
+    "word_pages": 5,
+    "identity_checked": true
+  },
+  {
+    "variant": 11,
+    "lab": 2,
+    "pdf_pages": 4,
+    "word_pages": 4,
+    "identity_checked": true
+  },
+  {
+    "variant": 11,
+    "lab": 8,
+    "pdf_pages": 6,
+    "word_pages": 6,
+    "identity_checked": true
+  },
+  {
+    "variant": 11,
+    "lab": 10,
+    "pdf_pages": 5,
+    "word_pages": 5,
+    "identity_checked": true
+  }
+]

@@ -1,0 +1,346 @@
+{
+  "status": "PASS",
+  "required_practicals": 14,
+  "docx": 13,
+  "final_pdf_pages": 4,
+  "excel_cases": 12,
+  "independent_cases": [
+    {
+      "id": "T0",
+      "sum": 810.0,
+      "count": 8,
+      "actions": [
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "НЕДОПУСТИМО",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T1",
+      "sum": 100.0,
+      "count": 1,
+      "actions": [
+        "УЧЕСТЬ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T2",
+      "sum": 100.0,
+      "count": 1,
+      "actions": [
+        "УЧЕСТЬ",
+        "ПОВТОР"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T3",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T4",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T5",
+      "sum": 410.0,
+      "count": 4,
+      "actions": [
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "ПОВТОР",
+        "НЕДОПУСТИМО",
+        "ОЖИДАНИЕ",
+        "КОНФЛИКТ",
+        "КОНФЛИКТ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T6",
+      "sum": 130,
+      "count": 1,
+      "actions": [
+        "УЧЕСТЬ",
+        "ПОВТОР"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T7",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T8",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T9",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T10",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "pass_": true
+    },
+    {
+      "id": "T11",
+      "sum": 0,
+      "count": 0,
+      "actions": [
+        "ОЖИДАНИЕ"
+      ],
+      "pass_": true
+    }
+  ],
+  "formula_changes": [],
+  "unintended_input_changes": [],
+  "workbook_features": [
+    {
+      "sheet": "Настройки",
+      "merged_equal": true,
+      "validation_count_source": 1,
+      "validation_count_final": 1
+    },
+    {
+      "sheet": "Исходные",
+      "merged_equal": true,
+      "validation_count_source": 0,
+      "validation_count_final": 0
+    },
+    {
+      "sheet": "Модель",
+      "merged_equal": true,
+      "validation_count_source": 0,
+      "validation_count_final": 0
+    },
+    {
+      "sheet": "Протокол",
+      "merged_equal": true,
+      "validation_count_source": 0,
+      "validation_count_final": 0
+    }
+  ],
+  "final_cached_sum": 410,
+  "source_files_unchanged": 77,
+  "economics": [
+    {
+      "variant": "A",
+      "hours": "14.66666666666666666666666667",
+      "monthly_value": "8800.000000000000000000000002",
+      "first_year": "69600.00000000000000000000002"
+    },
+    {
+      "variant": "B",
+      "hours": "22",
+      "monthly_value": "13200",
+      "first_year": "32400"
+    },
+    {
+      "variant": "B40",
+      "hours": "14.66666666666666666666666667",
+      "monthly_value": "8800.000000000000000000000002",
+      "first_year": "-20399.99999999999999999999998"
+    },
+    {
+      "variant": "A60",
+      "hours": "7.333333333333333333333333333",
+      "monthly_value": "4400.000000000000000000000000",
+      "first_year": "16800.00000000000000000000000"
+    }
+  ],
+  "rendered_documents": [
+    {
+      "file": "PZ01_Сарычев_ДЭ39-26.pdf",
+      "pages": 2,
+      "text_chars": 2293
+    },
+    {
+      "file": "PZ02_Сарычев_ДЭ39-26.pdf",
+      "pages": 2,
+      "text_chars": 2376
+    },
+    {
+      "file": "PZ03_Сарычев_ДЭ39-26.pdf",
+      "pages": 2,
+      "text_chars": 2651
+    },
+    {
+      "file": "PZ04_Сарычев_ДЭ39-26.pdf",
+      "pages": 2,
+      "text_chars": 2400
+    },
+    {
+      "file": "PZ05_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 2609
+    },
+    {
+      "file": "PZ06_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 2695
+    },
+    {
+      "file": "PZ07_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 2469
+    },
+    {
+      "file": "PZ08_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 3109
+    },
+    {
+      "file": "PZ09_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 3188
+    },
+    {
+      "file": "PZ10_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 3525
+    },
+    {
+      "file": "PZ11_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 3090
+    },
+    {
+      "file": "PZ12_Сарычев_ДЭ39-26.pdf",
+      "pages": 2,
+      "text_chars": 2952
+    },
+    {
+      "file": "PZ13_Сарычев_ДЭ39-26.pdf",
+      "pages": 3,
+      "text_chars": 3486
+    },
+    {
+      "file": "PZ14_Сарычев_ДЭ39-26.pdf",
+      "pages": 4,
+      "text_chars": 6207
+    }
+  ],
+  "files": [
+    {
+      "file": "PZ01_Сарычев_ДЭ39-26.docx",
+      "bytes": 86365,
+      "sha256": "0e0b995481804eb7252c4b7b7315e14747578f595ac48b963e5fecd38b3d014a"
+    },
+    {
+      "file": "PZ02_Сарычев_ДЭ39-26.docx",
+      "bytes": 94530,
+      "sha256": "9c915ca7b07bb5f7c799d5b4cb865d0ccadde665529b0a037bc33ba917d75adb"
+    },
+    {
+      "file": "PZ03_Сарычев_ДЭ39-26.docx",
+      "bytes": 41210,
+      "sha256": "a63f5ac0a6950fd55f871e868926ced857a4dc9c049fb82ae699ab07a8792569"
+    },
+    {
+      "file": "PZ04_Сарычев_ДЭ39-26.docx",
+      "bytes": 70133,
+      "sha256": "e38335229be43d33480a5320991a5ea84c55b93871154b33f47ceee991b9cc64"
+    },
+    {
+      "file": "PZ05_Сарычев_ДЭ39-26.docx",
+      "bytes": 125835,
+      "sha256": "77bb9d06464c2feb0f3b76e5a98df63b28c26b2c4253635cc3d4746930a49d3b"
+    },
+    {
+      "file": "PZ06_Сарычев_ДЭ39-26.docx",
+      "bytes": 82813,
+      "sha256": "5cb3769c3b8358f980e03c827df7863baf746f9be9ec694f69085d04fa36dbc9"
+    },
+    {
+      "file": "PZ07_Сарычев_ДЭ39-26.docx",
+      "bytes": 87055,
+      "sha256": "71ff54d45b998c0d712524d237ce1b9f05f0384bc4f5f14421ff22d5d1a35a02"
+    },
+    {
+      "file": "PZ08_Сарычев_ДЭ39-26.docx",
+      "bytes": 133634,
+      "sha256": "abfb2cdd607eb0dad0ab177b0e3f8fe9771f0f474a03ce75a7e8d2fe0ad85233"
+    },
+    {
+      "file": "PZ09_Сарычев_ДЭ39-26.docx",
+      "bytes": 92108,
+      "sha256": "4b3148a570c65c37737299bca24e8a7b41fe309bcba43a4a46df3946d3d2f6bf"
+    },
+    {
+      "file": "PZ10_Сарычев_ДЭ39-26.docx",
+      "bytes": 98748,
+      "sha256": "d07120382cec78b90dfdad15cfc6afbd3cad22c6d9fba748e01af2e3e89a8f8e"
+    },
+    {
+      "file": "PZ11_Сарычев_ДЭ39-26.docx",
+      "bytes": 101073,
+      "sha256": "4321946b8a4c04fda6ac4a8eba008d056622597267a058469ea54526dca6ae9a"
+    },
+    {
+      "file": "PZ12_Model_Сарычев.xlsx",
+      "bytes": 16052,
+      "sha256": "b360e05f4f16c9f53e8a6de4c6e282ddee07f907fbfb5239bbea99373cd2a597"
+    },
+    {
+      "file": "PZ12_Сарычев_ДЭ39-26.docx",
+      "bytes": 144527,
+      "sha256": "257cb8b3266228707814c6c9c3c06fbcf3085ad8fa1cdf0a5c1c6b9a521b9973"
+    },
+    {
+      "file": "PZ13_Сарычев_ДЭ39-26.docx",
+      "bytes": 83221,
+      "sha256": "0b3c36db2a10d03afd8e2b21230917e2870d0d7ed88928f7080ec3ad9366bfdd"
+    },
+    {
+      "file": "PZ14_Сарычев_ДЭ39-26.pdf",
+      "bytes": 197360,
+      "sha256": "a8e6efd6254c020dcad6d33fa2bd1646a24b14257c0392f00a19c11edf01fb64"
+    }
+  ],
+  "visual_review": "All 38 final document pages reviewed via rendered contact sheets; final PDF and four XLSX sheets inspected. AI review, no human grade.",
+  "page_budget_pass": true,
+  "source_templates_preserved": true
+}

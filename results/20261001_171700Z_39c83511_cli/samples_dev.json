@@ -1,0 +1,326 @@
+[
+  {
+    "id": "controlled_compound_reasoning_6_0",
+    "group": "controlled_compound_reasoning_6",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        11,
+        11,
+        5,
+        8,
+        0
+      ],
+      "daily_max": [
+        27,
+        25,
+        19,
+        22,
+        22
+      ],
+      "daily_rain": [
+        8,
+        8,
+        9,
+        7,
+        3
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_486",
+    "group": "b3ece773233ee1563a7e8eba67ce640c8e9c6cf733e3248dd1858bdd0b35eb8e",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "how many wells does the Upper Cretaceous aquifer supply water for in western Scotts Bluff County?",
+    "context": "The Upper Cretaceous aquifer supplies water to only about 13 wells, mostly in western Scotts Bluff County, although it is heavily used in the Denver area. The Upper Cretaceous aquifer has high sodium, and sometimes high chloride concentrations in Nebraska. ",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "13"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_6_0",
+    "group": "controlled_missing_data_6",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        13,
+        12,
+        6
+      ],
+      "tmax": [
+        26,
+        23,
+        22
+      ],
+      "temperature_unit": "F",
+      "base": 10
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_6_0",
+    "group": "controlled_numeric_6",
+    "split": "dev",
+    "category": "numeric",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай gdd.",
+    "context": "",
+    "inputs": {
+      "tmin": [
+        8,
+        8,
+        11
+      ],
+      "tmax": [
+        21,
+        17,
+        22
+      ],
+      "base": 5,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 28.5,
+      "unit": "degC day"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_6_0",
+    "group": "controlled_rule_interpretation_6",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": -2,
+      "scenario_threshold": 2,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_6_0",
+    "group": "controlled_tool_selection_6",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: только выбери инструмент, чтобы оценить тепловую сумму по tmin/tmax и base; не рассчитывай.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_compound_reasoning_6_1",
+    "group": "controlled_compound_reasoning_6",
+    "split": "dev",
+    "category": "compound_reasoning",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+    "context": "",
+    "inputs": {
+      "daily_min": [
+        1,
+        4,
+        6,
+        4,
+        2
+      ],
+      "daily_max": [
+        23,
+        29,
+        18,
+        20,
+        21
+      ],
+      "daily_rain": [
+        8,
+        9,
+        5,
+        8,
+        9
+      ],
+      "base_c": 5,
+      "heat_threshold": 45,
+      "rain_target_mm": 25
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "agxqa_160",
+    "group": "95d9249864b5f607a1a32760ceb947f4302ca746fae076d0af33d8f30e712461",
+    "category": "extractive_qa",
+    "language": "en",
+    "input": "what years were all fields irrigated to a level preventing water stress all season?",
+    "context": "The analysis found that all the fields in 2017, ‘18 and ‘19 were irrigated to a level preventing water stress all season, however 15% to 20% of the fields may have been underwatered late into the season just a little bit (it may or may not have affected the yield) late in the season in the dry years of 2020, ’21 and ‘22.\n\n",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "2017, ‘18 and ‘19"
+      ]
+    },
+    "scoring": "span_em_f1",
+    "source": "https://raw.githubusercontent.com/MSU-CECO/agxqa_benchmark_v1/8626771b289d48cff113f0c13d0603ac644628c0/data/for_qa_data_annotated/annotations_part_B_Nov03_Dec23_2023.json",
+    "license": "Apache-2.0 repository declaration; underlying Extension material retains provenance",
+    "difficulty": "not_assigned",
+    "split": "dev"
+  },
+  {
+    "id": "controlled_missing_data_6_1",
+    "group": "controlled_missing_data_6",
+    "split": "dev",
+    "category": "missing_data",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 19,
+      "temperature_unit": "F",
+      "rh": 10
+    },
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "scoring": "action",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_numeric_6_1",
+    "group": "controlled_numeric_6",
+    "split": "dev",
+    "category": "numeric",
+    "language": "ru",
+    "input": "Проверь числовой сценарий, рассчитай vpd.",
+    "context": "",
+    "inputs": {
+      "temperature": 13,
+      "rh": 81,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.28457647152382537,
+      "unit": "kPa"
+    },
+    "scoring": "numeric_tolerance",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_rule_interpretation_6_1",
+    "group": "controlled_rule_interpretation_6",
+    "split": "dev",
+    "category": "rule_interpretation",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+    "context": "",
+    "inputs": {
+      "minimum_temperature": -5,
+      "scenario_threshold": 2,
+      "temperature_unit": "C"
+    },
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  },
+  {
+    "id": "controlled_tool_selection_6_1",
+    "group": "controlled_tool_selection_6",
+    "split": "dev",
+    "category": "tool_selection",
+    "language": "ru",
+    "input": "Проверь числовой сценарий: только выбери инструмент, чтобы оценить дефицит давления пара по температуре и RH; не рассчитывай.",
+    "context": "",
+    "inputs": {},
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "scoring": "exact_label",
+    "source": "scripts/prepare_data.py; formula-controlled synthetic research scenarios",
+    "license": "CC0-1.0 (new controlled scenarios)",
+    "difficulty": "not_assigned"
+  }
+]

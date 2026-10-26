@@ -1,0 +1,86 @@
+COMPLETE PRIMAL SIMPLEX TABLEAUX - VARIANT 8
+Units: centners/day; revenue thousand RUB/day.
+Row: sum(tableau coefficients * variables) = RHS.
+Objective row: z + sum(objective coefficients * variables) = RHS.
+Bland order: milk,kefir,cream,skim,sraw,sline,scream,sassort.
+Entering: first negative objective coefficient; leaving: minimum ratio,
+ties: smallest ordered BASIC variable. Zero ratio pivots are allowed.
+Round only the displayed tables; internal arithmetic uses full precision.
+
+TABLE 0 - INITIAL
+Nonbasic: milk        kefir       cream       skim
+row           basic       milk           kefir          cream          skim           sraw           sline          scream         sassort        rhs
+rawmilk       sraw               1.010000       1.010000       9.450000       0.310000       1.000000       0.000000       0.000000       0.000000     140.000000
+mainline      sline              0.200000       0.166667       0.000000       0.166667       0.000000       1.000000       0.000000       0.000000      21.000000
+creamline     scream             0.000000       0.000000       3.333333       0.000000       0.000000       0.000000       1.000000       0.000000      16.000000
+assortment    sassort            0.000000       1.000000       0.000000      -2.000000       0.000000       0.000000       0.000000       1.000000       0.000000
+obj           z                 -2.400000      -2.700000     -13.800000      -0.790000       0.000000       0.000000       0.000000       0.000000       0.000000
+
+PIVOT 1: enter milk, leave sline, pivot=0.200000000, ratio=105.000000000
+Eligible ratios: rawmilk=138.613861386  mainline=105.000000000
+
+TABLE 1
+Nonbasic: kefir       cream       skim        sline
+row           basic       milk           kefir          cream          skim           sraw           sline          scream         sassort        rhs
+rawmilk       sraw               0.000000       0.168333       9.450000      -0.531667       1.000000      -5.050000       0.000000       0.000000      33.950000
+mainline      milk               1.000000       0.833333       0.000000       0.833333       0.000000       5.000000       0.000000       0.000000     105.000000
+creamline     scream             0.000000       0.000000       3.333333       0.000000       0.000000       0.000000       1.000000       0.000000      16.000000
+assortment    sassort            0.000000       1.000000       0.000000      -2.000000       0.000000       0.000000       0.000000       1.000000       0.000000
+obj           z                  0.000000      -0.700000     -13.800000       1.210000       0.000000      12.000000       0.000000       0.000000     252.000000
+
+PIVOT 2: enter kefir, leave sassort, pivot=1.000000000, ratio=0.000000000
+Eligible ratios: rawmilk=201.683168317  mainline=126.000000000  assortment=0.000000000
+
+TABLE 2
+Nonbasic: cream       skim        sline       sassort
+row           basic       milk           kefir          cream          skim           sraw           sline          scream         sassort        rhs
+rawmilk       sraw               0.000000       0.000000       9.450000      -0.195000       1.000000      -5.050000       0.000000      -0.168333      33.950000
+mainline      milk               1.000000       0.000000       0.000000       2.500000       0.000000       5.000000       0.000000      -0.833333     105.000000
+creamline     scream             0.000000       0.000000       3.333333       0.000000       0.000000       0.000000       1.000000       0.000000      16.000000
+assortment    kefir              0.000000       1.000000       0.000000      -2.000000       0.000000       0.000000       0.000000       1.000000       0.000000
+obj           z                  0.000000       0.000000     -13.800000      -0.190000       0.000000      12.000000       0.000000       0.700000     252.000000
+
+PIVOT 3: enter cream, leave sraw, pivot=9.450000000, ratio=3.592592593
+Eligible ratios: rawmilk=3.592592593  creamline=4.800000000
+
+TABLE 3
+Nonbasic: skim        sraw        sline       sassort
+row           basic       milk           kefir          cream          skim           sraw           sline          scream         sassort        rhs
+rawmilk       cream              0.000000       0.000000       1.000000      -0.020635       0.105820      -0.534392       0.000000      -0.017813       3.592593
+mainline      milk               1.000000       0.000000       0.000000       2.500000       0.000000       5.000000       0.000000      -0.833333     105.000000
+creamline     scream             0.000000       0.000000       0.000000       0.068783      -0.352734       1.781305       1.000000       0.059377       4.024691
+assortment    kefir              0.000000       1.000000       0.000000      -2.000000       0.000000       0.000000       0.000000       1.000000       0.000000
+obj           z                  0.000000       0.000000       0.000000      -0.474762       1.460317       4.625397       0.000000       0.454180     301.577778
+
+PIVOT 4: enter skim, leave milk, pivot=2.500000000, ratio=42.000000000
+Eligible ratios: mainline=42.000000000  creamline=58.512820513
+
+TABLE 4
+Nonbasic: milk        sraw        sline       sassort
+row           basic       milk           kefir          cream          skim           sraw           sline          scream         sassort        rhs
+rawmilk       cream              0.008254       0.000000       1.000000       0.000000       0.105820      -0.493122       0.000000      -0.024691       4.459259
+mainline      skim               0.400000       0.000000       0.000000       1.000000       0.000000       2.000000       0.000000      -0.333333      42.000000
+creamline     scream            -0.027513       0.000000       0.000000       0.000000      -0.352734       1.643739       1.000000       0.082305       1.135802
+assortment    kefir              0.800000       1.000000       0.000000       0.000000       0.000000       4.000000       0.000000       0.333333      84.000000
+obj           z                  0.189905       0.000000       0.000000       0.000000       1.460317       5.574921       0.000000       0.295926     321.517778
+
+FINAL TABLE = TABLE 4
+solution (product and slack variables):
+milk                 0.000000000
+kefir               84.000000000
+cream                4.459259259
+skim                42.000000000
+sraw                 0.000000000
+sline                0.000000000
+scream               1.135802469
+sassort              0.000000000
+Revenue, thousand RUB/day: 321.517777778
+Resource        Limit           Used            Remaining
+rawmilk            140.000000000   140.000000000     0.000000000
+mainline            21.000000000    21.000000000     0.000000000
+creamline           16.000000000    14.864197531     1.135802469
+assortment           0.000000000     0.000000000     0.000000000
+Verification: original constraints and nonnegativity PASS
+Verification: objective = CPLEX LP = original lab2 LP PASS
+CPLEX objective difference: 0.000000000000
+Maximum original constraint violation: 0.000000000000

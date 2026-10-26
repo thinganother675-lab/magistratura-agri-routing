@@ -1,0 +1,4288 @@
+[
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0145",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        11.5,
+        30.0,
+        11.0,
+        25.5
+      ],
+      "daily_min": [
+        3.5,
+        22.5,
+        5.5,
+        16.5
+      ],
+      "daily_rain": [
+        2.3,
+        3.7,
+        1.5,
+        4.8
+      ],
+      "heat_threshold": 61.75,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 12.3,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.0,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0067",
+    "input": "Calculate rain_deficit for the supplied synthetic research record. Return the total for this observation window.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        0.5,
+        8.1,
+        2.7,
+        8.9,
+        7.4
+      ],
+      "target": 26.1
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "group": "synthetic_selection_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0096",
+    "input": "Только выбери калькулятор, чтобы найти разность давления насыщенного и фактического пара по одной температуре и RH. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "group": "synthetic_selection_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0100",
+    "input": "Только выбери калькулятор, чтобы оценить ненасыщенную долю давления насыщенного водяного пара. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0127",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 3.0,
+      "scenario_threshold": 2.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 1.0,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0066",
+    "input": "Рассчитай rain_deficit для переданной синтетической исследовательской записи. Используйте только переданные наблюдения.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        7.6,
+        2.8,
+        2.8,
+        0.2,
+        7.9
+      ],
+      "target": 22.3
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Подземный дренаж отводит дополнительную промывную воду и ограничивает подъём грунтовых вод.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Подземный дренаж"
+      ]
+    },
+    "fact_id": "fact_10",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0020",
+    "input": "Что отводит дополнительную промывную воду?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 1.58754184656738,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0056",
+    "input": "Рассчитай vpd для переданной синтетической исследовательской записи. Верните результат за данный период наблюдений.",
+    "inputs": {
+      "rh": 74,
+      "temperature": 36.5,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.75,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0047",
+    "input": "Calculate gdd for the supplied synthetic research record. Use only the supplied observations.",
+    "inputs": {
+      "base": 11,
+      "temperature_unit": "C",
+      "tmax": [
+        7.5,
+        16.0,
+        18.0,
+        6.5
+      ],
+      "tmin": [
+        -4.5,
+        9.5,
+        8.0,
+        -5.5
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0112",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -2.5,
+      "scenario_threshold": 1.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.6117001573111839,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0049",
+    "input": "Calculate vpd for the supplied synthetic research record. Return the total for this observation window.",
+    "inputs": {
+      "rh": 41,
+      "temperature": 7.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0111",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": -5.5,
+      "scenario_threshold": -3.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "group": "synthetic_selection_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0092",
+    "input": "Только выбери калькулятор, чтобы суммировать положительные разности средней суточной температуры и базовой температуры. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "missing_rh",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_rh",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0077",
+    "input": "Calculate vpd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "temperature": 4.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 14.5,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0046",
+    "input": "Рассчитай gdd для переданной синтетической исследовательской записи. Используйте заданные величины и единицы без агрономических допущений.",
+    "inputs": {
+      "base": 9,
+      "temperature_unit": "C",
+      "tmax": [
+        6.5,
+        2.5,
+        25.0,
+        15.0
+      ],
+      "tmin": [
+        -2.5,
+        -3.0,
+        15.5,
+        9.5
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0136",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        12.5,
+        13.0,
+        17.5,
+        22.5
+      ],
+      "daily_min": [
+        7.5,
+        5.5,
+        6.0,
+        11.0
+      ],
+      "daily_rain": [
+        0.9,
+        1.4,
+        2.8,
+        1.9
+      ],
+      "heat_threshold": 46.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 9.75,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Накопление солей, остающихся в орошаемой почве, называется засолением.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "засолением"
+      ]
+    },
+    "fact_id": "fact_07",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0014",
+    "input": "Как называется накопление солей в почве?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 8.5,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0065",
+    "input": "Calculate rain_deficit for the supplied synthetic research record. Use only the supplied observations.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        6.8,
+        4.1,
+        5.1,
+        3.2,
+        0.4
+      ],
+      "target": 28.1
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "missing_base",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_base",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0071",
+    "input": "Calculate gdd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "temperature_unit": "C",
+      "tmax": [
+        6.5,
+        13.5,
+        17.0,
+        27.5
+      ],
+      "tmin": [
+        0.0,
+        5.5,
+        14.0,
+        19.5
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0137",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        18.0,
+        25.5,
+        31.0,
+        21.0
+      ],
+      "daily_min": [
+        10.0,
+        13.5,
+        21.0,
+        11.5
+      ],
+      "daily_rain": [
+        3.2,
+        3.1,
+        2.1,
+        3.1
+      ],
+      "heat_threshold": 74.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 14.25,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Irrigation water itself can bring salts into a field; evaporation leaves those salts behind.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Irrigation water"
+      ]
+    },
+    "fact_id": "fact_08",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0015",
+    "input": "What supplied water can bring salts into the field?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rain_deficit"
+      ]
+    },
+    "group": "synthetic_selection_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0106",
+    "input": "Только выбери калькулятор, чтобы найти неотрицательную разность заданной цели осадков и наблюдаемой суммы дождя. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "rh_outside_range",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_rh_outside_range",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0079",
+    "input": "Calculate vpd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "rh": 106,
+      "temperature": 7.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.828094531970389,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0060",
+    "input": "Рассчитай et0 для переданной синтетической исследовательской записи. Используйте только переданные наблюдения.",
+    "inputs": {
+      "delta": 0.07416267252236507,
+      "ea": 0.5769992662669496,
+      "es": 1.1313711103273523,
+      "g": 0,
+      "gamma": 0.0665,
+      "rn": 15.2,
+      "temperature": 8.25,
+      "temperature_unit": "C",
+      "u2": 2.5
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.4094705024330763,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0057",
+    "input": "Calculate et0 for the supplied synthetic research record. Use the stated base and units without agronomic assumptions.",
+    "inputs": {
+      "delta": 0.11451959828211196,
+      "ea": 1.3336364124410183,
+      "es": 1.8783611442831245,
+      "g": 0,
+      "gamma": 0.061845,
+      "rn": 11.8,
+      "temperature": 15.75,
+      "temperature_unit": "C",
+      "u2": 1.5
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0149",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        19.5,
+        17.5,
+        22.0,
+        18.0
+      ],
+      "daily_min": [
+        7.5,
+        7.5,
+        16.0,
+        10.0
+      ],
+      "daily_rain": [
+        1.7,
+        1.8,
+        0.4,
+        2.1
+      ],
+      "heat_threshold": 60.25,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 4.75,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Leaves release most water vapour through stomata; roots first supply the plant with water.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "stomata"
+      ]
+    },
+    "fact_id": "fact_01",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0001",
+    "input": "Which leaf openings release most water vapour?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e04.htm",
+    "source_id": "fao56_ch1",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0132",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        12.0,
+        29.0,
+        23.5,
+        11.5
+      ],
+      "daily_min": [
+        4.5,
+        20.0,
+        12.0,
+        4.0
+      ],
+      "daily_rain": [
+        4.3,
+        3.7,
+        3.8,
+        2.3
+      ],
+      "heat_threshold": 57.0,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 16.85,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Accumulation of salts left in irrigated soil is called salinization.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "salinization"
+      ]
+    },
+    "fact_id": "fact_07",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0013",
+    "input": "What is salt accumulation in soil called?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 6.0,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0043",
+    "input": "Calculate gdd for the supplied synthetic research record. Return the total for this observation window.",
+    "inputs": {
+      "base": 9,
+      "temperature_unit": "C",
+      "tmax": [
+        7.5,
+        11.5,
+        9.0,
+        18.0
+      ],
+      "tmin": [
+        0.5,
+        4.5,
+        0.0,
+        12.0
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0113",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 5.5,
+      "scenario_threshold": 7.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Soil cover protects fields from erosion by heavy rain and strong wind.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Soil cover"
+      ]
+    },
+    "fact_id": "fact_12",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0023",
+    "input": "What protects fields against rain and wind erosion?",
+    "inputs": {},
+    "language": "en",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "missing_rh",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_rh",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0078",
+    "input": "Рассчитай vpd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "temperature": 20.5,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "The rhizosphere is the zone near roots with concentrated microbial activity.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rhizosphere"
+      ]
+    },
+    "fact_id": "fact_14",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0027",
+    "input": "What is the active microbial zone near roots called?",
+    "inputs": {},
+    "language": "en",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "nonnumeric_rh",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_nonnumeric_rh",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0081",
+    "input": "Calculate vpd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "rh": "not measured",
+      "temperature": 23.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Ризосфера — зона около корней с высокой активностью микроорганизмов.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Ризосфера"
+      ]
+    },
+    "fact_id": "fact_14",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0028",
+    "input": "Как называется активная микробная зона около корней?",
+    "inputs": {},
+    "language": "ru",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Vetch and clover are legumes whose cover-crop residues have a low carbon-to-nitrogen ratio.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Vetch and clover"
+      ]
+    },
+    "fact_id": "fact_20",
+    "group": "source_document_UMN_cover_nitrogen_20190426",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0039",
+    "input": "Which two named legumes have low-ratio residues?",
+    "inputs": {},
+    "language": "en",
+    "license": "Underlying University source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+    "source_id": "umn_nitrogen",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 8.75,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0041",
+    "input": "Calculate gdd for the supplied synthetic research record. Use only the supplied observations.",
+    "inputs": {
+      "base": 7,
+      "temperature_unit": "C",
+      "tmax": [
+        13.5,
+        13.0,
+        10.0,
+        15.5
+      ],
+      "tmin": [
+        1.5,
+        4.0,
+        5.5,
+        10.5
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.0,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0064",
+    "input": "Рассчитай rain_deficit для переданной синтетической исследовательской записи. Используйте заданные величины и единицы без агрономических допущений.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        8.4,
+        2.2,
+        8.8,
+        8.7,
+        7.7
+      ],
+      "target": 15.5
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rain_deficit"
+      ]
+    },
+    "group": "synthetic_selection_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0108",
+    "input": "Только выбери калькулятор, чтобы измерить дефицит осадков относительно явно заданной цели в мм. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "wrong_temperature_unit",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_wrong_temperature_unit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0075",
+    "input": "Calculate gdd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "base": 7,
+      "temperature_unit": "F",
+      "tmax": [
+        11.0,
+        6.0,
+        18.5,
+        5.0
+      ],
+      "tmin": [
+        5.5,
+        2.0,
+        8.0,
+        0.5
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Давление насыщенного водяного пара увеличивается при повышении температуры; зависимость нелинейна.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "увеличивается"
+      ]
+    },
+    "fact_id": "fact_06",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0012",
+    "input": "Что происходит с давлением насыщенного пара при повышении температуры?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e07.htm",
+    "source_id": "fao56_ch3",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Озимая рожь зимостойка в Миннесоте и возобновляет рост следующей весной.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Озимая рожь"
+      ]
+    },
+    "fact_id": "fact_18",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0036",
+    "input": "Какая названная культура возобновляет рост после зимы?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "negative_wind",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_negative_wind",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0086",
+    "input": "Рассчитай et0 по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "delta": 0.07640957341725704,
+      "ea": 0.5482477689807553,
+      "es": 1.1918429760451204,
+      "g": 0,
+      "gamma": 0.0665,
+      "rn": 15.5,
+      "temperature": 8.75,
+      "temperature_unit": "C",
+      "u2": -0.3
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Вика и клевер — бобовые, остатки которых имеют низкое соотношение углерода и азота.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Вика и клевер"
+      ]
+    },
+    "fact_id": "fact_20",
+    "group": "source_document_UMN_cover_nitrogen_20190426",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0040",
+    "input": "Какие два названных бобовых растения имеют остатки с низким соотношением?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Underlying University source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+    "source_id": "umn_nitrogen",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 8.5,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0068",
+    "input": "Рассчитай rain_deficit для переданной синтетической исследовательской записи. Верните результат за данный период наблюдений.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        1.9,
+        8.8,
+        6.1,
+        1.9,
+        6.9
+      ],
+      "target": 34.1
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0143",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        33.5,
+        23.0,
+        20.0,
+        14.0
+      ],
+      "daily_min": [
+        22.0,
+        15.5,
+        8.0,
+        6.5
+      ],
+      "daily_rain": [
+        1.2,
+        4.2,
+        3.2,
+        4.4
+      ],
+      "heat_threshold": 71.25,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 15.75,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0119",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": -4.5,
+      "scenario_threshold": -2.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Evapotranspiration combines evaporation from the soil with transpiration from plants.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "transpiration"
+      ]
+    },
+    "fact_id": "fact_02",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0003",
+    "input": "Which plant process joins evaporation in evapotranspiration?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e04.htm",
+    "source_id": "fao56_ch1",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0146",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        11.5,
+        16.5,
+        15.5,
+        30.0
+      ],
+      "daily_min": [
+        3.0,
+        6.0,
+        5.0,
+        18.0
+      ],
+      "daily_rain": [
+        4.2,
+        4.2,
+        1.7,
+        4.3
+      ],
+      "heat_threshold": 51.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 14.4,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0147",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        24.0,
+        16.5,
+        15.0,
+        17.5
+      ],
+      "daily_min": [
+        15.5,
+        10.0,
+        5.5,
+        5.5
+      ],
+      "daily_rain": [
+        0.8,
+        2.2,
+        4.1,
+        0.2
+      ],
+      "heat_threshold": 53.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 7.3,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "unequal_arrays",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_unequal_arrays",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0073",
+    "input": "Calculate gdd using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "base": 9,
+      "temperature_unit": "C",
+      "tmax": [
+        23.0,
+        24.0,
+        9.5
+      ],
+      "tmin": [
+        11.0,
+        19.0,
+        4.5,
+        5.5
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Living roots feed soil microbes with released compounds, supporting nutrient cycling.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Living roots"
+      ]
+    },
+    "fact_id": "fact_11",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0021",
+    "input": "What living plant parts feed soil microbes?",
+    "inputs": {},
+    "language": "en",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0134",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        31.0,
+        13.0,
+        13.5,
+        28.0
+      ],
+      "daily_min": [
+        22.5,
+        7.5,
+        6.5,
+        22.5
+      ],
+      "daily_rain": [
+        3.5,
+        2.4,
+        3.5,
+        2.2
+      ],
+      "heat_threshold": 71.0,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 14.35,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "missing_delta",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_delta",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0083",
+    "input": "Calculate et0 using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "ea": 0.8711853510238564,
+      "es": 1.8938811978779488,
+      "g": 0,
+      "gamma": 0.059185,
+      "rn": 6.4,
+      "temperature": 16.25,
+      "temperature_unit": "C",
+      "u2": 0.7
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0148",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        14.5,
+        25.5,
+        19.5,
+        10.0
+      ],
+      "daily_min": [
+        4.5,
+        19.0,
+        8.0,
+        5.0
+      ],
+      "daily_rain": [
+        0.0,
+        1.7,
+        3.3,
+        3.3
+      ],
+      "heat_threshold": 54.25,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 7.050000000000001,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Злаки имеют мочковатую корневую систему, полезную для перехвата питательных элементов и уменьшения эрозии.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "мочковатую"
+      ]
+    },
+    "fact_id": "fact_16",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0032",
+    "input": "Какой тип корневой системы имеют злаки?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 18.5,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0048",
+    "input": "Рассчитай gdd для переданной синтетической исследовательской записи. Используйте только переданные наблюдения.",
+    "inputs": {
+      "base": 7,
+      "temperature_unit": "C",
+      "tmax": [
+        10.0,
+        15.5,
+        23.5,
+        6.5
+      ],
+      "tmin": [
+        -2.0,
+        9.0,
+        17.0,
+        2.5
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "wrong_precipitation_unit",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_wrong_precipitation_unit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0087",
+    "input": "Calculate rain_deficit using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "precipitation_unit": "in",
+      "rain": [
+        6.9,
+        0.3,
+        8.8,
+        4.5,
+        2.3
+      ],
+      "target": 29.9
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0126",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": 1.0,
+      "scenario_threshold": -0.5,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0121",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 2.5,
+      "scenario_threshold": 2.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0138",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        31.0,
+        17.0,
+        17.0,
+        10.0
+      ],
+      "daily_min": [
+        20.0,
+        6.5,
+        5.0,
+        5.0
+      ],
+      "daily_rain": [
+        3.7,
+        3.3,
+        1.0,
+        4.3
+      ],
+      "heat_threshold": 54.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 15.05,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Поливная вода сама может приносить соли на поле; при испарении соли остаются.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Поливная вода"
+      ]
+    },
+    "fact_id": "fact_08",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0016",
+    "input": "Какая подаваемая вода может приносить соли на поле?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0124",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -4.0,
+      "scenario_threshold": -4.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Гипотетическая эталонная трава FAO имеет альбедо 0.23 и обеспечена водой.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "0.23"
+      ]
+    },
+    "fact_id": "fact_04",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0008",
+    "input": "Какое альбедо задано эталонной траве?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e06.htm",
+    "source_id": "fao56_ch2",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0142",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        19.5,
+        20.5,
+        29.0,
+        21.0
+      ],
+      "daily_min": [
+        7.5,
+        10.0,
+        19.0,
+        15.5
+      ],
+      "daily_rain": [
+        1.6,
+        3.3,
+        0.7,
+        4.8
+      ],
+      "heat_threshold": 71.0,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 13.15,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "missing_delta",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_delta",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0084",
+    "input": "Рассчитай et0 по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "ea": 0.7534207310171742,
+      "es": 1.1079716632605503,
+      "g": 0,
+      "gamma": 0.06517,
+      "rn": 12.7,
+      "temperature": 8.25,
+      "temperature_unit": "C",
+      "u2": 2.1
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Saturation vapour pressure increases when air temperature rises; the relationship is nonlinear.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "increases"
+      ]
+    },
+    "fact_id": "fact_06",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0011",
+    "input": "What happens to saturation vapour pressure when temperature rises?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e07.htm",
+    "source_id": "fao56_ch3",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0122",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -3.0,
+      "scenario_threshold": -3.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Промывка удаляет растворимые соли из корнеобитаемого слоя просачивающейся водой.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Промывка"
+      ]
+    },
+    "fact_id": "fact_09",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0018",
+    "input": "Какой процесс удаляет соли из корнеобитаемого слоя?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "FAO evapotranspiration calculations use wind speed at 2 m above the surface.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "2 m"
+      ]
+    },
+    "fact_id": "fact_05",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0009",
+    "input": "At what height is wind speed required?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e07.htm",
+    "source_id": "fao56_ch3",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "group": "synthetic_selection_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0094",
+    "input": "Только выбери калькулятор, чтобы оценить накопленное тепло по парам Tmin/Tmax и явно заданной базе. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0114",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": 5.0,
+      "scenario_threshold": 6.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "group": "synthetic_selection_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0101",
+    "input": "Choose only the calculator needed to find daily FAO56 reference evapotranspiration from supplied radiation, wind and vapour-pressure terms. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.015434443282958,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0058",
+    "input": "Рассчитай et0 для переданной синтетической исследовательской записи. Используйте заданные величины и единицы без агрономических допущений.",
+    "inputs": {
+      "delta": 0.08853691670129779,
+      "ea": 0.9561769807466929,
+      "es": 1.4061426187451367,
+      "g": 0,
+      "gamma": 0.05719,
+      "rn": 10.9,
+      "temperature": 11.25,
+      "temperature_unit": "C",
+      "u2": 2.0
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.9583997864769721,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0053",
+    "input": "Calculate vpd for the supplied synthetic research record. Use only the supplied observations.",
+    "inputs": {
+      "rh": 55,
+      "temperature": 18.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Азотный зачёт после сои главным образом связан с соотношением углерода и азота в её остатках.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "соотношением углерода и азота"
+      ]
+    },
+    "fact_id": "fact_19",
+    "group": "source_document_UMN_cover_nitrogen_20190426",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0038",
+    "input": "С каким соотношением в остатках преимущественно связан азотный зачёт после сои?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Underlying University source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+    "source_id": "umn_nitrogen",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "missing_base",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_base",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0072",
+    "input": "Рассчитай gdd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "temperature_unit": "C",
+      "tmax": [
+        24.0,
+        17.5,
+        30.0,
+        24.5
+      ],
+      "tmin": [
+        19.5,
+        8.0,
+        18.0,
+        14.0
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0140",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        15.5,
+        12.5,
+        15.0,
+        32.0
+      ],
+      "daily_min": [
+        5.0,
+        4.5,
+        7.5,
+        22.0
+      ],
+      "daily_rain": [
+        0.5,
+        2.8,
+        2.2,
+        3.7
+      ],
+      "heat_threshold": 55.75,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 11.95,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Cereal rye is winter-hardy in Minnesota and resumes growth the following spring.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Cereal rye"
+      ]
+    },
+    "fact_id": "fact_18",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0035",
+    "input": "Which named crop resumes growth after winter?",
+    "inputs": {},
+    "language": "en",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rain_deficit"
+      ]
+    },
+    "group": "synthetic_selection_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0107",
+    "input": "Choose only the calculator needed to subtract a five-day rainfall sum from a fictional water target and floor at zero. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0130",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": 1.5,
+      "scenario_threshold": 0.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Биоразнообразие может уменьшать проблемы вредителей и болезней, связанные с монокультурой.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Биоразнообразие"
+      ]
+    },
+    "fact_id": "fact_13",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0026",
+    "input": "Какое разнообразие может уменьшать проблемы вредителей монокультуры?",
+    "inputs": {},
+    "language": "ru",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0141",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        12.5,
+        22.0,
+        24.5,
+        24.5
+      ],
+      "daily_min": [
+        3.0,
+        16.0,
+        19.0,
+        13.5
+      ],
+      "daily_rain": [
+        4.2,
+        2.0,
+        2.3,
+        0.6
+      ],
+      "heat_threshold": 67.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 11.85,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0135",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        12.0,
+        16.0,
+        27.5,
+        17.5
+      ],
+      "daily_min": [
+        4.0,
+        6.0,
+        18.0,
+        8.5
+      ],
+      "daily_rain": [
+        1.5,
+        0.9,
+        2.5,
+        0.2
+      ],
+      "heat_threshold": 53.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 7.85,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "group": "synthetic_selection_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0093",
+    "input": "Choose only the calculator needed to measure growing degree days over four observed days with no upper cap. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "FAO определяет гипотетическую эталонную траву высотой 0.12 м с фиксированными характеристиками поверхности.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "0.12 м"
+      ]
+    },
+    "fact_id": "fact_03",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0006",
+    "input": "Какова высота эталонной травы? Верните значение и единицу из текста.",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e06.htm",
+    "source_id": "fao56_ch2",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 1.9947007119019193,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0052",
+    "input": "Рассчитай vpd для переданной синтетической исследовательской записи. Используйте заданные величины и единицы без агрономических допущений.",
+    "inputs": {
+      "rh": 29,
+      "temperature": 23.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0117",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 1.5,
+      "scenario_threshold": 2.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "In Minnesota, oats are a winter-killed cover crop, while cereal rye survives winter.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "oats"
+      ]
+    },
+    "fact_id": "fact_17",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0033",
+    "input": "Which named cover crop is winter-killed in Minnesota?",
+    "inputs": {},
+    "language": "en",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "negative_wind",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_negative_wind",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0085",
+    "input": "Calculate et0 using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "delta": 0.12977102815536123,
+      "ea": 1.5505950690554562,
+      "es": 2.1536042625770224,
+      "g": 0,
+      "gamma": 0.067165,
+      "rn": 14.4,
+      "temperature": 18.0,
+      "temperature_unit": "C",
+      "u2": -0.4
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Большая часть водяного пара выходит из листьев через устьица; воду сначала поставляют корни.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "устьица"
+      ]
+    },
+    "fact_id": "fact_01",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0002",
+    "input": "Через какие отверстия листьев выходит основная часть водяного пара?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e04.htm",
+    "source_id": "fao56_ch1",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 14.5,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0045",
+    "input": "Calculate gdd for the supplied synthetic research record. Use the stated base and units without agronomic assumptions.",
+    "inputs": {
+      "base": 11,
+      "temperature_unit": "C",
+      "tmax": [
+        9.0,
+        16.0,
+        19.0,
+        28.0
+      ],
+      "tmin": [
+        5.5,
+        6.0,
+        10.0,
+        16.0
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.249907124123626,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0061",
+    "input": "Calculate et0 for the supplied synthetic research record. Return the total for this observation window.",
+    "inputs": {
+      "delta": 0.08350249407703039,
+      "ea": 0.6673113164229398,
+      "es": 1.2832909931210381,
+      "g": 0,
+      "gamma": 0.067165,
+      "rn": 9.5,
+      "temperature": 10.25,
+      "temperature_unit": "C",
+      "u2": 2.9
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0131",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        34.0,
+        15.5,
+        14.0,
+        16.5
+      ],
+      "daily_min": [
+        22.5,
+        6.5,
+        8.0,
+        9.5
+      ],
+      "daily_rain": [
+        0.8,
+        0.3,
+        2.5,
+        2.3
+      ],
+      "heat_threshold": 62.0,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 8.65,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rain_deficit"
+      ]
+    },
+    "group": "synthetic_selection_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0109",
+    "input": "Choose only the calculator needed to report zero when accumulated rainfall exceeds the specified target, otherwise their gap. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0120",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": 1.0,
+      "scenario_threshold": 4.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Biodiversity can reduce pest and disease problems associated with monocultures.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Biodiversity"
+      ]
+    },
+    "fact_id": "fact_13",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0025",
+    "input": "What diversity can reduce monoculture pest problems?",
+    "inputs": {},
+    "language": "en",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "wrong_precipitation_unit",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_wrong_precipitation_unit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0088",
+    "input": "Рассчитай rain_deficit по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "precipitation_unit": "in",
+      "rain": [
+        5.2,
+        5.7,
+        5.1,
+        8.3,
+        2.6
+      ],
+      "target": 33.3
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.0685633005792118,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0050",
+    "input": "Рассчитай vpd для переданной синтетической исследовательской записи. Верните результат за данный период наблюдений.",
+    "inputs": {
+      "rh": 87,
+      "temperature": -2.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0144",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        30.5,
+        14.0,
+        27.5,
+        11.0
+      ],
+      "daily_min": [
+        20.0,
+        5.0,
+        16.5,
+        3.0
+      ],
+      "daily_rain": [
+        4.3,
+        2.0,
+        1.9,
+        3.9
+      ],
+      "heat_threshold": 63.75,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 14.85,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "group": "synthetic_selection_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0103",
+    "input": "Choose only the calculator needed to estimate reference grass water loss from net energy and aerodynamic terms. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 1.072789141486475,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0051",
+    "input": "Calculate vpd for the supplied synthetic research record. Use the stated base and units without agronomic assumptions.",
+    "inputs": {
+      "rh": 41,
+      "temperature": 16.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "This strict calculator accepts temperature_unit=C and precipitation_unit=mm only. GDD lists must have equal lengths. RH must be numeric within0..100%; wind must be nonnegative. All required formula parameters must be supplied.",
+    "defect": "missing_target",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_target",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0089",
+    "input": "Calculate rain_deficit using the supplied research inputs. If a mandatory field, value or supported unit is invalid, ask for corrected inputs; do not infer or convert them.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        3.8,
+        4.4,
+        6.3,
+        5.7,
+        3.8
+      ]
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "group": "synthetic_selection_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0105",
+    "input": "Choose only the calculator needed to compute reference evapotranspiration with supplied Rn,G,u2,es,ea,delta,gamma,T. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 1.9666271870400054,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0063",
+    "input": "Calculate et0 for the supplied synthetic research record. Use the stated base and units without agronomic assumptions.",
+    "inputs": {
+      "delta": 0.07640957341725704,
+      "ea": 0.795498605859469,
+      "es": 1.1528965302311145,
+      "g": 0,
+      "gamma": 0.0665,
+      "rn": 7.3,
+      "temperature": 8.75,
+      "temperature_unit": "C",
+      "u2": 1.7
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Grasses have fibrous root systems useful for nutrient scavenging and reducing erosion.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "fibrous"
+      ]
+    },
+    "fact_id": "fact_16",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0031",
+    "input": "What root-system type do grasses have?",
+    "inputs": {},
+    "language": "en",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "group": "synthetic_selection_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0099",
+    "input": "Choose only the calculator needed to combine saturation pressure at air temperature with humidity percentage. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "wrong_temperature_unit",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_wrong_temperature_unit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0076",
+    "input": "Рассчитай gdd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "base": 9,
+      "temperature_unit": "F",
+      "tmax": [
+        6.0,
+        24.5,
+        7.5,
+        25.0
+      ],
+      "tmin": [
+        -1.0,
+        15.0,
+        4.5,
+        14.0
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.9344426529142935,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0062",
+    "input": "Рассчитай et0 для переданной синтетической исследовательской записи. Верните результат за данный период наблюдений.",
+    "inputs": {
+      "delta": 0.11942456641907649,
+      "ea": 1.4286152899569817,
+      "es": 1.93056120264457,
+      "g": 0,
+      "gamma": 0.059185,
+      "rn": 13.8,
+      "temperature": 16.5,
+      "temperature_unit": "C",
+      "u2": 2.3
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Условная двухэтапная исследовательская политика. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) по соответствующим дням; precipitation=sum(daily_rain). Верните ALERT только если heat > heat_threshold И precipitation < rain_target_mm, иначе OK. Строгие неравенства исключают равенство. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "OK"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0150",
+    "input": "Оцените оба заданных условия и верните только метку решения.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        27.5,
+        19.0,
+        13.0,
+        12.5
+      ],
+      "daily_min": [
+        22.5,
+        7.0,
+        3.5,
+        3.5
+      ],
+      "daily_rain": [
+        3.5,
+        2.6,
+        1.4,
+        3.6
+      ],
+      "heat_threshold": 55.5,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 9.85,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "group": "synthetic_selection_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0102",
+    "input": "Только выбери калькулятор, чтобы оценить суточное уравнение Пенмана-Монтейта для эталонной поверхности в мм/сутки. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "В Миннесоте овёс — вымерзающая зимой покровная культура, а озимая рожь переживает зиму.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "овёс"
+      ]
+    },
+    "fact_id": "fact_17",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0034",
+    "input": "Какая названная покровная культура вымерзает зимой в Миннесоте?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0129",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 4.5,
+      "scenario_threshold": 3.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 2.5252555195522075,
+      "unit": "mm/day"
+    },
+    "group": "synthetic_numeric_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0059",
+    "input": "Calculate et0 for the supplied synthetic research record. Use only the supplied observations.",
+    "inputs": {
+      "delta": 0.07871436999934961,
+      "ea": 0.8533947599509466,
+      "es": 1.1852704999318704,
+      "g": 0,
+      "gamma": 0.064505,
+      "rn": 10.7,
+      "temperature": 9.25,
+      "temperature_unit": "C",
+      "u2": 1.4
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "et0",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "rh_outside_range",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_rh_outside_range",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0080",
+    "input": "Рассчитай vpd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "rh": 110,
+      "temperature": 12.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Subsurface drainage removes extra leaching water and limits a rising groundwater table.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Subsurface drainage"
+      ]
+    },
+    "fact_id": "fact_10",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0019",
+    "input": "What removes extra leaching water?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0125",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 7.0,
+      "scenario_threshold": 4.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0118",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -8.0,
+      "scenario_threshold": -5.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "The hypothetical FAO reference grass has albedo 0.23 and receives adequate water.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "0.23"
+      ]
+    },
+    "fact_id": "fact_04",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0007",
+    "input": "What albedo is assigned to reference grass?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e06.htm",
+    "source_id": "fao56_ch2",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "missing_target",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_missing_target",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0090",
+    "input": "Рассчитай rain_deficit по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        0.8,
+        1.4,
+        7.1,
+        4.0,
+        5.1
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "В расчётах эвапотранспирации FAO используется скорость ветра на высоте 2 м над поверхностью.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "2 м"
+      ]
+    },
+    "fact_id": "fact_05",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0010",
+    "input": "На какой высоте требуется скорость ветра?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e07.htm",
+    "source_id": "fao56_ch3",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 27.25,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0044",
+    "input": "Рассчитай gdd для переданной синтетической исследовательской записи. Верните результат за данный период наблюдений.",
+    "inputs": {
+      "base": 7,
+      "temperature_unit": "C",
+      "tmax": [
+        1.0,
+        8.0,
+        30.0,
+        21.5
+      ],
+      "tmin": [
+        -5.5,
+        1.0,
+        19.5,
+        11.5
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Leaching washes soluble salts from the root zone with percolating water.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Leaching"
+      ]
+    },
+    "fact_id": "fact_09",
+    "group": "source_document_FAO_irrigation_training_salty_soils",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0017",
+    "input": "Which process washes salts from the root zone?",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/r4082e/r4082e08.htm",
+    "source_id": "fao_salinity",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "group": "synthetic_selection_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0098",
+    "input": "Только выбери калькулятор, чтобы вычислить атмосферный дефицит водяного пара в кПа по одной температуре. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0115",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": -4.5,
+      "scenario_threshold": -1.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "rain_deficit"
+      ]
+    },
+    "group": "synthetic_selection_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0110",
+    "input": "Только выбери калькулятор, чтобы сравнить заданную целевую глубину с измеренными осадками без рекомендаций по поливу. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Legumes can fix atmospheric nitrogen; cover-crop species differ in their benefits.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Legumes"
+      ]
+    },
+    "fact_id": "fact_15",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0029",
+    "input": "Which plant group can fix atmospheric nitrogen?",
+    "inputs": {},
+    "language": "en",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.22771310683135085,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0055",
+    "input": "Calculate vpd for the supplied synthetic research record. Return the total for this observation window.",
+    "inputs": {
+      "rh": 72,
+      "temperature": 4.0,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "FAO defines hypothetical reference grass as 0.12 m tall, with fixed surface characteristics.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "0.12 m"
+      ]
+    },
+    "fact_id": "fact_03",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0005",
+    "input": "How tall is the reference grass? Return the written value and unit.",
+    "inputs": {},
+    "language": "en",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e06.htm",
+    "source_id": "fao56_ch2",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Бобовые способны фиксировать атмосферный азот; преимущества видов покровных культур различаются.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Бобовые"
+      ]
+    },
+    "fact_id": "fact_15",
+    "group": "source_document_UMN_cover_species_20220929",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0030",
+    "input": "Какая группа растений способна фиксировать атмосферный азот?",
+    "inputs": {},
+    "language": "ru",
+    "license": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+    "source_id": "umn_cover",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Живые корни питают почвенные микроорганизмы выделяемыми веществами и поддерживают круговорот питательных элементов.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Живые корни"
+      ]
+    },
+    "fact_id": "fact_11",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0022",
+    "input": "Какие живые части растений питают почвенные микроорганизмы?",
+    "inputs": {},
+    "language": "ru",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0133",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        15.0,
+        25.5,
+        15.0,
+        28.0
+      ],
+      "daily_min": [
+        8.0,
+        17.0,
+        7.5,
+        16.0
+      ],
+      "daily_rain": [
+        2.2,
+        2.7,
+        0.1,
+        1.1
+      ],
+      "heat_threshold": 64.75,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 8.85,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "vpd"
+      ]
+    },
+    "group": "synthetic_selection_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0097",
+    "input": "Choose only the calculator needed to estimate air vapour pressure deficit from Celsius temperature and relative humidity. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "unequal_arrays",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_unequal_arrays",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0074",
+    "input": "Рассчитай gdd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "base": 7,
+      "temperature_unit": "C",
+      "tmax": [
+        21.5,
+        4.0,
+        23.0
+      ],
+      "tmin": [
+        12.5,
+        -1.0,
+        18.5,
+        -5.5
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 3.3694441883389374,
+      "unit": "kPa"
+    },
+    "group": "synthetic_numeric_vpd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0054",
+    "input": "Рассчитай vpd для переданной синтетической исследовательской записи. Используйте только переданные наблюдения.",
+    "inputs": {
+      "rh": 25,
+      "temperature": 31.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0116",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -1.5,
+      "scenario_threshold": -0.5,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Эвапотранспирация объединяет испарение из почвы с транспирацией растений.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "транспирацией"
+      ]
+    },
+    "fact_id": "fact_02",
+    "group": "source_document_FAO56_1998",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0004",
+    "input": "Какой процесс растений вместе с испарением образует эвапотранспирацию?",
+    "inputs": {},
+    "language": "ru",
+    "license": "FAO source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.fao.org/4/x0490e/x0490e04.htm",
+    "source_id": "fao56_ch1",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD uses the uncapped daily mean minus the supplied base, floored at zero. VPD is the single-temperature/RH approximation. ET0 uses supplied daily FAO56 parameters; Rn and G are MJ/m2/day, u2 at2m is m/s, vapour pressures are kPa. Rain deficit is nonnegative target minus total rainfall. No irrigation prescription.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.0,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0069",
+    "input": "Calculate rain_deficit for the supplied synthetic research record. Use the stated base and units without agronomic assumptions.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        5.9,
+        1.3,
+        6.4,
+        6.5,
+        4.2
+      ],
+      "target": 20.0
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Fictional supplied research rule: RISK if minimum_temperature < scenario_threshold; otherwise NO_RISK. Equality is NO_RISK. The threshold is a scenario parameter, not a crop recommendation.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0123",
+    "input": "Apply the supplied rule to these observations. Return only the label.",
+    "inputs": {
+      "minimum_temperature": 3.5,
+      "scenario_threshold": 3.5,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 0.0,
+      "unit": "mm"
+    },
+    "group": "synthetic_numeric_rain_deficit",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0070",
+    "input": "Рассчитай rain_deficit для переданной синтетической исследовательской записи. Используйте заданные величины и единицы без агрономических допущений.",
+    "inputs": {
+      "precipitation_unit": "mm",
+      "rain": [
+        5.8,
+        3.6,
+        3.7,
+        6.9,
+        8.0
+      ],
+      "target": 22.1
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "rain_deficit",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  },
+  {
+    "category": "missing_data",
+    "context": "Строгий калькулятор принимает только temperature_unit=C и precipitation_unit=mm. Ряды GDD должны иметь равные длины. RH — число в диапазоне0..100%; ветер неотрицателен. Все обязательные параметры формулы должны быть переданы.",
+    "defect": "nonnumeric_rh",
+    "expected": {
+      "action": "ASK_FOR_DATA"
+    },
+    "group": "synthetic_invalid_nonnumeric_rh",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0082",
+    "input": "Рассчитай vpd по переданным исследовательским входам. Если обязательное поле, значение или поддерживаемая единица некорректны, запросите исправленные входы; не угадывайте и не преобразуйте их.",
+    "inputs": {
+      "rh": "не измерено",
+      "temperature": -4.5,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "vpd",
+    "scoring": "action",
+    "source": "scripts/build_home_holdout.py; controlled malformed or incomplete inputs",
+    "split": "home_final"
+  },
+  {
+    "category": "rule_interpretation",
+    "context": "Условное заданное исследовательское правило: RISK, если minimum_temperature < scenario_threshold, иначе NO_RISK. При равенстве — NO_RISK. Порог — параметр сценария, не рекомендация для культуры.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "NO_RISK"
+      ]
+    },
+    "group": "synthetic_rule_strict_temperature_lt",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0128",
+    "input": "Примените заданное правило к наблюдениям. Верните только метку.",
+    "inputs": {
+      "minimum_temperature": -1.5,
+      "scenario_threshold": -4.0,
+      "temperature_unit": "C"
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; fictional rule controlled labels",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "Почвенный покров защищает поля от эрозии при сильных дождях и ветре.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "Почвенный покров"
+      ]
+    },
+    "fact_id": "fact_12",
+    "group": "source_document_USDA_NRCS_soil_health_cropland",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0024",
+    "input": "Что защищает поля от дождевой и ветровой эрозии?",
+    "inputs": {},
+    "language": "ru",
+    "license": "USDA government source; authored paraphrase and attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+    "source_id": "nrcs_soil",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "group": "synthetic_selection_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0091",
+    "input": "Choose only the calculator needed to accumulate daily thermal time above a supplied base from minimum and maximum temperatures. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "et0"
+      ]
+    },
+    "group": "synthetic_selection_et0",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0104",
+    "input": "Только выбери калькулятор, чтобы объединить наклон, психрометрическую постоянную, чистую радиацию и ветер на2м для эталонной ET. Не рассчитывай; ответь одним идентификатором инструмента.",
+    "inputs": {},
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "tool_selection",
+    "context": "",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "gdd"
+      ]
+    },
+    "group": "synthetic_selection_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0095",
+    "input": "Choose only the calculator needed to aggregate zero-floored mean-temperature-minus-base values. Do not calculate; answer one tool identifier.",
+    "inputs": {},
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; authored tool eligibility request",
+    "split": "home_final"
+  },
+  {
+    "category": "compound_reasoning",
+    "context": "Fictional two-step research policy. heat=sum(max(0,(daily_min+daily_max)/2-base_c)) over matching days; precipitation=sum(daily_rain). Return ALERT only if heat > heat_threshold AND precipitation < rain_target_mm; otherwise OK. Strict inequalities exclude equality. This is not irrigation advice.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "ALERT"
+      ]
+    },
+    "group": "synthetic_compound_heat_rain_strict_and",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0139",
+    "input": "Evaluate both supplied conditions and return only the decision label.",
+    "inputs": {
+      "base_c": 0,
+      "daily_max": [
+        18.5,
+        24.0,
+        25.5,
+        12.5
+      ],
+      "daily_min": [
+        10.5,
+        13.5,
+        19.0,
+        7.5
+      ],
+      "daily_rain": [
+        0.8,
+        3.6,
+        0.9,
+        1.6
+      ],
+      "heat_threshold": 64.25,
+      "precipitation_unit": "mm",
+      "rain_target_mm": 9.65,
+      "temperature_unit": "C"
+    },
+    "language": "en",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "scoring": "exact_label",
+    "source": "scripts/build_home_holdout.py; independent Decimal two-step controlled scenario",
+    "split": "home_final"
+  },
+  {
+    "category": "extractive_qa",
+    "context": "The soybean nitrogen credit mainly reflects the carbon-to-nitrogen ratio of its residue.",
+    "expected": {
+      "action": "ANSWER",
+      "answers": [
+        "carbon-to-nitrogen ratio"
+      ]
+    },
+    "fact_id": "fact_19",
+    "group": "source_document_UMN_cover_nitrogen_20190426",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0037",
+    "input": "What residue ratio mainly explains the soybean nitrogen credit?",
+    "inputs": {},
+    "language": "en",
+    "license": "Underlying University source rights retained; short authored paraphrases with attribution",
+    "provenance_kind": "source_paraphrase",
+    "scoring": "span_em_f1",
+    "source": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+    "source_id": "umn_nitrogen",
+    "split": "home_final",
+    "translation": "AI-assisted EN/RU paired adaptation; human manual validation PENDING"
+  },
+  {
+    "category": "numeric",
+    "context": "GDD — среднее за сутки минус заданная база, с отсечкой результата на нуле и без верхнего ограничения. VPD — приближение по одной температуре и RH. ET0 использует переданные суточные параметры FAO56; Rn и G в МДж/м2/сутки, u2 на2м в м/с, давления пара в кПа. Дефицит осадков — неотрицательная разница цели и суммы осадков. Это не рекомендация по поливу.",
+    "expected": {
+      "action": "ANSWER",
+      "numeric": 26.75,
+      "unit": "degC day"
+    },
+    "group": "synthetic_numeric_gdd",
+    "human_validation": "PENDING",
+    "id": "home_final_20261001_0042",
+    "input": "Рассчитай gdd для переданной синтетической исследовательской записи. Используйте только переданные наблюдения.",
+    "inputs": {
+      "base": 11,
+      "temperature_unit": "C",
+      "tmax": [
+        23.0,
+        20.5,
+        1.5,
+        25.5
+      ],
+      "tmin": [
+        18.0,
+        17.0,
+        -4.0,
+        15.5
+      ]
+    },
+    "language": "ru",
+    "license": "CC0-1.0 authored synthetic scenario",
+    "provenance_kind": "synthetic",
+    "reference_tool": "gdd",
+    "scoring": "numeric_tolerance",
+    "source": "scripts/build_home_holdout.py; independently calculated Decimal synthetic values",
+    "split": "home_final"
+  }
+]

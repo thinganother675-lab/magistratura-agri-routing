@@ -1,0 +1,27 @@
+{
+  "pz": 2,
+  "attempt_started_at": "2026-10-16T15:45:08+03:00",
+  "verified_at": "2026-10-16T15:47:43+03:00",
+  "submitted_at_sdo": "2026-10-16T15:49:00+03:00",
+  "sdo_last_modified": "пятница, 16 октября 2026, 15:49",
+  "clock_note": "Часы СДО опережают проверенные часы инструмента примерно на 1–2 минуты. Оба значения сохранены отдельно.",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ02_Сарычев_ДЭ39-26.docx",
+      "sha256": "7d0243be31ea35a3fec5c9e2a822e49a15c0a459d92171f7e700038c5a6a8d4e",
+      "bytes": 96494
+    }
+  ],
+  "sha256_verified": true,
+  "status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "file_selected": true,
+  "file_uploaded": true,
+  "save_clicked": true,
+  "additional_submit_step_required": false,
+  "declaration_requested": false,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ02_20261016_submitted.jpg",
+  "authorization": "План revision=2, слот 15:43–15:58 МСК; начато внутри окна.",
+  "errors": []
+}

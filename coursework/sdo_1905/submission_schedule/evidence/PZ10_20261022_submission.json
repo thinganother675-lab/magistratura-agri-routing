@@ -1,0 +1,19 @@
+{
+  "pz": 10,
+  "verified_at": "2026-10-22T11:27:10+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+  "identity": "Антоний Сарычев",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ10_Сарычев_ДЭ39-26.docx",
+      "sha256": "cb453a60b365cc13cf318c7a195aac18c8228861fe26f169dcff138643dc1bf8",
+      "bytes": 101507
+    }
+  ],
+  "sha256_verified": true,
+  "sdo_status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "sdo_last_modified": "четверг, 22 октября 2026, 11:28",
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ10_20261022_submitted.jpg",
+  "outside_window_authorized_by_user": true
+}

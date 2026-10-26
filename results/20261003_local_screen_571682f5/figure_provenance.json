@@ -1,0 +1,16 @@
+{
+  "status": "DEV",
+  "private_test_run": false,
+  "source_analysis_sha256": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44",
+  "source_analysis_path": "results/20261003_local_screen_571682f5/final_analysis.json",
+  "plot_code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "plot_source_sha256": "37cd1101b742e2d77c74cbfc52dcb52132e807bff9fd4fdad2e86687edc49624",
+  "outputs": {
+    "quality_latency_dev.png": "5c7ad3485c4d3738d2028ca4e67ca82039a173c4a1eaead31535db10afced1fe",
+    "quality_latency_dev.svg": "ed1e51ca148964846444f35eff3737412e0d08cf63a3268be0acc783ef863480"
+  },
+  "contains_benchmark_text_or_predictions": false,
+  "metric": "STRICT_SET_EM on unmodified parseable original references",
+  "latency_scope": "p95 successful query response timing; excludes load and warmup",
+  "resource_scope": "sampled peak whole-system RAM, not model allocation"
+}

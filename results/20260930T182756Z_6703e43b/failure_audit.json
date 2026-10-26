@@ -1,0 +1,1776 @@
+{
+  "failures": [
+    {
+      "id": "agxqa_65",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what will an irrigator have to do in in Nebraska when there is a very dry off-season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "pump some water in June to refill the profile before the high water demand days of July arrive"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target sum of rainfall for the scenario in Nebraska when there is a very dry off-season?",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_65",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "what will an irrigator have to do in in Nebraska when there is a very dry off-season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "pump some water in June to refill the profile before the high water demand days of July arrive"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "pump some water in June to refill the profile",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_225",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "why does crop water use vary across the panhandle region in Nebraska?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "variations in temperature and precipitation events"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target precipitation value for the scenario used in the rain_deficit calculation?",
+        "numeric": null,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_315",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "when should ETgages or atmometers be installed?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "early"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the specific base temperature (base) for the ETgage installation schedule?",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_540",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what does VRI denote?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Variable rate irrigation"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the specific definition or usage context of VRI in your agricultural research task?",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_564",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "if the standard speed of the electric motor is 1770 rpm and you want the motor to run at 1650 rpm what would you adjust the frequency of the electric supply from?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "60 hertz down to 56 hertz [1650 rpm ÷ 1770 rpm x 60 hertz]."
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "56 hertz",
+        "numeric": 56,
+        "unit": "hertz",
+        "tool": "vpd"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_564",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "if the standard speed of the electric motor is 1770 rpm and you want the motor to run at 1650 rpm what would you adjust the frequency of the electric supply from?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "60 hertz down to 56 hertz [1650 rpm ÷ 1770 rpm x 60 hertz]."
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "60 hertz",
+        "numeric": 60,
+        "unit": "hertz",
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_336",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what is recommended to help determine the actual irrigation cost?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "use of the IrrigateCost app"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "The IrrigateCost app",
+        "numeric": null,
+        "unit": null,
+        "tool": "irrigateCost"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_336",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "what is recommended to help determine the actual irrigation cost?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "use of the IrrigateCost app"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "IrrigateCost app"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_101",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what does data show about irrigators application of water late in the season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "many irrigators are applying more water late in the season"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the specific target irrigation amount or schedule for the 40% recommendation mentioned in the text?",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_101",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "what does data show about irrigators application of water late in the season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "many irrigators are applying more water late in the season"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "Many irrigators are applying more water late in the season than is needed.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_283",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "how can you check for proper operation of your irrigation system?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "making sure there is not any water squirting from the side of any regulators"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the current age of your irrigation system in years?",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_283",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "how can you check for proper operation of your irrigation system?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "making sure there is not any water squirting from the side of any regulators"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "Check for proper operation by making sure there is not any water squirting from the side of any regulators. If your system is approaching 10 years old you might need to take a closer look at them.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_345",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "when  is an excellent time to turn attention to soil water sensor and ETgage installations if they haven’t already been completed?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "With planting wrapping up across the state"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "None",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_345",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "when  is an excellent time to turn attention to soil water sensor and ETgage installations if they haven’t already been completed?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "With planting wrapping up across the state"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "now",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_561",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what software could potentially be implanted into  irrigation control modules for automated irrigation control, variable rate irrigation, and other irrigation decision supports packages?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "CornSoyWater"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What specific software or technology standards are you interested in for implantation into irrigation control modules?",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_502",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "how many wells is the Chadron aquifer the sole provider for in the Nebraska panhandle?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "160"
+        ]
+      },
+      "output": null,
+      "error": {
+        "type": "ValueError",
+        "http_status": null
+      }
+    },
+    {
+      "id": "agxqa_502",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "how many wells is the Chadron aquifer the sole provider for in the Nebraska panhandle?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "160"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "more than 160",
+        "numeric": 160,
+        "unit": "wells",
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_279",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what are two examples of substances that can be applied through a center pivot that is efficient and effective?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "nitrogen fertilizer or crop protection products"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the specific crop type, nitrogen fertilizer application rate, and expected corn yield target to calculate the appropriate center pivot injection rates and pump settings for efficient and effective application.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_279",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "what are two examples of substances that can be applied through a center pivot that is efficient and effective?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "nitrogen fertilizer or crop protection products"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "nitrogen fertilizer and crop protection products",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_282",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "where can you find the steps that should be taken to check over your irrigation system?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Ag Production tab on our website at water.unl.edu"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the specific irrigation system type (e.g., sprinkler, drip, overhead) and the region or climate conditions (e.g., temperature range, rainfall history) to determine the appropriate steps for checking over your irrigation system.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_282",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "where can you find the steps that should be taken to check over your irrigation system?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Ag Production tab on our website at water.unl.edu"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "Ag Production tab on our website at water.unl.edu, or contact me directly",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_269",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "who can provide a copy of the sprinkler chart if the current sprinklers on the pivot came with the machine when it was new?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "the pivot dealer should be able to provide a copy"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "The user needs to know the current location of the pivot to determine if the dealer can provide the chart or if they need to measure the pivot.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_269",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "who can provide a copy of the sprinkler chart if the current sprinklers on the pivot came with the machine when it was new?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "the pivot dealer should be able to provide a copy"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "pivot dealer",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_474",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "how many inches of irrigation water per acre could be wasted as a result from an extra irrigation late in the season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "1 to 3 inches"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "The context states that an extra irrigation could waste 1 to 3 inches of water per acre, but it does not specify the exact timing (late in the season) or provide a specific threshold for when this waste becomes unacceptable. Please provide the specific criteria or threshold for 'late in the season' to determine the exact amount of wasted water.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_1",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what is the key to early water management while keeping in mind over-irrigation enables crop input losses?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "to apply irrigation only when it is needed to get the crop off to a good start"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target irrigation amount or timing schedule for the specific crop and location to determine the optimal early water management strategy?",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_1",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "what is the key to early water management while keeping in mind over-irrigation enables crop input losses?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "to apply irrigation only when it is needed to get the crop off to a good start"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "apply irrigation only when it is needed to get the crop off to a good start",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_361",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "under what sprinkler design flow rate variations are the use of pressure regulators encouraged?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "10% for more than 15% of the system due to pressure differences"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "When the sprinkler design flow rate varies by at least 10% for more than 15% of the system due to pressure differences.",
+        "numeric": null,
+        "unit": null,
+        "tool": "gdd"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_361",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "under what sprinkler design flow rate variations are the use of pressure regulators encouraged?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "10% for more than 15% of the system due to pressure differences"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "at least 10% for more than 15% of the system",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_63",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "why should the decision to irrigate a field in Nebraska in May and June be carefully considered?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Long-term averages show May and June to be two of the highest rainfall months in Nebraska"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target rainfall amount for irrigation decisions in Nebraska for May and June?",
+        "numeric": null,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_63",
+      "category": "extractive_qa",
+      "model": "cloud",
+      "input": "why should the decision to irrigate a field in Nebraska in May and June be carefully considered?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Long-term averages show May and June to be two of the highest rainfall months in Nebraska"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "Long-term averages show May and June to be two of the highest rainfall months in Nebraska, and the rainfall is usually more than needed to refill the soil profile for fields that were irrigated the previous year.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_458",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what becomes easy to do if you do not plan for the possibility of rain?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "apply too much irrigation water"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target sum of rainfall for the scenario?",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "agxqa_38",
+      "category": "extractive_qa",
+      "model": "local",
+      "input": "what is essential for a successful growing season?",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "Getting the crop off to a great start"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "What is the target sum of rainfall for the growing season?",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_9_0",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 9: calculate gdd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 7.5,
+        "unit": "degC day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "GDD = 0",
+        "numeric": 0,
+        "unit": "degC",
+        "tool": "gdd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_9_1",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 9: calculate vpd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 1.5863587153263454,
+        "unit": "kPa"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.015 kPa",
+        "numeric": 1.015,
+        "unit": "kPa",
+        "tool": "vpd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_9_2",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 9: calculate et0.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 4.697816020398592,
+        "unit": "mm/day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.008",
+        "numeric": 1.008,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_9_3",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 9: calculate rain_deficit.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 12,
+        "unit": "mm"
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "The context is empty. Please provide the missing data (e.g., daily temperature, humidity, wind speed, solar radiation, and evapotranspiration values) to calculate the rain_deficit.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_10_0",
+      "category": "numeric",
+      "model": "local",
+      "input": "Для воспроизводимой проверки, рассчитай gdd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 10.0,
+        "unit": "degC day"
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Для расчета GDD требуется значение температуры воздуха (T) в каждый день, а не только минимум и максимум. Пожалуйста, предоставьте значения температуры воздуха для каждого дня.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_10_1",
+      "category": "numeric",
+      "model": "local",
+      "input": "Для воспроизводимой проверки, рассчитай vpd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 2.6081519511567315,
+        "unit": "kPa"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.25",
+        "numeric": 1.25,
+        "unit": "kPa"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_10_2",
+      "category": "numeric",
+      "model": "local",
+      "input": "Для воспроизводимой проверки, рассчитай et0.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 4.690051123397347,
+        "unit": "mm/day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.008",
+        "numeric": 1.008,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_10_2",
+      "category": "numeric",
+      "model": "cloud",
+      "input": "Для воспроизводимой проверки, рассчитай et0.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 4.690051123397347,
+        "unit": "mm/day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "8.14",
+        "numeric": 8.14,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_10_3",
+      "category": "numeric",
+      "model": "local",
+      "input": "Для воспроизводимой проверки, рассчитай rain_deficit.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 20,
+        "unit": "mm"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "13",
+        "numeric": 13,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_11_0",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate gdd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 25.5,
+        "unit": "degC day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "GDD = 0",
+        "numeric": 0,
+        "unit": "degC",
+        "tool": "gdd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_11_1",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate vpd.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 0.8719782083417001,
+        "unit": "kPa"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.058 kPa",
+        "numeric": 1.058,
+        "unit": "kPa",
+        "tool": "vpd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_11_2",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate et0.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 3.990422798021024,
+        "unit": "mm/day"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "ET0=0.408*0.15*(12-0)+0.066*900/(28+273)*1^2*(2.4-1.3)=0.0756 mm/day",
+        "numeric": 0.0756,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_numeric_11_3",
+      "category": "numeric",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate rain_deficit.",
+      "expected": {
+        "action": "ANSWER",
+        "numeric": 17,
+        "unit": "mm"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1",
+        "numeric": 1,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_9_0",
+      "category": "missing_data",
+      "model": "cloud",
+      "input": "Controlled scenario 9: calculate gdd.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "0",
+        "numeric": 0,
+        "unit": "degC day",
+        "tool": "gdd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_9_1",
+      "category": "missing_data",
+      "model": "cloud",
+      "input": "Controlled scenario 9: calculate vpd.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": null,
+      "error": {
+        "type": "ValueError",
+        "http_status": null
+      }
+    },
+    {
+      "id": "controlled_missing_data_9_3",
+      "category": "missing_data",
+      "model": "local",
+      "input": "Controlled scenario 9: calculate rain_deficit.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "2",
+        "numeric": 2,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_9_3",
+      "category": "missing_data",
+      "model": "cloud",
+      "input": "Controlled scenario 9: calculate rain_deficit.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": null,
+      "error": {
+        "type": "ValueError",
+        "http_status": null
+      }
+    },
+    {
+      "id": "controlled_missing_data_10_2",
+      "category": "missing_data",
+      "model": "local",
+      "input": "Для воспроизводимой проверки, рассчитай et0.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "1.08",
+        "numeric": 1.08,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_10_2",
+      "category": "missing_data",
+      "model": "cloud",
+      "input": "Для воспроизводимой проверки, рассчитай et0.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "2.41",
+        "numeric": 2.41,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_11_2",
+      "category": "missing_data",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate et0.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "ET0=0.408*0.15*(2.4-1.3)+0.066*900/(19+273)*3^2*(2.4-1.3)=0.00945+0.00019=0.00964 mm/day",
+        "numeric": 0.00964,
+        "unit": "mm/day",
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_missing_data_11_2",
+      "category": "missing_data",
+      "model": "cloud",
+      "input": "Controlled scenario 11: calculate et0.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": null,
+      "error": {
+        "type": "ValueError",
+        "http_status": null
+      }
+    },
+    {
+      "id": "controlled_missing_data_11_3",
+      "category": "missing_data",
+      "model": "local",
+      "input": "Controlled scenario 11: calculate rain_deficit.",
+      "expected": {
+        "action": "ASK_FOR_DATA"
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "10",
+        "numeric": 10,
+        "unit": "mm",
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_9_0",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 9: select only the tool for accumulated heat from daily minimum/maximum temperatures and a base; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "gdd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the daily minimum and maximum temperatures (in °C) and the base temperature (in °C) to calculate the accumulated heat (GDD).",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_9_1",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 9: select only the tool for vapour pressure deficit from temperature and relative humidity; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "vpd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the temperature (T) and relative humidity (RH) values in degrees Celsius and percent, respectively, to calculate the vapour pressure deficit (VPD) using the supplied formula.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_9_2",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 9: select only the tool for FAO-56 reference evapotranspiration; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "et0"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the daily temperature (T), relative humidity (RH), wind speed at 2 meters (u2), and net radiation (Rn) values in MJ/m2/day for the location and period where FAO-56 reference evapotranspiration is needed.",
+        "numeric": null,
+        "unit": null,
+        "tool": "et0"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_9_3",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 9: select only the tool for rainfall deficit relative to a stated target; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "rain_deficit"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the target rainfall value and the current rainfall values needed to calculate the rainfall deficit relative to the target.",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_10_0",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: только выбери инструмент, чтобы оценить тепловую сумму по tmin/tmax и base; не рассчитывай.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "gdd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Для оценки тепловую сумму по tmin/tmax и base необходимо указать значения tmin, tmax и base (в градусах Цельсия) для каждого дня. Также требуется указать период (например, 1990-2020 гг.) и базу (например, 10°C).",
+        "numeric": null,
+        "unit": null,
+        "tool": "gdd"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_10_1",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: только выбери инструмент, чтобы оценить дефицит давления пара по температуре и RH; не рассчитывай.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "vpd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Для оценки дефицита давления пара по температуре и RH необходимо указать температуру (T) и относительную влажность (RH) в контексте. Пожалуйста, предоставьте эти значения.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_10_2",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: только выбери инструмент, чтобы оценить эталонную эвапотранспирацию FAO-56; не рассчитывай.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "et0"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Для расчета эталонной эвапотранспирации FAO-56 необходимо указать следующие параметры: температуру воздуха (T), влажность воздуха (RH), скорость ветра (u2), радиационный поток (Rn), коэффициент испарения (gamma), температуру почвы (tmin, tmax) и базовую температуру (base). Также требуется указать целевое значение для расчета дефицита осадков (target).",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_10_3",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: только выбери инструмент, чтобы оценить дефицит осадков относительно заданной цели; не рассчитывай.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "rain_deficit"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Для оценки дефицита осадков относительно заданной цели необходимо указать: 1) целевое значение осадков (target), 2) количество осадков за период (rain), 3) дату (date). Пожалуйста, предоставьте эти данные.",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_11_0",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 11: select only the tool for accumulated heat from daily minimum/maximum temperatures and a base; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "gdd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the daily minimum and maximum temperatures (in °C) and the base temperature (in °C) to calculate the accumulated heat (GDD).",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_11_1",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 11: select only the tool for vapour pressure deficit from temperature and relative humidity; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "vpd"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the temperature (T) and relative humidity (RH) values in degrees Celsius and percent, respectively, to calculate the VPD using the supplied formula.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_11_2",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 11: select only the tool for FAO-56 reference evapotranspiration; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "et0"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the daily temperature (T), relative humidity (RH), wind speed at 2 meters (u2), and net radiation (Rn) values in MJ/m2/day for the specific location and date required to calculate the FAO-56 reference evapotranspiration (ET0).",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_tool_selection_11_3",
+      "category": "tool_selection",
+      "model": "local",
+      "input": "Scenario 11: select only the tool for rainfall deficit relative to a stated target; do not calculate.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "rain_deficit"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the target rainfall value and the actual measured rainfall value to calculate the rainfall deficit.",
+        "numeric": null,
+        "unit": null,
+        "tool": "rain_deficit"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_10_0",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Потребуются данные о минимальной температуре для конкретной культуры и нормативном пороге для данной культуры, чтобы определить, является ли заданный scenario_threshold нормой культуры.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_10_1",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "RISK"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Получите значение температуры для расчета (или уточните, что требуется для проверки условия), так как контекст пуст.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_10_2",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Потребуются данные о минимальной температуре для конкретной культуры, чтобы определить, соответствует ли текущая температура порогу для воспроизводимости.",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_10_3",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Для воспроизводимой проверки: по условному правилу RISK тогда и только тогда, когда minimum_temperature < scenario_threshold, иначе NO_RISK. Классифицируй. Порог задан условием, это не норма культуры.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "RISK",
+        "numeric": 1,
+        "unit": "days"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_11_0",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Scenario 11: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "RISK",
+        "numeric": null,
+        "unit": null,
+        "tool": "risk_rule"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_11_1",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Scenario 11: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ASK_FOR_DATA",
+        "answer": "Please provide the actual minimum temperature value and the scenario threshold value to evaluate the risk condition.",
+        "numeric": null,
+        "unit": null,
+        "tool": "none"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_rule_interpretation_11_3",
+      "category": "rule_interpretation",
+      "model": "local",
+      "input": "Scenario 11: return RISK iff minimum_temperature < scenario_threshold, otherwise NO_RISK. This is a stipulated rule, not a crop threshold.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "NO_RISK"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "RISK",
+        "numeric": 1,
+        "unit": "C"
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_compound_reasoning_9_3",
+      "category": "compound_reasoning",
+      "model": "local",
+      "input": "Scenario 9: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "ALERT"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "OK",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_compound_reasoning_10_1",
+      "category": "compound_reasoning",
+      "model": "cloud",
+      "input": "Для воспроизводимой проверки: условный ALERT, если сумма max(0,(daily_min+daily_max)/2-base_c) больше heat_threshold И сумма daily_rain меньше rain_target_mm; иначе OK. Верни только метку. Это формальная проверка, без рекомендаций по поливу.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "OK"
+        ]
+      },
+      "output": null,
+      "error": {
+        "type": "HTTPStatusError",
+        "http_status": 503
+      }
+    },
+    {
+      "id": "controlled_compound_reasoning_11_1",
+      "category": "compound_reasoning",
+      "model": "local",
+      "input": "Scenario 11: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "ALERT"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "OK",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_compound_reasoning_11_2",
+      "category": "compound_reasoning",
+      "model": "local",
+      "input": "Scenario 11: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "ALERT"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "OK",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    },
+    {
+      "id": "controlled_compound_reasoning_11_3",
+      "category": "compound_reasoning",
+      "model": "local",
+      "input": "Scenario 11: return ALERT if sum(max(0,(daily_min+daily_max)/2-base_c)) > heat_threshold AND sum(daily_rain) < rain_target_mm, otherwise OK. No irrigation prescription.",
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "ALERT"
+        ]
+      },
+      "output": {
+        "action": "ANSWER",
+        "answer": "OK",
+        "numeric": null,
+        "unit": null,
+        "tool": null
+      },
+      "error": null
+    }
+  ],
+  "false_local_accepts": [
+    {
+      "id": "agxqa_564",
+      "output": {
+        "action": "ANSWER",
+        "answer": "56 hertz",
+        "numeric": 56,
+        "unit": "hertz",
+        "tool": "vpd"
+      },
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "60 hertz down to 56 hertz [1650 rpm ÷ 1770 rpm x 60 hertz]."
+        ]
+      }
+    },
+    {
+      "id": "agxqa_336",
+      "output": {
+        "action": "ANSWER",
+        "answer": "The IrrigateCost app",
+        "numeric": null,
+        "unit": null,
+        "tool": "irrigateCost"
+      },
+      "expected": {
+        "action": "ANSWER",
+        "answers": [
+          "use of the IrrigateCost app"
+        ]
+      }
+    }
+  ],
+  "numeric_by_tool": [
+    {
+      "method": "cascade",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "degC day"
+    },
+    {
+      "method": "cascade",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 3.700743415417188e-17,
+      "unit": "kPa"
+    },
+    {
+      "method": "cascade",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 4.440892098500626e-16,
+      "unit": "mm/day"
+    },
+    {
+      "method": "cascade",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "mm"
+    },
+    {
+      "method": "cloud",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "degC day"
+    },
+    {
+      "method": "cloud",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0075904813906954765,
+      "unit": "kPa"
+    },
+    {
+      "method": "cloud",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 2,
+      "mae_when_numeric_present": 1.1541852180750287,
+      "unit": "mm/day"
+    },
+    {
+      "method": "cloud",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "mm"
+    },
+    {
+      "method": "local",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 2,
+      "correct": 0,
+      "mae_when_numeric_present": 16.5,
+      "unit": "degC day"
+    },
+    {
+      "method": "local",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 0,
+      "mae_when_numeric_present": 0.7051774860471256,
+      "unit": "kPa"
+    },
+    {
+      "method": "local",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 0,
+      "mae_when_numeric_present": 3.7622299806056545,
+      "unit": "mm/day"
+    },
+    {
+      "method": "local",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 2,
+      "correct": 0,
+      "mae_when_numeric_present": 11.5,
+      "unit": "mm"
+    },
+    {
+      "method": "offline",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "degC day"
+    },
+    {
+      "method": "offline",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 3.700743415417188e-17,
+      "unit": "kPa"
+    },
+    {
+      "method": "offline",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 4.440892098500626e-16,
+      "unit": "mm/day"
+    },
+    {
+      "method": "offline",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "mm"
+    },
+    {
+      "method": "rule",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "degC day"
+    },
+    {
+      "method": "rule",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 3.700743415417188e-17,
+      "unit": "kPa"
+    },
+    {
+      "method": "rule",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 4.440892098500626e-16,
+      "unit": "mm/day"
+    },
+    {
+      "method": "rule",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "mm"
+    },
+    {
+      "method": "tool_cloud",
+      "tool": "gdd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "degC day"
+    },
+    {
+      "method": "tool_cloud",
+      "tool": "vpd",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 3.700743415417188e-17,
+      "unit": "kPa"
+    },
+    {
+      "method": "tool_cloud",
+      "tool": "et0",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 4.440892098500626e-16,
+      "unit": "mm/day"
+    },
+    {
+      "method": "tool_cloud",
+      "tool": "rain_deficit",
+      "n": 3,
+      "valid_numeric_outputs": 3,
+      "correct": 3,
+      "mae_when_numeric_present": 0.0,
+      "unit": "mm"
+    }
+  ],
+  "warning": "Primary analysis numeric_mae_when_present pools incompatible units; do not interpret it as a physical aggregate. Use per-tool MAE here."
+}

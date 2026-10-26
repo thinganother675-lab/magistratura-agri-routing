@@ -1,0 +1,47 @@
+Проверка локальной среды GAMS — 24.10.2026
+
+Использована существующая локальная установка, новая установка не требовалась:
+C:/sarychev/Codex/magistratura/coursework/mmm-ppr/variant-11/runtime/gams/54.5/gams.exe
+GAMS 54.5.0 f2bc4e68 Sep 29, 2026, WEI x86 64bit/MS Windows.
+Authenticode: Valid; подписант GAMS Development Corporation.
+SHA256 gams.exe: 4768CFD891F495B84E2E970847DFF70D18032DDACC62DFB9270128B53AB779AC.
+В runtime есть штатная GAMS Demo license. Содержимое лицензии не копировалось.
+
+Контрольные примеры скопированы из локальной официальной библиотеки GAMS:
+trnsport.1 → smoke/trnsport.gms, chenery.33 → smoke/chenery.gms.
+LP trnsport: SOLVER STATUS 1 Normal Completion; MODEL STATUS 1 Optimal;
+OBJECTIVE VALUE 153.6750 (официальный ориентир 153.675).
+NLP chenery: SOLVER STATUS 1 Normal Completion; MODEL STATUS 2 Locally Optimal;
+OBJECTIVE VALUE 1058.9199 (официальный ориентир 1058.9).
+В smoke/ сохранены .gms, .log и .lst. Оба запуска завершились с кодом 0.
+Это проверка среды, а не расчет индивидуальной лабораторной.
+
+run-gams.ps1 запускает существующий runtime без PATH и глобальных изменений.
+Пример из папки модели:
+& 'C:/sarychev/Codex/magistratura/coursework/gams-2026/runtime/run-gams.ps1' model.gms lo=3
+
+Для обычного открытия программы: двойной клик по ../OPEN_GAMS_STUDIO.cmd.
+Он открывает существующий studio/studio.exe и lab2-variant8/lab2.gms.
+studio.exe: Authenticode Valid, GAMS Development Corporation.
+Аргументы studio [options] [files] и --gams-dir подтверждены локальной официальной
+документацией docs/T_STUDIO.html#STUDIO_COMMAND_LINE_OPTIONS.
+Автоматическое открытие GUI не удалось проверить: Windows Computer Use helper
+не ответил на list_apps, повтор и повтор после reset. Сам запускатель GUI не
+исполнялся через обходной способ. Основной gams.exe проверен реальными расчетами.
+
+Ссылка курса mod/url/view.php?id=26155 ведет на OneDrive: setup.exe в GAMS 20.5.
+В курсе она помечена как 32-разрядная учебная версия. Не скачивалась повторно
+и не исполнялась: уже имеется новая подписанная работоспособная версия в проекте.
+Источник старого setup.exe — стороннее хранилище, его подпись не проверялась.
+Старый 32bit runtime может отличаться интерфейсом, доступными решателями и
+ограничениями. Совместимость сдаваемой модели со старой версией отдельно не доказана.
+Новая EULA не принималась; лицензионные ограничения не обходились.
+
+Официальные источники, проверенные 24.10.2026:
+https://www.gams.com/latest/docs/UG_WIN_INSTALL.html
+https://www.gams.com/latest/docs/UG_License.html
+https://www.gams.com/sales/licensing/
+Текущая demo: до 2000 переменных и ограничений LP/MIP; до 1000 для остальных
+типов. Некоторые решатели имеют дополнительные меньшие пределы. Demo предназначена
+для изучения небольших моделей, не коммерческого/производственного применения;
+имеет срок действия. В этой проверке LP и NLP реально сработали.

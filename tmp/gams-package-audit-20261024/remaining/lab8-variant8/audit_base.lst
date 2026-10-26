@@ -1,0 +1,803 @@
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 1
+Lab 8.1 variant 8: base case and three starts
+C o m p i l a t i o n
+
+
+INCLUDE    C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\model.inc
+   3  Sets
+   4      j /milk, kefir, cream, curds/
+   5      r /mainline, creamline, curdsline/;
+   6   
+   7  Parameters
+   8      p0(j) /milk 24000, kefir 27000, cream 138000, curds 78000/
+   9      a0(j) /milk 1.01, kefir 1.01, cream 9.45, curds 14/
+  10      ep(j) /milk -.034, kefir -.022, cream -.022, curds -.027/
+  11      ea(j) /milk -.017, kefir -.012, cream -.011, curds -.010/
+  12      qmin(j) /milk 25, kefir 30, cream 1.5, curds 1.25/
+  13      hours(r) /mainline 21, creamline 18, curdsline 18/
+  14      price(j), time(r,j);
+  15   
+  16  Table speed(r,j)
+  17                  milk    kefir    cream    curds
+  18      mainline      50       60        0        0
+  19      creamline      0        0        3        0
+  20      curdsline      0        0        0      2.5;
+  21   
+  22  Scalar rawCapacity /1400/, q0 /100/;
+  23  price(j) = p0(j);
+  24  time(r,j)$speed(r,j) = 1/speed(r,j);
+  25   
+  26  Positive Variable q(j);
+  27  Variable revenue;
+  28  Equations objective, raw, line(r);
+  29   
+  30  objective.. revenue =e= sum(j,price(j)*q0*rPower(q(j)/q0,1+ep(j)))/1e6;
+  31  raw.. sum(j,a0(j)*q0*rPower(q(j)/q0,1+ea(j))) =l= rawCapacity;
+  32  line(r).. sum(j,time(r,j)*q(j)) =l= hours(r);
+  33   
+  34  Model dairy /all/;
+  35  q.lo(j) = qmin(j);
+  36  option nlp=conopt, optcr=1e-9, optca=1e-9, reslim=60;
+  37   
+  38   
+  39  Set s /base/;
+  40  Table conditions(s,*)
+  41            raw_t  mk_hours  cream_hours  curds_hours  p_milk  p_kefir  p_cream  p_curds
+  42      base   1400        21           18           18   24000    27000   138000    78000;
+  43   
+INCLUDE    C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\run_cases.inc
+  46  Sets st /start1*start3/, pass /normal, strict/;
+  47  Table initial(st,j)
+  48               milk   kefir  cream  curds
+  49      start1     25      30    1.5   1.25
+  50      start2    300     500     30      5
+  51      start3    800     100     45     35;
+  52   
+  53  Parameters result(s,*), bestQ(s,j), run(s,st,*), runQ(s,st,j),
+  54      startQ(s,st,j), startUpper(j), used(r), bestShadow(s,*), bestBound(s,j), basePrice(s,j), baseInput(s,j);
+  55  Scalars best, spread, objSpread, qSpread, violation, rawUsed, boundViolation,
+  56      rawViolation, lineViolation, objectiveCheck, accepted;
+  57   
+  58  loop(s,
+  59      rawCapacity = conditions(s,'raw_t');
+  60      hours('mainline') = conditions(s,'mk_hours');
+  61      hours('creamline') = conditions(s,'cream_hours');
+  62      hours('curdsline') = conditions(s,'curds_hours');
+  63      price('milk') = conditions(s,'p_milk');
+  64      price('kefir') = conditions(s,'p_kefir');
+  65      price('cream') = conditions(s,'p_cream');
+  66      price('curds') = conditions(s,'p_curds');
+  67      startUpper(j) = smin(r$speed(r,j),speed(r,j)*hours(r));
+  68      abort$(smin(j,startUpper(j)-qmin(j))<0) 'Lower bound exceeds line capacity',s;
+  69      spread = 0;
+  70      loop(pass$(ord(pass)=1 or spread>.001),
+  71          dairy.optfile = ord(pass);
+  72          best = -inf;
+  73          loop(st,
+  74              q.l(j) = min(startUpper(j),max(qmin(j),initial(st,j)));
+  75              startQ(s,st,j) = q.l(j);
+  76              q.m(j) = 0;
+  77              revenue.l = sum(j,price(j)*q0*rPower(q.l(j)/q0,1+ep(j)))/1e6;
+  78              revenue.m = 0; raw.m = 0; line.m(r) = 0; objective.m = 0;
+  79              solve dairy using nlp maximizing revenue;
+  80              rawUsed = sum(j,a0(j)*q0*rPower(q.l(j)/q0,1+ea(j)));
+  81              used(r) = sum(j,time(r,j)*q.l(j));
+  82              rawViolation = max(0,rawUsed-rawCapacity);
+  83              lineViolation = smax(r,max(0,used(r)-hours(r)));
+  84              boundViolation = smax(j,max(0,qmin(j)-q.l(j),q.l(j)-q.up(j)));
+  85              violation = max(rawViolation,lineViolation,boundViolation);
+  86              objectiveCheck = abs(revenue.l*1e6-sum(j,price(j)*q0*rPower(q.l(j)/q0,1+ep(j))));
+  87              accepted = ((dairy.modelstat=1 or dairy.modelstat=2) and dairy.solvestat=1 and violation<1e-5 and objectiveCheck<.01);
+  88              run(s,st,'objective_rub') = revenue.l*1e6;
+  89              run(s,st,'modelstat') = dairy.modelstat;
+  90              run(s,st,'solvestat') = dairy.solvestat;
+  91              run(s,st,'max_violation') = violation;
+  92              run(s,st,'raw_violation_t') = rawViolation;
+  93              run(s,st,'line_violation_hours') = lineViolation;
+  94              run(s,st,'bound_violation_t') = boundViolation;
+  95              run(s,st,'objective_check_rub') = objectiveCheck;
+  96              run(s,st,'accepted') = accepted;
+  97              run(s,st,'pass') = ord(pass);
+  98              runQ(s,st,j) = q.l(j);
+  99              if(accepted and revenue.l>best,
+ 100                  best = revenue.l;
+ 101                  bestQ(s,j) = q.l(j);
+ 102                  result(s,'objective_rub') = revenue.l*1e6;
+ 103                  result(s,'modelstat') = dairy.modelstat;
+ 104                  result(s,'solvestat') = dairy.solvestat;
+ 105                  result(s,'max_violation') = violation;
+ 106                  result(s,'raw_used_t') = rawUsed;
+ 107                  result(s,'mk_used_hours') = used('mainline');
+ 108                  result(s,'cream_used_hours') = used('creamline');
+ 109                  result(s,'curds_used_hours') = used('curdsline');
+ 110                  result(s,'raw_violation_t') = rawViolation;
+ 111                  result(s,'mk_violation_hours') = max(0,used('mainline')-hours('mainline'));
+ 112                  result(s,'cream_violation_hours') = max(0,used('creamline')-hours('creamline'));
+ 113                  result(s,'curds_violation_hours') = max(0,used('curdsline')-hours('curdsline'));
+ 114                  result(s,'bound_violation_t') = boundViolation;
+ 115                  result(s,'objective_check_rub') = objectiveCheck;
+ 116                  bestShadow(s,'raw') = raw.m*1e6;
+ 117                  loop(r,bestShadow(s,r) = line.m(r)*1e6;);
+ 118                  bestBound(s,j) = q.m(j)*1e6;
+ 119                  basePrice(s,j) = price(j)*rPower(q.l(j)/q0,ep(j));
+ 120                  baseInput(s,j) = a0(j)*rPower(q.l(j)/q0,ea(j));
+ 121              );
+ 122          );
+ 123          abort$(smin(st,run(s,st,'accepted'))=0) 'At least one start failed. Inspect listing.',s,run;
+ 124          objSpread = (smax(st,run(s,st,'objective_rub'))-smin(st,run(s,st,'objective_rub')))/max(1,abs(result(s,'objective_rub')));
+ 125          qSpread = smax(j,(smax(st,runQ(s,st,j))-smin(st,runQ(s,st,j)))/max(1,abs(bestQ(s,j))));
+ 126          spread = max(objSpread,qSpread);
+ 127          result(s,'pass') = ord(pass);
+ 128      );
+ 129      result(s,'spread_relative') = spread;
+ 130      result(s,'objective_spread_relative') = objSpread;
+ 131      result(s,'q_spread_relative') = qSpread;
+ 132      abort$(spread>.001) 'Starts still differ by more than 0.1 percent after stricter retry',s,spread;
+ 133  );
+ 134   
+INCLUDE    C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\export_results.inc
+ 136  Sets cf /raw_t,mk_hours,cream_hours,curds_hours,p_milk,p_kefir,p_cream,p_curds/,
+ 137      rf /objective_rub,modelstat,solvestat,max_violation,spread_relative,
+ 138          objective_spread_relative,q_spread_relative,raw_used_t,mk_used_hours,
+ 139          cream_used_hours,curds_used_hours,raw_violation_t,mk_violation_hours,
+ 140          cream_violation_hours,curds_violation_hours,bound_violation_t,objective_check_rub,pass/;
+ 141   
+ 142  File f /'results/base_results.csv'/;
+ 143  f.pw = 32767;
+ 144  f.nz = 0;
+ 145  put f 'scenario_id,';
+ 146  loop(cf,put cf.tl:0 ',';);
+ 147  loop(j,put 'q_' j.tl:0 ',';);
+ 148  loop(rf,put rf.tl:0 ',';);
+ 149  put 'status,shadow_raw_rub_per_t,';
+ 150  loop(r,put 'shadow_' r.tl:0 '_rub_per_hour,';);
+ 151  loop(j,put 'a0_' j.tl:0 ',';);
+ 152  loop(j,put 'ep_' j.tl:0 ',';);
+ 153  loop(j,put 'ea_' j.tl:0 ',';);
+ 154  loop(j,put 'qmin_' j.tl:0 ',';);
+ 155  loop((r,j),put 'speed_' r.tl:0 '_' j.tl:0 ',';);
+ 156  loop(j,put 'effective_price_' j.tl:0 ',';);
+ 157  loop(j,put 'effective_input_' j.tl:0 ',';);
+ 158  loop(j,put 'bound_marginal_' j.tl:0 '_rub_per_t,';);
+ 159  put 'q0_t' /;
+ 160  loop(s,
+ 161      put s.tl:0 ',';
+ 162      loop(cf,put conditions(s,cf):0:12 ',';);
+ 163      loop(j,put bestQ(s,j):0:12 ',';);
+ 164      loop(rf,put result(s,rf):0:12 ',';);
+ 165      put 'LOCAL_OPTIMUM_FOUND,' bestShadow(s,'raw'):0:12 ',';
+ 166      loop(r,put bestShadow(s,r):0:12 ',';);
+ 167      loop(j,put a0(j):0:12 ',';);
+ 168      loop(j,put ep(j):0:12 ',';);
+ 169      loop(j,put ea(j):0:12 ',';);
+ 170      loop(j,put qmin(j):0:12 ',';);
+ 171      loop((r,j),put speed(r,j):0:12 ',';);
+ 172      loop(j,put basePrice(s,j):0:12 ',';);
+ 173      loop(j,put baseInput(s,j):0:12 ',';);
+ 174      loop(j,put bestBound(s,j):0:12 ',';);
+ 175      put q0:0:12 /;
+ 176  );
+ 177  putclose f;
+ 178   
+ 179  File h /'results/base_starts.csv'/;
+ 180  h.pw = 32767;
+ 181  h.nz = 0;
+ 182  put h 'scenario_id,start_id,';
+ 183  loop(j,put 'initial_' j.tl:0 ',';);
+ 184  loop(j,put 'q_' j.tl:0 ',';);
+ 185  put 'objective_rub,modelstat,solvestat,max_violation,raw_violation_t,line_violation_hours,bound_violation_t,objective_check_rub,accepted,pass,status' /;
+ 186  loop((s,st),
+ 187      put s.tl:0 ',' st.tl:0 ',';
+ 188      loop(j,put startQ(s,st,j):0:12 ',';);
+ 189      loop(j,put runQ(s,st,j):0:12 ',';);
+ 190      put run(s,st,'objective_rub'):0:12 ',' run(s,st,'modelstat'):0:0 ',' run(s,st,'solvestat'):0:0 ',';
+ 191      put run(s,st,'max_violation'):0:12 ',' run(s,st,'raw_violation_t'):0:12 ',';
+ 192      put run(s,st,'line_violation_hours'):0:12 ',' run(s,st,'bound_violation_t'):0:12 ',';
+ 193      put run(s,st,'objective_check_rub'):0:12 ',' run(s,st,'accepted'):0:0 ',' run(s,st,'pass'):0:0 ',LOCAL_OPTIMUM_FOUND' /;
+ 194  );
+ 195  putclose h;
+ 196   
+ 197  display result, bestQ, basePrice, baseInput, bestShadow;
+ 198   
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 2
+Lab 8.1 variant 8: base case and three starts
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  INCLVL  FILENAME
+
+     1        1 INPUT          0       0       0  C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\lab8.gms
+     2        2 INCLUDE        1       2       1  C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\model.inc
+     3       45 INCLUDE        1      10       1  C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\run_cases.inc
+     4      135 INCLUDE        1      11       1  C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\export_results.inc
+
+
+COMPILATION TIME     =        0.015 SECONDS      3 MB  54.5.0 f2bc4e68 WEX-WEI
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 3
+Lab 8.1 variant 8: base case and three starts
+Equation Listing    SOLVE dairy Using NLP From line 79
+
+
+---- objective  =E=  
+
+objective..  - (0.0243029172323845)*q(milk) - (0.0271147716508815)*q(kefir) - (0.148028021147867)*q(cream) - (0.0854261576044358)*q(curds) + revenue =E= 0 ; (LHS = 0)
+     
+
+---- raw  =L=  
+
+raw..  (1.01650591815237)*q(milk) + (1.01240169433581)*q(kefir) + (9.78793544270013)*q(cream) + (14.4808525083201)*q(curds) =L= 1400 ; (LHS = 89.7221814218426)
+     
+
+---- line  =L=  
+
+line(mainline)..  0.02*q(milk) + 0.0166666666666667*q(kefir) =L= 21 ; (LHS = 1)
+     
+line(creamline)..  0.333333333333333*q(cream) =L= 18 ; (LHS = 0.5)
+     
+line(curdsline)..  0.4*q(curds) =L= 18 ; (LHS = 0.5)
+     
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 4
+Lab 8.1 variant 8: base case and three starts
+Column Listing      SOLVE dairy Using NLP From line 79
+
+
+---- q  
+
+q(milk)
+                (.LO, .L, .UP, .M = 25, 25, +INF, 0)
+      (-0.0243) objective
+       (1.0165) raw
+        0.02    line(mainline)
+
+q(kefir)
+                (.LO, .L, .UP, .M = 30, 30, +INF, 0)
+      (-0.0271) objective
+       (1.0124) raw
+        0.0167  line(mainline)
+
+q(cream)
+                (.LO, .L, .UP, .M = 1.5, 1.5, +INF, 0)
+      (-0.148)  objective
+       (9.7879) raw
+        0.3333  line(creamline)
+
+REMAINING ENTRY SKIPPED
+
+---- revenue  
+
+revenue
+                (.LO, .L, .UP, .M = -INF, 1.79748162378304, +INF, 0)
+        1       objective
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 5
+Lab 8.1 variant 8: base case and three starts
+Range Statistics    SOLVE dairy Using NLP From line 79
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.800E+01, 1.400E+03] - Zero values observed as well
+Bound     [min, max] : [ 1.250E+00, 3.000E+01]
+Matrix    [min, max] : [ 1.667E-02, 1.448E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 6
+Lab 8.1 variant 8: base case and three starts
+Model Statistics    SOLVE dairy Using NLP From line 79
+
+
+LOOPS                                    s   base
+                                      pass   normal
+                                        st   start1
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            13     NON LINEAR N-Z              8
+CODE LENGTH                  46     CONSTANT POOL              32
+
+
+GENERATION TIME      =        0.063 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  s base
+                                       pass normal
+                                         st start1
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 7
+Lab 8.1 variant 8: base case and three starts
+Solution Report     SOLVE dairy Using NLP From line 79
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dairy               OBJECTIVE  revenue
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  CONOPT              FROM LINE  79
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      2 Locally Optimal
+**** OBJECTIVE VALUE               34.4068
+
+ RESOURCE USAGE, LIMIT          0.203        60.000
+ ITERATION COUNT, LIMIT         4    2147483647
+ EVALUATION ERRORS              0             0
+--- *** This solver runs with a demo license. No commercial use.
+
+Reading parameter(s) from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+>>  Tol_Feas_Max 1e-9
+>>  Tol_Feas_Min 1e-11
+>>  Tol_Optimality 1e-9
+>> 
+Finished reading from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+
+ 
+ 
+    C O N O P T   version 4.39.2
+    Copyright (C) GAMS Software GmbH
+                  GAMS Development Corporation
+ 
+    Will use up to 4 threads.
+ 
+ 
+    The user model has 5 constraints and 5 variables
+    with 13 Jacobian elements, 8 of which are nonlinear.
+    The Hessian of the Lagrangian has 4 elements on the diagonal,
+    0 elements below the diagonal, and 4 nonlinear variables.
+ 
+    The pre-triangular part of the model has 2 constraints and 0 variables.
+    The post-triangular part of the model has 1 constraints and variables.
+ 
+    Preprocessed model has 2 constraints and 4 variables
+    with 6 Jacobian elements, 4 of which are nonlinear.
+ 
+ ** Optimal solution. There are no superbasic variables.
+ 
+ 
+ CONOPT time Total                            0.030 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+             Interval derivative evals        0.000 =  0.0%
+ 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objective           .              .              .             1.0000      
+---- EQU raw               -INF         1400.0000      1400.0000         0.0147      
+
+---- EQU line  
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+mainline         -INF           21.0000        21.0000         0.6430      
+creamline        -INF            5.1984        18.0000          .          
+curdsline        -INF            0.5000        18.0000          .          
+
+---- VAR q  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+milk         25.0000        25.0000        +INF           -0.0035      
+kefir        30.0000      1230.0000        +INF             .          
+cream         1.5000        15.5952        +INF             .          
+curds         1.2500         1.2500        +INF           -0.1280      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR revenue           -INF           34.4068        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 8
+Lab 8.1 variant 8: base case and three starts
+Equation Listing    SOLVE dairy Using NLP From line 79
+
+
+---- objective  =E=  
+
+objective..  - (0.0223339863034556)*q(milk) - (0.0254873849772846)*q(kefir) - (0.138586610660061)*q(cream) - (0.0822877623729125)*q(curds) + revenue =E= 0 ; (LHS = 0)
+     
+
+---- raw  =L=  
+
+raw..  (0.974459581643374)*q(milk) + (0.978792602339099)*q(kefir) + (9.47064954870176)*q(cream) + (14.28149033265)*q(curds) =L= 1400 ; (LHS = 1152.14225159172)
+     
+
+---- line  =L=  
+
+line(mainline)..  0.02*q(milk) + 0.0166666666666667*q(kefir) =L= 21 ; (LHS = 14.3333333333333)
+     
+line(creamline)..  0.333333333333333*q(cream) =L= 18 ; (LHS = 10)
+     
+line(curdsline)..  0.4*q(curds) =L= 18 ; (LHS = 2)
+     
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 9
+Lab 8.1 variant 8: base case and three starts
+Column Listing      SOLVE dairy Using NLP From line 79
+
+
+---- q  
+
+q(milk)
+                (.LO, .L, .UP, .M = 25, 300, +INF, 0)
+      (-0.0223) objective
+       (0.9745) raw
+        0.02    line(mainline)
+
+q(kefir)
+                (.LO, .L, .UP, .M = 30, 500, +INF, 0)
+      (-0.0255) objective
+       (0.9788) raw
+        0.0167  line(mainline)
+
+q(cream)
+                (.LO, .L, .UP, .M = 1.5, 30, +INF, 0)
+      (-0.1386) objective
+       (9.4706) raw
+        0.3333  line(creamline)
+
+REMAINING ENTRY SKIPPED
+
+---- revenue  
+
+revenue
+                (.LO, .L, .UP, .M = -INF, 24.640359957104, +INF, 0)
+        1       objective
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 10
+Lab 8.1 variant 8: base case and three starts
+Range Statistics    SOLVE dairy Using NLP From line 79
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.800E+01, 1.400E+03] - Zero values observed as well
+Bound     [min, max] : [ 1.250E+00, 3.000E+01]
+Matrix    [min, max] : [ 1.667E-02, 1.428E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 11
+Lab 8.1 variant 8: base case and three starts
+Model Statistics    SOLVE dairy Using NLP From line 79
+
+
+LOOPS                                    s   base
+                                      pass   normal
+                                        st   start2
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            13     NON LINEAR N-Z              8
+CODE LENGTH                  46     CONSTANT POOL              32
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  s base
+                                       pass normal
+                                         st start2
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 12
+Lab 8.1 variant 8: base case and three starts
+Solution Report     SOLVE dairy Using NLP From line 79
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dairy               OBJECTIVE  revenue
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  CONOPT              FROM LINE  79
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      2 Locally Optimal
+**** OBJECTIVE VALUE               34.4068
+
+ RESOURCE USAGE, LIMIT          0.031        60.000
+ ITERATION COUNT, LIMIT         2    2147483647
+ EVALUATION ERRORS              0             0
+--- *** This solver runs with a demo license. No commercial use.
+
+Reading parameter(s) from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+>>  Tol_Feas_Max 1e-9
+>>  Tol_Feas_Min 1e-11
+>>  Tol_Optimality 1e-9
+>> 
+Finished reading from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+
+ 
+ 
+    C O N O P T   version 4.39.2
+    Copyright (C) GAMS Software GmbH
+                  GAMS Development Corporation
+ 
+    Will use up to 4 threads.
+ 
+ 
+    The user model has 5 constraints and 5 variables
+    with 13 Jacobian elements, 8 of which are nonlinear.
+    The Hessian of the Lagrangian has 4 elements on the diagonal,
+    0 elements below the diagonal, and 4 nonlinear variables.
+ 
+    The pre-triangular part of the model has 2 constraints and 0 variables.
+    The post-triangular part of the model has 1 constraints and variables.
+ 
+    Preprocessed model has 2 constraints and 4 variables
+    with 6 Jacobian elements, 4 of which are nonlinear.
+ 
+ ** Optimal solution. There are no superbasic variables.
+ 
+ 
+ CONOPT time Total                            0.001 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+             Interval derivative evals        0.000 =  0.0%
+ 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objective           .              .              .             1.0000      
+---- EQU raw               -INF         1400.0000      1400.0000         0.0147      
+
+---- EQU line  
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+mainline         -INF           21.0000        21.0000         0.6430      
+creamline        -INF            5.1984        18.0000          .          
+curdsline        -INF            0.5000        18.0000          .          
+
+---- VAR q  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+milk         25.0000        25.0000        +INF           -0.0035      
+kefir        30.0000      1230.0000        +INF             .          
+cream         1.5000        15.5952        +INF             .          
+curds         1.2500         1.2500        +INF           -0.1280      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR revenue           -INF           34.4068        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 13
+Lab 8.1 variant 8: base case and three starts
+Equation Listing    SOLVE dairy Using NLP From line 79
+
+
+---- objective  =E=  
+
+objective..  - (0.0216014701130018)*q(milk) - (0.026406)*q(kefir) - (0.137355883236541)*q(cream) - (0.0780760090545179)*q(curds) + revenue =E= 0 ; (LHS = 0)
+     
+
+---- raw  =L=  
+
+raw..  (0.958346060303427)*q(milk) + (0.99788)*q(kefir) + (9.42850340953273)*q(cream) + (14.0062717998997)*q(curds) =L= 1400 ; (LHS = 1805.10865316434, INFES = 405.108653164342 ****)
+     
+
+---- line  =L=  
+
+line(mainline)..  0.02*q(milk) + 0.0166666666666667*q(kefir) =L= 21 ; (LHS = 17.6666666666667)
+     
+line(creamline)..  0.333333333333333*q(cream) =L= 18 ; (LHS = 15)
+     
+line(curdsline)..  0.4*q(curds) =L= 18 ; (LHS = 14)
+     
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 14
+Lab 8.1 variant 8: base case and three starts
+Column Listing      SOLVE dairy Using NLP From line 79
+
+
+---- q  
+
+q(milk)
+                (.LO, .L, .UP, .M = 25, 800, +INF, 0)
+      (-0.0216) objective
+       (0.9583) raw
+        0.02    line(mainline)
+
+q(kefir)
+                (.LO, .L, .UP, .M = 30, 100, +INF, 0)
+      (-0.0264) objective
+       (0.9979) raw
+        0.0167  line(mainline)
+
+q(cream)
+                (.LO, .L, .UP, .M = 1.5, 45, +INF, 0)
+      (-0.1374) objective
+       (9.4285) raw
+        0.3333  line(creamline)
+
+REMAINING ENTRY SKIPPED
+
+---- revenue  
+
+revenue
+                (.LO, .L, .UP, .M = -INF, 29.7179617541283, +INF, 0)
+        1       objective
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 15
+Lab 8.1 variant 8: base case and three starts
+Range Statistics    SOLVE dairy Using NLP From line 79
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 1.800E+01, 1.400E+03] - Zero values observed as well
+Bound     [min, max] : [ 1.250E+00, 3.000E+01]
+Matrix    [min, max] : [ 1.667E-02, 1.401E+01]
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 16
+Lab 8.1 variant 8: base case and three starts
+Model Statistics    SOLVE dairy Using NLP From line 79
+
+
+LOOPS                                    s   base
+                                      pass   normal
+                                        st   start3
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           3     SINGLE EQUATIONS            5
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            13     NON LINEAR N-Z              8
+CODE LENGTH                  46     CONSTANT POOL              32
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+               L O O P S                  s base
+                                       pass normal
+                                         st start3
+
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 17
+Lab 8.1 variant 8: base case and three starts
+Solution Report     SOLVE dairy Using NLP From line 79
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   dairy               OBJECTIVE  revenue
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  CONOPT              FROM LINE  79
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      2 Locally Optimal
+**** OBJECTIVE VALUE               34.4068
+
+ RESOURCE USAGE, LIMIT          0.031        60.000
+ ITERATION COUNT, LIMIT         3    2147483647
+ EVALUATION ERRORS              0             0
+--- *** This solver runs with a demo license. No commercial use.
+
+Reading parameter(s) from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+>>  Tol_Feas_Max 1e-9
+>>  Tol_Feas_Min 1e-11
+>>  Tol_Optimality 1e-9
+>> 
+Finished reading from "C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\conopt.opt"
+
+ 
+ 
+    C O N O P T   version 4.39.2
+    Copyright (C) GAMS Software GmbH
+                  GAMS Development Corporation
+ 
+    Will use up to 4 threads.
+ 
+ 
+    The user model has 5 constraints and 5 variables
+    with 13 Jacobian elements, 8 of which are nonlinear.
+    The Hessian of the Lagrangian has 4 elements on the diagonal,
+    0 elements below the diagonal, and 4 nonlinear variables.
+ 
+    The pre-triangular part of the model has 2 constraints and 0 variables.
+    The post-triangular part of the model has 1 constraints and variables.
+ 
+    Preprocessed model has 2 constraints and 4 variables
+    with 6 Jacobian elements, 4 of which are nonlinear.
+ 
+ ** Optimal solution. There are no superbasic variables.
+ 
+ 
+ CONOPT time Total                            0.004 seconds
+   of which: Function evaluations             0.000 =  0.0%
+             1st Derivative evaluations       0.000 =  0.0%
+             Interval derivative evals        0.002 = 50.0%
+ 
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU objective           .              .              .             1.0000      
+---- EQU raw               -INF         1400.0000      1400.0000         0.0147      
+
+---- EQU line  
+
+                 LOWER          LEVEL          UPPER         MARGINAL
+
+mainline         -INF           21.0000        21.0000         0.6430      
+creamline        -INF            5.1984        18.0000          .          
+curdsline        -INF            0.5000        18.0000          .          
+
+---- VAR q  
+
+             LOWER          LEVEL          UPPER         MARGINAL
+
+milk         25.0000        25.0000        +INF           -0.0035      
+kefir        30.0000      1230.0000        +INF             .          
+cream         1.5000        15.5952        +INF             .          
+curds         1.2500         1.2500        +INF           -0.1280      
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR revenue           -INF           34.4068        +INF             .          
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+GAMS 54.5.0  f2bc4e68 Sep 29, 2026          WEX-WEI x86 64bit/MS Windows - 10/24/26 12:34:36 Page 18
+Lab 8.1 variant 8: base case and three starts
+E x e c u t i o n
+
+
+----    197 PARAMETER result  
+
+      objective~   modelstat   solvestat  max_viola~  raw_viola~        pass  raw_used_t  mk_used_h~  cream_use~  curds_use~  spread_re~  objective~  q_spread_~
+
+base 3.440678E+7       2.000       1.000 1.80307E-10 1.80307E-10       1.000    1400.000      21.000       5.198       0.500 2.95535E-12 1.88393E-13 2.95535E-12
+
+
+----    197 PARAMETER bestQ  
+
+            milk       kefir       cream       curds
+
+base      25.000    1230.000      15.595       1.250
+
+
+----    197 PARAMETER basePrice  
+
+            milk       kefir       cream       curds
+
+base   25158.299   25549.703  143758.411   87796.668
+
+
+----    197 PARAMETER baseInput  
+
+            milk       kefir       cream       curds
+
+base       1.034       0.980       9.645      14.627
+
+
+----    197 PARAMETER bestShadow  
+
+        mainline         raw
+
+base  642972.934   14738.963
+
+
+**** REPORT FILE SUMMARY
+
+f C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\results\base_results.csv
+h C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\results\base_starts.csv
+
+
+EXECUTION TIME       =        0.735 SECONDS      4 MB  54.5.0 f2bc4e68 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G260530+0003Cc-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\lab8.gms
+Output     C:\sarychev\Codex\magistratura\tmp\gams-package-audit-20261024\remaining\lab8-variant8\audit_base.lst

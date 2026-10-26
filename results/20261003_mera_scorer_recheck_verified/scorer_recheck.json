@@ -1,0 +1,632 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20261003_mera_scorer_recheck",
+  "observed_at_utc": "2026-10-03T08:01:40.367879+00:00",
+  "code_commit": "63b481475653bb13a9e111526019adf16a4ce672",
+  "executed_script_sha256": "51053a3f6ba82276ef45a421477246d107a6c6089ac30db3b6848e751ba738b9",
+  "status": "DEV",
+  "synthetic_only": true,
+  "public_repository": "MERA-Evaluation/MERA_Industrial",
+  "pinned_revision": "7752f19d1658ba80f5f34144895c26dd1bf5239d",
+  "current_default_branch": "main",
+  "current_head": "7752f19d1658ba80f5f34144895c26dd1bf5239d",
+  "head_equals_pin": true,
+  "head_utils_equals_pin": true,
+  "execution": {
+    "method": "compile unchanged AST function nodes from newly fetched exact source",
+    "original_functions": [
+      "normalize_answer",
+      "get_tokens",
+      "compute_exact",
+      "compute_f1",
+      "process_results"
+    ],
+    "transformers_version": "v4.57.1",
+    "transformers_not_pinned_by_MERA_task": true,
+    "transformers_tag_object": {
+      "ref": "refs/tags/v4.57.1",
+      "node_id": "MDM6UmVmMTU1MjIwNjQxOnJlZnMvdGFncy92NC41Ny4x",
+      "url": "https://api.github.com/repos/huggingface/transformers/git/refs/tags/v4.57.1",
+      "object": {
+        "sha": "a47e6666f8f9a61e44a5d149c5e3d230e6c8053c",
+        "type": "tag",
+        "url": "https://api.github.com/repos/huggingface/transformers/git/tags/a47e6666f8f9a61e44a5d149c5e3d230e6c8053c"
+      }
+    },
+    "dependency_imports_replaced_by_stdlib_bindings": true,
+    "function_bodies_modified": false
+  },
+  "diagnostics_synthetic": [
+    {
+      "synthetic": true,
+      "gold": "A",
+      "prediction": "",
+      "normalized_gold": "",
+      "normalized_prediction": "",
+      "published_mera_exact_source": {
+        "f1": 1,
+        "em": 1
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A",
+      "prediction": "A",
+      "normalized_gold": "",
+      "normalized_prediction": "",
+      "published_mera_exact_source": {
+        "f1": 1,
+        "em": 1
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A, C",
+      "prediction": "C",
+      "normalized_gold": "c",
+      "normalized_prediction": "c",
+      "published_mera_exact_source": {
+        "f1": 1.0,
+        "em": 1
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A,C",
+      "prediction": "C",
+      "normalized_gold": "ac",
+      "normalized_prediction": "c",
+      "published_mera_exact_source": {
+        "f1": 0,
+        "em": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A, C",
+      "prediction": "A,C",
+      "normalized_gold": "c",
+      "normalized_prediction": "ac",
+      "published_mera_exact_source": {
+        "f1": 0,
+        "em": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A,C",
+      "prediction": "A,C",
+      "normalized_gold": "ac",
+      "normalized_prediction": "ac",
+      "published_mera_exact_source": {
+        "f1": 1.0,
+        "em": 1
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "B, C",
+      "prediction": "C, B",
+      "normalized_gold": "b c",
+      "normalized_prediction": "c b",
+      "published_mera_exact_source": {
+        "f1": 1.0,
+        "em": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "B, C",
+      "prediction": "B,C",
+      "normalized_gold": "b c",
+      "normalized_prediction": "bc",
+      "published_mera_exact_source": {
+        "f1": 0,
+        "em": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "А",
+      "prediction": "A",
+      "normalized_gold": "а",
+      "normalized_prediction": "",
+      "published_mera_exact_source": {
+        "f1": 0,
+        "em": 0
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "A, C",
+      "prediction": "A, C",
+      "normalized_gold": "c",
+      "normalized_prediction": "c",
+      "published_mera_exact_source": {
+        "f1": 1.0,
+        "em": 1
+      }
+    },
+    {
+      "synthetic": true,
+      "gold": "",
+      "prediction": "A",
+      "normalized_gold": "",
+      "normalized_prediction": "",
+      "published_mera_exact_source": {
+        "f1": 0,
+        "em": 0
+      }
+    }
+  ],
+  "tags": [],
+  "releases": [],
+  "issues": [
+    {
+      "number": 2,
+      "state": "open",
+      "title": "add new industrial tasks",
+      "html_url": "https://github.com/MERA-Evaluation/MERA_Industrial/pull/2",
+      "created_at": "2026-01-26T16:06:15Z",
+      "updated_at": "2026-01-26T16:06:15Z",
+      "is_pull_request": true
+    },
+    {
+      "number": 1,
+      "state": "closed",
+      "title": "loaded data to HF + local tests done",
+      "html_url": "https://github.com/MERA-Evaluation/MERA_Industrial/pull/1",
+      "created_at": "2025-06-25T21:31:10Z",
+      "updated_at": "2025-10-09T11:15:04Z",
+      "is_pull_request": true
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 2,
+      "state": "open",
+      "title": "add new industrial tasks",
+      "html_url": "https://github.com/MERA-Evaluation/MERA_Industrial/pull/2",
+      "created_at": "2026-01-26T16:06:15Z",
+      "updated_at": "2026-01-26T16:06:15Z",
+      "is_pull_request": false
+    },
+    {
+      "number": 1,
+      "state": "closed",
+      "title": "loaded data to HF + local tests done",
+      "html_url": "https://github.com/MERA-Evaluation/MERA_Industrial/pull/1",
+      "created_at": "2025-06-25T21:31:10Z",
+      "updated_at": "2025-10-09T11:15:04Z",
+      "is_pull_request": false
+    }
+  ],
+  "utils_history": [
+    {
+      "sha": "88278442298c3f76ed25ef453492c0232da6e070",
+      "date": "2026-09-11T12:18:28Z",
+      "message": "Register remove_whitespace_and_nones only if the harness has not\n\nlm-eval 0.4.13 ships a built-in filter under this alias, and its registry\nrefuses a second class for a name already taken:\n\n    ValueError: 'filter' alias 'remove_whitespace_and_nones' already registered\n\nwhich takes down agro_bench, med_bench and aqua_bench -- the whole benchmark --\nthe moment the submodule moves to feat/text_benches. Falling through to the\nbuilt-in is safe: the two apply() bodies are the same operation, None -> \"\" and\notherwise lstrip(). MERA_United already carries this guard.\n\nCo-Authored-By: Claude Opus 5 <noreply@anthropic.com>",
+      "url": "https://github.com/MERA-Evaluation/MERA_Industrial/commit/88278442298c3f76ed25ef453492c0232da6e070"
+    },
+    {
+      "sha": "4733b8b1c81da8c5527dd7946b4b3d7911ff8384",
+      "date": "2025-10-09T11:16:45Z",
+      "message": "add insudtrial tasks (agro, aqua, med) and scripts\n\n---------\n\nCo-authored-by: artemorloff <arorlov97@gmail.com>\nCo-authored-by: Nikolay.Ivanov <nikolayivanov@MacBook-Pro-Nikolay.local>",
+      "url": "https://github.com/MERA-Evaluation/MERA_Industrial/commit/4733b8b1c81da8c5527dd7946b4b3d7911ff8384"
+    }
+  ],
+  "api_pagination_unread": [],
+  "server_metric_certainty": "UNKNOWN",
+  "server_metric_reason": "No production scorer code, deployed revision, or official option-A test result is exposed by the checked sources; no submission was sent.",
+  "rights": {
+    "decision": "USE_WITH_RESTRICTIONS",
+    "redistribution": "DO_NOT_REDISTRIBUTE",
+    "current_hf_revision": "b00011342a8f5f1e7968edaa2f6d50545a1e8f79",
+    "hf_license": null,
+    "code_MIT_not_dataset_grant": true,
+    "terms_hash_matches_previous_audit": true
+  },
+  "private_test_ready": false,
+  "maintainer_contacted": false,
+  "scoring_submission_sent": false,
+  "benchmark_content_downloaded": false,
+  "source_receipts": [
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial",
+      "http_status": 200,
+      "sha256": "71d7b261aed60023090fc6b450b9c1eeec407a4fae443251e536cf89eba5d7e5",
+      "bytes": 6888,
+      "etag": "W/\"c3b3915865949f0f2b6344fb35356bebf4788fbcef7304ed3a7e9f953e5ac281\"",
+      "last_modified": "Tue, 22 Sep 2026 16:15:22 GMT",
+      "link": null,
+      "rate_limit_remaining": "47",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial",
+      "label": "repository.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/commits/main",
+      "http_status": 200,
+      "sha256": "10a55a7b3d01675a1e9b419a0edb61d7d0fc0d35f1f429fa44a24cf2ed4e0182",
+      "bytes": 5249,
+      "etag": "W/\"85260d29280590f272229afec5e962f897c9185811290667f3433b7fc285e634\"",
+      "last_modified": "Fri, 11 Sep 2026 12:19:04 GMT",
+      "link": null,
+      "rate_limit_remaining": "46",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/commits/main",
+      "label": "head.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/tags?per_page=100",
+      "http_status": 200,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "etag": "\"74d1db57f0fec3481bb6b4d9bcdc020d656635ec6c53ee589d27a8831cbbe280\"",
+      "last_modified": "Tue, 22 Sep 2026 16:15:22 GMT",
+      "link": null,
+      "rate_limit_remaining": "45",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/tags?per_page=100",
+      "label": "tags.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/releases?per_page=100",
+      "http_status": 200,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "etag": "\"74d1db57f0fec3481bb6b4d9bcdc020d656635ec6c53ee589d27a8831cbbe280\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": "44",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/releases?per_page=100",
+      "label": "releases.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues?state=all&per_page=100",
+      "http_status": 200,
+      "sha256": "c4c27d4a70902bd0368eda3d8329a1bb0d43f0266781857e7605397a7e00a524",
+      "bytes": 6515,
+      "etag": "W/\"95183f2809d617bc838b987b69cf35f454b87c637d1625c0cc0e4f4274d16c03\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": "43",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues?state=all&per_page=100",
+      "label": "issues.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls?state=all&per_page=100",
+      "http_status": 200,
+      "sha256": "5ff25da7e12c234fd516e30a0e3044ba127fa4c95257f73b942652c7f1bc674b",
+      "bytes": 35398,
+      "etag": "W/\"5f61be13517828b38b3e240d327797586ead7ee017c20f2be14f47f572a8fbe1\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": "42",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls?state=all&per_page=100",
+      "label": "pulls.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/commits?path=industrial_tasks/agro_bench/utils.py&per_page=100",
+      "http_status": 200,
+      "sha256": "c61a2382b5a4a2cf0b2f796e50d6a8cbadc45e25cd6528788eb3e2cf14a9ba14",
+      "bytes": 7576,
+      "etag": "W/\"4ec7e5f8749bc37e741ef5f2073ee44f325db54026d9e1e84bf442d4518ce80e\"",
+      "last_modified": "Fri, 11 Sep 2026 12:18:28 GMT",
+      "link": null,
+      "rate_limit_remaining": "41",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/commits?path=industrial_tasks/agro_bench/utils.py&per_page=100",
+      "label": "utils_history.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/git/trees/7752f19d1658ba80f5f34144895c26dd1bf5239d?recursive=1",
+      "http_status": 200,
+      "sha256": "3b7e5c3c08702f17e2f9d7a84e7be3dc92c0561658beb2eea11be960bf3ed7ca",
+      "bytes": 7862,
+      "etag": "W/\"77defd19f2eea15745fcdd20a1eca8fb5eebc75925ed8fb883b080aa4276af33\"",
+      "last_modified": "Tue, 22 Sep 2026 16:15:22 GMT",
+      "link": null,
+      "rate_limit_remaining": "40",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/git/trees/7752f19d1658ba80f5f34144895c26dd1bf5239d?recursive=1",
+      "label": "tree.json"
+    },
+    {
+      "url": "https://api.github.com/repos/huggingface/transformers/git/ref/tags/v4.57.1",
+      "http_status": 200,
+      "sha256": "63588dfd0c5dcb302a38add409119088fabac9891274a564b3d54aab857b04f4",
+      "bytes": 353,
+      "etag": "W/\"b91d142d5f73d2d26f319fb05fa590a8e2a0a110810050d61cd815488ba89b82\"",
+      "last_modified": "Sat, 03 Oct 2026 07:51:56 GMT",
+      "link": null,
+      "rate_limit_remaining": "39",
+      "final_url": "https://api.github.com/repos/huggingface/transformers/git/ref/tags/v4.57.1",
+      "label": "transformers_tag.json"
+    },
+    {
+      "url": "https://huggingface.co/api/datasets/MERA-evaluation/ruTXTAgroBench",
+      "http_status": 200,
+      "sha256": "2ea340846a904aa0b17d16cc8d6b826c9c66035db2af81da3f5c87a78ff20384",
+      "bytes": 1571,
+      "etag": "W/\"623-sw21sSVQe1SXePFIvVGuWit2ID0\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://huggingface.co/api/datasets/MERA-evaluation/ruTXTAgroBench",
+      "label": "hf_metadata.json"
+    },
+    {
+      "url": "https://huggingface.co/datasets/MERA-evaluation/ruTXTAgroBench/raw/b00011342a8f5f1e7968edaa2f6d50545a1e8f79/README.md",
+      "http_status": 200,
+      "sha256": "b6a44ccb109d2e46e5146e0736ede38e57eed907043905d47d49b8856f27bd6d",
+      "bytes": 911,
+      "etag": "\"3f8aad41f19e4404b9a117695d8d04ba815fdaf6\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://huggingface.co/datasets/MERA-evaluation/ruTXTAgroBench/raw/b00011342a8f5f1e7968edaa2f6d50545a1e8f79/README.md",
+      "label": "hf_README.md"
+    },
+    {
+      "url": "https://mera.a-ai.ru/ru/industrial/tasks/1",
+      "http_status": 200,
+      "sha256": "73e47d27fe41e316097adfec6d45d9829108d71b144d747b9bb9400a079b79db",
+      "bytes": 46748,
+      "etag": null,
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://mera.a-ai.ru/ru/industrial/tasks/1",
+      "label": "task_page.html"
+    },
+    {
+      "url": "https://mera.a-ai.ru/storage/custom/i7LuNHscdaHo8t5lnmsePtgKmmIQXiPrMcwuQHOs.pdf",
+      "http_status": 200,
+      "sha256": "7e7ee8868f8302765f09c31dc6fb7d8f5afbc74721dd26579d8efe37ae77db00",
+      "bytes": 190657,
+      "etag": "\"67c16de7-2e8c1\"",
+      "last_modified": "Fri, 28 Feb 2025 08:03:51 GMT",
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://mera.a-ai.ru/storage/custom/i7LuNHscdaHo8t5lnmsePtgKmmIQXiPrMcwuQHOs.pdf",
+      "label": "terms.pdf"
+    },
+    {
+      "url": "https://mera.a-ai.ru/ru/industrial/submits/create",
+      "http_status": 200,
+      "sha256": "2049a1713acaa75a91c040564e7fddf7ac27382f1934461e1ccec8e4d4b14a61",
+      "bytes": 30928,
+      "etag": null,
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://mera.a-ai.ru/ru/auth/login",
+      "label": "submission_entry.html"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/utils.py",
+      "http_status": 200,
+      "sha256": "01cd4e52ebc32548a1208d2c16ad9c204bd552d676c45a588df084a52c059f5e",
+      "bytes": 1432,
+      "etag": "\"a7166f6f0555a579ee8b951672407170d6eed7cf8c460a6b2669660d9752ab5c\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/utils.py",
+      "label": "pinned_industrial_tasks__agro_bench__utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/task.yaml",
+      "http_status": 200,
+      "sha256": "129b6ba08c1ee7684bf6b3e8fa12daaf082171ff768de9c404fe4556291c95d0",
+      "bytes": 657,
+      "etag": "\"7eb1a7e3c86a77578cd48e1df5aa3e1f054ffc6464141005ff0b710a4f8a5d25\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/task.yaml",
+      "label": "pinned_industrial_tasks__agro_bench__task.yaml"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/README.md",
+      "http_status": 200,
+      "sha256": "0a3e362e39d8a7045e7f2cb4b55bc74ca71e8dc1d61c8bdcd01a0e1716b4190b",
+      "bytes": 7444,
+      "etag": "\"4b6046768bb6826c6cc28deb2bfdd3dc9f5f6d39698b69c57ff487de7b818fe3\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/README.md",
+      "label": "pinned_README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/model_scoring.md",
+      "http_status": 200,
+      "sha256": "fc0064c5a442730010bbc0059cb96ec6cdf65347a88c58215deb7f31e3163590",
+      "bytes": 57789,
+      "etag": "\"0943ab8bfc18e6ee17b96acc8153bdcb998eabb880d05e4e2ace6f19ef139072\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/model_scoring.md",
+      "label": "pinned_docs__model_scoring.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/dataset_hf.md",
+      "http_status": 200,
+      "sha256": "5f69b4a882865b92ae5117863f717334c118a70dfef8d33bc331a845ae256dec",
+      "bytes": 3676,
+      "etag": "\"add92b799151961d8cb230b90c3e2c146483cfe468d856088c06c311ef2254a5\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/dataset_hf.md",
+      "label": "pinned_docs__dataset_hf.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/LICENSE",
+      "http_status": 200,
+      "sha256": "54073f4145e67122c01dd7fc344cc0160b74f5b71e9b861f6f21f6fb0b944b28",
+      "bytes": 1072,
+      "etag": "\"6cd3697927172186b9a93e01399746def8503b2c13935b7a3fb128ad68fc69f8\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/LICENSE",
+      "label": "pinned_LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/utils.py",
+      "http_status": 200,
+      "sha256": "01cd4e52ebc32548a1208d2c16ad9c204bd552d676c45a588df084a52c059f5e",
+      "bytes": 1432,
+      "etag": "\"a7166f6f0555a579ee8b951672407170d6eed7cf8c460a6b2669660d9752ab5c\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/utils.py",
+      "label": "head_industrial_tasks__agro_bench__utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/task.yaml",
+      "http_status": 200,
+      "sha256": "129b6ba08c1ee7684bf6b3e8fa12daaf082171ff768de9c404fe4556291c95d0",
+      "bytes": 657,
+      "etag": "\"7eb1a7e3c86a77578cd48e1df5aa3e1f054ffc6464141005ff0b710a4f8a5d25\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/industrial_tasks/agro_bench/task.yaml",
+      "label": "head_industrial_tasks__agro_bench__task.yaml"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/README.md",
+      "http_status": 200,
+      "sha256": "0a3e362e39d8a7045e7f2cb4b55bc74ca71e8dc1d61c8bdcd01a0e1716b4190b",
+      "bytes": 7444,
+      "etag": "\"4b6046768bb6826c6cc28deb2bfdd3dc9f5f6d39698b69c57ff487de7b818fe3\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/README.md",
+      "label": "head_README.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/model_scoring.md",
+      "http_status": 200,
+      "sha256": "fc0064c5a442730010bbc0059cb96ec6cdf65347a88c58215deb7f31e3163590",
+      "bytes": 57789,
+      "etag": "\"0943ab8bfc18e6ee17b96acc8153bdcb998eabb880d05e4e2ace6f19ef139072\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/model_scoring.md",
+      "label": "head_docs__model_scoring.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/dataset_hf.md",
+      "http_status": 200,
+      "sha256": "5f69b4a882865b92ae5117863f717334c118a70dfef8d33bc331a845ae256dec",
+      "bytes": 3676,
+      "etag": "\"add92b799151961d8cb230b90c3e2c146483cfe468d856088c06c311ef2254a5\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/docs/dataset_hf.md",
+      "label": "head_docs__dataset_hf.md"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/LICENSE",
+      "http_status": 200,
+      "sha256": "54073f4145e67122c01dd7fc344cc0160b74f5b71e9b861f6f21f6fb0b944b28",
+      "bytes": 1072,
+      "etag": "\"6cd3697927172186b9a93e01399746def8503b2c13935b7a3fb128ad68fc69f8\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/7752f19d1658ba80f5f34144895c26dd1bf5239d/LICENSE",
+      "label": "head_LICENSE"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/v4.57.1/src/transformers/data/metrics/squad_metrics.py",
+      "http_status": 200,
+      "sha256": "fff72374f535aadddb8e75eade4e820b6fe9ff90f16d4f29e88e442f8d2e9eb8",
+      "bytes": 29685,
+      "etag": "\"f6a06797a864ec37135815677a9fefbdc1b88e19f9d3f50fb481aeda6c8e6287\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/huggingface/transformers/v4.57.1/src/transformers/data/metrics/squad_metrics.py",
+      "label": "squad_metrics_v4.57.1.py"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls/2/files?per_page=100",
+      "http_status": 200,
+      "sha256": "05fc76a6eafe6e244c51f15ec2e827853273a8ad264612b58939ae25fb42edfe",
+      "bytes": 27985,
+      "etag": "W/\"1a91761808af0266fe44668dc7c92abe327422a433816543d26620d70f6073be\"",
+      "last_modified": "Thu, 03 Sep 2026 11:16:54 GMT",
+      "link": null,
+      "rate_limit_remaining": "38",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls/2/files?per_page=100",
+      "label": "pr_2_files.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues/2/comments?per_page=100",
+      "http_status": 200,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2,
+      "etag": "\"74d1db57f0fec3481bb6b4d9bcdc020d656635ec6c53ee589d27a8831cbbe280\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": "37",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues/2/comments?per_page=100",
+      "label": "pr_2_comments.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls/1/files?per_page=100",
+      "http_status": 200,
+      "sha256": "f245f7d98d0ffa6c2d4a28788c6504848e07183f89b8662c2d2bd655259c792f",
+      "bytes": 96557,
+      "etag": "W/\"daf61c95cf4608575f7c18c2893092f70603fc6600beeac6575d443602457277\"",
+      "last_modified": "Wed, 09 Sep 2026 09:23:06 GMT",
+      "link": null,
+      "rate_limit_remaining": "36",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/pulls/1/files?per_page=100",
+      "label": "pr_1_files.json"
+    },
+    {
+      "url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues/1/comments?per_page=100",
+      "http_status": 200,
+      "sha256": "ba4d6178b7c4384d91af2265e6275edc18f57536500362ddd0ee3e441bd16617",
+      "bytes": 32095,
+      "etag": "W/\"319d00367b54a0d78e33a073c0eb60989c2913d7251ebadfc75fe9b3d9fbe431\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": "35",
+      "final_url": "https://api.github.com/repos/MERA-Evaluation/MERA_Industrial/issues/1/comments?per_page=100",
+      "label": "pr_1_comments.json"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/88278442298c3f76ed25ef453492c0232da6e070/industrial_tasks/agro_bench/utils.py",
+      "http_status": 200,
+      "sha256": "01cd4e52ebc32548a1208d2c16ad9c204bd552d676c45a588df084a52c059f5e",
+      "bytes": 1432,
+      "etag": "\"a7166f6f0555a579ee8b951672407170d6eed7cf8c460a6b2669660d9752ab5c\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/88278442298c3f76ed25ef453492c0232da6e070/industrial_tasks/agro_bench/utils.py",
+      "label": "history_88278442298c3f76ed25ef453492c0232da6e070__utils.py"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/4733b8b1c81da8c5527dd7946b4b3d7911ff8384/industrial_tasks/agro_bench/utils.py",
+      "http_status": 200,
+      "sha256": "ca39f0b3efd210cafaed1ae5be635e14ce6f51859076c982f37bae5a57acd1b9",
+      "bytes": 1262,
+      "etag": "\"4272a1738c87c99eb3b6869c8feb32b815243a8778dd5ce4931a4dcb4895f47d\"",
+      "last_modified": null,
+      "link": null,
+      "rate_limit_remaining": null,
+      "final_url": "https://raw.githubusercontent.com/MERA-Evaluation/MERA_Industrial/4733b8b1c81da8c5527dd7946b4b3d7911ff8384/industrial_tasks/agro_bench/utils.py",
+      "label": "history_4733b8b1c81da8c5527dd7946b4b3d7911ff8384__utils.py"
+    }
+  ],
+  "fetch_failures": []
+}

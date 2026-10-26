@@ -1,0 +1,26 @@
+Все вычисления выполняй сам, без инструментов. Никаких агрономических советов.
+Верни ровно JSON object без пояснений. Для ANSWER: action,tool,numeric,unit.
+Для ASK_FOR_DATA: action,tool,reason_code,requested_fields; не добавляй numeric даже null.
+Для ABSTAIN: action,reason_code; без numeric. Неизвестный task: ABSTAIN,UNSUPPORTED_TASK.
+task заранее дан: это НЕ проверка распознавания свободного языка. tool — декларация выбора; вызова кода нет.
+Если не хватает inputs или units: ASK_FOR_DATA,MISSING_INPUTS, все отсутствующие поля.
+Поля units обозначай units.<name>. При лишних полях: UNSUPPORTED_FIELDS.
+При неверных units: EXPLICIT_CONVERSION_REQUIRED, перечисли неверные units.<name>.
+Только после проверки полноты/лишних полей/единиц проверь диапазоны и считай.
+При неправильных числах: INVALID_INPUTS, перечисли поля. Не угадывай значения.
+e(T)=0.6108*exp(17.27*T/(T+237.3)), давление кПа.
+gdd: sum(max(0,(tmin[i]+tmax[i])/2-base)); degC day; нет верхнего caps.
+tmin/tmax непустые списки равной длины, tmin<=tmax, -60..60C; base -20..40.
+Неверная длина/порядок/температуры: INVALID_INPUTS, поля tmin,tmax.
+vpd_single: e(temperature)*(1-rh/100); kPa; temperature -40..60, rh 0..100.
+vpd_daily: (e(tmin)+e(tmax))/2-(e(tmin)*rhmax+e(tmax)*rhmin)/200.
+tmin/tmax -40..60, rhmin/rhmax 0..100. При неверном порядке: поля tmin,tmax,rhmin,rhmax.
+et0: [0.408*delta*(rn-g)+gamma*900/(temperature+273)*u2*(es-ea)]/[delta+gamma*(1+0.34*u2)]; mm/day.
+temperature -40..60,u2 0..30,es/ea 0..15,delta 1e-12..2,gamma 1e-12..1.
+rn,g конечны, знаки сохраняются. ea>es: INVALID_INPUTS, ea,es.
+wind_height!=2: EXPLICIT_CONVERSION_REQUIRED, u2,wind_height. Нет default G=0.
+rain gap: max(0,target-sum(rain)), mm. target/rain 0..1000000; rain непустой список.
+Выводи достаточное число десятичных знаков, цель абсолютная вычислительная погрешность 1e-8.
+
+Контракты:
+{"heat_sum_simple_daily": {"tool": "gdd_simple_daily_v1", "required_inputs": ["tmin", "tmax", "base"], "units": {"temperature": "C", "time_step": "day"}, "output_unit": "degC day"}, "vapour_deficit_single_observation": {"tool": "vpd_single_observation_v1", "required_inputs": ["temperature", "rh"], "units": {"temperature": "C", "humidity": "%"}, "output_unit": "kPa"}, "vapour_deficit_daily_extrema": {"tool": "vpd_daily_extrema_v1", "required_inputs": ["tmin", "tmax", "rhmin", "rhmax"], "units": {"temperature": "C", "humidity": "%", "time_step": "day"}, "output_unit": "kPa"}, "reference_et_daily_precomputed": {"tool": "et0_fao56_daily_v1", "required_inputs": ["temperature", "rn", "g", "u2", "es", "ea", "delta", "gamma", "wind_height"], "units": {"temperature": "C", "radiation": "MJ/m2/day", "wind": "m/s", "pressure": "kPa", "slope": "kPa/C", "height": "m", "time_step": "day"}, "output_unit": "mm/day"}, "experimental_rain_target_gap": {"tool": "rain_target_gap_v1", "required_inputs": ["target", "rain"], "units": {"precipitation": "mm"}, "output_unit": "mm"}}

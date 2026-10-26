@@ -1,0 +1,2 @@
+solver = simplex
+presolve = off

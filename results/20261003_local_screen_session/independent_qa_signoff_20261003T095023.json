@@ -1,0 +1,50 @@
+{
+  "audit_utc": "2026-10-03T09:50:23.056319+00:00",
+  "audit_kind": "FINAL_INDEPENDENT_DEVELOPMENT_EVIDENCE_SIGNOFF",
+  "status": "PASS_DEV_AND_SIMULATED_ONLY",
+  "qa_document_path": "docs/MERA_INDEPENDENT_QA_20261003_RU.md",
+  "qa_document_sha256": "f7efac6d18303b75ca33f7f435703e8fbba2a1a39312e8d7d1d0612e8074f72b",
+  "bound_audit_receipts_sha256": {
+    "results/20261003_local_screen_session/independent_qa_20261003T093340.json": "a954620d0f2428109cdf99ab289b2e0b0bd610a1ed07b2cc3946c996d5745e6b",
+    "results/20261003_local_screen_session/independent_qa_timing_20261003T093340.json": "87fbc1520e14edcbe96d749fe0e624276ca33c4da4bfc7d772feb753a9989f7c",
+    "results/20261003_local_screen_session/independent_qa_schema_20261003T093329.json": "2d92e586391f75cbabd3e16bc93b668ab34d3a86a103c05d42ecf5ffceb5bc1d",
+    "results/20261003_local_screen_session/independent_qa_overlap_20261003T093341.json": "efe3f26cab8c294a9c86ead669d0220e6cf127f40eb66b06d68bcf2a9eaabfb1",
+    "results/20261003_local_screen_session/independent_qa_final_20261003T093559.json": "2bc09eb226f7b742aad9fa60a050e4a9e5051fb73bb84f71f0748d604bc47479",
+    "results/20261003_local_screen_session/independent_qa_delivery_20261003T093842.json": "193dd8a642eac512e24a0b37dabb473894bcd9d75c2f64b952888537dc96e6fa",
+    "results/20261003_local_screen_session/independent_qa_host_20261003T094058.json": "08bbc2b84ae03b7faa4eb5dea5287cd9ddcbf56cf4b81a954c702f929e724163",
+    "results/20261003_local_screen_session/independent_qa_final_archive_20261003T094554.json": "f07ac0ad5c5252be1b2aca7c918495534ffb37808bbe6bc21a67bbb52e510ae3",
+    "results/20261003_local_screen_session/independent_qa_auxiliary_claims_20261003T092326.json": "cac4040101575d689eb83faada3d4055cc19bd827413809b1c362384e1bd7efb",
+    "results/20261003_local_screen_session/independent_qa_baseline_claims_20261003T093143.json": "4d06681cd5ad610a95ea1990ef9bfe16784c5bf262b354f4b3a232e14979ebcd",
+    "results/20261003_local_screen_session/independent_qa_software_claims_20261003T094908.json": "27867f2167ffc9a691a74a2574bd6ed6e3818edbe7dac7054b5c64e64f72a518",
+    "results/20261003_local_screen_session/independent_qa_cloudclaims_20261003T090313.json": "c234565a61fa1eac23eb0ff843d7e92691dc2309daee732d6e531a9e991f4837"
+  },
+  "independently_validated_claim_counts": {
+    "CLAIM_PROVENANCE_CLOUD_BASELINE_20261003.json": 62,
+    "CLAIM_PROVENANCE_LOCAL_SCREEN_20261003.json": 759,
+    "CLAIM_PROVENANCE_SCREEN_INVENTORY_20261003.json": 79,
+    "CLAIM_PROVENANCE_SCREEN_SOFTWARE_20261003.json": 7,
+    "CLAIM_PROVENANCE_SCREEN_UPSTREAM_20261003.json": 44,
+    "CLAIM_PROVENANCE_TRIVIAL_BASELINES_20261003.json": 12
+  },
+  "independently_validated_claim_total": 963,
+  "final_analysis_sha256": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44",
+  "benchmark_source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "local_attempts": 1946,
+  "local_successful_completions": 1945,
+  "full_dev_models_complete": 5,
+  "full_dev_attempts_and_successful_completions": 1465,
+  "full_dev_scored_references_each": 289,
+  "private_test_ready": false,
+  "inference_or_submission_authorization_granted": false,
+  "known_scientific_limits": [
+    "DEV293 includes selectedDEV60; model/rule selection remains exploratory",
+    "4 unparseable original refs unrepaired",
+    "Server metric UNKNOWN; rights restricted",
+    "Confidence uncalibrated;72-point grid SIMULATED;actual_requests_saved0",
+    "Host/runtime/workingHEAD interpretations explicitly limited",
+    "Source commit byte equality attested by owner; auditor verifies archive/live SHA, performs no Git"
+  ],
+  "auditor_model_calls": 0,
+  "auditor_git_commands": 0,
+  "private_benchmark_text_or_model_output_written": false
+}

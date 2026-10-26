@@ -1,0 +1,24 @@
+{
+  "pz": 12,
+  "at": "2026-10-22T16:02:10+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ12_Сарычев_ДЭ39-26.docx",
+      "sha256": "fd67b8115e7658382aa223cb0274665489dc2c8ee4be27d00aac20d1bdc4fbd0",
+      "bytes": 144527
+    },
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ12_Model_Сарычев.xlsx",
+      "sha256": "b360e05f4f16c9f53e8a6de4c6e282ddee07f907fbfb5239bbea99373cd2a597",
+      "bytes": 16052
+    }
+  ],
+  "sha256_verified": true,
+  "status": "blocked_login_missing",
+  "reason": "Сессия СДО истекла, страница Log in. Имя пользователя подставлено, поле пароля пусто. Никакие файлы не загружались.",
+  "file_uploaded": false,
+  "save_clicked": false,
+  "login_clicked": false,
+  "screenshot": null
+}

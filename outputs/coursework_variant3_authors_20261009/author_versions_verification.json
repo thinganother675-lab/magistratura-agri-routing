@@ -1,0 +1,24 @@
+{
+  "pair": {
+    "authors": "Антоний Сарычев и Денис Шестернин",
+    "archive": "AgroPlan_variant3_Antonii_and_Denis.zip",
+    "bytes": 2471685,
+    "pdf_pages": 30,
+    "task1_words": 297,
+    "task7_words": 144,
+    "links": "passed",
+    "single_author_scan": "not_applicable",
+    "xlsx_sha256": "9d26d7d3e46ee5d9aff7a08df85ab1a6d63d1caba595f3e00e9a20f2c4e8cc48"
+  },
+  "antonii": {
+    "authors": "Антоний Сарычев",
+    "archive": "AgroPlan_variant3_Antonii_only.zip",
+    "bytes": 2468170,
+    "pdf_pages": 30,
+    "task1_words": 295,
+    "task7_words": 144,
+    "links": "passed",
+    "single_author_scan": "passed",
+    "xlsx_sha256": "9d26d7d3e46ee5d9aff7a08df85ab1a6d63d1caba595f3e00e9a20f2c4e8cc48"
+  }
+}

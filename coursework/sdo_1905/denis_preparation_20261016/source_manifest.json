@@ -1,0 +1,952 @@
+[
+  {
+    "name": "00_Start.docx",
+    "bytes": 44766,
+    "sha256": "50dbc6e7c687585fa03722f31594a5fcb7ca5ff0d35ca41020c846c3be027073",
+    "embedded_media": [],
+    "text_chars": 10213,
+    "group": "Общая инструкция",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93650",
+    "source_name": "00_Start.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/00_Start.docx?forcedownload=1",
+    "local_path": "materials/originals/00_Start.docx"
+  },
+  {
+    "name": "01_Case.docx",
+    "bytes": 45062,
+    "sha256": "a1130a5811d938287168c6541d02fcbeb7d83cef512ecf24492e219d85922776",
+    "embedded_media": [],
+    "text_chars": 9971,
+    "group": "Общая инструкция",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93650",
+    "source_name": "01_Case.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/01_Case.docx?forcedownload=1",
+    "local_path": "materials/originals/01_Case.docx"
+  },
+  {
+    "name": "All_examples.drawio",
+    "bytes": 32992,
+    "sha256": "873d62c13bd30cdb86ce9e91ac3ea139bad426d833262ba183e19d90204757b5",
+    "diagrams": [
+      "pz01_context",
+      "pz02_domains",
+      "pz04_roles",
+      "pz05_process",
+      "pz06_data",
+      "pz07_apps",
+      "pz08_exchange",
+      "pz09_tech",
+      "pz10_trace",
+      "pz11_tobe",
+      "pz13_roadmap"
+    ],
+    "text_chars": 31100,
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "All_examples.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/All_examples.drawio?forcedownload=1",
+    "local_path": "materials/originals/All_examples.drawio"
+  },
+  {
+    "name": "Answer_PZ01.docx",
+    "bytes": 40322,
+    "sha256": "39a5adc72748735d612fdb2080a396a4dee9cb96109c5e44663184d8761c15d9",
+    "embedded_media": [],
+    "text_chars": 1851,
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "Answer_PZ01.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/Answer_PZ01.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ01.docx"
+  },
+  {
+    "name": "Answer_PZ02.docx",
+    "bytes": 40256,
+    "sha256": "7dcfc8149473c150e83644dc708fc366f111b97aa3de087a5da4834879518ea7",
+    "embedded_media": [],
+    "text_chars": 1935,
+    "group": "ПЗ-02",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+    "source_name": "Answer_PZ02.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/Answer_PZ02.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ02.docx"
+  },
+  {
+    "name": "Answer_PZ03.docx",
+    "bytes": 40169,
+    "sha256": "c3b8d5f0c1e139672d302f9360abe022209234362a2e6dd84ef0173b3fb6bb3c",
+    "embedded_media": [],
+    "text_chars": 1784,
+    "group": "ПЗ-03",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93652",
+    "source_name": "Answer_PZ03.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/Answer_PZ03.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ03.docx"
+  },
+  {
+    "name": "Answer_PZ04.docx",
+    "bytes": 40305,
+    "sha256": "155c474b2d85dfa352a6147e56f5895dbf8903bcea88a87fb1f63612c005774a",
+    "embedded_media": [],
+    "text_chars": 1888,
+    "group": "ПЗ-04",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+    "source_name": "Answer_PZ04.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/Answer_PZ04.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ04.docx"
+  },
+  {
+    "name": "Answer_PZ05.docx",
+    "bytes": 40395,
+    "sha256": "445d9eb2da07bb97c456608e2661059b07ac489de00364e7dfeb95ff82f48282",
+    "embedded_media": [],
+    "text_chars": 2117,
+    "group": "ПЗ-05",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+    "source_name": "Answer_PZ05.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/Answer_PZ05.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ05.docx"
+  },
+  {
+    "name": "Answer_PZ06.docx",
+    "bytes": 40248,
+    "sha256": "240d9f208763299cecc8b71d12de2658d7119ea5873e9b49f002323a8c58a869",
+    "embedded_media": [],
+    "text_chars": 2029,
+    "group": "ПЗ-06",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+    "source_name": "Answer_PZ06.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/Answer_PZ06.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ06.docx"
+  },
+  {
+    "name": "Answer_PZ07.docx",
+    "bytes": 40430,
+    "sha256": "7315bc5c3435e84e6e0f9962409e63b1cc77e8a689c444f70f1da22763e014c7",
+    "embedded_media": [],
+    "text_chars": 2214,
+    "group": "ПЗ-07",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+    "source_name": "Answer_PZ07.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/Answer_PZ07.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ07.docx"
+  },
+  {
+    "name": "Answer_PZ08.docx",
+    "bytes": 40295,
+    "sha256": "2e56bb8015e4a20ec3d21a261789c2dbba3462246bb2ea09de90177f97360756",
+    "embedded_media": [],
+    "text_chars": 1806,
+    "group": "ПЗ-08",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+    "source_name": "Answer_PZ08.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/Answer_PZ08.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ08.docx"
+  },
+  {
+    "name": "Answer_PZ09.docx",
+    "bytes": 40270,
+    "sha256": "be8dc7bc67bfb7ecb921a0f8e8a2fe70c5b4e34633400c53a31a5f8f51a28e1f",
+    "embedded_media": [],
+    "text_chars": 1761,
+    "group": "ПЗ-09",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+    "source_name": "Answer_PZ09.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/Answer_PZ09.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ09.docx"
+  },
+  {
+    "name": "Answer_PZ10.docx",
+    "bytes": 40230,
+    "sha256": "cb510f08fe519a4e48802f269295a76e83f0ff19aea0f82fc59d12870cecb9b8",
+    "embedded_media": [],
+    "text_chars": 1948,
+    "group": "ПЗ-10",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+    "source_name": "Answer_PZ10.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/Answer_PZ10.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ10.docx"
+  },
+  {
+    "name": "Answer_PZ11.docx",
+    "bytes": 40225,
+    "sha256": "451dcfdb462c3687f3d0a3801dcffc4ecf83eefcb7ac56111ef0afe8e652e1a0",
+    "embedded_media": [],
+    "text_chars": 1830,
+    "group": "ПЗ-11",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+    "source_name": "Answer_PZ11.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/Answer_PZ11.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ11.docx"
+  },
+  {
+    "name": "Answer_PZ12.docx",
+    "bytes": 40448,
+    "sha256": "4231042ffe1295a6bcf22131eb5bdaa6228c564cdf3f4c05c27575fd06d11226",
+    "embedded_media": [],
+    "text_chars": 1888,
+    "group": "ПЗ-12",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+    "source_name": "Answer_PZ12.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Answer_PZ12.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ12.docx"
+  },
+  {
+    "name": "Answer_PZ13.docx",
+    "bytes": 40570,
+    "sha256": "0490ee95a9c034555c7ebe970c19e0897d3d4dab3329415e6b17a1f419f18c87",
+    "embedded_media": [],
+    "text_chars": 2358,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "Answer_PZ13.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Answer_PZ13.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ13.docx"
+  },
+  {
+    "name": "Answer_PZ14.docx",
+    "bytes": 40281,
+    "sha256": "f19744fb9a37255e370a2a95ffea1b0a6e91c23f76e8c16aeca8ec618d190e75",
+    "embedded_media": [],
+    "text_chars": 1815,
+    "group": "ПЗ-14",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+    "source_name": "Answer_PZ14.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/Answer_PZ14.docx?forcedownload=1",
+    "local_path": "materials/originals/Answer_PZ14.docx"
+  },
+  {
+    "name": "Case_for_AI.txt",
+    "bytes": 17320,
+    "sha256": "b9af05d1f679a483fb7ebf3e11d86fc65d8c56cbe59660591a47af31d3e865ad",
+    "text_chars": 9856,
+    "group": "Общая инструкция",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93650",
+    "source_name": "Case_for_AI.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/Case_for_AI.txt?forcedownload=1",
+    "local_path": "materials/originals/Case_for_AI.txt"
+  },
+  {
+    "name": "Operations_PZ12.csv",
+    "bytes": 366,
+    "sha256": "5e19a8d139cfbf69a603da89d9364578003d11c27d2e77ef0aebbde679af19b0",
+    "text_chars": 353,
+    "group": "ПЗ-12",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+    "source_name": "Operations.csv",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Operations.csv?forcedownload=1",
+    "local_path": "materials/originals/Operations_PZ12.csv"
+  },
+  {
+    "name": "Operations_PZ13.csv",
+    "bytes": 366,
+    "sha256": "5e19a8d139cfbf69a603da89d9364578003d11c27d2e77ef0aebbde679af19b0",
+    "text_chars": 353,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "Operations.csv",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Operations.csv?forcedownload=1",
+    "local_path": "materials/originals/Operations_PZ13.csv"
+  },
+  {
+    "name": "Prompt_PZ01.txt",
+    "bytes": 10747,
+    "sha256": "d82b46334d7a2e8f1a16e9c96c68e1b65bb5abb49936cdcd07e3e7b640ef3542",
+    "text_chars": 5957,
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "Prompt_PZ01.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/Prompt_PZ01.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ01.txt"
+  },
+  {
+    "name": "Prompt_PZ02.txt",
+    "bytes": 10982,
+    "sha256": "fe6b19070eb0c066ce6cc7760d27df13c3d167068c0610a9a1cb35340ee31677",
+    "text_chars": 6131,
+    "group": "ПЗ-02",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+    "source_name": "Prompt_PZ02.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/Prompt_PZ02.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ02.txt"
+  },
+  {
+    "name": "Prompt_PZ03.txt",
+    "bytes": 10758,
+    "sha256": "5ea5a08e05c252587b8703bef9173b199fb6577d1c104ec2c30d5c90fc3d662b",
+    "text_chars": 5946,
+    "group": "ПЗ-03",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93652",
+    "source_name": "Prompt_PZ03.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/Prompt_PZ03.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ03.txt"
+  },
+  {
+    "name": "Prompt_PZ04.txt",
+    "bytes": 11388,
+    "sha256": "34ec17cf1d49dd815b7b21bb48154ed3b6f1cc2b7ed429f4a59541e3306c1984",
+    "text_chars": 6313,
+    "group": "ПЗ-04",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+    "source_name": "Prompt_PZ04.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/Prompt_PZ04.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ04.txt"
+  },
+  {
+    "name": "Prompt_PZ05.txt",
+    "bytes": 9219,
+    "sha256": "6d3eb90a7cd98c7005cb15d4ddd82e713c2832d172fdf8d4a465f8b3c939c0c7",
+    "text_chars": 5132,
+    "group": "ПЗ-05",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+    "source_name": "Prompt_PZ05.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/Prompt_PZ05.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ05.txt"
+  },
+  {
+    "name": "Prompt_PZ06.txt",
+    "bytes": 9434,
+    "sha256": "ab38e85c543628d30c3e7d553354923c0532f2c5cd4c2815c3eb942baddb62a4",
+    "text_chars": 5421,
+    "group": "ПЗ-06",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+    "source_name": "Prompt_PZ06.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/Prompt_PZ06.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ06.txt"
+  },
+  {
+    "name": "Prompt_PZ07.txt",
+    "bytes": 9167,
+    "sha256": "8869a2a6b427e03560486809c285e256dfbf90a6f9a08c569d650d2b4c0a4c9a",
+    "text_chars": 5155,
+    "group": "ПЗ-07",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+    "source_name": "Prompt_PZ07.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/Prompt_PZ07.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ07.txt"
+  },
+  {
+    "name": "Prompt_PZ08.txt",
+    "bytes": 13017,
+    "sha256": "cf9033ce44ec9f4e5b09b594de4e8a73264de7f295bedb3ba4bddc18431defc7",
+    "text_chars": 7451,
+    "group": "ПЗ-08",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+    "source_name": "Prompt_PZ08.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/Prompt_PZ08.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ08.txt"
+  },
+  {
+    "name": "Prompt_PZ09.txt",
+    "bytes": 7690,
+    "sha256": "6ebdb50ef6deda650aadf475c241bff8c9d37d20a58891f3d7b9e1f0ff14b54f",
+    "text_chars": 4273,
+    "group": "ПЗ-09",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+    "source_name": "Prompt_PZ09.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/Prompt_PZ09.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ09.txt"
+  },
+  {
+    "name": "Prompt_PZ10.txt",
+    "bytes": 16136,
+    "sha256": "24d47c215a6b194c6606f58934c2f0b67225de9a5afd4ec62d52bfd3a288bfe1",
+    "text_chars": 9169,
+    "group": "ПЗ-10",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+    "source_name": "Prompt_PZ10.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/Prompt_PZ10.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ10.txt"
+  },
+  {
+    "name": "Prompt_PZ11.txt",
+    "bytes": 8065,
+    "sha256": "38c3bbd3d291d82cb91ed69eb6d6ed106edfae71f3d2902565a0a0fd3ecde47d",
+    "text_chars": 4468,
+    "group": "ПЗ-11",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+    "source_name": "Prompt_PZ11.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/Prompt_PZ11.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ11.txt"
+  },
+  {
+    "name": "Prompt_PZ12.txt",
+    "bytes": 7807,
+    "sha256": "3d350e874ea61c423d5bf4bef99ec8f62e3831feef0765292db22b63969b0365",
+    "text_chars": 4487,
+    "group": "ПЗ-12",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+    "source_name": "Prompt_PZ12.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Prompt_PZ12.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ12.txt"
+  },
+  {
+    "name": "Prompt_PZ13.txt",
+    "bytes": 7470,
+    "sha256": "f7f9a9338af5742a4aa7955ea9f3b232492cd7bb79fd0d038dc0b3fb10c54e25",
+    "text_chars": 4152,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "Prompt_PZ13.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Prompt_PZ13.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ13.txt"
+  },
+  {
+    "name": "Prompt_PZ14.txt",
+    "bytes": 10716,
+    "sha256": "7de033ee3269d84631b207ae2836952593f0f0aab58d91c853b2a396d86c23e2",
+    "text_chars": 5914,
+    "group": "ПЗ-14",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+    "source_name": "Prompt_PZ14.txt",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/Prompt_PZ14.txt?forcedownload=1",
+    "local_path": "materials/originals/Prompt_PZ14.txt"
+  },
+  {
+    "name": "pz01_context.drawio",
+    "bytes": 3410,
+    "sha256": "ccbc370a79eb54e193b1464544fd4994fbed11752ef347773862e2852164fc73",
+    "diagrams": [
+      "pz01_context"
+    ],
+    "text_chars": 3248,
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "pz01_context.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/pz01_context.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz01_context.drawio"
+  },
+  {
+    "name": "pz01_context.png",
+    "bytes": 104371,
+    "sha256": "62ebda0fe55db2713e616399653ed353522c4ff781dedf9e93f59485718992db",
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "pz01_context.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/pz01_context.png?forcedownload=1",
+    "local_path": "materials/originals/pz01_context.png"
+  },
+  {
+    "name": "PZ01_Instruction.docx",
+    "bytes": 141889,
+    "sha256": "fd3ea4f57dd0f2098761e92e527d6568b08f3e007c0d50a3f0518a2697bc1c5d",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 5988,
+    "group": "ПЗ-01",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "source_name": "PZ01_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/PZ01_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ01_Instruction.docx"
+  },
+  {
+    "name": "pz02_domains.drawio",
+    "bytes": 2578,
+    "sha256": "8a6062b0d688167f882f7006a6e13a712a79d8455f020e245554414714191365",
+    "diagrams": [
+      "pz02_domains"
+    ],
+    "text_chars": 2444,
+    "group": "ПЗ-02",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+    "source_name": "pz02_domains.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/pz02_domains.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz02_domains.drawio"
+  },
+  {
+    "name": "pz02_domains.png",
+    "bytes": 90877,
+    "sha256": "fba88794781e7ab1ee4c0aa25c1818c96000b8a7e3ebd3c49244e518137057c6",
+    "group": "ПЗ-02",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+    "source_name": "pz02_domains.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/pz02_domains.png?forcedownload=1",
+    "local_path": "materials/originals/pz02_domains.png"
+  },
+  {
+    "name": "PZ02_Instruction.docx",
+    "bytes": 130197,
+    "sha256": "8955b9389c26c34745a3b0a16433c06a6a0f8e0bfdb97ee46d9a66c3003af4cb",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 5907,
+    "group": "ПЗ-02",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+    "source_name": "PZ02_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/PZ02_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ02_Instruction.docx"
+  },
+  {
+    "name": "PZ03_Instruction.docx",
+    "bytes": 42962,
+    "sha256": "c8a1534a326e7d7121f23b6e44e89c8f49817a493bade3c681d820fbcfb03fab",
+    "embedded_media": [],
+    "text_chars": 5788,
+    "group": "ПЗ-03",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93652",
+    "source_name": "PZ03_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/PZ03_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ03_Instruction.docx"
+  },
+  {
+    "name": "PZ04_Instruction.docx",
+    "bytes": 96671,
+    "sha256": "245aeb2beea032bca028952d486cd1be82a195c59ce5035ace84e2e0a08633e0",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6086,
+    "group": "ПЗ-04",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+    "source_name": "PZ04_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/PZ04_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ04_Instruction.docx"
+  },
+  {
+    "name": "pz04_roles.drawio",
+    "bytes": 2686,
+    "sha256": "e4de8d55005884436d2bbb5eabe6e840b9d3badb85ebb488e56082e87b8202b7",
+    "diagrams": [
+      "pz04_roles"
+    ],
+    "text_chars": 2593,
+    "group": "ПЗ-04",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+    "source_name": "pz04_roles.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/pz04_roles.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz04_roles.drawio"
+  },
+  {
+    "name": "pz04_roles.png",
+    "bytes": 55148,
+    "sha256": "e7ed0a07e751e0dfd92ce2098ba44264c47f85f0cff307e7b6e7213770ff625f",
+    "group": "ПЗ-04",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+    "source_name": "pz04_roles.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/pz04_roles.png?forcedownload=1",
+    "local_path": "materials/originals/pz04_roles.png"
+  },
+  {
+    "name": "PZ05_Instruction.docx",
+    "bytes": 207065,
+    "sha256": "d4974e41b540c372b95e47012616de0bb5c4ffea063337b096319f27ebc7fa51",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6002,
+    "group": "ПЗ-05",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+    "source_name": "PZ05_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/PZ05_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ05_Instruction.docx"
+  },
+  {
+    "name": "pz05_process.drawio",
+    "bytes": 5179,
+    "sha256": "4466f8ad166b6fac828fdb120314bb740970b72bc039303c4f8e00d8b71ee245",
+    "diagrams": [
+      "pz05_process"
+    ],
+    "text_chars": 4877,
+    "group": "ПЗ-05",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+    "source_name": "pz05_process.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/pz05_process.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz05_process.drawio"
+  },
+  {
+    "name": "pz05_process.png",
+    "bytes": 171236,
+    "sha256": "1a6965f0a8202a0924765eeb8463ae770ffea3d44ff4c99c39dbf9a53faff522",
+    "group": "ПЗ-05",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+    "source_name": "pz05_process.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/pz05_process.png?forcedownload=1",
+    "local_path": "materials/originals/pz05_process.png"
+  },
+  {
+    "name": "pz06_data.drawio",
+    "bytes": 2300,
+    "sha256": "b9c8b16d09aebfc4fbb637895829aa070c4c181074a1e54042f4ded94464597c",
+    "diagrams": [
+      "pz06_data"
+    ],
+    "text_chars": 2196,
+    "group": "ПЗ-06",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+    "source_name": "pz06_data.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/pz06_data.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz06_data.drawio"
+  },
+  {
+    "name": "pz06_data.png",
+    "bytes": 75145,
+    "sha256": "fefd270973fce3d7cd60dfcff936a9359456959ab4f4b68b81eb219a974c0465",
+    "group": "ПЗ-06",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+    "source_name": "pz06_data.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/pz06_data.png?forcedownload=1",
+    "local_path": "materials/originals/pz06_data.png"
+  },
+  {
+    "name": "PZ06_Instruction.docx",
+    "bytes": 115681,
+    "sha256": "908298e9775ec76fd61442f3eedb8195385253400cbf3d66429cd4caa9f8d746",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6315,
+    "group": "ПЗ-06",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+    "source_name": "PZ06_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/PZ06_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ06_Instruction.docx"
+  },
+  {
+    "name": "pz07_apps.drawio",
+    "bytes": 2771,
+    "sha256": "a3717020131839a89e31af9fae196977ca77430a126d66eeb8ced740a9ac1f41",
+    "diagrams": [
+      "pz07_apps"
+    ],
+    "text_chars": 2655,
+    "group": "ПЗ-07",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+    "source_name": "pz07_apps.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/pz07_apps.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz07_apps.drawio"
+  },
+  {
+    "name": "pz07_apps.png",
+    "bytes": 78697,
+    "sha256": "5eec8a51448622fdb6e4b0a42dd5fb0bb7d8a37f72cd235ba3fbf4bbcd3653aa",
+    "group": "ПЗ-07",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+    "source_name": "pz07_apps.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/pz07_apps.png?forcedownload=1",
+    "local_path": "materials/originals/pz07_apps.png"
+  },
+  {
+    "name": "PZ07_Instruction.docx",
+    "bytes": 118480,
+    "sha256": "d70c97ea056065c9e1c9dc78ac8a5ad0589785f4177cffc698c53c9e33e300c0",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6028,
+    "group": "ПЗ-07",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+    "source_name": "PZ07_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/PZ07_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ07_Instruction.docx"
+  },
+  {
+    "name": "pz08_exchange.drawio",
+    "bytes": 3154,
+    "sha256": "07010bd8efa89e0281238f9b7948aacfeebdff808b3b784934e11e5d9cb07d2d",
+    "diagrams": [
+      "pz08_exchange"
+    ],
+    "text_chars": 2987,
+    "group": "ПЗ-08",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+    "source_name": "pz08_exchange.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/pz08_exchange.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz08_exchange.drawio"
+  },
+  {
+    "name": "pz08_exchange.png",
+    "bytes": 97116,
+    "sha256": "d507068dfff78bb3f197e1466801e9b2a896af48dd1c2ccb3d3a26cf32ed8cd7",
+    "group": "ПЗ-08",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+    "source_name": "pz08_exchange.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/pz08_exchange.png?forcedownload=1",
+    "local_path": "materials/originals/pz08_exchange.png"
+  },
+  {
+    "name": "PZ08_Instruction.docx",
+    "bytes": 136976,
+    "sha256": "57fcd86499a2281988c4112e2d67f28bbf33cc7eac931712fe5356797805b980",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6089,
+    "group": "ПЗ-08",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+    "source_name": "PZ08_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/PZ08_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ08_Instruction.docx"
+  },
+  {
+    "name": "PZ09_Instruction.docx",
+    "bytes": 133436,
+    "sha256": "e286b179bdcc3620317ca3e808f0624c4852c5ca46386e02cb24e153f2cc84ed",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6133,
+    "group": "ПЗ-09",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+    "source_name": "PZ09_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/PZ09_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ09_Instruction.docx"
+  },
+  {
+    "name": "pz09_tech.drawio",
+    "bytes": 2919,
+    "sha256": "a291c6f2c96932cd853374fced4650c9bd3f2d350f3111183d3c3403f0854aa4",
+    "diagrams": [
+      "pz09_tech"
+    ],
+    "text_chars": 2735,
+    "group": "ПЗ-09",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+    "source_name": "pz09_tech.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/pz09_tech.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz09_tech.drawio"
+  },
+  {
+    "name": "pz09_tech.png",
+    "bytes": 93877,
+    "sha256": "b7317f0d9cc7bcc9f955a1c1928916781da2efda7b4f225af5d3f7d95604974b",
+    "group": "ПЗ-09",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+    "source_name": "pz09_tech.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/pz09_tech.png?forcedownload=1",
+    "local_path": "materials/originals/pz09_tech.png"
+  },
+  {
+    "name": "PZ10_Instruction.docx",
+    "bytes": 176348,
+    "sha256": "99cce09efeffb4f1be93487c8276c1fce1ce06554bcebdb81c1c97c2a9537f5c",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6344,
+    "group": "ПЗ-10",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+    "source_name": "PZ10_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/PZ10_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ10_Instruction.docx"
+  },
+  {
+    "name": "pz10_trace.drawio",
+    "bytes": 3599,
+    "sha256": "736a4d5bae548d8c60407f9bba697b811a25e8d632b334ec5111424107991c77",
+    "diagrams": [
+      "pz10_trace"
+    ],
+    "text_chars": 3363,
+    "group": "ПЗ-10",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+    "source_name": "pz10_trace.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/pz10_trace.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz10_trace.drawio"
+  },
+  {
+    "name": "pz10_trace.png",
+    "bytes": 140325,
+    "sha256": "b6082fc4df9aca081e9c28fe3854f3d9a9d7831f58a2b7b2e26f2550a046b474",
+    "group": "ПЗ-10",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+    "source_name": "pz10_trace.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/pz10_trace.png?forcedownload=1",
+    "local_path": "materials/originals/pz10_trace.png"
+  },
+  {
+    "name": "PZ11_Instruction.docx",
+    "bytes": 145904,
+    "sha256": "7378268deab540f2b465740761648a17634e608544b5339472baabbf3b8f8999",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6505,
+    "group": "ПЗ-11",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+    "source_name": "PZ11_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/PZ11_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ11_Instruction.docx"
+  },
+  {
+    "name": "pz11_tobe.drawio",
+    "bytes": 3025,
+    "sha256": "f9a2cf6b3091a84124130a16a4c5419f984a6cf400a6c608d40858d7c52451af",
+    "diagrams": [
+      "pz11_tobe"
+    ],
+    "text_chars": 2786,
+    "group": "ПЗ-11",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+    "source_name": "pz11_tobe.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/pz11_tobe.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz11_tobe.drawio"
+  },
+  {
+    "name": "pz11_tobe.png",
+    "bytes": 108824,
+    "sha256": "d582f9e5d1b86b432df891d017a6f09111d4a043a6b55fffa8af1c41df02a8f7",
+    "group": "ПЗ-11",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+    "source_name": "pz11_tobe.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/pz11_tobe.png?forcedownload=1",
+    "local_path": "materials/originals/pz11_tobe.png"
+  },
+  {
+    "name": "PZ12_Instruction.docx",
+    "bytes": 43607,
+    "sha256": "c8325f9c965c03e7f63bf13f415592ba31761b470853588dc25ca2e2b437d757",
+    "embedded_media": [],
+    "text_chars": 7025,
+    "group": "ПЗ-12",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+    "source_name": "PZ12_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/PZ12_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ12_Instruction.docx"
+  },
+  {
+    "name": "PZ12_Model.xlsx",
+    "bytes": 16038,
+    "sha256": "dac9bef4596146c4479fbff328eed084c68ea886ae6f6d54d29355af60797d3e",
+    "sheets": [
+      "Настройки",
+      "Исходные",
+      "Модель",
+      "Протокол"
+    ],
+    "text_chars": 21522,
+    "group": "ПЗ-12",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+    "source_name": "PZ12_Model.xlsx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/PZ12_Model.xlsx?forcedownload=1",
+    "local_path": "materials/originals/PZ12_Model.xlsx"
+  },
+  {
+    "name": "PZ13_Effect.xlsx",
+    "bytes": 6419,
+    "sha256": "db0df35b736b2ddac474cfb8c15df98e3c39240b82e6180566f22f8a1c3db841",
+    "sheets": [
+      "Расчет"
+    ],
+    "text_chars": 2433,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "PZ13_Effect.xlsx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/PZ13_Effect.xlsx?forcedownload=1",
+    "local_path": "materials/originals/PZ13_Effect.xlsx"
+  },
+  {
+    "name": "PZ13_Instruction.docx",
+    "bytes": 108890,
+    "sha256": "fa5506f34be68c15631c7e828d09b4b50cad3b964daf2489dd5b0aa83295301d",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6820,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "PZ13_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/PZ13_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ13_Instruction.docx"
+  },
+  {
+    "name": "pz13_roadmap.drawio",
+    "bytes": 2136,
+    "sha256": "fd18044330cdc4ca8288f4d983dbe5c349ee0eba88f79db5ca07cc2f9e6cc778",
+    "diagrams": [
+      "pz13_roadmap"
+    ],
+    "text_chars": 1981,
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "pz13_roadmap.drawio",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/pz13_roadmap.drawio?forcedownload=1",
+    "local_path": "materials/originals/pz13_roadmap.drawio"
+  },
+  {
+    "name": "pz13_roadmap.png",
+    "bytes": 67075,
+    "sha256": "3a770e48ea54da378957c7493270500cbe6da4efa74feebbc53d4f0efebecd4a",
+    "group": "ПЗ-13",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+    "source_name": "pz13_roadmap.png",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/pz13_roadmap.png?forcedownload=1",
+    "local_path": "materials/originals/pz13_roadmap.png"
+  },
+  {
+    "name": "PZ14_Instruction.docx",
+    "bytes": 146217,
+    "sha256": "4de35940462ae3404f7809f9fe9212708a2acae4e97c7ad3c4722557dcb35aa8",
+    "embedded_media": [
+      "word/media/image1.png"
+    ],
+    "text_chars": 6887,
+    "group": "ПЗ-14",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+    "source_name": "PZ14_Instruction.docx",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/PZ14_Instruction.docx?forcedownload=1",
+    "local_path": "materials/originals/PZ14_Instruction.docx"
+  },
+  {
+    "name": "Лекция 1.pdf",
+    "bytes": 2083454,
+    "sha256": "b8493db67e439f519e8befbec1d650a3e21fe5cc2aeeeb003a98391483824c1d",
+    "pages": 100,
+    "text_chars": 50252,
+    "group": "Лекция 1",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93644",
+    "source_name": "Лекция 1.pdf",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515507/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%201.pdf?forcedownload=1",
+    "local_path": "materials/originals/Лекция 1.pdf"
+  },
+  {
+    "name": "Лекция 2.pdf",
+    "bytes": 1854757,
+    "sha256": "72f3dc0f41d17d2265082e9189de187d973eadb86643d73dd4284e0ad4d2b7b1",
+    "pages": 100,
+    "text_chars": 46807,
+    "group": "Лекция 2",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93645",
+    "source_name": "Лекция 2.pdf",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515508/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%202.pdf?forcedownload=1",
+    "local_path": "materials/originals/Лекция 2.pdf"
+  },
+  {
+    "name": "Лекция 3.pdf",
+    "bytes": 2129354,
+    "sha256": "1c318049742e9e46e3a89421995ab644ea6adf4ae708baccb7674460f0b720f2",
+    "pages": 100,
+    "text_chars": 46148,
+    "group": "Лекция 3",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93646",
+    "source_name": "Лекция 3.pdf",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515509/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%203.pdf?forcedownload=1",
+    "local_path": "materials/originals/Лекция 3.pdf"
+  },
+  {
+    "name": "Лекция 4.pdf",
+    "bytes": 1900711,
+    "sha256": "d7396a23e3e2601526841aeff965bce762f42472b041745820ff997d538a034c",
+    "pages": 100,
+    "text_chars": 47087,
+    "group": "Лекция 4",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93647",
+    "source_name": "Лекция 4.pdf",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515510/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%204.pdf?forcedownload=1",
+    "local_path": "materials/originals/Лекция 4.pdf"
+  },
+  {
+    "name": "Лекция 5.pdf",
+    "bytes": 1660028,
+    "sha256": "27f953e51221d2855dba6888105d83873e7d708150c12120045c614bf1303fce",
+    "pages": 100,
+    "text_chars": 46044,
+    "group": "Лекция 5",
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93648",
+    "source_name": "Лекция 5.pdf",
+    "source_url": "https://sdo.timacad.ru/pluginfile.php/515511/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%205.pdf?forcedownload=1",
+    "local_path": "materials/originals/Лекция 5.pdf"
+  }
+]

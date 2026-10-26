@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-03T07:05:51.413517+00:00",
+  "status": "PASS",
+  "pre_continuation_commit": "420c3eccf46b4a233780b62b5fda86cf7f5f1e80",
+  "pre_continuation_research_files": 967,
+  "failures": [],
+  "review40_files": {
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/manifest.json": "e22655ca5434b2768e8d367d1e9a7ee46b3b6d09e29fde9466fa7916e01eca2c",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/private_provenance/id_mapping.json": "1dea74ca4d6164bcb308d982f48c4120b5e432cbf9c84b59448f36bc51f137d9",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_A/instructions_RU.md": "beb7435c2cb4c470e72572841dab98cfc1689dc364807dd18e62f058eb320323",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_A/reference_weather.json": "38d4f7bc57ee8b6a09c49e46f0b1112cfc843d8d1e289c8a7301307113bcac84",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_A/reviewer_A_antoniy.csv": "43372fe8e63b7758cfb1b06cf8cb417d24063bea15c9513159ea302845b1f41d",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_B/instructions_RU.md": "7456ce27c566fd04c0ddf0a53eb89825d3974efa594794251510554983b0b178",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_B/reference_weather.json": "38d4f7bc57ee8b6a09c49e46f0b1112cfc843d8d1e289c8a7301307113bcac84",
+    "results/20261003_045520Z_1bd51445_scorer_audit/clean_human_review40/reviewer_B/reviewer_B_denis.csv": "9929917c831a551b17b70b76a1cfb4b162ed9ffd34f2e2e7b33dcb0b85444ed6"
+  },
+  "manuscript_files_preserved": 19,
+  "own_local_instances_cleanup_verified": {
+    "gemma-4-26b-a4b-it": true,
+    "qwen3.8-27b": true
+  },
+  "comparison": "Working file bytes versus git archive baseline; archive parsed in memory without extraction"
+}

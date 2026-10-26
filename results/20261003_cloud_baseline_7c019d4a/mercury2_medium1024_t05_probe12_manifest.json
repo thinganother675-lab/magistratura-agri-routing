@@ -1,0 +1,145 @@
+{
+  "run_id": "20261003_cloud_baseline_7c019d4a",
+  "profile": "mercury2_medium1024_t05",
+  "stage": "probe12",
+  "status": "COMPLETE",
+  "started_utc": "2026-10-03T08:10:52.783216+00:00",
+  "credential_source_name": "project_env:mercury_api_key",
+  "code_commit": "63b481475653bb13a9e111526019adf16a4ce672",
+  "plan_sha256": "78d1ed59aa5d707df00fcff5105169f6dc8ced805e9494851e831600b35eeb20",
+  "actual_attempts": 12,
+  "prior_probe_calls": 0,
+  "private_test_run": false,
+  "retries": 0,
+  "MERA_submissions": 0,
+  "cap_usd": 0.02,
+  "n_expected": 12,
+  "parameter_differences": [
+    "Mercury temperature.5 vs local0 because provider allows.5-1",
+    "Mercury instant/medium vs native local off/low",
+    "Mercury nonstream TTFT/tok/s unavailable",
+    "Mercury no seed/top_p/logprobs requested because not documented in current API"
+  ],
+  "finished_utc": "2026-10-03T08:11:14.618944+00:00",
+  "actual_calls": 12,
+  "reserved_usd": 0.0137265,
+  "known_cost_usd_estimate": 0.00602575,
+  "unknown_cost_calls": 0,
+  "summary": {
+    "n_expected": 12,
+    "n_attempted": 12,
+    "n_completed": 12,
+    "n_response_received": 12,
+    "n_scored": 12,
+    "complete_coverage": true,
+    "strict_em_count": 4,
+    "strict_f1_sum": 7.5476190476190474,
+    "strict_set_em": 0.3333333333333333,
+    "strict_set_f1": 0.628968253968254,
+    "conservative_all_n_em": 0.3333333333333333,
+    "reference_issues": 0,
+    "invalid_output": 1,
+    "json_contract_failure": 1,
+    "errors": 0,
+    "timeouts": 0,
+    "latency_p50_s": 1.6384560500009684,
+    "latency_p95_s": 2.8976822650023677,
+    "latency_mean_s": 1.813552491670028,
+    "ttft_p50_s": null,
+    "first_answer_p50_s": null,
+    "client_tps_p50": null,
+    "backend_tps_p50": null,
+    "input_tokens": 5638,
+    "output_tokens": 6155,
+    "usage_coverage": 12,
+    "confidence_coverage": 0,
+    "by_domain": {
+      "Ботаника": {
+        "n": 2,
+        "n_scored": 2,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.6785714285714286
+      },
+      "Кормопроизводство и луговодство": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      },
+      "Мелиоративное земледелие": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      },
+      "Общая генетика": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 1,
+        "strict_set_f1": 1.0
+      },
+      "Общее земледелие": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 1,
+        "strict_set_f1": 1.0
+      },
+      "Основы селекции": {
+        "n": 2,
+        "n_scored": 2,
+        "reference_issues": 0,
+        "strict_set_em": 0.5,
+        "strict_set_f1": 0.8333333333333333
+      },
+      "Растениеводство": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.8571428571428571
+      },
+      "Семеноводство и семеноведение": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 1,
+        "strict_set_f1": 1.0
+      },
+      "Системы земледелия на различных агроландшафтах": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.6666666666666666
+      },
+      "Технологии возделывания сельскохозяйственных культур": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      }
+    },
+    "by_answer_cardinality": {
+      "single": {
+        "n": 7,
+        "strict_set_em": 0.2857142857142857,
+        "strict_set_f1": 0.47619047619047616,
+        "predicted_single_n": 4
+      },
+      "multiple": {
+        "n": 5,
+        "strict_set_em": 0.4,
+        "strict_set_f1": 0.8428571428571429,
+        "predicted_single_n": 0
+      }
+    }
+  },
+  "raw_sha256": "b17d8bc0b806aa474b9844edf3a91b5500478a06cb402409dcf68a0b8ceef4a5",
+  "safe_rows_sha256": "fec18c3776962dc8483ec516e1c07ed20548fbd7ada8ffbd6a6dd4ef4c62e88b"
+}

@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-16T14:11:02.444004+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+  "scheduled_window": "2026-10-16 13:05–13:20 UTC+3",
+  "window_expired_on_user_request": true,
+  "login_active": true,
+  "observed_previous_failure": "Инициализация файлового поля: «Загрузка…» и невидимая кнопка добавления до выбора файла.",
+  "observed_now": [
+    "Компонент имеет состояние fm-loaded",
+    "Кнопка «Добавить...» доступна и открывает диалог",
+    "Вкладка «Загрузить файл» открылась с полем вложения и кнопкой отправки",
+    "Консоль error/warn не содержит записей",
+    "После отмены статус «Ответы на задание еще не представлены»"
+  ],
+  "root_cause": "Точная причина прежней задержки JavaScript/сети не установлена. Признаков истечения входа нет.",
+  "file_selected": false,
+  "file_uploaded": false,
+  "submission_saved": false,
+  "user_browser_action_required_now": false,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ01_20261016_picker_ready.jpg",
+  "next_run_guidance": "Дождаться видимой кнопки «Добавить...» и исчезновения активного индикатора загрузки. Один короткий DOM-снимок не доказывает зависание. При сохранении загрузки — ограниченные проверки готовности и одна перезагрузка пустой формы; не выходить за окно и не повторять неизвестную запись."
+}

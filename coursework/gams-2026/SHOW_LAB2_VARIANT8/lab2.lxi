@@ -1,0 +1,17 @@
+B 3 C o m p i l a t i o n
+B 41 Equation Listing    SOLVE dairy Using LP From line 29
+D 44 objective
+D 49 resource
+B 61 Column Listing      SOLVE dairy Using LP From line 29
+E 64 x
+E 87 revenue
+B 95 Range Statistics    SOLVE dairy Using LP From line 29
+B 106 Model Statistics    SOLVE dairy Using LP From line 29
+B 119 Solution Report     SOLVE dairy Using LP From line 29
+F 152 objective
+F 154 resource
+G 163 x
+G 174 revenue
+B 182 E x e c u t i o n
+I 182 x
+I 189 revenue
