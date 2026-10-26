@@ -1,0 +1,12 @@
+{
+  "raw_centners": 139.99999999999756,
+  "main_hours": 21.0,
+  "cream_hours": 14.864197530863335,
+  "skim_share": 0.3333333333333333,
+  "revenue_thousand_rub": 321.51777777777426,
+  "upper_bound_thousand_rub": 321.5177777777778,
+  "dual_gap": 3.524291969370097E-12,
+  "gams_modelstat": "1",
+  "gams_solvestat": "1",
+  "passed": true
+}

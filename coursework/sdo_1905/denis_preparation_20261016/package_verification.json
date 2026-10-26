@@ -1,0 +1,873 @@
+{
+  "status": "PASS",
+  "files": 172,
+  "originals": 77,
+  "summaries": 19,
+  "practical_cards": 14,
+  "source_hashes_match": true,
+  "filled_answers": 0,
+  "tests_executed_for_denis": 0,
+  "submitted": 0,
+  "files_manifest": [
+    {
+      "path": "materials/extracted/00_Start.docx.txt",
+      "bytes": 18264,
+      "sha256": "aab7b7bbfd617dd7a2ba8bc45080214c950188e775ab03098338fae9c5efe648"
+    },
+    {
+      "path": "materials/extracted/01_Case.docx.txt",
+      "bytes": 17582,
+      "sha256": "d41b60994f2192cc41e0ae030384825752f57f4b21c6501e57d61622edd5a280"
+    },
+    {
+      "path": "materials/extracted/All_examples.drawio.txt",
+      "bytes": 32993,
+      "sha256": "c92a0d65f25372c06e0daf511f250b61ab1bfc937c8cd68302385760ce87de6c"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ01.docx.txt",
+      "bytes": 3287,
+      "sha256": "5c45573b2b812c2d74e8e062bb98aa43d118130e0afa266e4cb28ac1309b8ae0"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ02.docx.txt",
+      "bytes": 3417,
+      "sha256": "a19619572a544eb58642bb1279922952d9918993c3f70d8523fc7038c13c7078"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ03.docx.txt",
+      "bytes": 3160,
+      "sha256": "c7ce1367748c16a0dd38f3648fb1a0c0a289f591e32aa60dd82ac98500f33fca"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ04.docx.txt",
+      "bytes": 3360,
+      "sha256": "77a1f9cc377913ffe429e3bafd9e71094963da996f1af82a574965ca84be016a"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ05.docx.txt",
+      "bytes": 3728,
+      "sha256": "960f5ad8ca719d2c1d8334e5906a11615109ff9fb9fca07d121f12bf647cdd54"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ06.docx.txt",
+      "bytes": 3503,
+      "sha256": "52673e7f7a4ccc4ac332ade8218575264c35d4be69443aef5fc5a2990572a1a6"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ07.docx.txt",
+      "bytes": 3888,
+      "sha256": "ef1b214bd233cb892b8601483e397c0c63ebe438bee308ae8900da3e68c6b3ae"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ08.docx.txt",
+      "bytes": 3152,
+      "sha256": "cfe35229761a9ec3f83e5fdf1c70387804b8ee43f8ce653a98fc4c0444a3ff19"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ09.docx.txt",
+      "bytes": 3110,
+      "sha256": "0d089da699688dd36ea62fe098376b62c43c7cb5c5b7adda7ed09e484082ef3a"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ10.docx.txt",
+      "bytes": 3346,
+      "sha256": "abe3d942a0d54cf6280a9c70a57adae4681a9c097cfb433a19c70e694e57e100"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ11.docx.txt",
+      "bytes": 3218,
+      "sha256": "b8e390b9a7158b73fab7600801a688a8e1e288e110ae3a7d3da251283f111df5"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ12.docx.txt",
+      "bytes": 3208,
+      "sha256": "d9db5c6c87ad239fabe7b1c9df4ac64a9c026fc0d989707d1086be27e7a3e880"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ13.docx.txt",
+      "bytes": 4169,
+      "sha256": "7fe4a1f99a7cda1b7a240da36749c500c034872aee96abf6342c74d090b7565a"
+    },
+    {
+      "path": "materials/extracted/Answer_PZ14.docx.txt",
+      "bytes": 3184,
+      "sha256": "215e5d878edf5db27e55d881a2ddc20eebe3cf77e2fb24038f4b537da619d017"
+    },
+    {
+      "path": "materials/extracted/Case_for_AI.txt.txt",
+      "bytes": 17389,
+      "sha256": "049ec4bc9d84e6393938ec87fb1bf0ff93bcfaf9bcfc0fdb780f33349448d545"
+    },
+    {
+      "path": "materials/extracted/Operations_PZ12.csv.txt",
+      "bytes": 363,
+      "sha256": "3073698e54eced73525d261835fe25f4ccead1e9e5d38e89728cf4de0bda6cbf"
+    },
+    {
+      "path": "materials/extracted/Operations_PZ13.csv.txt",
+      "bytes": 363,
+      "sha256": "3073698e54eced73525d261835fe25f4ccead1e9e5d38e89728cf4de0bda6cbf"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ01.txt.txt",
+      "bytes": 10787,
+      "sha256": "c3c6326b9dce161c862eae500f25dc91e32c23d70bd6555e4311d56f02c3884a"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ02.txt.txt",
+      "bytes": 11022,
+      "sha256": "559bf2c43007f00c53e223cfc4ee9a8ad165941dc3c9dd29746c9b8f272533c4"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ03.txt.txt",
+      "bytes": 10798,
+      "sha256": "787fa1b10370eb12c428d4924d9cbbba902a63763aec27d81b80f2d4b5ea69b7"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ04.txt.txt",
+      "bytes": 11429,
+      "sha256": "88ef128b708fd5b13c9147bab22bf8b8a5f66f6e87b9e859517e7c0c89abae0e"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ05.txt.txt",
+      "bytes": 9254,
+      "sha256": "37f7c60ca518072aaf637873cd0f218a345d4c0f0227c1c115a8d07551abfb8f"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ06.txt.txt",
+      "bytes": 9480,
+      "sha256": "783731565b469507836201cc0a1b5a84b1cc782eeff70e3680c2ede27515a5fa"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ07.txt.txt",
+      "bytes": 9202,
+      "sha256": "99795256b1fe5052ed555c8a8785d52838818e8ca34dfead6c1b04b5fe4782f6"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ08.txt.txt",
+      "bytes": 13075,
+      "sha256": "9be4b05d55ce8a8492979b6dac77dc53ef3e26874c7ef73aced2d9ece470e96a"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ09.txt.txt",
+      "bytes": 7719,
+      "sha256": "51c43a88f40677f31e82366775169103d36d94716152339c95d85f47abdab5cb"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ10.txt.txt",
+      "bytes": 16205,
+      "sha256": "6feaac8e6e74fa26fa17c38971d642aa3bf50599a8c1c40b1b29fb86289d57e9"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ11.txt.txt",
+      "bytes": 8095,
+      "sha256": "13c7daf599c6062ef3a1fefc1ab4af0094a5f2fa91a0f7b0004149c99a9e9d55"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ12.txt.txt",
+      "bytes": 7847,
+      "sha256": "1713ba2c29ccea17ea2c3b6f9396ae7381779e43567bf196be17020b5cf5c04f"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ13.txt.txt",
+      "bytes": 7499,
+      "sha256": "59f455dda8a691dde6f9010fc593dcd96a91502ab138c26fe7dfc1ec207b1da6"
+    },
+    {
+      "path": "materials/extracted/Prompt_PZ14.txt.txt",
+      "bytes": 10755,
+      "sha256": "7f95c25c2df941861b745469396b9a77c6434ad28f066722042ee03faac0258e"
+    },
+    {
+      "path": "materials/extracted/pz01_context.drawio.txt",
+      "bytes": 3411,
+      "sha256": "dea2c41c6b7a51d178fdeffd57cd1c338d874abb8cf0a81058dd887369d8b9cb"
+    },
+    {
+      "path": "materials/extracted/PZ01_Instruction.docx.txt",
+      "bytes": 10790,
+      "sha256": "c565f86a2592b4973b6c08f3956a9daede2d696ab73b28d267fbe5357259a8e9"
+    },
+    {
+      "path": "materials/extracted/pz02_domains.drawio.txt",
+      "bytes": 2579,
+      "sha256": "6670e7a36ce25e77a8cac320576ec996f726bce47e91df7072fd1db479f45e1e"
+    },
+    {
+      "path": "materials/extracted/PZ02_Instruction.docx.txt",
+      "bytes": 10537,
+      "sha256": "add39816ab7155472ab006ded4ae224b6276bd61173cd780387ca87809b142e8"
+    },
+    {
+      "path": "materials/extracted/PZ03_Instruction.docx.txt",
+      "bytes": 10468,
+      "sha256": "affaabdf6d27f94f10aa8aa917181f6a86f84ab2297f90876d65270247aa8b79"
+    },
+    {
+      "path": "materials/extracted/PZ04_Instruction.docx.txt",
+      "bytes": 10994,
+      "sha256": "f3492c9ff59051fb5bb2c0114cbb03c0de03be7012caf198309bc76d3ca9d499"
+    },
+    {
+      "path": "materials/extracted/pz04_roles.drawio.txt",
+      "bytes": 2687,
+      "sha256": "775854c85193a5132bcd8459a65aa485dcf3c8c8057e5c5abc3d35368d64d0a5"
+    },
+    {
+      "path": "materials/extracted/PZ05_Instruction.docx.txt",
+      "bytes": 10706,
+      "sha256": "2df6afa61f1e2e3763d6e3cf317948f914b84481293fdedc094f5247ab9bb480"
+    },
+    {
+      "path": "materials/extracted/pz05_process.drawio.txt",
+      "bytes": 5180,
+      "sha256": "67af4f8ba55c360112e8507b8543e021cd887986fe5b6e041f99031f32bdac91"
+    },
+    {
+      "path": "materials/extracted/pz06_data.drawio.txt",
+      "bytes": 2301,
+      "sha256": "4969b39e7c6f24f908080e5770d8d2b3b9b6eab71ee309925b8a8ad8c74ce18d"
+    },
+    {
+      "path": "materials/extracted/PZ06_Instruction.docx.txt",
+      "bytes": 11006,
+      "sha256": "580b10e4a5baa3a689537371489bd45ec3101a70fc9833aadb5894f9357204db"
+    },
+    {
+      "path": "materials/extracted/pz07_apps.drawio.txt",
+      "bytes": 2772,
+      "sha256": "8a7e0b52e22af7c1d250ecb6a87f67fe77462a72ce69d8d5bfa51493052f7170"
+    },
+    {
+      "path": "materials/extracted/PZ07_Instruction.docx.txt",
+      "bytes": 10719,
+      "sha256": "7adce35cafad324eb46de41e0b5229310e38fd15db15b65ec9f74f06da91b041"
+    },
+    {
+      "path": "materials/extracted/pz08_exchange.drawio.txt",
+      "bytes": 3155,
+      "sha256": "e6bb86df8de1667671a300ad6567a39a134a8d7e5b8cf270c1fffe07348aac9e"
+    },
+    {
+      "path": "materials/extracted/PZ08_Instruction.docx.txt",
+      "bytes": 10601,
+      "sha256": "e81c0544bb52e889540c448203317c129f63260c5cf3c9a4dd613dda699d090a"
+    },
+    {
+      "path": "materials/extracted/PZ09_Instruction.docx.txt",
+      "bytes": 11015,
+      "sha256": "a5ae3cf0b2b11246569038e959652aedd155470b94b20d1d30a276f668cac422"
+    },
+    {
+      "path": "materials/extracted/pz09_tech.drawio.txt",
+      "bytes": 2920,
+      "sha256": "a15aae7937f2693fab69e0c158fd04bc45a7864e63c12d1059b5083312f4bc58"
+    },
+    {
+      "path": "materials/extracted/PZ10_Instruction.docx.txt",
+      "bytes": 11319,
+      "sha256": "0d7288749ab871adf986795c04b0a06330c380f674297558e0cb81832d5042af"
+    },
+    {
+      "path": "materials/extracted/pz10_trace.drawio.txt",
+      "bytes": 3600,
+      "sha256": "167a0a5f812dcd3435af60fac9de3e0a2c296a492bf306f58b98aee208095e39"
+    },
+    {
+      "path": "materials/extracted/PZ11_Instruction.docx.txt",
+      "bytes": 11593,
+      "sha256": "fca1671b1836fac53ef7070635f0e179806cbde641b1d8fe48dd48363b7dc5d7"
+    },
+    {
+      "path": "materials/extracted/pz11_tobe.drawio.txt",
+      "bytes": 3026,
+      "sha256": "32c5477be0c948d71a2ecc407df7b120f57b24a5b446dee6c1088ea3ef22a7c0"
+    },
+    {
+      "path": "materials/extracted/PZ12_Instruction.docx.txt",
+      "bytes": 12431,
+      "sha256": "7c8a4d2b4cbd24ff8aa9cf81c549ead280186617e68db1d0b3a09efcfef768ab"
+    },
+    {
+      "path": "materials/extracted/PZ12_Model.xlsx.txt",
+      "bytes": 25393,
+      "sha256": "128d47803e96238b33471fc1e33de525142b36320890c785af1add7e8ca4af3a"
+    },
+    {
+      "path": "materials/extracted/PZ13_Effect.xlsx.txt",
+      "bytes": 3439,
+      "sha256": "1f79d08fdaf8732793d2a16635f7efc7441b1d98828f78fdf12e0fae4d6ae366"
+    },
+    {
+      "path": "materials/extracted/PZ13_Instruction.docx.txt",
+      "bytes": 12134,
+      "sha256": "4e3cc68322efdcf0c6742401a179e7bfdfd18e42308b2f187c50e0b00060e53e"
+    },
+    {
+      "path": "materials/extracted/pz13_roadmap.drawio.txt",
+      "bytes": 2137,
+      "sha256": "62c26bc644925e60e346a90a355b1161357635bdea6a8d24e3aa856f43f9766f"
+    },
+    {
+      "path": "materials/extracted/PZ14_Instruction.docx.txt",
+      "bytes": 12354,
+      "sha256": "9f5bfc03a414385e8fc5cdd47a098d39826441d9cce7d684e347f6b30fa87ae2"
+    },
+    {
+      "path": "materials/extracted/Лекция 1.pdf.txt",
+      "bytes": 91593,
+      "sha256": "a5c28d17ebf7744806c5c2119ca5cb96bd4ce416fbd62bdae2af1152c96ac36a"
+    },
+    {
+      "path": "materials/extracted/Лекция 2.pdf.txt",
+      "bytes": 85103,
+      "sha256": "ac8e1481f1275a081cdc5b5acde68f7768e3cd49118d548642acbaf98af51fe1"
+    },
+    {
+      "path": "materials/extracted/Лекция 3.pdf.txt",
+      "bytes": 84033,
+      "sha256": "147f2cb237149562d0a07c3b0c295b9bc639ffa1baeaa9ee215fa41245f68aa8"
+    },
+    {
+      "path": "materials/extracted/Лекция 4.pdf.txt",
+      "bytes": 85835,
+      "sha256": "5076d87f4adc1055aeda1fe6f8172f0619caf98d4c475807727151dfd6075a64"
+    },
+    {
+      "path": "materials/extracted/Лекция 5.pdf.txt",
+      "bytes": 83733,
+      "sha256": "a0b1f9d36ad041ec9ff366be349a19421726e75d3ac1b0408136323cd210c59d"
+    },
+    {
+      "path": "materials/originals/00_Start.docx",
+      "bytes": 44766,
+      "sha256": "50dbc6e7c687585fa03722f31594a5fcb7ca5ff0d35ca41020c846c3be027073"
+    },
+    {
+      "path": "materials/originals/01_Case.docx",
+      "bytes": 45062,
+      "sha256": "a1130a5811d938287168c6541d02fcbeb7d83cef512ecf24492e219d85922776"
+    },
+    {
+      "path": "materials/originals/All_examples.drawio",
+      "bytes": 32992,
+      "sha256": "873d62c13bd30cdb86ce9e91ac3ea139bad426d833262ba183e19d90204757b5"
+    },
+    {
+      "path": "materials/originals/Answer_PZ01.docx",
+      "bytes": 40322,
+      "sha256": "39a5adc72748735d612fdb2080a396a4dee9cb96109c5e44663184d8761c15d9"
+    },
+    {
+      "path": "materials/originals/Answer_PZ02.docx",
+      "bytes": 40256,
+      "sha256": "7dcfc8149473c150e83644dc708fc366f111b97aa3de087a5da4834879518ea7"
+    },
+    {
+      "path": "materials/originals/Answer_PZ03.docx",
+      "bytes": 40169,
+      "sha256": "c3b8d5f0c1e139672d302f9360abe022209234362a2e6dd84ef0173b3fb6bb3c"
+    },
+    {
+      "path": "materials/originals/Answer_PZ04.docx",
+      "bytes": 40305,
+      "sha256": "155c474b2d85dfa352a6147e56f5895dbf8903bcea88a87fb1f63612c005774a"
+    },
+    {
+      "path": "materials/originals/Answer_PZ05.docx",
+      "bytes": 40395,
+      "sha256": "445d9eb2da07bb97c456608e2661059b07ac489de00364e7dfeb95ff82f48282"
+    },
+    {
+      "path": "materials/originals/Answer_PZ06.docx",
+      "bytes": 40248,
+      "sha256": "240d9f208763299cecc8b71d12de2658d7119ea5873e9b49f002323a8c58a869"
+    },
+    {
+      "path": "materials/originals/Answer_PZ07.docx",
+      "bytes": 40430,
+      "sha256": "7315bc5c3435e84e6e0f9962409e63b1cc77e8a689c444f70f1da22763e014c7"
+    },
+    {
+      "path": "materials/originals/Answer_PZ08.docx",
+      "bytes": 40295,
+      "sha256": "2e56bb8015e4a20ec3d21a261789c2dbba3462246bb2ea09de90177f97360756"
+    },
+    {
+      "path": "materials/originals/Answer_PZ09.docx",
+      "bytes": 40270,
+      "sha256": "be8dc7bc67bfb7ecb921a0f8e8a2fe70c5b4e34633400c53a31a5f8f51a28e1f"
+    },
+    {
+      "path": "materials/originals/Answer_PZ10.docx",
+      "bytes": 40230,
+      "sha256": "cb510f08fe519a4e48802f269295a76e83f0ff19aea0f82fc59d12870cecb9b8"
+    },
+    {
+      "path": "materials/originals/Answer_PZ11.docx",
+      "bytes": 40225,
+      "sha256": "451dcfdb462c3687f3d0a3801dcffc4ecf83eefcb7ac56111ef0afe8e652e1a0"
+    },
+    {
+      "path": "materials/originals/Answer_PZ12.docx",
+      "bytes": 40448,
+      "sha256": "4231042ffe1295a6bcf22131eb5bdaa6228c564cdf3f4c05c27575fd06d11226"
+    },
+    {
+      "path": "materials/originals/Answer_PZ13.docx",
+      "bytes": 40570,
+      "sha256": "0490ee95a9c034555c7ebe970c19e0897d3d4dab3329415e6b17a1f419f18c87"
+    },
+    {
+      "path": "materials/originals/Answer_PZ14.docx",
+      "bytes": 40281,
+      "sha256": "f19744fb9a37255e370a2a95ffea1b0a6e91c23f76e8c16aeca8ec618d190e75"
+    },
+    {
+      "path": "materials/originals/Case_for_AI.txt",
+      "bytes": 17320,
+      "sha256": "b9af05d1f679a483fb7ebf3e11d86fc65d8c56cbe59660591a47af31d3e865ad"
+    },
+    {
+      "path": "materials/originals/Operations_PZ12.csv",
+      "bytes": 366,
+      "sha256": "5e19a8d139cfbf69a603da89d9364578003d11c27d2e77ef0aebbde679af19b0"
+    },
+    {
+      "path": "materials/originals/Operations_PZ13.csv",
+      "bytes": 366,
+      "sha256": "5e19a8d139cfbf69a603da89d9364578003d11c27d2e77ef0aebbde679af19b0"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ01.txt",
+      "bytes": 10747,
+      "sha256": "d82b46334d7a2e8f1a16e9c96c68e1b65bb5abb49936cdcd07e3e7b640ef3542"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ02.txt",
+      "bytes": 10982,
+      "sha256": "fe6b19070eb0c066ce6cc7760d27df13c3d167068c0610a9a1cb35340ee31677"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ03.txt",
+      "bytes": 10758,
+      "sha256": "5ea5a08e05c252587b8703bef9173b199fb6577d1c104ec2c30d5c90fc3d662b"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ04.txt",
+      "bytes": 11388,
+      "sha256": "34ec17cf1d49dd815b7b21bb48154ed3b6f1cc2b7ed429f4a59541e3306c1984"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ05.txt",
+      "bytes": 9219,
+      "sha256": "6d3eb90a7cd98c7005cb15d4ddd82e713c2832d172fdf8d4a465f8b3c939c0c7"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ06.txt",
+      "bytes": 9434,
+      "sha256": "ab38e85c543628d30c3e7d553354923c0532f2c5cd4c2815c3eb942baddb62a4"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ07.txt",
+      "bytes": 9167,
+      "sha256": "8869a2a6b427e03560486809c285e256dfbf90a6f9a08c569d650d2b4c0a4c9a"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ08.txt",
+      "bytes": 13017,
+      "sha256": "cf9033ce44ec9f4e5b09b594de4e8a73264de7f295bedb3ba4bddc18431defc7"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ09.txt",
+      "bytes": 7690,
+      "sha256": "6ebdb50ef6deda650aadf475c241bff8c9d37d20a58891f3d7b9e1f0ff14b54f"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ10.txt",
+      "bytes": 16136,
+      "sha256": "24d47c215a6b194c6606f58934c2f0b67225de9a5afd4ec62d52bfd3a288bfe1"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ11.txt",
+      "bytes": 8065,
+      "sha256": "38c3bbd3d291d82cb91ed69eb6d6ed106edfae71f3d2902565a0a0fd3ecde47d"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ12.txt",
+      "bytes": 7807,
+      "sha256": "3d350e874ea61c423d5bf4bef99ec8f62e3831feef0765292db22b63969b0365"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ13.txt",
+      "bytes": 7470,
+      "sha256": "f7f9a9338af5742a4aa7955ea9f3b232492cd7bb79fd0d038dc0b3fb10c54e25"
+    },
+    {
+      "path": "materials/originals/Prompt_PZ14.txt",
+      "bytes": 10716,
+      "sha256": "7de033ee3269d84631b207ae2836952593f0f0aab58d91c853b2a396d86c23e2"
+    },
+    {
+      "path": "materials/originals/pz01_context.drawio",
+      "bytes": 3410,
+      "sha256": "ccbc370a79eb54e193b1464544fd4994fbed11752ef347773862e2852164fc73"
+    },
+    {
+      "path": "materials/originals/pz01_context.png",
+      "bytes": 104371,
+      "sha256": "62ebda0fe55db2713e616399653ed353522c4ff781dedf9e93f59485718992db"
+    },
+    {
+      "path": "materials/originals/PZ01_Instruction.docx",
+      "bytes": 141889,
+      "sha256": "fd3ea4f57dd0f2098761e92e527d6568b08f3e007c0d50a3f0518a2697bc1c5d"
+    },
+    {
+      "path": "materials/originals/pz02_domains.drawio",
+      "bytes": 2578,
+      "sha256": "8a6062b0d688167f882f7006a6e13a712a79d8455f020e245554414714191365"
+    },
+    {
+      "path": "materials/originals/pz02_domains.png",
+      "bytes": 90877,
+      "sha256": "fba88794781e7ab1ee4c0aa25c1818c96000b8a7e3ebd3c49244e518137057c6"
+    },
+    {
+      "path": "materials/originals/PZ02_Instruction.docx",
+      "bytes": 130197,
+      "sha256": "8955b9389c26c34745a3b0a16433c06a6a0f8e0bfdb97ee46d9a66c3003af4cb"
+    },
+    {
+      "path": "materials/originals/PZ03_Instruction.docx",
+      "bytes": 42962,
+      "sha256": "c8a1534a326e7d7121f23b6e44e89c8f49817a493bade3c681d820fbcfb03fab"
+    },
+    {
+      "path": "materials/originals/PZ04_Instruction.docx",
+      "bytes": 96671,
+      "sha256": "245aeb2beea032bca028952d486cd1be82a195c59ce5035ace84e2e0a08633e0"
+    },
+    {
+      "path": "materials/originals/pz04_roles.drawio",
+      "bytes": 2686,
+      "sha256": "e4de8d55005884436d2bbb5eabe6e840b9d3badb85ebb488e56082e87b8202b7"
+    },
+    {
+      "path": "materials/originals/pz04_roles.png",
+      "bytes": 55148,
+      "sha256": "e7ed0a07e751e0dfd92ce2098ba44264c47f85f0cff307e7b6e7213770ff625f"
+    },
+    {
+      "path": "materials/originals/PZ05_Instruction.docx",
+      "bytes": 207065,
+      "sha256": "d4974e41b540c372b95e47012616de0bb5c4ffea063337b096319f27ebc7fa51"
+    },
+    {
+      "path": "materials/originals/pz05_process.drawio",
+      "bytes": 5179,
+      "sha256": "4466f8ad166b6fac828fdb120314bb740970b72bc039303c4f8e00d8b71ee245"
+    },
+    {
+      "path": "materials/originals/pz05_process.png",
+      "bytes": 171236,
+      "sha256": "1a6965f0a8202a0924765eeb8463ae770ffea3d44ff4c99c39dbf9a53faff522"
+    },
+    {
+      "path": "materials/originals/pz06_data.drawio",
+      "bytes": 2300,
+      "sha256": "b9c8b16d09aebfc4fbb637895829aa070c4c181074a1e54042f4ded94464597c"
+    },
+    {
+      "path": "materials/originals/pz06_data.png",
+      "bytes": 75145,
+      "sha256": "fefd270973fce3d7cd60dfcff936a9359456959ab4f4b68b81eb219a974c0465"
+    },
+    {
+      "path": "materials/originals/PZ06_Instruction.docx",
+      "bytes": 115681,
+      "sha256": "908298e9775ec76fd61442f3eedb8195385253400cbf3d66429cd4caa9f8d746"
+    },
+    {
+      "path": "materials/originals/pz07_apps.drawio",
+      "bytes": 2771,
+      "sha256": "a3717020131839a89e31af9fae196977ca77430a126d66eeb8ced740a9ac1f41"
+    },
+    {
+      "path": "materials/originals/pz07_apps.png",
+      "bytes": 78697,
+      "sha256": "5eec8a51448622fdb6e4b0a42dd5fb0bb7d8a37f72cd235ba3fbf4bbcd3653aa"
+    },
+    {
+      "path": "materials/originals/PZ07_Instruction.docx",
+      "bytes": 118480,
+      "sha256": "d70c97ea056065c9e1c9dc78ac8a5ad0589785f4177cffc698c53c9e33e300c0"
+    },
+    {
+      "path": "materials/originals/pz08_exchange.drawio",
+      "bytes": 3154,
+      "sha256": "07010bd8efa89e0281238f9b7948aacfeebdff808b3b784934e11e5d9cb07d2d"
+    },
+    {
+      "path": "materials/originals/pz08_exchange.png",
+      "bytes": 97116,
+      "sha256": "d507068dfff78bb3f197e1466801e9b2a896af48dd1c2ccb3d3a26cf32ed8cd7"
+    },
+    {
+      "path": "materials/originals/PZ08_Instruction.docx",
+      "bytes": 136976,
+      "sha256": "57fcd86499a2281988c4112e2d67f28bbf33cc7eac931712fe5356797805b980"
+    },
+    {
+      "path": "materials/originals/PZ09_Instruction.docx",
+      "bytes": 133436,
+      "sha256": "e286b179bdcc3620317ca3e808f0624c4852c5ca46386e02cb24e153f2cc84ed"
+    },
+    {
+      "path": "materials/originals/pz09_tech.drawio",
+      "bytes": 2919,
+      "sha256": "a291c6f2c96932cd853374fced4650c9bd3f2d350f3111183d3c3403f0854aa4"
+    },
+    {
+      "path": "materials/originals/pz09_tech.png",
+      "bytes": 93877,
+      "sha256": "b7317f0d9cc7bcc9f955a1c1928916781da2efda7b4f225af5d3f7d95604974b"
+    },
+    {
+      "path": "materials/originals/PZ10_Instruction.docx",
+      "bytes": 176348,
+      "sha256": "99cce09efeffb4f1be93487c8276c1fce1ce06554bcebdb81c1c97c2a9537f5c"
+    },
+    {
+      "path": "materials/originals/pz10_trace.drawio",
+      "bytes": 3599,
+      "sha256": "736a4d5bae548d8c60407f9bba697b811a25e8d632b334ec5111424107991c77"
+    },
+    {
+      "path": "materials/originals/pz10_trace.png",
+      "bytes": 140325,
+      "sha256": "b6082fc4df9aca081e9c28fe3854f3d9a9d7831f58a2b7b2e26f2550a046b474"
+    },
+    {
+      "path": "materials/originals/PZ11_Instruction.docx",
+      "bytes": 145904,
+      "sha256": "7378268deab540f2b465740761648a17634e608544b5339472baabbf3b8f8999"
+    },
+    {
+      "path": "materials/originals/pz11_tobe.drawio",
+      "bytes": 3025,
+      "sha256": "f9a2cf6b3091a84124130a16a4c5419f984a6cf400a6c608d40858d7c52451af"
+    },
+    {
+      "path": "materials/originals/pz11_tobe.png",
+      "bytes": 108824,
+      "sha256": "d582f9e5d1b86b432df891d017a6f09111d4a043a6b55fffa8af1c41df02a8f7"
+    },
+    {
+      "path": "materials/originals/PZ12_Instruction.docx",
+      "bytes": 43607,
+      "sha256": "c8325f9c965c03e7f63bf13f415592ba31761b470853588dc25ca2e2b437d757"
+    },
+    {
+      "path": "materials/originals/PZ12_Model.xlsx",
+      "bytes": 16038,
+      "sha256": "dac9bef4596146c4479fbff328eed084c68ea886ae6f6d54d29355af60797d3e"
+    },
+    {
+      "path": "materials/originals/PZ13_Effect.xlsx",
+      "bytes": 6419,
+      "sha256": "db0df35b736b2ddac474cfb8c15df98e3c39240b82e6180566f22f8a1c3db841"
+    },
+    {
+      "path": "materials/originals/PZ13_Instruction.docx",
+      "bytes": 108890,
+      "sha256": "fa5506f34be68c15631c7e828d09b4b50cad3b964daf2489dd5b0aa83295301d"
+    },
+    {
+      "path": "materials/originals/pz13_roadmap.drawio",
+      "bytes": 2136,
+      "sha256": "fd18044330cdc4ca8288f4d983dbe5c349ee0eba88f79db5ca07cc2f9e6cc778"
+    },
+    {
+      "path": "materials/originals/pz13_roadmap.png",
+      "bytes": 67075,
+      "sha256": "3a770e48ea54da378957c7493270500cbe6da4efa74feebbc53d4f0efebecd4a"
+    },
+    {
+      "path": "materials/originals/PZ14_Instruction.docx",
+      "bytes": 146217,
+      "sha256": "4de35940462ae3404f7809f9fe9212708a2acae4e97c7ad3c4722557dcb35aa8"
+    },
+    {
+      "path": "materials/originals/Лекция 1.pdf",
+      "bytes": 2083454,
+      "sha256": "b8493db67e439f519e8befbec1d650a3e21fe5cc2aeeeb003a98391483824c1d"
+    },
+    {
+      "path": "materials/originals/Лекция 2.pdf",
+      "bytes": 1854757,
+      "sha256": "72f3dc0f41d17d2265082e9189de187d973eadb86643d73dd4284e0ad4d2b7b1"
+    },
+    {
+      "path": "materials/originals/Лекция 3.pdf",
+      "bytes": 2129354,
+      "sha256": "1c318049742e9e46e3a89421995ab644ea6adf4ae708baccb7674460f0b720f2"
+    },
+    {
+      "path": "materials/originals/Лекция 4.pdf",
+      "bytes": 1900711,
+      "sha256": "d7396a23e3e2601526841aeff965bce762f42472b041745820ff997d538a034c"
+    },
+    {
+      "path": "materials/originals/Лекция 5.pdf",
+      "bytes": 1660028,
+      "sha256": "27f953e51221d2855dba6888105d83873e7d708150c12120045c614bf1303fce"
+    },
+    {
+      "path": "materials/summaries/LECTURE_01_RU.md",
+      "bytes": 4656,
+      "sha256": "64e1b6c60ddb4d3127b6f3305201a0c8d72fb7cf9d36a6ef5b5b3049485dae86"
+    },
+    {
+      "path": "materials/summaries/LECTURE_02_RU.md",
+      "bytes": 4280,
+      "sha256": "05d7cf694a667ff95655051ed5fd6fba50fcb96365053be8e106d5313a85c12d"
+    },
+    {
+      "path": "materials/summaries/LECTURE_03_RU.md",
+      "bytes": 4684,
+      "sha256": "6d2ff9db28429f71e9d5d874b112823180cf749c6f5292cfc740720afed6cafe"
+    },
+    {
+      "path": "materials/summaries/LECTURE_04_RU.md",
+      "bytes": 5173,
+      "sha256": "44cdd49ef6651939baa088ae80042f0dd6971aa7f91c3dfc63ff55b4f478a58e"
+    },
+    {
+      "path": "materials/summaries/LECTURE_05_RU.md",
+      "bytes": 4797,
+      "sha256": "c824282408a068baa76cc49dae0d80e26604ee08d098088c6f6f18998f122e2b"
+    },
+    {
+      "path": "materials/summaries/PZ_01_RU.md",
+      "bytes": 3291,
+      "sha256": "ba26fef1503f66152675addbbede33f5f5583e3b2213cc0bd44dbca076b57bc8"
+    },
+    {
+      "path": "materials/summaries/PZ_02_RU.md",
+      "bytes": 3359,
+      "sha256": "2f0e0a106686b801032e7af8088b8c5ae9bf7f16cb0e579abb57c7731ebc191d"
+    },
+    {
+      "path": "materials/summaries/PZ_03_RU.md",
+      "bytes": 3179,
+      "sha256": "3f12620004dc27e8e95d8fd9dbceb33b1b8c02dff5621fcc2ae1f0f5251316f9"
+    },
+    {
+      "path": "materials/summaries/PZ_04_RU.md",
+      "bytes": 3291,
+      "sha256": "2beb4237c0f00da76404067e309c62776645e1591e8eab002a7585b4e14d06a9"
+    },
+    {
+      "path": "materials/summaries/PZ_05_RU.md",
+      "bytes": 3262,
+      "sha256": "e76a5a131b87b2b314ab438502c3585e7811a5e7713f01dc1d3226c8ef6529fd"
+    },
+    {
+      "path": "materials/summaries/PZ_06_RU.md",
+      "bytes": 3202,
+      "sha256": "9b3f12b2ca99708c5fadd7b5dd3d06a0ba3141675c936a029fd933e2c36a647d"
+    },
+    {
+      "path": "materials/summaries/PZ_07_RU.md",
+      "bytes": 3135,
+      "sha256": "8823f0f577bef287d9f59ea304913363b52e165bed0716a9e9f089a831fcda82"
+    },
+    {
+      "path": "materials/summaries/PZ_08_RU.md",
+      "bytes": 3206,
+      "sha256": "af3fd81d39e7e52f5a00080708095719b0d7693e89218c6d6ae73316faf9cf16"
+    },
+    {
+      "path": "materials/summaries/PZ_09_RU.md",
+      "bytes": 3094,
+      "sha256": "a1a154fba436c5b079db3588e063e4c4867751375e7201969bf9401ac22723b7"
+    },
+    {
+      "path": "materials/summaries/PZ_10_RU.md",
+      "bytes": 3261,
+      "sha256": "722d36899b6d9119b1737ba50dd4a0cbe206a6e09625768257ed84730ea4002c"
+    },
+    {
+      "path": "materials/summaries/PZ_11_RU.md",
+      "bytes": 3123,
+      "sha256": "31b2b611c5f2e41611c39f2810a1d9a5cff66680873179f16d8e779030b27fd6"
+    },
+    {
+      "path": "materials/summaries/PZ_12_RU.md",
+      "bytes": 3615,
+      "sha256": "4fa644dd1164d145a7f4c4f8c94a5fc6f4ad974eab702bdca5d208bed3bc19c8"
+    },
+    {
+      "path": "materials/summaries/PZ_13_RU.md",
+      "bytes": 3369,
+      "sha256": "78722c4c1e42ab508cf63077b8f4092048aa58910859d0083ab38c51a64b3074"
+    },
+    {
+      "path": "materials/summaries/PZ_14_RU.md",
+      "bytes": 3530,
+      "sha256": "713f22c219161ab3b96e16498cf3690bafe9cd661091dfa4369e43f0883643d4"
+    },
+    {
+      "path": "planning/case_source_sections.json",
+      "bytes": 17212,
+      "sha256": "ef5e02411a4e7757062c9ce6cd68a9e85ee91c972e25ef00449a1d4986752361"
+    },
+    {
+      "path": "planning/decisions_before_execution.json",
+      "bytes": 1822,
+      "sha256": "1249f3c06a231c22679064713ce00803fa91f2456889344fc5ad9c0312c4793a"
+    },
+    {
+      "path": "planning/practicals_checklist.csv",
+      "bytes": 17353,
+      "sha256": "16f9bfd276180a616b292bfe8cedc43e5588c1634f57af137f713fe25145bab2"
+    },
+    {
+      "path": "planning/practicals_requirements.json",
+      "bytes": 22445,
+      "sha256": "2964da8878ad110798ff81aac04f0509e97178d1bd61700d9b633647b40a4947"
+    },
+    {
+      "path": "planning/readiness.json",
+      "bytes": 1973,
+      "sha256": "7cf157bbc1a1d310c39f542f9c3e52ba3ed3ced9ce6577445241b80f7aebba98"
+    },
+    {
+      "path": "planning/source_path_aliases.json",
+      "bytes": 4248,
+      "sha256": "9080fdc4d0ade5145296b82b54326c81004b7eea5977b99e5046ff4144928ac6"
+    },
+    {
+      "path": "planning/variant_A_brief.json",
+      "bytes": 1779,
+      "sha256": "52e1e54ef655a1e06ea55a76267277d565a64b56468363689d68571c9b5651e5"
+    },
+    {
+      "path": "PREPARATION_RU.html",
+      "bytes": 42238,
+      "sha256": "fe6bf0b1f7845f37f9172fb3de88d7f0d957d784e9f4c6fd38c5d204596f5d8d"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 41120,
+      "sha256": "80891143f36c5d5ed6e29495a95d8b8075934068f5873d3feb118dbb6f60734c"
+    },
+    {
+      "path": "START_NEXT_RUN.txt",
+      "bytes": 3131,
+      "sha256": "8bb241c5df070920775bc873f1f17d633104ecb09822b95805f3d16c54dcdd45"
+    }
+  ]
+}

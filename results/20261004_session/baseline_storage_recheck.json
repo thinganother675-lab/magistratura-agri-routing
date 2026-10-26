@@ -1,6 +1,0 @@
-{
-  "created_utc": "2026-10-03T21:43:43.4834108Z",
-  "exit_code": 0,
-  "reason": "Targeted investigation of transient Windows manifest replacement PermissionError; no code/test changes",
-  "command": "pytest -q tests/test_run_home_final.py::test_mocked_live_driver_journal_once_claim_and_independent_counts"
-}

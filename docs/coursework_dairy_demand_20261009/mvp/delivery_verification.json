@@ -1,0 +1,11 @@
+{
+  "model_and_delivery_tests": 20,
+  "same_demo_result": true,
+  "analysis_seconds": 0.374,
+  "offline_logic_cases": 10,
+  "browser_render_verified": true,
+  "current_user_browser_access": "9 октября после восстановления сессии сайт открыт и основные действия проверены во встроенном браузере.",
+  "offline_browser_render_verified": false,
+  "powershell_launcher_start_verified": true,
+  "powershell_launcher_health_verified": false
+}

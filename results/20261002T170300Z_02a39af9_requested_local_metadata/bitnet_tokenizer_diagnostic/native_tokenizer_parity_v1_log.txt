@@ -1,8 +1,0 @@
-warning: no usable GPU found, --gpu-layers option will be ignored
-warning: one possible reason is that llama.cpp was compiled without GPU support
-warning: consult docs/build.md for compilation instructions
-0.00.004.877 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
-0.00.011.434 I srv    load_model: loading model 'C:\Users\hustlePC\Codex\magistratura\.runtime\bitnet\models\BitNet-b1.58-2B-4T\ggml-model-i2_s.gguf'
-0.00.694.462 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 4096, kv_unified = 'false'
-0.00.695.985 I srv  llama_server: model loaded
-0.00.695.991 I srv  llama_server: listening on http://127.0.0.1:1235

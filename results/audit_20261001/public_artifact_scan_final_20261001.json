@@ -1,7 +1,0 @@
-{
-  "scope": "all tracked plus nonignored untracked",
-  "files_checked": 342,
-  "findings": [],
-  "secret_values_printed": false,
-  "limitation": "Pattern and configured-secret checks do not prove absence of every possible secret."
-}

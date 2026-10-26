@@ -1,8 +1,0 @@
-
-Model: qwen3-8b-deepseek-v3.2-speciale-distill
-Context Length: 4 096
-GPU Offload: 100%
-Estimated GPU Memory:   5.22 GiB
-Estimated Total Memory: 5.22 GiB
-
-Estimate: This model may be loaded based on your resource guardrails settings.

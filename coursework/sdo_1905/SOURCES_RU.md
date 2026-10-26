@@ -1,0 +1,85 @@
+# Реестр исходных материалов курса 1905
+
+Источник: https://sdo.timacad.ru/course/view.php?id=1905. Сверено 16 октября 2026 года в авторизованной сессии. Все 20 элементов и 77 вложений просмотрены в списках сайта. Срок элементов: 22 декабря 2026, 00:00 (как отображает СДО).
+
+Скачивание выполнено через браузер. Оригиналы сохранены без изменения содержимого. Два вложения Operations.csv сохранены под разными локальными именами для сохранения происхождения.
+
+| Раздел | Локальный файл | Размер, байт | Источник |
+|---|---|---:|---|
+| Общая инструкция | [00_Start.docx](originals/00_Start.docx) | 44766 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/00_Start.docx?forcedownload=1) |
+| Общая инструкция | [01_Case.docx](originals/01_Case.docx) | 45062 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/01_Case.docx?forcedownload=1) |
+| ПЗ-01 | [All_examples.drawio](originals/All_examples.drawio) | 32992 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/All_examples.drawio?forcedownload=1) |
+| ПЗ-01 | [Answer_PZ01.docx](originals/Answer_PZ01.docx) | 40322 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/Answer_PZ01.docx?forcedownload=1) |
+| ПЗ-02 | [Answer_PZ02.docx](originals/Answer_PZ02.docx) | 40256 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/Answer_PZ02.docx?forcedownload=1) |
+| ПЗ-03 | [Answer_PZ03.docx](originals/Answer_PZ03.docx) | 40169 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/Answer_PZ03.docx?forcedownload=1) |
+| ПЗ-04 | [Answer_PZ04.docx](originals/Answer_PZ04.docx) | 40305 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/Answer_PZ04.docx?forcedownload=1) |
+| ПЗ-05 | [Answer_PZ05.docx](originals/Answer_PZ05.docx) | 40395 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/Answer_PZ05.docx?forcedownload=1) |
+| ПЗ-06 | [Answer_PZ06.docx](originals/Answer_PZ06.docx) | 40248 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/Answer_PZ06.docx?forcedownload=1) |
+| ПЗ-07 | [Answer_PZ07.docx](originals/Answer_PZ07.docx) | 40430 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/Answer_PZ07.docx?forcedownload=1) |
+| ПЗ-08 | [Answer_PZ08.docx](originals/Answer_PZ08.docx) | 40295 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/Answer_PZ08.docx?forcedownload=1) |
+| ПЗ-09 | [Answer_PZ09.docx](originals/Answer_PZ09.docx) | 40270 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/Answer_PZ09.docx?forcedownload=1) |
+| ПЗ-10 | [Answer_PZ10.docx](originals/Answer_PZ10.docx) | 40230 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/Answer_PZ10.docx?forcedownload=1) |
+| ПЗ-11 | [Answer_PZ11.docx](originals/Answer_PZ11.docx) | 40225 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/Answer_PZ11.docx?forcedownload=1) |
+| ПЗ-12 | [Answer_PZ12.docx](originals/Answer_PZ12.docx) | 40448 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Answer_PZ12.docx?forcedownload=1) |
+| ПЗ-13 | [Answer_PZ13.docx](originals/Answer_PZ13.docx) | 40570 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Answer_PZ13.docx?forcedownload=1) |
+| ПЗ-14 | [Answer_PZ14.docx](originals/Answer_PZ14.docx) | 40281 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/Answer_PZ14.docx?forcedownload=1) |
+| Общая инструкция | [Case_for_AI.txt](originals/Case_for_AI.txt) | 17320 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515513/mod_assign/introattachment/0/Case_for_AI.txt?forcedownload=1) |
+| ПЗ-12 | [Operations_PZ12.csv](originals/Operations_PZ12.csv) | 366 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Operations.csv?forcedownload=1) |
+| ПЗ-13 | [Operations_PZ13.csv](originals/Operations_PZ13.csv) | 366 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Operations.csv?forcedownload=1) |
+| ПЗ-01 | [Prompt_PZ01.txt](originals/Prompt_PZ01.txt) | 10747 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/Prompt_PZ01.txt?forcedownload=1) |
+| ПЗ-02 | [Prompt_PZ02.txt](originals/Prompt_PZ02.txt) | 10982 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/Prompt_PZ02.txt?forcedownload=1) |
+| ПЗ-03 | [Prompt_PZ03.txt](originals/Prompt_PZ03.txt) | 10758 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/Prompt_PZ03.txt?forcedownload=1) |
+| ПЗ-04 | [Prompt_PZ04.txt](originals/Prompt_PZ04.txt) | 11388 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/Prompt_PZ04.txt?forcedownload=1) |
+| ПЗ-05 | [Prompt_PZ05.txt](originals/Prompt_PZ05.txt) | 9219 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/Prompt_PZ05.txt?forcedownload=1) |
+| ПЗ-06 | [Prompt_PZ06.txt](originals/Prompt_PZ06.txt) | 9434 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/Prompt_PZ06.txt?forcedownload=1) |
+| ПЗ-07 | [Prompt_PZ07.txt](originals/Prompt_PZ07.txt) | 9167 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/Prompt_PZ07.txt?forcedownload=1) |
+| ПЗ-08 | [Prompt_PZ08.txt](originals/Prompt_PZ08.txt) | 13017 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/Prompt_PZ08.txt?forcedownload=1) |
+| ПЗ-09 | [Prompt_PZ09.txt](originals/Prompt_PZ09.txt) | 7690 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/Prompt_PZ09.txt?forcedownload=1) |
+| ПЗ-10 | [Prompt_PZ10.txt](originals/Prompt_PZ10.txt) | 16136 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/Prompt_PZ10.txt?forcedownload=1) |
+| ПЗ-11 | [Prompt_PZ11.txt](originals/Prompt_PZ11.txt) | 8065 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/Prompt_PZ11.txt?forcedownload=1) |
+| ПЗ-12 | [Prompt_PZ12.txt](originals/Prompt_PZ12.txt) | 7807 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/Prompt_PZ12.txt?forcedownload=1) |
+| ПЗ-13 | [Prompt_PZ13.txt](originals/Prompt_PZ13.txt) | 7470 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/Prompt_PZ13.txt?forcedownload=1) |
+| ПЗ-14 | [Prompt_PZ14.txt](originals/Prompt_PZ14.txt) | 10716 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/Prompt_PZ14.txt?forcedownload=1) |
+| ПЗ-01 | [pz01_context.drawio](originals/pz01_context.drawio) | 3410 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/pz01_context.drawio?forcedownload=1) |
+| ПЗ-01 | [pz01_context.png](originals/pz01_context.png) | 104371 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/pz01_context.png?forcedownload=1) |
+| ПЗ-01 | [PZ01_Instruction.docx](originals/PZ01_Instruction.docx) | 141889 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515512/mod_assign/introattachment/0/PZ01_Instruction.docx?forcedownload=1) |
+| ПЗ-02 | [pz02_domains.drawio](originals/pz02_domains.drawio) | 2578 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/pz02_domains.drawio?forcedownload=1) |
+| ПЗ-02 | [pz02_domains.png](originals/pz02_domains.png) | 90877 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/pz02_domains.png?forcedownload=1) |
+| ПЗ-02 | [PZ02_Instruction.docx](originals/PZ02_Instruction.docx) | 130197 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515514/mod_assign/introattachment/0/PZ02_Instruction.docx?forcedownload=1) |
+| ПЗ-03 | [PZ03_Instruction.docx](originals/PZ03_Instruction.docx) | 42962 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515515/mod_assign/introattachment/0/PZ03_Instruction.docx?forcedownload=1) |
+| ПЗ-04 | [PZ04_Instruction.docx](originals/PZ04_Instruction.docx) | 96671 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/PZ04_Instruction.docx?forcedownload=1) |
+| ПЗ-04 | [pz04_roles.drawio](originals/pz04_roles.drawio) | 2686 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/pz04_roles.drawio?forcedownload=1) |
+| ПЗ-04 | [pz04_roles.png](originals/pz04_roles.png) | 55148 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515516/mod_assign/introattachment/0/pz04_roles.png?forcedownload=1) |
+| ПЗ-05 | [PZ05_Instruction.docx](originals/PZ05_Instruction.docx) | 207065 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/PZ05_Instruction.docx?forcedownload=1) |
+| ПЗ-05 | [pz05_process.drawio](originals/pz05_process.drawio) | 5179 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/pz05_process.drawio?forcedownload=1) |
+| ПЗ-05 | [pz05_process.png](originals/pz05_process.png) | 171236 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515518/mod_assign/introattachment/0/pz05_process.png?forcedownload=1) |
+| ПЗ-06 | [pz06_data.drawio](originals/pz06_data.drawio) | 2300 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/pz06_data.drawio?forcedownload=1) |
+| ПЗ-06 | [pz06_data.png](originals/pz06_data.png) | 75145 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/pz06_data.png?forcedownload=1) |
+| ПЗ-06 | [PZ06_Instruction.docx](originals/PZ06_Instruction.docx) | 115681 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515519/mod_assign/introattachment/0/PZ06_Instruction.docx?forcedownload=1) |
+| ПЗ-07 | [pz07_apps.drawio](originals/pz07_apps.drawio) | 2771 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/pz07_apps.drawio?forcedownload=1) |
+| ПЗ-07 | [pz07_apps.png](originals/pz07_apps.png) | 78697 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/pz07_apps.png?forcedownload=1) |
+| ПЗ-07 | [PZ07_Instruction.docx](originals/PZ07_Instruction.docx) | 118480 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515520/mod_assign/introattachment/0/PZ07_Instruction.docx?forcedownload=1) |
+| ПЗ-08 | [pz08_exchange.drawio](originals/pz08_exchange.drawio) | 3154 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/pz08_exchange.drawio?forcedownload=1) |
+| ПЗ-08 | [pz08_exchange.png](originals/pz08_exchange.png) | 97116 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/pz08_exchange.png?forcedownload=1) |
+| ПЗ-08 | [PZ08_Instruction.docx](originals/PZ08_Instruction.docx) | 136976 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515522/mod_assign/introattachment/0/PZ08_Instruction.docx?forcedownload=1) |
+| ПЗ-09 | [PZ09_Instruction.docx](originals/PZ09_Instruction.docx) | 133436 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/PZ09_Instruction.docx?forcedownload=1) |
+| ПЗ-09 | [pz09_tech.drawio](originals/pz09_tech.drawio) | 2919 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/pz09_tech.drawio?forcedownload=1) |
+| ПЗ-09 | [pz09_tech.png](originals/pz09_tech.png) | 93877 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515523/mod_assign/introattachment/0/pz09_tech.png?forcedownload=1) |
+| ПЗ-10 | [PZ10_Instruction.docx](originals/PZ10_Instruction.docx) | 176348 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/PZ10_Instruction.docx?forcedownload=1) |
+| ПЗ-10 | [pz10_trace.drawio](originals/pz10_trace.drawio) | 3599 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/pz10_trace.drawio?forcedownload=1) |
+| ПЗ-10 | [pz10_trace.png](originals/pz10_trace.png) | 140325 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515525/mod_assign/introattachment/0/pz10_trace.png?forcedownload=1) |
+| ПЗ-11 | [PZ11_Instruction.docx](originals/PZ11_Instruction.docx) | 145904 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/PZ11_Instruction.docx?forcedownload=1) |
+| ПЗ-11 | [pz11_tobe.drawio](originals/pz11_tobe.drawio) | 3025 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/pz11_tobe.drawio?forcedownload=1) |
+| ПЗ-11 | [pz11_tobe.png](originals/pz11_tobe.png) | 108824 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515537/mod_assign/introattachment/0/pz11_tobe.png?forcedownload=1) |
+| ПЗ-12 | [PZ12_Instruction.docx](originals/PZ12_Instruction.docx) | 43607 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/PZ12_Instruction.docx?forcedownload=1) |
+| ПЗ-12 | [PZ12_Model.xlsx](originals/PZ12_Model.xlsx) | 16038 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515538/mod_assign/introattachment/0/PZ12_Model.xlsx?forcedownload=1) |
+| ПЗ-13 | [PZ13_Effect.xlsx](originals/PZ13_Effect.xlsx) | 6419 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/PZ13_Effect.xlsx?forcedownload=1) |
+| ПЗ-13 | [PZ13_Instruction.docx](originals/PZ13_Instruction.docx) | 108890 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/PZ13_Instruction.docx?forcedownload=1) |
+| ПЗ-13 | [pz13_roadmap.drawio](originals/pz13_roadmap.drawio) | 2136 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/pz13_roadmap.drawio?forcedownload=1) |
+| ПЗ-13 | [pz13_roadmap.png](originals/pz13_roadmap.png) | 67075 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515539/mod_assign/introattachment/0/pz13_roadmap.png?forcedownload=1) |
+| ПЗ-14 | [PZ14_Instruction.docx](originals/PZ14_Instruction.docx) | 146217 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515540/mod_assign/introattachment/0/PZ14_Instruction.docx?forcedownload=1) |
+| Лекция 1 | [Лекция 1.pdf](originals/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%201.pdf) | 2083454 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515507/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%201.pdf?forcedownload=1) |
+| Лекция 2 | [Лекция 2.pdf](originals/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%202.pdf) | 1854757 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515508/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%202.pdf?forcedownload=1) |
+| Лекция 3 | [Лекция 3.pdf](originals/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%203.pdf) | 2129354 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515509/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%203.pdf?forcedownload=1) |
+| Лекция 4 | [Лекция 4.pdf](originals/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%204.pdf) | 1900711 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515510/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%204.pdf?forcedownload=1) |
+| Лекция 5 | [Лекция 5.pdf](originals/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%205.pdf) | 1660028 | [Вложение](https://sdo.timacad.ru/pluginfile.php/515511/mod_assign/introattachment/0/%D0%9B%D0%B5%D0%BA%D1%86%D0%B8%D1%8F%205.pdf?forcedownload=1) |

@@ -1,0 +1,1660 @@
+<!-- modified HTML header for doxygen 1.12.0-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta name="generator" content="Doxygen"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!--PROJECTNAME GAMS Documentation-->
+<title>A GAMS Tutorial by Richard E. Rosenthal</title>
+<!--<link href="./style/tabs.css" rel="stylesheet" type="text/css"/>-->
+<script type="text/javascript" src="./style/jquery.js"></script>
+<script type="text/javascript" src="./style/jquery.highlight.js"></script>
+<script type="text/javascript" src="./style/dynsections.js"></script>
+<script type="text/javascript" src="./style/resize.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="./style/MathJax/es5/tex-svg.js"></script>
+<script type="text/javascript" language="javascript" src="./style/prism.js"></script>
+<link href="./style/prism.css" rel="stylesheet" type="text/css" />
+<link href="./style/stylesheet.css" rel="stylesheet" type="text/css" id="gamsstylesheet" />
+<link href="./style/navtree.css" rel="stylesheet" type="text/css" />
+<link href="./style/icono.min.css" rel="stylesheet"  type="text/css" />
+<link href="./style/stylesheet-new.css" rel="stylesheet" type="text/css" id="newgamsstylesheet" />
+<script type="text/javascript" src="./style/toc-highlight.js"></script>
+<script type="text/javascript" src="./style/doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeDarkModeToggle.init()
+</script>
+<script type="text/javascript" src="./style/doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+</script>
+<!-- -->
+
+<link rel="apple-touch-icon" sizes="57x57" href="/img/favicons/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/img/favicons/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/img/favicons/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/img/favicons/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/img/favicons/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/img/favicons/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/img/favicons/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/img/favicons/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192"  href="/img/favicons/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/img/favicons/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png" />
+<link rel="manifest" href="/img/favicons/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<script async src="https://plausible.io/js/pa-Kb2KTxHx0HfjjRTNw1um0.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
+<link href="https://www.gams.com/css/website_custom.css" rel="stylesheet" type="text/css" id="customgamsstylesheet" />
+</head>
+<body class="doc-page" id="doc-page">
+<header class="topnav" id="menu-area">
+    
+
+
+
+  <link rel="stylesheet" href="/scss/custom.min.51a3305ad31e054206abdfb70345fb7e8ec7a21c089a51a4e06a998082435de8.css" >
+
+  <style>
+    .row {
+      flex-wrap: unset;
+    }
+
+  .modal-backdrop {
+    z-index: 100;
+  }
+
+  </style>
+
+
+<div class="gams-site">
+  
+  
+  
+  
+  
+      <nav id="gams-nav" class="navbar navbar-expand-xl navbar-light bg-white py-2 px-2">
+
+  
+    
+
+      
+
+    
+    <div class="container px-0">
+    
+      <a class="navbar-brand p-0" href="/">
+          <img id="gams-logo" src="/img/gams_logo.svg" alt="" height="75" >
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse flex-column" id="navbarNavDropdown">
+          
+          <ul id="top-buttons" class="navbar-nav flex-row ml-auto">
+            
+            <li class="nav-item">
+                <a class="top-button btn bg-white text-gams-dark-grey border-0 mr-2" href="/free-licenses/" aria-label="Get a free GAMS license">
+                  <strong>Get free license</strong>
+                </a>
+              </li>
+
+            
+            <li  class="nav-item">
+                <a id="navBuyBtn" class="top-button btn btn-gams-light-orange" href="/contact" aria-label="GAMS Contact">
+                  <strong>Contact us</strong>
+                </a>
+              </li>
+            
+            
+            <li class="nav-item ">
+              <button id="searchBtn" type="button" class="top-button btn btn-secondary ml-2 " data-toggle="modal" data-target="#uni_searchModal" aria-label="Search Button">
+                  <i width="18px" data-feather="search"></i> 
+                  <strong> SEARCH</strong>
+              </button>
+            </li>
+          
+          </ul>
+          
+          
+          <ul class="navbar-nav ml-auto">
+            
+            
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/products/gams-ecosystem/">GAMS Ecosystem</a>
+            </li><li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/products/gams-language"> GAMS Language</a></li>
+                <li><a class="dropdown-item" href="/products/gams-miro"> GAMS MIRO</a></li>
+                <li><a class="dropdown-item" href="/products/gams-engine"> GAMS Engine</a></li>
+                <li><a class="dropdown-item" href="/products/gamspy"> GAMSPy</a></li></ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Documentation</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/latest/docs/"> GAMS</a></li>
+                <li><a class="dropdown-item" href="/miro/"> MIRO</a></li>
+                <li><a class="dropdown-item" href="/engine"> Engine</a></li>
+                <li><a class="dropdown-item" href="https://gamspy.readthedocs.io/en/latest/index.html"> GAMSPy<i height='15px' data-feather='external-link'></i></a></li></ul>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/academics">Academic</a>
+            </li><li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Download</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/download/"> GAMS</a></li>
+                <li><a class="dropdown-item" href="/miro/download.html"> MIRO</a></li>
+                <li><a class="dropdown-item" href="/engine/installation.html"> Engine</a></li>
+                <li><a class="dropdown-item" href="https://gamspy.readthedocs.io/en/latest/user/installation.html"> GAMSPy<i height='15px' data-feather='external-link'></i></a></li></ul>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link " href="/consulting">Consulting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/resources/">Resources</a>
+            </li><li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Community</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="https:///www.gams.com/newsletter/signup/?utm_source=website&amp;utm_medium=menu&amp;utm_campaign=newsletter_signup"> Sign-up for our Newsletter</a></li>
+                <li><a class="dropdown-item" href="/stories"> Case Studies</a></li>
+                <li><a class="dropdown-item" href="https://forum.gams.com/"> The GAMS Forum<i height='15px' data-feather='external-link'></i></a></li>
+                <li><a class="dropdown-item" href="/conferences"> Meet us at a Conference</a></li>
+                <li><a class="dropdown-item" href="/blog"> Read our GAMS Blog</a></li>
+                <li><a class="dropdown-item" href="/webinars"> Visit a GAMS Webinar</a></li>
+                <li><a class="dropdown-item" href="/courses"> Take a GAMS Course</a></li></ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+              <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="/about/company"> Company Information</a></li>
+                <li><a class="dropdown-item" href="/team"> The GAMS team</a></li>
+                
+                <li><a class="dropdown-item dropdown-toggle" href="#">Career</a>
+                  <ul class="submenu submenu-left dropdown-menu"><li><a class="dropdown-item" href="/about/openings">Openings</a></li>
+                    <li><a class="dropdown-item" href="/about/internships">Internships</a></li>
+                    
+                  </ul>
+                </li>
+                
+                <li><a class="dropdown-item" href="/about/advisory"> Advisory Board</a></li>
+                <li><a class="dropdown-item" href="/about/infosec"> Information Security</a></li></ul>
+            </li>
+            
+            </ul>
+        </div>
+      </div> 
+    </nav>
+</div>
+
+
+<div class="gams-site gams-modal-container">
+  <div class="modal fade" id="uni_searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h2 class='modal-title' id="exampleModalLabel">Search</h2>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+
+          <section>
+
+            <div class="input-group mb-3">
+              <input type="text" id="uni_query" class="form-control" placeholder="What are you looking for?" aria-label="SearchQuery" aria-describedby="uni_searchbutton">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="uni_searchbutton">Search</button>
+              </div>
+            </div>
+
+            <div style="display:none;">
+              <input name="case_sensitive" id="case_sensitive" type="checkbox" ><label for="case_senstive">Case sensitive</label>
+              <input name="match_whole_word" id="match_whole_word" type="checkbox"><label for="match_whole_word">Match whole word</label>
+            </div>
+
+
+            
+            <div class="row">
+
+              
+              <div class="col-lg-4">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  
+                  <a class="nav-link active" id="v-pills-gams-doc-tab" data-toggle="pill" href="#v-pills-gams-doc" role="tab" aria-controls="v-pills-gams-doc" aria-selected="false">GAMS Documentation</a>
+                  <a class="nav-link" id="v-pills-mod-lib-tab" data-toggle="pill" href="#v-pills-mod-lib" role="tab" aria-controls="v-pills-mod-lib" aria-selected="false">Model Library</a>
+                  <a class="nav-link" id="v-pills-miro-doc-tab" data-toggle="pill" href="#v-pills-miro-doc" role="tab" aria-controls="v-pills-miro-doc" aria-selected="false">MIRO Documentation</a>
+                  <a class="nav-link" id="v-pills-engine-doc-tab" data-toggle="pill" href="#v-pills-engine-doc" role="tab" aria-controls="v-pills-engine-doc" aria-selected="false">ENGINE Documentation</a>
+                  <a class="nav-link" id="v-pills-website-tab" data-toggle="pill" href="#v-pills-website" role="tab" aria-controls="v-pills-website" aria-selected="false">Website & Blog</a>
+                </div>
+              </div>
+
+
+              
+              <div class="col-lg-8">
+                <div class="tab-content" id="v-pills-tabContent">
+
+
+                  
+                  
+
+                  
+                  <div class="tab-pane fade show active" id="v-pills-gams-doc" role="tabpanel" aria-labelledby="v-pills-gams-doc-tab">
+
+                    <div id="uni_docsTab" class="mb-3 mt-3 mt-md-0" style="display: flex;">
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks active" onclick="uni_showSection(event, 'allsections')" id="uni_alldocsTab" value="docs/">All</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'userguides')" id="uni_ugTab" value="docs/"> User's Guide</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'solvers')" id="uni_solverTab" value="docs/">Solvers</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'tools')" id="uni_toolTab" value="docs/">Tools</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'apis')" id="uni_apiTab" value="docs/">APIs</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'releasenotes')" id="uni_rnTab" value="docs/">Release Notes</button>
+                    </div>
+
+                    <div class="uni_inforesults mb-3">
+                      <div class="resultsummary"></div>
+                    </div>
+
+                    <div class="uni_searchresults"></div>
+
+                    <div class="uni_navresults"></div>
+
+                  </div>
+
+                  
+                  <div class="tab-pane fade show" id="v-pills-mod-lib" role="tabpanel" aria-labelledby="v-pills-mod-lib-tab">
+
+                    <div id="uni_modlibsTab" class=" mb-3 mt-3 mt-md-0" style="display: flex;">
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks active" onclick="uni_showSection(event, 'all')" id="uni_allmodlibsTab" value="">All</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'gamslib')" id="uni_gamslibTab" value="">Model</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'testlib')" id="uni_testlibTab" value="">Test</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'datalib')" id="uni_datalibTab" value="">Data</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'emplib')" id="uni_emplibTab" value="">EMP</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'apilib')" id="uni_apilibTab" value="">API</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'finlib')" id="uni_finlibTab" value="">FIN</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'noalib')" id="uni_noalibTab" value="">NOA</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary uni_tablinks" onclick="uni_showSection(event, 'psoptlib')" id="uni_psoptlibTab" value="">PSOPT</button>
+                    </div>
+
+                    <div class="uni_inforesults mb-3">
+                      <div class="resultsummary">
+                      </div>
+                    </div>
+
+                    <div class="uni_searchresults">
+                    </div>
+
+                    <div class="uni_navresults"></div>
+
+
+
+                  </div>
+
+                  
+                  <div class="tab-pane fade" id="v-pills-miro-doc" role="tabpanel" aria-labelledby="v-pills-miro-doc-tab">
+
+                    <div class="uni_inforesults mb-3">
+                      <div class="resultsummary">
+                      </div>
+                    </div>
+
+                    <div class="uni_searchresults">
+                    </div>
+
+                    <div class="uni_navresults">
+                    </div>
+
+
+                  </div>
+
+                  
+                  <div class="tab-pane fade" id="v-pills-engine-doc" role="tabpanel" aria-labelledby="v-pills-engine-doc-tab">
+
+                    <div class="uni_inforesults mb-3">
+                      <div class="resultsummary">
+                      </div>
+                    </div>
+
+                    <div class="uni_searchresults">
+                    </div>
+
+                    <div class="uni_navresults">
+                    </div>
+
+
+                  </div>
+                  
+                  <div class="tab-pane fade" id="v-pills-website" role="tabpanel" aria-labelledby="v-pills-website-tab">
+
+                    <div class="uni_inforesults mb-3">
+                      <div class="resultsummary">
+                      </div>
+                    </div>
+
+                    <div class="uni_searchresults">
+                    </div>
+
+                    <div class="uni_navresults">
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+          </section>
+
+          
+          <script src="https://www.gams.com/latest/docs/style/keyword.js"></script>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+    <div class="versionwrapper">
+      <li id='version' class='right'>
+   <div class='styled-select'>
+   <select id='versionfilter' class='selectbox'>
+     <option id='54' value='/54/docs/index.html'>54 (latest)</option>
+     <option id='53' value='/53/docs/index.html'>53</option>
+     <option id='52' value='/52/docs/index.html'>52</option>
+     <option id='51' value='/51/docs/index.html'>51</option>
+     <option id='50' value='/50/docs/index.html'>50</option>
+     <option id='49' value='/49/docs/index.html'>49</option>
+     <option id='48' value='/48/docs/index.html'>48</option>
+     <option id='47' value='/47/docs/index.html'>47</option>
+     <option id='46' value='/46/docs/index.html'>46</option>
+     <option id='45' value='/45/docs/index.html'>45</option>
+     <option id='44' value='/44/docs/index.html'>44</option>
+     <option id='43' value='/43/docs/index.html'>43</option>
+     <option id='42' value='/42/docs/index.html'>42</option>
+     <option id='41' value='/41/docs/index.html'>41</option>
+     <option id='40' value='/40/docs/index.html'>40</option>
+     <option id='39' value='/39/docs/index.html'>39</option>
+     <option id='38' value='/38/docs/index.html'>38</option>
+     <option id='37' value='/37/docs/index.html'>37</option>
+     <option id='36' value='/36/docs/index.html'>36</option>
+     <option id='35' value='/35/docs/index.html'>35</option>
+     <option id='34' value='/34/docs/index.html'>34</option>
+     <option id='33' value='/33/docs/index.html'>33</option>
+     <option id='32' value='/32/docs/index.html'>32</option>
+     <option id='31' value='/31/docs/index.html'>31</option>
+     <option id='30' value='/30/docs/index.html'>30</option>
+     <option id='29' value='/29/docs/index.html'>29</option>
+     <option id='28' value='/28/docs/index.html'>28</option>
+     <option id='27' value='/27/docs/index.html'>27</option>
+     <option id='26' value='/26/docs/index.html'>26</option>
+     <option id='25.1' value='/25.1/docs/index.html'>25.1</option>
+   </select>
+   </div>
+</li>
+<li class='right menutext'><div>Version:</div></li>
+
+    </div> 
+    <a href="javascript:void(0);" id="hamburger-nav" title="Open Menu" class="hamburger" onclick="toggleResponsive()">
+       <div class="bar1"></div>
+       <div class="bar2"></div>
+       <div class="bar3"></div>
+    </a>
+    <a class="search" href="javascript:void(0);">
+        <div class="searchwrapper">
+           <div class="nav-icon" onclick="forwardToSearchPage();"><i class="icono-search"></i></div>
+           <input id="searchbar" type="text" placeholder="Search..." onkeypress="return handleSearchKeyPress(event);">
+        </div>
+    </a>
+    <div class="nav">
+        <div id="docs-menu-ctrl" title="Expand Submenu" class="submenu-icon collapsed"><i class="icono-caretDown"></i></div>
+        <a id="docs" href="index.html" class="menu">Documentation</a>
+        <div class="subnav">
+            <a href="Preface.html" class="docsmenu collapsed">Preface</a>
+            <a href="RN_MAIN.html" class="docsmenu collapsed">Release Notes</a>
+            <a href="UG_MAIN.html#UG_INSTALL" class="docsmenu collapsed">Installation and Licensing</a>
+            <a href="UG_MAIN.html#UG_Tutorial_Examples" class="docsmenu collapsed">Tutorials and Examples</a>
+            <a href="UG_MAIN.html#UG_Language_Environment" class="docsmenu collapsed">GAMS Language and Environment</a>
+            <a href="S_MAIN.html" class="docsmenu collapsed">Solver Manuals</a>
+            <a href="T_MAIN.html" class="docsmenu collapsed">Tools Manuals</a>
+            <a href="API_MAIN.html" class="docsmenu collapsed">Application Programming Interfaces</a>
+            <a href="UG_Glossary.html" class="docsmenu collapsed">Glossary</a>
+            <a href="citelist.html" class="docsmenu collapsed">Bibliograhpy</a>
+        </div>
+        <div id="modlibs-menu-ctrl" title="Expand Submenu" class="submenu-icon collapsed"><i class="icono-caretDown"></i></div>
+        <a id="modlibs" href="modlibs.html" class="menu">Model Libraries</a>
+        <div class="subnav">
+            <a href="../gamslib_ml/libhtml/index.html" class="modlibsmenu collapsed">GAMS Model Library</a>
+            <a href="../testlib_ml/libhtml/index.html" class="modlibsmenu collapsed">GAMS Test Library</a>
+            <a href="../datalib_ml/libhtml/index.html" class="modlibsmenu collapsed">GAMS Data Library</a>
+            <a href="../emplib_ml/libhtml/index.html" class="modlibsmenu collapsed">GAMS EMP Library</a>
+            <a href="../apilib_ml/libhtml/index.html" class="modlibsmenu collapsed">GAMS API Library</a>
+            <a href="../finlib_ml/libhtml/index.html" class="modlibsmenu collapsed">FIN Library</a>
+            <a href="../noalib_ml/libhtml/index.html" class="modlibsmenu collapsed">NOA Library</a>
+            <a href="../psoptlib_ml/libhtml/index.html" class="modlibsmenu collapsed">PSOPT Library</a>
+        </div>  
+        <a id="keyword" href="keyword.html" class="menu">Index</a>
+        <a id="help" href="./style/../help.html" class="menu">Help</a>
+    </div>  
+</header>
+<div id="content-area" class="content-page">
+  <div  id="context-sidebar" class="ontop nav-menu">
+    <div id="ctrl-expand-collapse"> 
+        <div id="ctrl-icon" title="Show Table of Contents"><i class="icono-caretLeftCircle"></i></div>
+        <span id="ctrl-toc-item" class="tocitem">Hide Table of Contents</span>
+    </div>
+    <div id="nav-area" class="collapsible-menu">
+        <div id="nav-tree">
+           <div id="nav-tree-contents">
+             <div id="nav-sync" class="sync"></div>
+        </div>
+       </div>
+    </div>
+  </div>
+  <div id="split-bar" class="expanded"></div>
+  <div class="content" id="doc-contents">
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<!-- end header part -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){ initResizable(false); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="doc-content">
+<div><div class="header">
+  <div class="headertitle"><div class="title">A GAMS Tutorial by Richard E. Rosenthal</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul>
+  <li class="level1">
+    <a href="#UG_Tutorial_INTRODUCTION">Introduction</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_STRUCTURE_OF_A_GAMS_MODEL">Structure of a GAMS Model</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_SETS">Sets</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_DATA">Data</a>
+    <ul>
+      <li class="level2">
+        <a href="#UG_Tutorial_DATA_ENTRY_BY_LISTS">Data Entry by Lists</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_DATA_ENTRY_BY_TABLES">Data Entry by Tables</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_DATA_ENTRY_BY_DIRECT_ASSIGNMENT">Data Entry by Direct Assignment</a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_VARIABLES">Variables</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_EQUATIONS">Equations</a>
+    <ul>
+      <li class="level2">
+        <a href="#UG_Tutorial_EquationDeclaration">Equation Declaration</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_GAMSSummationAndProductNotation">GAMS Summation (and Product) Notation</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_EquationDefinition">Equation Definition</a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_ObjectiveFunction">Objective Function</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_ModelAndSolveStatements">Model and Solve Statements</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_DisplayStatements">Display Statements</a>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_TheDotloDotlDotupDotmDatabase">The .lo, .l, .up, .m Database</a>
+    <ul>
+      <li class="level2">
+        <a href="#UG_Tutorial_AssignmentOfVariableBoundsAndOrInitialValues">Assignment of Variable Bounds and/or Initial Values</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_TransformationAndDisplayOfOptimalValues">Transformation and Display of Optimal Values</a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_GAMSOutput">GAMS Output</a>
+    <ul>
+      <li class="level2">
+        <a href="#UG_Tutorial_EchoPrints">Echo Prints</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_ErrorMessages">Error Messages</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_ReferenceMaps">Reference Maps</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_EquationListings">Equation Listings</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_ModelStatistics">Model Statistics</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_StatusReports">Status Reports</a>
+      </li>
+      <li class="level2">
+        <a href="#UG_Tutorial_SolutionReports">Solution Reports</a>
+      </li>
+    </ul>
+  </li>
+  <li class="level1">
+    <a href="#UG_Tutorial_Summary">Summary</a>
+  </li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="UG_Tutorial_INTRODUCTION"></a>
+Introduction</h1>
+<p> <a class="anchor" id="INDEX_Tutorials_22_GAMS_21_Tutorials" keyword="Tutorials!GAMS Tutorials"></a><a class="anchor" id="INDEX_Tutorials_22_GAMS_21_Tutorials_DUMMY_2"></a>Richard E. Rosenthal of the Naval Postgraduate School in Monterey, California wrote a detailed example of the use of GAMS for formulating, solving, and analyzing a small and simple optimization problem. The example is a quick overview of GAMS and its main features. Many references are made to other parts of the documentation, but they are only to tell you where to look for more details; the material here can be read profitably without reference to the rest of the documentation.</p>
+<p>The example is an instance of the transportation problem of linear programming, which has historically served as a <em>'laboratory animal'</em> in the development of optimization technology. [See, for example, Dantzig (1963)  <sup><a href="#fn1" id="ref1">1)</a></sup> ] It is a good choice for illustrating the power of algebraic modeling languages like GAMS because the transportation problem, no matter how large the instance at hand, possesses a simple, exploitable algebraic structure. You will see that almost all of the statements in the GAMS input file we are about to present would remain unchanged if a much larger transportation problem were considered.</p>
+<p>In the familiar transportation problem, we are given the supplies at several plants and the demands at several markets for a single commodity, and we are given the unit costs of shipping the commodity from plants to markets. The economic question is: how much shipment should there be between each plant and each market so as to minimize total transport cost?</p>
+<p>The algebraic representation of this problem is usually presented in a format similar to the following.</p>
+<p>Indices: </p><blockquote class="doxtable">
+<p>\(i\) = plants <br  />
+ \(j\) = markets<br  />
+ </p>
+</blockquote>
+<p>Given Data: </p><blockquote class="doxtable">
+<p>\(a_i\) = supply of commodity of plant \(i\) (in cases) <br  />
+ \(b_j\) = demand for commodity at market \(j\) <br  />
+ \(c_{ij}\) = cost per unit shipment between plant \(i\) and market \(j\) </p>
+</blockquote>
+<p>Decision Variables:<br  />
+ </p><blockquote class="doxtable">
+<p>\(x_{ij}\) = amount of commodity to ship from plant \(i\) to market \(j\)<br  />
+ where \(x_{ij} \geq 0\), for all \(i\), \(j\) </p>
+</blockquote>
+<p>Constraints:<br  />
+ </p><blockquote class="doxtable">
+<p>Observe supply limit at plant \(i\): &#160;&#160; \(\sum_j x_{ij} \leq a_i\) for all \(i\) &#160;&#160; (cases)<br  />
+ Satisfy demand at market \(j\): &#160;&#160; \(\sum_i x_{ij} \geq b_j\) for all \(j\) &#160;&#160; (cases) <br  />
+ Objective Function: &#160;&#160; Minimize \(\sum_i \sum_j c_{ij} x_{ij}\) &#160;&#160; ($K) </p>
+</blockquote>
+<p>Note that this simple example reveals some modeling practices that we regard as good habits in general and that are consistent with the design of GAMS. First, all the entities of the model are identified (and grouped) by type. Second, the ordering of entities is chosen so that no symbol is referred to before it is defined. Third, the units of all entities are specified, and, fourth, the units are chosen to a scale such that the numerical values to be encountered by the optimizer have relatively small absolute orders of magnitude. (The symbol $K here means thousands of dollars.)</p>
+<p>The names of the types of entities may differ among modelers. For example, economists use the terms <em>exogenous variable</em> and <em>endogenous variable</em> for <em>given data</em> and <em>decision variable</em>, respectively. In GAMS, the terminology adopted is as follows: indices are called <code>sets</code>, given data are called <code>parameters</code>, decision variables are called <code>variables</code>, and constraints and the objective function are called <code>equations</code>.</p>
+<p>The GAMS representation of the transportation problem closely resembles the algebraic representation above. The most important difference, however, is that the GAMS version can be read and processed by a computer.</p>
+<p><a class="anchor" id="UG_table_tutorial_T1"></a><b>Table 1</b>: Data for the transportation problem (adapted from Dantzig, 1963) illustrates Shipping Distances from Plants to Markets (1000 miles) as well as Market Demands and Plant Supplies. </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft"><em>Plants</em> &darr;   </th><th class="markdownTableHeadRight">New York   </th><th class="markdownTableHeadRight">Chicago   </th><th class="markdownTableHeadRight">Topeka   </th><th class="markdownTableHeadRight">&larr;<em>Markets</em>    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Seattle   </td><td class="markdownTableBodyRight">2.5   </td><td class="markdownTableBodyRight">1.7   </td><td class="markdownTableBodyRight">1.8   </td><td class="markdownTableBodyRight">350    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">San Diego   </td><td class="markdownTableBodyRight">2.5   </td><td class="markdownTableBodyRight">1.8   </td><td class="markdownTableBodyRight">1.4   </td><td class="markdownTableBodyRight">600    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><em>Demands</em> &rarr;   </td><td class="markdownTableBodyRight">325   </td><td class="markdownTableBodyRight">300   </td><td class="markdownTableBodyRight">275   </td><td class="markdownTableBodyRight"><em>Supplies</em> &uarr;   </td></tr>
+</table>
+<p>As an instance of the transportation problem, suppose there are two canning plants and three markets, with the data given in table <a class="el" href="#UG_table_tutorial_T1">Table 1</a>. Shipping distances are in thousands of miles, and shipping costs are assumed to be $90.00 per case per thousand miles. The GAMS representation of this problem is as follows:</p>
+<pre><code class="language-gams">$title a transportation model
+Sets
+     i   canning plants   / seattle, san-diego /
+     j   markets          / new-york, chicago, topeka / ;
+
+Parameters
+
+     a(i)  capacity of plant i in cases
+       /    seattle     350
+            san-diego   600  /
+
+     b(j)  demand at market j in cases
+       /    new-york    325
+            chicago     300
+            topeka      275  / ;
+
+Table d(i,j)  distance in thousands of miles
+                  new-york       chicago      topeka
+    seattle          2.5           1.7          1.8
+    san-diego        2.5           1.8          1.4  ;
+
+Scalar f  freight in dollars per case per thousand miles  /90/ ;
+
+Parameter c(i,j)  transport cost in thousands of dollars per case ;
+
+          c(i,j) = f * d(i,j) / 1000 ;
+
+Variables
+     x(i,j)  shipment quantities in cases
+     z       total transportation costs in thousands of dollars ;
+
+Positive Variable x ;
+
+Equations
+     cost        define objective function
+     supply(i)   observe supply limit at plant i
+     demand(j)   satisfy demand at market j ;
+
+cost ..        z  =e=  sum((i,j), c(i,j)*x(i,j)) ;
+
+supply(i) ..   sum(j, x(i,j))  =l=  a(i) ;
+
+demand(j) ..   sum(i, x(i,j))  =g=  b(j) ;
+
+Model transport /all/ ;
+
+Solve transport using lp minimizing z ;
+
+Display x.l, x.m ;
+</code></pre>
+<p>If you submit a file containing the statements above as input to GAMS , the transportation model will be formulated and solved. Details vary on how to invoke GAMS on different of computers, but the simplest ('<em>no frills</em>') way to call GAMS is to enter the word GAMS followed by the input file's name. You will see a number of terse lines describing the progress GAMS is making, including the name of the file onto which the output is being written. When GAMS has finished, examine this file, and if all has gone well the optimal shipments will be displayed at the bottom as follows.</p>
+<pre><code class="language-gams">             new-york     chicago      topeka
+seattle        50.000     300.000
+san-diego     275.000                 275.000
+</code></pre>
+<p>You will also receive the marginal costs (simplex multipliers) below.</p>
+<pre><code class="language-gams">              chicago      topeka
+seattle                     0.036
+san-diego       0.009
+</code></pre>
+<p>These results indicate, for example, that it is optimal to send nothing from Seattle to Topeka, but if you insist on sending one case it will add .036 $K (or $36.00) to the optimal cost.</p>
+<h1><a class="anchor" id="UG_Tutorial_STRUCTURE_OF_A_GAMS_MODEL"></a>
+Structure of a GAMS Model</h1>
+<p>For the remainder of the tutorial, we will discuss the basic components of a GAMS model, with reference to the example above. The basic components are listed in table <a class="el" href="#UG_table_tutorial_T2">Table 2</a>.</p>
+<p><a class="anchor" id="UG_table_tutorial_T2"></a><b>Table 2:</b> The basic components of a GAMS model </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Type   </th><th class="markdownTableHeadLeft">Component    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Inputs   </td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_SETS">Sets</a> <blockquote class="doxtable">
+<p>Declaration <br  />
+ Assignment of members</p>
+</blockquote>
+</td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_DATA">Data</a> (<code>Parameters, Tables, Scalars</code>)<blockquote class="doxtable">
+<p>Declaration <br  />
+ Assignment of values</p>
+</blockquote>
+</td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_VARIABLES">Variables</a> <blockquote class="doxtable">
+<p>Declaration <br  />
+ Assignment of type</p>
+</blockquote>
+</td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_AssignmentOfVariableBoundsAndOrInitialValues">Assignment of Variable Bounds and/or Initial Values</a> (optional)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_EQUATIONS">Equations</a> <blockquote class="doxtable">
+<p>Declaration <br  />
+ Definition</p>
+</blockquote>
+</td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_ModelAndSolveStatements">Model and Solve Statements</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_DisplayStatements">Display Statements</a> (optional)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Outputs   </td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_EchoPrints">Echo Prints</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_ReferenceMaps">Reference Maps</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_EquationListings">Equation Listings</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_StatusReports">Status Reports</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="#UG_Tutorial_SolutionReports">Solution Reports</a>   </td></tr>
+</table>
+<p>There are optional input components, such as edit checks for bad data and requests for customized reports of results. Other optional advanced features include saving and restoring old models, and creating multiple models in a single run, but this tutorial will discuss only the basic components.</p>
+<p>Before treating the individual components, we give a few general remarks.</p>
+<ol type="1">
+<li>A GAMS model is a collection of statements in the GAMS Language. The only rule governing the ordering of statements is that an entity of the model cannot be referenced before it is declared to exist.</li>
+<li>GAMS statements may be laid out typographically in almost any style that is appealing to the user. Multiple lines per statement, embedded blank lines, and multiple statements per line are allowed. You will get a good idea of what is allowed from the examples in this tutorial, but precise rules of the road are given in the next Chapter.</li>
+<li>When you are a beginning GAMS user, you should terminate every statement with a semicolon, as in our examples. The GAMS compiler does not distinguish between upper-and lowercase letters, so you are free to use either.</li>
+<li>Documentation is crucial to the usefulness of mathematical models. It is more useful (and most likely to be accurate) if it is embedded within the model itself rather than written up separately. There are at least two ways to insert documentation within a GAMS model. First, any line that starts with an asterisk in column 1 is disregarded as a comment line by the GAMS compiler. Second, perhaps more important, documentary text can be inserted within specific GAMS statements.</li>
+<li>As you can see from the list of input components above, the creation of GAMS entities involves two steps: a declaration and an assignment or definition. <em>Declaration</em> means declaring the existence of something and giving it a name. <em>Assignment</em> or <em>definition</em> means giving something a specific value or form. In the case of equations, you must make the declaration and definition in separate GAMS statements. For all other GAMS entities, however, you have the option of making declarations and assignments in the same statement or separately.</li>
+<li>The names given to the entities of the model must start with a letter and can be followed by up to 62 more letters or digits.</li>
+</ol>
+<h1><a class="anchor" id="UG_Tutorial_SETS"></a>
+Sets</h1>
+<p>Sets are the basic building blocks of a GAMS model, corresponding exactly to the indices in the algebraic representations of models. The Transportation example above contains just one <code>Set</code> statement:</p>
+<pre><code class="language-gams">Sets
+     i   canning plants   / seattle, san-diego /
+     j   markets          / new-york, chicago, topeka / ;
+</code></pre>
+<p>The effect of this statement is probably self-evident. We declared two sets and gave them the names <code>i</code> and <code>j</code>. We also assigned members to the sets as follows:</p>
+<blockquote class="doxtable">
+<p>\(i\) = {Seattle, San Diego} <br  />
+ \(j\) = {New York, Chicago, Topeka}. </p>
+</blockquote>
+<p>You should note the typographical differences between the GAMS format and the usual mathematical format for listing the elements of a set. GAMS uses slashes '/' rather than curly braces '{}' to delineate the set. Note also that multiword names like 'New York' have to be quoted (e.g. 'New York' or "New York") or you must use hyphens instead of blanks (e.g. New-York).</p>
+<p>The words after the set names in the <code>sets</code> statement above are called <em>text</em>. Text is optional. It is there only for internal documentation, serving no formal purpose in the model. The GAMS compiler makes no attempt to interpret the text, but it saves the text and '<em>parrots</em>' it back to you at various times for your convenience.</p>
+<p>It was not necessary to combine the creation of sets \(i\) and \(j\) in one statement. We could have put them into separate statements as follows:</p>
+<pre><code class="language-gams">Set    i   canning plants   / seattle, san-diego / ;
+Set    j   markets          / new-york, chicago, topeka / ;
+</code></pre>
+<p>The placement of blank spaces and lines (as well as the choice of upper- or lowercase) is up to you. Each GAMS user tends to develop individual stylistic conventions. (The use of the singular <code>set</code> is also up to you. Using <code>set</code> in a statement that makes a single declaration and <code>sets</code> in one that makes several is good English, but GAMS treats the singular and plural synonymously.)</p>
+<p>A convenient feature to use when you are assigning members to a set is the asterisk. It applies to cases when the elements follow a sequence. For example, the following are valid <code>set</code> statements in GAMS.</p>
+<pre><code class="language-gams">Set    t   time periods         /1991*2000/;
+Set    m   machines             /mach1*mach24/;
+</code></pre>
+<p>Here the effect is to assign </p><blockquote class="doxtable">
+<p>\(t\) = {1991,1992,1993, ....., 2000} <br  />
+ \(m\) = {mach \(_1\), mach \(_2\),......, mach \(_{24}\) }. </p>
+</blockquote>
+<p>Note that set elements are stored as character strings, so the elements of \(t\) are not numbers.</p>
+<p>Another convenient feature is the <a class="el" href="UG_SetDefinition.html#UG_SetDefinition_TheAliasStatementMultipleNamesForASet">alias</a> statement, which is used to give another name to a previously declared set. In the following example:</p>
+<pre><code class="language-gams">Alias (t,tp);
+</code></pre>
+<p>the name <code>tp</code> is like a \(t&#39;\) in mathematical notation. It is useful in models that are concerned with the interactions of elements within the same set.</p>
+<p>The sets <code>i</code>, <code>j</code>, <code>t</code>, and <code>m</code> in the statements above are examples of static sets, i.e., they are assigned their members directly by the user and do not change. GAMS has several capabilities for creating dynamic sets, which acquire their members through the execution of set-theoretic and logical operations. Dynamic sets are discussed in chapter <a class="el" href="UG_DynamicSets.html">Dynamic Sets</a>. Another valuable advanced feature is multidimensional sets, which are discussed in section <a class="el" href="UG_SetDefinition.html#UG_SetDefinition_Multi-dimensionalSets">Multi-Dimensional Sets</a>.</p>
+<h1><a class="anchor" id="UG_Tutorial_DATA"></a>
+Data</h1>
+<p>The GAMS model of the transportation problem demonstrates three of the different formats that are allowable for entering data. The three formats are:</p>
+<ul>
+<li>Lists</li>
+<li>Tables</li>
+<li>Direct assignments</li>
+</ul>
+<p>The next three subsections will discuss each of these formats in turn.</p>
+<h2><a class="anchor" id="UG_Tutorial_DATA_ENTRY_BY_LISTS"></a>
+Data Entry by Lists</h2>
+<p>The first format is illustrated by the first Parameters statement of the example, which is repeated below.</p>
+<pre><code class="language-gams">Parameters
+
+     a(i)  capacity of plant i in cases
+       /    seattle     350
+            san-diego   600  /
+
+     b(j)  demand at market j in cases
+       /    new-york    325
+            chicago     300
+            topeka      275  / ;
+</code></pre>
+<p>This statement has several effects. Again, they may be self-evident, but it is worthwhile to analyze them in detail. The statement declares the existence of two parameters, gives them the names <code>a</code> and <code>b</code>, and declares their <em>domains</em> to be <code>i</code> and <code>j</code>, respectively. (A domain is the set, or tuple of sets, over which a parameter, variable, or equation is defined.) The statement also gives documentary text for each parameter and assigns values of <code>a(i)</code> and <code>b(j)</code> for each element of <code>i</code> and <code>j</code>. It is perfectly acceptable to break this one statement into two, if you prefer, as follows.</p>
+<pre><code class="language-gams">Parameters a(i)  capacity of plant i in cases
+     / seattle     350
+       san-diego   600  / ;
+
+Parameters b(j)  demand at market j in cases
+    / new-york    325
+      chicago     300
+      topeka      275  / ;
+</code></pre>
+<p>Here are some points to remember when using the list format.</p>
+<ol type="1">
+<li>The list of domain elements and their respective parameter values can be laid out in almost any way you like. The only rules are that the entire list must be enclosed in slashes and that the element-value pairs must be separated by commas or entered on separate lines.</li>
+<li>There is no semicolon separating the element-value list from the name, domain, and text that precede it. This is because the same statement is being used for declaration and assignment when you use the list format. (An element-value list by itself is not interpretable by GAMS and will result in an error message.)</li>
+<li>The GAMS compiler has an unusual feature called <a class="el" href="UG_SetDefinition.html#UG_SetDefinition_DomainChecking">domain checking</a>, which verifies that each domain element in the list is in fact a member of the appropriate set. For example, if you were to spell 'Seattle' correctly in the statement declaring <code>Set</code> <code>i</code> but misspell it as 'Seatle' in a subsequent element-value list, the GAMS compiler would give you an error message that the element 'Seatle' does not belong to the set <code>i</code>.</li>
+<li>Zero is the default value for all parameters. Therefore, you only need to include the nonzero entries in the element-value list, and these can be entered in any order.</li>
+<li>A scalar is regarded as a parameter that has no domain. It can be declared and assigned with a <code>Scalar</code> statement containing a <em>degenerate</em> list of only one value, as in the following statement from the transportation model.<pre><code class="language-gams">Scalar f freight in dollars per case per thousand miles /90/;
+</code></pre></li>
+</ol>
+<p>If the domain of a parameter has two or more dimensions, it can still have its values entered by the list format. This is very useful for entering arrays that are sparse (having few non-zeros) and super-sparse (having few distinct non-zeros).</p>
+<h2><a class="anchor" id="UG_Tutorial_DATA_ENTRY_BY_TABLES"></a>
+Data Entry by Tables</h2>
+<p>Optimization practitioners have noticed for some time that many of the input data for a large model are derived from relatively small tables of numbers. Thus, it is very useful to have the table format for data entry. An example of a two-dimensional table (or matrix) is provided in the transportation model:</p>
+<pre><code class="language-gams">Table d(i,j)  distance in thousands of miles
+                  new-york       chicago      topeka
+    seattle          2.5           1.7          1.8
+    san-diego        2.5           1.8          1.4  ;
+</code></pre>
+<p>The effect of this statement is to declare the parameter <code>d</code> and to specify its domain as the set of ordered pairs in the Cartesian product of <code>i</code> and <code>j</code>. The values of <code>d</code> are also given in this statement under the appropriate heading. If there are blank entries in the table, they are interpreted as zeroes.</p>
+<p>As in the list format, GAMS will perform domain checking to make sure that the row and column names of the table are members of the appropriate sets. Formats for entering tables with more columns than you can fit on one line and for entering tables with more than two dimensions are given in Chapter <a class="el" href="UG_DataEntry.html">Data Entry: Parameters, Scalars and Tables</a>.</p>
+<h2><a class="anchor" id="UG_Tutorial_DATA_ENTRY_BY_DIRECT_ASSIGNMENT"></a>
+Data Entry by Direct Assignment</h2>
+<p>The direct assignment method of data entry differs from the list and table methods in that it divides the tasks of parameter declaration and parameter assignment between separate statements. The transportation model contains the following example of this method.</p>
+<pre><code class="language-gams">Parameter c(i,j)  transport cost in thousands of dollars per case ;
+          c(i,j) = f * d(i,j) / 1000 ;
+</code></pre>
+<p>It is important to emphasize the presence of the semicolon at the end of the first line. Without it, the GAMS compiler would attempt to interpret both lines as parts of the same statement. (GAMS would fail to discern a valid interpretation, so it would send you an error message.)</p>
+<p>The effects of the first statement above are to declare the parameter <code>c</code>, to specify the domain <code>(i,j)</code>, and to provide some documentary text. The second statement assigns to <code>c(i,j)</code> the product of the values of the parameters <code>f</code> and <code>d(i,j)</code>. Naturally, this is legal in GAMS only if you have already assigned values to <code>f</code> and <code>d(i,j)</code> in previous statements.</p>
+<p>The direct assignment above applies to all <code>(i,j)</code> pairs in the domain of <code>c</code>. If you wish to make assignments for specific elements in the domain, you enclose the element names in quotes. For example,</p><pre><code class="language-gams">c('Seattle','New-York')  = 0.40;
+</code></pre>
+<p>is a valid GAMS assignment statement.</p>
+<p>The same parameter can be assigned a value more than once. Each assignment statement takes effect immediately and overrides any previous values. (In contrast, the same parameter may not be declared more than once. This is a GAMS error check to keep you from accidentally using the same name for two different things.)</p>
+<p>The right-hand side of an assignment statement can contain a great variety of mathematical expressions and built-in functions. If you are familiar with a scientific programming language such as C, you will have no trouble in becoming comfortable writing assignment statements in GAMS. (Notice, however, that GAMS has some efficiencies not shared by C. For example, we were able to assign <code>c(i,j)</code> values for all <code>(i,j)</code> pairs without constructing '<em>loops</em>'.)</p>
+<p>The GAMS standard operations and supplied functions are given later. Here are some examples of valid assignments. In all cases, assume the left-hand-side parameter has already been declared and the right-hand-side parameters have already been assigned values in previous statements.</p><pre><code class="language-gams">csquared       = sqr(c);
+e              = m*csquared;
+w              = l/lamda;
+eoq(i)         = sqrt( 2*demand(i)*ordcost(i)/holdcost(i));
+t(i)           = min(p(i), q(i)/r(i), log(s(i)));
+euclidean(i,j) = qrt(sqr(xi(i) - xi(j) + sqr(x2(i) - x2(j)));
+present(j)     = future(j)*exp(-interest*time(j));
+</code></pre>
+<p>The summation and product operators to be introduced later can also be used in direct assignments.</p>
+<h1><a class="anchor" id="UG_Tutorial_VARIABLES"></a>
+Variables</h1>
+<p>The decision variables (or endogenous variables ) of a GAMS-expressed model must be declared with a <code>Variables</code> statement. Each variable is given a name, a domain if appropriate, and (optionally) text. The transportation model contains the following example of a <code>Variables</code> statement.</p>
+<pre><code class="language-gams">Variables
+    x(i,j)  shipment quantities in cases
+    z       total transportation costs in thousands of dollars ;
+</code></pre>
+<p>This statement results in the declaration of a shipment variable for each <code>(i,j)</code> pair. (You will see in chapter <a class="el" href="UG_Equations.html">Equations</a>, how GAMS can handle the typical real-world situation in which only a subset of the <code>(i,j)</code> pairs is allowable for shipment.)</p>
+<p>The <code>z</code> variable is declared without a domain because it is a scalar quantity. Every GAMS optimization model must contain one such variable to serve as the quantity to be minimized or maximized.</p>
+<p>Once declared, every variable must be assigned a type. A selection of permissible types are given in table <a class="el" href="#UG_table_tutorial_T3">Table 3</a>. For a full list, see section <a class="el" href="UG_Variables.html#UG_Variables_VariableTypes">Variable Types</a>.</p>
+<p><a class="anchor" id="UG_table_tutorial_T3"></a><b>Table 3</b> : Permissible variable types </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft"><em>Variable Type</em>   </th><th class="markdownTableHeadCenter"><em>Allowed Range of Variable</em>    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>free(default)</code>   </td><td class="markdownTableBodyCenter">\(-\infty\) to \(+\infty\)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>positive</code>   </td><td class="markdownTableBodyCenter">\(0\) to \(+\infty\)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>negative</code>   </td><td class="markdownTableBodyCenter">\(-\infty\) to \(0\)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>binary</code>   </td><td class="markdownTableBodyCenter">\(0\) or \(1\)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>integer</code>   </td><td class="markdownTableBodyCenter">\(0,1,\ldots,100\) (default)   </td></tr>
+</table>
+<p>The variable that serves as the quantity to be optimized must be a scalar and must be of the <code>free</code> type. In our transportation example, <code>z</code> is kept free by default, but <code>x(i,j)</code> is constrained to non-negativity by the following statement.</p>
+<pre><code class="language-gams">Positive variable x ;
+</code></pre>
+<p>Note that the domain of <code>x</code> should not be repeated in the type assignment. All entries in the domain automatically have the same variable type.</p>
+<p>Section <a class="el" href="#UG_Tutorial_TheDotloDotlDotupDotmDatabase">The .lo, .l, .up, .m Database</a> describes how to assign lower bounds, upper bounds, and initial values to variables</p>
+<h1><a class="anchor" id="UG_Tutorial_EQUATIONS"></a>
+Equations</h1>
+<p>The power of algebraic modeling languages like GAMS is most apparent in the creation of the equations and inequalities that comprise the model under construction. This is because whenever a group of equations or inequalities has the same algebraic structure, all the members of the group are created simultaneously, not individually.</p>
+<h2><a class="anchor" id="UG_Tutorial_EquationDeclaration"></a>
+Equation Declaration</h2>
+<p>Equations must be declared and defined in separate statements. The format of the declaration is the same as for other GAMS entities. First comes the keyword, <code>Equations</code> in this case, followed by the name, domain and text of one or more groups of equations or inequalities being declared. Our transportation model contains the following equation declaration:</p>
+<pre><code class="language-gams">Equations
+     cost        define objective function
+     supply(i)   observe supply limit at plant i
+     demand(j)   satisfy demand at market j ;
+</code></pre>
+<p>Keep in mind that the word <code>Equation</code> has a broad meaning in GAMS. It encompasses both equality and inequality relationships, and a GAMS equation with a single name can refer to one or several of these relationships. For example, <code>cost</code> has no domain so it is a single equation, but <code>supply</code> refers to a set of inequalities defined over the domain <code>i</code>.</p>
+<h2><a class="anchor" id="UG_Tutorial_GAMSSummationAndProductNotation"></a>
+GAMS Summation (and Product) Notation</h2>
+<p>Before going into equation definition we describe the summation notation in GAMS. Remember that GAMS is designed for standard keyboards and line-by-line input readers, so it is not possible (nor would it be convenient for the user) to employ the standard mathematical notation for summations.</p>
+<p>The summation notation in GAMS can be used for simple and complex expressions. The format is based on the idea of always thinking of a summation as an operator with two arguments: <code>Sum(index of summation, summand)</code> A comma separates the two arguments, and if the first argument requires a comma then it should be in parentheses. The second argument can be any mathematical expression including another summation.</p>
+<p>As a simple example, the transportation problem contains the expression</p><pre><code class="language-gams">Sum(j, x(i,j))
+</code></pre>
+<p>that is equivalent to \(\sum_j x_{ij}\).</p>
+<p>A slightly more complex summation is used in the following example:</p>
+<pre><code class="language-gams">Sum((i,j), c(i,j)*x(i,j))
+</code></pre>
+<p>that is equivalent to \(\sum_i \sum_j c_{ij} x_{ij}\).</p>
+<p>The last expression could also have been written as a nested summation as follows:</p>
+<pre><code class="language-gams">Sum(i, Sum(j, c(i,j)*x(i,j)))
+</code></pre>
+<p>In section <a class="el" href="UG_CondExpr.html#UG_CondExpr_ConditionalIndexedOperations">Conditional Indexed Operations</a>, we describe how to use the <a class="el" href="UG_CondExpr.html#UG_CondExpr_TheDollarCondition">dollar operator</a> to impose restrictions on the summation operator so that only the elements of <code>i</code> and <code>j</code> that satisfy specified conditions are included in the summation.</p>
+<p>Products are defined in GAMS using exactly the same format as summations, replacing <code>Sum</code> by <code>Prod</code>. For example,</p><pre><code class="language-gams">prod(j, x(i, j))
+</code></pre>
+<p>is equivalent to: \(\Pi_j x_{ij}\).</p>
+<p>Summation and product operators may be used in direct assignment statements for parameters. For example,</p>
+<pre><code class="language-gams">scalar totsupply   total supply over all plants;
+totsupply = sum(i, a(i));
+</code></pre>
+<h2><a class="anchor" id="UG_Tutorial_EquationDefinition"></a>
+Equation Definition</h2>
+<p>Equation definitions are the most complex statements in GAMS in terms of their variety. The components of an equation definition are, in order:</p><ol type="1">
+<li>The name of the equation being defined</li>
+<li>The domain</li>
+<li>Domain restriction condition (optional)</li>
+<li>The symbol '<code>..</code>'</li>
+<li>Left-hand side expression</li>
+<li>Relational operator: <code>=l=</code>, <code>=e=</code>, <code>=g=</code> or others. For a complete list, see Table <a class="el" href="UG_Equations.html#UG_Equations_symbols">Equation Types</a>.</li>
+<li>Right-hand side expression</li>
+</ol>
+<p>The transportation example contains three of these statements.</p>
+<pre><code class="language-gams">cost ..        z  =e=  sum((i,j), c(i,j)*x(i,j)) ;
+supply(i) ..   sum(j, x(i,j))  =l=  a(i) ;
+demand(j) ..   sum(i, x(i,j))  =g=  b(j) ;
+</code></pre>
+<p>Here are some points to remember.</p>
+<ul>
+<li>The power to create multiple equations with a single GAMS statement is controlled by the domain. For example, the definition for the <code>demand</code> constraint will result in the creation of one constraint for each element of the domain <code>j</code>, as shown in the following excerpt from the GAMS output.<pre><code class="language-gams">demand(new-york)..x(seattle,new-york) + x(san-diego,new-york)=g=325 ;
+demand(chicago).. x(seattle,chicago) + x(san-diego,chicago)  =g=300 ;
+demand(topeka)..  x(seattle,topeka) + x(san-diego,topeka)    =g=275 ;
+</code></pre></li>
+<li>The key idea here is that the definition of the demand constraints is exactly the same whether we are solving the toy-sized example above or a 20,000-node real-world problem. In either case, the user enters just one generic equation algebraically, and GAMS creates the specific equations that are appropriate for the model instance at hand. (Using some other optimization packages, something like the extract above would be part of the input, not the output.)</li>
+<li>In many real-world problems, some of the members of an equation domain need to be omitted or differentiated from the pattern of the others because of an exception of some kind. GAMS can readily accommodate this loss of structure using a powerful feature known as the <em>dollar</em> or '<em>such-that</em>' operator, which is not illustrated here. The domain restriction feature can be absolutely essential for keeping the size of a real-world model within the range of solvability.</li>
+<li>The relational operators have the following meanings: <blockquote class="doxtable">
+<p><code>=l=</code> &#160;&#160; less than or equal to <br  />
+ <code>=g=</code> &#160;&#160; greater than or equal to <br  />
+ <code>=e=</code> &#160;&#160; equal to </p>
+</blockquote>
+</li>
+<li>It is important to understand the difference between the symbols '<code>=</code>' and '<code>=e=</code>'. The '<code>=</code>' symbol is used only in direct assignments, and the '<code>=e=</code>' symbol is used only in equation definitions. These two contexts are very different. A direct assignment gives a desired value to a parameter before the solver is called. An equation definition also describes a desired relationship, but it cannot be satisfied until after the solver is called. It follows that equation definitions must contain variables and direct assignments must not.</li>
+<li>Variables can appear on the left or right-hand side of an equation or both. The same variable can appear in an equation more than once. The GAMS processor will automatically convert the equation to its equivalent standard form (variables on the left, no duplicate appearances) before calling the solver.</li>
+<li>An equation definition may appear anywhere in the GAMS input, provided the equation and all variables and parameters to which it refers were previously declared. (Note that it is permissible for a parameter appearing in the equation to be assigned or reassigned a value after the definition. This is useful when doing multiple model runs with one GAMS input.) The equations need not be defined in the same order in which they were declared.</li>
+</ul>
+<h1><a class="anchor" id="UG_Tutorial_ObjectiveFunction"></a>
+Objective Function</h1>
+<p>This is just a reminder that GAMS has no explicit entity called the <em>objective function</em>. To specify the function to be optimized, you must create a variable, which is free (unconstrained in sign) and scalar-valued (has no domain) and which appears in an equation definition that equates it to the objective function.</p>
+<h1><a class="anchor" id="UG_Tutorial_ModelAndSolveStatements"></a>
+Model and Solve Statements</h1>
+<p>The word <code>model</code> has a very precise meaning in GAMS. It is simply a collection of equations. Like other GAMS entities, it must be given a name in a declaration. The format of the declaration is the keyword <code>model</code> followed by the name of the model, followed by a list of equation names enclosed in slashes. If all previously defined equations are to be included, you can enter <code>/all/</code> in place of the explicit list. In our example, there is one <code>model</code> statement:</p>
+<pre><code class="language-gams">model transport  /all/  ;
+</code></pre>
+<p>This statement may seem superfluous, but it is useful to advanced users who may create several models in one GAMS run. If we were to use the explicit list rather than the shortcut <code>/all/</code>, the statement would be written as</p>
+<pre><code class="language-gams">model transport / cost, supply, demand / ;
+</code></pre>
+<p>The domains are omitted from the list since they are not part of the equation name. The list option is used when only a subset of the existing equations comprises a specific model (or sub-model) being generated.</p>
+<p>Once a model has been declared and assigned equations, we are ready to call the solver. This is done with a <code>solve</code> statement, which in our example is written as</p><pre><code class="language-gams">solve transport using lp minimizing z ;
+</code></pre>
+<p>The format of the solve statement is as follows:</p><ol type="1">
+<li>The key word <code>solve</code></li>
+<li>The name of the model to be solved</li>
+<li>The key word <code>using</code></li>
+<li>An available solution procedure. A complete list is given below. For further details, see section <a class="el" href="UG_ModelSolve.html#UG_ModelSolve_ModelClassificationOfModels">Classification of Models</a>. <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Solution   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>lp</code>   </td><td class="markdownTableBodyLeft">for linear programming    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>qcp</code>   </td><td class="markdownTableBodyLeft">for quadratic constraint programming    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>nlp</code>   </td><td class="markdownTableBodyLeft">for nonlinear programming    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>dnlp</code>   </td><td class="markdownTableBodyLeft">for nonlinear programming with discontinuous derivatives    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>mip</code>   </td><td class="markdownTableBodyLeft">for mixed integer programming    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>rmip</code>   </td><td class="markdownTableBodyLeft">for relaxed mixed integer programming    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>miqcp</code>   </td><td class="markdownTableBodyLeft">for mixed integer quadratic constraint programming    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>rmiqcp</code>   </td><td class="markdownTableBodyLeft">for relaxed mixed integer quadratic constraint programming    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>minlp</code>   </td><td class="markdownTableBodyLeft">for mixed integer nonlinear programming    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>rminlp</code>   </td><td class="markdownTableBodyLeft">for relaxed mixed integer nonlinear programming    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>mcp</code>   </td><td class="markdownTableBodyLeft">for mixed complementarity problems    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>mpec</code>   </td><td class="markdownTableBodyLeft">for mathematical programs with equilibrium constraints    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>rmpec</code>   </td><td class="markdownTableBodyLeft">for relaxed mathematical program with equilibrium constraints    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>cns</code>   </td><td class="markdownTableBodyLeft">for constrained nonlinear systems    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>emp</code>   </td><td class="markdownTableBodyLeft">for extended mathematical programming   </td></tr>
+</table>
+</li>
+<li>The keyword '<code>minimizing</code>' or '<code>maximizing</code>'</li>
+<li>The name of the variable to be optimized</li>
+</ol>
+<h1><a class="anchor" id="UG_Tutorial_DisplayStatements"></a>
+Display Statements</h1>
+<p>The <code>solve</code> statement will cause several things to happen when executed. The specific instance of interest of the model will be generated, the appropriate data structures for inputting this problem to the solver will be created, the solver will be invoked, and the output from the solver will be printed to a file. To get the optimal values of the primal and/or dual variables, we can look at the solver output, or, if we wish, we can request a display of these results from GAMS. Our example contains the following statement:</p>
+<pre><code class="language-gams">display x.l, x.m ;
+</code></pre>
+<p>that calls for a printout of the final levels, <code>x.l</code>, and marginal (or reduced costs), <code>x.m</code>, of the shipment variables, <code>x(i,j)</code>. GAMS will automatically format this printout in to dimensional tables with appropriate headings.</p>
+<h1><a class="anchor" id="UG_Tutorial_TheDotloDotlDotupDotmDatabase"></a>
+The .lo, .l, .up, .m Database</h1>
+<p>GAMS was designed with a small database system in which records are maintained for the variables and equations. The most important fields in each record are: </p><blockquote class="doxtable">
+<p><code>.lo</code> &#160;&#160; lower bound <br  />
+ <code>.l</code> &#160;&#160; level or primal value <br  />
+ <code>.up</code> &#160;&#160; upper bound <br  />
+ <code>.m</code> &#160;&#160; marginal or dual value </p>
+</blockquote>
+<p>The format for referencing these quantities is the variable or equation's name followed by the field's name, followed (if necessary) by the domain (or an element of the domain).</p>
+<p>GAMS allows the user complete read-and write-access to the database. This may not seem remarkable to you now, but it can become a greatly appreciated feature in advanced use. Some examples of use of the database follow.</p>
+<h2><a class="anchor" id="UG_Tutorial_AssignmentOfVariableBoundsAndOrInitialValues"></a>
+Assignment of Variable Bounds and/or Initial Values</h2>
+<p>The lower and upper bounds of a variable are set automatically according to the variable's type (<code>free, positive, negative, binary</code>, or <code>integer</code>), but these bounds can be overwritten by the GAMS user. Some examples follow.</p>
+<pre><code class="language-gams">x.up(i,j)    =  capacity(i,j)  ;
+x.lo(i,j)    =  10.0  ;
+x.up('seattle','new-york') = 1.2*capacity('seattle','new-york') ;
+</code></pre>
+<p>It is assumed in the first and third examples that <code>capacity(i,j)</code> is a parameter that was previously declared and assigned values. These statements must appear after the variable declaration and before the <code>Solve</code> statement. All the mathematical expressions available for direct assignments are usable on the right-hand side.</p>
+<p>In nonlinear programming it is very important for the modeler to help the solver by specifying as narrow a range as possible between lower and upper bound. It is also very helpful to specify an initial solution from which the solver can start searching for the optimum. For example, in a constrained inventory model, the variables are <code>quantity(i)</code>, and it is known that the optimal solution to the unconstrained version of the problem is a parameter called <code>eoq(i)</code>. As a guess for the optimum of the constrained problem we enter</p><pre><code class="language-gams">quantity.l(i)  =  0.5*eoq(i)  ;
+</code></pre>
+<p>(The default initial level is zero unless zero is not within the bounded range, in which case it is the bound closest to zero.)</p>
+<p>It is important to understand that the <code>.lo</code> and <code>.up</code> fields are entirely under the control of the GAMS user. The <code>.l</code> and <code>.m</code> fields, in contrast, can be initialized by the user but are then controlled by the solver.</p>
+<h2><a class="anchor" id="UG_Tutorial_TransformationAndDisplayOfOptimalValues"></a>
+Transformation and Display of Optimal Values</h2>
+<p>(This section may be skipped on first reading if desired.)</p>
+<p>After the optimizer is called via the <code>solve</code> statement, the values it computes for the primal and dual variables are placed in the database in the <code>.l</code> and <code>.m</code> fields. We can then read these results and transform and display them with GAMS statements.</p>
+<p>For example, in the transportation problem, suppose we wish to know the percentage of each market's demand that is filled by each plant. After the solve statement, we would enter</p><pre><code class="language-gams">parameter pctx(i,j)  perc of market j's demand filled by plant i;
+pctx(i,j) =  100.0*x.l(i,j)/b(j) ;
+display pctx ;
+</code></pre>
+<p>Appending these commands to the original transportation problem input results in the following output:</p>
+<pre><code class="language-gams">pctx    percent of market j's demand filled by plant I
+          new-york   chicago   topeka
+seattle     15.385   100.000
+san-diego   84.615            100.000
+</code></pre>
+<p>For an example involving marginal, we briefly consider the <em>ratio constraints</em> that commonly appear in blending and refining problems. These linear programming models are concerned with determining the optimal amount of each of several available raw materials to put into each of several desired finished products. Let <code>y(i,j)</code> be the variable for the number of tons of raw material \(i\) put into finished product <code>j</code>. Suppose the <em>ratio constraint</em> is that no product can consist of more than 25 percent of one ingredient, that is,</p><pre><code class="language-gams">y(i,j)/q(j) =l=   .25 ;
+</pre></code></pre><p>for all <code>i</code>, <code>j</code>. To keep the model linear, the constraint is written as</p><pre><code class="language-gams">ratio(i,j).. y(i,j) - .25*q(j)  =l=  0.0  ;
+</pre></code></pre><p>rather than explicitly as a ratio.</p>
+<p>The problem here is that <code>ratio</code>.<code>m(i,j)</code>, the marginal value associated with the linear form of the constraint, has no intrinsic meaning. At optimality, it tells us by at most how much we can benefit from relaxing the linear constraint to</p><pre><code class="language-gams">y(i,j) - .25*q(j)  =l=  1.0 ;
+</code></pre>
+<p>Unfortunately, this relaxed constraint has no realistic significance. The constraint we are interested in relaxing (or tightening) is the nonlinear form of the ration constraint. For example, we would like to know the marginal benefit arising from changing the ratio constraint to</p>
+<pre><code class="language-gams">y(i,j)/q(j)  =l=  .26  ;
+</code></pre>
+<p>We can in fact obtain the desired marginals by entering the following transformation on the undesired marginals:</p>
+<pre><code class="language-gams">parameter  amr(i,j)  appropriate marginal for ratio constraint ;
+amr(i,j)  =  ratio.m(i,j)*0.01*q.l(j) ;
+display amr ;
+</code></pre>
+<p>Notice that the assignment statement for <code>amr</code> accesses both <code>.m</code> and <code>.l</code> records from the database. The idea behind the transformation is to notice that</p><pre><code class="language-gams">y(i,j)/q(j)  =l=  .26  ;
+</pre></code></pre><p>is equivalent to</p><pre><code class="language-gams">y(i,j) - .25*q(j)  =l=  0.01*q(j)  ;
+</code></pre>
+<h1><a class="anchor" id="UG_Tutorial_GAMSOutput"></a>
+GAMS Output</h1>
+<p>The default output of a GAMS run is extensive and informative. For a complete discussion, see chapter <a class="el" href="UG_GAMSOutput.html">GAMS Output</a>. This tutorial discusses output partially as follows:</p><ul>
+<li>Echo Print</li>
+<li>Reference Maps</li>
+<li>Status Reports</li>
+<li>Error Messages</li>
+<li>Model Statistics</li>
+<li>Solution Reports</li>
+</ul>
+<p>A great deal of unnecessary anxiety has been caused by textbooks and users' manuals that give the reader the false impression that flawless use of advanced software should be easy for anyone with a positive pulse rate. GAMS is designed with the understanding that even the most experienced users will make errors. GAMS attempts to catch the errors as soon as possible and to minimize their consequences.</p>
+<h2><a class="anchor" id="UG_Tutorial_EchoPrints"></a>
+Echo Prints</h2>
+<p>Whether or not errors prevent your optimization problem from being solved, the first section of output from a GAMS run is an echo, or copy, of your input file. For the sake of future reference, GAMS puts line numbers on the left-hand side of the echo. For our transportation example, which luckily contained no errors, the echo print is as follows:</p>
+<pre class="fragment">   2  Sets
+   3       i   canning plants   / seattle, san-diego /
+   4       j   markets          / new-york, chicago, topeka / ;
+   5
+   6  Parameters
+   7
+   8       a(i)  capacity of plant i in cases
+   9         /    seattle     350
+  10              san-diego   600  /
+  11
+  12       b(j)  demand at market j in cases
+  13         /    new-york    325
+  14              chicago     300
+  15              topeka      275  / ;
+  16
+  17  Table d(i,j)  distance in thousands of miles
+  18                    new-york       chicago      topeka
+  19      seattle          2.5           1.7          1.8
+  20      san-diego        2.5           1.8          1.4  ;
+  21
+  22  Scalar f  freight in dollars per case per thousand miles  /90/ ;
+  23
+  24  Parameter c(i,j)  transport cost in thousands of dollars per case ;
+  25
+  26            c(i,j) = f * d(i,j) / 1000 ;
+  27
+  28  Variables
+  29       x(i,j)  shipment quantities in cases
+  30       z       total transportation costs in thousands of dollars ;
+  31
+  32  Positive Variable x ;
+  33
+  34  Equations
+  35       cost        define objective function
+  36       supply(i)   observe supply limit at plant i
+  37       demand(j)   satisfy demand at market j ;
+  38
+  39  cost ..        z  =e=  sum((i,j), c(i,j)*x(i,j)) ;
+  40
+  41  supply(i) ..   sum(j, x(i,j))  =l=  a(i) ;
+  42
+  43  demand(j) ..   sum(i, x(i,j))  =g=  b(j) ;
+  44
+  45  Model transport /all/ ;
+  46
+  47  Solve transport using lp minimizing z ;
+  48
+  49  Display x.l, x.m ;
+  50
+</pre><p>The reason this echo print starts with line number 2 rather than line number 1 is because the input file contains a <em>dollar-print-control</em> statement. This type of instruction controls the output printing, but since it has nothing to do with defining the optimization model, it is omitted from the echo. The dollar print controls must start in column 1.</p>
+<pre><code class="language-gams">$title a transportation model
+</code></pre>
+<p>The <code>$title</code> statement causes the subsequent text to be printed at the top of each page of output. Other available instructions are given in chapter <a class="el" href="UG_DollarControlOptions.html">Dollar Control Options</a>.</p>
+<p> <a class="anchor" id="INDEX_error_22_messages" keyword="error!messages"></a><a class="anchor" id="INDEX_error_22_messages_DUMMY_394"></a></p>
+<h2><a class="anchor" id="UG_Tutorial_ErrorMessages"></a>
+Error Messages</h2>
+<p>When the GAMS compiler encounters an error in the input file, it inserts a coded error message inside the echo print on the line immediately following the scene of the offense. These messages always start with <code>****</code> and contain a '<code>$</code>' directly below the point at which the compiler thinks the error occurred. The <code>$</code> is followed by a numerical error code, which is explained after the echo print. Several examples follow.</p>
+<p><b>Example 1 :</b> Entering the statement </p><blockquote class="doxtable">
+<pre><code class="language-gams">set  q  quarterly time periods  / spring, sos1, fall, wtr / ;
+</pre></code></pre><p>results in the echo</p>
+<pre class="fragment">      1  set  q  quarterly time periods  / spring, sos1, fall, wtr / ;
+****                                               $160
+</pre><p>In this case, the GAMS compiler indicates that something is wrong with the set element sum. At the bottom of the echo print, we see the interpretation of error code 160:</p>
+<pre class="fragment">Error Message
+160  Unique element expected....
+</pre><p> The problem is that <code>sos1</code> is a reserved word, which can not be used as identifiers in general. The complete list of reserved words is shown in <a class="el" href="UG_GAMSPrograms.html#UG_GAMSPrograms_ReservedWords">this chapter</a>. Thus our set element must have a unique name like <code>'summer'</code>. This is a common beginner's error. </p>
+</blockquote>
+<p><b>Example 2 :</b> Another common error is the omission of a semicolon preceding a direct assignment or equation definition. In our transportation example, suppose we omit the semicolon prior to the assignment of <code>c(i,j)</code>, as follows. </p><blockquote class="doxtable">
+<pre><code class="language-gams">Parameter c(i,j)  transport cost in 1000s of dollars per case
+c(i,j)  = f * d(i,j)  /  1000  ;
+</code></pre>
+<p>Here is the resulting output.</p>
+<pre class="fragment">  16   Parameter c(i,j) transport cost in 1000s of dollars per case
+  17             c(i,j)  = f * d(i,j)/1000
+****                     $97       $195,96,409
+Error Message
+ 96  Blank needed between identifier and text
+       (-or- illegal character in identifier)
+       (-or- check for missing ';' on previous line)
+ 97  Explanatory text can not start with '$', '=', or '..'
+       (-or- check for missing ';' on previous line)
+195  Symbol redefined with a different type
+409  Unrecognizable item - skip to find a new statement
+       looking for a ';' or a key word to get started again
+</pre><p>It is not uncommon for one little offense like our missing semicolon to generate five intimidating error messages. The lesson here is: concentrate on fixing the first error and ignore the other! The first error detected (in line 17), code 97, indicate that GAMS thinks the symbols in line 17 are a continuation of the documentary text at the end of line 16 rather than a direct assignment as we intended. The error message also appropriately advises us to check the preceding line for a missing semicolon.</p>
+<p>Unfortunately, you cannot always expect error messages to be so accurate in their advice. The compiler cannot read your mind. It will at times fail to comprehend your intentions, so learn to detect the causes of errors by picking up the clues that abound in the GAMS output. For example, the missing semicolon could have been detected by looking up the c entry in the cross-reference list (to be explained in the next section) and noticing that it was never assigned.</p>
+<pre class="fragment">SYMBOL      TYPE      REFERENCES
+c           PARAM     declared     15   ref   17
+</pre> </blockquote>
+<p><b>Example 3 :</b> Many errors are caused merely by spelling mistakes and are caught before they can be damaging. For example, with '<code>Seattle</code>' spelled in the table differently from the way it was introduced in the set declaration, we get the following error message. </p><blockquote class="doxtable">
+<pre class="fragment">   4   sets
+   5          i   canning plants  /seattle, san-diego /
+   6          j   markets  /new-york, chicago, topeka /  ;
+   7
+   8   table d(i,j)  distance in thousand of miles
+   9           new-york   chicago   topeka
+  10      seatle       2.5      1.7        1.8
+****         $170
+  11      san-diego    2.5      1.8            1.4   ;
+Error Message
+170  Domain violation for element
+</pre> </blockquote>
+<p><b>Example 4 :</b> Similarly, if we mistakenly enter <code>dem(j)</code> instead of <code>b(j)</code> as the right-hand side of the demand constraint, the result is </p><blockquote class="doxtable">
+<pre class="fragment">   45   demand(j)  ..   sum(i,  x(i,j)  )   =g=  dem(j)  ;
+****                                             $140
+    Error Message
+    140  Unknown symbol
+</pre> </blockquote>
+<p><b>Example 5 :</b> The next example is a mathematical error, which is sometimes committed by novice modelers and which GAMS is adept at catching. The following is mathematically inconsistent and, hence, is not an interpretable statement. </p><blockquote class="doxtable">
+<p class="formulaDsp">
+\[
+  \mbox{For all $i$},\quad \sum_i x_{ij} = 100
+\]
+</p>
+<p> There are two errors in this equation, both having to do with the co ntrol of indices. Index \(i\) is over-controlled and index \(j\) is under-controlled.</p>
+<p>You should see that index \(i\) is getting conflicting orders. By appearing in the quantifier '<em>for all \(i\)</em>', it is supposed to remain fixed for each instance of the equation. Yet, by appearing as an index of summation, it is supposed to vary. It can't do both. On the other hand, index \(j\) is not controlled in any way, so we have no way of knowing which of its possible values to use.</p>
+<p>If we enter this meaningless equation into GAMS, both errors are correctly diagnosed.</p>
+<pre class="fragment">   meaningless(i)  ..    sum(i, x(i,j))   =e=    100 ;
+****                        $125   $149
+Error Messages
+125  Set is under control already         [This refers to set i.]
+149  Uncontrolled set entered as constant [This refers to set j.]
+</pre> </blockquote>
+<p>More information about error reporting is given in section <a class="el" href="UG_GAMSOutput.html#UG_GAMSOutput_ErrorReporting">Error Reporting</a>. Comprehensive error detection and well-designed error messages are a big help in getting models implemented quickly and correctly.</p>
+<h2><a class="anchor" id="UG_Tutorial_ReferenceMaps"></a>
+Reference Maps</h2>
+<p>The next section of output, which is the last if errors have been detected, is a pair of <em>reference maps</em> that contain summaries and analyses of the input file for the purposes of debugging and documentation.</p>
+<p>The first reference map is a <em>cross-reference map</em> such as one finds in most modern compilers. It is an alphabetical, cross-referenced list of all the entities (sets, parameters, variables, and equations) of the model. The list shows the type of each entity and a coded reference for each appearance of the entity in the input. The cross-reference map for our transportation example is as follows (we do not display all tables). To turn the <em>cross-reference map</em> on, please add the line </p><pre class="fragment">$onSymXRef
+</pre><p> at the beginning of your model right after the <code>$title</code> statement.</p>
+<pre class="fragment">SYMBOL      TYPE   REFERENCES
+
+a            PARAM declared        9  defined       10      ref       42
+b            PARAM declared       13  defined       14      ref       44
+c            PARAM declared       25 assigned       27      ref       40
+cost         EQU   declared       36  defined       40 impl-asn       48      ref       46
+d            PARAM declared       18  defined       18      ref       27
+demand       EQU   declared       38  defined       44 impl-asn       48      ref       46
+f            PARAM declared       23  defined       23      ref       27
+i            SET   declared        4  defined        4      ref        9       18       25       27       30       37     2*40     2*42       44  control       27       40       42       44
+j            SET   declared        5  defined        5      ref       13       18       25       27       30       38     2*40       42     2*44  control       27       40       42       44
+supply       EQU   declared       37  defined       42 impl-asn       48      ref       46
+transport    MODEL declared       46  defined       46 impl-asn       48      ref       48
+x            VAR   declared       30 impl-asn       48      ref       33       40       42       44     2*50
+z            VAR   declared       31 impl-asn       48      ref       40       48
+</pre><p>For example, the cross-reference list tells us that the symbol <code>a</code> is a parameter that was declared in line 9, defined (assigned value) in line 10, and referenced in line 42. The symbol <code>i</code> has a more complicated entry in the cross-reference list. It is shown to be a set that was declared and defined in line 4. It is referenced once in lines 9, 18, 25, 27, 30, 37, 44 and referenced twice in lines 40 and 44. Set <code>i</code> is also used as a controlling index in a summation, equation definition or direct parameter assignment in lines 27, 40, 42 and 44.</p>
+<p>For the GAMS novice, the detailed analysis of the cross-reference list may not be important. Perhaps the most likely benefit he or she will get from the reference maps will be the discovery of an unwanted entity that mistakenly entered the model owing to a punctuation or syntax error.</p>
+<p>The second part of the reference map is a list of model entities grouped by type and listed with their associated documentary text. For example, this list is as follows.</p>
+<pre><code class="language-gams">SETS
+
+i             canning plants
+j             markets
+
+PARAMETERS
+
+a             capacity of plant i in cases
+b             demand at market j in cases
+c             transport cost in thousands of dollars per case
+d             distance in thousands of miles
+f             freight in dollars per case per thousand miles
+
+VARIABLES 
+
+x             shipment quantities in cases
+z             total transportation costs in thousands of dollars
+
+EQUATIONS 
+
+cost          define objective function
+demand        satisfy demand at market j
+supply        observe supply limit at plant i
+
+MODELS
+
+transport
+</code></pre>
+<h2><a class="anchor" id="UG_Tutorial_EquationListings"></a>
+Equation Listings</h2>
+<p>Once you succeed in building an input file devoid of compilation errors, GAMS is able to generate a model. The question remains, and only you can answer it, does GAMS generate the model you intended?</p>
+<p>The equation listing is probably the best device for studying this extremely important question. A product of the solve command, the equation listing shows the specific instance of the model that is created when the current values of the sets and parameters are plugged into the general algebraic form of the model. For example, the generic demand constraint given in the input file for the transportation model is</p><pre><code class="language-gams">demand(j)  ..   sum(i, x(i,j))  =g=  b(j)  ;
+</pre></code></pre><p>while the equation listing of specific constraints is </p><pre class="fragment">--------demand   =g=   satisfy demand at market  j
+demand(new-york)..  x(seattle, new-york) +x(san-diego, new-york)  =g=  325  ;
+demand(chicago)..  x(seattle, chicago) +x(san-diego, chicago )  =g=  300  ;
+demand(topeka)..  x(seattle, topeka) +x(san-diego, topeka)  =g=  275 ;
+</pre><p> The default output is a maximum of three specific equations for each generic equation. To change the default, insert an input statement prior to the solve statement:</p><pre><code class="language-gams">option limrow  =  r ;
+</pre></code></pre><p>where <code>r</code> is the desired number.</p>
+<p>The default output also contains a section called the column listing, analogous to the equation listing, which shows the coefficients of three specific variables for each generic variable. This listing would be particularly useful for verifying a GAMS model that was previously implemented in MPS format. To change the default number of specific column printouts per generic variable, the above command can be extended:</p><pre><code class="language-gams">option limrow  =  r,  limcol  = c ;
+</pre></code></pre><p>where <code>c</code> is the desired number of columns. (Setting <code>limrow</code> and <code>limcol</code> to 0 is a good way to reduce the size of your lst file after your model has been debugged.) In nonlinear models, the GAMS equation listing shows first-order Taylor approximations of the nonlinear equations. The approximations are taken at the starting values of the variables.</p>
+<h2><a class="anchor" id="UG_Tutorial_ModelStatistics"></a>
+Model Statistics</h2>
+<p>The last section of output that GAMS produces before invoking the solver is a group of statistics about the model's size, as shown below for the transportation example.</p>
+<pre class="fragment">MODEL STATISTICS
+
+BLOCKS OF EQUATIONS       3     SINGLE EQUATIONS        6
+BLOCKS OF VARIABLES       2     SINGLE VARIABLES        7
+NON ZERO ELEMENTS        19
+</pre><p>The <code>BLOCK</code> counts refer to the number of generic equations and variables. The <code>SINGLE</code> counts refer to individual rows and columns in the specific model instance being generated. For nonlinear models, some other statistics are given to describe the degree of non-linearity in the problem.</p>
+<h2><a class="anchor" id="UG_Tutorial_StatusReports"></a>
+Status Reports</h2>
+<p>After the solver executes, GAMS prints out a brief <em>Solve Summary</em> whose two most important entries are <code>SOLVER STATUS</code> and the <code>MODEL STATUS</code>. For our transportation problem the solve summary is as follows:</p>
+<pre class="fragment">               S O L V E      S U M M A R Y
+
+     MODEL   TRANSPORT           OBJECTIVE  z
+     TYPE    LP                  DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  49
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE              153.6750
+
+ RESOURCE USAGE, LIMIT          0.031      1000.000
+ ITERATION COUNT, LIMIT         4    2000000000
+</pre><p>The status reports are preceded by the same <code>****</code> string as an error message, so you should probably develop the habit of searching for all occurrences of this string whenever you look at an output file for the first time. The desired solver status is <code>1</code> <code>NORMAL COMPLETION</code>, but there are other possibilities, documented in section <a class="el" href="UG_GAMSOutput.html#UG_GAMSOutput_TheSolveSummary">The Solve Summary</a>, which relate to various types of errors and mishaps.</p>
+<p>There are eleven possible model statuses, including the usual linear programming termination states (<code>1 Optimal, 3 Unbounded, 4 Infeasible</code>), and others relating to nonlinear and integer programming. In nonlinear programming, the status to look for is <code>2 Locally Optimal</code>. The most the software can guarantee for nonlinear programming is a local optimum. The user is responsible for analyzing the convexity of the problem to determine whether local optimality is sufficient for global optimality. In integer programming, the status to look for is <code>8 Integer Solution</code>. This means that a feasible integer solution has been found. More detail follows as to whether the solution meets the relative and absolute optimality tolerances that the user specifies.</p>
+<h2><a class="anchor" id="UG_Tutorial_SolutionReports"></a>
+Solution Reports</h2>
+<p>If the solver status and model status are acceptable, then you will be interested in examining the results of the optimization. The results are first presented in as standard mathematical programming output format, with the added feature that rows and columns are grouped and labeled according to names that are appropriate for the specific model just solved. In this format, there is a line of printout for each row and column giving the lower limit, level, upper limit, and marginal. Generic equation block and the column output group the row output by generic variable block. Set element names are embedded in the output for easy reading. In the transportation example, the solver outputs for <code>supply(i)</code>, <code>demand(j)</code>, and <code>x(i,j)</code> are as follows:</p>
+<pre class="fragment">---- EQU supply      observe supply limit at plant i
+
+             LOWER     LEVEL     UPPER    MARGINAL
+
+seattle       -INF    350.000   350.000      EPS
+san-diego     -INF    550.000   600.000      .
+
+---- EQU demand      satisfy demand at market j
+
+            LOWER     LEVEL     UPPER    MARGINAL
+
+new-york   325.000   325.000     +INF      0.225
+chicago    300.000   300.000     +INF      0.153
+topeka     275.000   275.000     +INF      0.126
+
+---- VAR x           shipment quantities in cases
+
+                      LOWER     LEVEL     UPPER    MARGINAL
+
+seattle  .new-york      .       50.000     +INF       .
+seattle  .chicago       .      300.000     +INF       .
+seattle  .topeka        .         .        +INF      0.036
+san-diego.new-york      .      275.000     +INF       .
+san-diego.chicago       .         .        +INF      0.009
+san-diego.topeka        .      275.000     +INF       .
+</pre><p>The single dots '<code>.</code>' in the output represent zeroes. The entry <code>EPS</code>, which stands for <em>epsilon</em>, mean very small but nonzero. In this case, <code>EPS</code> indicates degeneracy. (The slack variable for the Seattle supply constraint is in the basis at zero level. The marginal is marked with <code>EPS</code> rather than zero to facilitate restarting the optimizer from the old basis.)</p>
+<p>If the solvers results contain either infeasibilities or marginal costs of the wrong sign, then the offending entries are marked with <code>INFES</code> or <code>NOPT</code>, respectively. If the problem terminates unbounded, then the rows and columns corresponding to extreme rays are marked <code>UNBND</code>.</p>
+<p>At the end of the solvers solution report is a very important <em>report summary</em>, which gives a tally of the total number of non-optimal, infeasible, and unbounded rows and columns. For our example, the report summary shows all zero tallies as desired.</p>
+<pre class="fragment">**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+</pre><p>After the solver's report is written, control is returned from the solver back to GAMS. All the levels and marginals obtained by the solver are entered into the GAMS database in the <code>.l</code> and <code>.m</code> fields. These values can then be transformed and displayed in any desired report. As noted earlier, the user merely lists the quantities to be displayed, and GAMS automatically formats and labels an appropriate array. For example, the input statement.</p>
+<pre><code class="language-gams">display x.l, x.m  ;
+</pre></code></pre><p>results in the following output.</p>
+<pre class="fragment">----     50 VARIABLE  x.L           shipment quantities in cases
+
+             new-york     chicago      topeka
+
+seattle        50.000     300.000
+san-diego     275.000                 275.000
+
+----     50 VARIABLE  x.M           shipment quantities in cases
+
+              chicago      topeka
+
+seattle                     0.036
+san-diego       0.009
+</pre><p>As seen in reference maps, equation listings, solution reports, and optional displays, GAMS saves the documentary text and '<em>parrots</em>' it back throughout the output to help keep the model well documented.</p>
+<h1><a class="anchor" id="UG_Tutorial_Summary"></a>
+Summary</h1>
+<p>This tutorial has demonstrated several of the design features of GAMS that enable you to build practical optimization models quickly and effectively. The following discussion summarizes the advantages of using an algebraic modeling language such as GAMS versus a matrix generator or conversational solver.</p>
+<ul>
+<li>By using an algebra-based notation, you can describe an optimization model to a computer nearly as easily as you can describe it to another mathematically trained person.</li>
+<li>Because an algebraic description of a problem has generality, most of the statements in a GAMS model are reusable when new instances of the same or related problems arise. This is especially important in environments where models are constantly changing.</li>
+<li>You save time and reduce generation errors by creating whole sets of closely related constraints in one statement.</li>
+<li>You can save time and reduce input errors by providing formulae for calculating the data rather than entering them explicitly.</li>
+<li>The model is self-documenting. Since the tasks of model development and model documentation can be done simultaneously, the modeler is much more likely to be conscientious about keeping the documentation accurate and up to date.</li>
+<li>The output of GAMS is easy to read and use. The solution report from the solver is automatically reformatted so that related equations and variables are grouped together and appropriately labeled. Also, the <code>display</code> command allows you to modify and tabulate results very easily.</li>
+<li>If you are teaching or learning modeling, you can benefit from the insistence of the GAMS compiler that every equation be mathematically consistent. Even if you are an experienced modeler, the hundreds of ways in which errors are detected should greatly reduce development time.</li>
+<li>By using the <em>dollar</em> operator and other advanced features not covered in this tutorial, one can efficiently implement large-scale models. Specific applications of the dollar operator include:<ol type="1">
+<li>It can enforce logical restrictions on the allowable combinations of indices for the variables and equations to be included in the model. You can thereby screen out unnecessary rows and columns and keep the size of the problem within the range of solvability.</li>
+<li>It can be used to build complex summations and products, which can then be used in equations or customized reports.</li>
+<li>It can be used for issuing warning messages or for terminating prematurely conditioned upon context-specific data edits.</li>
+</ol>
+</li>
+</ul>
+<p> 
+<sup><a href="#ref1" id="fn1">1)</a></sup> Dantzig, George B. (1963). <em>Linear Programming and Extensions</em>, Princeton University Press, Princeton N.J.
+ </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- modified HTML footer for doxygen 1.12.0-->
+<!-- start footer part -->
+</div><!-- doc-content -->    
+</div><!-- doc-contents -->
+</div><!-- content-area -->
+  <footer id="footer-area" class="bottomnav"> 
+       <a id="print" class="printbtn left">Printer-friendly version </a> 
+       <div class="right"> Copyright &copy; <a target="_blank" href="https://www.gams.com/">GAMS Development Corporation</a> </div>
+  </footer>
+<script src="./style/jquery.highlight.js"></script>
+<script src="./style/navtree.js"></script>
+<script src="./style/navtreeinfo.js"></script>
+<script src="./style/navtreeindex.js"></script>
+<script>
+if (recallStatus("toc") == "hidden" || recallStatus("layout") == "collapsed") {
+    $('#context-sidebar').hide();
+    $('#split-bar').hide();
+}
+$(document).ready(function(){
+   initTOCPage();
+   var gamsversion = "54";
+   $('#versionfilter').val('/'+gamsversion+'/docs/index.html');
+$('#versionfilter').on('change', function () {
+   var url = $(this).val(); 
+   if (url) { 
+      window.location = url; 
+   }
+   return false;
+});
+
+});
+</script>
+<div id="gamsfooter">
+  
+
+
+
+<div class="gams-site">
+    <footer id="gams-site-footer" class="d-print-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-4 mb-3">
+                    <strong>GAMS Development Corp.</strong><br />
+                    <strong>GAMS Software GmbH</strong><br />
+                    <br />
+                    <a
+                        class="mr-1"
+                        href="https://www.youtube.com/channel/UCfTAizXPo4vN54CC-Zs9TTg"
+                        ><i
+                            data-feather="youtube"
+                            stroke="white"
+                            stroke-width="1"
+                        ></i
+                    ></a>
+                    <a class="mr-1" href="https://twitter.com/gamssoftware"
+                        ><i
+                            data-feather="twitter"
+                            stroke="white"
+                            stroke-width="1"
+                        ></i
+                    ></a>
+                    <a
+                        class="mr-1"
+                        href="https://www.linkedin.com/company/gams-development-corporation/"
+                        ><i
+                            data-feather="linkedin"
+                            stroke="white"
+                            stroke-width="1"
+                        ></i
+                    ></a>
+                    <p class="mt-2">
+                        <a
+                            class="font-weight-bolder"
+                            href="https://www.gams.com/newsletter/signup/?utm_source=website&utm_medium=footer&utm_campaign=newsletter_signup"
+                            >Newsletter</a
+                        >
+                    </p>
+                </div>
+
+                <div class="col-md-3 col-sm-4 mb-3">
+                    <strong>General Information and Sales</strong><br />
+                    <div class="mt-2">
+                        U.S. (+1) 202 342-0180 <br />
+                        Europe: (+49) 221 949-9170
+                    </div>
+                    <a
+                        href="mailto:sales@gams.com?subject=Inquiry"
+                        class="mt-2 pl-4 pr-4 btn btn-gams-orange"
+                    >
+                        <strong>SALES@GAMS.COM</strong>
+                    </a>
+                </div>
+
+                <div class="col-md-3 d-none d-md-block"></div>
+
+                <div class="col-md-3 col-sm-4 mb-3">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://portal.gams.com/">GAMS Portal</a>
+                        </li>
+                        <li>
+                            <a href="https://status.gams.com">Service status</a>
+                        </li>
+                        <li><a href="/about/privacy">Privacy policy</a></li>
+                        <li><a href="/impressum">Impressum / Legal</a></li>
+                        <li>
+                            <a target="_blank" href="/GAMS_EULA.pdf"
+                                >License Agreement</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="/GAMS_Cloud_License_Agreement.pdf"
+                                >Cloud License Agreement</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="/GAMS_License_Server_SLA.pdf"
+                                >License Server SLA</a
+                            >
+                        </li>
+                        <li>
+                            <a target="_blank" href="/GAMS_Code_of_Conduct.pdf"
+                                >Code of Conduct</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="/GAMS_Open_Source_Strategy.pdf"
+                                >Open Source Strategy</a
+                            >
+                        </li>
+                        <li><a href="/archives">Archives</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            GAMS is a registered trademark of GAMS Software GmbH in the European
+            Union
+        </div>
+    </footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/bundle.js"></script>
+
+
+
+
+
+
+
+<script src="/js/gamsSearch.js"></script>
+
+
+
+<script src="/js/lightbox.js"></script>
+
+
+
+
+<script>
+
+
+  $(document).ready(function() {
+
+    $(document).on('click', '.dropdown-menu', function(e) {
+      e.stopPropagation();
+    });
+
+    
+    if ($(window).width() < 992) {
+      $('.dropdown-menu a').click(function(e) {
+
+
+        
+        if ($(this).next('.submenu').length) {
+          e.preventDefault();
+          $(this).next('.submenu').toggle();
+        }
+
+        
+        $('.dropdown').on('hide.bs.dropdown', function() {
+          $(this).find('.submenu').hide();
+        })
+      });
+    }
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+
+
+    function fixModal(m) {
+      
+      
+        $(m).on('shown.bs.modal', function () {
+        var mobd = $('.modal-backdrop');
+        var cont = $('.gams-modal-container');
+        cont.append(mobd);
+        $('body').css('overflow','hidden');
+        })
+        
+        $(m).on('hide.bs.modal', function () {
+          if ($(".modal-backdrop").length > 1) {  
+            $(".modal-backdrop").remove();        
+          }
+          $('body').css('overflow','');
+        })  
+    }
+
+    var modals = ['#uni_searchModal','#galleryModal', '#navTryModal'];
+    modals.forEach(fixModal);
+
+
+  })
+</script>
+
+<script>
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    feather.replace()
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> 
+</body>
+</html>

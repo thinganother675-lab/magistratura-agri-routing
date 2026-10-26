@@ -1,5 +1,0 @@
-﻿model,protocol,n_attempted,n_scored,unresolved_references,em_count,em,set_f1,conservative_all_n_em,invalid_predictions,json_contract_failures,transport_errors
-qwen3.5-9b,historical_same40,40,39,1,23,0.5897435897435898,0.7282051282051282,0.575,0,0,0
-qwen3.5-9b,retrospective_native40,40,39,1,22,0.5641025641025641,0.7196581196581197,0.55,0,2,0
-qwen3.8-27b,historical_same40,40,39,1,23,0.5897435897435898,0.7373626373626374,0.575,0,0,0
-qwen3.8-27b,retrospective_native40,40,39,1,24,0.6153846153846154,0.7800976800976801,0.6,0,0,0

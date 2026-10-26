@@ -1,8 +1,0 @@
-
-Model: qwen3-coder-next
-Context Length: 4 096
-GPU Offload: 40%
-Estimated GPU Memory:   13.42 GiB
-Estimated Total Memory: 32.12 GiB
-
-Estimate: This model may be loaded based on your resource guardrails settings.

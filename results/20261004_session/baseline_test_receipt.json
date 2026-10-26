@@ -1,6 +1,0 @@
-{
-  "created_utc": "2026-10-03T21:38:14.5384846Z",
-  "exit_code": 1,
-  "command": ".venv/Scripts/python.exe -X utf8 -m pytest -q",
-  "head": "af5742e7c294cd5f93155a3deb438f6d667351fe"
-}

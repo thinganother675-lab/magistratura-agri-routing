@@ -1,8 +1,0 @@
-{
-  "claimed_utc": "2026-10-02T18:37:39.479060+00:00",
-  "model": "liquid/lfm-2.5-2.6b:free",
-  "endpoint": "liquid/fp8",
-  "max_attempts": 1,
-  "measurement_window": "OR_DIAGNOSTIC_ZERO_20261002_1836Z",
-  "no_automatic_resume": true
-}

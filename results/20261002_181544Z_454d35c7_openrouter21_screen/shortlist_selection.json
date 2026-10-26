@@ -1,6 +1,0 @@
-{
-  "selected_utc": "2026-10-02T18:15:51.209264+00:00",
-  "models": [],
-  "method": "Stable general models with two complete structured probes: highest probe correctness/latency first, fastest different model second; exploratory priority only",
-  "two_case_quality_is_not_reliable_model_ranking": true
-}

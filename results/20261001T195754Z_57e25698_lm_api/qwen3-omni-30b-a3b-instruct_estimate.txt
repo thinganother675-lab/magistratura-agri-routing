@@ -1,8 +1,0 @@
-
-Model: qwen3-omni-30b-a3b-instruct
-Context Length: 4 096
-GPU Offload: 60%
-Estimated GPU Memory:   12.22 GiB
-Estimated Total Memory: 20.14 GiB
-
-Estimate: This model may be loaded based on your resource guardrails settings.

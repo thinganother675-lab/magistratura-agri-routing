@@ -1,0 +1,233 @@
+{
+  "passed": true,
+  "scenario_count": 20,
+  "start_count": 63,
+  "method": "independent convex-variable SLSQP from three starts; concave Lagrangian tangent numerical upper bounds on a box",
+  "bound_scope": "Floating point numerical certificate with safety margin, not interval arithmetic proof",
+  "beta": [
+    0.982706002034588,
+    0.9898785425101214,
+    0.9888776541961577,
+    0.9828282828282828
+  ],
+  "gamma": [
+    1.017293997965412,
+    1.0121457489878543,
+    1.0111223458038423,
+    1.0101010101010102
+  ],
+  "rows": [
+    {
+      "scenario_id": "s01",
+      "revenue_rub": 28662398.88400018,
+      "independent_revenue_rub": 28662398.884013474,
+      "relative_difference": 4.638677009910839e-13,
+      "numerical_upper_bound_rub": 28662398.89401304,
+      "relative_bound_gap": 3.4933786881416145e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 0.0
+    },
+    {
+      "scenario_id": "s02",
+      "revenue_rub": 32277631.637139082,
+      "independent_revenue_rub": 32277631.637155034,
+      "relative_difference": 4.942027109467252e-13,
+      "numerical_upper_bound_rub": 32277631.64715178,
+      "relative_bound_gap": 3.102054556240782e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 0.0
+    },
+    {
+      "scenario_id": "s03",
+      "revenue_rub": 36461888.53432854,
+      "independent_revenue_rub": 36461888.53432854,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 36461888.54432823,
+      "relative_bound_gap": 2.742503307264995e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 2.2509993868879974e-11
+    },
+    {
+      "scenario_id": "s04",
+      "revenue_rub": 38505531.52229683,
+      "independent_revenue_rub": 38505531.52229683,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 38505531.53228847,
+      "relative_bound_gap": 2.5948579249248835e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 5.738911568187177e-10
+    },
+    {
+      "scenario_id": "s05",
+      "revenue_rub": 32460238.239913452,
+      "independent_revenue_rub": 32460238.239913452,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 32460238.249889288,
+      "relative_bound_gap": 3.073247832388123e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.65391611517407e-09
+    },
+    {
+      "scenario_id": "s06",
+      "revenue_rub": 35888591.77672469,
+      "independent_revenue_rub": 35888591.77674084,
+      "relative_difference": 4.500833812210679e-13,
+      "numerical_upper_bound_rub": 35888591.786726706,
+      "relative_bound_gap": 2.7869627996008306e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 0.0
+    },
+    {
+      "scenario_id": "s07",
+      "revenue_rub": 34406783.73975962,
+      "independent_revenue_rub": 34406783.73975962,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 34406783.749757014,
+      "relative_bound_gap": 2.905647251665771e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s08",
+      "revenue_rub": 34406783.73975962,
+      "independent_revenue_rub": 34406783.73975962,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 34406783.749757014,
+      "relative_bound_gap": 2.905647251665771e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s09",
+      "revenue_rub": 34406783.73975962,
+      "independent_revenue_rub": 34406783.739767894,
+      "relative_difference": 2.405803200261637e-13,
+      "numerical_upper_bound_rub": 34406783.749757014,
+      "relative_bound_gap": 2.905647251665771e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s10",
+      "revenue_rub": 34406783.73975962,
+      "independent_revenue_rub": 34406783.73975962,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 34406783.749757014,
+      "relative_bound_gap": 2.905647251665771e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s11",
+      "revenue_rub": 34343887.9912286,
+      "independent_revenue_rub": 34343887.991228126,
+      "relative_difference": 1.3884192678618937e-14,
+      "numerical_upper_bound_rub": 34343888.001226,
+      "relative_bound_gap": 2.9109685146196707e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s12",
+      "revenue_rub": 34469679.48829063,
+      "independent_revenue_rub": 34469679.48828998,
+      "relative_difference": 1.8804947465570928e-14,
+      "numerical_upper_bound_rub": 34469679.49828802,
+      "relative_bound_gap": 2.9003432463085795e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s13",
+      "revenue_rub": 31264170.302449733,
+      "independent_revenue_rub": 31264170.302448258,
+      "relative_difference": 4.718548242028115e-14,
+      "numerical_upper_bound_rub": 31264170.31244713,
+      "relative_bound_gap": 3.1977172477293443e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s14",
+      "revenue_rub": 37549397.1770695,
+      "independent_revenue_rub": 37549397.177073754,
+      "relative_difference": 1.1329826417137508e-13,
+      "numerical_upper_bound_rub": 37549397.1870669,
+      "relative_bound_gap": 2.66246555545618e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s15",
+      "revenue_rub": 34182589.135078356,
+      "independent_revenue_rub": 34182589.13507778,
+      "relative_difference": 1.678324317962229e-14,
+      "numerical_upper_bound_rub": 34182589.145076014,
+      "relative_bound_gap": 2.924780914641234e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s16",
+      "revenue_rub": 34630978.34444087,
+      "independent_revenue_rub": 34630978.34444087,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 34630978.35443801,
+      "relative_bound_gap": 2.886761324342719e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s17",
+      "revenue_rub": 34395809.15630581,
+      "independent_revenue_rub": 34395809.15630581,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 34395809.1663032,
+      "relative_bound_gap": 2.9065721830229656e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s18",
+      "revenue_rub": 34417758.32321342,
+      "independent_revenue_rub": 34417758.32321888,
+      "relative_difference": 1.5867609756158208e-13,
+      "numerical_upper_bound_rub": 34417758.33321081,
+      "relative_bound_gap": 2.904718580665279e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    },
+    {
+      "scenario_id": "s19",
+      "revenue_rub": 25503535.572804414,
+      "independent_revenue_rub": 25503535.57280608,
+      "relative_difference": 6.529309470284425e-14,
+      "numerical_upper_bound_rub": 25503535.582804184,
+      "relative_bound_gap": 3.920935057252391e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7053025658242404e-11
+    },
+    {
+      "scenario_id": "s20",
+      "revenue_rub": 44498122.49944841,
+      "independent_revenue_rub": 44498122.49944841,
+      "relative_difference": 0.0,
+      "numerical_upper_bound_rub": 44498122.50944424,
+      "relative_bound_gap": 2.2463477169912194e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 2.59660737356171e-10
+    },
+    {
+      "scenario_id": "base",
+      "revenue_rub": 34406783.73975962,
+      "independent_revenue_rub": 34406783.73976055,
+      "relative_difference": 2.7067992802223635e-14,
+      "numerical_upper_bound_rub": 34406783.749757014,
+      "relative_bound_gap": 2.905647251665771e-10,
+      "independent_successful_starts": 3,
+      "max_resource_violation": 1.7689671949483454e-10
+    }
+  ],
+  "max_relative_solver_difference": 4.942027109467252e-13,
+  "max_relative_bound_gap": 3.920935057252391e-10
+}

@@ -1,0 +1,522 @@
+{
+  "automation_id": "1905-1-6-16-19",
+  "timezone": "Asia/Riyadh (UTC+3), совпадает с Москвой",
+  "user_authorized": true,
+  "authorization_date": "2026-10-20",
+  "course": "https://sdo.timacad.ru/course/view.php?id=1905",
+  "visible_due_at_last_check": "2026-12-22 00:00, отображение СДО",
+  "deadline_check": "run_20261016/audit_20261016/deadlines.json",
+  "validation_at_each_run": [
+    "Текущая дата и окно",
+    "Файл и SHA256",
+    "Правильный пользователь и задание",
+    "Доступность сдачи",
+    "Нет уже отправленного ответа",
+    "Итоговый статус после отправки"
+  ],
+  "missed_slot_policy": "Не догонять вне 15-минутного окна; сообщить пропуск. Иные ПЗ и даты не разрешены.",
+  "stop_after": "2026-10-23T14:18:00+03:00",
+  "evidence_directory": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence",
+  "slots": [
+    {
+      "pz": 1,
+      "complexity": 2,
+      "scheduled_at": "2026-10-16T13:05:00+03:00",
+      "start_window_ends_at": "2026-10-16T13:20:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ01_Сарычев_ДЭ39-26.docx",
+      "sha256": "4e5bebd373d0fdd39457b2299fdf0ac3c3ec1aa8bc4117a4cf1e0a70c7cf811f",
+      "bytes": 92405,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ01_Сарычев_ДЭ39-26.docx",
+          "sha256": "4e5bebd373d0fdd39457b2299fdf0ac3c3ec1aa8bc4117a4cf1e0a70c7cf811f",
+          "bytes": 92405
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-16T14:20:00+03:00",
+      "last_attempt_at": "2026-10-16T13:10:22.092273+03:00",
+      "evidence": "evidence/PZ01_20261016_submission.json",
+      "verified_at": "2026-10-16T14:19:27.253529+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено",
+      "submission_authorization": "Прямое разовое разрешение пользователя отправить ПЗ-1 сейчас вне старого окна; остальное расписание оставить прежним."
+    },
+    {
+      "pz": 2,
+      "complexity": 3,
+      "scheduled_at": "2026-10-16T15:43:00+03:00",
+      "start_window_ends_at": "2026-10-16T15:58:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93651",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ02_Сарычев_ДЭ39-26.docx",
+      "sha256": "7d0243be31ea35a3fec5c9e2a822e49a15c0a459d92171f7e700038c5a6a8d4e",
+      "bytes": 96494,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ02_Сарычев_ДЭ39-26.docx",
+          "sha256": "7d0243be31ea35a3fec5c9e2a822e49a15c0a459d92171f7e700038c5a6a8d4e",
+          "bytes": 96494
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-16T15:49:00+03:00",
+      "verified_at": "2026-10-16T15:47:43+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено",
+      "evidence": "evidence/PZ02_20261016_submission.json"
+    },
+    {
+      "pz": 3,
+      "complexity": 3,
+      "scheduled_at": "2026-10-16T17:17:00+03:00",
+      "start_window_ends_at": "2026-10-16T17:32:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93652",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ03_Сарычев_ДЭ39-26.docx",
+      "sha256": "c44656db05b0975ebccc16b5ffa4dd921e6c4c5193e534716b99b791be03aa00",
+      "bytes": 76506,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ03_Сарычев_ДЭ39-26.docx",
+          "sha256": "c44656db05b0975ebccc16b5ffa4dd921e6c4c5193e534716b99b791be03aa00",
+          "bytes": 76506
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-16T17:20:00+03:00",
+      "verified_at": "2026-10-16T17:18:06+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено",
+      "evidence": "evidence/PZ03_20261016_submission.json"
+    },
+    {
+      "pz": 4,
+      "complexity": 3,
+      "scheduled_at": "2026-10-20T09:53:00+03:00",
+      "start_window_ends_at": "2026-10-20T10:08:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93653",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ04_Сарычев_ДЭ39-26.docx",
+      "sha256": "f43380c8460b04e0047183c217c4357327bd9931e7713920bdcda392e6f59360",
+      "bytes": 70133,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ04_Сарычев_ДЭ39-26.docx",
+          "sha256": "f43380c8460b04e0047183c217c4357327bd9931e7713920bdcda392e6f59360",
+          "bytes": 70133
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-20T09:57:00+03:00",
+      "last_attempt_at": "2026-10-19T12:25:57.474013+03:00",
+      "evidence": "evidence/PZ04_20261020_submission.json",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-19T12:23:00+03:00",
+        "status": "blocked_login_required",
+        "evidence": "evidence/PZ04_20261019_attempt.json"
+      },
+      "verified_at": "2026-10-20T09:55:37+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено"
+    },
+    {
+      "pz": 5,
+      "complexity": 3,
+      "scheduled_at": "2026-10-20T16:13:00+03:00",
+      "start_window_ends_at": "2026-10-20T16:28:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93655",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ05_Сарычев_ДЭ39-26.docx",
+      "sha256": "ca48523fd49d75908cba44991391954e7faccf6d63de69e97e79bc4e2fee5908",
+      "bytes": 128505,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ05_Сарычев_ДЭ39-26.docx",
+          "sha256": "ca48523fd49d75908cba44991391954e7faccf6d63de69e97e79bc4e2fee5908",
+          "bytes": 128505
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-20T16:16:00+03:00",
+      "last_attempt_at": "2026-10-20T12:14:00+03:00",
+      "evidence": "evidence/PZ05_20261020_submission.json",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-19T14:51:00+03:00",
+        "status": "blocked_login_required",
+        "evidence": "evidence/PZ05_20261019_attempt.json"
+      },
+      "schedule_history": [
+        {
+          "scheduled_at": "2026-10-20T12:13:00+03:00",
+          "status": "blocked_browser_unavailable",
+          "evidence": "evidence/PZ05_20261020_attempt.json"
+        }
+      ],
+      "submission_authorization": "Прямое разрешение пользователя 20 октября: ПЗ-5 сегодня 16:13 вне старого окна, остальное расписание оставить без изменений.",
+      "verified_at": "2026-10-20T16:14:20+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено"
+    },
+    {
+      "pz": 6,
+      "complexity": 3,
+      "scheduled_at": "2026-10-20T14:37:00+03:00",
+      "start_window_ends_at": "2026-10-20T14:52:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ06_Сарычев_ДЭ39-26.docx",
+      "sha256": "2faa25690ee6b3b389d6b82faab2fc21c3996e2a8a623e5bf147e19de439ad59",
+      "bytes": 82813,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ06_Сарычев_ДЭ39-26.docx",
+          "sha256": "2faa25690ee6b3b389d6b82faab2fc21c3996e2a8a623e5bf147e19de439ad59",
+          "bytes": 82813
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-20T14:42:00+03:00",
+      "last_attempt_at": "2026-10-19T17:36:49.673699+03:00",
+      "evidence": "evidence/PZ06_20261020_submission.json",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-19T17:36:00+03:00",
+        "status": "blocked_login_required",
+        "evidence": "evidence/PZ06_20261019_attempt.json"
+      },
+      "verified_at": "2026-10-20T14:40:11+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено"
+    },
+    {
+      "pz": 7,
+      "complexity": 3,
+      "scheduled_at": "2026-10-21T10:17:00+03:00",
+      "start_window_ends_at": "2026-10-21T10:32:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ07_Сарычев_ДЭ39-26.docx",
+      "sha256": "5026e919eb679d1dc4673ae30c7fed326df8906b6df8c5ba627063b231e2ec2f",
+      "bytes": 87055,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ07_Сарычев_ДЭ39-26.docx",
+          "sha256": "5026e919eb679d1dc4673ae30c7fed326df8906b6df8c5ba627063b231e2ec2f",
+          "bytes": 87055
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-21T10:22:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-20T12:41:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено",
+      "evidence": "evidence/PZ07_20261021_submission.json",
+      "verified_at": "2026-10-21T10:20:50+03:00",
+      "screenshot": "evidence/PZ07_20261021_status.jpg"
+    },
+    {
+      "pz": 8,
+      "complexity": 4,
+      "scheduled_at": "2026-10-21T12:53:00+03:00",
+      "start_window_ends_at": "2026-10-21T13:08:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ08_Сарычев_ДЭ39-26.docx",
+      "sha256": "9a1f99e1d3887d7375f30e8c659ff27537e6375ac1d94a740d27ccd4a23451a6",
+      "bytes": 135783,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ08_Сарычев_ДЭ39-26.docx",
+          "sha256": "9a1f99e1d3887d7375f30e8c659ff27537e6375ac1d94a740d27ccd4a23451a6",
+          "bytes": 135783
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "blocked_login_rejected",
+      "submitted_at": null,
+      "previous_schedule": {
+        "scheduled_at": "2026-10-20T15:29:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "last_attempt_at": "2026-10-21T12:55:00+03:00",
+      "evidence": "evidence/PZ08_20261021_attempt.json"
+    },
+    {
+      "pz": 9,
+      "complexity": 3,
+      "scheduled_at": "2026-10-21T15:11:00+03:00",
+      "start_window_ends_at": "2026-10-21T15:26:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ09_Сарычев_ДЭ39-26.docx",
+      "sha256": "f7f11d58179bef151ee291e5acb509ec5065422d63f1688102943df5542cf998",
+      "bytes": 102388,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ09_Сарычев_ДЭ39-26.docx",
+          "sha256": "f7f11d58179bef151ee291e5acb509ec5065422d63f1688102943df5542cf998",
+          "bytes": 102388
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-21T15:15:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-20T17:47:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "verified_at": "2026-10-21T15:13:52+03:00",
+      "sdo_status": "Отправлено для оценивания",
+      "grading_status": "Не оценено",
+      "evidence": "evidence/PZ09_20261021_submission.json"
+    },
+    {
+      "pz": 10,
+      "complexity": 4,
+      "scheduled_at": "2026-10-22T10:23:00+03:00",
+      "start_window_ends_at": "2026-10-22T10:38:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ10_Сарычев_ДЭ39-26.docx",
+      "sha256": "cb453a60b365cc13cf318c7a195aac18c8228861fe26f169dcff138643dc1bf8",
+      "bytes": 101507,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ10_Сарычев_ДЭ39-26.docx",
+          "sha256": "cb453a60b365cc13cf318c7a195aac18c8228861fe26f169dcff138643dc1bf8",
+          "bytes": 101507
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-22T11:28:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-21T11:37:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "last_attempt_at": "2026-10-22T11:17:06+03:00",
+      "evidence": "evidence/PZ10_20261022_submission.json",
+      "verified_at": "2026-10-22T11:27:10+03:00",
+      "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ10_20261022_submitted.jpg"
+    },
+    {
+      "pz": 11,
+      "complexity": 4,
+      "scheduled_at": "2026-10-22T13:07:00+03:00",
+      "start_window_ends_at": "2026-10-22T13:22:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93662",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ11_Сарычев_ДЭ39-26.docx",
+      "sha256": "17d6f08a463abd2b1f68ec8c3598807a4cb7401a7294794d2e00fdce41b043dc",
+      "bytes": 102248,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ11_Сарычев_ДЭ39-26.docx",
+          "sha256": "17d6f08a463abd2b1f68ec8c3598807a4cb7401a7294794d2e00fdce41b043dc",
+          "bytes": 102248
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-22T13:11:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-21T14:19:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "verified_at": "2026-10-22T13:09:29+03:00",
+      "evidence": "evidence/PZ11_20261022_submission.json",
+      "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ11_20261022_submitted.jpg"
+    },
+    {
+      "pz": 12,
+      "complexity": 5,
+      "scheduled_at": "2026-10-22T15:59:00+03:00",
+      "start_window_ends_at": "2026-10-22T16:14:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93663",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ12_Сарычев_ДЭ39-26.docx",
+      "sha256": "fd67b8115e7658382aa223cb0274665489dc2c8ee4be27d00aac20d1bdc4fbd0",
+      "bytes": 144527,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ12_Сарычев_ДЭ39-26.docx",
+          "sha256": "fd67b8115e7658382aa223cb0274665489dc2c8ee4be27d00aac20d1bdc4fbd0",
+          "bytes": 144527
+        },
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ12_Model_Сарычев.xlsx",
+          "sha256": "b360e05f4f16c9f53e8a6de4c6e282ddee07f907fbfb5239bbea99373cd2a597",
+          "bytes": 16052
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-22T16:14:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-21T17:11:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "last_attempt_at": "2026-10-22T16:02:10+03:00",
+      "evidence": "evidence/PZ12_20261022_submission.json",
+      "verified_at": "2026-10-22T16:12:59+03:00",
+      "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ12_20261022_submitted.jpg"
+    },
+    {
+      "pz": 13,
+      "complexity": 4,
+      "scheduled_at": "2026-10-23T11:19:00+03:00",
+      "start_window_ends_at": "2026-10-23T11:34:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93664",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ13_Сарычев_ДЭ39-26.docx",
+      "sha256": "7b9d0545e9ad0e1916490c16f856298cb3ad91f8374d6e06c59e9a08fbc0aa1a",
+      "bytes": 84345,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ13_Сарычев_ДЭ39-26.docx",
+          "sha256": "7b9d0545e9ad0e1916490c16f856298cb3ad91f8374d6e06c59e9a08fbc0aa1a",
+          "bytes": 84345
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "blocked_browser_unavailable",
+      "submitted_at": null,
+      "previous_schedule": {
+        "scheduled_at": "2026-10-22T13:17:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "last_attempt_at": "2026-10-23T11:20:06+03:00",
+      "evidence": "evidence/PZ13_20261023_attempt.json"
+    },
+    {
+      "pz": 14,
+      "complexity": 4,
+      "scheduled_at": "2026-10-23T14:03:00+03:00",
+      "start_window_ends_at": "2026-10-23T14:18:00+03:00",
+      "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93665",
+      "file": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ14_Сарычев_ДЭ39-26.pdf",
+      "sha256": "60387068b91e429e7f78f0fc3cf96b9e39fa91840bbbe189eee5622b4ee285df",
+      "bytes": 198420,
+      "files": [
+        {
+          "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ14_Сарычев_ДЭ39-26.pdf",
+          "sha256": "60387068b91e429e7f78f0fc3cf96b9e39fa91840bbbe189eee5622b4ee285df",
+          "bytes": 198420
+        }
+      ],
+      "expected_identity": "Антоний Сарычев",
+      "group": "ДЭ 39-26",
+      "status": "submitted",
+      "submitted_at": "2026-10-23T14:32:00+03:00",
+      "previous_schedule": {
+        "scheduled_at": "2026-10-22T16:03:00+03:00",
+        "status": "scheduled",
+        "evidence": null
+      },
+      "last_attempt_at": "2026-10-23T14:05:14+03:00",
+      "evidence": "evidence/PZ14_20261023_submission.json",
+      "verified_at": "2026-10-23T14:33:15.343106+03:00"
+    }
+  ],
+  "revision": 3,
+  "rescheduled_at": "2026-10-20T09:53:00+03:00",
+  "authorization_scope": "Пользователь разрешил повторный вход с подставленными данными, актуализацию и отправку с интервалами 1–3 часа; максимум три ПЗ в день сохраняется.",
+  "automations": [
+    {
+      "date": "2026-10-20",
+      "slots": [
+        5
+      ],
+      "times": [
+        "16:13"
+      ],
+      "rrule": "FREQ=DAILY;BYHOUR=16;BYMINUTE=13;BYSECOND=0",
+      "automation_id": "1905-7-9-20",
+      "stop_after": "2026-10-20T16:28:00+03:00"
+    },
+    {
+      "date": "2026-10-21",
+      "slots": [
+        7,
+        8,
+        9
+      ],
+      "times": [
+        "10:17",
+        "12:53",
+        "15:11"
+      ],
+      "rrule": "FREQ=DAILY;BYDAY=WE;BYHOUR=10,12,15;BYMINUTE=11,17,53;BYSECOND=0;BYSETPOS=2,6,7",
+      "automation_id": "1905-10-12-21",
+      "status": "deleted"
+    },
+    {
+      "date": "2026-10-22",
+      "slots": [
+        10,
+        11,
+        12
+      ],
+      "times": [
+        "10:23",
+        "13:07",
+        "15:59"
+      ],
+      "rrule": "FREQ=DAILY;BYDAY=TH;BYHOUR=10,13,15;BYMINUTE=7,23,59;BYSECOND=0;BYSETPOS=2,4,9",
+      "automation_id": "1905-13-14-22",
+      "status": "deleted"
+    },
+    {
+      "date": "2026-10-23",
+      "slots": [
+        13,
+        14
+      ],
+      "times": [
+        "11:19",
+        "14:03"
+      ],
+      "rrule": "FREQ=DAILY;BYDAY=FR;BYHOUR=11,14;BYMINUTE=3,19;BYSECOND=0;BYSETPOS=2,3",
+      "automation_id": "1905-4-6-19",
+      "status": "deleted"
+    }
+  ],
+  "schedule_rationale": "Пропущенные ПЗ-4–6 перенесены на 20 октября; остальные последовательно на 21–23 октября. ПЗ-4 вручную сейчас, без автоматического повтора.",
+  "schedule_status": "active_revision3",
+  "reporting_requirements": {
+    "after_each_submission": [
+      "Номер ПЗ",
+      "Фактическое время МСК",
+      "Конечный статус СДО",
+      "Скриншот статуса встроен прямо в сообщение"
+    ],
+    "on_error": "Сообщить в этом чате сразу после обнаружения, без ожидания следующего слота",
+    "configured_at": "2026-10-16T08:26:03.675392+00:00"
+  },
+  "upload_widget_diagnosis": {
+    "evidence": "evidence/PZ01_20261016_diagnosis.json",
+    "checked_at": "2026-10-16T14:11:02.444004+03:00",
+    "picker_available_now": true,
+    "actual_upload_not_tested": true,
+    "readiness_guidance": "Дождаться видимой кнопки «Добавить...» и исчезновения активного индикатора загрузки. Один короткий DOM-снимок не доказывает зависание. При сохранении загрузки — ограниченные проверки готовности и одна перезагрузка пустой формы; не выходить за окно и не повторять неизвестную запись."
+  }
+}

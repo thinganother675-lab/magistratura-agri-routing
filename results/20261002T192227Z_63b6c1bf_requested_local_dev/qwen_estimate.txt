@@ -1,7 +1,0 @@
-Model: qwen3.5-4b
-Context Length: 4 096
-GPU Offload: 100%
-Estimated GPU Memory:   6.18 GiB
-Estimated Total Memory: 6.18 GiB
-
-Estimate: This model may be loaded based on your resource guardrails settings.

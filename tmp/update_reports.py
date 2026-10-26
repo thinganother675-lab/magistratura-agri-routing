@@ -1,0 +1,41 @@
+from pathlib import Path
+import shutil
+base=Path('coursework/mmm-ppr')
+for v,person in [(11,'Сарычев Антоний Евгеньевич'),(3,'Шестернин Денис')]:
+    root=base/f'variant-{v}';f=root/'scripts/build_reports.py'
+    text=f.read_text(encoding='utf-8')
+    text=text.replace('import os,csv,json,html,math,textwrap','import os,csv,json,html,math,textwrap\nfrom docx_export import export_docx\nPERSON='+repr(person)+'\nVARIANT='+str(v))
+    text=text.replace("fontSize=10.3,leading=14.5","fontSize=11,leading=15")
+    text=text.replace("fontSize=22,leading=27","fontSize=18,leading=23")
+    text=text.replace("textColor=colors.HexColor('#243346')","textColor=colors.black").replace("textColor=colors.HexColor('#123951')","textColor=colors.black")
+    text=text.replace("def heading(text):return p(text,'H1RU')","def heading(text):\n    import re\n    return p(re.sub(r'^\\d+\\.\\s*','',text).replace(':',' ').replace('.',' '),'H1RU')")
+    text=text.replace('Вариант 11 | расчёт 07.10.2026 | GAMS 54.5.0',f'Вариант {v} | ДЭ 39-26 | GAMS 54.5.0')
+    text=text.replace('def title(no,subtitle):return ', 'def title(no,subtitle):return ')
+    text=text.replace('Лабораторная работа №{no}','Лабораторная работа {no}')
+    text=text.replace('Вариант 11. {subtitle}',f'Вариант {v}. '+'{subtitle}')
+    text=text.replace("p('Расчётный отчёт. Сведения о студенте и группе добавляются перед сдачей.','SmallRU')", "p(f'<b>Выполнил:</b> {PERSON}<br/><b>Группа:</b> ДЭ 39-26','SmallRU')")
+    text=text.replace("author='Учебный расчёт, вариант 11'",'author=PERSON')
+    text=text.replace('path=OUT/name\n    SimpleDocTemplate','path=OUT/name\n    docdir=PROJECT_ROOT/f\'output/docx/mmm-ppr-variant-{VARIANT}\' if IN_PROJECT else ROOT/\'reports\'\n    docdir.mkdir(parents=True,exist_ok=True)\n    export_docx(story,docdir/name.replace(\'.pdf\',\'.docx\'),PERSON,VARIANT)\n    SimpleDocTemplate')
+    text=text.replace("p('<b>Статус согласования.</b> Это подготовленный учебный расчёт. В карточке курса требуется проверка математической записи преподавателем до работы в GAMS. Такая проверка ещё не получена; выполнение расчёта по просьбе студента не заменяет согласование.'),",'')
+    text=text.replace("fig.savefig(path,dpi=145);plt.close(fig)","fig.savefig(path,dpi=145);plt.close(fig)")
+    if v==3:
+        text=text.replace('варианта 11','варианта 3').replace('стр. 38-40 и 43','стр. 38-40 и 41').replace('на стр. 58','на стр. 56')
+        text=text.replace("'7 500','16'","'7 200','15'")
+        text=text.replace('+7500x_4','+7200x_4').replace('+16x_4','+15x_4').replace('x_4/0.25\\leq17','x_4/0.2\\leq16')
+        text=text.replace('0,25 ц/ч, до 17 ч','0,2 ц/ч, до 16 ч').replace('468,75 ₽','480 ₽')
+        text=text.replace("'24 000','1,01','-0,062','-0,014','25'","'24 000','1,01','-0,033','-0,020','25'")
+        text=text.replace("'27 000','1,01','-0,062','-0,012','30'","'27 000','1,01','-0,034','-0,012','30'")
+        text=text.replace("'138 000','9,45','-0,022','-0,015','1,5'","'138 000','9,45','-0,060','-0,019','1,5'")
+        text=text.replace("'25 000','0,85','-0,047','-0,017','0,75'","'22 000','0,9','-0,051','-0,014','1'")
+        text=text.replace('3 и 1,5 т/ч','3 и 2 т/ч').replace('q_Y/1.5','q_Y/2').replace('q_Y\\geq0.75','q_Y\\geq1').replace("q('yogurt')/1.5","q('yogurt')/2")
+        text=text.replace('но молоко также производится: падающая цена дополнительного кефира меняет сравнение предельных доходов','а молоко выпускается на нижней границе 25 т/сут: при этих эластичностях дополнительный выпуск кефира выгоднее дополнительного молока')
+        text=text.replace('Нулевой y₂ у фирмы 9 сохранён.','Все исходные доходы и ресурсы положительны.')
+        text=text.replace('включая фирму 9 с нулевым доходом второго вида','без исключения наблюдений')
+        text=text.replace('0,0011 и 0,0009','0,0011 и 0,0011')
+    # Keep published main text tied to actual numerical data, even when the
+    # efficiency count or the scenario certificate tolerance later changes.
+    text=text.replace("p('Радиально эффективны 14 фирм: '+", "p('Радиально эффективны '+str(sum(r['radially_efficient']=='True' for r in rows))+' фирм: '+")
+    text=text.replace('У всех этих 14 фирм','У всех радиально эффективных фирм')
+    f.write_text(text,encoding='utf-8')
+    if v==3:shutil.copyfile(base/'variant-11/scripts/docx_export.py',root/'scripts/docx_export.py')
+print('Report builders updated; no report files authored yet')

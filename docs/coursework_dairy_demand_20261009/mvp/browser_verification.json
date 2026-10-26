@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-09",
+  "main_browser_render_verified": true,
+  "url": "http://127.0.0.1:8096/",
+  "flows": [
+    "product_selection",
+    "expired_inventory",
+    "capacity_limit",
+    "csv_upload",
+    "promotion_recalculation",
+    "forecast_csv_download"
+  ],
+  "download_rows": 21,
+  "console_errors": [],
+  "powershell_launcher_start_verified": true,
+  "powershell_launcher_health_verified": false,
+  "powershell_launcher_limitation": "Script reached server startup on a random port. HTTP requests to that isolated temporary process timed out; the main server was checked separately in the browser.",
+  "offline_browser_render_verified": false,
+  "offline_browser_limitation": "Built-in browser disallows local file URLs. Offline calculations and embedded data checked separately.",
+  "screenshot": "DairyPlan_browser_verified.png"
+}
