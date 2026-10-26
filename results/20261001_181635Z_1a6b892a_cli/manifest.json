@@ -1,0 +1,236 @@
+{
+  "run_id": "20261001_181635Z_1a6b892a_cli",
+  "started_utc": "2026-10-01T18:16:35.219295+00:00",
+  "state": "completed",
+  "phase": "development_only",
+  "transport": "cli",
+  "dataset_split": "custom_dev",
+  "sample_ids": [
+    "home_bilingual_en_agxqa_300",
+    "home_bilingual_ru_agxqa_300",
+    "home_bilingual_ru_agxqa_141",
+    "home_bilingual_en_agxqa_141",
+    "home_bilingual_en_agxqa_358",
+    "home_bilingual_ru_agxqa_358",
+    "home_bilingual_ru_agxqa_362",
+    "home_bilingual_en_agxqa_362",
+    "home_bilingual_en_agxqa_55",
+    "home_bilingual_ru_agxqa_55",
+    "home_bilingual_ru_agxqa_490",
+    "home_bilingual_en_agxqa_490"
+  ],
+  "dataset_sha256": "387854df81eef3b9e998c9327571700c295a923d059f697183d26fc072247f6b",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "context": 4096,
+  "parallel": 1,
+  "reasoning": "requested off; verify observed channels per raw response",
+  "temperature": "CLI default UNKNOWN",
+  "max_tokens": "CLI default UNKNOWN",
+  "cloud_calls": 0,
+  "historical_test_used_for_selection": false,
+  "models": {
+    "qwen3.8-27b": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "qwen3.8-27b",
+        "format": "gguf",
+        "displayName": "Qwen3.8 27B UD",
+        "publisher": "unsloth",
+        "path": "unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf",
+        "sizeBytes": 17392051472,
+        "indexedModelIdentifier": "unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "27B",
+        "architecture": "qwen35",
+        "quantization": {
+          "name": "Q4_K_M",
+          "bits": 4
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.75",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "load_attempted": true,
+      "headroom_before_load": {
+        "ram_available_gib": 21.16476821899414,
+        "gpu_free_mib": 15061.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 5.1903076171875,
+        "gpu_free_mib": 986.0
+      },
+      "load_s": 24.931971599999997,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "qwen3.8-27b",
+          "format": "gguf",
+          "displayName": "Qwen3.8 27B UD",
+          "publisher": "unsloth",
+          "path": "unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf",
+          "sizeBytes": 17392051472,
+          "indexedModelIdentifier": "unsloth/Qwen3.8-27B-GGUF/Qwen3.8-27B-UD-Q4_K_M.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "27B",
+          "architecture": "qwen35",
+          "quantization": {
+            "name": "Q4_K_M",
+            "bits": 4
+          },
+          "identifier": "home-qwen3.8-27b",
+          "ttlMs": null,
+          "lastUsedTime": 1790878619642,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 15089.0,
+      "ram_gib_peak_sampled_system_used": 27.66363525390625,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 119,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 3.2905290333334656,
+        "latency_p50_s": 3.267790650000279,
+        "latency_p95_s": 4.141679580000255,
+        "decode_tps_median": 15.545,
+        "ttft_median_s": 0.7515000000000001,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 9
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 5
+          }
+        }
+      },
+      "unload_success": true
+    },
+    "gemma-4-26b-a4b-it": {
+      "inventory": {
+        "type": "llm",
+        "modelKey": "gemma-4-26b-a4b-it",
+        "format": "gguf",
+        "displayName": "Gemma 4 26B A4B Instruct UD",
+        "publisher": "unsloth",
+        "path": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+        "sizeBytes": 16847892149,
+        "indexedModelIdentifier": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+        "deviceIdentifier": null,
+        "paramsString": "26B-A4B",
+        "architecture": "gemma4",
+        "quantization": {
+          "name": "IQ4_NL_XL",
+          "bits": 4
+        },
+        "vision": true,
+        "trainedForToolUse": true,
+        "maxContextLength": 262144
+      },
+      "requested_offload": "0.70",
+      "load_success": true,
+      "preflight_estimate_returncode": 0,
+      "load_attempted": true,
+      "headroom_before_load": {
+        "ram_available_gib": 21.74814224243164,
+        "gpu_free_mib": 15061.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 7.23834228515625,
+        "gpu_free_mib": 2196.0
+      },
+      "load_s": 21.808995800000048,
+      "loaded_state": [
+        {
+          "type": "llm",
+          "modelKey": "gemma-4-26b-a4b-it",
+          "format": "gguf",
+          "displayName": "Gemma 4 26B A4B Instruct UD",
+          "publisher": "unsloth",
+          "path": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+          "sizeBytes": 16847892149,
+          "indexedModelIdentifier": "unsloth/gemma-4-26B-A4B-it-GGUF/gemma-4-26B-A4B-it-UD-IQ4_NL_XL.gguf",
+          "deviceIdentifier": null,
+          "paramsString": "26B-A4B",
+          "architecture": "gemma4",
+          "quantization": {
+            "name": "IQ4_NL_XL",
+            "bits": 4
+          },
+          "identifier": "home-gemma-4-26b-a4b-it",
+          "ttlMs": null,
+          "lastUsedTime": 1790878684806,
+          "vision": true,
+          "trainedForToolUse": true,
+          "maxContextLength": 262144,
+          "contextLength": 4096,
+          "status": "idle",
+          "queued": 0,
+          "parallel": 1
+        }
+      ],
+      "vram_mib_peak_sampled_total": 13913.0,
+      "ram_gib_peak_sampled_system_used": 25.434078216552734,
+      "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+      "samples": 84,
+      "resource_poll_errors": [],
+      "summary": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 1.8813388999997944,
+        "latency_p50_s": 1.8098323499998514,
+        "latency_p95_s": 2.5849965550000884,
+        "decode_tps_median": 35.32,
+        "ttft_median_s": 0.4715,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 9
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 5
+          }
+        }
+      },
+      "unload_success": true
+    }
+  },
+  "python": "3.12.12 (main, Feb  3 2026, 22:54:57) [MSC v.1944 64 bit (AMD64)]",
+  "latency_kind": "measured CLI process wall time",
+  "note": "CLI diagnostics cannot establish a frozen HTTP protocol",
+  "resource_guard": {
+    "enabled": true,
+    "min_ram_gib_during_load": 2,
+    "min_gpu_free_mib_during_load": 512
+  },
+  "finished_utc": "2026-10-01T18:18:30.934419+00:00"
+}

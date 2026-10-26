@@ -1,0 +1,37 @@
+{
+  "source": "mercury_raw.jsonl",
+  "phase": "DEVELOPMENT_ONLY",
+  "n": 12,
+  "quality_denominator_includes_errors": true,
+  "latency_kind": "direct measured HTTP wall time; timeout included",
+  "latency_mean_s": 6.58976245833325,
+  "latency_p50_s": 1.7689936000006128,
+  "latency_p95_s": 28.659876844999555,
+  "http_responses_received": 11,
+  "by_category": {
+    "compound_reasoning": {
+      "n": 2,
+      "correct": 1
+    },
+    "extractive_qa": {
+      "n": 2,
+      "correct": 1
+    },
+    "missing_data": {
+      "n": 2,
+      "correct": 2
+    },
+    "numeric": {
+      "n": 2,
+      "correct": 2
+    },
+    "rule_interpretation": {
+      "n": 2,
+      "correct": 2
+    },
+    "tool_selection": {
+      "n": 2,
+      "correct": 2
+    }
+  }
+}

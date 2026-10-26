@@ -1,0 +1,16 @@
+{
+  "valid": true,
+  "claims_total": 142,
+  "claims_verified": 142,
+  "status_counts": {
+    "CONFIRMATORY": 0,
+    "DEV": 84,
+    "HISTORICAL": 0,
+    "SIMULATED": 4,
+    "SUPPLEMENTARY": 18,
+    "SYSTEMS_TELEMETRY": 36
+  },
+  "errors": [],
+  "scope": "FILE_HASH_POINTER_VALUE_COMMIT_CONSISTENCY_NOT_SCIENTIFIC_OR_CONSENT_CERTIFICATION",
+  "validated_utc": "2026-10-03T17:56:22.172511+00:00"
+}

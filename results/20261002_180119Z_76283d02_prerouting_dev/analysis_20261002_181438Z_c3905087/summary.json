@@ -1,0 +1,1761 @@
+{
+  "created_utc": "2026-10-02T18:14:38.423916+00:00",
+  "phase": "EXPLORATORY_DEV_NOT_CONFIRMATORY",
+  "run": "results\\20261002_180119Z_76283d02_prerouting_dev",
+  "raw_sha256": "4b690c7bc40373d10fbfdbc8f30cf3b306cf5b0373b0df516448f6cf99681e95",
+  "protocol_sha256": "00e81a8893b40b745a56ee39f15de58118cb009c43b9d61bfb333024139dcb83",
+  "n": 36,
+  "source_groups": 21,
+  "human_review": false,
+  "methods": {
+    "tool_cloud": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 31,
+      "quality_intended": 0.8611111111111112,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 3,
+      "router_errors": 0,
+      "routes": {
+        "CLOUD_MODEL": 24,
+        "ASK_FOR_DATA": 6,
+        "DETERMINISTIC_TOOL": 6
+      },
+      "proposed_routes": {},
+      "guard_overrides": {},
+      "local_calls": 0,
+      "generative_cloud_calls": 24,
+      "hosted_router_calls": 0,
+      "total_external_requests": 24,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 4.314389577777547,
+        "p50": 1.3333020999998553,
+        "p95": 17.15568162499767
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 33,
+        "mean": 0.9500904818178793,
+        "p50": 1.305750800005626,
+        "p95": 1.8758221399970352
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "known_remote_cost_usd": 0.00118831,
+      "unknown_cost_events": 2,
+      "cost_complete": false,
+      "known_cost_per_intended_request_usd": 3.300861111111111e-05,
+      "known_cost_per_success_usd": 3.833258064516129e-05,
+      "known_cost_per_completed_decision_usd": 3.300861111111111e-05,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 3,
+      "cloud_provider_failure_rate": 0.125,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.75,
+      "incorrect_answer_rate_intended": 0.05555555555555555,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 6,
+      "abstentions": 0,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 13264,
+          "coverage": 22,
+          "attempts": 24
+        },
+        "completion_tokens": {
+          "known_total": 4385,
+          "coverage": 22,
+          "attempts": 24
+        },
+        "total_tokens": {
+          "known_total": 17649,
+          "coverage": 22,
+          "attempts": 24
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 24
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 24
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "local_client_tps_approx": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": null,
+      "laya_truncation_records": [],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 5
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 4
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 5
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 5
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 17
+        },
+        "ru": {
+          "n": 15,
+          "correct": 14
+        }
+      }
+    },
+    "cascade": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 32,
+      "quality_intended": 0.8888888888888888,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 2,
+      "router_errors": 0,
+      "routes": {
+        "CLOUD_MODEL": 18,
+        "LOCAL_MODEL": 6,
+        "ASK_FOR_DATA": 6,
+        "DETERMINISTIC_TOOL": 6
+      },
+      "proposed_routes": {},
+      "guard_overrides": {},
+      "local_calls": 6,
+      "generative_cloud_calls": 18,
+      "hosted_router_calls": 0,
+      "total_external_requests": 18,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 4.349088527777793,
+        "p50": 1.385903899998084,
+        "p95": 17.23183269999572
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 34,
+        "mean": 1.039732176470459,
+        "p50": 1.3289833999951952,
+        "p95": 2.0767753450032616
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "known_remote_cost_usd": 0.00081088,
+      "unknown_cost_events": 2,
+      "cost_complete": false,
+      "known_cost_per_intended_request_usd": 2.2524444444444446e-05,
+      "known_cost_per_success_usd": 2.534e-05,
+      "known_cost_per_completed_decision_usd": 2.2524444444444446e-05,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 2,
+      "cloud_provider_failure_rate": 0.1111111111111111,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.7777777777777778,
+      "incorrect_answer_rate_intended": 0.05555555555555555,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 6,
+      "abstentions": 0,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 2946,
+          "coverage": 6,
+          "attempts": 6
+        },
+        "completion_tokens": {
+          "known_total": 226,
+          "coverage": 6,
+          "attempts": 6
+        },
+        "total_tokens": {
+          "known_total": 3172,
+          "coverage": 6,
+          "attempts": 6
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 6
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 6
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 9382,
+          "coverage": 16,
+          "attempts": 18
+        },
+        "completion_tokens": {
+          "known_total": 2904,
+          "coverage": 16,
+          "attempts": 18
+        },
+        "total_tokens": {
+          "known_total": 12286,
+          "coverage": 16,
+          "attempts": 18
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 18
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 18
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 6,
+        "mean": 0.9176168000012694,
+        "p50": 0.8360866000039096,
+        "p95": 1.6376393499995174
+      },
+      "local_client_tps_approx": {
+        "n": 6,
+        "mean": 45.256204831480765,
+        "p50": 45.66532229735603,
+        "p95": 46.687411722399744
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": null,
+      "laya_truncation_records": [],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 5
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 4
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 5
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 6
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 19
+        },
+        "ru": {
+          "n": 15,
+          "correct": 13
+        }
+      }
+    },
+    "rule_first": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 31,
+      "quality_intended": 0.8611111111111112,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 3,
+      "router_errors": 0,
+      "routes": {
+        "CLOUD_MODEL": 20,
+        "ASK_FOR_DATA": 6,
+        "DETERMINISTIC_TOOL": 6,
+        "ABSTAIN": 3,
+        "LOCAL_MODEL": 1
+      },
+      "proposed_routes": {
+        "CLOUD": 23,
+        "TOOL": 8,
+        "CLARIFY": 4,
+        "LOCAL": 1
+      },
+      "guard_overrides": {
+        "shared_deterministic_input_gate": 12
+      },
+      "local_calls": 1,
+      "generative_cloud_calls": 23,
+      "hosted_router_calls": 0,
+      "total_external_requests": 23,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 6.244068316666421,
+        "p50": 1.316076900002372,
+        "p95": 60.54303229999823
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 33,
+        "mean": 1.305852866666762,
+        "p50": 1.2742383000004338,
+        "p95": 2.0129528600024056
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 0.04970277768734377,
+        "p50": 0.036649998946813866,
+        "p95": 0.057925002693082206
+      },
+      "known_remote_cost_usd": 0.0009889,
+      "unknown_cost_events": 3,
+      "cost_complete": false,
+      "known_cost_per_intended_request_usd": 2.7469444444444444e-05,
+      "known_cost_per_success_usd": 3.19e-05,
+      "known_cost_per_completed_decision_usd": 2.7469444444444444e-05,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 3,
+      "cloud_provider_failure_rate": 0.13043478260869565,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.75,
+      "incorrect_answer_rate_intended": 0.05555555555555555,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 6,
+      "abstentions": 3,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 461,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "completion_tokens": {
+          "known_total": 39,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "total_tokens": {
+          "known_total": 500,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 11920,
+          "coverage": 20,
+          "attempts": 23
+        },
+        "completion_tokens": {
+          "known_total": 3414,
+          "coverage": 20,
+          "attempts": 23
+        },
+        "total_tokens": {
+          "known_total": 15334,
+          "coverage": 20,
+          "attempts": 23
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 23
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 23
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 1,
+        "mean": 0.9204979999994976,
+        "p50": 0.9204979999994976,
+        "p95": 0.9204979999994976
+      },
+      "local_client_tps_approx": {
+        "n": 1,
+        "mean": 45.20546754353994,
+        "p50": 45.20546754353994,
+        "p95": 45.20546754353994
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": null,
+      "laya_truncation_records": [],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 5
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 3
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 5
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 6
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 17
+        },
+        "ru": {
+          "n": 15,
+          "correct": 14
+        }
+      }
+    },
+    "jev_first": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 30,
+      "quality_intended": 0.8333333333333334,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 1,
+      "router_errors": 0,
+      "routes": {
+        "CLOUD_MODEL": 19,
+        "ABSTAIN": 1,
+        "ASK_FOR_DATA": 9,
+        "DETERMINISTIC_TOOL": 6,
+        "LOCAL_MODEL": 1
+      },
+      "proposed_routes": {
+        "CLOUD": 6,
+        "LOCAL": 15,
+        "TOOL": 8,
+        "CLARIFY": 7
+      },
+      "guard_overrides": {
+        "shared_prerouting_ambiguity_guard": 14,
+        "shared_deterministic_input_gate": 12
+      },
+      "local_calls": 1,
+      "generative_cloud_calls": 20,
+      "hosted_router_calls": 36,
+      "total_external_requests": 56,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 1.6138975694450184,
+        "p50": 1.7815075500038802,
+        "p95": 2.952861950003353
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 35,
+        "mean": 1.5455177714291495,
+        "p50": 1.7234211000031792,
+        "p95": 2.660996659999363
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 675.8900861111922,
+        "p50": 788.193450000108,
+        "p95": 1010.9767000030843
+      },
+      "known_remote_cost_usd": 0.0022975680000000003,
+      "unknown_cost_events": 0,
+      "cost_complete": true,
+      "known_cost_per_intended_request_usd": 6.382133333333335e-05,
+      "known_cost_per_success_usd": 7.658560000000001e-05,
+      "known_cost_per_completed_decision_usd": 6.382133333333335e-05,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 1,
+      "cloud_provider_failure_rate": 0.05,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.7222222222222222,
+      "incorrect_answer_rate_intended": 0.05555555555555555,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 9,
+      "abstentions": 1,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 461,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "completion_tokens": {
+          "known_total": 39,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "total_tokens": {
+          "known_total": 500,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 12114,
+          "coverage": 20,
+          "attempts": 20
+        },
+        "completion_tokens": {
+          "known_total": 3890,
+          "coverage": 20,
+          "attempts": 20
+        },
+        "total_tokens": {
+          "known_total": 16004,
+          "coverage": 20,
+          "attempts": 20
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 20
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 20
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 36
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 36
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 36
+        },
+        "input_tokens": {
+          "known_total": 29274,
+          "coverage": 36,
+          "attempts": 36
+        },
+        "output_tokens": {
+          "known_total": 2806,
+          "coverage": 36,
+          "attempts": 36
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 1,
+        "mean": 0.276402200004668,
+        "p50": 0.276402200004668,
+        "p95": 0.276402200004668
+      },
+      "local_client_tps_approx": {
+        "n": 1,
+        "mean": 44.438671215501934,
+        "p50": 44.438671215501934,
+        "p95": 44.438671215501934
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": null,
+      "laya_truncation_records": [],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 6
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 3
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 6
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 3
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 18
+        },
+        "ru": {
+          "n": 15,
+          "correct": 12
+        }
+      }
+    },
+    "laya_first": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 23,
+      "quality_intended": 0.6388888888888888,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 1,
+      "router_errors": 0,
+      "routes": {
+        "ASK_FOR_DATA": 16,
+        "CLOUD_MODEL": 12,
+        "DETERMINISTIC_TOOL": 6,
+        "ABSTAIN": 1,
+        "LOCAL_MODEL": 1
+      },
+      "proposed_routes": {
+        "CLARIFY": 17,
+        "LOCAL": 19
+      },
+      "guard_overrides": {
+        "shared_prerouting_ambiguity_guard": 13,
+        "shared_deterministic_input_gate": 12
+      },
+      "local_calls": 1,
+      "generative_cloud_calls": 13,
+      "hosted_router_calls": 0,
+      "total_external_requests": 13,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 2.9812664833330524,
+        "p50": 0.8934262000002491,
+        "p95": 2.822581574999276
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 35,
+        "mean": 1.3130229857139057,
+        "p50": 0.8920400999995763,
+        "p95": 2.4861655199994854
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 747.7631611113288,
+        "p50": 705.415799999173,
+        "p95": 911.4408249988628
+      },
+      "known_remote_cost_usd": 0.00045803,
+      "unknown_cost_events": 1,
+      "cost_complete": false,
+      "known_cost_per_intended_request_usd": 1.2723055555555556e-05,
+      "known_cost_per_success_usd": 1.9914347826086956e-05,
+      "known_cost_per_completed_decision_usd": 1.2723055555555556e-05,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 1,
+      "cloud_provider_failure_rate": 0.07692307692307693,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.5277777777777778,
+      "incorrect_answer_rate_intended": 0.05555555555555555,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 16,
+      "abstentions": 1,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 461,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "completion_tokens": {
+          "known_total": 39,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "total_tokens": {
+          "known_total": 500,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 7007,
+          "coverage": 12,
+          "attempts": 13
+        },
+        "completion_tokens": {
+          "known_total": 1185,
+          "coverage": 12,
+          "attempts": 13
+        },
+        "total_tokens": {
+          "known_total": 8192,
+          "coverage": 12,
+          "attempts": 13
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 13
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 13
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 1,
+        "mean": 0.2981699000010849,
+        "p50": 0.2981699000010849,
+        "p95": 0.2981699000010849
+      },
+      "local_client_tps_approx": {
+        "n": 1,
+        "mean": 44.08459358738116,
+        "p50": 44.08459358738116,
+        "p95": 44.08459358738116
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": 1790668800,
+      "laya_truncation_records": [
+        {
+          "truncated": false,
+          "state_tokens": 313,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 275,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 207,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 205,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 223,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 181,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 295,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 271,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 194,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 174,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 313,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 235,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 198,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 204,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 222,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 180,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 295,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 208,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 172,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 179,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 171,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 311,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 206,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 183,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 183,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 223,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 179,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 293,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 238,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 220,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 226,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 170,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        }
+      ],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 0
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 4
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 5
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 2
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 15
+        },
+        "ru": {
+          "n": 15,
+          "correct": 8
+        }
+      }
+    },
+    "offline_laya": {
+      "intended_n": 36,
+      "recorded_n": 36,
+      "missing_n": 0,
+      "correct": 12,
+      "quality_intended": 0.3333333333333333,
+      "measured_n": 36,
+      "not_run_n": 0,
+      "errors": 0,
+      "router_errors": 0,
+      "routes": {
+        "ASK_FOR_DATA": 19,
+        "ABSTAIN": 10,
+        "DETERMINISTIC_TOOL": 6,
+        "LOCAL_MODEL": 1
+      },
+      "proposed_routes": {
+        "CLARIFY": 20,
+        "LOCAL": 16
+      },
+      "guard_overrides": {
+        "shared_prerouting_ambiguity_guard": 10,
+        "shared_deterministic_input_gate": 12
+      },
+      "local_calls": 1,
+      "generative_cloud_calls": 0,
+      "hosted_router_calls": 0,
+      "total_external_requests": 0,
+      "tool_calls": 6,
+      "verification_external_calls": 0,
+      "retries": 0,
+      "latency_s": {
+        "n": 36,
+        "mean": 0.7932729527783522,
+        "p50": 0.7209331000012753,
+        "p95": 1.0161829499993473
+      },
+      "latency_scope": "All journaled pipeline decisions, including blocked and failed results; same operational scope across arms",
+      "successful_latency_s": {
+        "n": 36,
+        "mean": 0.7932729527783522,
+        "p50": 0.7209331000012753,
+        "p95": 1.0161829499993473
+      },
+      "blocked_before_dispatch_decisions": 0,
+      "router_latency_ms": {
+        "n": 36,
+        "mean": 756.590847222267,
+        "p50": 720.8529999988968,
+        "p95": 946.9230750019051
+      },
+      "known_remote_cost_usd": 0.0,
+      "unknown_cost_events": 0,
+      "cost_complete": true,
+      "known_cost_per_intended_request_usd": 0.0,
+      "known_cost_per_success_usd": 0.0,
+      "known_cost_per_completed_decision_usd": 0.0,
+      "completed_decision_definition": "Journaled policy result; provider failures remain in this operational denominator",
+      "cloud_provider_errors": 0,
+      "cloud_provider_failure_rate": null,
+      "local_provider_errors": 0,
+      "answer_coverage": 0.19444444444444445,
+      "incorrect_answer_rate_intended": 0.027777777777777776,
+      "unsupported_answer_proxy_note": "Wrong scored ANSWER, not an independently human-audited hallucination metric",
+      "clarifications": 19,
+      "abstentions": 10,
+      "gold_abstention_n": 0,
+      "correct_abstention": "NOT_IDENTIFIABLE",
+      "local_tokens": {
+        "prompt_tokens": {
+          "known_total": 461,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "completion_tokens": {
+          "known_total": 39,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "total_tokens": {
+          "known_total": 500,
+          "coverage": 1,
+          "attempts": 1
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 1
+        }
+      },
+      "cloud_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "hosted_router_tokens": {
+        "prompt_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "completion_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "total_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "input_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        },
+        "output_tokens": {
+          "known_total": 0,
+          "coverage": 0,
+          "attempts": 0
+        }
+      },
+      "local_client_ttft_s": {
+        "n": 1,
+        "mean": 0.2857953999991878,
+        "p50": 0.2857953999991878,
+        "p95": 0.2857953999991878
+      },
+      "local_client_tps_approx": {
+        "n": 1,
+        "mean": 44.40400264522073,
+        "p50": 44.40400264522073,
+        "p95": 44.40400264522073
+      },
+      "local_backend_tps": {
+        "n": 0,
+        "mean": null,
+        "p50": null,
+        "p95": null
+      },
+      "laya_cpu_rss_peak_bytes": 1791160320,
+      "laya_truncation_records": [
+        {
+          "truncated": false,
+          "state_tokens": 313,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 275,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 207,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 205,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 223,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 181,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 295,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 271,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 194,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 174,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 313,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 235,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 198,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 204,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 222,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 180,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 295,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 208,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 172,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 179,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 171,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 311,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 206,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 183,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 183,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 223,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 179,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 293,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 238,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 220,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 226,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 203,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        },
+        {
+          "truncated": false,
+          "state_tokens": 170,
+          "state_tokens_dropped": 0,
+          "truncated_questions": []
+        }
+      ],
+      "by_category": {
+        "compound_reasoning": {
+          "n": 6,
+          "correct": 0
+        },
+        "extractive_qa": {
+          "n": 6,
+          "correct": 0
+        },
+        "missing_data": {
+          "n": 6,
+          "correct": 6
+        },
+        "numeric": {
+          "n": 6,
+          "correct": 6
+        },
+        "rule_interpretation": {
+          "n": 6,
+          "correct": 0
+        },
+        "tool_selection": {
+          "n": 6,
+          "correct": 0
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 21,
+          "correct": 6
+        },
+        "ru": {
+          "n": 15,
+          "correct": 6
+        }
+      }
+    }
+  },
+  "paired_quality": {
+    "jev_first-minus-rule_first": {
+      "estimate": -0.027777777777777776,
+      "ci95": [
+        -0.20689655172413793,
+        0.12121212121212122
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261002,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "laya_first-minus-rule_first": {
+      "estimate": -0.2222222222222222,
+      "ci95": [
+        -0.43243243243243246,
+        -0.02564102564102564
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261002,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "rule_first-minus-cascade": {
+      "estimate": -0.027777777777777776,
+      "ci95": [
+        -0.17073170731707318,
+        0.12903225806451613
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261002,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "jev_first-minus-cascade": {
+      "estimate": -0.05555555555555555,
+      "ci95": [
+        -0.2222222222222222,
+        0.09090909090909091
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261002,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "laya_first-minus-cascade": {
+      "estimate": -0.25,
+      "ci95": [
+        -0.47058823529411764,
+        -0.05
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261002,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    }
+  },
+  "interpretation_limits": [
+    "Observed DEV; no new confirmatory holdout",
+    "Lexical ambiguity guard added only to pre-routing arms: extra factor versus historical cascade",
+    "Strict extractive scoring may reject semantically equivalent text",
+    "Weak literal support verifier retained in historical cascade",
+    "RU agricultural QA absent from original DEV sample; overall EN/RU is confounded by category mix",
+    "Laya confidence uncalibrated; inspect actual truncation",
+    "Invoice and ownership of cloud billing accounts UNKNOWN"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-07",
+  "variant": 11,
+  "course_url": "https://sdo.timacad.ru/course/view.php?id=1237",
+  "source_hashes": {
+    "laboratory-tasks.pdf": "899e7e47abaf76c504e581a6e724469032a5e79831e486af2d8a0e87f01c035f",
+    "dea-variant-11.csv": "961fff0eb5176af23e67ece452779ca940088266ad70bf7335aa54127bc7b5b2"
+  },
+  "gams_version": "54.5.0",
+  "installer_sha256": "52367763eb69dae1b9eeee5f3023715ed851d9184f875da689c8b3fae955a1b2",
+  "signature_status": "Valid",
+  "signer": "GAMS Development Corporation",
+  "eula_user_accepted": true,
+  "solvers": [
+    "CPLEX",
+    "CONOPT 4"
+  ],
+  "teacher_lab2_math_approved": false,
+  "submitted_to_moodle": false
+}

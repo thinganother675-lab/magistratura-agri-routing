@@ -1,0 +1,38 @@
+{
+  "run_id": "20261003_cli_products/codex_probe_corrected",
+  "status": "SUPPLEMENTARY",
+  "started_utc": "2026-10-03T17:03:49.777804+00:00",
+  "cli_version": "codex-cli 0.160.0",
+  "product": "codex",
+  "selected_model": "gpt-6-luna",
+  "selected_effort": "medium",
+  "authentication": {
+    "authMethod": "ChatGPT"
+  },
+  "subscription_cost": "SUBSCRIPTION_INCLUDED",
+  "new_paid_api_spend_authorized": false,
+  "private_test_run": false,
+  "MERA_submissions": 0,
+  "concurrency": 1,
+  "retries": 0,
+  "prompt_policy": "unchanged benchmark question plus identical local SYSTEM; no gold supplied",
+  "system_prompt": "Ты отвечаешь на тестовые вопросы по сельскому хозяйству. Выбери все правильные варианты. Вопрос может иметь один или несколько правильных вариантов. Верни только JSON вида {\"choices\":[\"A\",\"C\"]}, без пояснений. Используй только латинские буквы вариантов, которые присутствуют в вопросе. Не добавляй поля.",
+  "system_sha256": "789599237e97733559e3a66327417fe6974c6196d2da41ef5cdef352e09f3391",
+  "code_commit_before_changes": "6c496744107001d523c2311f236a61a5e14b93c2",
+  "source_hashes": {
+    "scripts/cli_product_baseline_20261003.py": "cca6cb60b7ccb9a506e8f4361924855025768aee3e29bec7091c9cd06487bb9b",
+    "src/agro_route/cli_product_20261003.py": "857999c7eb4ecb68b19816f295d114a528ce5f6c848ef6473848be29f5e8b229"
+  },
+  "tool_policy": "Claude built-ins empty, strict empty MCP, safe/restricted; Codex disabled shell/web/apps/MCP/memory/hooks/plugins/subagents; events audited",
+  "codex_residual_harness_limit": "No CLI flag proves every internal tool absent; no observed tool event accepted; remains supplementary",
+  "latency_definition": "wall clock per fresh CLI process, startup+authentication+inference+shutdown; not backend TTFT",
+  "usage_definition": "product/harness tokens including system context; Claude cache fields separate, Codex output includes hidden reasoning if product reports it",
+  "rights": "USE_WITH_RESTRICTIONS; prompts/source labels/provider output remain ignored .runtime",
+  "api_billing_claim": "NONE; Claude client cost estimate is not a charge or subscription inference cost",
+  "expected_ids": [
+    "arithmetic",
+    "multiple",
+    "supplied_only",
+    "units"
+  ]
+}

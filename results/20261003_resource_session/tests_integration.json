@@ -1,0 +1,16 @@
+{
+  "start_utc": "2026-10-03T17:42:28.795806+00:00",
+  "end_utc": "2026-10-03T17:43:26.201702+00:00",
+  "exit_code": 0,
+  "counts": {
+    "passed": 800,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "source_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+  "scope": "full pytest suite against current working-tree bytes; commit is parent/assembly HEAD",
+  "transcript": "results/20261003_resource_session/pytest_integration.txt",
+  "transcript_sha256": "30c46e6f8b7d04ce80dc1622f8992efa98bd04bfa40826415e4e5b63c225469d",
+  "private_test_run": false
+}

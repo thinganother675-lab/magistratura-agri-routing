@@ -1,0 +1,10 @@
+{
+  "url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MIN%2CT2M_MAX%2CPRECTOTCORR&community=AG&longitude=37.3&latitude=56.0&start=20250501&end=20250507&format=JSON&time-standard=UTC",
+  "sha256": "f98c39af886cababf1c3db9d3f310ec239ba2d1701ed09e6fa87cb7f86797fee",
+  "access_date": "2026-09-30",
+  "coordinates": [
+    37.3,
+    56.0
+  ],
+  "time_standard": "UTC"
+}

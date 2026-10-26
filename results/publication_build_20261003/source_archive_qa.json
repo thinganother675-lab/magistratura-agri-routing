@@ -1,0 +1,14 @@
+{
+  "status": "PASS_LOCAL_SOURCE_ARCHIVE",
+  "members": [
+    "main.tex"
+  ],
+  "bytes": 14524,
+  "sha256": "ad4f56d1852b34d734ebdc4291bd9a4c02830259bc8d5e1f08d43c8cbb4181f8",
+  "source_same_as_new_english": true,
+  "local_clean_unpack_compile": true,
+  "pages": 7,
+  "arxiv_server_compile": "UNVERIFIED",
+  "article_license": "NOT_SELECTED",
+  "submission": "NOT_RUN"
+}

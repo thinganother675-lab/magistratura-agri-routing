@@ -1,0 +1,52 @@
+{
+  "nominal_language_parameters_billions": {
+    "qwen3.5-9b": 9,
+    "qwen3.8-27b": 27,
+    "gemma-4-26b-a4b-it": 26
+  },
+  "gemma_active_billions": 4,
+  "counts_kind": "author model description, not tensor-element recount or total vision/MTP parameters",
+  "measured_context_length": 2048,
+  "receipts": [
+    {
+      "name": "qwen3.5-9b",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B/raw/main/README.md",
+      "retrieved_utc": "2026-10-03T17:24:10.134966+00:00",
+      "http_status": 200,
+      "sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0",
+      "bytes": 77643
+    },
+    {
+      "name": "qwen3.8-27b",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+      "retrieved_utc": "2026-10-03T17:24:10.983315+00:00",
+      "http_status": 200,
+      "sha256": "57e4bdb258ee1a7d2635c5174ebd4e56abe392505cdb5f8bbb356b0dc4293641",
+      "bytes": 65012
+    },
+    {
+      "name": "gemma-4-26b-a4b-it",
+      "url": "https://ai.google.dev/gemma/docs/core",
+      "retrieved_utc": "2026-10-03T17:24:12.287058+00:00",
+      "http_status": 200,
+      "sha256": "24fae13b2249b92e2ad4ee948395fcf6f07f28fe3cc8e0dbe5af2fef4b83c3d8",
+      "bytes": 145444
+    },
+    {
+      "name": "native_api",
+      "url": "https://lmstudio.ai/docs/developer/rest/chat",
+      "retrieved_utc": "2026-10-03T17:24:13.364553+00:00",
+      "http_status": 200,
+      "sha256": "8b9d1c58607d78730f91a6341333d73e49ad6872ca96defc70f2fb586a0f0d07",
+      "bytes": 327339
+    },
+    {
+      "name": "context_checkpoints",
+      "url": "https://raw.githubusercontent.com/lmstudio-ai/lmstudio-js/main/packages/lms-kv-config/src/schema.ts",
+      "retrieved_utc": "2026-10-03T17:24:14.152714+00:00",
+      "http_status": 200,
+      "sha256": "6aaf4dc3b725d6ea71a2662603a22ac82243451481251c3d14de111b9ae966bd",
+      "bytes": 28058
+    }
+  ]
+}

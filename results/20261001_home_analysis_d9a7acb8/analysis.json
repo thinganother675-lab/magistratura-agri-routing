@@ -1,0 +1,1203 @@
+{
+  "created_utc": "2026-10-01T18:28:08.498273+00:00",
+  "status": "DEVELOPMENT_ONLY",
+  "selected_context_reader_provisional": "gemma-4-26b-a4b-it",
+  "selection_reason": "Provisional context reader from DEV; CLI instability, bilingual QA and generation controls require API revalidation. Final model selection PENDING.",
+  "common_candidate_sample_n": 12,
+  "models": {
+    "qwen3.5-9b": {
+      "source_run": "20261001_172204Z_9a16b3ba_cli",
+      "full": {
+        "n": 12,
+        "correct": 4,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 1.0760329166666907,
+        "latency_p50_s": 1.0526063500001328,
+        "latency_p95_s": 1.350949879999962,
+        "decode_tps_median": 42.94,
+        "ttft_median_s": 0.101,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 1
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 2
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 4,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 1.0760329166666907,
+        "latency_p50_s": 1.0526063500001328,
+        "latency_p95_s": 1.350949879999962,
+        "decode_tps_median": 42.94,
+        "ttft_median_s": 0.101,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 1
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 2
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "mean_qa_f1": 0.5,
+      "quality_cluster_ci": {
+        "estimate": 0.3333333333333333,
+        "ci95": [
+          0.08333333333333333,
+          0.5833333333333334
+        ],
+        "n": 12,
+        "n_groups": 12,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": "fewer than 20 clusters: percentile interval may be unstable"
+      },
+      "quality_wilson_ci_descriptive": [
+        0.1381200910912132,
+        0.6093779111272004
+      ],
+      "offload_requested": "max",
+      "resources": {
+        "vram_mib_peak_sampled_total": 11421.0,
+        "ram_gib_peak_sampled_system_used": 21.384536743164062
+      },
+      "reasoning_rendered_cases": 0,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    },
+    "gemma-4-12b-it": {
+      "source_run": "20261001_172204Z_9a16b3ba_cli",
+      "full": {
+        "n": 12,
+        "correct": 4,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 1.2025450583332333,
+        "latency_p50_s": 1.1963603999997758,
+        "latency_p95_s": 1.3826371500001187,
+        "decode_tps_median": 47.665000000000006,
+        "ttft_median_s": 0.192,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 3
+          },
+          "ru": {
+            "n": 5,
+            "correct": 1
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 4,
+        "quality": 0.3333333333333333,
+        "latency_mean_s": 1.2025450583332333,
+        "latency_p50_s": 1.1963603999997758,
+        "latency_p95_s": 1.3826371500001187,
+        "decode_tps_median": 47.665000000000006,
+        "ttft_median_s": 0.192,
+        "errors": 4,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 0
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 3
+          },
+          "ru": {
+            "n": 5,
+            "correct": 1
+          }
+        }
+      },
+      "mean_qa_f1": 0.9545454545454546,
+      "quality_cluster_ci": {
+        "estimate": 0.3333333333333333,
+        "ci95": [
+          0.08333333333333333,
+          0.5833333333333334
+        ],
+        "n": 12,
+        "n_groups": 12,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": "fewer than 20 clusters: percentile interval may be unstable"
+      },
+      "quality_wilson_ci_descriptive": [
+        0.1381200910912132,
+        0.6093779111272004
+      ],
+      "offload_requested": "max",
+      "resources": {
+        "vram_mib_peak_sampled_total": 8593.0,
+        "ram_gib_peak_sampled_system_used": 18.24325180053711
+      },
+      "reasoning_rendered_cases": 0,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    },
+    "qwen3.8-27b": {
+      "source_run": "20261001_172204Z_9a16b3ba_cli",
+      "full": {
+        "n": 36,
+        "correct": 25,
+        "quality": 0.6944444444444444,
+        "latency_mean_s": 3.20453040833335,
+        "latency_p50_s": 3.041815349999979,
+        "latency_p95_s": 4.450264724999897,
+        "decode_tps_median": 14.149999999999999,
+        "ttft_median_s": 0.7144999999999999,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 6,
+            "correct": 3
+          },
+          "extractive_qa": {
+            "n": 6,
+            "correct": 4
+          },
+          "missing_data": {
+            "n": 6,
+            "correct": 4
+          },
+          "numeric": {
+            "n": 6,
+            "correct": 2
+          },
+          "rule_interpretation": {
+            "n": 6,
+            "correct": 6
+          },
+          "tool_selection": {
+            "n": 6,
+            "correct": 6
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 21,
+            "correct": 14
+          },
+          "ru": {
+            "n": 15,
+            "correct": 11
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 7,
+        "quality": 0.5833333333333334,
+        "latency_mean_s": 3.37231493333339,
+        "latency_p50_s": 3.18049050000036,
+        "latency_p95_s": 4.5112561949998735,
+        "decode_tps_median": 13.469999999999999,
+        "ttft_median_s": 0.711,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 1
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 2
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 4
+          },
+          "ru": {
+            "n": 5,
+            "correct": 3
+          }
+        }
+      },
+      "mean_qa_f1": 0.9134199134199134,
+      "quality_cluster_ci": {
+        "estimate": 0.6944444444444444,
+        "ci95": [
+          0.5384615384615384,
+          0.8421052631578947
+        ],
+        "n": 36,
+        "n_groups": 21,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "quality_wilson_ci_descriptive": [
+        0.5314372714948967,
+        0.8199554840517007
+      ],
+      "offload_requested": "0.75",
+      "resources": {
+        "vram_mib_peak_sampled_total": 15095.0,
+        "ram_gib_peak_sampled_system_used": 27.758312225341797
+      },
+      "reasoning_rendered_cases": 0,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    },
+    "qwen3.5-35b-a3b": {
+      "source_run": "20261001_172204Z_9a16b3ba_cli",
+      "full": {
+        "n": 36,
+        "correct": 19,
+        "quality": 0.5277777777777778,
+        "latency_mean_s": 2.1663644999999985,
+        "latency_p50_s": 1.992164799999955,
+        "latency_p95_s": 2.776555124999959,
+        "decode_tps_median": 28.755000000000003,
+        "ttft_median_s": 0.628,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 6,
+            "correct": 2
+          },
+          "extractive_qa": {
+            "n": 6,
+            "correct": 3
+          },
+          "missing_data": {
+            "n": 6,
+            "correct": 5
+          },
+          "numeric": {
+            "n": 6,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 6,
+            "correct": 3
+          },
+          "tool_selection": {
+            "n": 6,
+            "correct": 6
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 21,
+            "correct": 10
+          },
+          "ru": {
+            "n": 15,
+            "correct": 9
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 7,
+        "quality": 0.5833333333333334,
+        "latency_mean_s": 2.2552425833332563,
+        "latency_p50_s": 2.0489872499997546,
+        "latency_p95_s": 3.0028051349994707,
+        "decode_tps_median": 28.36,
+        "ttft_median_s": 0.652,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 1
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 2
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 1
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 2
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 4
+          },
+          "ru": {
+            "n": 5,
+            "correct": 3
+          }
+        }
+      },
+      "mean_qa_f1": 0.8679653679653679,
+      "quality_cluster_ci": {
+        "estimate": 0.5277777777777778,
+        "ci95": [
+          0.3157518796992483,
+          0.7333333333333333
+        ],
+        "n": 36,
+        "n_groups": 21,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "quality_wilson_ci_descriptive": [
+        0.37005938022987606,
+        0.6801395848482094
+      ],
+      "offload_requested": "0.55",
+      "resources": {
+        "vram_mib_peak_sampled_total": 14187.0,
+        "ram_gib_peak_sampled_system_used": 29.794475555419922
+      },
+      "reasoning_rendered_cases": 0,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    },
+    "gpt-oss-20b": {
+      "source_run": "20261001_173130Z_dc97b1d6_cli",
+      "full": {
+        "n": 36,
+        "correct": 28,
+        "quality": 0.7777777777777778,
+        "latency_mean_s": 4.3687134888888925,
+        "latency_p50_s": 3.6043354499997804,
+        "latency_p95_s": 8.53085677499962,
+        "decode_tps_median": 106.2,
+        "ttft_median_s": 0.072,
+        "errors": 3,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 6,
+            "correct": 6
+          },
+          "extractive_qa": {
+            "n": 6,
+            "correct": 6
+          },
+          "missing_data": {
+            "n": 6,
+            "correct": 1
+          },
+          "numeric": {
+            "n": 6,
+            "correct": 5
+          },
+          "rule_interpretation": {
+            "n": 6,
+            "correct": 5
+          },
+          "tool_selection": {
+            "n": 6,
+            "correct": 5
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 21,
+            "correct": 19
+          },
+          "ru": {
+            "n": 15,
+            "correct": 9
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 8,
+        "quality": 0.6666666666666666,
+        "latency_mean_s": 4.217483408333389,
+        "latency_p50_s": 3.8207305999999335,
+        "latency_p95_s": 7.9312531350002695,
+        "decode_tps_median": 106.76,
+        "ttft_median_s": 0.072,
+        "errors": 1,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 2
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 2
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 0
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 1
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 1
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 6
+          },
+          "ru": {
+            "n": 5,
+            "correct": 2
+          }
+        }
+      },
+      "mean_qa_f1": 1.0,
+      "quality_cluster_ci": {
+        "estimate": 0.7777777777777778,
+        "ci95": [
+          0.6097560975609756,
+          0.9230769230769231
+        ],
+        "n": 36,
+        "n_groups": 21,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "quality_wilson_ci_descriptive": [
+        0.6191529705388181,
+        0.8828366802420353
+      ],
+      "offload_requested": "max",
+      "resources": {
+        "vram_mib_peak_sampled_total": 12478.0,
+        "ram_gib_peak_sampled_system_used": 24.047252655029297
+      },
+      "reasoning_rendered_cases": 36,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    },
+    "gemma-4-26b-a4b-it": {
+      "source_run": "20261001_181115Z_5bff1166_cli",
+      "full": {
+        "n": 36,
+        "correct": 21,
+        "quality": 0.5833333333333334,
+        "latency_mean_s": 1.5799279833333406,
+        "latency_p50_s": 1.471990850000111,
+        "latency_p95_s": 2.3624020749998635,
+        "decode_tps_median": 36.55,
+        "ttft_median_s": 0.4285,
+        "errors": 1,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 6,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 6,
+            "correct": 4
+          },
+          "missing_data": {
+            "n": 6,
+            "correct": 4
+          },
+          "numeric": {
+            "n": 6,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 6,
+            "correct": 6
+          },
+          "tool_selection": {
+            "n": 6,
+            "correct": 6
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 21,
+            "correct": 12
+          },
+          "ru": {
+            "n": 15,
+            "correct": 9
+          }
+        }
+      },
+      "common": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 1.5955984083332926,
+        "latency_p50_s": 1.4837947500000155,
+        "latency_p95_s": 2.1021096250000477,
+        "decode_tps_median": 36.275,
+        "ttft_median_s": 0.4365,
+        "errors": 0,
+        "by_category": {
+          "compound_reasoning": {
+            "n": 2,
+            "correct": 1
+          },
+          "extractive_qa": {
+            "n": 2,
+            "correct": 2
+          },
+          "missing_data": {
+            "n": 2,
+            "correct": 2
+          },
+          "numeric": {
+            "n": 2,
+            "correct": 0
+          },
+          "rule_interpretation": {
+            "n": 2,
+            "correct": 2
+          },
+          "tool_selection": {
+            "n": 2,
+            "correct": 2
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 7,
+            "correct": 6
+          },
+          "ru": {
+            "n": 5,
+            "correct": 3
+          }
+        }
+      },
+      "mean_qa_f1": 0.8831168831168831,
+      "quality_cluster_ci": {
+        "estimate": 0.5833333333333334,
+        "ci95": [
+          0.3684210526315789,
+          0.7941176470588235
+        ],
+        "n": 36,
+        "n_groups": 21,
+        "confidence": 0.95,
+        "repeats": 5000,
+        "seed": 20261001,
+        "estimand": "per-row mean, whole-group resampling",
+        "warning": null
+      },
+      "quality_wilson_ci_descriptive": [
+        0.4220025157487167,
+        0.7285943794855393
+      ],
+      "offload_requested": "0.70",
+      "resources": {
+        "vram_mib_peak_sampled_total": 13937.0,
+        "ram_gib_peak_sampled_system_used": 25.742290496826172
+      },
+      "reasoning_rendered_cases": 0,
+      "temperature": "UNKNOWN CLI defaults",
+      "max_tokens": "UNKNOWN CLI defaults"
+    }
+  },
+  "paired_selected_minus_other": {
+    "qwen3.8-27b": {
+      "estimate": -0.1111111111111111,
+      "ci95": [
+        -0.22857142857142856,
+        0.0
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261001,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "qwen3.5-35b-a3b": {
+      "estimate": 0.05555555555555555,
+      "ci95": [
+        -0.10256410256410256,
+        0.25806451612903225
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261001,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    },
+    "gpt-oss-20b": {
+      "estimate": -0.19444444444444445,
+      "ci95": [
+        -0.4706290849673201,
+        0.08333333333333333
+      ],
+      "n": 36,
+      "n_groups": 21,
+      "confidence": 0.95,
+      "repeats": 5000,
+      "seed": 20261001,
+      "estimand": "per-row mean, whole-group resampling",
+      "warning": null,
+      "contrast": "a minus b, pairs aligned by caller"
+    }
+  },
+  "offline": {
+    "phase": "development replay; no final holdout",
+    "n": 36,
+    "correct": 16,
+    "quality": 0.4444444444444444,
+    "cloud_calls_actual": 0,
+    "answer_count": 12,
+    "ask_for_data_count": 6,
+    "abstentions": 18,
+    "local_calls_replayed": 6,
+    "tool_calls": 6,
+    "latency_mean_reconstructed_s": 0.27069948888892115,
+    "latency_p50_reconstructed_s": 1.3150000086170621e-05,
+    "latency_p95_reconstructed_s": 1.6112879750000957,
+    "correct_abstention_rate": null,
+    "correct_abstention_note": "No gold ABSTAIN cases in this dev slice; rate not estimable",
+    "policy": "home_policy v2 skips local attempts without context; historical router unchanged"
+  },
+  "bilingual": {
+    "source_run": "20261001_181635Z_1a6b892a_cli",
+    "summary": {
+      "n": 12,
+      "correct": 9,
+      "quality": 0.75,
+      "latency_mean_s": 1.8813388999997944,
+      "latency_p50_s": 1.8098323499998514,
+      "latency_p95_s": 2.5849965550000884,
+      "decode_tps_median": 35.32,
+      "ttft_median_s": 0.4715,
+      "errors": 0,
+      "by_category": {
+        "extractive_qa": {
+          "n": 12,
+          "correct": 9
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 6,
+          "correct": 4
+        },
+        "ru": {
+          "n": 6,
+          "correct": 5
+        }
+      }
+    },
+    "groups": 6,
+    "scope": "six paired translated DEV QA cases; AI-assisted translations, independent human validation PENDING",
+    "counterbalanced_language_order": true,
+    "transitions": {
+      "both_correct": 4,
+      "en_only": 0,
+      "ru_only": 1,
+      "neither": 1
+    },
+    "language_latency": {
+      "en": {
+        "n": 6,
+        "correct": 4,
+        "quality": 0.6666666666666666,
+        "latency_mean_s": 1.9007591333332432,
+        "latency_p50_s": 1.7331271999996716,
+        "latency_p95_s": 2.70093887500002,
+        "decode_tps_median": 35.57,
+        "ttft_median_s": 0.4685,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 6,
+            "correct": 4
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          }
+        }
+      },
+      "ru": {
+        "n": 6,
+        "correct": 5,
+        "quality": 0.8333333333333334,
+        "latency_mean_s": 1.8619186666663456,
+        "latency_p50_s": 1.834611749999567,
+        "latency_p95_s": 2.182948124999939,
+        "decode_tps_median": 35.065,
+        "ttft_median_s": 0.4735,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 6,
+            "correct": 5
+          }
+        },
+        "by_language": {
+          "ru": {
+            "n": 6,
+            "correct": 5
+          }
+        }
+      }
+    },
+    "language_qa_f1": {
+      "en": 0.8831168831168831,
+      "ru": 0.9166666666666666
+    }
+  },
+  "bilingual_models": {
+    "gpt-oss-20b": {
+      "source_run": "20261001_174226Z_192df863_cli",
+      "summary": {
+        "n": 12,
+        "correct": 6,
+        "quality": 0.5,
+        "latency_mean_s": 2.1251368583333865,
+        "latency_p50_s": 2.168192900000122,
+        "latency_p95_s": 2.9067513700002108,
+        "decode_tps_median": 105.86,
+        "ttft_median_s": 0.0785,
+        "errors": 2,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 6
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 2
+          }
+        }
+      },
+      "groups": 6,
+      "scope": "six paired translated DEV QA cases; AI-assisted translations, independent human validation PENDING",
+      "counterbalanced_language_order": true,
+      "transitions": {
+        "both_correct": 2,
+        "en_only": 2,
+        "ru_only": 0,
+        "neither": 2
+      },
+      "language_latency": {
+        "en": {
+          "n": 6,
+          "correct": 4,
+          "quality": 0.6666666666666666,
+          "latency_mean_s": 1.887667583333344,
+          "latency_p50_s": 1.733947249999801,
+          "latency_p95_s": 2.6940964500001883,
+          "decode_tps_median": 105.99,
+          "ttft_median_s": 0.077,
+          "errors": 1,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 4
+            }
+          },
+          "by_language": {
+            "en": {
+              "n": 6,
+              "correct": 4
+            }
+          }
+        },
+        "ru": {
+          "n": 6,
+          "correct": 2,
+          "quality": 0.3333333333333333,
+          "latency_mean_s": 2.362606133333429,
+          "latency_p50_s": 2.249587000000247,
+          "latency_p95_s": 2.925863950000121,
+          "decode_tps_median": 105.74,
+          "ttft_median_s": 0.08,
+          "errors": 1,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 2
+            }
+          },
+          "by_language": {
+            "ru": {
+              "n": 6,
+              "correct": 2
+            }
+          }
+        }
+      },
+      "language_qa_f1": {
+        "en": 0.787878787878788,
+        "ru": 0.6547619047619048
+      }
+    },
+    "qwen3.8-27b": {
+      "source_run": "20261001_181635Z_1a6b892a_cli",
+      "summary": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 3.2905290333334656,
+        "latency_p50_s": 3.267790650000279,
+        "latency_p95_s": 4.141679580000255,
+        "decode_tps_median": 15.545,
+        "ttft_median_s": 0.7515000000000001,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 9
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 5
+          }
+        }
+      },
+      "groups": 6,
+      "scope": "six paired translated DEV QA cases; AI-assisted translations, independent human validation PENDING",
+      "counterbalanced_language_order": true,
+      "transitions": {
+        "both_correct": 4,
+        "en_only": 0,
+        "ru_only": 1,
+        "neither": 1
+      },
+      "language_latency": {
+        "en": {
+          "n": 6,
+          "correct": 4,
+          "quality": 0.6666666666666666,
+          "latency_mean_s": 3.2462291166666546,
+          "latency_p50_s": 3.0777945999998337,
+          "latency_p95_s": 4.092084175000082,
+          "decode_tps_median": 15.325,
+          "ttft_median_s": 0.7264999999999999,
+          "errors": 0,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 4
+            }
+          },
+          "by_language": {
+            "en": {
+              "n": 6,
+              "correct": 4
+            }
+          }
+        },
+        "ru": {
+          "n": 6,
+          "correct": 5,
+          "quality": 0.8333333333333334,
+          "latency_mean_s": 3.334828950000277,
+          "latency_p50_s": 3.3117605000002186,
+          "latency_p95_s": 3.859797000000526,
+          "decode_tps_median": 15.735,
+          "ttft_median_s": 0.787,
+          "errors": 0,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 5
+            }
+          },
+          "by_language": {
+            "ru": {
+              "n": 6,
+              "correct": 5
+            }
+          }
+        }
+      },
+      "language_qa_f1": {
+        "en": 0.9134199134199134,
+        "ru": 0.9166666666666666
+      }
+    },
+    "gemma-4-26b-a4b-it": {
+      "source_run": "20261001_181635Z_1a6b892a_cli",
+      "summary": {
+        "n": 12,
+        "correct": 9,
+        "quality": 0.75,
+        "latency_mean_s": 1.8813388999997944,
+        "latency_p50_s": 1.8098323499998514,
+        "latency_p95_s": 2.5849965550000884,
+        "decode_tps_median": 35.32,
+        "ttft_median_s": 0.4715,
+        "errors": 0,
+        "by_category": {
+          "extractive_qa": {
+            "n": 12,
+            "correct": 9
+          }
+        },
+        "by_language": {
+          "en": {
+            "n": 6,
+            "correct": 4
+          },
+          "ru": {
+            "n": 6,
+            "correct": 5
+          }
+        }
+      },
+      "groups": 6,
+      "scope": "six paired translated DEV QA cases; AI-assisted translations, independent human validation PENDING",
+      "counterbalanced_language_order": true,
+      "transitions": {
+        "both_correct": 4,
+        "en_only": 0,
+        "ru_only": 1,
+        "neither": 1
+      },
+      "language_latency": {
+        "en": {
+          "n": 6,
+          "correct": 4,
+          "quality": 0.6666666666666666,
+          "latency_mean_s": 1.9007591333332432,
+          "latency_p50_s": 1.7331271999996716,
+          "latency_p95_s": 2.70093887500002,
+          "decode_tps_median": 35.57,
+          "ttft_median_s": 0.4685,
+          "errors": 0,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 4
+            }
+          },
+          "by_language": {
+            "en": {
+              "n": 6,
+              "correct": 4
+            }
+          }
+        },
+        "ru": {
+          "n": 6,
+          "correct": 5,
+          "quality": 0.8333333333333334,
+          "latency_mean_s": 1.8619186666663456,
+          "latency_p50_s": 1.834611749999567,
+          "latency_p95_s": 2.182948124999939,
+          "decode_tps_median": 35.065,
+          "ttft_median_s": 0.4735,
+          "errors": 0,
+          "by_category": {
+            "extractive_qa": {
+              "n": 6,
+              "correct": 5
+            }
+          },
+          "by_language": {
+            "ru": {
+              "n": 6,
+              "correct": 5
+            }
+          }
+        }
+      },
+      "language_qa_f1": {
+        "en": 0.8831168831168831,
+        "ru": 0.9166666666666666
+      }
+    }
+  },
+  "escalation_plan_dev": {
+    "n": 36,
+    "tools_cloud_planned": 24,
+    "hybrid_cloud_planned": 18,
+    "reduction_absolute_pp": 16.666666666666668,
+    "reduction_relative": 0.25,
+    "cloud_calls_actual": 0,
+    "warning": "Routing plan from measured local answers; cloud correctness/cost/latency NOT RUN"
+  },
+  "final_holdout": {
+    "status": "NOT RUN",
+    "selected_n": 0,
+    "target_n": 150,
+    "protocol_frozen": false
+  },
+  "cloud_cost_actual_new_runs_usd": 0.0,
+  "cloud_comparison_quality_latency_cost": null,
+  "historical_main_test_used_for_tuning": false,
+  "historical_results_unchanged": true
+}

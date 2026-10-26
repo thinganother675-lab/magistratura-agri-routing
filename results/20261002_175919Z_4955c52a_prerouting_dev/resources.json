@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "vram_mib_peak_sampled_total": 13622.0,
+    "ram_gib_peak_sampled_system_used": 23.51424789428711,
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "samples": 3,
+    "resource_poll_errors": []
+  },
+  "samples": [
+    {
+      "utc": "2026-10-02T17:59:27.587180+00:00",
+      "vram_mib_total": 13622.0,
+      "gpu_util_percent": 1.0,
+      "ram_gib_system_used": 23.509700775146484
+    },
+    {
+      "utc": "2026-10-02T17:59:27.634673+00:00",
+      "vram_mib_total": 13622.0,
+      "gpu_util_percent": 1.0,
+      "ram_gib_system_used": 23.509872436523438
+    },
+    {
+      "utc": "2026-10-02T17:59:27.809004+00:00",
+      "vram_mib_total": 13622.0,
+      "gpu_util_percent": 1.0,
+      "ram_gib_system_used": 23.51424789428711
+    }
+  ]
+}

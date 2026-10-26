@@ -1,0 +1,453 @@
+{
+  "run_id": "20261003_local_screen_571682f5_dev60_qwen3.5-9b",
+  "stage": "dev60",
+  "classification": "DEV",
+  "model_key": "qwen3.5-9b",
+  "gpu_requested": "max",
+  "actual_gpu_layers": null,
+  "source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "protocol_sha256": "8aec2d6fafb9228dddd434a72eae45903071ec4a3b49109667bec40bf01aca59",
+  "started_utc": "2026-10-03T08:20:58.920967+00:00",
+  "loads": [
+    {
+      "chunk_offset": 0,
+      "headroom_before": {
+        "ram_available_gib": 21.87065887451172,
+        "gpu_free_mib": 15113.0
+      },
+      "started_utc": "2026-10-03T08:20:59.098899+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.861141204833984,
+        "gpu_free_mib": 15113.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.269416809082031,
+        "gpu_free_mib": 4743.0
+      },
+      "load_latency_s": 18.270268299995223,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.446121215820312,
+        "gpu_free_mib": 4735.0
+      },
+      "warmup_latency_s": 0.36209079998661764
+    },
+    {
+      "chunk_offset": 10,
+      "headroom_before": {
+        "ram_available_gib": 21.856101989746094,
+        "gpu_free_mib": 15125.0
+      },
+      "started_utc": "2026-10-03T08:21:25.310189+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.84331512451172,
+        "gpu_free_mib": 15125.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.209205627441406,
+        "gpu_free_mib": 4755.0
+      },
+      "load_latency_s": 7.263233299992862,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.47323226928711,
+        "gpu_free_mib": 4735.0
+      },
+      "warmup_latency_s": 0.2889435999968555
+    },
+    {
+      "chunk_offset": 20,
+      "headroom_before": {
+        "ram_available_gib": 21.86874008178711,
+        "gpu_free_mib": 15114.0
+      },
+      "started_utc": "2026-10-03T08:21:40.541209+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.85315704345703,
+        "gpu_free_mib": 15114.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.086898803710938,
+        "gpu_free_mib": 4759.0
+      },
+      "load_latency_s": 7.237535099993693,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.439624786376953,
+        "gpu_free_mib": 4735.0
+      },
+      "warmup_latency_s": 0.354923199993209
+    },
+    {
+      "chunk_offset": 30,
+      "headroom_before": {
+        "ram_available_gib": 21.849998474121094,
+        "gpu_free_mib": 15113.0
+      },
+      "started_utc": "2026-10-03T08:21:55.534822+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.83795928955078,
+        "gpu_free_mib": 15113.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.192512512207031,
+        "gpu_free_mib": 4754.0
+      },
+      "load_latency_s": 7.225417599998764,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.452838897705078,
+        "gpu_free_mib": 4735.0
+      },
+      "warmup_latency_s": 0.29387700000370387
+    },
+    {
+      "chunk_offset": 40,
+      "headroom_before": {
+        "ram_available_gib": 21.872020721435547,
+        "gpu_free_mib": 15125.0
+      },
+      "started_utc": "2026-10-03T08:22:10.305173+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.868282318115234,
+        "gpu_free_mib": 15125.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.125137329101562,
+        "gpu_free_mib": 5008.0
+      },
+      "load_latency_s": 7.232818999997107,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.444076538085938,
+        "gpu_free_mib": 4736.0
+      },
+      "warmup_latency_s": 0.2985488000122132
+    },
+    {
+      "chunk_offset": 50,
+      "headroom_before": {
+        "ram_available_gib": 21.859386444091797,
+        "gpu_free_mib": 15126.0
+      },
+      "started_utc": "2026-10-03T08:22:25.581551+00:00",
+      "headroom_before_load": {
+        "ram_available_gib": 21.857746124267578,
+        "gpu_free_mib": 15126.0
+      },
+      "headroom_latest": {
+        "ram_available_gib": 12.178047180175781,
+        "gpu_free_mib": 4757.0
+      },
+      "load_latency_s": 7.217748900002334,
+      "load_config": {
+        "context_length": 2048,
+        "eval_batch_size": 2048,
+        "physical_batch_size": 512,
+        "parallel": 1,
+        "flash_attention": true,
+        "context_checkpoints": 32,
+        "reasoning_budget_message": "",
+        "speculative_draft_mtp": false,
+        "speculative_draft_simple": false,
+        "speculative_draft_model": "",
+        "speculative_draft_max_tokens": 3,
+        "speculative_draft_min_tokens": 0,
+        "speculative_draft_min_continue_probability": 0,
+        "offload_kv_cache_to_gpu": true
+      },
+      "headroom_after": {
+        "ram_available_gib": 12.46286392211914,
+        "gpu_free_mib": 4738.0
+      },
+      "warmup_latency_s": 0.35496120000607334
+    }
+  ],
+  "status": "COMPLETE",
+  "private_test_run": false,
+  "code_commit": "3bbe24410cdc42d74edd2791cd7b5862e2848987",
+  "uncommitted_source_hashes": {
+    "scripts/mera_local_screen_20261003.py": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+    "src/agro_route/mera_screen_metrics_20261003.py": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567"
+  },
+  "timeout_count": 0,
+  "model_load_failure": false,
+  "safe_rows": "qwen3.5-9b_metrics.jsonl",
+  "quantization": {
+    "name": "Q8_0",
+    "bits_per_weight": 8
+  },
+  "model_size_bytes": 11351564064,
+  "architecture": "qwen35",
+  "native_model_metadata": {
+    "type": "llm",
+    "publisher": "unsloth",
+    "key": "qwen3.5-9b",
+    "display_name": "Qwen3.5 9B",
+    "architecture": "qwen35",
+    "quantization": {
+      "name": "Q8_0",
+      "bits_per_weight": 8
+    },
+    "size_bytes": 11351564064,
+    "params_string": "9B",
+    "loaded_instances": [
+      {
+        "id": "mera-screen-571682f5-qwen3.5-9b",
+        "config": {
+          "context_length": 2048,
+          "eval_batch_size": 2048,
+          "physical_batch_size": 512,
+          "parallel": 1,
+          "flash_attention": true,
+          "context_checkpoints": 32,
+          "reasoning_budget_message": "",
+          "speculative_draft_mtp": false,
+          "speculative_draft_simple": false,
+          "speculative_draft_model": "",
+          "speculative_draft_max_tokens": 3,
+          "speculative_draft_min_tokens": 0,
+          "speculative_draft_min_continue_probability": 0,
+          "offload_kv_cache_to_gpu": true
+        }
+      }
+    ],
+    "max_context_length": 262144,
+    "format": "gguf",
+    "capabilities": {
+      "vision": true,
+      "trained_for_tool_use": true,
+      "reasoning": {
+        "allowed_options": [
+          "off",
+          "on"
+        ],
+        "default": "on"
+      }
+    },
+    "description": null
+  },
+  "load_config": {
+    "context_length": 2048,
+    "eval_batch_size": 2048,
+    "physical_batch_size": 512,
+    "parallel": 1,
+    "flash_attention": true,
+    "context_checkpoints": 32,
+    "reasoning_budget_message": "",
+    "speculative_draft_mtp": false,
+    "speculative_draft_simple": false,
+    "speculative_draft_model": "",
+    "speculative_draft_max_tokens": 3,
+    "speculative_draft_min_tokens": 0,
+    "speculative_draft_min_continue_probability": 0,
+    "offload_kv_cache_to_gpu": true
+  },
+  "reasoning_effort_requested": "none",
+  "cleanup_success": true,
+  "finished_utc": "2026-10-03T08:22:38.505947+00:00",
+  "summary": {
+    "n_expected": 60,
+    "n_attempted": 60,
+    "n_completed": 60,
+    "n_response_received": 60,
+    "n_scored": 59,
+    "attempted_coverage": true,
+    "complete_coverage": true,
+    "strict_em_count": 37,
+    "strict_f1_sum": 42.523809523809526,
+    "strict_set_em": 0.6271186440677966,
+    "strict_set_f1": 0.7207425343018564,
+    "conservative_all_n_em": 0.6166666666666667,
+    "reference_issues": 1,
+    "invalid_output": 0,
+    "json_contract_failure": 0,
+    "errors": 0,
+    "timeouts": 0,
+    "latency_p50_s": 0.31312379999872064,
+    "latency_p95_s": 0.41785567998958867,
+    "latency_mean_s": 0.3232423883334074,
+    "ttft_p50_s": 0.16815609999321168,
+    "first_answer_p50_s": 0.16815609999321168,
+    "client_tps_p50": 57.15785468818838,
+    "backend_tps_p50": null,
+    "input_tokens": 15201,
+    "output_tokens": 410,
+    "usage_coverage": 60,
+    "confidence_coverage": 60,
+    "by_domain": {
+      "Ботаника": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.6666666666666666,
+        "strict_set_f1": 0.8888888888888888
+      },
+      "Кормопроизводство и луговодство": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.3333333333333333,
+        "strict_set_f1": 0.5555555555555556
+      },
+      "Мелиоративное земледелие": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.6666666666666666,
+        "strict_set_f1": 0.6666666666666666
+      },
+      "Общая генетика": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.6666666666666666,
+        "strict_set_f1": 0.7777777777777778
+      },
+      "Общее земледелие": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.8333333333333334,
+        "strict_set_f1": 0.8333333333333334
+      },
+      "Основы селекции": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.8333333333333334,
+        "strict_set_f1": 0.8333333333333334
+      },
+      "Растениеводство": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.8333333333333334,
+        "strict_set_f1": 0.8333333333333334
+      },
+      "Семеноводство и семеноведение": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.8333333333333334,
+        "strict_set_f1": 0.8333333333333334
+      },
+      "Системы земледелия на различных агроландшафтах": {
+        "n": 6,
+        "n_scored": 6,
+        "reference_issues": 0,
+        "strict_set_em": 0.3333333333333333,
+        "strict_set_f1": 0.6984126984126984
+      },
+      "Технологии возделывания сельскохозяйственных культур": {
+        "n": 6,
+        "n_scored": 5,
+        "reference_issues": 1,
+        "strict_set_em": 0.2,
+        "strict_set_f1": 0.2
+      }
+    },
+    "by_answer_cardinality": {
+      "single": {
+        "n": 44,
+        "strict_set_em": 0.6590909090909091,
+        "strict_set_f1": 0.6893939393939394,
+        "predicted_single_n": 38
+      },
+      "multiple": {
+        "n": 15,
+        "strict_set_em": 0.5333333333333333,
+        "strict_set_f1": 0.8126984126984127,
+        "predicted_single_n": 5
+      }
+    }
+  },
+  "resource_metrics": {
+    "vram_mib_peak_sampled_total": 11327.0,
+    "ram_gib_peak_sampled_system_used": 20.53488540649414,
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "samples": 158,
+    "resource_poll_errors": []
+  },
+  "actual_calls": 60,
+  "loads_n": 6,
+  "total_load_latency_s": 54.44702219997998,
+  "total_warmup_latency_s": 1.9533445999986725,
+  "raw_sha256": "7acb6f284556784ff1c79b22c34f8bec8afea12c8bdb25c5de68a1e4c65dcac8",
+  "safe_rows_sha256": "e14a38c7ee84baca2ba8d1041b09823d8593b08dbf3ba4365db2e3b37f845413"
+}

@@ -1,0 +1,126 @@
+{
+  "started_utc": "2026-10-02T18:27:47.133518+00:00",
+  "credential_source_management": "project_env:openrouter_api_key_2",
+  "credential_source_inference": "project_env:OPENROUTER_INFERENCE_KEY_ZERO_20261002",
+  "credential_values_or_fingerprints_persisted": false,
+  "child_credentials_saved_only_in_git_ignored_project_env": true,
+  "paid_spend_cap_usd": 0,
+  "account_or_quota_rotation": false,
+  "generation_attempts": 0,
+  "metadata_requests": 3,
+  "setup_mutations": 1,
+  "account_changes": "ONE same-account regular inference key only",
+  "privacy_preferences_changed": false,
+  "sources": [
+    "https://openrouter.ai/docs/api/api-reference/api-keys/create-a-new-api-key",
+    "https://openrouter.ai/docs/guides/overview/auth/management-api-keys",
+    "https://openrouter.ai/docs/api/reference/limits"
+  ],
+  "management_before": {
+    "http_status": 200,
+    "checked_utc": "2026-10-02T18:27:48.644944+00:00",
+    "limit": null,
+    "limit_remaining": null,
+    "limit_reset": null,
+    "include_byok_in_limit": false,
+    "disabled": null,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "is_free_tier": true,
+    "free_model_daily_requests": {
+      "used": 0,
+      "limit": 50,
+      "remaining": 50
+    },
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    },
+    "is_management_key": true,
+    "is_provisioning_key": true,
+    "expires_at": null
+  },
+  "creation_http_status": 201,
+  "created_metadata": {
+    "limit": 0,
+    "limit_remaining": 0,
+    "limit_reset": null,
+    "include_byok_in_limit": true,
+    "disabled": false,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "is_free_tier": null,
+    "free_model_daily_requests": null,
+    "rate_limit": null,
+    "is_management_key": null,
+    "is_provisioning_key": null,
+    "expires_at": "2026-10-09T23:59:59.000Z"
+  },
+  "original_project_env_bytes_preserved_as_prefix": true,
+  "child_key": {
+    "http_status": 200,
+    "checked_utc": "2026-10-02T18:27:49.712137+00:00",
+    "limit": 0,
+    "limit_remaining": 0,
+    "limit_reset": null,
+    "include_byok_in_limit": true,
+    "disabled": null,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "is_free_tier": true,
+    "free_model_daily_requests": {
+      "used": 0,
+      "limit": 50,
+      "remaining": 50
+    },
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    },
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "expires_at": "2026-10-09T23:59:59.000Z"
+  },
+  "management_after": {
+    "http_status": 200,
+    "checked_utc": "2026-10-02T18:27:49.801843+00:00",
+    "limit": null,
+    "limit_remaining": null,
+    "limit_reset": null,
+    "include_byok_in_limit": false,
+    "disabled": null,
+    "usage": 0,
+    "usage_daily": 0,
+    "usage_weekly": 0,
+    "usage_monthly": 0,
+    "is_free_tier": true,
+    "free_model_daily_requests": {
+      "used": 0,
+      "limit": 50,
+      "remaining": 50
+    },
+    "rate_limit": {
+      "requests": -1,
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore."
+    },
+    "is_management_key": true,
+    "is_provisioning_key": true,
+    "expires_at": null
+  },
+  "management_key_source_value_unchanged": true,
+  "zero_cap_verified": true,
+  "regular_inference_type_verified": true,
+  "free_completion_eligibility": "UNKNOWN UNTIL FIRST STRICT ZERO-PRICE COMPLETION; limit will not be raised",
+  "free_quota_global_not_new_per_key": true,
+  "status": "READY_METADATA_ONLY",
+  "finished_utc": "2026-10-02T18:27:49.801843+00:00"
+}

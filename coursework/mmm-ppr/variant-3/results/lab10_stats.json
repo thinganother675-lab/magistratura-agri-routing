@@ -1,0 +1,34 @@
+[
+  {
+    "variable": "size",
+    "n": 25,
+    "rho": 0.10434841925326349,
+    "t_stat": 0.5031844217104958,
+    "df": 23,
+    "p_asymptotic": 0.6196195445542948,
+    "p_permutation": 0.6145019274903626,
+    "permutations": 200000,
+    "seed": 20261007,
+    "permutation_mc_se": 0.0010883200911505101,
+    "alpha": 0.05,
+    "reject_h0": false,
+    "reject_h0_permutation": false,
+    "ties_method": "average ranks; efficiencies within 1e-9 of 1 rounded to 1"
+  },
+  {
+    "variable": "lawyer_share",
+    "n": 25,
+    "rho": -0.10286423206126373,
+    "t_stat": -0.49595034218832734,
+    "df": 23,
+    "p_asymptotic": 0.62463556159989,
+    "p_permutation": 0.6193119034404828,
+    "permutations": 200000,
+    "seed": 20261007,
+    "permutation_mc_se": 0.001085733601948366,
+    "alpha": 0.05,
+    "reject_h0": false,
+    "reject_h0_permutation": false,
+    "ties_method": "average ranks; efficiencies within 1e-9 of 1 rounded to 1"
+  }
+]

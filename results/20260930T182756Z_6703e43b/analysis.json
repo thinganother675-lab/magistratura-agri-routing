@@ -1,0 +1,749 @@
+{
+  "latency_kind": "reconstructed_trace_replay for model methods; measured tools",
+  "summary": [
+    {
+      "method": "local",
+      "n": 90,
+      "quality": 0.34444444444444444,
+      "quality_ci95": [
+        0.20829741379310346,
+        0.4888888888888889
+      ],
+      "cloud_call_rate": 0.0,
+      "local_model_call_rate": 1.0,
+      "tool_call_rate": 0.0,
+      "latency_mean_ms": 3179.046523333293,
+      "latency_p50_ms": 2985.0141499996425,
+      "latency_p95_ms": 4888.266060000024,
+      "cost_total_usd": 0.0,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.0,
+      "coverage_answer": 0.5222222222222223,
+      "selective_error_rate": 0.5106382978723404,
+      "critical_error_rate": 0.15555555555555556,
+      "qa_token_f1": 0.449027489395268,
+      "route_counts": {
+        "LOCAL_MODEL": 89,
+        "ABSTAIN": 1
+      },
+      "local_resolution_rate": 0.9888888888888889,
+      "non_cloud_completion_rate": 1.0,
+      "correct_local_resolution_rate": 0.34444444444444444,
+      "numeric_mae_when_present": 6.940222239995833
+    },
+    {
+      "method": "cloud",
+      "n": 90,
+      "quality": 0.7777777777777778,
+      "quality_ci95": [
+        0.6551724137931034,
+        0.8686868686868687
+      ],
+      "cloud_call_rate": 1.0,
+      "local_model_call_rate": 0.0,
+      "tool_call_rate": 0.0,
+      "latency_mean_ms": 1563.5145266667578,
+      "latency_p50_ms": 1392.9434999995465,
+      "latency_p95_ms": 2976.5617949998605,
+      "cost_total_usd": 0.00435224,
+      "unknown_cost_requests": 1,
+      "cost_per_1000_usd": null,
+      "coverage_answer": 0.8777777777777778,
+      "selective_error_rate": 0.20253164556962025,
+      "critical_error_rate": 0.03333333333333333,
+      "qa_token_f1": 0.8268664477285166,
+      "route_counts": {
+        "CLOUD_MODEL": 86,
+        "ABSTAIN": 4
+      },
+      "local_resolution_rate": 0.0,
+      "non_cloud_completion_rate": 0.0,
+      "correct_local_resolution_rate": 0.0,
+      "numeric_mae_when_present": 0.29044392486643106
+    },
+    {
+      "method": "rule",
+      "n": 90,
+      "quality": 0.5666666666666667,
+      "quality_ci95": [
+        0.4073784722222222,
+        0.7204301075268817
+      ],
+      "cloud_call_rate": 0.2,
+      "local_model_call_rate": 0.5333333333333333,
+      "tool_call_rate": 0.13333333333333333,
+      "latency_mean_ms": 1935.1750377777937,
+      "latency_p50_ms": 1946.9608500003233,
+      "latency_p95_ms": 4381.131215000005,
+      "cost_total_usd": 0.000712,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.00791111111111111,
+      "coverage_answer": 0.6222222222222222,
+      "selective_error_rate": 0.30357142857142855,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.6671339718683172,
+      "route_counts": {
+        "CLOUD_MODEL": 18,
+        "LOCAL_MODEL": 47,
+        "ABSTAIN": 1,
+        "DETERMINISTIC_TOOL": 12,
+        "ASK_FOR_DATA": 12
+      },
+      "local_resolution_rate": 0.5222222222222223,
+      "non_cloud_completion_rate": 0.8,
+      "correct_local_resolution_rate": 0.18888888888888888,
+      "numeric_mae_when_present": 1.2027416100105862e-16
+    },
+    {
+      "method": "cascade",
+      "n": 90,
+      "quality": 0.8444444444444444,
+      "quality_ci95": [
+        0.7435897435897436,
+        0.9187046802900461
+      ],
+      "cloud_call_rate": 0.6,
+      "local_model_call_rate": 0.7333333333333333,
+      "tool_call_rate": 0.13333333333333333,
+      "latency_mean_ms": 3298.117682222235,
+      "latency_p50_ms": 3948.7193499994646,
+      "latency_p95_ms": 6532.5090649999765,
+      "cost_total_usd": 0.00248949,
+      "unknown_cost_requests": 1,
+      "cost_per_1000_usd": null,
+      "coverage_answer": 0.8555555555555555,
+      "selective_error_rate": 0.16883116883116883,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.8268664477285166,
+      "route_counts": {
+        "LOCAL_TO_CLOUD": 53,
+        "LOCAL_MODEL": 12,
+        "DETERMINISTIC_TOOL": 12,
+        "ASK_FOR_DATA": 12,
+        "ABSTAIN": 1
+      },
+      "local_resolution_rate": 0.13333333333333333,
+      "non_cloud_completion_rate": 0.4,
+      "correct_local_resolution_rate": 0.1111111111111111,
+      "numeric_mae_when_present": 1.2027416100105862e-16
+    },
+    {
+      "method": "tool_cloud",
+      "n": 90,
+      "quality": 0.8444444444444444,
+      "quality_ci95": [
+        0.7435897435897436,
+        0.9187046802900461
+      ],
+      "cloud_call_rate": 0.7333333333333333,
+      "local_model_call_rate": 0.0,
+      "tool_call_rate": 0.13333333333333333,
+      "latency_mean_ms": 1136.0227055557416,
+      "latency_p50_ms": 1189.0925000002426,
+      "latency_p95_ms": 2747.5002250006582,
+      "cost_total_usd": 0.00294341,
+      "unknown_cost_requests": 1,
+      "cost_per_1000_usd": null,
+      "coverage_answer": 0.8555555555555555,
+      "selective_error_rate": 0.16883116883116883,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.8268664477285166,
+      "route_counts": {
+        "CLOUD_MODEL": 65,
+        "DETERMINISTIC_TOOL": 12,
+        "ASK_FOR_DATA": 12,
+        "ABSTAIN": 1
+      },
+      "local_resolution_rate": 0.0,
+      "non_cloud_completion_rate": 0.26666666666666666,
+      "correct_local_resolution_rate": 0.0,
+      "numeric_mae_when_present": 1.2027416100105862e-16
+    },
+    {
+      "method": "offline",
+      "n": 90,
+      "quality": 0.37777777777777777,
+      "quality_ci95": [
+        0.20586349924585218,
+        0.5591397849462365
+      ],
+      "cloud_call_rate": 0.0,
+      "local_model_call_rate": 0.7333333333333333,
+      "tool_call_rate": 0.13333333333333333,
+      "latency_mean_ms": 2344.787578888857,
+      "latency_p50_ms": 2719.266000000516,
+      "latency_p95_ms": 4552.297574999966,
+      "cost_total_usd": 0.0,
+      "unknown_cost_requests": 0,
+      "cost_per_1000_usd": 0.0,
+      "coverage_answer": 0.26666666666666666,
+      "selective_error_rate": 0.08333333333333333,
+      "critical_error_rate": 0.0,
+      "qa_token_f1": 0.3638888888888889,
+      "route_counts": {
+        "ABSTAIN": 54,
+        "LOCAL_MODEL": 12,
+        "DETERMINISTIC_TOOL": 12,
+        "ASK_FOR_DATA": 12
+      },
+      "local_resolution_rate": 0.13333333333333333,
+      "non_cloud_completion_rate": 1.0,
+      "correct_local_resolution_rate": 0.1111111111111111,
+      "numeric_mae_when_present": 1.2027416100105862e-16
+    }
+  ],
+  "category": [
+    {
+      "method": "local",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.3333333333333333,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.3333333333333333
+    },
+    {
+      "method": "local",
+      "category": "numeric",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.8333333333333334
+    },
+    {
+      "method": "local",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 0.4166666666666667,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "local",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.9166666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.5666666666666667,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 0.5833333333333334,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.16666666666666666
+    },
+    {
+      "method": "cloud",
+      "category": "numeric",
+      "n": 12,
+      "quality": 0.9166666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.08333333333333333
+    },
+    {
+      "method": "cloud",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cloud",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.6666666666666666,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.4666666666666667,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "numeric",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 0.4166666666666667,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.9166666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.5666666666666667,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "numeric",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.9166666666666666,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.5666666666666667,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "numeric",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "compound_reasoning",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "extractive_qa",
+      "n": 30,
+      "quality": 0.3333333333333333,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "missing_data",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "numeric",
+      "n": 12,
+      "quality": 1.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "rule_interpretation",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "category": "tool_selection",
+      "n": 12,
+      "quality": 0.0,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    }
+  ],
+  "language": [
+    {
+      "method": "local",
+      "language": "en",
+      "n": 70,
+      "quality": 0.34285714285714286,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.14285714285714285
+    },
+    {
+      "method": "local",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.35,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.2
+    },
+    {
+      "method": "cloud",
+      "language": "en",
+      "n": 70,
+      "quality": 0.7571428571428571,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.014285714285714285
+    },
+    {
+      "method": "cloud",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.85,
+      "cloud_call_rate": 1.0,
+      "critical_error_rate": 0.1
+    },
+    {
+      "method": "rule",
+      "language": "en",
+      "n": 70,
+      "quality": 0.5571428571428572,
+      "cloud_call_rate": 0.2571428571428571,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "rule",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.6,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "language": "en",
+      "n": 70,
+      "quality": 0.8142857142857143,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "cascade",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.95,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "language": "en",
+      "n": 70,
+      "quality": 0.8142857142857143,
+      "cloud_call_rate": 0.7714285714285715,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "tool_cloud",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.95,
+      "cloud_call_rate": 0.6,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "language": "en",
+      "n": 70,
+      "quality": 0.37142857142857144,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    },
+    {
+      "method": "offline",
+      "language": "ru",
+      "n": 20,
+      "quality": 0.4,
+      "cloud_call_rate": 0.0,
+      "critical_error_rate": 0.0
+    }
+  ],
+  "paired": {
+    "local": {
+      "quality_difference": -0.43333333333333335,
+      "difference_ci95": [
+        -0.6095238095238096,
+        -0.2399523809523812
+      ],
+      "critical_difference_ci95": [
+        0.022988505747126436,
+        0.24140543364681283
+      ],
+      "wins": 3,
+      "losses": 42,
+      "mcnemar_exact_p": 8.654978955746628e-10,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "rule": {
+      "quality_difference": -0.2111111111111111,
+      "difference_ci95": [
+        -0.40404040404040403,
+        -0.021488575268817298
+      ],
+      "critical_difference_ci95": [
+        -0.0707070707070707,
+        0.0
+      ],
+      "wins": 7,
+      "losses": 26,
+      "mcnemar_exact_p": 0.0013187271542847157,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "cascade": {
+      "quality_difference": 0.06666666666666667,
+      "difference_ci95": [
+        0.011111111111111112,
+        0.14288931788931772
+      ],
+      "critical_difference_ci95": [
+        -0.0707070707070707,
+        0.0
+      ],
+      "wins": 6,
+      "losses": 0,
+      "mcnemar_exact_p": 0.03125,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "tool_cloud": {
+      "quality_difference": 0.06666666666666667,
+      "difference_ci95": [
+        0.011111111111111112,
+        0.14288931788931772
+      ],
+      "critical_difference_ci95": [
+        -0.0707070707070707,
+        0.0
+      ],
+      "wins": 6,
+      "losses": 0,
+      "mcnemar_exact_p": 0.03125,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    },
+    "offline": {
+      "quality_difference": -0.4,
+      "difference_ci95": [
+        -0.6129452284946236,
+        -0.17240452354467933
+      ],
+      "critical_difference_ci95": [
+        -0.0707070707070707,
+        0.0
+      ],
+      "wins": 6,
+      "losses": 42,
+      "mcnemar_exact_p": 1.0087482138487759e-07,
+      "mcnemar_limitation": "descriptive unadjusted; correlated synthetic variants violate independent-pair assumption; cluster-bootstrap primary"
+    }
+  },
+  "local_contribution_vs_tool_cloud": {
+    "quality_difference": 0.0,
+    "quality_difference_ci95": [
+      0.0,
+      0.0
+    ],
+    "additional_cloud_call_reduction": 0.13333333333333333,
+    "call_reduction_ci95": [
+      0.06666666666666667,
+      0.22232142857142803
+    ],
+    "supported": true,
+    "note": "Isolates local LLM contribution; tools alone cannot support H2."
+  },
+  "hypothesis": {
+    "checks": {
+      "quality_noninferiority": true,
+      "cloud_call_reduction": true,
+      "critical_errors": true
+    },
+    "supported_on_this_controlled_sample": true,
+    "publication_claim": "exploratory only; no generalization to real agronomists or frontier APIs"
+  },
+  "tool_selection_confusion": {
+    "local": {
+      "gdd -> please provide the daily minimum and maximum temperatures (in °c) and the base temperature (in °c) to calculate the accumulated heat (gdd).": 2,
+      "vpd -> please provide the temperature (t) and relative humidity (rh) values in degrees celsius and percent, respectively, to calculate the vapour pressure deficit (vpd) using the supplied formula.": 1,
+      "et0 -> please provide the daily temperature (t), relative humidity (rh), wind speed at 2 meters (u2), and net radiation (rn) values in mj/m2/day for the location and period where fao-56 reference evapotranspiration is needed.": 1,
+      "rain_deficit -> please provide the target rainfall value and the current rainfall values needed to calculate the rainfall deficit relative to the target.": 1,
+      "gdd -> для оценки тепловую сумму по tmin/tmax и base необходимо указать значения tmin, tmax и base (в градусах цельсия) для каждого дня. также требуется указать период (например, 1990-2020 гг.) и базу (например, 10°c).": 1,
+      "vpd -> для оценки дефицита давления пара по температуре и rh необходимо указать температуру (t) и относительную влажность (rh) в контексте. пожалуйста, предоставьте эти значения.": 1,
+      "et0 -> для расчета эталонной эвапотранспирации fao-56 необходимо указать следующие параметры: температуру воздуха (t), влажность воздуха (rh), скорость ветра (u2), радиационный поток (rn), коэффициент испарения (gamma), температуру почвы (tmin, tmax) и базовую температуру (base). также требуется указать целевое значение для расчета дефицита осадков (target).": 1,
+      "rain_deficit -> для оценки дефицита осадков относительно заданной цели необходимо указать: 1) целевое значение осадков (target), 2) количество осадков за период (rain), 3) дату (date). пожалуйста, предоставьте эти данные.": 1,
+      "vpd -> please provide the temperature (t) and relative humidity (rh) values in degrees celsius and percent, respectively, to calculate the vpd using the supplied formula.": 1,
+      "et0 -> please provide the daily temperature (t), relative humidity (rh), wind speed at 2 meters (u2), and net radiation (rn) values in mj/m2/day for the specific location and date required to calculate the fao-56 reference evapotranspiration (et0).": 1,
+      "rain_deficit -> please provide the target rainfall value and the actual measured rainfall value to calculate the rainfall deficit.": 1
+    },
+    "cloud": {
+      "gdd -> gdd": 3,
+      "vpd -> vpd": 3,
+      "et0 -> et0": 3,
+      "rain_deficit -> rain_deficit": 3
+    },
+    "rule": {
+      "gdd -> please provide the daily minimum and maximum temperatures (in °c) and the base temperature (in °c) to calculate the accumulated heat (gdd).": 2,
+      "vpd -> please provide the temperature (t) and relative humidity (rh) values in degrees celsius and percent, respectively, to calculate the vapour pressure deficit (vpd) using the supplied formula.": 1,
+      "et0 -> please provide the daily temperature (t), relative humidity (rh), wind speed at 2 meters (u2), and net radiation (rn) values in mj/m2/day for the location and period where fao-56 reference evapotranspiration is needed.": 1,
+      "rain_deficit -> please provide the target rainfall value and the current rainfall values needed to calculate the rainfall deficit relative to the target.": 1,
+      "gdd -> для оценки тепловую сумму по tmin/tmax и base необходимо указать значения tmin, tmax и base (в градусах цельсия) для каждого дня. также требуется указать период (например, 1990-2020 гг.) и базу (например, 10°c).": 1,
+      "vpd -> для оценки дефицита давления пара по температуре и rh необходимо указать температуру (t) и относительную влажность (rh) в контексте. пожалуйста, предоставьте эти значения.": 1,
+      "et0 -> для расчета эталонной эвапотранспирации fao-56 необходимо указать следующие параметры: температуру воздуха (t), влажность воздуха (rh), скорость ветра (u2), радиационный поток (rn), коэффициент испарения (gamma), температуру почвы (tmin, tmax) и базовую температуру (base). также требуется указать целевое значение для расчета дефицита осадков (target).": 1,
+      "rain_deficit -> для оценки дефицита осадков относительно заданной цели необходимо указать: 1) целевое значение осадков (target), 2) количество осадков за период (rain), 3) дату (date). пожалуйста, предоставьте эти данные.": 1,
+      "vpd -> please provide the temperature (t) and relative humidity (rh) values in degrees celsius and percent, respectively, to calculate the vpd using the supplied formula.": 1,
+      "et0 -> please provide the daily temperature (t), relative humidity (rh), wind speed at 2 meters (u2), and net radiation (rn) values in mj/m2/day for the specific location and date required to calculate the fao-56 reference evapotranspiration (et0).": 1,
+      "rain_deficit -> please provide the target rainfall value and the actual measured rainfall value to calculate the rainfall deficit.": 1
+    },
+    "cascade": {
+      "gdd -> gdd": 3,
+      "vpd -> vpd": 3,
+      "et0 -> et0": 3,
+      "rain_deficit -> rain_deficit": 3
+    },
+    "tool_cloud": {
+      "gdd -> gdd": 3,
+      "vpd -> vpd": 3,
+      "et0 -> et0": 3,
+      "rain_deficit -> rain_deficit": 3
+    },
+    "offline": {
+      "gdd -> нет проверяемой локальной опоры; облако недоступно": 3,
+      "vpd -> нет проверяемой локальной опоры; облако недоступно": 3,
+      "et0 -> нет проверяемой локальной опоры; облако недоступно": 3,
+      "rain_deficit -> нет проверяемой локальной опоры; облако недоступно": 3
+    }
+  },
+  "model_reliability": {
+    "local": {
+      "error_calls": 1,
+      "prompt_tokens": 42064,
+      "completion_tokens": 3964
+    },
+    "cloud": {
+      "error_calls": 4,
+      "prompt_tokens": 52736,
+      "completion_tokens": 14952
+    }
+  },
+  "language_pair_oracle_quality": 0.8111111111111111,
+  "oracle_note": "Gold-informed local/cloud upper bound without tools; not an executable router and not equal access to tool policies"
+}

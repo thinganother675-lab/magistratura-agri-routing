@@ -1,0 +1,354 @@
+{
+  "status": "CANDIDATE_AUDIT_DATA_BLOCKED_NOT_FROZEN_NOT_RUN",
+  "created_utc": "2026-10-03T05:00:43.907506+00:00",
+  "purpose": "Source acquisition/schema/group/overlap only; no human gold, final split, scoring or model inference",
+  "review40": "Not imported or used for development; no review40 file read by this script",
+  "old_comparison": {
+    "files": [
+      {
+        "path": "data/benchmark.jsonl",
+        "sha256": "03ce1fd188fbd46d2a69fed37ac0f773be3008a814b93c6d646ed8c6aa30e3ca",
+        "records": 360,
+        "question_fields": 360,
+        "unique_normalized_questions": 240,
+        "unique_urls": 4
+      },
+      {
+        "path": "data/versions/benchmark_v0.1.jsonl",
+        "sha256": "981776c966d778c59efb7384edf88ae2670f2da1222a08faa0b795315d466279",
+        "records": 360,
+        "question_fields": 360,
+        "unique_normalized_questions": 240,
+        "unique_urls": 4
+      },
+      {
+        "path": "data/home_dev_bilingual_20261001.jsonl",
+        "sha256": "387854df81eef3b9e998c9327571700c295a923d059f697183d26fc072247f6b",
+        "records": 12,
+        "question_fields": 12,
+        "unique_normalized_questions": 12,
+        "unique_urls": 1
+      },
+      {
+        "path": "data/home_holdout_20261001.jsonl",
+        "sha256": "3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03",
+        "records": 150,
+        "question_fields": 150,
+        "unique_normalized_questions": 96,
+        "unique_urls": 7
+      },
+      {
+        "path": "data/raw/agxqa/annotations.json",
+        "sha256": "f230aa6aee8897a95e167e7c558e025e5b02d2661bab20ecd399654c540b5640",
+        "records": 1,
+        "question_fields": 570,
+        "unique_normalized_questions": 565,
+        "unique_urls": 4
+      },
+      {
+        "path": "data/home_holdout_20261001_sources.json",
+        "sha256": "cee18b0a44fbd93d50ae84072f6afef9e0ceb5516ae6caecaa96a66150866abd",
+        "records": 1,
+        "question_fields": 0,
+        "unique_normalized_questions": 0,
+        "unique_urls": 8
+      },
+      {
+        "path": ".runtime/20261002_170443Z_21722066_dataset_literature/agxqa_train.jsonl",
+        "sha256": "72da2aaa34d90ce32f28c6d461f258dc9ec712f0af8ff3b5041ceb1528817d85",
+        "records": 1503,
+        "question_fields": 1503,
+        "unique_normalized_questions": 1474,
+        "unique_urls": 69
+      },
+      {
+        "path": ".runtime/20261002_170443Z_21722066_dataset_literature/agxqa_validation.jsonl",
+        "sha256": "386181aa34e6b71faa3474868008cc7b8bed7143da0218f22e546cdfc4ebc583",
+        "records": 353,
+        "question_fields": 353,
+        "unique_normalized_questions": 352,
+        "unique_urls": 37
+      },
+      {
+        "path": ".runtime/20261002_170443Z_21722066_dataset_literature/agxqa_test.jsonl",
+        "status": "NOT_VALID_JSON_EXCLUDED",
+        "sha256": "a93f2bb7c5d18f96b6aa63f2c9ed89617bcf0f9d313631b0b1eb412971758a3f"
+      },
+      {
+        "path": ".runtime/20261002_170443Z_21722066_dataset_literature/agxqa_test_main.jsonl",
+        "sha256": "505fa18e7d7e7b6f86f090ae8c1172d5fd29ba5f6845a82107eb49df59c32a8b",
+        "records": 330,
+        "question_fields": 330,
+        "unique_normalized_questions": 327,
+        "unique_urls": 42
+      }
+    ],
+    "unique_normalized_questions": 2412,
+    "unique_urls": 80,
+    "method": "NFKC/casefold word normalization exact; word-set Jaccard>=0.8 for >=5-token questions; conservative URL diagnostic",
+    "limits": "No semantic/paraphrase/cross-language overlap guarantee; no model-pretraining contamination audit"
+  },
+  "ilri": {
+    "source": "https://data.mel.cgiar.org/dataset.xhtml?persistentId=hdl:20.500.11766.1/FK2/6U4UAI",
+    "metadata_api": "https://data.mel.cgiar.org/api/datasets/:persistentId/?persistentId=hdl:20.500.11766.1/FK2/6U4UAI",
+    "version": "4.0",
+    "release_time": "2026-04-16T16:41:05Z",
+    "license": {
+      "name": "CC-BY-4.0",
+      "uri": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "iconUri": "https://licensebuttons.net/l/by/4.0/88x31.png"
+    },
+    "local_file": ".runtime/new_sources_20261003/ilri_all598.csv",
+    "sha256": "95ce974a5ccb7767a1054551011e8f1111b28bc87334d29ae46a5d0a0d13ae41",
+    "md5": "86389d50542d621da01d3f35517723dc",
+    "official_md5_matches": true,
+    "bytes": 200717,
+    "schema": [
+      "team",
+      "persona",
+      "topic",
+      "question",
+      "answer",
+      "sources",
+      "team_answering"
+    ],
+    "rows": 598,
+    "nonmissing_by_column": {
+      "team": 598,
+      "persona": 598,
+      "topic": 598,
+      "question": 598,
+      "answer": 312,
+      "sources": 125,
+      "team_answering": 313
+    },
+    "unique_normalized_questions": 525,
+    "duplicate_question_groups": 62,
+    "duplicate_extra_rows": 73,
+    "duplicate_groups_with_different_nonmissing_answers": 48,
+    "unique_nonmissing_normalized_answers": 303,
+    "repeated_answer_groups": 9,
+    "team_counts": {
+      "Twiga": 109,
+      "Borana": 103,
+      "Livestock bots": 108,
+      "Mazingira": 85,
+      "Nyama choma": 86,
+      "Simba": 107
+    },
+    "persona_counts": {
+      "researcher": 122,
+      "smallholder farmer": 229,
+      "business investor": 73,
+      "policy maker": 103,
+      "extension agent": 71
+    },
+    "topic_counts": {
+      "GHG emission factors": 18,
+      "access to financial resources": 20,
+      "access to livestock markets and livelihoods": 22,
+      "access to pasture, water and livestock infrastructure": 21,
+      "adaptation and resilience to climate change impacts": 24,
+      "animal diseases and epidemiology": 21,
+      "animal movement licensing": 16,
+      "artificial insemination": 25,
+      "better breed selection": 14,
+      "biosecurity and disease prevention": 34,
+      "climate change and resilience": 25,
+      "climate change forecast": 15,
+      "data privacy": 22,
+      "digital public infrastructure": 14,
+      "early warning for droughts and floods": 15,
+      "estrus detection in dairy cattle": 11,
+      "farm business plans and records": 13,
+      "future foods opportunities": 5,
+      "gender considerations in food systems": 6,
+      "improved fodder production for sustainable livestock productivity and environment": 13,
+      "insurance subsidy": 15,
+      "livestock trade in Horn of Africa": 19,
+      "marketing and processing (adding value)": 24,
+      "mastitis prevention": 19,
+      "milk yield": 25,
+      "mobile and extension services": 15,
+      "natural supplements for livestock growth": 10,
+      "peace building mechanisms in rangelands": 9,
+      "rangeland restoration": 15,
+      "reproduction - breeding success": 13,
+      "safety of livestock vaccines": 18,
+      "successful and efficient housing for livestock - animal welfare": 10,
+      "use of indigenous knowledge": 12,
+      "vaccine strategies and access": 9,
+      "why livestock matters": 16,
+      "youth access to livestock business opportunities": 15
+    },
+    "source_cells_nonmissing": 125,
+    "unique_exact_nonmissing_source_cells": 91,
+    "rows_with_parseable_source_url": 94,
+    "unique_source_urls": 76,
+    "collection_events": 1,
+    "collection_group": "ILRI_NAIROBI_HACKATHON_20250609",
+    "evidence_components": 51,
+    "evidence_component_sizes": [
+      540,
+      3,
+      3,
+      2,
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "evidence_component_method": "Connected components of exact normalized question/shared URL/shared normalized non-URL citation; all unreferenced rows one unknown-source bucket; independence not certified",
+    "overlap": {
+      "exact_old_question_groups": 0,
+      "near_old_question_groups_jaccard_ge_08": 0,
+      "shared_exact_canonical_source_urls": 0,
+      "exact_matches": [],
+      "near_matches": [],
+      "shared_urls": []
+    },
+    "scientific_companion": {
+      "status": "NO_PEER_REVIEWED_COMPANION_VERIFIED",
+      "declared_related_publication": "CGIAR 2025 AgriLLM news article; not a scientific paper"
+    },
+    "gold_status": "Crowdsourced answers are candidate evidence; neither NA nor omitted answers establishes gold ASK/ABSTAIN; new human adjudication required",
+    "language": "English only; Russian paired translations and adequacy have not been created/validated"
+  },
+  "mendeley": {
+    "source": "https://data.mendeley.com/datasets/xxzm838jn8/1",
+    "doi": "10.17632/xxzm838jn8.1",
+    "title": "A Comprehensive Multilingual Dataset of Farmers' Queries and Expert Advisories for LLM and RAG-Driven Agricultural Chatbots",
+    "version": 1,
+    "publication_date": "2026-07-03",
+    "license_declared": "CC BY 4.0",
+    "status": "METADATA_ONLY_DATA_DOWNLOAD_BLOCKED_HTTP_403",
+    "observed_rows": null,
+    "depositor_claimed_rows": 29982,
+    "depositor_claimed_rows_per_language": {
+      "en": 9994,
+      "bn": 9994,
+      "zh": 9994
+    },
+    "depositor_claimed_schema": [
+      "id",
+      "question",
+      "answer",
+      "category",
+      "language",
+      "q_length",
+      "a_length"
+    ],
+    "depositor_claimed_splits": {
+      "train": 20987,
+      "validation": 4497,
+      "test": 4498
+    },
+    "split_method_declared": "Stratified by language; 70/15/15 random_state=42; no document or translation-family grouping shown",
+    "download_attempts": [
+      {
+        "url": "https://data.mendeley.com/datasets/xxzm838jn8/1",
+        "http_status": 403
+      },
+      {
+        "url": "https://data.mendeley.com/public-api/datasets/xxzm838jn8/versions/1/files",
+        "http_status": 403
+      },
+      {
+        "url": "https://data.mendeley.com/public-api/datasets/xxzm838jn8/versions/1",
+        "http_status": 403
+      }
+    ],
+    "groups_count": null,
+    "overlap_with_old": "NOT_MEASURED_FILES_UNAVAILABLE",
+    "translation_family_leakage": "PLAUSIBLE_RISK_NOT_MEASURED; synchronized multilingual rows plus row-wise split; regroup before use",
+    "scientific_companion": {
+      "status": "NO_COMPANION_SCIENTIFIC_PAPER_VERIFIED"
+    },
+    "gold_status": "Expert verification is depositor claim; protocol/annotator evidence not independently verified"
+  },
+  "reference_only": [
+    {
+      "id": "NOAA_GHCND",
+      "url": "https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf",
+      "status": "REFERENCE_ONLY_RIGHTS_FOR_SELECTED_DATA_UNVERIFIED",
+      "observed_samples": 0,
+      "group_count": null,
+      "license_note": "Official documentation p1 contains WMO/non-US commercial redistribution caveats; cannot call all GHCND public domain",
+      "source_group_rule": "station/source-stream plus contiguous time block; not one independent row per day",
+      "scientific_companion": {
+        "title": "An Overview of the Global Historical Climatology Network-Daily Database",
+        "authors": [
+          "Matthew J. Menne",
+          "Imke Durre",
+          "Russell S. Vose",
+          "Byron E. Gleason",
+          "Tamara G. Houston"
+        ],
+        "year": 2012,
+        "journal": "Journal of Atmospheric and Oceanic Technology",
+        "volume": 29,
+        "issue": 7,
+        "pages": "897-910",
+        "doi": "10.1175/JTECH-D-11-00103.1",
+        "primary_url": "https://journals.ametsoc.org/abstract/journals/atot/29/7/jtech-d-11-00103_1.xml",
+        "reading_status": "ABSTRACT_READ_METADATA_VERIFIED",
+        "full_text_read": false
+      }
+    },
+    {
+      "id": "NRCS_CPS449_2020",
+      "url": "https://www.nrcs.usda.gov/sites/default/files/2022-09/Irrigation_Water_Management_449_CPS_9_2020.pdf",
+      "status": "REFERENCE_ONLY_DOCUMENT_LICENSE_UNVERIFIED",
+      "observed_samples": 0,
+      "group_count": 1,
+      "group_count_meaning": "one document candidate; no gold task sample authored",
+      "source_group_rule": "entire CPS449 document, including translations and derived paraphrases",
+      "old_source_document_overlap": "Different document from USDA_NRCS_soil_health_cropland; shared institution/topic not proof of independence",
+      "scientific_companion": "Technical standard, not peer-reviewed scientific paper",
+      "currency_note": "September2020 national PDF; current state FOTG version not verified"
+    }
+  ]
+}

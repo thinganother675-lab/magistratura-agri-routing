@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-10-02T17:06:23.884260+00:00",
+  "credential_source": "existing configured Git Credential Manager",
+  "credential_values_or_fingerprints_persisted": false,
+  "target": "Apartman36/magistratura-agri-routing",
+  "identity": "Apartman36",
+  "repository": {
+    "full_name": "Apartman36/magistratura-agri-routing",
+    "html_url": "https://github.com/Apartman36/magistratura-agri-routing",
+    "private": true,
+    "visibility": "private",
+    "default_branch": "main",
+    "size": 0,
+    "empty": null,
+    "permissions": {
+      "admin": true,
+      "maintain": true,
+      "push": true,
+      "triage": true,
+      "pull": true
+    }
+  },
+  "status": "PRIVATE_VERIFIED",
+  "git_global_config_changed": false,
+  "creation_requested": true,
+  "credential_fill_exit_code": 0,
+  "identity_http_status": 200,
+  "repository_http_status": 200,
+  "create_http_status": 201,
+  "remote_branch_http_status": 409,
+  "remote_branch_sha": null
+}

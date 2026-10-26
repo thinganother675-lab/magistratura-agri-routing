@@ -1,0 +1,22 @@
+{
+  "pz": 9,
+  "attempt_started_at": "2026-10-21T15:12:13+03:00",
+  "verified_at": "2026-10-21T15:13:52+03:00",
+  "submitted_at_sdo": "2026-10-21T15:15:00+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93660",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ09_Сарычев_ДЭ39-26.docx",
+      "sha256": "f7f11d58179bef151ee291e5acb509ec5065422d63f1688102943df5542cf998",
+      "bytes": 102388
+    }
+  ],
+  "sha256_verified": true,
+  "status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "file_uploaded": true,
+  "save_clicked": true,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ09_20261021_submitted.jpg",
+  "clock_note": "Часы СДО немного опережают проверенные часы.",
+  "errors": []
+}

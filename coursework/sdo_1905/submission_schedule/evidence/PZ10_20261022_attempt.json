@@ -1,0 +1,20 @@
+{
+  "pz": 10,
+  "at": "2026-10-22T11:17:06+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93661",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ10_Сарычев_ДЭ39-26.docx",
+      "sha256": "cb453a60b365cc13cf318c7a195aac18c8228861fe26f169dcff138643dc1bf8",
+      "bytes": 101507
+    }
+  ],
+  "sha256_verified": true,
+  "status": "blocked_login_missing",
+  "reason": "В 11:16 МСК окно 10:23–10:38 прошло; страница входа открыта, но поле пароля пустое. Вход и загрузка не выполнялись.",
+  "file_uploaded": false,
+  "save_clicked": false,
+  "login_clicked": false,
+  "screenshot": null,
+  "prior_attempt": "Автоматическая проверка одобрения браузерного нажатия завершилась ошибкой лимита; действие не выполнялось."
+}

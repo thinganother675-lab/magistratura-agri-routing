@@ -1,0 +1,141 @@
+{
+  "status": "APPEND_ONLY_SEGMENT_EVIDENCE",
+  "created_utc": "2026-10-02T04:54:17.473807+00:00",
+  "helper_sha256": "c765aaca5f273178e6d966dd596c3907a33f437074d12093f3da161257306ca6",
+  "run": "results\\20261002_043909Z_5d0044d9_final",
+  "manifest_state": "running",
+  "raw_rows": 30,
+  "unique_sample_policy_pairs": 30,
+  "first_sample_index": 0,
+  "complete_sample_cases": 6,
+  "measured_cases_by_policy": {
+    "local": 6,
+    "hybrid": 6,
+    "offline": 6,
+    "tool_cloud": 6,
+    "cloud": 6
+  },
+  "finished_calls": {
+    "local": 10,
+    "cloud": 12
+  },
+  "attempt_baseline": {
+    "local": 0,
+    "cloud": 0
+  },
+  "all_started_attempts_finished": true,
+  "source_sha256": {
+    "manifest.json": "b157f071c4eb364e27f1acf9431c862785f2c113eff5c3d4a59bb38d1ce6800c",
+    "protocol_copy.json": "32263441f8d049aba7f5de5b0fbd76917a002e08a2b9191184cc472811ff24cf",
+    "raw_decisions.jsonl": "7545afd390092c318e96f36cb333382a3657e224c2b4a1e23017b31bc0c1c29e",
+    "attempts.jsonl": "f3b293ce24262fbfe4f7566feb7902f3489c0229d10c3a0638018d7e90413d51",
+    "schedule.json": "acb52487363ffbb6662bd5d535785640aa0ad0542ac132f7fe1d89accf73890d",
+    "resources.json": "fbb26164cbc517e3f7e00ca6c3cbdb070cf1af1c5c2fce2150967a64637e71e3",
+    "manifest.tmp": "a3d730cee935305c5606892e71170445543d427f8468ec7da040e9ce9895a77e"
+  },
+  "resource_summary": {
+    "vram_mib_peak_sampled_total": 13598.0,
+    "ram_gib_peak_sampled_system_used": 24.325820922851562,
+    "samples": 202,
+    "first_sample_utc": "2026-10-02T04:39:09.857908+00:00",
+    "last_sample_utc": "2026-10-02T04:41:00.586225+00:00",
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "resource_poll_errors": null,
+    "poll_error_log_status": "UNKNOWN: not persisted in interrupted manifest"
+  },
+  "protocol_serialization": {
+    "raw_copy_sha256": "32263441f8d049aba7f5de5b0fbd76917a002e08a2b9191184cc472811ff24cf",
+    "frozen_protocol_sha256": "795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c",
+    "exact_raw_copy": false,
+    "normalized_copy_sha256": "795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c",
+    "scope": "Only proven CRLF to LF serialization is accepted; all frozen JSON content remains byte-identical after newline normalization"
+  },
+  "cold_load_wall_s": 14.77836000000002,
+  "started_utc": "2026-10-02T04:39:09.822869+00:00",
+  "finished_utc": null,
+  "local_load_metadata": {
+    "actual_offloaded_layers": "UNKNOWN",
+    "preflight_headroom": {
+      "ram_available_gib": 21.924224853515625,
+      "gpu_free_mib": 15405.0
+    },
+    "headroom_before_load": {
+      "ram_available_gib": 21.909900665283203,
+      "gpu_free_mib": 15405.0
+    },
+    "headroom_latest": {
+      "ram_available_gib": 7.713470458984375,
+      "gpu_free_mib": 2691.0
+    },
+    "cold_load_wall_s": 14.77836000000002,
+    "load_success": true,
+    "own_instance_id": "home-final-05e5c5ec-gemma26",
+    "native_model_metadata": {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gemma-4-26b-a4b-it",
+      "display_name": "Gemma 4 26B A4B Instruct UD",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "IQ4_NL_XL",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 16847892149,
+      "params_string": "26B-A4B",
+      "loaded_instances": [
+        {
+          "id": "home-final-05e5c5ec-gemma26",
+          "config": {
+            "context_length": 4096,
+            "eval_batch_size": 2048,
+            "physical_batch_size": 512,
+            "parallel": 1,
+            "flash_attention": true,
+            "context_checkpoints": 32,
+            "reasoning_budget_message": "",
+            "speculative_draft_mtp": false,
+            "speculative_draft_simple": false,
+            "speculative_draft_model": "",
+            "speculative_draft_max_tokens": 3,
+            "speculative_draft_min_tokens": 0,
+            "speculative_draft_min_continue_probability": 0,
+            "num_experts": 8,
+            "offload_kv_cache_to_gpu": true
+          }
+        }
+      ],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    "actual_load_config": {
+      "context_length": 4096,
+      "eval_batch_size": 2048,
+      "physical_batch_size": 512,
+      "parallel": 1,
+      "flash_attention": true,
+      "context_checkpoints": 32,
+      "reasoning_budget_message": "",
+      "speculative_draft_mtp": false,
+      "speculative_draft_simple": false,
+      "speculative_draft_model": "",
+      "speculative_draft_max_tokens": 3,
+      "speculative_draft_min_tokens": 0,
+      "speculative_draft_min_continue_probability": 0,
+      "num_experts": 8,
+      "offload_kv_cache_to_gpu": true
+    }
+  },
+  "manifest_tmp_is_evidence_only": "Any stale .tmp counter is excluded; only matching finished HTTP events and raw traces establish incurred calls"
+}

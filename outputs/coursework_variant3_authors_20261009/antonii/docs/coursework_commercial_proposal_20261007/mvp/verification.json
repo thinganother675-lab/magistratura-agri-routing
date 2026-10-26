@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-07",
+  "target": "http://127.0.0.1:8094",
+  "tests": {
+    "irrigation": 24,
+    "existing_calculations_and_statistics": 68,
+    "total": 92,
+    "result": "passed"
+  },
+  "browser": {
+    "demo": true,
+    "dry_scenario": true,
+    "csv_upload": true,
+    "negative_net_effect": true,
+    "json_download_matches_python": true,
+    "csv_download_matches_report": true,
+    "journal_rows": 36,
+    "mobile_width": 390,
+    "mobile_overflow": false,
+    "console_errors": 0
+  },
+  "source_sha256": {
+    "src/agro_route/irrigation_mvp.py": "874e2eec0648b99e4df3312722b3c94eff17194b10128c44436bfbf4bcc736f2",
+    "src/agro_route/irrigation_web.py": "39f42cfc1e6c276d4466cf6e4f7a2f2a2af9d396198b3f006dfc37afa03f3a88",
+    "src/agro_route/static/irrigation.html": "1f05a6d8c7a39b53bc13c2ef5d0acdd96dd8c52dfaa611ebad6dbcafb6d435ef",
+    "scripts/serve_irrigation_mvp.py": "451c9851566a03f6f005eaeaa01524a500853c5936af77f0c4bf1246256694d5",
+    "scripts/start_irrigation_mvp.ps1": "b928746f66384efb95c4b5b25d33f4d19f5d9d5d1b21fd2eebcc01b4e99d2b5c",
+    "tests/test_irrigation_mvp.py": "ddbda81768709555007d307b851ff5c28146bed6b5af752e44a2fc333fbc57a1"
+  },
+  "limitations": [
+    "synthetic demonstration",
+    "policy effects are bucket simulations",
+    "no yield model",
+    "no real farm validation",
+    "no full historical experiment rerun"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "pz": 1,
+  "attempt_started_at": "2026-10-16T13:07:05+03:00",
+  "finished_at": "2026-10-16T13:10:22.092273+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+  "files": [
+    "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ01_Сарычев_ДЭ39-26.docx"
+  ],
+  "sha256_verified": true,
+  "identity": "Антоний Сарычев",
+  "outcome": "blocked_upload_widget",
+  "sdo_status": "Ответы на задание еще не представлены",
+  "reason": "Файловое поле остаётся на «Загрузка…», кнопка «Добавить...» невидима и недоступна. Одна перезагрузка пустой формы не помогла.",
+  "file_transmitted": false,
+  "save_or_submit_clicked": false,
+  "form_cancelled": true,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ01_20261016_not_submitted.jpg",
+  "blocked_widget_screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ01_20261016_upload_blocked.jpg"
+}

@@ -1,0 +1,56 @@
+{
+  "human_review": false,
+  "revision": "9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c",
+  "splits": {
+    "train": {
+      "rows": 1503,
+      "source_groups": 76,
+      "unique_contexts": 374,
+      "duplicate_questions": 29,
+      "old570_exact_question_overlaps": 426,
+      "old570_context_overlaps": 154,
+      "old570_id_overlaps": 427,
+      "source_disjoint_from_train_and_validation_and_old_context_candidates": 0
+    },
+    "validation": {
+      "rows": 353,
+      "source_groups": 41,
+      "unique_contexts": 159,
+      "duplicate_questions": 1,
+      "old570_exact_question_overlaps": 60,
+      "old570_context_overlaps": 23,
+      "old570_id_overlaps": 60,
+      "source_disjoint_from_train_and_validation_and_old_context_candidates": 0
+    },
+    "test": {
+      "rows": 330,
+      "source_groups": 46,
+      "unique_contexts": 183,
+      "duplicate_questions": 3,
+      "old570_exact_question_overlaps": 78,
+      "old570_context_overlaps": 25,
+      "old570_id_overlaps": 78,
+      "source_disjoint_from_train_and_validation_and_old_context_candidates": 1
+    }
+  },
+  "pair_overlaps": {
+    "train_validation": {
+      "source_groups": 38,
+      "exact_contexts": 148,
+      "normalized_questions": 5
+    },
+    "train_test": {
+      "source_groups": 44,
+      "exact_contexts": 170,
+      "normalized_questions": 4
+    },
+    "validation_test": {
+      "source_groups": 39,
+      "exact_contexts": 125,
+      "normalized_questions": 3
+    }
+  },
+  "fresh_test_row_ids": [
+    "1183042"
+  ]
+}

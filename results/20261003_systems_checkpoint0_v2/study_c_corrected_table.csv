@@ -1,0 +1,4 @@
+﻿model_key,status,source_runs,n,complete_correct,action_correct,real_tool_n,real_tool_correct,numeric_n,numeric_correct,rounding_1e4_correct,missing_or_invalid_n,missing_or_invalid_correct,unit_conversion_n,unit_conversion_correct,errors,parse_invalid,latency_p50_s,latency_p95_s,simulated_executor_replay_correct,simulated_executor_replay_n,live_model_tool_calls
+deterministic_tools,DEV,20261003_systems_study_c_v1,27,27,27,26,26,16,16,16,10,10,3,3,0,0,3.0499999411404133e-05,4.019999469164759e-05,26,26,0
+qwen3.5-9b,DEV,20261003_systems_study_c_v1,27,7,19,26,17,16,1,1,10,5,3,0,0,0,1.2537497000012081,1.757607939999434,17,26,0
+qwen3.8-27b,DEV,20261003_systems_checkpoint0_v2,27,15,26,26,25,16,6,6,10,8,3,1,0,0,9.042941299994709,10.371452669994323,25,26,0

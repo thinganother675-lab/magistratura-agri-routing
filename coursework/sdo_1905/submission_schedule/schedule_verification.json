@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-16T11:23:21.734792+03:00",
+  "practicals": 14,
+  "days": 5,
+  "max_per_day": 3,
+  "within_day_intervals_minutes": [
+    158,
+    94,
+    148,
+    165,
+    168,
+    138,
+    162,
+    172,
+    166
+  ],
+  "files": 15,
+  "all_file_hashes_match": true,
+  "old_schedule_replaced": true,
+  "automations": [
+    {
+      "automation_id": "1905-1-6-16-19",
+      "date": "2026-10-16",
+      "status": "ACTIVE",
+      "times": [
+        "2026-10-16T13:05:00+03:00",
+        "2026-10-16T15:43:00+03:00",
+        "2026-10-16T17:17:00+03:00"
+      ],
+      "matches": true
+    },
+    {
+      "automation_id": "1905-4-6-19",
+      "date": "2026-10-19",
+      "status": "ACTIVE",
+      "times": [
+        "2026-10-19T12:23:00+03:00",
+        "2026-10-19T14:51:00+03:00",
+        "2026-10-19T17:36:00+03:00"
+      ],
+      "matches": true
+    },
+    {
+      "automation_id": "1905-7-9-20",
+      "date": "2026-10-20",
+      "status": "ACTIVE",
+      "times": [
+        "2026-10-20T12:41:00+03:00",
+        "2026-10-20T15:29:00+03:00",
+        "2026-10-20T17:47:00+03:00"
+      ],
+      "matches": true
+    },
+    {
+      "automation_id": "1905-10-12-21",
+      "date": "2026-10-21",
+      "status": "ACTIVE",
+      "times": [
+        "2026-10-21T11:37:00+03:00",
+        "2026-10-21T14:19:00+03:00",
+        "2026-10-21T17:11:00+03:00"
+      ],
+      "matches": true
+    },
+    {
+      "automation_id": "1905-13-14-22",
+      "date": "2026-10-22",
+      "status": "ACTIVE",
+      "times": [
+        "2026-10-22T13:17:00+03:00",
+        "2026-10-22T16:03:00+03:00"
+      ],
+      "matches": true
+    }
+  ],
+  "submissions_performed": 0
+}

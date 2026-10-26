@@ -1,0 +1,486 @@
+{
+  "created_utc": "2026-10-02T17:04:43.162935+00:00",
+  "status": "SOURCE_ACQUISITION",
+  "result_dir": "results\\20261002_170443Z_21722066_dataset_literature",
+  "cache_dir": ".runtime\\20261002_170443Z_21722066_dataset_literature",
+  "sources": [
+    {
+      "label": "kaggle_list",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/list?search=sarych-lm-instruction-lite-eval-suite-and-research",
+      "retrieved_utc": "2026-10-02T17:04:43.238021+00:00",
+      "http_status": 200,
+      "final_url": "https://www.kaggle.com/api/v1/datasets/list?search=sarych-lm-instruction-lite-eval-suite-and-research",
+      "content_type": "application/json",
+      "byte_length": 3532,
+      "sha256": "2c5edb4c15c3121d4bcc055a8cb182ae7deac49fc4fabef25eaa8eda9046310b",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\kaggle_list.json"
+    },
+    {
+      "label": "kaggle_metadata",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/view/antoniisarychev/sarych-lm-instruction-lite-eval-suite-and-research",
+      "retrieved_utc": "2026-10-02T17:04:46.290947+00:00",
+      "http_status": 200,
+      "final_url": "https://www.kaggle.com/api/v1/datasets/view/antoniisarychev/sarych-lm-instruction-lite-eval-suite-and-research",
+      "content_type": "application/json",
+      "byte_length": 6706,
+      "sha256": "26db4b6957e58c36f173c174ee10918db65955df9bc707370cfc9f349918ae0c",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\kaggle_metadata.json"
+    },
+    {
+      "label": "arxiv_blog",
+      "requested_url": "https://blog.arxiv.org/",
+      "retrieved_utc": "2026-10-02T17:04:47.401149+00:00",
+      "http_status": 200,
+      "final_url": "https://blog.arxiv.org/",
+      "content_type": "text/html; charset=UTF-8",
+      "byte_length": 121374,
+      "sha256": "83a1d48bec7613483865ceaf8c6c560cba6dabd785f152ccdf5f92469b6e80d9",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_blog.txt",
+      "discovered_links": []
+    },
+    {
+      "label": "arxiv_content_types",
+      "requested_url": "https://info.arxiv.org/help/policies/content-types.html",
+      "retrieved_utc": "2026-10-02T17:04:50.658818+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/policies/content-types.html",
+      "content_type": "text/html",
+      "byte_length": 87599,
+      "sha256": "397895751b317549c20f4b2dd27a96a5219aa75fa7ba641216750ab3687af9cb",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_content_types.txt"
+    },
+    {
+      "label": "arxiv_moderation",
+      "requested_url": "https://info.arxiv.org/help/moderation/index.html",
+      "retrieved_utc": "2026-10-02T17:04:53.523779+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/moderation/index.html",
+      "content_type": "text/html",
+      "byte_length": 100201,
+      "sha256": "8edf40032789a317cbe854e6e1c0ac5ee15b19d1c80659271bc30d410e9a4169",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_moderation.txt"
+    },
+    {
+      "label": "arxiv_endorsement",
+      "requested_url": "https://info.arxiv.org/help/endorsement.html",
+      "retrieved_utc": "2026-10-02T17:04:54.851566+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/endorsement.html",
+      "content_type": "text/html",
+      "byte_length": 90958,
+      "sha256": "5703744b115f84c0582e536e2a33c9be1d5ac0e365670ba030ae3f07e054bcd8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_endorsement.txt"
+    },
+    {
+      "label": "arxiv_license",
+      "requested_url": "https://info.arxiv.org/help/license/index.html",
+      "retrieved_utc": "2026-10-02T17:04:56.167829+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/license/index.html",
+      "content_type": "text/html",
+      "byte_length": 101170,
+      "sha256": "75ef3cef1c13bad8b20c52aee64d2608eac6c20638b71ec8ab2b6f22c84f233d",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_license.txt"
+    },
+    {
+      "label": "arxiv_submit",
+      "requested_url": "https://info.arxiv.org/help/submit/index.html",
+      "retrieved_utc": "2026-10-02T17:04:57.113960+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/submit/index.html",
+      "content_type": "text/html",
+      "byte_length": 97068,
+      "sha256": "258de567e54f965ce1491b3feadee5d66b0a7739aba21ffd59d8ae5b32fefe34",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_submit.txt"
+    },
+    {
+      "label": "arxiv_tex",
+      "requested_url": "https://info.arxiv.org/help/submit_tex.html",
+      "retrieved_utc": "2026-10-02T17:04:58.498991+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/submit_tex.html",
+      "content_type": "text/html",
+      "byte_length": 116566,
+      "sha256": "bb1d6e7e410c09769718ff9e365425bc0bbbab0b30328c9b734ce7eca36a0251",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_tex.txt"
+    },
+    {
+      "label": "arxiv_metadata",
+      "requested_url": "https://info.arxiv.org/help/prep.html",
+      "retrieved_utc": "2026-10-02T17:04:59.454723+00:00",
+      "http_status": 200,
+      "final_url": "https://info.arxiv.org/help/prep.html",
+      "content_type": "text/html",
+      "byte_length": 118524,
+      "sha256": "3734c272d6ecd0c593e06f02b054e80cf6a908adb4447d541d1334006b48653b",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_metadata.txt"
+    },
+    {
+      "label": "awm_leaderboard",
+      "requested_url": "https://dsiweb.cse.msu.edu/awm-bench/",
+      "retrieved_utc": "2026-10-02T17:05:00.512178+00:00",
+      "http_status": 200,
+      "final_url": "https://dsiweb.cse.msu.edu/awm-bench/",
+      "content_type": "text/html",
+      "byte_length": 212,
+      "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\awm_leaderboard.txt",
+      "discovered_links": []
+    },
+    {
+      "label": "agxqa_metadata",
+      "requested_url": "https://huggingface.co/api/datasets/msu-ceco/agxqa_v1",
+      "retrieved_utc": "2026-10-02T17:05:02.107817+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/api/datasets/msu-ceco/agxqa_v1",
+      "content_type": "application/json; charset=utf-8",
+      "byte_length": 2690,
+      "sha256": "e12d21554c53e7967f299054013f96bfa8c0b2e817248c6ff494e6502cc8f468",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_metadata.json"
+    },
+    {
+      "label": "agxqa_readme",
+      "requested_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/raw/main/README.md",
+      "retrieved_utc": "2026-10-02T17:05:03.637726+00:00",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/raw/main/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "byte_length": 11641,
+      "sha256": "74610af38666a7f590361356e58616dcec73229d36b4f3524f9e85f91fe6d011",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_readme.txt"
+    },
+    {
+      "label": "kaggle_archive",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/download/antoniisarychev/sarych-lm-instruction-lite-eval-suite-and-research?datasetVersionNumber=1",
+      "retrieved_utc": "2026-10-02T17:06:39.563790+00:00",
+      "http_status": 200,
+      "content_type": "application/zip",
+      "byte_length": 35762,
+      "sha256": "2af3ff37efc81e1b8c178a3cfa80fbcb0825269324d8024dfa4730412639bab6",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\kaggle_archive.zip",
+      "archive_files": [
+        {
+          "name": "DATASET_CARD.md",
+          "bytes": 3734,
+          "compressed_bytes": 1588
+        },
+        {
+          "name": "LIMITATIONS.md",
+          "bytes": 821,
+          "compressed_bytes": 424
+        },
+        {
+          "name": "MISSING_ARTIFACTS.md",
+          "bytes": 6744,
+          "compressed_bytes": 998
+        },
+        {
+          "name": "README.md",
+          "bytes": 4618,
+          "compressed_bytes": 1899
+        },
+        {
+          "name": "data/eval/v0_4_instruction_lite_expected.json",
+          "bytes": 5349,
+          "compressed_bytes": 1483
+        },
+        {
+          "name": "data/eval/v0_4_instruction_lite_prompts.jsonl",
+          "bytes": 10529,
+          "compressed_bytes": 2715
+        },
+        {
+          "name": "data/tooling_reference/audit_sft_build_filter.py",
+          "bytes": 21460,
+          "compressed_bytes": 5274
+        },
+        {
+          "name": "data/tooling_reference/compare_instruction_lite_evals.py",
+          "bytes": 4733,
+          "compressed_bytes": 1608
+        },
+        {
+          "name": "data/tooling_reference/eval_instruction_lite_v0_4.py",
+          "bytes": 33833,
+          "compressed_bytes": 8291
+        },
+        {
+          "name": "data/tooling_reference/run_instruction_lite_factory.py",
+          "bytes": 4564,
+          "compressed_bytes": 1191
+        },
+        {
+          "name": "dataset-metadata.json",
+          "bytes": 231,
+          "compressed_bytes": 171
+        },
+        {
+          "name": "docs/dev_guide_excerpt.md",
+          "bytes": 2491,
+          "compressed_bytes": 885
+        },
+        {
+          "name": "docs/instruction_lite_factory_v0_4.md",
+          "bytes": 5845,
+          "compressed_bytes": 2044
+        },
+        {
+          "name": "docs/instruction_lite_v0_4.md",
+          "bytes": 7624,
+          "compressed_bytes": 2794
+        },
+        {
+          "name": "schema/eval_prompt_schema.json",
+          "bytes": 993,
+          "compressed_bytes": 352
+        },
+        {
+          "name": "schema/instruction_lite_schema.json",
+          "bytes": 1375,
+          "compressed_bytes": 426
+        },
+        {
+          "name": "schema/strict_eval_schema.json",
+          "bytes": 1469,
+          "compressed_bytes": 495
+        }
+      ]
+    },
+    {
+      "label": "kaggle_files",
+      "requested_url": "https://www.kaggle.com/api/v1/datasets/list/antoniisarychev/sarych-lm-instruction-lite-eval-suite-and-research",
+      "retrieved_utc": "2026-10-02T17:06:46.219255+00:00",
+      "http_status": 200,
+      "content_type": "application/json",
+      "byte_length": 6281,
+      "sha256": "1d6105f1039a37873e3bd87d0393e31c40e695687d5bbaf0ea3be21ced0affde",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\kaggle_files.json"
+    },
+    {
+      "label": "arxiv_cs_search",
+      "requested_url": "https://blog.arxiv.org/wp-json/wp/v2/posts?search=review%20articles&per_page=10",
+      "retrieved_utc": "2026-10-02T17:06:46.858724+00:00",
+      "http_status": 200,
+      "content_type": "application/json; charset=UTF-8",
+      "byte_length": 83815,
+      "sha256": "8d27c3b579329a35427d72d918a533af1fc51c6e1a80f2858fa05a4eefecca5b",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_cs_search.json",
+      "posts": [
+        {
+          "date": "2025-10-31T09:41:09",
+          "link": "https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/",
+          "title": "Attention Authors: Updated Practice for Review Articles and Position Papers in arXiv CS Category"
+        },
+        {
+          "date": "2023-05-01T11:59:04",
+          "link": "https://blog.arxiv.org/2023/05/01/arxiv-welcomes-yoav-artzi-as-associate-faculty-director/",
+          "title": "arXiv welcomes Yoav Artzi as associate faculty director"
+        },
+        {
+          "date": "2022-12-16T14:00:16",
+          "link": "https://blog.arxiv.org/2022/12/16/new-arxivlabs-collaboration-links-author-videos-on-sciencecast-org-to-their-arxiv-papers/",
+          "title": "New arXivLabs collaboration links researchers&#8217; videos on ScienceCast.org to their arXiv papers"
+        },
+        {
+          "date": "2022-05-09T10:30:18",
+          "link": "https://blog.arxiv.org/2022/05/09/professor-ramin-zabih-named-arxiv-faculty-director/",
+          "title": "Professor Ramin Zabih named arXiv faculty director"
+        },
+        {
+          "date": "2022-04-21T16:00:25",
+          "link": "https://blog.arxiv.org/2022/04/21/librarians-gain-new-insights-into-their-researchers-arxiv-usage/",
+          "title": "Librarians gain new insights into their researchers’ arXiv usage"
+        },
+        {
+          "date": "2022-02-21T10:52:03",
+          "link": "https://blog.arxiv.org/2022/02/21/arxiv-articles-as-responsive-web-pages/",
+          "title": "arXiv articles as responsive web pages"
+        },
+        {
+          "date": "2022-01-03T21:38:14",
+          "link": "https://blog.arxiv.org/2022/01/03/two-million-articles-and-counting/",
+          "title": "Two million articles and counting!"
+        },
+        {
+          "date": "2021-02-12T18:11:35",
+          "link": "https://blog.arxiv.org/2021/02/12/restoration-of-the-daily-email-announcement/",
+          "title": "Restoration of the Daily Email Announcement"
+        },
+        {
+          "date": "2021-02-03T14:57:25",
+          "link": "https://blog.arxiv.org/2021/02/03/new-tool-to-visualize-related-articles/",
+          "title": "New tool to visualize related articles"
+        },
+        {
+          "date": "2020-10-22T10:26:08",
+          "link": "https://blog.arxiv.org/2020/10/22/open-access-in-the-covid-19-era-oaweek-panel-discussion/",
+          "title": "Open access in the COVID-19 era: #OAWeek Panel Discussion"
+        }
+      ]
+    },
+    {
+      "label": "awm_app",
+      "requested_url": "https://dsiweb.cse.msu.edu/awm-bench/assets/index.js",
+      "retrieved_utc": "2026-10-02T17:06:49.023667+00:00",
+      "http_status": 200,
+      "content_type": "text/html",
+      "byte_length": 1108,
+      "sha256": "061095b156b672d143b06f75095ef47f509ea9504ef085fc0e7ca59a8b42790a",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\awm_app.txt"
+    },
+    {
+      "label": "agxqa_test",
+      "requested_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/9fb0cf23e082d730819f07f991a845b9a105d7be8/agxqa-test-2024-06-11.jsonl",
+      "retrieved_utc": "2026-10-02T17:14:25.163959+00:00",
+      "http_status": 404,
+      "byte_length": 57,
+      "sha256": "a93f2bb7c5d18f96b6aa63f2c9ed89617bcf0f9d313631b0b1eb412971758a3f",
+      "final_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/9fb0cf23e082d730819f07f991a845b9a105d7be8/agxqa-test-2024-06-11.jsonl",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_test.jsonl"
+    },
+    {
+      "label": "agxqa_test_main",
+      "requested_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/main/agxqa-test-2024-06-11.jsonl",
+      "retrieved_utc": "2026-10-02T17:14:26.511776+00:00",
+      "http_status": 200,
+      "byte_length": 349119,
+      "sha256": "505fa18e7d7e7b6f86f090ae8c1172d5fd29ba5f6845a82107eb49df59c32a8b",
+      "final_url": "https://huggingface.co/api/resolve-cache/datasets/msu-ceco/agxqa_v1/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-test-2024-06-11.jsonl",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_test_main.jsonl"
+    },
+    {
+      "label": "agxqa_train",
+      "requested_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/main/agxqa-train-2024-06-11.jsonl",
+      "retrieved_utc": "2026-10-02T17:14:27.642569+00:00",
+      "http_status": 200,
+      "byte_length": 1587312,
+      "sha256": "72da2aaa34d90ce32f28c6d461f258dc9ec712f0af8ff3b5041ceb1528817d85",
+      "final_url": "https://huggingface.co/api/resolve-cache/datasets/msu-ceco/agxqa_v1/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-train-2024-06-11.jsonl",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_train.jsonl"
+    },
+    {
+      "label": "agxqa_validation",
+      "requested_url": "https://huggingface.co/datasets/msu-ceco/agxqa_v1/resolve/main/agxqa-validation-2024-06-11.jsonl",
+      "retrieved_utc": "2026-10-02T17:14:30.411967+00:00",
+      "http_status": 200,
+      "byte_length": 373698,
+      "sha256": "386181aa34e6b71faa3474868008cc7b8bed7143da0218f22e546cdfc4ebc583",
+      "final_url": "https://huggingface.co/api/resolve-cache/datasets/msu-ceco/agxqa_v1/9fb0cf2a6d03ccfccbd67d5966179b43b5b77e2c/agxqa-validation-2024-06-11.jsonl",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agxqa_validation.jsonl"
+    },
+    {
+      "label": "agrieval_metadata",
+      "requested_url": "https://huggingface.co/api/datasets/PaperHarvester/AgriEval",
+      "retrieved_utc": "2026-10-02T17:14:32.734449+00:00",
+      "http_status": 200,
+      "byte_length": 1368,
+      "sha256": "2ce0fcb233481a943fa571a4652ed21e7ea30c6b562e5ce1c1ec081acce9a250",
+      "final_url": "https://huggingface.co/api/datasets/PaperHarvester/AgriEval",
+      "content_type": "application/json; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agrieval_metadata.json"
+    },
+    {
+      "label": "agrieval_readme",
+      "requested_url": "https://huggingface.co/datasets/PaperHarvester/AgriEval/raw/main/README.md",
+      "retrieved_utc": "2026-10-02T17:14:34.251596+00:00",
+      "http_status": 200,
+      "byte_length": 4133,
+      "sha256": "eeb422982f004983427643435c3594a53d8174e3bc08f6ed74fff716a86d4bae",
+      "final_url": "https://huggingface.co/datasets/PaperHarvester/AgriEval/raw/main/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agrieval_readme.txt"
+    },
+    {
+      "label": "agrieval_multilingual_metadata",
+      "requested_url": "https://huggingface.co/api/datasets/rokayon/AgriEvalCombined",
+      "retrieved_utc": "2026-10-02T17:14:35.582013+00:00",
+      "http_status": 401,
+      "byte_length": 41,
+      "sha256": "65842e3d84e6b7f62a470c85204e80b953bb8f944e9b69813130a9d7f3eaa1d8",
+      "final_url": "https://huggingface.co/api/datasets/rokayon/AgriEvalCombined",
+      "content_type": "application/json; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agrieval_multilingual_metadata.json"
+    },
+    {
+      "label": "agrieval_multilingual_readme",
+      "requested_url": "https://huggingface.co/datasets/rokayon/AgriEvalCombined/raw/main/README.md",
+      "retrieved_utc": "2026-10-02T17:14:36.129940+00:00",
+      "http_status": 401,
+      "byte_length": 29,
+      "sha256": "45b71fe98efe5f530b825dce6f5049d738e9c16869f10be4370ab81a9912d4a6",
+      "final_url": "https://huggingface.co/datasets/rokayon/AgriEvalCombined/raw/main/README.md",
+      "content_type": "text/plain; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\agrieval_multilingual_readme.txt"
+    },
+    {
+      "label": "openmeteo_terms",
+      "requested_url": "https://open-meteo.com/en/terms",
+      "retrieved_utc": "2026-10-02T17:14:36.597066+00:00",
+      "http_status": 200,
+      "byte_length": 37537,
+      "sha256": "a240d115dec46561141d003518dec3feeed99d66b5203f7c1041292961966ea7",
+      "final_url": "https://open-meteo.com/en/terms",
+      "content_type": "text/html; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\openmeteo_terms.txt"
+    },
+    {
+      "label": "openmeteo_docs",
+      "requested_url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "retrieved_utc": "2026-10-02T17:14:38.507093+00:00",
+      "http_status": 200,
+      "byte_length": 357181,
+      "sha256": "2f513748b224fd6f9de2474164a27c62adabd32c39d52e83afe87362702e73e0",
+      "final_url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "content_type": "text/html; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\openmeteo_docs.txt"
+    },
+    {
+      "label": "moscow_era5",
+      "requested_url": "https://archive-api.open-meteo.com/v1/archive?latitude=55.75&longitude=37.62&start_date=2025-05-01&end_date=2025-05-20&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,et0_fao_evapotranspiration&timezone=Europe%2FMoscow&models=era5",
+      "retrieved_utc": "2026-10-02T17:14:39.291007+00:00",
+      "http_status": 200,
+      "byte_length": 1081,
+      "sha256": "818fcc76dbb5756a715d2032db85f6a6ee6acc7e638b89bb8e499a562c05bc50",
+      "final_url": "https://archive-api.open-meteo.com/v1/archive",
+      "content_type": "application/json; charset=utf-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\moscow_era5.json"
+    },
+    {
+      "label": "arxiv_cs_policy",
+      "requested_url": "https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/",
+      "retrieved_utc": "2026-10-02T17:14:41.186241+00:00",
+      "http_status": 200,
+      "byte_length": 129542,
+      "sha256": "87f7ae00d275ec8b7edd4e5948fd4c59c1bc3152cf077ab57c354af63caca7af",
+      "final_url": "https://blog.arxiv.org/2025/10/31/attention-authors-updated-practice-for-review-articles-and-position-papers-in-arxiv-cs-category/",
+      "content_type": "text/html; charset=UTF-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_cs_policy.txt"
+    },
+    {
+      "label": "arxiv_new_rate_policy",
+      "requested_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+      "retrieved_utc": "2026-10-02T17:14:43.792791+00:00",
+      "http_status": 200,
+      "byte_length": 152577,
+      "sha256": "c26e1c6fdbe9828b5eac0c57508e970dfe02ee89fdbc2abf1c4a63a70c05df8c",
+      "final_url": "https://blog.arxiv.org/2026/10/01/updated-rate-limit-policy/",
+      "content_type": "text/html; charset=UTF-8",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_new_rate_policy.txt"
+    },
+    {
+      "label": "arxiv_nonenglish",
+      "requested_url": "https://info.arxiv.org/help/faq/multilang.html",
+      "retrieved_utc": "2026-10-02T17:14:44.783065+00:00",
+      "http_status": 200,
+      "byte_length": 84174,
+      "sha256": "905a47a59a88629ac2d24f2b117d308684263f8d9e0bb442bd8cef87c843d7a4",
+      "final_url": "https://info.arxiv.org/help/faq/multilang.html",
+      "content_type": "text/html",
+      "cache_file": ".runtime\\20261002_170443Z_21722066_dataset_literature\\arxiv_nonenglish.txt"
+    }
+  ]
+}

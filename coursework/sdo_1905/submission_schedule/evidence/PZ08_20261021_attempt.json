@@ -1,0 +1,19 @@
+{
+  "pz": 8,
+  "at": "2026-10-21T12:55:00+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93659",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ08_Сарычев_ДЭ39-26.docx",
+      "sha256": "9a1f99e1d3887d7375f30e8c659ff27537e6375ac1d94a740d27ccd4a23451a6",
+      "bytes": 135783
+    }
+  ],
+  "sha256_verified": true,
+  "status": "blocked_login_rejected",
+  "reason": "После одного нажатия Log in СДО показало Invalid login, please try again.",
+  "file_uploaded": false,
+  "save_clicked": false,
+  "screenshot": null,
+  "screenshot_note": "Конечного статуса отправки нет; форма входа с чувствительными полями не снималась."
+}

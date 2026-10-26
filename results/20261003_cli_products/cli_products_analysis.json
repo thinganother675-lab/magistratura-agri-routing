@@ -1,0 +1,211 @@
+{
+  "run_id": "20261003_cli_products",
+  "status": "SUPPLEMENTARY",
+  "private_test_run": false,
+  "MERA_submissions": 0,
+  "cost_class": "SUBSCRIPTION_INCLUDED",
+  "no_api_keys_forwarded": true,
+  "no_api_credit_purchase": true,
+  "claude": {
+    "baseline_class": "CLAUDE_CODE_PRODUCT_BASELINE",
+    "status": "NOT_RUN_AUTHENTICATION_403",
+    "cli_version": "2.1.288",
+    "displayed_model": "claude-sonnet-5-5",
+    "selected_effort": "medium",
+    "auth_method": "claude.ai",
+    "subscription": "pro",
+    "tools_exposed": [],
+    "mcp_exposed": [],
+    "synthetic_attempts": 2,
+    "synthetic_completed": 0,
+    "dev60_attempts": 0,
+    "accuracy": null,
+    "usage_reported": 0,
+    "no_opus_substitution": true
+  },
+  "codex": {
+    "baseline_class": "CODEX_CLI_PRODUCT_BASELINE",
+    "cli_version": "0.160.0",
+    "execution_status": "COMPLETE",
+    "model_selection": {
+      "selected_model": "gpt-6-luna",
+      "display_name": "GPT-6-Luna",
+      "catalog_provenance": "installed Codex models_cache.json selective noncredential fields inspected20261003; visible list entry",
+      "effort": "medium",
+      "access_verified_by": "four successful subscription-backed explicit-model CLI completions then DEV60",
+      "actual_backend_model_id": null,
+      "limitation": "CLI JSONL does not expose backend model identity or weight revision"
+    },
+    "summary": {
+      "n_expected": 60,
+      "n_attempted": 60,
+      "n_completed": 60,
+      "n_response_received": 60,
+      "n_scored": 59,
+      "attempted_coverage": true,
+      "complete_coverage": true,
+      "strict_em_count": 36,
+      "strict_f1_sum": 43.371428571428574,
+      "strict_set_em": 0.6101694915254238,
+      "strict_set_f1": 0.7351089588377724,
+      "conservative_all_n_em": 0.6,
+      "reference_issues": 1,
+      "invalid_output": 0,
+      "json_contract_failure": 46,
+      "errors": 0,
+      "timeouts": 0,
+      "latency_p50_s": 21.593270099998335,
+      "latency_p95_s": 27.951660034990343,
+      "latency_mean_s": 21.895822156668387,
+      "ttft_p50_s": null,
+      "first_answer_p50_s": null,
+      "client_tps_p50": null,
+      "backend_tps_p50": null,
+      "input_tokens": 510206,
+      "output_tokens": 507,
+      "usage_coverage": 60,
+      "confidence_coverage": 0,
+      "by_domain": {
+        "Ботаника": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.6666666666666666,
+          "strict_set_f1": 0.9206349206349206
+        },
+        "Кормопроизводство и луговодство": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.16666666666666666,
+          "strict_set_f1": 0.42063492063492064
+        },
+        "Мелиоративное земледелие": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.8333333333333334,
+          "strict_set_f1": 0.8333333333333334
+        },
+        "Общая генетика": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.6666666666666666,
+          "strict_set_f1": 0.7777777777777778
+        },
+        "Общее земледелие": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.8333333333333334,
+          "strict_set_f1": 0.8333333333333334
+        },
+        "Основы селекции": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.8333333333333334,
+          "strict_set_f1": 0.9666666666666667
+        },
+        "Растениеводство": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.5,
+          "strict_set_f1": 0.5
+        },
+        "Семеноводство и семеноведение": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.6666666666666666,
+          "strict_set_f1": 0.6666666666666666
+        },
+        "Системы земледелия на различных агроландшафтах": {
+          "n": 6,
+          "n_scored": 6,
+          "reference_issues": 0,
+          "strict_set_em": 0.16666666666666666,
+          "strict_set_f1": 0.5317460317460317
+        },
+        "Технологии возделывания сельскохозяйственных культур": {
+          "n": 6,
+          "n_scored": 5,
+          "reference_issues": 1,
+          "strict_set_em": 0.8,
+          "strict_set_f1": 0.9333333333333333
+        }
+      },
+      "by_answer_cardinality": {
+        "single": {
+          "n": 44,
+          "strict_set_em": 0.6590909090909091,
+          "strict_set_f1": 0.7045454545454546,
+          "predicted_single_n": 41
+        },
+        "multiple": {
+          "n": 15,
+          "strict_set_em": 0.4666666666666667,
+          "strict_set_f1": 0.8247619047619047,
+          "predicted_single_n": 4
+        }
+      }
+    },
+    "tool_calls_n": 0,
+    "harness_confounded": false,
+    "transport_warning_events_n": 360,
+    "product_internal_reconnect_events_n": 240,
+    "cache_read_input_tokens": 427520,
+    "model_backend_identity": "NOT_EXPOSED",
+    "TTFT": null,
+    "generation_tps": null,
+    "json_contract_success_n": 14,
+    "json_contract_enforced_by_product": false,
+    "latency_scope": "new CLI process end-to-end; includes transport recovery; no direct local-backend latency comparison"
+  },
+  "primary_scientific_cloud_baseline_recommendation": "Mercury2.5 direct remains PROVISIONAL_DEV_REFERENCE_NOT_PRIVATE_TEST_READY",
+  "reason_primary": "direct documented API parameters, explicit response model; keep product harness context/effort/cache/transport distinct",
+  "mercury_parent_data": "results/20261003_cloud_budget_only_c1184a27/cloud_development_analysis.json",
+  "mercury_parent_sha256": "05cb2fb86acf698c27ce210ecbca5b94bed5329e9a931deafc44aab9210786aa",
+  "scientific_limits": [
+    "public DEV60 model-selection supplement; no confirmatory claim",
+    "subscription cost is not zero inference cost",
+    "default product system/harness context persists despite repository isolation",
+    "CLI tools absent/disabled where supported and zero observed; hidden harness behavior remains",
+    "effort and output budgeting differ from local models/direct Mercury",
+    "provider hidden training contamination UNKNOWN",
+    "Codex requested model selection verified operationally, backend returned model ID not exposed"
+  ],
+  "official_documentation": [
+    {
+      "url": "https://code.claude.com/docs/en/cli-reference",
+      "supports": "-p, tools empty, strict MCP, safe-mode, JSON/stream JSON, system prompt"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/model-config",
+      "supports": "Sonnet5.5 alias, installed version minimum, effort medium; adaptive reasoning cannot be disabled"
+    },
+    {
+      "url": "https://code.claude.com/docs/en/headless",
+      "supports": "programmatic print usage; client-side cost estimates are not invoice"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+      "supports": "exec, model flag, JSONL, ephemeral, ignore-user-config"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/auth",
+      "supports": "ChatGPT subscription authentication vs API-key metered usage; login status"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-basic",
+      "supports": "web_search disabled, feature shell_tool/apps/memory/hooks toggles"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "supports": "project_doc_max_bytes, developer_instructions; reserved built-in provider IDs cannot be overridden"
+    }
+  ],
+  "documentation_checked_date": "2026-10-03"
+}

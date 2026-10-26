@@ -1,0 +1,25 @@
+{
+  "pz": 7,
+  "submitted_at_sdo": "2026-10-21T10:22:00+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93657",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ07_Сарычев_ДЭ39-26.docx",
+      "sha256": "5026e919eb679d1dc4673ae30c7fed326df8906b6df8c5ba627063b231e2ec2f",
+      "bytes": 87055
+    }
+  ],
+  "sha256_verified": true,
+  "status": "Отправлено для оценивания",
+  "grading_status": "Не оценено",
+  "file_uploaded": true,
+  "save_clicked": true,
+  "login_button_used": true,
+  "screenshot": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\submission_schedule\\evidence\\PZ07_20261021_status.jpg",
+  "errors": [
+    "Дважды не удалось получить скриншот через screenshot(fullPage=True): Unable to capture screenshot."
+  ],
+  "clock_note": "Время СДО сохранено отдельно; её часы ранее опережали часы инструмента.",
+  "verified_at": "2026-10-21T10:20:50+03:00",
+  "screenshot_note": "Полностраничный снимок не сработал; сохранены обычные снимки названия и статуса."
+}

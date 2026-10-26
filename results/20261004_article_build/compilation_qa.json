@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-10-03T22:19:38.686623+00:00",
+  "status": "PASS_LOCAL_COMPILE_AND_ALL_PAGES_VISUAL",
+  "engine": "Tectonic portable 0.17.0 MSVC",
+  "engine_sha256": "99ffcfdbf1ebf8bdda9e791942e3d06aedb12463fddc33f07de6f5211c8bf08d",
+  "documents": {
+    "ru": {
+      "source": "manuscript/russian_resource_20261004.tex",
+      "source_sha256": "115a4176eaa3ab7dfa845a5495b26b222e17bf56945c38dedb54d973ae1294de",
+      "pdf": "manuscript/russian_resource_20261004.pdf",
+      "pdf_sha256": "bcacd875744531c8e1bc1fa73d8baac277c60cfa9675e0ca9c49fddbe875ec0d",
+      "pages": 8,
+      "text_characters": 19221,
+      "selectable_text": true,
+      "all_fonts_embedded": true,
+      "fonts": {
+        "4": {
+          "name": "/IHAIZV+TimesNewRomanPS-BoldMT",
+          "embedded": true
+        },
+        "6": {
+          "name": "/BZIVMZ+TimesNewRomanPSMT",
+          "embedded": true
+        },
+        "47": {
+          "name": "/IXFAWU+TimesNewRomanPS-ItalicMT",
+          "embedded": true
+        }
+      },
+      "metadata": {
+        "/Creator": "LaTeX with hyperref",
+        "/Title": "Ресурсная эффективность локальных языковых моделей в аграрных задачах: сравнение конфигураций 9B и 27B и использование расчётных инструментов",
+        "/Subject": "Working empirical draft; final author consent and license pending",
+        "/Author": "Антоний Сарычев; Денис Шестернин",
+        "/Producer": "xdvipdfmx (0.1)",
+        "/CreationDate": "D:20261003221938-00'00'"
+      },
+      "scientific_references": 19
+    },
+    "en": {
+      "source": "manuscript/english_resource_20261004.tex",
+      "source_sha256": "04b33ce429a7b1a545825d1abafdd44f37e3f974da1fa5eda27186e23701bcfa",
+      "pdf": "manuscript/english_resource_20261004.pdf",
+      "pdf_sha256": "5ca6535ef8e516d7fa4b0c08b3ee1652e685cdb2328d94915f3ad123c0629913",
+      "pages": 7,
+      "text_characters": 26437,
+      "selectable_text": true,
+      "all_fonts_embedded": true,
+      "fonts": {
+        "4": {
+          "name": "/IHAIZV+LMRoman10-Bold",
+          "embedded": true
+        },
+        "5": {
+          "name": "/BZIVMZ+LMRoman10-Regular",
+          "embedded": true
+        },
+        "6": {
+          "name": "/IXFAWU+LMRoman12-Bold",
+          "embedded": true
+        },
+        "33": {
+          "name": "/TQTHRL+LMRoman9-Regular",
+          "embedded": true
+        },
+        "99": {
+          "name": "/YEUUOC+LMRoman9-Italic",
+          "embedded": true
+        }
+      },
+      "metadata": {
+        "/Creator": "LaTeX with hyperref",
+        "/Title": "Resource-Efficient Local Language Models for Agricultural Tasks: A 9B–27B Comparison with Deterministic Tools",
+        "/Subject": "Working empirical draft; final author consent and license pending",
+        "/Author": "Antoniy Sarychev; Denis Shesternin",
+        "/Producer": "xdvipdfmx (0.1)",
+        "/CreationDate": "D:20261003221940-00'00'"
+      },
+      "scientific_references": 19
+    }
+  },
+  "external_submission": "NOT_RUN",
+  "license": "NOT_SELECTED",
+  "visual_review": {
+    "ru": "All eight page PNGs individually inspected at original resolution by GPT-6.1 Sol",
+    "en": "All seven page PNGs individually inspected at original resolution by GPT-6.1 Sol",
+    "root": "Both contact sheets and detailed table/figure pages inspected",
+    "human_review": "NOT_CLAIMED"
+  },
+  "native_codex_compiler": {
+    "status": "PLATFORM_UNAVAILABLE",
+    "diagnostic": "Unable to find standard directories for platform",
+    "sources_open_requested": true,
+    "open_result": "queued",
+    "local_pdf_engine_pass": true
+  }
+}

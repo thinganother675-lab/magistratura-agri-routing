@@ -1,0 +1,178 @@
+{
+  "audit_utc": "2026-10-03T09:24:46.247541+00:00",
+  "audit_kind": "READ_ONLY_INDEPENDENT_NON_TUNED_ANALYTICAL_BASELINES",
+  "status": "DEV",
+  "source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "source_hash_matches_protocol": true,
+  "parser_policy": "STRICT_LATIN_SETS_PRESENTATION_ONLY_NO_GOLD_REPAIR",
+  "uniform_distribution": "All nonempty subsets of the item-specific prompt options, each equally probable; exact exhaustive analytical expectation, not model calls or sampled random seeds",
+  "all_options_policy": "Choose every item-specific prompt option, independent of reference; reference is used only to score DEV",
+  "computed": {
+    "dev60": {
+      "n_expected": 60,
+      "n_scored": 59,
+      "reference_issues": 1,
+      "all_options_em_count": 0,
+      "all_options_em": 0.0,
+      "all_options_f1": 0.4678100618778585,
+      "uniform_nonempty_subset_expected_em": 0.056530153523045815,
+      "uniform_nonempty_subset_expected_f1": 0.36580798619591615,
+      "by_original_domain": {
+        "Ботаника": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5703703703703703,
+          "uniform_nonempty_subset_expected_em": 0.06093189964157706,
+          "uniform_nonempty_subset_expected_f1": 0.42820447175285886
+        },
+        "Кормопроизводство и луговодство": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.43333333333333335,
+          "uniform_nonempty_subset_expected_em": 0.05246629117596859,
+          "uniform_nonempty_subset_expected_f1": 0.34467067352628034
+        },
+        "Мелиоративное земледелие": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.36984126984126986,
+          "uniform_nonempty_subset_expected_em": 0.05246629117596859,
+          "uniform_nonempty_subset_expected_f1": 0.3044527344988175
+        },
+        "Общая генетика": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5027777777777778,
+          "uniform_nonempty_subset_expected_em": 0.06093189964157706,
+          "uniform_nonempty_subset_expected_f1": 0.388594470046083
+        },
+        "Общее земледелие": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4583333333333333,
+          "uniform_nonempty_subset_expected_em": 0.06093189964157706,
+          "uniform_nonempty_subset_expected_f1": 0.3608166922683052
+        },
+        "Основы селекции": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5333333333333333,
+          "uniform_nonempty_subset_expected_em": 0.06666666666666667,
+          "uniform_nonempty_subset_expected_f1": 0.41
+        },
+        "Растениеводство": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4142857142857143,
+          "uniform_nonempty_subset_expected_em": 0.03253114866018092,
+          "uniform_nonempty_subset_expected_f1": 0.3260255420368068
+        },
+        "Семеноводство и семеноведение": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.47500000000000003,
+          "uniform_nonempty_subset_expected_em": 0.05246629117596859,
+          "uniform_nonempty_subset_expected_f1": 0.37080913368931806
+        },
+        "Системы земледелия на различных агроландшафтах": {
+          "n_scored": 6,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5095238095238095,
+          "uniform_nonempty_subset_expected_em": 0.06093189964157706,
+          "uniform_nonempty_subset_expected_f1": 0.3913159242191501
+        },
+        "Технологии возделывания сельскохозяйственных культур": {
+          "n_scored": 5,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4,
+          "uniform_nonempty_subset_expected_em": 0.06666666666666667,
+          "uniform_nonempty_subset_expected_f1": 0.3266666666666667
+        }
+      }
+    },
+    "dev293": {
+      "n_expected": 293,
+      "n_scored": 289,
+      "reference_issues": 4,
+      "all_options_em_count": 0,
+      "all_options_em": 0.0,
+      "all_options_f1": 0.472862086010875,
+      "uniform_nonempty_subset_expected_em": 0.05947265577180685,
+      "uniform_nonempty_subset_expected_f1": 0.3697766650973518,
+      "by_original_domain": {
+        "Ботаника": {
+          "n_scored": 25,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5668888888888889,
+          "uniform_nonempty_subset_expected_em": 0.06253763440860215,
+          "uniform_nonempty_subset_expected_f1": 0.42669472606246805
+        },
+        "Кормопроизводство и луговодство": {
+          "n_scored": 30,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4845238095238095,
+          "uniform_nonempty_subset_expected_em": 0.059839563065369514,
+          "uniform_nonempty_subset_expected_f1": 0.3772833654369753
+        },
+        "Мелиоративное земледелие": {
+          "n_scored": 30,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.426984126984127,
+          "uniform_nonempty_subset_expected_em": 0.06382659156852705,
+          "uniform_nonempty_subset_expected_f1": 0.342350864360081
+        },
+        "Общая генетика": {
+          "n_scored": 28,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5083333333333333,
+          "uniform_nonempty_subset_expected_em": 0.06052227342549923,
+          "uniform_nonempty_subset_expected_f1": 0.3923941189378978
+        },
+        "Общее земледелие": {
+          "n_scored": 30,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4411111111111111,
+          "uniform_nonempty_subset_expected_em": 0.06437275985663082,
+          "uniform_nonempty_subset_expected_f1": 0.35143778801843323
+        },
+        "Основы селекции": {
+          "n_scored": 29,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.5394909688013136,
+          "uniform_nonempty_subset_expected_em": 0.06548016314423434,
+          "uniform_nonempty_subset_expected_f1": 0.41126913501774465
+        },
+        "Растениеводство": {
+          "n_scored": 35,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.4005442176870748,
+          "uniform_nonempty_subset_expected_em": 0.03974837246726647,
+          "uniform_nonempty_subset_expected_f1": 0.3216163748312092
+        },
+        "Семеноводство и семеноведение": {
+          "n_scored": 24,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.512962962962963,
+          "uniform_nonempty_subset_expected_em": 0.055000383016639044,
+          "uniform_nonempty_subset_expected_f1": 0.3940603714431583
+        },
+        "Системы земледелия на различных агроландшафтах": {
+          "n_scored": 30,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.471031746031746,
+          "uniform_nonempty_subset_expected_em": 0.06207885304659498,
+          "uniform_nonempty_subset_expected_f1": 0.36882590885816696
+        },
+        "Технологии возделывания сельскохозяйственных культур": {
+          "n_scored": 28,
+          "all_options_em": 0.0,
+          "all_options_f1": 0.41309523809523807,
+          "uniform_nonempty_subset_expected_em": 0.06485260770975057,
+          "uniform_nonempty_subset_expected_f1": 0.33476028506640754
+        }
+      }
+    }
+  },
+  "model_calls": 0,
+  "private_text_or_model_output_written": false
+}

@@ -1,0 +1,8 @@
+
+Model: minicpm5-1b
+Context Length: 4 096
+GPU Offload: 100%
+Estimated GPU Memory:   1.20 GiB
+Estimated Total Memory: 1.20 GiB
+
+Estimate: This model may be loaded based on your resource guardrails settings.

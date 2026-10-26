@@ -1,0 +1,107 @@
+{
+  "started_at": "2026-10-16T07:16:31Z",
+  "date_local": "2026-10-16",
+  "timezone": "Asia/Riyadh",
+  "status": "completed",
+  "case": "K01-K10",
+  "d": 3,
+  "student": "Сарычев Антоний Евгеньевич",
+  "group": "ДЭ 39-26",
+  "variant": "B",
+  "submission_authorized": false,
+  "model_identity": "User-specified label; not independently verified",
+  "errors": [
+    {
+      "id": "E01",
+      "category": "environment",
+      "finding": "Word/Excel COM denied in sandbox",
+      "resolution": "Authorized host execution; Word/Excel 16.0 worked",
+      "status": "resolved"
+    },
+    {
+      "id": "E02",
+      "category": "environment",
+      "finding": "Dependency junction denied in sandbox",
+      "resolution": "Authorized creation of local junction to bundled dependencies, no install",
+      "status": "resolved"
+    },
+    {
+      "id": "E03",
+      "category": "environment",
+      "finding": "Packaged DOCX renderer lacked soffice; temporary-profile cleanup also denied",
+      "resolution": "Native hidden Word export and bundled PDFium rendering used",
+      "status": "resolved"
+    },
+    {
+      "id": "E04",
+      "category": "lookup",
+      "finding": "Two optional skill reference paths and Office registry probe did not resolve",
+      "resolution": "Read available skill files and probed actual Office COM successfully",
+      "status": "resolved"
+    },
+    {
+      "id": "A01",
+      "category": "authoring",
+      "finding": "First diagram patch did not match source context",
+      "resolution": "No file changed by failed patch; read exact lines and reapplied",
+      "status": "resolved"
+    },
+    {
+      "id": "C01",
+      "category": "content",
+      "finding": "First PZ08 draft included only TO-BE diagram",
+      "resolution": "Added separate AS-IS flow diagram",
+      "status": "resolved"
+    },
+    {
+      "id": "C02",
+      "category": "content",
+      "finding": "First PZ10 map emphasized repeat only",
+      "resolution": "Added confirmation channel, unresolved cases and requirement-domain matrix",
+      "status": "resolved"
+    },
+    {
+      "id": "C03",
+      "category": "content",
+      "finding": "PZ12 limits paragraph repeated",
+      "resolution": "Removed duplicate; retained one explicit limit statement and actual test protocol",
+      "status": "resolved"
+    },
+    {
+      "id": "C04",
+      "category": "source_inconsistency",
+      "finding": "Author sample JSON omitted separate unit field required by its contract",
+      "resolution": "Our payload explicitly includes unit=kg; disclosed in PZ08/PZ14",
+      "status": "resolved"
+    },
+    {
+      "id": "L01",
+      "category": "layout",
+      "finding": "Sources isolated on near-empty ending pages; some diagrams had excess canvas whitespace",
+      "resolution": "Cropped diagram canvases, reflowed citations and grouped new-condition sections",
+      "status": "resolved"
+    },
+    {
+      "id": "L02",
+      "category": "layout",
+      "finding": "PZ14 diagram dimensions needed original aspect ratio after canvas crop",
+      "resolution": "Derived PDF image height from PNG dimensions",
+      "status": "resolved"
+    }
+  ],
+  "finished_at": "2026-10-16T07:39:34.679786+00:00",
+  "elapsed_seconds": 1383.68,
+  "elapsed_definition": "Wall clock of this implementation turn including reading, file creation, tools, repairs and verification. Earlier course download/summaries excluded.",
+  "practicals_completed": 14,
+  "submission_files": 15,
+  "rendered_pages": 38,
+  "native_excel_cases": 12,
+  "native_excel_failures": 0,
+  "independent_oracle_failures": 0,
+  "submission_performed": false,
+  "subagents_used": false,
+  "grading": "No external grade assigned",
+  "content_revisions": 4,
+  "visual_layout_revisions": 3,
+  "unresolved_issues": []
+}

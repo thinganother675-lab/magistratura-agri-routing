@@ -1,0 +1,26 @@
+{
+  "status": "DEV_READINESS_INSPECTION",
+  "created_utc": "2026-10-03T09:35:34.446912+00:00",
+  "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "protocol_path": "experiments/mera_private_test_protocol_draft_20261003.json",
+  "protocol_sha256": "e9062f5fc1a944117b7de8d586b1805668d264634ef00a0a1f90a1e278f31a7d",
+  "guard_source_sha256": "28cdd96f2772f98750cfb9b1998cc758ef07848243fa5fd2b52a20024d63da28",
+  "private_test_run": false,
+  "test_gold_dependency": false,
+  "MERA_PRIVATE_TEST_READY": false,
+  "blockers": [
+    "PROTOCOL_NOT_FROZEN",
+    "PRIMARY_CLOUD_SELECTED",
+    "ROUTING_RULE_FROZEN",
+    "SERVER_SCORING_RESOLVED",
+    "OFFICIAL_WORKFLOW_VERIFIED",
+    "CONTENT_RIGHTS_UNDERSTOOD",
+    "ANTONIY_APPROVAL",
+    "DENIS_APPROVAL",
+    "EXPLICIT_SUBMISSION_AUTHORIZATION"
+  ],
+  "inference_permitted": false,
+  "submission_permitted": false,
+  "inspection_only": true,
+  "human_identity_verified_by_code": false
+}

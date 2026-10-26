@@ -1,0 +1,128 @@
+{
+  "checked_at": "2026-10-16T11:27:48.005286+03:00",
+  "files_checked": 15,
+  "practicals": 14,
+  "all_pass": true,
+  "checks": [
+    {
+      "pz": 1,
+      "file": "PZ01_Сарычев_ДЭ39-26.docx",
+      "bytes": 92405,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 2,
+      "file": "PZ02_Сарычев_ДЭ39-26.docx",
+      "bytes": 96494,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 3,
+      "file": "PZ03_Сарычев_ДЭ39-26.docx",
+      "bytes": 76506,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 4,
+      "file": "PZ04_Сарычев_ДЭ39-26.docx",
+      "bytes": 70133,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 5,
+      "file": "PZ05_Сарычев_ДЭ39-26.docx",
+      "bytes": 128505,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 6,
+      "file": "PZ06_Сарычев_ДЭ39-26.docx",
+      "bytes": 82813,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 7,
+      "file": "PZ07_Сарычев_ДЭ39-26.docx",
+      "bytes": 87055,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 8,
+      "file": "PZ08_Сарычев_ДЭ39-26.docx",
+      "bytes": 135783,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 9,
+      "file": "PZ09_Сарычев_ДЭ39-26.docx",
+      "bytes": 102388,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 10,
+      "file": "PZ10_Сарычев_ДЭ39-26.docx",
+      "bytes": 101507,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 11,
+      "file": "PZ11_Сарычев_ДЭ39-26.docx",
+      "bytes": 102248,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 12,
+      "file": "PZ12_Сарычев_ДЭ39-26.docx",
+      "bytes": 144527,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 12,
+      "file": "PZ12_Model_Сарычев.xlsx",
+      "bytes": 16052,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 13,
+      "file": "PZ13_Сарычев_ДЭ39-26.docx",
+      "bytes": 84345,
+      "sha256_match": true,
+      "readable": true
+    },
+    {
+      "pz": 14,
+      "file": "PZ14_Сарычев_ДЭ39-26.pdf",
+      "bytes": 198420,
+      "sha256_match": true,
+      "readable": true
+    }
+  ],
+  "first_slot": "2026-10-16T13:05:00+03:00",
+  "automation_status": "ACTIVE",
+  "browser_check": {
+    "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93649",
+    "method": "Свежая навигация разрешённым браузерным инструментом; DOM страницы задания",
+    "identity": "Антоний Сарычев",
+    "login_active": true,
+    "assignment": "Практическое задание 1",
+    "due": "22 декабря 2026, 00:00",
+    "submission_status": "Ответы на задание еще не представлены",
+    "add_submission_button_visible": true
+  },
+  "uploads_performed": 0,
+  "submission_controls_clicked": false,
+  "limitation": "Вход подтверждён на момент проверки; перед отправкой нужен повторный контроль сессии."
+}

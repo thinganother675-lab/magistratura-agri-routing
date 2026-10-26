@@ -1,0 +1,18 @@
+{
+  "audit_utc": "2026-10-03T09:49:08.868978+00:00",
+  "audit_kind": "READ_ONLY_SOFTWARE_CLAIMS_AND_ORIGINAL_EXECUTION_ARCHIVE_RECHECK",
+  "status": "DEV",
+  "checks": {
+    "all7_software_claims_unique_match_value_hash_status_commit": true,
+    "original11_execution_archive_index_unchanged": true,
+    "original11_execution_archive_sources_still_match": true
+  },
+  "all_checks_pass": true,
+  "software_claims_path": "manuscript/CLAIM_PROVENANCE_SCREEN_SOFTWARE_20261003.json",
+  "software_claims_sha256": "3e2c7c6406ac3e855b9370155dace781006ce9934f1937e976cd66eb034cc269",
+  "claim_count": 7,
+  "claim_mismatches": [],
+  "software_values_previously_independently_counted_from_junit": true,
+  "git_commands_or_model_calls": 0,
+  "private_text_or_model_output_written": false
+}

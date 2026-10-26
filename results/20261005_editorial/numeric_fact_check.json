@@ -1,0 +1,239 @@
+{
+  "number_set_comparison": {
+    "ru": {
+      "new_numbers_not_in_audited_text": [
+        "13",
+        "14"
+      ],
+      "audited_numbers_absent_from_edit": [
+        "7.8",
+        "12.13",
+        "14.15",
+        "16.17",
+        "2026"
+      ]
+    },
+    "en": {
+      "new_numbers_not_in_audited_text": [
+        "13",
+        "14"
+      ],
+      "audited_numbers_absent_from_edit": [
+        "3.1",
+        "3.2",
+        "3.3",
+        "78",
+        "1213",
+        "1415",
+        "1617"
+      ]
+    },
+    "ru_r2": {
+      "new_numbers_not_in_audited_text": [
+        "13",
+        "14",
+        "75"
+      ],
+      "audited_numbers_absent_from_edit": [
+        "0.75",
+        "7.8",
+        "12.13",
+        "14.15",
+        "16.17",
+        "2026"
+      ]
+    }
+  },
+  "claims": [
+    {
+      "claim": "Qwen9 DEV293 EM",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Qwen27 DEV293 EM",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "EM percentages",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "EM difference",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "bootstrap EM interval",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "paired outcomes",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "relative ratio not accuracy",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "conservative 293",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "native40 EM Q9",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "native40 EM Q27",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "native40 p50 Q9",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "native40 p50 Q27",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "whole-GPU peaks",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "whole-RAM peak Q27",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "answer drift",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C Q9",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C Q27",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C numeric",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C nonnumeric Q9",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C executions",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Study C summed p50 Q27 tools",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": true
+    },
+    {
+      "claim": "Mercury DEV60",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    },
+    {
+      "claim": "routing replay",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    },
+    {
+      "claim": "Codex CLI",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    },
+    {
+      "claim": "OpenRouter hosted Qwen27",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    },
+    {
+      "claim": "HOME150",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    },
+    {
+      "claim": "Jev",
+      "ru_present": true,
+      "ru_r2_present": true,
+      "en_present": true,
+      "evidence_match": "covered by 20261004 claim_to_evidence (text unchanged)"
+    }
+  ],
+  "status": "PASS"
+}

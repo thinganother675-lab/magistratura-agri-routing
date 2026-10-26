@@ -1,0 +1,115 @@
+{
+  "run_id": "20261003_cli_products_effort10",
+  "status": "SUPPLEMENTARY",
+  "private_test_run": false,
+  "selected_model": "gpt-6-luna",
+  "CLI_version": "0.160.0",
+  "subscription_cost": "SUBSCRIPTION_INCLUDED",
+  "new_calls": 22,
+  "new_DEV_calls": 20,
+  "synthetic_calls": 2,
+  "reused_medium_calls": 10,
+  "selection_method": "first existing DEV60 item per discipline in immutable DEV60 order; exactly10 disciplines; no correctness, labels or output used",
+  "profiles": {
+    "low": {
+      "attempted": 10,
+      "completed": 10,
+      "n_scored": 9,
+      "EM_count": 4,
+      "EM": 0.4444444444444444,
+      "F1": 0.6285714285714286,
+      "p50_s": 17.30819715000689,
+      "p95_s": 20.352210265005123,
+      "mean_s": 17.27089432000066,
+      "invalid_option_sets": 0,
+      "JSON_contract_failures": 7,
+      "input_tokens": 85065,
+      "output_tokens": 73,
+      "observed_tool_calls": 0,
+      "raw_usage_aggregate": {
+        "n": 10,
+        "exposed_reasoning_tokens": 0,
+        "cache_read_input_tokens": 58880,
+        "cache_write_input_tokens": 0,
+        "reasoning_semantics": "product-reported field; zero does not prove absent hidden reasoning; output token total already includes reported reasoning"
+      }
+    },
+    "medium": {
+      "attempted": 10,
+      "completed": 10,
+      "n_scored": 9,
+      "EM_count": 3,
+      "EM": 0.3333333333333333,
+      "F1": 0.5915343915343915,
+      "p50_s": 20.282998050010065,
+      "p95_s": 27.619024245005857,
+      "mean_s": 21.924858310003764,
+      "invalid_option_sets": 0,
+      "JSON_contract_failures": 6,
+      "input_tokens": 85065,
+      "output_tokens": 80,
+      "observed_tool_calls": 0,
+      "raw_usage_aggregate": {
+        "n": 10,
+        "exposed_reasoning_tokens": 0,
+        "cache_read_input_tokens": 69376,
+        "cache_write_input_tokens": 0,
+        "reasoning_semantics": "product-reported field; zero does not prove absent hidden reasoning; output token total already includes reported reasoning"
+      }
+    },
+    "high": {
+      "attempted": 10,
+      "completed": 10,
+      "n_scored": 9,
+      "EM_count": 5,
+      "EM": 0.5555555555555556,
+      "F1": 0.7396825396825397,
+      "p50_s": 21.06247854998219,
+      "p95_s": 23.92678924499487,
+      "mean_s": 21.061230849992718,
+      "invalid_option_sets": 0,
+      "JSON_contract_failures": 2,
+      "input_tokens": 85065,
+      "output_tokens": 860,
+      "observed_tool_calls": 0,
+      "raw_usage_aggregate": {
+        "n": 10,
+        "exposed_reasoning_tokens": 744,
+        "cache_read_input_tokens": 42496,
+        "cache_write_input_tokens": 0,
+        "reasoning_semantics": "product-reported field; zero does not prove absent hidden reasoning; output token total already includes reported reasoning"
+      }
+    }
+  },
+  "paired_EM_counts": {
+    "low_vs_medium": {
+      "n": 9,
+      "both_correct": 3,
+      "medium_only_correct": 0,
+      "extra_effort_only_correct": 1,
+      "both_wrong": 5
+    },
+    "high_vs_medium": {
+      "n": 9,
+      "both_correct": 3,
+      "medium_only_correct": 0,
+      "extra_effort_only_correct": 2,
+      "both_wrong": 4
+    }
+  },
+  "unsupported_efforts": [
+    "instant",
+    "none"
+  ],
+  "benchmark_content_in_this_summary": false,
+  "source_analysis": "results/20261003_cli_products/cli_effort10_analysis.json",
+  "source_analysis_sha256": "df034de8dff9a455d78e94e1d2ce74b68b19f57fb305a54b15941c23e82acb1c",
+  "plan_sha256": "fd35828af10b6f05fbb7354744f9ae1f260f6c7fb777e094f3cbe27e81f162a3",
+  "recommendation": {
+    "retained_completed_DEV60_profile": "medium",
+    "next_quality_focused_product_candidate": "high",
+    "reason": "high rescued2 of9 scored cases with0 regressions vsmedium and fewer JSON failures; retain original full60 medium score, high larger-set accuracy unknown",
+    "resource_caveat": "high reports substantially more output/reasoning tokens; latency dominated by fresh-process stock transport recovery",
+    "limits": "single stochastic pass,n9; neither effort optimum nor causal superiority established; no full60 high extension thissession"
+  }
+}

@@ -1,0 +1,2 @@
+# Experimental hashes depend on the saved bytes; avoid newline conversion.
+* -text

@@ -1,0 +1,5 @@
+﻿criterion,value,threshold,operator,status
+quality_noninferiority,-0.1764795552367288,-0.05,>=,FAIL
+additional_cloud_call_reduction,0.5333333333333333,0.1,>=,PASS
+critical_error_difference,0.0,0,<=,PASS
+hybrid_p95_latency,1.5606822049999882,10,<=,PASS

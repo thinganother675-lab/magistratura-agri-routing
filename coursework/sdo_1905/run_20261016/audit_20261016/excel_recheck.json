@@ -1,0 +1,647 @@
+{
+  "tests": [
+    {
+      "finished_at": "2026-10-16T07:54:25.5022152+00:00",
+      "flags": [
+        0,
+        0,
+        0
+      ],
+      "inputs": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M02",
+          "OP-102",
+          200.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ],
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M08",
+          "OP-106",
+          80.0,
+          "confirmed"
+        ],
+        [
+          "M09",
+          "OP-107",
+          30.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 8,
+      "expected_sum": 810,
+      "pass": true,
+      "id": "T0",
+      "started_at": "2026-10-16T07:54:24.9083817+00:00",
+      "actual_count": 8,
+      "label": "Контрпример 0/0/0",
+      "actual_sum": 810.0,
+      "decisions": [
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 100.0,
+          "operation": "OP-101",
+          "message": "M01"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 200.0,
+          "operation": "OP-102",
+          "message": "M02"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 100.0,
+          "operation": "OP-101",
+          "message": "M03"
+        },
+        {
+          "action": "НЕДОПУСТИМО",
+          "contribution": 0.0,
+          "operation": "OP-103",
+          "message": "M04"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 50.0,
+          "operation": "OP-104",
+          "message": "M05"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 120.0,
+          "operation": "OP-105",
+          "message": "M06"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 130.0,
+          "operation": "OP-105",
+          "message": "M07"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 80.0,
+          "operation": "OP-106",
+          "message": "M08"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 30.0,
+          "operation": "OP-107",
+          "message": "M09"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:25.5782015+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 1,
+      "expected_sum": 100,
+      "pass": true,
+      "id": "T1",
+      "started_at": "2026-10-16T07:54:25.5054655+00:00",
+      "actual_count": 1,
+      "label": "Одна корректная M01",
+      "actual_sum": 100.0,
+      "decisions": [
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 100.0,
+          "operation": "OP-101",
+          "message": "M01"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:25.6790906+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 1,
+      "expected_sum": 100,
+      "pass": true,
+      "id": "T2",
+      "started_at": "2026-10-16T07:54:25.5782156+00:00",
+      "actual_count": 1,
+      "label": "M01 и точный повтор M03",
+      "actual_sum": 100.0,
+      "decisions": [
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 100.0,
+          "operation": "OP-101",
+          "message": "M01"
+        },
+        {
+          "action": "ПОВТОР",
+          "contribution": 0.0,
+          "operation": "OP-101",
+          "message": "M03"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:25.7416887+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T3",
+      "started_at": "2026-10-16T07:54:25.6791018+00:00",
+      "actual_count": 0,
+      "label": "M04 с пустым количеством",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "НЕДОПУСТИМО",
+          "contribution": 0.0,
+          "operation": "OP-103",
+          "message": "M04"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:25.8479584+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T4",
+      "started_at": "2026-10-16T07:54:25.7417126+00:00",
+      "actual_count": 0,
+      "label": "M06/M07 с конфликтом",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M06"
+        },
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M07"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.2211169+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M02",
+          "OP-102",
+          200.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ],
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M08",
+          "OP-106",
+          80.0,
+          "confirmed"
+        ],
+        [
+          "M09",
+          "OP-107",
+          30.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 4,
+      "expected_sum": 410,
+      "pass": true,
+      "id": "T5",
+      "started_at": "2026-10-16T07:54:25.8479792+00:00",
+      "actual_count": 4,
+      "label": "Все девять строк",
+      "actual_sum": 410.0,
+      "decisions": [
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 100.0,
+          "operation": "OP-101",
+          "message": "M01"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 200.0,
+          "operation": "OP-102",
+          "message": "M02"
+        },
+        {
+          "action": "ПОВТОР",
+          "contribution": 0.0,
+          "operation": "OP-101",
+          "message": "M03"
+        },
+        {
+          "action": "НЕДОПУСТИМО",
+          "contribution": 0.0,
+          "operation": "OP-103",
+          "message": "M04"
+        },
+        {
+          "action": "ОЖИДАНИЕ",
+          "contribution": 0.0,
+          "operation": "OP-104",
+          "message": "M05"
+        },
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M06"
+        },
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M07"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 80.0,
+          "operation": "OP-106",
+          "message": "M08"
+        },
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 30.0,
+          "operation": "OP-107",
+          "message": "M09"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.3264216+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M-P1",
+          "OP-P",
+          130,
+          "confirmed"
+        ],
+        [
+          "M-P2",
+          "OP-P",
+          130,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 1,
+      "expected_sum": 130,
+      "pass": true,
+      "id": "T6",
+      "started_at": "2026-10-16T07:54:26.2211375+00:00",
+      "actual_count": 1,
+      "label": "d=3, q=130, точный повтор",
+      "actual_sum": 130.0,
+      "decisions": [
+        {
+          "action": "УЧЕСТЬ",
+          "contribution": 130.0,
+          "operation": "OP-P",
+          "message": "M-P1"
+        },
+        {
+          "action": "ПОВТОР",
+          "contribution": 0.0,
+          "operation": "OP-P",
+          "message": "M-P2"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.4072055+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M-P1",
+          "OP-P",
+          130,
+          "confirmed"
+        ],
+        [
+          "M-P2",
+          "OP-P",
+          140,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T7",
+      "started_at": "2026-10-16T07:54:26.3264419+00:00",
+      "actual_count": 0,
+      "label": "d=3, q=130, конфликт 130/140",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-P",
+          "message": "M-P1"
+        },
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-P",
+          "message": "M-P2"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.6935172+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T8",
+      "started_at": "2026-10-16T07:54:26.4072971+00:00",
+      "actual_count": 0,
+      "label": "Конфликт в обратном порядке",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M07"
+        },
+        {
+          "action": "КОНФЛИКТ",
+          "contribution": 0.0,
+          "operation": "OP-105",
+          "message": "M06"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.8108097+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M-X",
+          "OP-X",
+          10,
+          "unknown"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T9",
+      "started_at": "2026-10-16T07:54:26.6935341+00:00",
+      "actual_count": 0,
+      "label": "Неизвестный статус",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "НЕДОПУСТИМО",
+          "contribution": 0.0,
+          "operation": "OP-X",
+          "message": "M-X"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.8801280+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M-X",
+          "OP-X",
+          0,
+          "confirmed"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T10",
+      "started_at": "2026-10-16T07:54:26.8108338+00:00",
+      "actual_count": 0,
+      "label": "Нулевое количество",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "НЕДОПУСТИМО",
+          "contribution": 0.0,
+          "operation": "OP-X",
+          "message": "M-X"
+        }
+      ]
+    },
+    {
+      "finished_at": "2026-10-16T07:54:26.9474140+00:00",
+      "flags": [
+        1,
+        1,
+        1
+      ],
+      "inputs": [
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ]
+      ],
+      "expected_count": 0,
+      "expected_sum": 0,
+      "pass": true,
+      "id": "T11",
+      "started_at": "2026-10-16T07:54:26.8801429+00:00",
+      "actual_count": 0,
+      "label": "Ожидание подтверждения",
+      "actual_sum": 0.0,
+      "decisions": [
+        {
+          "action": "ОЖИДАНИЕ",
+          "contribution": 0.0,
+          "operation": "OP-104",
+          "message": "M05"
+        }
+      ]
+    }
+  ],
+  "build": 14332.0,
+  "agent": "Codex",
+  "version": "16.0",
+  "engine": "Microsoft Excel",
+  "expectations_recorded_at": "2026-10-16T10:20:05.580857+03:00",
+  "all_pass": true,
+  "d": 3
+}

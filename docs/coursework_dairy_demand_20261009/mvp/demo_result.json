@@ -1,0 +1,942 @@
+{
+  "products": [
+    {
+      "sku": "milk",
+      "name": "Молоко",
+      "days": 730,
+      "alpha": 1.0,
+      "method": "ridge",
+      "train_end": "2026-04-01",
+      "validation_end": "2026-06-27",
+      "test_start": "2026-06-28",
+      "tuning": {
+        "1": 30.676,
+        "10": 31.807,
+        "100": 40.804
+      },
+      "model_test": {
+        "n": 96,
+        "mae": 31.014,
+        "rmse": 38.48,
+        "wape": 2.501
+      },
+      "naive_test": {
+        "n": 96,
+        "mae": 92.089,
+        "rmse": 133.054,
+        "wape": 7.427
+      },
+      "forecast": [
+        {
+          "date": "2026-10-09",
+          "forecast": 1227.86,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-10",
+          "forecast": 1165.16,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-11",
+          "forecast": 1191.23,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-12",
+          "forecast": 1286.13,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-13",
+          "forecast": 1382.21,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-14",
+          "forecast": 1402.28,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-15",
+          "forecast": 1335.77,
+          "promo": 0
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-09-04",
+          "sku": "milk",
+          "sales": 1235,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-05",
+          "sku": "milk",
+          "sales": 1089,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-06",
+          "sku": "milk",
+          "sales": 1111,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-07",
+          "sku": "milk",
+          "sales": 1205,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-08",
+          "sku": "milk",
+          "sales": 1313,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-09",
+          "sku": "milk",
+          "sales": 1349,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-10",
+          "sku": "milk",
+          "sales": 1223,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-11",
+          "sku": "milk",
+          "sales": 1139,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-12",
+          "sku": "milk",
+          "sales": 1142,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-13",
+          "sku": "milk",
+          "sales": 1142,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-14",
+          "sku": "milk",
+          "sales": 1283,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-15",
+          "sku": "milk",
+          "sales": 1356,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-16",
+          "sku": "milk",
+          "sales": 1358,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-17",
+          "sku": "milk",
+          "sales": 1284,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-18",
+          "sku": "milk",
+          "sales": 1182,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-19",
+          "sku": "milk",
+          "sales": 1148,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-20",
+          "sku": "milk",
+          "sales": 1161,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-21",
+          "sku": "milk",
+          "sales": 1231,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-22",
+          "sku": "milk",
+          "sales": 1388,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-23",
+          "sku": "milk",
+          "sales": 1358,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-24",
+          "sku": "milk",
+          "sales": 1328,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-25",
+          "sku": "milk",
+          "sales": 1187,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-26",
+          "sku": "milk",
+          "sales": 1180,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-27",
+          "sku": "milk",
+          "sales": 875,
+          "promo": 0,
+          "stockout": 1
+        },
+        {
+          "date": "2026-09-28",
+          "sku": "milk",
+          "sales": 1263,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-29",
+          "sku": "milk",
+          "sales": 1338,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-30",
+          "sku": "milk",
+          "sales": 1546,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-01",
+          "sku": "milk",
+          "sales": 1593,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-02",
+          "sku": "milk",
+          "sales": 1418,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-03",
+          "sku": "milk",
+          "sales": 1447,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-04",
+          "sku": "milk",
+          "sales": 1432,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-05",
+          "sku": "milk",
+          "sales": 1305,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-06",
+          "sku": "milk",
+          "sales": 1403,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-07",
+          "sku": "milk",
+          "sales": 1394,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-08",
+          "sku": "milk",
+          "sales": 1305,
+          "promo": 0,
+          "stockout": 0
+        }
+      ],
+      "censored_days": 16
+    },
+    {
+      "sku": "kefir",
+      "name": "Кефир",
+      "days": 730,
+      "alpha": 10.0,
+      "method": "ridge",
+      "train_end": "2026-04-01",
+      "validation_end": "2026-06-27",
+      "test_start": "2026-06-28",
+      "tuning": {
+        "1": 20.654,
+        "10": 20.512,
+        "100": 23.544
+      },
+      "model_test": {
+        "n": 96,
+        "mae": 19.269,
+        "rmse": 23.675,
+        "wape": 2.453
+      },
+      "naive_test": {
+        "n": 96,
+        "mae": 60.432,
+        "rmse": 92.508,
+        "wape": 7.692
+      },
+      "forecast": [
+        {
+          "date": "2026-10-09",
+          "forecast": 777.96,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-10",
+          "forecast": 743.02,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-11",
+          "forecast": 759.63,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-12",
+          "forecast": 817.37,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-13",
+          "forecast": 876.14,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-14",
+          "forecast": 895.88,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-15",
+          "forecast": 853.36,
+          "promo": 0
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-09-04",
+          "sku": "kefir",
+          "sales": 730,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-05",
+          "sku": "kefir",
+          "sales": 687,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-06",
+          "sku": "kefir",
+          "sales": 729,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-07",
+          "sku": "kefir",
+          "sales": 737,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-08",
+          "sku": "kefir",
+          "sales": 831,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-09",
+          "sku": "kefir",
+          "sales": 853,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-10",
+          "sku": "kefir",
+          "sales": 810,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-11",
+          "sku": "kefir",
+          "sales": 774,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-12",
+          "sku": "kefir",
+          "sales": 706,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-13",
+          "sku": "kefir",
+          "sales": 736,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-14",
+          "sku": "kefir",
+          "sales": 823,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-15",
+          "sku": "kefir",
+          "sales": 865,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-16",
+          "sku": "kefir",
+          "sales": 825,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-17",
+          "sku": "kefir",
+          "sales": 802,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-18",
+          "sku": "kefir",
+          "sales": 765,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-19",
+          "sku": "kefir",
+          "sales": 690,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-20",
+          "sku": "kefir",
+          "sales": 760,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-21",
+          "sku": "kefir",
+          "sales": 818,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-22",
+          "sku": "kefir",
+          "sales": 871,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-23",
+          "sku": "kefir",
+          "sales": 844,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-24",
+          "sku": "kefir",
+          "sales": 806,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-25",
+          "sku": "kefir",
+          "sales": 764,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-26",
+          "sku": "kefir",
+          "sales": 786,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-27",
+          "sku": "kefir",
+          "sales": 565,
+          "promo": 0,
+          "stockout": 1
+        },
+        {
+          "date": "2026-09-28",
+          "sku": "kefir",
+          "sales": 778,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-29",
+          "sku": "kefir",
+          "sales": 847,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-30",
+          "sku": "kefir",
+          "sales": 1072,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-01",
+          "sku": "kefir",
+          "sales": 993,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-02",
+          "sku": "kefir",
+          "sales": 896,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-03",
+          "sku": "kefir",
+          "sales": 935,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-04",
+          "sku": "kefir",
+          "sales": 923,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-05",
+          "sku": "kefir",
+          "sales": 799,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-06",
+          "sku": "kefir",
+          "sales": 868,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-07",
+          "sku": "kefir",
+          "sales": 872,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-08",
+          "sku": "kefir",
+          "sales": 856,
+          "promo": 0,
+          "stockout": 0
+        }
+      ],
+      "censored_days": 16
+    },
+    {
+      "sku": "yogurt",
+      "name": "Йогурт",
+      "days": 730,
+      "alpha": 1.0,
+      "method": "ridge",
+      "train_end": "2026-04-01",
+      "validation_end": "2026-06-27",
+      "test_start": "2026-06-28",
+      "tuning": {
+        "1": 10.596,
+        "10": 11.148,
+        "100": 14.218
+      },
+      "model_test": {
+        "n": 96,
+        "mae": 12.543,
+        "rmse": 16.042,
+        "wape": 2.483
+      },
+      "naive_test": {
+        "n": 96,
+        "mae": 38.062,
+        "rmse": 53.734,
+        "wape": 7.534
+      },
+      "forecast": [
+        {
+          "date": "2026-10-09",
+          "forecast": 498.38,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-10",
+          "forecast": 472.83,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-11",
+          "forecast": 481.34,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-12",
+          "forecast": 523.26,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-13",
+          "forecast": 564.61,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-14",
+          "forecast": 573.48,
+          "promo": 0
+        },
+        {
+          "date": "2026-10-15",
+          "forecast": 547.87,
+          "promo": 0
+        }
+      ],
+      "history": [
+        {
+          "date": "2026-09-04",
+          "sku": "yogurt",
+          "sales": 488,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-05",
+          "sku": "yogurt",
+          "sales": 446,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-06",
+          "sku": "yogurt",
+          "sales": 465,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-07",
+          "sku": "yogurt",
+          "sales": 520,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-08",
+          "sku": "yogurt",
+          "sales": 549,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-09",
+          "sku": "yogurt",
+          "sales": 547,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-10",
+          "sku": "yogurt",
+          "sales": 522,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-11",
+          "sku": "yogurt",
+          "sales": 515,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-12",
+          "sku": "yogurt",
+          "sales": 475,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-13",
+          "sku": "yogurt",
+          "sales": 484,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-14",
+          "sku": "yogurt",
+          "sales": 527,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-15",
+          "sku": "yogurt",
+          "sales": 531,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-16",
+          "sku": "yogurt",
+          "sales": 543,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-17",
+          "sku": "yogurt",
+          "sales": 518,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-18",
+          "sku": "yogurt",
+          "sales": 479,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-19",
+          "sku": "yogurt",
+          "sales": 481,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-20",
+          "sku": "yogurt",
+          "sales": 466,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-21",
+          "sku": "yogurt",
+          "sales": 523,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-22",
+          "sku": "yogurt",
+          "sales": 550,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-23",
+          "sku": "yogurt",
+          "sales": 605,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-24",
+          "sku": "yogurt",
+          "sales": 520,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-25",
+          "sku": "yogurt",
+          "sales": 506,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-26",
+          "sku": "yogurt",
+          "sales": 428,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-27",
+          "sku": "yogurt",
+          "sales": 363,
+          "promo": 0,
+          "stockout": 1
+        },
+        {
+          "date": "2026-09-28",
+          "sku": "yogurt",
+          "sales": 502,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-29",
+          "sku": "yogurt",
+          "sales": 511,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-09-30",
+          "sku": "yogurt",
+          "sales": 677,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-01",
+          "sku": "yogurt",
+          "sales": 640,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-02",
+          "sku": "yogurt",
+          "sales": 588,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-03",
+          "sku": "yogurt",
+          "sales": 547,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-04",
+          "sku": "yogurt",
+          "sales": 593,
+          "promo": 1,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-05",
+          "sku": "yogurt",
+          "sales": 540,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-06",
+          "sku": "yogurt",
+          "sales": 561,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-07",
+          "sku": "yogurt",
+          "sales": 552,
+          "promo": 0,
+          "stockout": 0
+        },
+        {
+          "date": "2026-10-08",
+          "sku": "yogurt",
+          "sales": 527,
+          "promo": 0,
+          "stockout": 0
+        }
+      ],
+      "censored_days": 16
+    }
+  ],
+  "synthetic": true,
+  "note": "Проверка точности исключает дни дефицита. Скрытый спрос не наблюдается."
+}

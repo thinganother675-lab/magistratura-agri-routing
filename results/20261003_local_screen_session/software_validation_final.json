@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "evidence_class": "DEV_SOFTWARE_VALIDATION_NOT_AGRONOMIC_CONFIRMATION",
+  "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+  "baseline_tests_passed": 521,
+  "baseline_elapsed_s": 19.97,
+  "final_tests_passed": 633,
+  "new_tests": 112,
+  "final_elapsed_s_stdout": 20.88,
+  "final_failures": 0,
+  "final_errors": 0,
+  "final_skipped": 0,
+  "command": [
+    ".venv/Scripts/python.exe",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    ".runtime/mera/pytest_screen_final_root_20261003T0936",
+    "--junitxml",
+    "results/20261003_local_screen_session/software_tests_final.xml"
+  ],
+  "junit_path": "results/20261003_local_screen_session/software_tests_final.xml",
+  "junit_sha256": "3a729e4e2c624a7efa5588a23c0a63bcfb3a4c394180ce1d140a900ec9a00758",
+  "baseline_source": "Observed first full test execution before any session edits; docs/MERA_SESSION_RECONSTRUCTION_20261003_RU.md",
+  "private_test_run": false,
+  "figure_visually_inspected": true,
+  "figure_source_analysis_sha256": "a097fc75056a4477cf452e0064464eaa8da7eb3fffe0ee894c59bc70a7d10f44"
+}

@@ -1,0 +1,1442 @@
+{
+  "status": "NEW_INDEPENDENT_HOLDOUT_READY_NOT_RUN",
+  "created_utc": "2026-10-01T20:20:43.757217+00:00",
+  "tuning_stopped_utc_parent_declared": "2026-10-01T20:11:00Z",
+  "seed": 20261001,
+  "permutation_seed": 20261002,
+  "dataset_sha256": "3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03",
+  "dataset_path": "data\\home_holdout_20261001.jsonl",
+  "builder_sha256": "072acada13e5ef227fb483e413328a133eeac16287f4baa6cf0aec21c942d84f",
+  "sources": {
+    "fao56_ch1": {
+      "document": "FAO56_1998",
+      "title": "FAO Irrigation and Drainage Paper56, Chapter1",
+      "url": "https://www.fao.org/4/x0490e/x0490e04.htm",
+      "publisher": "FAO",
+      "published": "1998",
+      "sections": "Transpiration; Evapotranspiration process",
+      "source_rights": "FAO source rights retained; short authored paraphrases with attribution"
+    },
+    "fao56_ch2": {
+      "document": "FAO56_1998",
+      "title": "FAO56, Chapter2",
+      "url": "https://www.fao.org/4/x0490e/x0490e06.htm",
+      "publisher": "FAO",
+      "published": "1998",
+      "sections": "Reference surface; Eq6",
+      "source_rights": "FAO source rights retained; short authored paraphrases with attribution"
+    },
+    "fao56_ch3": {
+      "document": "FAO56_1998",
+      "title": "FAO56, Chapter3",
+      "url": "https://www.fao.org/4/x0490e/x0490e07.htm",
+      "publisher": "FAO",
+      "published": "1998",
+      "sections": "Wind profile relationship; vapour pressure; Eqs11,13",
+      "source_rights": "FAO source rights retained; short authored paraphrases with attribution"
+    },
+    "fao_salinity": {
+      "document": "FAO_irrigation_training_salty_soils",
+      "title": "Irrigation Water Management: Training Manual1, Chapter7 Salty Soils",
+      "url": "https://www.fao.org/4/r4082e/r4082e08.htm",
+      "publisher": "FAO",
+      "published": "1985",
+      "sections": "7.1 Salinization; 7.5 Improvement of saline soils",
+      "source_rights": "FAO source rights retained; short authored paraphrases with attribution"
+    },
+    "nrcs_soil": {
+      "document": "USDA_NRCS_soil_health_cropland",
+      "title": "Soil Health on Cropland",
+      "url": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+      "publisher": "USDA NRCS",
+      "published": "Undated live official page, verified2026-10-01",
+      "sections": "Maximize soil cover; Biodiversity; Continuous living roots",
+      "source_rights": "USDA government source; authored paraphrase and attribution"
+    },
+    "umn_cover": {
+      "document": "UMN_cover_species_20220929",
+      "title": "Maximize your cover crop benefits by selecting the best species",
+      "url": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+      "publisher": "University of Minnesota Extension",
+      "published": "2022-09-29",
+      "sections": "Table1; Winter-killed and winter-hardy cover crops",
+      "source_rights": "Page declares CC BY-SA4.0; attribution retained for authored paraphrases"
+    },
+    "umn_nitrogen": {
+      "document": "UMN_cover_nitrogen_20190426",
+      "title": "Cover Crops and Nitrogen Credits",
+      "url": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+      "publisher": "University of Minnesota Extension",
+      "published": "2019-04-26",
+      "sections": "Introduction; Legume cover crops",
+      "source_rights": "Underlying University source rights retained; short authored paraphrases with attribution"
+    }
+  },
+  "qa_facts": 20,
+  "qa_pairs": 20,
+  "qa_source_verification": "Official primary pages read2026-10-01; UMN nitrogen directHTTP200 with matching phrases after web renderer failure",
+  "qa_language_status": "AI-assisted EN/RU source paraphrases; human manual validation PENDING",
+  "formula_sources": [
+    "https://www.fao.org/4/x0490e/x0490e06.htm",
+    "https://www.fao.org/4/x0490e/x0490e07.htm",
+    "https://extension.umd.edu/resource/understanding-degree-days"
+  ],
+  "independent_reference": "Decimal45digits, separate formula expressions; frozen execute imported only after gold generated for validation",
+  "rain_target_status": "Fictional arithmetic target, not crop irrigation requirement; synthetic",
+  "scoring": "Unchanged evaluator: action; exact labels; span EM/F1; numeric1% relative or0.02 absolute with exact unit",
+  "validation": {
+    "cases": 150,
+    "by_category": {
+      "compound_reasoning": 20,
+      "numeric": 30,
+      "tool_selection": 20,
+      "rule_interpretation": 20,
+      "extractive_qa": 40,
+      "missing_data": 20
+    },
+    "by_language": {
+      "en": 75,
+      "ru": 75
+    },
+    "source_document_groups": 5,
+    "groups_total": 25,
+    "group_counts": {
+      "synthetic_compound_heat_rain_strict_and": 20,
+      "synthetic_numeric_rain_deficit": 7,
+      "synthetic_selection_vpd": 5,
+      "synthetic_rule_strict_temperature_lt": 20,
+      "source_document_FAO_irrigation_training_salty_soils": 8,
+      "synthetic_numeric_vpd": 8,
+      "synthetic_numeric_gdd": 8,
+      "synthetic_selection_gdd": 5,
+      "synthetic_invalid_missing_rh": 2,
+      "synthetic_invalid_missing_base": 2,
+      "synthetic_selection_rain_deficit": 5,
+      "synthetic_invalid_rh_outside_range": 2,
+      "synthetic_numeric_et0": 7,
+      "source_document_FAO56_1998": 12,
+      "source_document_USDA_NRCS_soil_health_cropland": 8,
+      "synthetic_invalid_nonnumeric_rh": 2,
+      "source_document_UMN_cover_nitrogen_20190426": 4,
+      "synthetic_invalid_wrong_temperature_unit": 2,
+      "source_document_UMN_cover_species_20220929": 8,
+      "synthetic_invalid_negative_wind": 2,
+      "synthetic_invalid_unequal_arrays": 2,
+      "synthetic_invalid_missing_delta": 2,
+      "synthetic_invalid_wrong_precipitation_unit": 2,
+      "synthetic_selection_et0": 5,
+      "synthetic_invalid_missing_target": 2
+    },
+    "historical_files_checked": [
+      {
+        "path": "data\\benchmark.jsonl",
+        "sha256": "03ce1fd188fbd46d2a69fed37ac0f773be3008a814b93c6d646ed8c6aa30e3ca"
+      },
+      {
+        "path": "data\\home_dev_bilingual_20261001.jsonl",
+        "sha256": "387854df81eef3b9e998c9327571700c295a923d059f697183d26fc072247f6b"
+      },
+      {
+        "path": "data\\versions\\benchmark_v0.1.jsonl",
+        "sha256": "981776c966d778c59efb7384edf88ae2670f2da1222a08faa0b795315d466279"
+      },
+      {
+        "path": "data\\raw\\agxqa\\annotations.json",
+        "sha256": "f230aa6aee8897a95e167e7c558e025e5b02d2661bab20ecd399654c540b5640"
+      }
+    ],
+    "historical_rows_checked_including_repeated_versions": 1302,
+    "exact_overlap_count": 0,
+    "within_new_exact_duplicates": 0,
+    "near_duplicate_method": "max token-set Jaccard vs historical data, combined input+context+inputs and question-only; threshold0.8; lexical proxy, not semantic proof",
+    "combined_near_duplicate_count_ge_0_8": 0,
+    "question_near_duplicate_count_ge_0_8": 0,
+    "nearest_historical": [
+      {
+        "id": "home_final_20261001_0145",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3972602739726027,
+        "closest_combined_old_id": "controlled_compound_reasoning_9_2",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0067",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1839080459770115,
+        "closest_combined_old_id": "controlled_compound_reasoning_7_3",
+        "question_jaccard_max": 0.15,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0096",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.4827586206896552,
+        "closest_combined_old_id": "controlled_tool_selection_2_1",
+        "question_jaccard_max": 0.4230769230769231,
+        "closest_question_old_id": "controlled_tool_selection_2_1"
+      },
+      {
+        "id": "home_final_20261001_0100",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.39285714285714285,
+        "closest_combined_old_id": "controlled_tool_selection_2_1",
+        "question_jaccard_max": 0.32,
+        "closest_question_old_id": "controlled_tool_selection_2_1"
+      },
+      {
+        "id": "home_final_20261001_0127",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5263157894736842,
+        "closest_combined_old_id": "controlled_rule_interpretation_3_3",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0066",
+        "category": "numeric",
+        "combined_jaccard_max": 0.17475728155339806,
+        "closest_combined_old_id": "controlled_compound_reasoning_0_1",
+        "question_jaccard_max": 0.23076923076923078,
+        "closest_question_old_id": "controlled_numeric_4_3"
+      },
+      {
+        "id": "home_final_20261001_0020",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.13333333333333333,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0.09090909090909091,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_362"
+      },
+      {
+        "id": "home_final_20261001_0056",
+        "category": "numeric",
+        "combined_jaccard_max": 0.16883116883116883,
+        "closest_combined_old_id": "controlled_tool_selection_0_1",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "controlled_numeric_4_1"
+      },
+      {
+        "id": "home_final_20261001_0047",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1917808219178082,
+        "closest_combined_old_id": "controlled_missing_data_7_0",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0112",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.3617021276595745,
+        "closest_combined_old_id": "controlled_rule_interpretation_10_0",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0049",
+        "category": "numeric",
+        "combined_jaccard_max": 0.16,
+        "closest_combined_old_id": "controlled_numeric_5_2",
+        "question_jaccard_max": 0.15,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0111",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5263157894736842,
+        "closest_combined_old_id": "controlled_rule_interpretation_5_3",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0092",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.2903225806451613,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0.21428571428571427,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0077",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.16417910447761194,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0046",
+        "category": "numeric",
+        "combined_jaccard_max": 0.18181818181818182,
+        "closest_combined_old_id": "controlled_numeric_0_2",
+        "question_jaccard_max": 0.17647058823529413,
+        "closest_question_old_id": "controlled_numeric_4_0"
+      },
+      {
+        "id": "home_final_20261001_0136",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.38461538461538464,
+        "closest_combined_old_id": "controlled_compound_reasoning_0_3",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0014",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.18181818181818182,
+        "closest_combined_old_id": "controlled_numeric_0_1",
+        "question_jaccard_max": 0.1,
+        "closest_question_old_id": "controlled_numeric_0_0"
+      },
+      {
+        "id": "home_final_20261001_0065",
+        "category": "numeric",
+        "combined_jaccard_max": 0.2028985507246377,
+        "closest_combined_old_id": "controlled_numeric_1_3",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0071",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.17391304347826086,
+        "closest_combined_old_id": "controlled_missing_data_7_0",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0137",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.375,
+        "closest_combined_old_id": "controlled_compound_reasoning_11_0",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0015",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.19047619047619047,
+        "closest_combined_old_id": "agxqa_562",
+        "question_jaccard_max": 0.25,
+        "closest_question_old_id": "163"
+      },
+      {
+        "id": "home_final_20261001_0106",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.36666666666666664,
+        "closest_combined_old_id": "controlled_tool_selection_0_3",
+        "question_jaccard_max": 0.2962962962962963,
+        "closest_question_old_id": "controlled_tool_selection_0_3"
+      },
+      {
+        "id": "home_final_20261001_0079",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.1791044776119403,
+        "closest_combined_old_id": "controlled_tool_selection_7_1",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0060",
+        "category": "numeric",
+        "combined_jaccard_max": 0.24705882352941178,
+        "closest_combined_old_id": "controlled_numeric_0_2",
+        "question_jaccard_max": 0.23076923076923078,
+        "closest_question_old_id": "controlled_numeric_4_2"
+      },
+      {
+        "id": "home_final_20261001_0057",
+        "category": "numeric",
+        "combined_jaccard_max": 0.23170731707317074,
+        "closest_combined_old_id": "controlled_numeric_3_2",
+        "question_jaccard_max": 0.16129032258064516,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0149",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.4166666666666667,
+        "closest_combined_old_id": "controlled_compound_reasoning_1_3",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0001",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.15,
+        "closest_combined_old_id": "226",
+        "question_jaccard_max": 0.07142857142857142,
+        "closest_question_old_id": "374"
+      },
+      {
+        "id": "home_final_20261001_0132",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.37333333333333335,
+        "closest_combined_old_id": "controlled_compound_reasoning_2_2",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0013",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.1794871794871795,
+        "closest_combined_old_id": "agxqa_464",
+        "question_jaccard_max": 0.25,
+        "closest_question_old_id": "11"
+      },
+      {
+        "id": "home_final_20261001_0043",
+        "category": "numeric",
+        "combined_jaccard_max": 0.189873417721519,
+        "closest_combined_old_id": "controlled_numeric_5_2",
+        "question_jaccard_max": 0.15,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0113",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5128205128205128,
+        "closest_combined_old_id": "controlled_rule_interpretation_1_0",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0023",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.2,
+        "closest_combined_old_id": "agxqa_464",
+        "question_jaccard_max": 0.1875,
+        "closest_question_old_id": "64"
+      },
+      {
+        "id": "home_final_20261001_0078",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.1896551724137931,
+        "closest_combined_old_id": "controlled_numeric_2_1",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_1"
+      },
+      {
+        "id": "home_final_20261001_0027",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16666666666666666,
+        "closest_combined_old_id": "agxqa_461",
+        "question_jaccard_max": 0.36363636363636365,
+        "closest_question_old_id": "15"
+      },
+      {
+        "id": "home_final_20261001_0081",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.16176470588235295,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0028",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.125,
+        "closest_combined_old_id": "controlled_missing_data_1_1",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0039",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.1694915254237288,
+        "closest_combined_old_id": "372",
+        "question_jaccard_max": 0.10526315789473684,
+        "closest_question_old_id": "364"
+      },
+      {
+        "id": "home_final_20261001_0041",
+        "category": "numeric",
+        "combined_jaccard_max": 0.2077922077922078,
+        "closest_combined_old_id": "controlled_numeric_5_2",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0064",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1566265060240964,
+        "closest_combined_old_id": "controlled_tool_selection_0_1",
+        "question_jaccard_max": 0.17647058823529413,
+        "closest_question_old_id": "controlled_numeric_4_3"
+      },
+      {
+        "id": "home_final_20261001_0108",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.5384615384615384,
+        "closest_combined_old_id": "controlled_tool_selection_0_3",
+        "question_jaccard_max": 0.4782608695652174,
+        "closest_question_old_id": "controlled_tool_selection_0_3"
+      },
+      {
+        "id": "home_final_20261001_0075",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.19718309859154928,
+        "closest_combined_old_id": "controlled_numeric_1_0",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0012",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.125,
+        "closest_combined_old_id": "controlled_tool_selection_2_1",
+        "question_jaccard_max": 0.1111111111111111,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_300"
+      },
+      {
+        "id": "home_final_20261001_0036",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.15151515151515152,
+        "closest_combined_old_id": "controlled_tool_selection_0_0",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0086",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.2727272727272727,
+        "closest_combined_old_id": "controlled_numeric_0_2",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_2"
+      },
+      {
+        "id": "home_final_20261001_0040",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.10810810810810811,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0068",
+        "category": "numeric",
+        "combined_jaccard_max": 0.16049382716049382,
+        "closest_combined_old_id": "controlled_tool_selection_0_1",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "controlled_numeric_4_3"
+      },
+      {
+        "id": "home_final_20261001_0143",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3918918918918919,
+        "closest_combined_old_id": "controlled_compound_reasoning_1_3",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0119",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5384615384615384,
+        "closest_combined_old_id": "controlled_rule_interpretation_5_2",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0003",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.1724137931034483,
+        "closest_combined_old_id": "controlled_tool_selection_1_2",
+        "question_jaccard_max": 0.125,
+        "closest_question_old_id": "166"
+      },
+      {
+        "id": "home_final_20261001_0146",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.37662337662337664,
+        "closest_combined_old_id": "controlled_compound_reasoning_2_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0147",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3888888888888889,
+        "closest_combined_old_id": "controlled_compound_reasoning_1_3",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0073",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.2,
+        "closest_combined_old_id": "controlled_numeric_11_0",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0021",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.13043478260869565,
+        "closest_combined_old_id": "563",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "41"
+      },
+      {
+        "id": "home_final_20261001_0134",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.358974358974359,
+        "closest_combined_old_id": "controlled_compound_reasoning_8_1",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0083",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.24358974358974358,
+        "closest_combined_old_id": "controlled_numeric_7_2",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0148",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.4,
+        "closest_combined_old_id": "controlled_compound_reasoning_4_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0032",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.14285714285714285,
+        "closest_combined_old_id": "controlled_missing_data_4_1",
+        "question_jaccard_max": 0.045454545454545456,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_141"
+      },
+      {
+        "id": "home_final_20261001_0048",
+        "category": "numeric",
+        "combined_jaccard_max": 0.17073170731707318,
+        "closest_combined_old_id": "controlled_numeric_4_0",
+        "question_jaccard_max": 0.23076923076923078,
+        "closest_question_old_id": "controlled_numeric_4_0"
+      },
+      {
+        "id": "home_final_20261001_0087",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.2,
+        "closest_combined_old_id": "384",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0126",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.34782608695652173,
+        "closest_combined_old_id": "controlled_rule_interpretation_2_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0121",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5263157894736842,
+        "closest_combined_old_id": "controlled_rule_interpretation_5_2",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0138",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3625,
+        "closest_combined_old_id": "controlled_compound_reasoning_0_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0016",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.1276595744680851,
+        "closest_combined_old_id": "home_bilingual_ru_agxqa_362",
+        "question_jaccard_max": 0.07142857142857142,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_362"
+      },
+      {
+        "id": "home_final_20261001_0124",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.34782608695652173,
+        "closest_combined_old_id": "controlled_rule_interpretation_4_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0008",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.15384615384615385,
+        "closest_combined_old_id": "controlled_missing_data_1_1",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0142",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3875,
+        "closest_combined_old_id": "controlled_compound_reasoning_0_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0084",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.25333333333333335,
+        "closest_combined_old_id": "controlled_missing_data_2_2",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_2"
+      },
+      {
+        "id": "home_final_20261001_0011",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.21875,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "360"
+      },
+      {
+        "id": "home_final_20261001_0122",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.37777777777777777,
+        "closest_combined_old_id": "controlled_rule_interpretation_10_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0018",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.18181818181818182,
+        "closest_combined_old_id": "controlled_missing_data_8_1",
+        "question_jaccard_max": 0.09090909090909091,
+        "closest_question_old_id": "controlled_numeric_8_0"
+      },
+      {
+        "id": "home_final_20261001_0009",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.2,
+        "closest_combined_old_id": "controlled_tool_selection_1_2",
+        "question_jaccard_max": 0.25,
+        "closest_question_old_id": "11"
+      },
+      {
+        "id": "home_final_20261001_0094",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.43333333333333335,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0.37037037037037035,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0114",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.3404255319148936,
+        "closest_combined_old_id": "controlled_rule_interpretation_10_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0101",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.35135135135135137,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.29411764705882354,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0058",
+        "category": "numeric",
+        "combined_jaccard_max": 0.2247191011235955,
+        "closest_combined_old_id": "controlled_numeric_4_2",
+        "question_jaccard_max": 0.17647058823529413,
+        "closest_question_old_id": "controlled_numeric_4_2"
+      },
+      {
+        "id": "home_final_20261001_0053",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1746031746031746,
+        "closest_combined_old_id": "controlled_numeric_7_1",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0038",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.14285714285714285,
+        "closest_combined_old_id": "controlled_tool_selection_0_0",
+        "question_jaccard_max": 0.06666666666666667,
+        "closest_question_old_id": "controlled_numeric_0_0"
+      },
+      {
+        "id": "home_final_20261001_0072",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.2153846153846154,
+        "closest_combined_old_id": "controlled_missing_data_2_0",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_0"
+      },
+      {
+        "id": "home_final_20261001_0140",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.36363636363636365,
+        "closest_combined_old_id": "controlled_compound_reasoning_6_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0035",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.21739130434782608,
+        "closest_combined_old_id": "204",
+        "question_jaccard_max": 0.14285714285714285,
+        "closest_question_old_id": "335"
+      },
+      {
+        "id": "home_final_20261001_0107",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.35135135135135137,
+        "closest_combined_old_id": "controlled_tool_selection_1_3",
+        "question_jaccard_max": 0.29411764705882354,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0130",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.34782608695652173,
+        "closest_combined_old_id": "controlled_rule_interpretation_2_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0026",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.12903225806451613,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0.07692307692307693,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_362"
+      },
+      {
+        "id": "home_final_20261001_0141",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3698630136986301,
+        "closest_combined_old_id": "controlled_compound_reasoning_11_0",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0135",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.3918918918918919,
+        "closest_combined_old_id": "controlled_compound_reasoning_3_0",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0093",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.2903225806451613,
+        "closest_combined_old_id": "controlled_tool_selection_1_0",
+        "question_jaccard_max": 0.21428571428571427,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0006",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16216216216216217,
+        "closest_combined_old_id": "controlled_tool_selection_8_2",
+        "question_jaccard_max": 0.08,
+        "closest_question_old_id": "controlled_tool_selection_8_0"
+      },
+      {
+        "id": "home_final_20261001_0052",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1686746987951807,
+        "closest_combined_old_id": "controlled_numeric_2_2",
+        "question_jaccard_max": 0.17647058823529413,
+        "closest_question_old_id": "controlled_numeric_4_1"
+      },
+      {
+        "id": "home_final_20261001_0117",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5128205128205128,
+        "closest_combined_old_id": "controlled_rule_interpretation_1_0",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0033",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16666666666666666,
+        "closest_combined_old_id": "controlled_rule_interpretation_1_2",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "217"
+      },
+      {
+        "id": "home_final_20261001_0085",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.24358974358974358,
+        "closest_combined_old_id": "controlled_missing_data_5_2",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0002",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.14814814814814814,
+        "closest_combined_old_id": "controlled_missing_data_8_1",
+        "question_jaccard_max": 0.041666666666666664,
+        "closest_question_old_id": "controlled_tool_selection_2_1"
+      },
+      {
+        "id": "home_final_20261001_0045",
+        "category": "numeric",
+        "combined_jaccard_max": 0.18181818181818182,
+        "closest_combined_old_id": "controlled_numeric_11_0",
+        "question_jaccard_max": 0.16129032258064516,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0061",
+        "category": "numeric",
+        "combined_jaccard_max": 0.25,
+        "closest_combined_old_id": "controlled_numeric_9_2",
+        "question_jaccard_max": 0.15,
+        "closest_question_old_id": "controlled_tool_selection_1_2"
+      },
+      {
+        "id": "home_final_20261001_0131",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.352112676056338,
+        "closest_combined_old_id": "controlled_compound_reasoning_3_1",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0109",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.34285714285714286,
+        "closest_combined_old_id": "controlled_tool_selection_1_3",
+        "question_jaccard_max": 0.28125,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0120",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.34782608695652173,
+        "closest_combined_old_id": "controlled_rule_interpretation_2_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0025",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16216216216216217,
+        "closest_combined_old_id": "226",
+        "question_jaccard_max": 0.18181818181818182,
+        "closest_question_old_id": "agxqa_365"
+      },
+      {
+        "id": "home_final_20261001_0088",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.18461538461538463,
+        "closest_combined_old_id": "controlled_missing_data_2_3",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_3"
+      },
+      {
+        "id": "home_final_20261001_0050",
+        "category": "numeric",
+        "combined_jaccard_max": 0.17073170731707318,
+        "closest_combined_old_id": "controlled_numeric_0_2",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "controlled_numeric_4_1"
+      },
+      {
+        "id": "home_final_20261001_0144",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.35802469135802467,
+        "closest_combined_old_id": "controlled_compound_reasoning_6_2",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0103",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.2972972972972973,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0051",
+        "category": "numeric",
+        "combined_jaccard_max": 0.15584415584415584,
+        "closest_combined_old_id": "controlled_numeric_1_2",
+        "question_jaccard_max": 0.16129032258064516,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0089",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.17204301075268819,
+        "closest_combined_old_id": "384",
+        "question_jaccard_max": 0.16666666666666666,
+        "closest_question_old_id": "controlled_tool_selection_1_3"
+      },
+      {
+        "id": "home_final_20261001_0105",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.3142857142857143,
+        "closest_combined_old_id": "controlled_tool_selection_1_2",
+        "question_jaccard_max": 0.25,
+        "closest_question_old_id": "controlled_tool_selection_1_2"
+      },
+      {
+        "id": "home_final_20261001_0063",
+        "category": "numeric",
+        "combined_jaccard_max": 0.2345679012345679,
+        "closest_combined_old_id": "controlled_numeric_3_2",
+        "question_jaccard_max": 0.16129032258064516,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0031",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.17647058823529413,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.21428571428571427,
+        "closest_question_old_id": "525"
+      },
+      {
+        "id": "home_final_20261001_0099",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.35294117647058826,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.2903225806451613,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0076",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.18571428571428572,
+        "closest_combined_old_id": "controlled_missing_data_2_0",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_0"
+      },
+      {
+        "id": "home_final_20261001_0062",
+        "category": "numeric",
+        "combined_jaccard_max": 0.23863636363636365,
+        "closest_combined_old_id": "controlled_numeric_0_2",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "controlled_numeric_4_2"
+      },
+      {
+        "id": "home_final_20261001_0150",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.38961038961038963,
+        "closest_combined_old_id": "controlled_compound_reasoning_2_0",
+        "question_jaccard_max": 0.08695652173913043,
+        "closest_question_old_id": "controlled_tool_selection_2_0"
+      },
+      {
+        "id": "home_final_20261001_0102",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.3225806451612903,
+        "closest_combined_old_id": "controlled_tool_selection_0_2",
+        "question_jaccard_max": 0.25,
+        "closest_question_old_id": "controlled_tool_selection_0_2"
+      },
+      {
+        "id": "home_final_20261001_0034",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.14285714285714285,
+        "closest_combined_old_id": "controlled_numeric_0_1",
+        "question_jaccard_max": 0.08333333333333333,
+        "closest_question_old_id": "controlled_numeric_0_0"
+      },
+      {
+        "id": "home_final_20261001_0129",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5263157894736842,
+        "closest_combined_old_id": "controlled_rule_interpretation_3_2",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0059",
+        "category": "numeric",
+        "combined_jaccard_max": 0.25316455696202533,
+        "closest_combined_old_id": "controlled_numeric_9_2",
+        "question_jaccard_max": 0.23529411764705882,
+        "closest_question_old_id": "controlled_tool_selection_1_2"
+      },
+      {
+        "id": "home_final_20261001_0080",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.1864406779661017,
+        "closest_combined_old_id": "controlled_numeric_2_1",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_1"
+      },
+      {
+        "id": "home_final_20261001_0019",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.17307692307692307,
+        "closest_combined_old_id": "546",
+        "question_jaccard_max": 0.3333333333333333,
+        "closest_question_old_id": "11"
+      },
+      {
+        "id": "home_final_20261001_0125",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5128205128205128,
+        "closest_combined_old_id": "controlled_rule_interpretation_3_0",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0118",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.3404255319148936,
+        "closest_combined_old_id": "controlled_rule_interpretation_10_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0007",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.2127659574468085,
+        "closest_combined_old_id": "489",
+        "question_jaccard_max": 0.2727272727272727,
+        "closest_question_old_id": "537"
+      },
+      {
+        "id": "home_final_20261001_0090",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.1875,
+        "closest_combined_old_id": "controlled_missing_data_2_0",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_3"
+      },
+      {
+        "id": "home_final_20261001_0010",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16666666666666666,
+        "closest_combined_old_id": "controlled_tool_selection_0_2",
+        "question_jaccard_max": 0.05263157894736842,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_55"
+      },
+      {
+        "id": "home_final_20261001_0044",
+        "category": "numeric",
+        "combined_jaccard_max": 0.17073170731707318,
+        "closest_combined_old_id": "controlled_numeric_6_0",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "controlled_numeric_4_0"
+      },
+      {
+        "id": "home_final_20261001_0017",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.17777777777777778,
+        "closest_combined_old_id": "agxqa_565",
+        "question_jaccard_max": 0.2,
+        "closest_question_old_id": "agxqa_459"
+      },
+      {
+        "id": "home_final_20261001_0098",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.43333333333333335,
+        "closest_combined_old_id": "controlled_tool_selection_0_1",
+        "question_jaccard_max": 0.37037037037037035,
+        "closest_question_old_id": "controlled_tool_selection_0_1"
+      },
+      {
+        "id": "home_final_20261001_0115",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5384615384615384,
+        "closest_combined_old_id": "controlled_rule_interpretation_1_0",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0110",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.28125,
+        "closest_combined_old_id": "controlled_tool_selection_2_2",
+        "question_jaccard_max": 0.20689655172413793,
+        "closest_question_old_id": "controlled_tool_selection_2_2"
+      },
+      {
+        "id": "home_final_20261001_0029",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.14,
+        "closest_combined_old_id": "agxqa_1",
+        "question_jaccard_max": 0.10526315789473684,
+        "closest_question_old_id": "326"
+      },
+      {
+        "id": "home_final_20261001_0055",
+        "category": "numeric",
+        "combined_jaccard_max": 0.17567567567567569,
+        "closest_combined_old_id": "controlled_numeric_1_2",
+        "question_jaccard_max": 0.15,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0005",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.16666666666666666,
+        "closest_combined_old_id": "controlled_tool_selection_1_2",
+        "question_jaccard_max": 0.21428571428571427,
+        "closest_question_old_id": "163"
+      },
+      {
+        "id": "home_final_20261001_0030",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.11538461538461539,
+        "closest_combined_old_id": "controlled_missing_data_1_1",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0022",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.12121212121212122,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0,
+        "closest_question_old_id": null
+      },
+      {
+        "id": "home_final_20261001_0133",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.37142857142857144,
+        "closest_combined_old_id": "controlled_compound_reasoning_7_2",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0097",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.5483870967741935,
+        "closest_combined_old_id": "controlled_tool_selection_1_1",
+        "question_jaccard_max": 0.5,
+        "closest_question_old_id": "controlled_tool_selection_1_1"
+      },
+      {
+        "id": "home_final_20261001_0074",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.2028985507246377,
+        "closest_combined_old_id": "controlled_numeric_0_0",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_0"
+      },
+      {
+        "id": "home_final_20261001_0054",
+        "category": "numeric",
+        "combined_jaccard_max": 0.1891891891891892,
+        "closest_combined_old_id": "controlled_tool_selection_0_1",
+        "question_jaccard_max": 0.23076923076923078,
+        "closest_question_old_id": "controlled_numeric_4_1"
+      },
+      {
+        "id": "home_final_20261001_0116",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.34782608695652173,
+        "closest_combined_old_id": "controlled_rule_interpretation_2_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0004",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.1724137931034483,
+        "closest_combined_old_id": "controlled_tool_selection_8_2",
+        "question_jaccard_max": 0.047619047619047616,
+        "closest_question_old_id": "controlled_tool_selection_0_2"
+      },
+      {
+        "id": "home_final_20261001_0069",
+        "category": "numeric",
+        "combined_jaccard_max": 0.18518518518518517,
+        "closest_combined_old_id": "controlled_numeric_1_2",
+        "question_jaccard_max": 0.16129032258064516,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0123",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.5263157894736842,
+        "closest_combined_old_id": "controlled_rule_interpretation_5_3",
+        "question_jaccard_max": 0.13636363636363635,
+        "closest_question_old_id": "158"
+      },
+      {
+        "id": "home_final_20261001_0070",
+        "category": "numeric",
+        "combined_jaccard_max": 0.16822429906542055,
+        "closest_combined_old_id": "controlled_compound_reasoning_0_2",
+        "question_jaccard_max": 0.17647058823529413,
+        "closest_question_old_id": "controlled_numeric_4_3"
+      },
+      {
+        "id": "home_final_20261001_0082",
+        "category": "missing_data",
+        "combined_jaccard_max": 0.1864406779661017,
+        "closest_combined_old_id": "controlled_numeric_2_1",
+        "question_jaccard_max": 0.17391304347826086,
+        "closest_question_old_id": "controlled_numeric_2_1"
+      },
+      {
+        "id": "home_final_20261001_0128",
+        "category": "rule_interpretation",
+        "combined_jaccard_max": 0.3404255319148936,
+        "closest_combined_old_id": "controlled_rule_interpretation_2_2",
+        "question_jaccard_max": 0.05555555555555555,
+        "closest_question_old_id": "controlled_compound_reasoning_2_0"
+      },
+      {
+        "id": "home_final_20261001_0024",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.125,
+        "closest_combined_old_id": "controlled_tool_selection_2_0",
+        "question_jaccard_max": 0.07692307692307693,
+        "closest_question_old_id": "home_bilingual_ru_agxqa_490"
+      },
+      {
+        "id": "home_final_20261001_0091",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.4857142857142857,
+        "closest_combined_old_id": "controlled_tool_selection_1_0",
+        "question_jaccard_max": 0.4375,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0104",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.2857142857142857,
+        "closest_combined_old_id": "controlled_tool_selection_4_0",
+        "question_jaccard_max": 0.21875,
+        "closest_question_old_id": "controlled_tool_selection_4_0"
+      },
+      {
+        "id": "home_final_20261001_0095",
+        "category": "tool_selection",
+        "combined_jaccard_max": 0.32142857142857145,
+        "closest_combined_old_id": "controlled_tool_selection_1_0",
+        "question_jaccard_max": 0.24,
+        "closest_question_old_id": "controlled_tool_selection_1_0"
+      },
+      {
+        "id": "home_final_20261001_0139",
+        "category": "compound_reasoning",
+        "combined_jaccard_max": 0.4246575342465753,
+        "closest_combined_old_id": "controlled_compound_reasoning_1_3",
+        "question_jaccard_max": 0.13043478260869565,
+        "closest_question_old_id": "agxqa_63"
+      },
+      {
+        "id": "home_final_20261001_0037",
+        "category": "extractive_qa",
+        "combined_jaccard_max": 0.21621621621621623,
+        "closest_combined_old_id": "255",
+        "question_jaccard_max": 0.15384615384615385,
+        "closest_question_old_id": "15"
+      },
+      {
+        "id": "home_final_20261001_0042",
+        "category": "numeric",
+        "combined_jaccard_max": 0.19753086419753085,
+        "closest_combined_old_id": "controlled_numeric_4_0",
+        "question_jaccard_max": 0.23076923076923078,
+        "closest_question_old_id": "controlled_numeric_4_0"
+      }
+    ],
+    "independent_decimal_vs_frozen_tool_max_absolute_error": 3.552713678800501e-15,
+    "public_request_hard_gate_counts": {
+      "NO_HARD_GATE": 100,
+      "DETERMINISTIC_TOOL": 30,
+      "ASK_FOR_DATA": 20
+    },
+    "labels": {
+      "rule_interpretation": {
+        "NO_RISK": 10,
+        "RISK": 10
+      },
+      "compound_reasoning": {
+        "OK": 10,
+        "ALERT": 10
+      }
+    }
+  },
+  "limits": [
+    "Authored after development model selection; no prediction-based tuning on this set",
+    "New values and texts, same formula/task families as DEV; not out-of-distribution proof",
+    "20 QA facts from5 documents, not40 independent facts",
+    "110 synthetic controlled cases, not real farm requests",
+    "QA supplied-context reading, not closed-book agricultural knowledge",
+    "AI translation/paraphrase human validation pending",
+    "Source texts may exist in model pretraining; contamination unknown",
+    "Group-based statistics needed; example-level independence false",
+    "Holdout labels must not change after final results"
+  ],
+  "source_http_verification": {
+    "fao56_ch1": {
+      "url": "https://www.fao.org/4/x0490e/x0490e04.htm",
+      "retrieved_utc": "2026-10-01T20:21:40.760087+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "5fbf685d9ce49fde886fac68f554c7e62cec8ad1625d2ea71803ea0e06ba1e34",
+      "size_bytes": 41854,
+      "complete_article_stored": false
+    },
+    "fao56_ch2": {
+      "url": "https://www.fao.org/4/x0490e/x0490e06.htm",
+      "retrieved_utc": "2026-10-01T20:21:41.037603+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "097e3aa9223ef69cf589549c445083eb78b1549b099459b448f01a5e7337c68b",
+      "size_bytes": 33762,
+      "complete_article_stored": false
+    },
+    "fao56_ch3": {
+      "url": "https://www.fao.org/4/x0490e/x0490e07.htm",
+      "retrieved_utc": "2026-10-01T20:21:41.347488+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "63d52d7c2858df69e6423312e17a631b8c6495575f8a2598915bcdf597a35cbe",
+      "size_bytes": 138060,
+      "complete_article_stored": false
+    },
+    "fao_salinity": {
+      "url": "https://www.fao.org/4/r4082e/r4082e08.htm",
+      "retrieved_utc": "2026-10-01T20:21:41.574334+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "782a7d2894c6eff3b12110b0bfa442e6601c3f841804767d29a4d2fe48ec0a9f",
+      "size_bytes": 15025,
+      "complete_article_stored": false
+    },
+    "nrcs_soil": {
+      "url": "https://www.nrcs.usda.gov/conservation-basics/soil/soil-health/soil-health-on-cropland",
+      "retrieved_utc": "2026-10-01T20:21:43.154192+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "244ea0128b19c1d0288677774847e302e7872717dc9606502808c8c4d3b22168",
+      "size_bytes": 248036,
+      "complete_article_stored": false
+    },
+    "umn_cover": {
+      "url": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+      "retrieved_utc": "2026-10-01T20:21:44.435155+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "a1426c2aa617c4c5b81eabdbbd3b9f1712cc70cf0d1e72d95d534545916be3b2",
+      "size_bytes": 126583,
+      "complete_article_stored": false
+    },
+    "umn_nitrogen": {
+      "url": "https://blog-nwcrops.extension.umn.edu/2019/04/cover-crops-and-nitrogen-credits.html",
+      "retrieved_utc": "2026-10-01T20:21:45.453127+00:00",
+      "http_status": 200,
+      "retrieved_content_sha256": "2435017e0662fec0550bcb3708ef4a106ca5c64d7fada851d54a32eb087efb65",
+      "size_bytes": 116331,
+      "complete_article_stored": false
+    }
+  }
+}

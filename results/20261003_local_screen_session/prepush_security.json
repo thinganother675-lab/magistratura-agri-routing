@@ -1,0 +1,15 @@
+{
+  "utc": "2026-10-03T08:00:44.396523+00:00",
+  "status": "PASS",
+  "head": "63b481475653bb13a9e111526019adf16a4ce672",
+  "reachable_blobs_checked": 1150,
+  "current_files_checked": 1269,
+  "archive_members_checked": 3,
+  "largest_blob_bytes": 5514432,
+  "findings": [],
+  "preservation_base": "63b481475653bb13a9e111526019adf16a4ce672",
+  "preserved_base_files": 1261,
+  "changed_base_files": [],
+  "secret_values_or_fingerprints_printed": false,
+  "limitations": "Pattern/exact-secret scan; binary pixels and unknown opaque secrets are not certified."
+}

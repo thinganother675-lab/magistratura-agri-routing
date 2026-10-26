@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-01T20:01:00.756965+00:00",
+  "phase": "development_only",
+  "rule": "Expand additional general text model from the same DEV12 to the same DEV36 when correct >= 9, observed_n == 12, errors == 0, and the measured load/inference stayed above resource guards. Perform at most one expansion per qualifying model, preserve DEV12 and DEV36 as dependent sets, compare full DEV36 only.",
+  "criterion_source": "Root explicitly requested threshold before further summaries were inspected",
+  "already_observed_before_record": {
+    "qwen3.5-9b": "5/12, errors0; does not qualify",
+    "dr-venus-4b-rl": "1/6, stopped after4 length errors; does not qualify"
+  },
+  "other_model_summaries_not_yet_inspected_by_selection_agent": true,
+  "scope": "All remaining installed general text candidates in this run, including Qwen9/Gemma12 when qualifying; unsafe models remain NOT_RUN. No final holdout.",
+  "bilingual_rule": "Existing paired QA DEV12 for the two highest accuracy full DEV36 models; latency as tie-breaker. Human translation validation PENDING, English QA repeated.",
+  "timestamp_source": "File creation time UTC; criterion file written before viewing remaining summaries"
+}

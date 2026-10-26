@@ -1,0 +1,345 @@
+{
+  "repo": "bartowski/HuggingFaceTB_SmolLM3-3B-GGUF",
+  "api_url": "https://huggingface.co/api/models/bartowski/HuggingFaceTB_SmolLM3-3B-GGUF?blobs=true",
+  "retrieved_utc": "2026-10-01T18:32:34.961554+00:00",
+  "weights_downloaded": false,
+  "metadata": {
+    "_id": "686d42b6876325a5897a1bea",
+    "id": "bartowski/HuggingFaceTB_SmolLM3-3B-GGUF",
+    "private": false,
+    "pipeline_tag": "text-generation",
+    "tags": [
+      "gguf",
+      "text-generation",
+      "en",
+      "fr",
+      "es",
+      "it",
+      "pt",
+      "zh",
+      "ar",
+      "ru",
+      "base_model:HuggingFaceTB/SmolLM3-3B",
+      "base_model:quantized:HuggingFaceTB/SmolLM3-3B",
+      "license:apache-2.0",
+      "endpoints_compatible",
+      "region:us",
+      "conversational"
+    ],
+    "downloads": 30546,
+    "likes": 11,
+    "modelId": "bartowski/HuggingFaceTB_SmolLM3-3B-GGUF",
+    "author": "bartowski",
+    "sha": "86b3536ed1ca0dcb4716745642db4e6804bf3d32",
+    "lastModified": "2025-07-10T00:20:40.000Z",
+    "gated": false,
+    "disabled": false,
+    "widgetData": [
+      {
+        "text": "Hi, what can you help me with?"
+      },
+      {
+        "text": "What is 84 * 3 / 2?"
+      },
+      {
+        "text": "Tell me an interesting fact about the universe!"
+      },
+      {
+        "text": "Explain quantum computing in simple terms."
+      }
+    ],
+    "model-index": null,
+    "config": {},
+    "cardData": {
+      "quantized_by": "bartowski",
+      "pipeline_tag": "text-generation",
+      "base_model": "HuggingFaceTB/SmolLM3-3B",
+      "base_model_relation": "quantized",
+      "license": "apache-2.0",
+      "language": [
+        "en",
+        "fr",
+        "es",
+        "it",
+        "pt",
+        "zh",
+        "ar",
+        "ru"
+      ]
+    },
+    "gguf": {
+      "total": 3075098624,
+      "architecture": "smollm3",
+      "context_length": 65536,
+      "chat_template": "{# ───── defaults ───── #}\n{%- if enable_thinking is not defined -%}\n{%- set enable_thinking = true -%}\n{%- endif -%}\n\n{# ───── reasoning mode ───── #}\n{%- if enable_thinking -%}\n  {%- set reasoning_mode = \"/think\" -%}\n{%- else -%}\n  {%- set reasoning_mode = \"/no_think\" -%}\n{%- endif -%}\n\n{# ───── header (system message) ───── #}\n{{- \"<|im_start|>system\\n\" -}}\n\n{%- if messages[0].role == \"system\" -%}\n  {%- set system_message = messages[0].content -%}\n  {%- if \"/no_think\" in system_message -%}\n    {%- set reasoning_mode = \"/no_think\" -%}\n  {%- elif \"/think\" in system_message -%}\n    {%- set reasoning_mode = \"/think\" -%}\n  {%- endif -%}\n  {%- set custom_instructions = system_message.replace(\"/no_think\", \"\").replace(\"/think\", \"\").rstrip() -%}\n{%- endif -%}\n\n{%- if \"/system_override\" in system_message -%}\n  {{- custom_instructions.replace(\"/system_override\", \"\").rstrip() -}}\n  {{- \"<|im_end|>\\n\" -}}\n{%- else -%}\n  {{- \"## Metadata\\n\\n\" -}}\n  {{- \"Knowledge Cutoff Date: June 2025\\n\" -}}\n  {%- set today = strftime_now(\"%d %B %Y\") -%}\n  {{- \"Today Date: \" ~ today ~ \"\\n\" -}}\n  {{- \"Reasoning Mode: \" + reasoning_mode + \"\\n\\n\" -}}\n  \n  {{- \"## Custom Instructions\\n\\n\" -}}\n  {%- if custom_instructions -%}\n    {{- custom_instructions + \"\\n\\n\" -}}\n  {%- elif reasoning_mode == \"/think\" -%}\n    {{- \"You are a helpful AI assistant named SmolLM, trained by Hugging Face. Your role as an assistant involves thoroughly exploring questions through a systematic thinking process before providing the final precise and accurate solutions. This requires engaging in a comprehensive cycle of analysis, summarizing, exploration, reassessment, reflection, backtracking, and iteration to develop well-considered thinking process. Please structure your response into two main sections: Thought and Solution using the specified format: <think> Thought section </think> Solution section. In the Thought section, detail your reasoning process in steps. Each step should include detailed considerations such as analysing questions, summarizing relevant findings, brainstorming new ideas, verifying the accuracy of the current steps, refining any errors, and revisiting previous steps. In the Solution section, based on various attempts, explorations, and reflections from the Thought section, systematically present the final solution that you deem correct. The Solution section should be logical, accurate, and concise and detail necessary steps needed to reach the conclusion.\\n\\n\" -}}\n  {%- else -%}\n    {{- \"You are a helpful AI assistant named SmolLM, trained by Hugging Face.\\n\\n\" -}}\n  {%- endif -%}\n\n  {%- if xml_tools or python_tools or tools -%}\n    {{- \"### Tools\\n\\n\" -}}\n    {%- if xml_tools or tools -%}\n      {%- if tools -%}\n        {%- set xml_tools = tools -%}\n      {%- endif -%}\n      {%- set ns = namespace(xml_tool_string=\"You may call one or more functions to assist with the user query.\\nYou are provided with function signatures within <tools></tools> XML tags:\\n\\n<tools>\\n\") -%}\n      {%- for tool in xml_tools[:] -%} {# The slicing makes sure that xml_tools is a list #}\n        {%- set ns.xml_tool_string = ns.xml_tool_string ~ (tool | string) ~ \"\\n\" -%}\n      {%- endfor -%}\n      {%- set xml_tool_string = ns.xml_tool_string + \"</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call>\" -%}\n      {{- xml_tool_string -}}\n    {%- endif -%}\n    {%- if python_tools -%}\n      {%- set ns = namespace(python_tool_string=\"When you send a message containing Python code between '<code>' and '</code>' tags, it will be executed in a stateful Jupyter notebook environment, and you will then be given the output to continued reasoning in an agentic loop.\\n\\nYou can use the following tools in your python code like regular functions:\\n<tools>\\n\") -%}\n      {%- for tool in python_tools[:] -%} {# The slicing makes sure that python_tools is a list #}\n        {%- set ns.python_tool_string = ns.python_tool_string ~ (tool | string) ~ \"\\n\" -%}\n      {%- endfor -%}\n      {%- set python_tool_string = ns.python_tool_string + \"</tools>\\n\\nThe state persists between code executions: so variables that you define in one step are still available thereafter.\" -%}\n      {{- python_tool_string -}}\n    {%- endif -%}\n    {{- \"\\n\\n\" -}}\n    {{- \"<|im_end|>\\n\" -}}\n  {%- endif -%}\n{%- endif -%}\n{# ───── main loop ───── #}\n{%- for message in messages -%}\n    {%- set content = message.content if message.content is string else \"\" -%}\n    {%- if message.role == \"user\" -%}\n        {{ \"<|im_start|>\" + message.role + \"\\n\"  + content + \"<|im_end|>\\n\" }}\n    {%- elif message.role == \"assistant\" -%}\n        {% generation %}\n        {%- if reasoning_mode == \"/think\" -%}\n            {{ \"<|im_start|>assistant\\n\" + content.lstrip(\"\\n\") + \"<|im_end|>\\n\" }}\n        {%- else -%}\n            {{ \"<|im_start|>assistant\\n\" + \"<think>\\n\\n</think>\\n\" + content.lstrip(\"\\n\") + \"<|im_end|>\\n\" }}\n        {%- endif -%}\n        {% endgeneration %}\n    {%- elif message.role == \"tool\" -%}\n    {{ \"<|im_start|>\" + \"user\\n\"  + content + \"<|im_end|>\\n\" }}\n    {%- endif -%}\n{%- endfor -%}\n{# ───── generation prompt ───── #}\n{%- if add_generation_prompt -%}\n    {%- if reasoning_mode == \"/think\" -%}\n        {{ \"<|im_start|>assistant\\n\" }}\n    {%- else -%}\n        {{ \"<|im_start|>assistant\\n\" + \"<think>\\n\\n</think>\\n\"  }}\n    {%- endif -%}\n{%- endif -%}",
+      "bos_token": "<|begin_of_text|>",
+      "eos_token": "<|im_end|>",
+      "totalFileSize": 6158339616
+    },
+    "siblings": [
+      {
+        "rfilename": ".gitattributes",
+        "blobId": "a48650b74c196967a4128709ee8020b14f9971a0",
+        "size": 3328
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ2_M.gguf",
+        "blobId": "a4ba5432ba631197394ef5c767ca9f5f0376e81e",
+        "size": 1125355328,
+        "lfs": {
+          "sha256": "96b88ac2f3b0e7fe336c80e22feafce9f99ffc0ff8f5780f949eb1124808b7b6",
+          "size": 1125355328,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ3_M.gguf",
+        "blobId": "d83683da32efc2f1752a4bab24ad0ac79da4981e",
+        "size": 1469357888,
+        "lfs": {
+          "sha256": "ddce138598e1f963e626334658d7a082d65fce70336d82e3e3eb1039c95d72d5",
+          "size": 1469357888,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ3_XS.gguf",
+        "blobId": "25cd0d795ebfa5d1e12c35e7a25766aa2413b1a5",
+        "size": 1371414336,
+        "lfs": {
+          "sha256": "c4e9d926ddef9ad235269c0460be583d885c0b09ba2ce11affc38ff42c583223",
+          "size": 1371414336,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ3_XXS.gguf",
+        "blobId": "e9186c3b62abd0549f80396df18e603a708472ac",
+        "size": 1267666752,
+        "lfs": {
+          "sha256": "356b83c016a7613e79791c2c86acea765f672afa1e18d206377e8118cff41ab7",
+          "size": 1267666752,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ4_NL.gguf",
+        "blobId": "8d8c3a324ca227dbcd4726c3d350aceb0b15dd84",
+        "size": 1810538304,
+        "lfs": {
+          "sha256": "af5e551b726a81b52bc06d7d9395f82890a326e36d814f03112fb0f9f41cfafe",
+          "size": 1810538304,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-IQ4_XS.gguf",
+        "blobId": "f15f5ddf876a888e878a3c237f66651042466be1",
+        "size": 1723834176,
+        "lfs": {
+          "sha256": "342fe3669e6db39bf9b9b514923f2af4a7d6b069efb45cc8f583cfc31cb75553",
+          "size": 1723834176,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q2_K.gguf",
+        "blobId": "aa7f48e265fde41f2b5521537ad549a313d8a06d",
+        "size": 1253302080,
+        "lfs": {
+          "sha256": "794509645d684d6b563b054c312f502af793e040155080d4de358e698f638354",
+          "size": 1253302080,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q2_K_L.gguf",
+        "blobId": "f5a3763cf93e33239c54512db1d224761697c034",
+        "size": 1316917056,
+        "lfs": {
+          "sha256": "27a3fbb59204030c2146452c193c12d946df13bd614b3f2131012adb4bf61ea5",
+          "size": 1316917056,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q3_K_L.gguf",
+        "blobId": "c0c65d43c9c48a9c182ba236cbc8359e4374c169",
+        "size": 1690214208,
+        "lfs": {
+          "sha256": "5e93d6464243fb3d809fcceaba79f1ceef02637ea61ad532af4ea95bc6fb7507",
+          "size": 1690214208,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q3_K_M.gguf",
+        "blobId": "3311e8c56c61cf873e6fed930a07ce9ade93be3a",
+        "size": 1571069760,
+        "lfs": {
+          "sha256": "5e5c70fdc3429023ed88ead8af2a70684047e2628258b650bdb729c8437639d0",
+          "size": 1571069760,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q3_K_S.gguf",
+        "blobId": "01cb54ea77cd878bbb488de957bd48ad41781ed8",
+        "size": 1432313664,
+        "lfs": {
+          "sha256": "40e2c50e950947363e3222353407dc407fad8c0bb03314d8b2278966b7d508aa",
+          "size": 1432313664,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q3_K_XL.gguf",
+        "blobId": "a667709260333164dd5977cd88232d6355b9cbd7",
+        "size": 1753829184,
+        "lfs": {
+          "sha256": "07660c5582bf9b26e7558f8a83723cf4a60665340db9276fee435d8586d4091a",
+          "size": 1753829184,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q4_0.gguf",
+        "blobId": "b1b027e8bdf2317fbb568168ffdc47146a5969b7",
+        "size": 1811455808,
+        "lfs": {
+          "sha256": "1e0e56d458e6b6d5ea18d0e5fe598cca252450308f1648afab49984fceae47da",
+          "size": 1811455808,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q4_1.gguf",
+        "blobId": "70889131c55e721b7fc48661da631ac5d97cba94",
+        "size": 1981587264,
+        "lfs": {
+          "sha256": "2603ac4acb987b702fb45bb439e752313a63fe02ae6f9b837cf7ef075e77a1a3",
+          "size": 1981587264,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q4_K_L.gguf",
+        "blobId": "241af2dca954f58933fb8a24ab8a926f53ac1eb9",
+        "size": 1978920768,
+        "lfs": {
+          "sha256": "e6ee0b21fff62763bae1d7ce829b5e22f92e06e7560a809b0f22d0e7347cc491",
+          "size": 1978920768,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q4_K_M.gguf",
+        "blobId": "62302d6c2d33642c940922b01ef4ca3d7c92095f",
+        "size": 1915305792,
+        "lfs": {
+          "sha256": "519732558d5fa7420ab058e1b776dcfe73da78013c2fe59c7ca43c325ef89132",
+          "size": 1915305792,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q4_K_S.gguf",
+        "blobId": "7f6b0075cd9e883cc00d44d9ac395eaf1d20a3f7",
+        "size": 1817616192,
+        "lfs": {
+          "sha256": "a1df314cf8900f93d02628430c1325872bb355f9258f858b966fed2aaff2df28",
+          "size": 1817616192,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q5_K_L.gguf",
+        "blobId": "c9ef44848cfb23169bfc3b71d29d288e53be4128",
+        "size": 2277371712,
+        "lfs": {
+          "sha256": "151d2efab4d8d7fbbdb8bd2653b9cb322ed44f937c27dd2f3e328411644a0b7d",
+          "size": 2277371712,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q5_K_M.gguf",
+        "blobId": "f05c14fbf4d1dfcc9c444f1b5eb2a5b1d93006f5",
+        "size": 2213756736,
+        "lfs": {
+          "sha256": "65a6490c29a728d1bde5b6a6858418715e773e061433386dbbc39b3f0a088f3d",
+          "size": 2213756736,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q5_K_S.gguf",
+        "blobId": "44e211e35fbdbf732a63861d203b7fd11fd0b8b4",
+        "size": 2157354816,
+        "lfs": {
+          "sha256": "1bcedb1cd1b6a4a19075295fdfecffa5b324db58101b5806c10cabd3c7ffedbe",
+          "size": 2157354816,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q6_K.gguf",
+        "blobId": "c4d6cfb982c65c13da4689ce4d9c7754c289b9b5",
+        "size": 2530860864,
+        "lfs": {
+          "sha256": "4c7ad22be780006817f727c8a8c0fdc75d35f995c6a91e0210a931cbb20ba6fd",
+          "size": 2530860864,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q6_K_L.gguf",
+        "blobId": "73c76c6083feb51c9dd29d283419b7f5a331f92e",
+        "size": 2594475840,
+        "lfs": {
+          "sha256": "406c5a1985fd5be91b865c6945a27ce28b5104dca338f042c0bd7f7f7cfe6175",
+          "size": 2594475840,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-Q8_0.gguf",
+        "blobId": "1b4bf75e58c379a12c8cc411cabbaea1dda3d2bb",
+        "size": 3275575104,
+        "lfs": {
+          "sha256": "32056df2ec827a1f7c14b6b7f48239fe1d288aba086c811c96a61a8c9df6c733",
+          "size": 3275575104,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B-bf16.gguf",
+        "blobId": "d51ce55f9bf9b778b09b55664c503c828cf48262",
+        "size": 6158339616,
+        "lfs": {
+          "sha256": "66a39ad173171c36bce86769449f8db61c062689f964a032995976d20b8245f9",
+          "size": 6158339616,
+          "pointerSize": 135
+        }
+      },
+      {
+        "rfilename": "HuggingFaceTB_SmolLM3-3B.imatrix",
+        "blobId": "a808196a7d7594e47bc2239c63ce50576bdd764f",
+        "size": 3362990,
+        "lfs": {
+          "sha256": "c24783399dd0d9db1ea7cfb1a0b66fa7c7fa406ada01f76b623597efa7fc3262",
+          "size": 3362990,
+          "pointerSize": 132
+        }
+      },
+      {
+        "rfilename": "README.md",
+        "blobId": "da583255bc2d6f05de8045c063caa27e0a9eff80",
+        "size": 13815
+      }
+    ],
+    "spaces": [],
+    "createdAt": "2025-07-08T16:09:26.000Z",
+    "usedStorage": 102870277358
+  }
+}

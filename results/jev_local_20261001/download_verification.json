@@ -1,0 +1,50 @@
+{
+  "model_id": "convaiinnovations/laya-multilingual",
+  "revision": "e4e9ddf21a7b1903b7acffd8814ad4307bf63a67",
+  "status": "all_selected_artifacts_size_and_lfs_sha256_verified",
+  "transport": "HF CLI small files; standard verified HTTPS Range fallback for binary read timeouts",
+  "artifacts": [
+    {
+      "file": ".gitattributes",
+      "bytes": 1580,
+      "sha256": "caf3ca02d5e883f643e939cbed54f94237f94c171797f0dfea5e25c7e33315b3",
+      "expected_lfs_sha256": null
+    },
+    {
+      "file": "README.md",
+      "bytes": 9346,
+      "sha256": "e85d16c3fe35fe7094ef51a7cfa81144a5cc07558e5faddcff753a8153e38a0b",
+      "expected_lfs_sha256": null
+    },
+    {
+      "file": "encoder/config.json",
+      "bytes": 1938,
+      "sha256": "83f6916d13ef0f556ac461f28308dc2bffa7ebeadee8ec9e2db5812020ea5bb4",
+      "expected_lfs_sha256": null
+    },
+    {
+      "file": "model.safetensors",
+      "bytes": 643835514,
+      "sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204",
+      "expected_lfs_sha256": "9d628fd971b700382ac6f65920a86f149777b2e748e0c955fb3b19695aa8f204"
+    },
+    {
+      "file": "rl_agent_config.json",
+      "bytes": 472,
+      "sha256": "25061739243b617ad88d1219ba6f8a9c86c5881ca28df024fa2d9b3b2fcc30c6",
+      "expected_lfs_sha256": null
+    },
+    {
+      "file": "tokenizer/tokenizer.json",
+      "bytes": 34363188,
+      "sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f",
+      "expected_lfs_sha256": "609d8f4c067cd3950f88594c5a802616cea245823836ef5848ee4fc40aab5b6f"
+    },
+    {
+      "file": "tokenizer/tokenizer_config.json",
+      "bytes": 502,
+      "sha256": "424b69444bf7b5809dc2cd2e36d0bd71b8055124dd24274d6db3c655d38205e7",
+      "expected_lfs_sha256": null
+    }
+  ]
+}

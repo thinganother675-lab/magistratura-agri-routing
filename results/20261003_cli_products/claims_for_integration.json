@@ -1,0 +1,112 @@
+{
+  "claims": [
+    {
+      "claim_id": "codex_cli_dev60_strict_set_em",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: strict_set_em",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/strict_set_em",
+      "value": 0.6101694915254238,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_strict_set_f1",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: strict_set_f1",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/strict_set_f1",
+      "value": 0.7351089588377724,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_n_attempted",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: n_attempted",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/n_attempted",
+      "value": 60,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_n_completed",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: n_completed",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/n_completed",
+      "value": 60,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_invalid_output",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: invalid_output",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/invalid_output",
+      "value": 0,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_latency_p50_s",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: latency_p50_s",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/latency_p50_s",
+      "value": 21.593270099998335,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_latency_p95_s",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: latency_p95_s",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/latency_p95_s",
+      "value": 27.951660034990343,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_input_tokens",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: input_tokens",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/input_tokens",
+      "value": 510206,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    },
+    {
+      "claim_id": "codex_cli_dev60_output_tokens",
+      "statement": "Supplementary Codex CLI GPT-6-Luna medium product DEV60: output_tokens",
+      "study_run_id": "20261003_cli_products",
+      "data_path": "results/20261003_cli_products/cli_products_analysis.json",
+      "analysis_field": "/codex/summary/output_tokens",
+      "value": 507,
+      "code_commit": "6c496744107001d523c2311f236a61a5e14b93c2",
+      "code_identity_note": "parent commit; exact executed worktree source hashes/snapshots in frozen DEV60 plan",
+      "data_sha256": "953a779e8f168545d948e50a938d0564c2b921991df75a62a5c0435903cc637f",
+      "status": "SUPPLEMENTARY"
+    }
+  ]
+}

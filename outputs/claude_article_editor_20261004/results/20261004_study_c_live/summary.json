@@ -1,0 +1,70 @@
+{
+  "run_id": "20261004_study_c_live",
+  "status": "COMPLETE",
+  "models": {
+    "qwen3.5-9b": {
+      "model_only": {
+        "n_expected": 27,
+        "n_attempted": 27,
+        "strict_correct": 7,
+        "numeric_cases": 16,
+        "strict_numeric_correct": 1,
+        "rounding_1e4_numeric_correct": 1,
+        "errors": 0,
+        "tool_calls_submitted": 0,
+        "numeric_executions": 0,
+        "latency_mean_s": 1.4039686222202834,
+        "latency_median_s": 1.4692580999981146
+      },
+      "live_application_tools": {
+        "n_expected": 27,
+        "n_attempted": 27,
+        "strict_correct": 18,
+        "numeric_cases": 16,
+        "strict_numeric_correct": 16,
+        "rounding_1e4_numeric_correct": 16,
+        "errors": 0,
+        "tool_calls_submitted": 16,
+        "numeric_executions": 16,
+        "latency_mean_s": 2.4920294407444694,
+        "latency_median_s": 2.857381699985126
+      }
+    },
+    "qwen3.8-27b": {
+      "model_only": {
+        "n_expected": 27,
+        "n_attempted": 27,
+        "strict_correct": 15,
+        "numeric_cases": 16,
+        "strict_numeric_correct": 6,
+        "rounding_1e4_numeric_correct": 6,
+        "errors": 0,
+        "tool_calls_submitted": 0,
+        "numeric_executions": 0,
+        "latency_mean_s": 8.688882622223227,
+        "latency_median_s": 8.988845899992157
+      },
+      "live_application_tools": {
+        "n_expected": 27,
+        "n_attempted": 27,
+        "strict_correct": 25,
+        "numeric_cases": 16,
+        "strict_numeric_correct": 16,
+        "rounding_1e4_numeric_correct": 16,
+        "errors": 0,
+        "tool_calls_submitted": 16,
+        "numeric_executions": 16,
+        "latency_mean_s": 19.125653481484967,
+        "latency_median_s": 21.879373799980385
+      }
+    }
+  },
+  "stop": null,
+  "finished_utc": "2026-10-03T21:59:34.283086+00:00",
+  "elapsed_s": 899.8454348999949,
+  "private_test_run": false,
+  "paid_api_calls": 0,
+  "new_model_calls": 142,
+  "traces_sha256": "1786b2cef7bfe3041a9253ae7506e2c7ded23000c2026ac3ffabc6ea1080b522",
+  "all_requested_models_unloaded": true
+}

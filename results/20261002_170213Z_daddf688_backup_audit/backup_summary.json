@@ -1,0 +1,35 @@
+{
+  "recorded_utc": "2026-10-02T17:14:02.269602+00:00",
+  "initial_head": "add40a8b81a7894915e357fa27623551b23304a1",
+  "status": "DONE",
+  "private_backup_verified": true,
+  "target": "https://github.com/Apartman36/magistratura-agri-routing",
+  "push_type": "normal explicit SHA to main; no force",
+  "origin_url_preserved": "https://github.com/thinganother675-lab/magistratura-agri-routing.git",
+  "upstream": "apartman/main",
+  "no_global_credentials_changed": true,
+  "secrets_or_fingerprints_persisted": false,
+  "audit_sources": [
+    "security_history_audit.json",
+    "github_create_private.json",
+    "remote_verification_20261002_171041Z_69e89934.json"
+  ],
+  "rights_public_dataset_release": "HOLD; source-specific permissions/attribution and share-alike obligations remain",
+  "rights_sources": [
+    {
+      "url": "https://www.fao.org/contact-us/terms/en/",
+      "read": "Reuse of web content; third-party content; translation/adaptation requests"
+    },
+    {
+      "url": "https://blog-crop-news.extension.umn.edu/2022/09/maximize-your-cover-crop-benefits-by.html",
+      "read": "Footer CC BY-SA4.0 statement"
+    },
+    {
+      "url": "https://power.larc.nasa.gov/docs/faqs/data/",
+      "read": "Public accessibility; not blanket license clearance"
+    }
+  ],
+  "agxqa_preserved_license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "large_file_max_bytes": 5514432,
+  "followup": "Root owns final new-work commit/push and versioned final security scan"
+}

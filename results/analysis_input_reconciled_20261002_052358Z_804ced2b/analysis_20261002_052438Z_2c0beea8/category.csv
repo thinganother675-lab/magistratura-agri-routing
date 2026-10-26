@@ -1,0 +1,31 @@
+﻿method,category,target_n,measured_n,measurement_coverage,not_run_n,missing_n,correct,quality,critical_errors,error_decisions,call_errors,cloud_calls,local_calls,route_counts,action_counts,qa_measured_n,qa_em,qa_f1_mean,latency_mean_s
+local,compound_reasoning,20,20,1.0,0,0,8,0.4,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.2881320400000162
+local,extractive_qa,40,40,1.0,0,0,36,0.9,0,0,0,0,40,"{""LOCAL_MODEL"": 40}","{""ANSWER"": 40}",40,0.9,0.9533333333333335,1.2320740400000205
+local,missing_data,20,20,1.0,0,0,18,0.9,2,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ASK_FOR_DATA"": 18, ""ANSWER"": 2}",0,UNKNOWN,UNKNOWN,1.9440476449999096
+local,numeric,30,30,1.0,0,0,0,0.0,30,0,0,0,30,"{""LOCAL_MODEL"": 30}","{""ANSWER"": 30}",0,UNKNOWN,UNKNOWN,1.9108919466667051
+local,rule_interpretation,20,20,1.0,0,0,20,1.0,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.3034776899999998
+local,tool_selection,20,20,1.0,0,0,20,1.0,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.4451922400000172
+cloud,compound_reasoning,20,20,1.0,0,0,16,0.8,0,4,4,20,0,"{""CLOUD_MODEL"": 20}","{""ANSWER"": 16, ""NO_OUTPUT"": 4}",0,UNKNOWN,UNKNOWN,10.451638579999974
+cloud,extractive_qa,40,40,1.0,0,0,37,0.925,0,0,0,40,0,"{""CLOUD_MODEL"": 40}","{""ANSWER"": 40}",40,0.925,0.9755952380952382,1.62809839250001
+cloud,missing_data,20,20,1.0,0,0,18,0.9,0,2,2,20,0,"{""CLOUD_MODEL"": 20}","{""ASK_FOR_DATA"": 18, ""NO_OUTPUT"": 2}",0,UNKNOWN,UNKNOWN,4.6602206699999895
+cloud,numeric,30,30,1.0,0,0,23,0.7666666666666667,0,6,6,30,0,"{""CLOUD_MODEL"": 30}","{""ANSWER"": 23, ""NO_OUTPUT"": 6, ""ASK_FOR_DATA"": 1}",0,UNKNOWN,UNKNOWN,3.544660383333356
+cloud,rule_interpretation,20,20,1.0,0,0,18,0.9,0,2,2,20,0,"{""CLOUD_MODEL"": 20}","{""NO_OUTPUT"": 2, ""ANSWER"": 18}",0,UNKNOWN,UNKNOWN,7.291947475000029
+cloud,tool_selection,20,20,1.0,0,0,18,0.9,0,2,2,20,0,"{""CLOUD_MODEL"": 20}","{""NO_OUTPUT"": 2, ""ANSWER"": 18}",0,UNKNOWN,UNKNOWN,4.705293975000041
+tool_cloud,compound_reasoning,20,20,1.0,0,0,18,0.9,0,2,2,20,0,"{""CLOUD_MODEL"": 20}","{""ANSWER"": 18, ""NO_OUTPUT"": 2}",0,UNKNOWN,UNKNOWN,5.539100895000002
+tool_cloud,extractive_qa,40,40,1.0,0,0,32,0.8,0,2,2,40,0,"{""CLOUD_MODEL"": 40}","{""ANSWER"": 38, ""NO_OUTPUT"": 2}",40,0.8,0.8928174603174603,4.373063612500016
+tool_cloud,missing_data,20,20,1.0,0,0,20,1.0,0,0,0,0,0,"{""ASK_FOR_DATA"": 20}","{""ASK_FOR_DATA"": 20}",0,UNKNOWN,UNKNOWN,4.774500007442839e-05
+tool_cloud,numeric,30,30,1.0,0,0,30,1.0,0,0,0,0,0,"{""DETERMINISTIC_TOOL"": 30}","{""ANSWER"": 30}",0,UNKNOWN,UNKNOWN,6.559333335947789e-05
+tool_cloud,rule_interpretation,20,20,1.0,0,0,19,0.95,0,1,1,20,0,"{""CLOUD_MODEL"": 20}","{""ANSWER"": 19, ""NO_OUTPUT"": 1}",0,UNKNOWN,UNKNOWN,4.273127700000009
+tool_cloud,tool_selection,20,20,1.0,0,0,20,1.0,0,0,0,20,0,"{""CLOUD_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.5546019149999553
+hybrid,compound_reasoning,20,20,1.0,0,0,8,0.4,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.2271146800000565
+hybrid,extractive_qa,40,40,1.0,0,0,36,0.9,0,0,0,0,40,"{""LOCAL_MODEL"": 40}","{""ANSWER"": 40}",40,0.9,0.9533333333333335,1.2212734199999773
+hybrid,missing_data,20,20,1.0,0,0,20,1.0,0,0,0,0,0,"{""ASK_FOR_DATA"": 20}","{""ASK_FOR_DATA"": 20}",0,UNKNOWN,UNKNOWN,5.0340000029791554e-05
+hybrid,numeric,30,30,1.0,0,0,30,1.0,0,0,0,0,0,"{""DETERMINISTIC_TOOL"": 30}","{""ANSWER"": 30}",0,UNKNOWN,UNKNOWN,5.881999998867589e-05
+hybrid,rule_interpretation,20,20,1.0,0,0,20,1.0,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.1922552300000007
+hybrid,tool_selection,20,20,1.0,0,0,19,0.95,0,0,0,20,0,"{""CLOUD_MODEL"": 20}","{""ANSWER"": 19, ""ASK_FOR_DATA"": 1}",0,UNKNOWN,UNKNOWN,1.4644158600000083
+offline,compound_reasoning,20,20,1.0,0,0,8,0.4,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.2248877150000113
+offline,extractive_qa,40,40,1.0,0,0,36,0.9,0,0,0,0,40,"{""LOCAL_MODEL"": 40}","{""ANSWER"": 40}",40,0.9,0.9533333333333335,1.2453827674999842
+offline,missing_data,20,20,1.0,0,0,20,1.0,0,0,0,0,0,"{""ASK_FOR_DATA"": 20}","{""ASK_FOR_DATA"": 20}",0,UNKNOWN,UNKNOWN,4.918999998153595e-05
+offline,numeric,30,30,1.0,0,0,30,1.0,0,0,0,0,0,"{""DETERMINISTIC_TOOL"": 30}","{""ANSWER"": 30}",0,UNKNOWN,UNKNOWN,5.107666668967188e-05
+offline,rule_interpretation,20,20,1.0,0,0,20,1.0,0,0,0,0,20,"{""LOCAL_MODEL"": 20}","{""ANSWER"": 20}",0,UNKNOWN,UNKNOWN,1.199759469999981
+offline,tool_selection,20,20,1.0,0,0,0,0.0,0,0,0,0,0,"{""ABSTAIN"": 20}","{""ABSTAIN"": 20}",0,UNKNOWN,UNKNOWN,4.6250000002601156e-05

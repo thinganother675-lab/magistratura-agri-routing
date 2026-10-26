@@ -1,0 +1,105 @@
+{
+  "audit_utc": "2026-10-03T08:49:31.484232+00:00",
+  "audit_kind": "READ_ONLY_CLOUD512_COMMON_DEV60_RECOMPUTATION",
+  "status": "DEV",
+  "plan_sha256": "45d19d9ad3662f4db2b0ddace290d6e54d9ba811626a73214b2e4b93036aab0f",
+  "source_sha256": "be1c6da85e9c19a819656733fcb30318b79735e05068d5699a3f4142df50d150",
+  "source_matches_plan": true,
+  "source_snapshot_checks": [
+    {
+      "source": "scripts/mera_cloud_baseline_20261003.py",
+      "expected_sha256": "941187e5dd26e7ba5fa8fad32cd462bff9e8ed63d70d41cc48bd1e384f9692b7",
+      "snapshot_sha256": "941187e5dd26e7ba5fa8fad32cd462bff9e8ed63d70d41cc48bd1e384f9692b7",
+      "matches": true
+    },
+    {
+      "source": "scripts/mera_local_screen_20261003.py",
+      "expected_sha256": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+      "snapshot_sha256": "6a860f6dd4413edcc41816b2b8ace8c663e42a3020b5687305cd22ee3fa77c2c",
+      "matches": true
+    },
+    {
+      "source": "src/agro_route/mera_screen_metrics_20261003.py",
+      "expected_sha256": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567",
+      "snapshot_sha256": "3230bd850e1650e66d700c833c50149e82321e5c6aa566c933ad9cff04aeb567",
+      "matches": true
+    },
+    {
+      "source": "src/agro_route/mera_adapter_20261003.py",
+      "expected_sha256": "2db616eecd091e6b9b0d59c40916761a22158c1fedd7a112331a5a4fcaad6a56",
+      "snapshot_sha256": "2db616eecd091e6b9b0d59c40916761a22158c1fedd7a112331a5a4fcaad6a56",
+      "matches": true
+    }
+  ],
+  "combined_sha256": "31c495c4c27b114615d1e3933a345095f2599bcb10e3ba33979f2c025d4e5d78",
+  "stage_hash_checks": [
+    {
+      "stage": "probe12",
+      "n_attempted": 12,
+      "raw_sha256": "4100c52926521a025faac08bc729218009e8e3998cd92b59ee8a7370c1265652",
+      "safe_sha256": "6bf7c55e9926606084d303035f36835264185b2cd4a84ea50f8133a13fe90898",
+      "raw_hash_matches_manifest": true,
+      "safe_hash_matches_manifest": true,
+      "safe_raw_ids_same_order": true,
+      "plan_hash_matches": true,
+      "raw_hash_stable": true,
+      "manifest_status": "COMPLETE",
+      "manifest_complete_coverage": true,
+      "n_completed_saved": 12,
+      "started_utc": "2026-10-03T08:33:18.617735+00:00",
+      "finished_utc": "2026-10-03T08:33:35.195943+00:00"
+    },
+    {
+      "stage": "dev60",
+      "n_attempted": 48,
+      "raw_sha256": "c38e555c03caadc0c8d2275044c875faf527920c2364e1c8dc902c3dd822af09",
+      "safe_sha256": "2332da4861227b78c18e45285be7fb90ac080df077505d6f13814e9622efe660",
+      "raw_hash_matches_manifest": true,
+      "safe_hash_matches_manifest": true,
+      "safe_raw_ids_same_order": true,
+      "plan_hash_matches": true,
+      "raw_hash_stable": true,
+      "manifest_status": "COMPLETE",
+      "manifest_complete_coverage": false,
+      "n_completed_saved": 44,
+      "started_utc": "2026-10-03T08:34:48.907517+00:00",
+      "finished_utc": "2026-10-03T08:36:03.566365+00:00"
+    }
+  ],
+  "independent_summary": {
+    "n_expected": 60,
+    "n_attempted": 60,
+    "n_completed": 56,
+    "n_response_received": 60,
+    "n_scored": 59,
+    "strict_em_count": 31,
+    "strict_f1_sum": 38.79999999999999,
+    "strict_set_em": 0.5254237288135594,
+    "strict_set_f1": 0.6576271186440676,
+    "conservative_all_n_em": 0.5166666666666667,
+    "errors": 4,
+    "invalid_output": 4,
+    "attempted_coverage": true,
+    "complete_coverage": false
+  },
+  "summary_mismatch_fields": [],
+  "per_item_score_price_mismatches": [],
+  "request_parameter_mismatch_ids": [],
+  "prompt_system_hash_mismatch_ids": [],
+  "returned_model_identity_mismatch_ids": [],
+  "unique_ids": true,
+  "probe_extension_ids_disjoint": true,
+  "all_expected_ids_present": true,
+  "combined_id_order_matches_frozen": true,
+  "finish_reason_counts": {
+    "stop": 56,
+    "length": 4
+  },
+  "incomplete_id_count": 4,
+  "known_cost_usd_estimate": 0.0020922000000000002,
+  "all_usage_known": true,
+  "primary_frozen_after_probe_before_extension": true,
+  "original_status_ambiguity": "extension manifest COMPLETE denotes attempted coverage, while44/48 responses successful; combined56/60 successful, complete_coverage false",
+  "audit_calls": 0,
+  "raw_source_or_output_text_written": false
+}

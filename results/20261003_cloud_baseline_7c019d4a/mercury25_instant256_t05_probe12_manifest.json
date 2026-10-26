@@ -1,0 +1,118 @@
+{
+  "run_id": "20261003_cloud_baseline_7c019d4a",
+  "profile": "mercury25_instant256_t05",
+  "stage": "probe12",
+  "status": "PARTIAL",
+  "started_utc": "2026-10-03T08:09:12.547953+00:00",
+  "credential_source_name": "project_env:mercury_api_key",
+  "code_commit": "63b481475653bb13a9e111526019adf16a4ce672",
+  "plan_sha256": "78d1ed59aa5d707df00fcff5105169f6dc8ced805e9494851e831600b35eeb20",
+  "actual_attempts": 8,
+  "prior_probe_calls": 0,
+  "private_test_run": false,
+  "retries": 0,
+  "MERA_submissions": 0,
+  "cap_usd": 0.02,
+  "n_expected": 12,
+  "parameter_differences": [
+    "Mercury temperature.5 vs local0 because provider allows.5-1",
+    "Mercury instant/medium vs native local off/low",
+    "Mercury nonstream TTFT/tok/s unavailable",
+    "Mercury no seed/top_p/logprobs requested because not documented in current API"
+  ],
+  "stop_reason": "ERROR_OR_UNKNOWN_USAGE_NO_RETRY",
+  "finished_utc": "2026-10-03T08:10:22.390768+00:00",
+  "actual_calls": 8,
+  "reserved_usd": 0.0007769999999999999,
+  "known_cost_usd_estimate": 0.0002523,
+  "unknown_cost_calls": 1,
+  "summary": {
+    "n_expected": 12,
+    "n_attempted": 8,
+    "n_completed": 8,
+    "n_response_received": 7,
+    "n_scored": 8,
+    "complete_coverage": false,
+    "strict_em_count": 4,
+    "strict_f1_sum": 4.0,
+    "strict_set_em": 0.5,
+    "strict_set_f1": 0.5,
+    "conservative_all_n_em": 0.3333333333333333,
+    "reference_issues": 0,
+    "invalid_output": 3,
+    "json_contract_failure": 3,
+    "errors": 1,
+    "timeouts": 1,
+    "latency_p50_s": 1.3558472000004258,
+    "latency_p95_s": 39.81622769999591,
+    "latency_mean_s": 8.71763859999919,
+    "ttft_p50_s": null,
+    "first_answer_p50_s": null,
+    "client_tps_p50": null,
+    "backend_tps_p50": null,
+    "input_tokens": 1845,
+    "output_tokens": 1190,
+    "usage_coverage": 7,
+    "confidence_coverage": 0,
+    "by_domain": {
+      "Ботаника": {
+        "n": 2,
+        "n_scored": 2,
+        "reference_issues": 0,
+        "strict_set_em": 0.5,
+        "strict_set_f1": 0.5
+      },
+      "Кормопроизводство и луговодство": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 1,
+        "strict_set_f1": 1.0
+      },
+      "Мелиоративное земледелие": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      },
+      "Общая генетика": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 1,
+        "strict_set_f1": 1.0
+      },
+      "Общее земледелие": {
+        "n": 1,
+        "n_scored": 1,
+        "reference_issues": 0,
+        "strict_set_em": 0,
+        "strict_set_f1": 0.0
+      },
+      "Основы селекции": {
+        "n": 2,
+        "n_scored": 2,
+        "reference_issues": 0,
+        "strict_set_em": 0.5,
+        "strict_set_f1": 0.5
+      }
+    },
+    "by_answer_cardinality": {
+      "single": {
+        "n": 4,
+        "strict_set_em": 0.25,
+        "strict_set_f1": 0.25,
+        "predicted_single_n": 2
+      },
+      "multiple": {
+        "n": 4,
+        "strict_set_em": 0.75,
+        "strict_set_f1": 0.75,
+        "predicted_single_n": 0
+      }
+    }
+  },
+  "raw_sha256": "e2e53563197980ab3e967cc6fc56cf0b1a32860e50a31a97233721519c23f552",
+  "safe_rows_sha256": "6ce5f7d9396779d810a11c626dd387c8246359f5960af303b793930a8542fbb0"
+}

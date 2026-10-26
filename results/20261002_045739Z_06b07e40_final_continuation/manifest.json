@@ -1,0 +1,1616 @@
+{
+  "phase": "HOME_FINAL_CONTINUATION",
+  "target_n": 150,
+  "holdout_ids": [
+    "home_final_20261001_0145",
+    "home_final_20261001_0067",
+    "home_final_20261001_0096",
+    "home_final_20261001_0100",
+    "home_final_20261001_0127",
+    "home_final_20261001_0066",
+    "home_final_20261001_0020",
+    "home_final_20261001_0056",
+    "home_final_20261001_0047",
+    "home_final_20261001_0112",
+    "home_final_20261001_0049",
+    "home_final_20261001_0111",
+    "home_final_20261001_0092",
+    "home_final_20261001_0077",
+    "home_final_20261001_0046",
+    "home_final_20261001_0136",
+    "home_final_20261001_0014",
+    "home_final_20261001_0065",
+    "home_final_20261001_0071",
+    "home_final_20261001_0137",
+    "home_final_20261001_0015",
+    "home_final_20261001_0106",
+    "home_final_20261001_0079",
+    "home_final_20261001_0060",
+    "home_final_20261001_0057",
+    "home_final_20261001_0149",
+    "home_final_20261001_0001",
+    "home_final_20261001_0132",
+    "home_final_20261001_0013",
+    "home_final_20261001_0043",
+    "home_final_20261001_0113",
+    "home_final_20261001_0023",
+    "home_final_20261001_0078",
+    "home_final_20261001_0027",
+    "home_final_20261001_0081",
+    "home_final_20261001_0028",
+    "home_final_20261001_0039",
+    "home_final_20261001_0041",
+    "home_final_20261001_0064",
+    "home_final_20261001_0108",
+    "home_final_20261001_0075",
+    "home_final_20261001_0012",
+    "home_final_20261001_0036",
+    "home_final_20261001_0086",
+    "home_final_20261001_0040",
+    "home_final_20261001_0068",
+    "home_final_20261001_0143",
+    "home_final_20261001_0119",
+    "home_final_20261001_0003",
+    "home_final_20261001_0146",
+    "home_final_20261001_0147",
+    "home_final_20261001_0073",
+    "home_final_20261001_0021",
+    "home_final_20261001_0134",
+    "home_final_20261001_0083",
+    "home_final_20261001_0148",
+    "home_final_20261001_0032",
+    "home_final_20261001_0048",
+    "home_final_20261001_0087",
+    "home_final_20261001_0126",
+    "home_final_20261001_0121",
+    "home_final_20261001_0138",
+    "home_final_20261001_0016",
+    "home_final_20261001_0124",
+    "home_final_20261001_0008",
+    "home_final_20261001_0142",
+    "home_final_20261001_0084",
+    "home_final_20261001_0011",
+    "home_final_20261001_0122",
+    "home_final_20261001_0018",
+    "home_final_20261001_0009",
+    "home_final_20261001_0094",
+    "home_final_20261001_0114",
+    "home_final_20261001_0101",
+    "home_final_20261001_0058",
+    "home_final_20261001_0053",
+    "home_final_20261001_0038",
+    "home_final_20261001_0072",
+    "home_final_20261001_0140",
+    "home_final_20261001_0035",
+    "home_final_20261001_0107",
+    "home_final_20261001_0130",
+    "home_final_20261001_0026",
+    "home_final_20261001_0141",
+    "home_final_20261001_0135",
+    "home_final_20261001_0093",
+    "home_final_20261001_0006",
+    "home_final_20261001_0052",
+    "home_final_20261001_0117",
+    "home_final_20261001_0033",
+    "home_final_20261001_0085",
+    "home_final_20261001_0002",
+    "home_final_20261001_0045",
+    "home_final_20261001_0061",
+    "home_final_20261001_0131",
+    "home_final_20261001_0109",
+    "home_final_20261001_0120",
+    "home_final_20261001_0025",
+    "home_final_20261001_0088",
+    "home_final_20261001_0050",
+    "home_final_20261001_0144",
+    "home_final_20261001_0103",
+    "home_final_20261001_0051",
+    "home_final_20261001_0089",
+    "home_final_20261001_0105",
+    "home_final_20261001_0063",
+    "home_final_20261001_0031",
+    "home_final_20261001_0099",
+    "home_final_20261001_0076",
+    "home_final_20261001_0062",
+    "home_final_20261001_0150",
+    "home_final_20261001_0102",
+    "home_final_20261001_0034",
+    "home_final_20261001_0129",
+    "home_final_20261001_0059",
+    "home_final_20261001_0080",
+    "home_final_20261001_0019",
+    "home_final_20261001_0125",
+    "home_final_20261001_0118",
+    "home_final_20261001_0007",
+    "home_final_20261001_0090",
+    "home_final_20261001_0010",
+    "home_final_20261001_0044",
+    "home_final_20261001_0017",
+    "home_final_20261001_0098",
+    "home_final_20261001_0115",
+    "home_final_20261001_0110",
+    "home_final_20261001_0029",
+    "home_final_20261001_0055",
+    "home_final_20261001_0005",
+    "home_final_20261001_0030",
+    "home_final_20261001_0022",
+    "home_final_20261001_0133",
+    "home_final_20261001_0097",
+    "home_final_20261001_0074",
+    "home_final_20261001_0054",
+    "home_final_20261001_0116",
+    "home_final_20261001_0004",
+    "home_final_20261001_0069",
+    "home_final_20261001_0123",
+    "home_final_20261001_0070",
+    "home_final_20261001_0082",
+    "home_final_20261001_0128",
+    "home_final_20261001_0024",
+    "home_final_20261001_0091",
+    "home_final_20261001_0104",
+    "home_final_20261001_0095",
+    "home_final_20261001_0139",
+    "home_final_20261001_0037",
+    "home_final_20261001_0042"
+  ],
+  "protocol_sha256": "795c58a8f5be6521382f82d19718d9e5225de945f5797d7012bd6bc15c097e6c",
+  "dataset_sha256": "3a4d47451fec18794b084d08d5f45c80b1443d3f99afca4656f9b335b578ac03",
+  "prompt_sha256": "35aad77353f3daa237b2209c26c7e4c175bf04037772482212aed656008f1fd3",
+  "max_cloud_calls": 450,
+  "planning_cost_estimate_usd": 0.14256,
+  "max_planning_cost_per_call_usd": 0.0003168,
+  "budget_cap_usd": 0.25,
+  "planning_method": "3 independent cloud-using policies; max(6000, UTF8 request+prompt bytes+1024) input estimate and512 output; estimate, not invoice or guaranteed tokenizer bound",
+  "automatic_paid_retries": 0,
+  "hidden_warmups": 0,
+  "result_cache_reuse": false,
+  "segment_start": 6,
+  "remaining_n": 144,
+  "target_segment_decisions": 720,
+  "original_run_id": "20261002_043909Z_5d0044d9_final",
+  "original_files_sha256": {
+    "attempts.jsonl": "f3b293ce24262fbfe4f7566feb7902f3489c0229d10c3a0638018d7e90413d51",
+    "catalog_before.json": "d23203d45b11ab444b4ea4894ac0aaa7e7b7dd947db6fcdc1731d05329e56ae0",
+    "hardware.json": "083e88d6f822dbf1867c5c1f46e6fefe3712a1e92f53f0397eff76596ca0c26e",
+    "harness_source.py": "428b2839903032368cf2995356a6f473286322dd272814bbcddbad0dc9963a17",
+    "load_estimate.txt": "1af918361f5f02a2fc9a9ab7e4c9c3f30fe4f24a4e271dcfa539720f89318e07",
+    "load_public.txt": "592254b083b8c9c07b91c3aef503e70c11c323d207d00e66203f96549033f840",
+    "manifest.json": "b157f071c4eb364e27f1acf9431c862785f2c113eff5c3d4a59bb38d1ce6800c",
+    "manifest.tmp": "a3d730cee935305c5606892e71170445543d427f8468ec7da040e9ce9895a77e",
+    "protocol_copy.json": "32263441f8d049aba7f5de5b0fbd76917a002e08a2b9191184cc472811ff24cf",
+    "raw_decisions.jsonl": "7545afd390092c318e96f36cb333382a3657e224c2b4a1e23017b31bc0c1c29e",
+    "resources.json": "fbb26164cbc517e3f7e00ca6c3cbdb070cf1af1c5c2fce2150967a64637e71e3",
+    "samples_home_final.json": "d6d8661ead10d408b0fbd44e3ffe6cee5b142a98c3634c1d266756e660d5e1e2",
+    "schedule.json": "acb52487363ffbb6662bd5d535785640aa0ad0542ac132f7fe1d89accf73890d",
+    "summary.json": "293297dbe4f81cd59977b741614f7da71efc77b0e6ef93500dfe01426bde0273",
+    "system_prompt.txt": "5db64212e5cc9997b5107d3ec0b34d32f0a320d64f3612f0a66b95227c5196b2",
+    "weight_metadata.json": "b030c0a343cfffb4756246169420f358c912ffd65c6690fee2f08f78c5c2accd"
+  },
+  "original_claim_sha256": "e2014cd868401e6e8a0e62aca51a735c31bb811770e8a599ebed686fc20fdbff",
+  "authorization_sha256": "5d732a30e908e184269b41f24183f2b97862f90c25ec35a8f8640735b8c2e057",
+  "recovery_driver_sha256": "98342619fae69f1ba6d2b4769bc088df6e3b71c696e8373c7f017ed2fc00dad9",
+  "original_call_baseline": {
+    "local": 10,
+    "cloud": 12
+  },
+  "original_known_cloud_cost_usd": 0.00054914,
+  "original_unknown_cost_calls": 1,
+  "automatic_resume_allowed": false,
+  "original_attempts_repeated": 0,
+  "filesystem_only_replace_retry_deadline_s": 5.0,
+  "run_id": "20261002_045739Z_06b07e40_final_continuation",
+  "state": "completed_with_errors",
+  "started_utc": "2026-10-02T04:57:39.135360+00:00",
+  "sample_ids": [
+    "home_final_20261001_0145",
+    "home_final_20261001_0067",
+    "home_final_20261001_0096",
+    "home_final_20261001_0100",
+    "home_final_20261001_0127",
+    "home_final_20261001_0066",
+    "home_final_20261001_0020",
+    "home_final_20261001_0056",
+    "home_final_20261001_0047",
+    "home_final_20261001_0112",
+    "home_final_20261001_0049",
+    "home_final_20261001_0111",
+    "home_final_20261001_0092",
+    "home_final_20261001_0077",
+    "home_final_20261001_0046",
+    "home_final_20261001_0136",
+    "home_final_20261001_0014",
+    "home_final_20261001_0065",
+    "home_final_20261001_0071",
+    "home_final_20261001_0137",
+    "home_final_20261001_0015",
+    "home_final_20261001_0106",
+    "home_final_20261001_0079",
+    "home_final_20261001_0060",
+    "home_final_20261001_0057",
+    "home_final_20261001_0149",
+    "home_final_20261001_0001",
+    "home_final_20261001_0132",
+    "home_final_20261001_0013",
+    "home_final_20261001_0043",
+    "home_final_20261001_0113",
+    "home_final_20261001_0023",
+    "home_final_20261001_0078",
+    "home_final_20261001_0027",
+    "home_final_20261001_0081",
+    "home_final_20261001_0028",
+    "home_final_20261001_0039",
+    "home_final_20261001_0041",
+    "home_final_20261001_0064",
+    "home_final_20261001_0108",
+    "home_final_20261001_0075",
+    "home_final_20261001_0012",
+    "home_final_20261001_0036",
+    "home_final_20261001_0086",
+    "home_final_20261001_0040",
+    "home_final_20261001_0068",
+    "home_final_20261001_0143",
+    "home_final_20261001_0119",
+    "home_final_20261001_0003",
+    "home_final_20261001_0146",
+    "home_final_20261001_0147",
+    "home_final_20261001_0073",
+    "home_final_20261001_0021",
+    "home_final_20261001_0134",
+    "home_final_20261001_0083",
+    "home_final_20261001_0148",
+    "home_final_20261001_0032",
+    "home_final_20261001_0048",
+    "home_final_20261001_0087",
+    "home_final_20261001_0126",
+    "home_final_20261001_0121",
+    "home_final_20261001_0138",
+    "home_final_20261001_0016",
+    "home_final_20261001_0124",
+    "home_final_20261001_0008",
+    "home_final_20261001_0142",
+    "home_final_20261001_0084",
+    "home_final_20261001_0011",
+    "home_final_20261001_0122",
+    "home_final_20261001_0018",
+    "home_final_20261001_0009",
+    "home_final_20261001_0094",
+    "home_final_20261001_0114",
+    "home_final_20261001_0101",
+    "home_final_20261001_0058",
+    "home_final_20261001_0053",
+    "home_final_20261001_0038",
+    "home_final_20261001_0072",
+    "home_final_20261001_0140",
+    "home_final_20261001_0035",
+    "home_final_20261001_0107",
+    "home_final_20261001_0130",
+    "home_final_20261001_0026",
+    "home_final_20261001_0141",
+    "home_final_20261001_0135",
+    "home_final_20261001_0093",
+    "home_final_20261001_0006",
+    "home_final_20261001_0052",
+    "home_final_20261001_0117",
+    "home_final_20261001_0033",
+    "home_final_20261001_0085",
+    "home_final_20261001_0002",
+    "home_final_20261001_0045",
+    "home_final_20261001_0061",
+    "home_final_20261001_0131",
+    "home_final_20261001_0109",
+    "home_final_20261001_0120",
+    "home_final_20261001_0025",
+    "home_final_20261001_0088",
+    "home_final_20261001_0050",
+    "home_final_20261001_0144",
+    "home_final_20261001_0103",
+    "home_final_20261001_0051",
+    "home_final_20261001_0089",
+    "home_final_20261001_0105",
+    "home_final_20261001_0063",
+    "home_final_20261001_0031",
+    "home_final_20261001_0099",
+    "home_final_20261001_0076",
+    "home_final_20261001_0062",
+    "home_final_20261001_0150",
+    "home_final_20261001_0102",
+    "home_final_20261001_0034",
+    "home_final_20261001_0129",
+    "home_final_20261001_0059",
+    "home_final_20261001_0080",
+    "home_final_20261001_0019",
+    "home_final_20261001_0125",
+    "home_final_20261001_0118",
+    "home_final_20261001_0007",
+    "home_final_20261001_0090",
+    "home_final_20261001_0010",
+    "home_final_20261001_0044",
+    "home_final_20261001_0017",
+    "home_final_20261001_0098",
+    "home_final_20261001_0115",
+    "home_final_20261001_0110",
+    "home_final_20261001_0029",
+    "home_final_20261001_0055",
+    "home_final_20261001_0005",
+    "home_final_20261001_0030",
+    "home_final_20261001_0022",
+    "home_final_20261001_0133",
+    "home_final_20261001_0097",
+    "home_final_20261001_0074",
+    "home_final_20261001_0054",
+    "home_final_20261001_0116",
+    "home_final_20261001_0004",
+    "home_final_20261001_0069",
+    "home_final_20261001_0123",
+    "home_final_20261001_0070",
+    "home_final_20261001_0082",
+    "home_final_20261001_0128",
+    "home_final_20261001_0024",
+    "home_final_20261001_0091",
+    "home_final_20261001_0104",
+    "home_final_20261001_0095",
+    "home_final_20261001_0139",
+    "home_final_20261001_0037",
+    "home_final_20261001_0042"
+  ],
+  "local": {
+    "model": "gemma-4-26b-a4b-it",
+    "quantization": "IQ4_NL_XL",
+    "gpu": "0.70",
+    "context": 4096,
+    "parallel": 1,
+    "reasoning_effort": "none",
+    "temperature": 0,
+    "top_p": 1,
+    "seed": 42,
+    "max_tokens": 512,
+    "response_format": "strict_json_schema_5fields",
+    "gguf_sha256": "c1ac61e3af04b40c7688dfe0686c54d68ff5ed26178a56f0b18c8a0e2b94db83",
+    "file_size_bytes": 14556687680
+  },
+  "cloud": {
+    "model": "mercury-2.5",
+    "base_url": "https://api.inceptionlabs.ai/v1",
+    "temperature": 0,
+    "max_tokens": 512,
+    "reasoning_effort": "instant",
+    "response_format": "json_object",
+    "timeout_s": 60,
+    "input_usd_per_m": 0.04,
+    "output_usd_per_m": 0.15,
+    "price_date": "2026-10-01"
+  },
+  "policies": [
+    "local",
+    "cloud",
+    "tool_cloud",
+    "hybrid",
+    "offline"
+  ],
+  "execution_seed": 20261001,
+  "code_sha256": {
+    "scripts/analyze_home_final.py": "9053e78b3cd632fa5e09a6e7ed0a77b48799131d38e5473467f01237cb29d5d2",
+    "scripts/build_home_holdout.py": "072acada13e5ef227fb483e413328a133eeac16287f4baa6cf0aec21c942d84f",
+    "scripts/home_lm_api_benchmark.py": "31735e5005413ee42c5ca54129060595447b5e6e7c057e13e201378505509b44",
+    "scripts/home_pc_benchmark.py": "7bcf558c9e191e2f84abc5810ee13e7ef85315c806b999f807a1b35e0bdc9d38",
+    "scripts/run_home_final.py": "428b2839903032368cf2995356a6f473286322dd272814bbcddbad0dc9963a17",
+    "src/agro_route/benchmark.py": "f0c2597d2b2da4c0367fa650405a74d83ea979d0433bf8a65669c14e83b201b0",
+    "src/agro_route/cli.py": "7304a5296e105e2490c6cc2cd47deac8a235c864a2f237ffcf237de118d72430",
+    "src/agro_route/evaluation.py": "a8231e1ee13b70b08d8f9b93a3d1802bef9e38242589fd77bfa1a0af8f99ecdb",
+    "src/agro_route/home_config.py": "897508dd09ba3d845bf12f619ef4254c908f7b7a96f19663a5f6bf00641a1d70",
+    "src/agro_route/home_policy.py": "56e124f7b463d7bb0bbf488c5efeaddd67ce0eb0100fa2422ba9c9974d2180b7",
+    "src/agro_route/home_stats.py": "03bcba308280b8eeb617c2c0ef4d2582cd9ba5b6cb8f4782d65b4351aa1d6727",
+    "src/agro_route/models.py": "86a39859b6aff7b77c83e98e337ef946cec1706f380e4fd04b474cb05c7446cb",
+    "src/agro_route/routing.py": "4013fe302954c9ae3b16a62d4ce6a9ec33ce07a998743fcd72a910e37bc4fa4a",
+    "src/agro_route/tools.py": "4b0a4524a12b92e8fae78cf174765b000eadd70882efdb113ab5a073c2f17f04"
+  },
+  "credential_sources": {
+    "local": "project_env:LOCAL_API_KEY",
+    "cloud": "project_env:mercury_api_key"
+  },
+  "credential_values_persisted": false,
+  "call_counter_scope": "cumulative_original_plus_continuation",
+  "cloud_calls_actual": 270,
+  "local_calls_actual": 310,
+  "cloud_known_cost_estimate_usd": 0.012345459999999997,
+  "cloud_unknown_cost_calls": 12,
+  "cloud_reserved_cost_estimate_usd": 0.0038016,
+  "completed_segment_cases": 144,
+  "completed_sample_groups": 150,
+  "local_energy_cost": "N/A; not measured",
+  "provider_invoice_obtained": false,
+  "cost_type": "Uncached token-price estimate; missing usage retains unknown cost and planning reserve",
+  "execution_context": "Sequential GPU/provider calls; infrastructure interruption and second cold load declared; host not isolated",
+  "infrastructure_override": "Runtime final.update replaced by bounded filesystem-only atomic replacement retry; no provider retries or scientific changes",
+  "no_other_benchmark_gpu_activity": true,
+  "local_load_metadata": {
+    "actual_offloaded_layers": "UNKNOWN",
+    "preflight_headroom": {
+      "ram_available_gib": 22.270870208740234,
+      "gpu_free_mib": 15409.0
+    },
+    "headroom_before_load": {
+      "ram_available_gib": 22.261978149414062,
+      "gpu_free_mib": 15409.0
+    },
+    "headroom_latest": {
+      "ram_available_gib": 7.828582763671875,
+      "gpu_free_mib": 2696.0
+    },
+    "cold_load_wall_s": 8.767373899999711,
+    "load_success": true,
+    "own_instance_id": "home-final-recovery-571eac4c-gemma26",
+    "native_model_metadata": {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gemma-4-26b-a4b-it",
+      "display_name": "Gemma 4 26B A4B Instruct UD",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "IQ4_NL_XL",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 16847892149,
+      "params_string": "26B-A4B",
+      "loaded_instances": [
+        {
+          "id": "home-final-recovery-571eac4c-gemma26",
+          "config": {
+            "context_length": 4096,
+            "eval_batch_size": 2048,
+            "physical_batch_size": 512,
+            "parallel": 1,
+            "flash_attention": true,
+            "context_checkpoints": 32,
+            "reasoning_budget_message": "",
+            "speculative_draft_mtp": false,
+            "speculative_draft_simple": false,
+            "speculative_draft_model": "",
+            "speculative_draft_max_tokens": 3,
+            "speculative_draft_min_tokens": 0,
+            "speculative_draft_min_continue_probability": 0,
+            "num_experts": 8,
+            "offload_kv_cache_to_gpu": true
+          }
+        }
+      ],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    "actual_load_config": {
+      "context_length": 4096,
+      "eval_batch_size": 2048,
+      "physical_batch_size": 512,
+      "parallel": 1,
+      "flash_attention": true,
+      "context_checkpoints": 32,
+      "reasoning_budget_message": "",
+      "speculative_draft_mtp": false,
+      "speculative_draft_simple": false,
+      "speculative_draft_model": "",
+      "speculative_draft_max_tokens": 3,
+      "speculative_draft_min_tokens": 0,
+      "speculative_draft_min_continue_probability": 0,
+      "num_experts": 8,
+      "offload_kv_cache_to_gpu": true
+    },
+    "unload_success": true,
+    "load_original_sha256": "0e25994a3abec77f0e26740891b50760c66939b8b82640a2afdbddc56ec7da76",
+    "load_public_sha256": "12fc025a3b91a0a2e9466ecaf1d23300e8de526155737f90261d44bc643c3819"
+  },
+  "cloud_stop_reason": null,
+  "local_stop_reason": null,
+  "catalog_after": [
+    {
+      "type": "llm",
+      "publisher": "abenzerps",
+      "key": "qwen-image-2.1-uncensored",
+      "display_name": "Qwen Image 2.1 UC",
+      "architecture": "qwen_image21",
+      "quantization": {
+        "name": "Q6_K",
+        "bits_per_weight": 6
+      },
+      "size_bytes": 5876556576,
+      "params_string": null,
+      "loaded_instances": [],
+      "max_context_length": 4096,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": false
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "ggml-org",
+      "key": "qwen3-omni-30b-a3b-instruct",
+      "display_name": "Qwen3 Omni 30B A3B Instruct",
+      "architecture": "qwen3vlmoe",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 20764519520,
+      "params_string": "128x1.8B",
+      "loaded_instances": [],
+      "max_context_length": 65536,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "qwen3.8-27b",
+      "display_name": "Qwen3.8 27B UD",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 17392051472,
+      "params_string": "27B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "openbmb",
+      "key": "minicpm5-1b",
+      "display_name": "MiniCPM5 1B",
+      "architecture": "llama",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 1153529216,
+      "params_string": "1B",
+      "loaded_instances": [],
+      "max_context_length": 131072,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": false,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gemma-4-12b-it",
+      "display_name": "Gemma 4 12B Instruct",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "Q4_K_S",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 6974047200,
+      "params_string": "12B",
+      "loaded_instances": [],
+      "max_context_length": 131072,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "mradermacher",
+      "key": "webworld-8b-i1",
+      "display_name": "WebWorld 8B I1",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q6_K",
+        "bits_per_weight": 6
+      },
+      "size_bytes": 6725900736,
+      "params_string": "8B",
+      "loaded_instances": [],
+      "max_context_length": 40960,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "mudler",
+      "key": "vibevoice.cpp-models",
+      "display_name": "Vibevoice Realtime 0.5B",
+      "architecture": "vibevoice",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 1699832128,
+      "params_string": null,
+      "loaded_instances": [],
+      "max_context_length": 4096,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": false
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "granite-4.1-8b",
+      "display_name": "Granite 4.1 8B",
+      "architecture": "granite",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 5347915136,
+      "params_string": "8B",
+      "loaded_instances": [],
+      "max_context_length": 131072,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true
+      },
+      "description": null
+    },
+    {
+      "type": "embedding",
+      "publisher": "nomic-ai",
+      "key": "text-embedding-nomic-embed-text-v2-moe",
+      "display_name": "Nomic Embed Text v2 MoE",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 512225120,
+      "params_string": "8x277M",
+      "loaded_instances": [],
+      "max_context_length": 512,
+      "format": "gguf"
+    },
+    {
+      "type": "embedding",
+      "publisher": "Qwen",
+      "key": "text-embedding-qwen3-embedding-8b",
+      "display_name": "Qwen3 Embedding 8B",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 8047105824,
+      "params_string": "8B",
+      "loaded_instances": [],
+      "max_context_length": 40960,
+      "format": "gguf"
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gpt-oss-20b",
+      "display_name": "GPT-OSS 20B",
+      "architecture": "gpt-oss",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 12109568811,
+      "params_string": "20B",
+      "loaded_instances": [],
+      "max_context_length": 131072,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "inclusionAI",
+      "key": "dr-venus-4b-rl",
+      "display_name": "DR Venus 4B RL",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 2716067936,
+      "params_string": "4.4B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "gemma-4-26b-a4b-it",
+      "display_name": "Gemma 4 26B A4B Instruct UD",
+      "architecture": "gemma4",
+      "quantization": {
+        "name": "IQ4_NL_XL",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 16847892149,
+      "params_string": "26B-A4B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "chris0173",
+      "key": "voxtral-4b-tts-2603",
+      "display_name": "Voxtral 4B TTS 2603",
+      "architecture": "llama",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 4695412096,
+      "params_string": "4B",
+      "loaded_instances": [],
+      "max_context_length": 65536,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": false
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "qwen3-coder-next",
+      "display_name": "Qwen3 Coder Next UD",
+      "architecture": "qwen3next",
+      "quantization": {
+        "name": "Q3_K_S",
+        "bits_per_weight": 3
+      },
+      "size_bytes": 33320267776,
+      "params_string": "512x2.5B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "HauhauCS",
+      "key": "qwen3.6-35b-a3b-uncensored-hauhaucs-aggressive",
+      "display_name": "Qwen3.6 35B A3B Uncensored HauhauCS Aggressive",
+      "architecture": "qwen35moe",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 22066041088,
+      "params_string": "35B-A3B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "qwen3.5-35b-a3b",
+      "display_name": "Qwen3.5 35B A3B UD",
+      "architecture": "qwen35moe",
+      "quantization": {
+        "name": "Q4_K_L",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 21991940602,
+      "params_string": "35B-A3B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "unsloth",
+      "key": "qwen3.5-9b",
+      "display_name": "Qwen3.5 9B",
+      "architecture": "qwen35",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 11351564064,
+      "params_string": "9B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "Qwen",
+      "key": "qwen3-vl-8b-instruct",
+      "display_name": "Qwen3VL 8B Instruct",
+      "architecture": "qwen3vl",
+      "quantization": {
+        "name": "Q8_0",
+        "bits_per_weight": 8
+      },
+      "size_bytes": 9868549280,
+      "params_string": "8B",
+      "loaded_instances": [],
+      "max_context_length": 262144,
+      "format": "gguf",
+      "capabilities": {
+        "vision": true,
+        "trained_for_tool_use": true
+      },
+      "description": null
+    },
+    {
+      "type": "llm",
+      "publisher": "TeichAI",
+      "key": "qwen3-8b-deepseek-v3.2-speciale-distill",
+      "display_name": "Qwen3 8B DeepSeek v3.2 Speciale Distill",
+      "architecture": "qwen3",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 5027786444,
+      "params_string": "8B",
+      "loaded_instances": [],
+      "max_context_length": 40960,
+      "format": "gguf",
+      "capabilities": {
+        "vision": false,
+        "trained_for_tool_use": true,
+        "reasoning": {
+          "allowed_options": [
+            "off",
+            "on"
+          ],
+          "default": "on"
+        }
+      },
+      "description": null
+    },
+    {
+      "type": "embedding",
+      "publisher": "nomic-ai",
+      "key": "text-embedding-nomic-embed-text-v1.5",
+      "display_name": "Nomic Embed Text v1.5",
+      "quantization": {
+        "name": "Q4_K_M",
+        "bits_per_weight": 4
+      },
+      "size_bytes": 84106624,
+      "params_string": null,
+      "loaded_instances": [],
+      "max_context_length": 2048,
+      "format": "gguf"
+    }
+  ],
+  "headroom_after": {
+    "ram_available_gib": 23.235057830810547,
+    "gpu_free_mib": 15386.0
+  },
+  "finished_utc": "2026-10-02T05:22:24.342515+00:00",
+  "summary": {
+    "local": {
+      "target_n": 150,
+      "n": 144,
+      "n_records": 144,
+      "not_run": 6,
+      "correct": 99,
+      "quality": 0.6875,
+      "critical_errors": 30,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 1.5027394770833382,
+      "latency_p50_s": 1.4164846500000294,
+      "latency_p95_s": 2.3444031500000166,
+      "routes": {
+        "LOCAL_MODEL": 144
+      },
+      "calls": {
+        "cloud": 0,
+        "local": 144,
+        "tool": 0
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": null,
+        "coverage": 0
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 73494,
+            "coverage": 144
+          },
+          "completion_tokens": {
+            "total": 5552,
+            "coverage": 144
+          },
+          "total_tokens": {
+            "total": 79046,
+            "coverage": 144
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.5727441999999883,
+          "coverage": 144
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.5727441999999883,
+          "coverage": 144
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 46.65461747024627,
+          "coverage": 144
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "n": 40,
+          "correct": 36
+        },
+        "numeric": {
+          "n": 28,
+          "correct": 0
+        },
+        "missing_data": {
+          "n": 20,
+          "correct": 18
+        },
+        "tool_selection": {
+          "n": 18,
+          "correct": 18
+        },
+        "rule_interpretation": {
+          "n": 19,
+          "correct": 19
+        },
+        "compound_reasoning": {
+          "n": 19,
+          "correct": 8
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 72,
+          "correct": 48
+        },
+        "ru": {
+          "n": 72,
+          "correct": 51
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0145",
+        "home_final_20261001_0067",
+        "home_final_20261001_0096",
+        "home_final_20261001_0100",
+        "home_final_20261001_0127",
+        "home_final_20261001_0066"
+      ]
+    },
+    "cloud": {
+      "target_n": 150,
+      "n": 144,
+      "n_records": 144,
+      "not_run": 6,
+      "correct": 126,
+      "quality": 0.875,
+      "critical_errors": 0,
+      "error_decisions": 14,
+      "call_errors": 14,
+      "latency_mean_s": 4.48100961805557,
+      "latency_p50_s": 1.4452855999998064,
+      "latency_p95_s": 9.953708074999707,
+      "routes": {
+        "CLOUD_MODEL": 144
+      },
+      "calls": {
+        "cloud": 144,
+        "local": 0,
+        "tool": 0
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 0.00693861,
+        "coverage": 137
+      },
+      "cloud_unknown_cost_calls": 7,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 83514,
+            "coverage": 137
+          },
+          "completion_tokens": {
+            "total": 23987,
+            "coverage": 137
+          },
+          "total_tokens": {
+            "total": 107501,
+            "coverage": 137
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "first_answer_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": null,
+          "coverage": 0
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "n": 40,
+          "correct": 37
+        },
+        "numeric": {
+          "n": 28,
+          "correct": 21
+        },
+        "missing_data": {
+          "n": 20,
+          "correct": 18
+        },
+        "tool_selection": {
+          "n": 18,
+          "correct": 17
+        },
+        "rule_interpretation": {
+          "n": 19,
+          "correct": 18
+        },
+        "compound_reasoning": {
+          "n": 19,
+          "correct": 15
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 72,
+          "correct": 63
+        },
+        "ru": {
+          "n": 72,
+          "correct": 63
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0145",
+        "home_final_20261001_0067",
+        "home_final_20261001_0096",
+        "home_final_20261001_0100",
+        "home_final_20261001_0127",
+        "home_final_20261001_0066"
+      ]
+    },
+    "tool_cloud": {
+      "target_n": 150,
+      "n": 144,
+      "n_records": 144,
+      "not_run": 6,
+      "correct": 133,
+      "quality": 0.9236111111111112,
+      "critical_errors": 0,
+      "error_decisions": 5,
+      "call_errors": 5,
+      "latency_mean_s": 2.7280051555555707,
+      "latency_p50_s": 1.2712742999999591,
+      "latency_p95_s": 2.7819451899999637,
+      "routes": {
+        "CLOUD_MODEL": 96,
+        "DETERMINISTIC_TOOL": 28,
+        "ASK_FOR_DATA": 20
+      },
+      "calls": {
+        "cloud": 96,
+        "local": 0,
+        "tool": 28
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 0.0041474,
+        "coverage": 92
+      },
+      "cloud_unknown_cost_calls": 4,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 53075,
+            "coverage": 92
+          },
+          "completion_tokens": {
+            "total": 13496,
+            "coverage": 92
+          },
+          "total_tokens": {
+            "total": 66571,
+            "coverage": 92
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "first_answer_delta_s_client": {
+          "p50": null,
+          "coverage": 0
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": null,
+          "coverage": 0
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "n": 40,
+          "correct": 32
+        },
+        "numeric": {
+          "n": 28,
+          "correct": 28
+        },
+        "missing_data": {
+          "n": 20,
+          "correct": 20
+        },
+        "tool_selection": {
+          "n": 18,
+          "correct": 18
+        },
+        "rule_interpretation": {
+          "n": 19,
+          "correct": 18
+        },
+        "compound_reasoning": {
+          "n": 19,
+          "correct": 17
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 72,
+          "correct": 68
+        },
+        "ru": {
+          "n": 72,
+          "correct": 65
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0145",
+        "home_final_20261001_0067",
+        "home_final_20261001_0096",
+        "home_final_20261001_0100",
+        "home_final_20261001_0127",
+        "home_final_20261001_0066"
+      ]
+    },
+    "hybrid": {
+      "target_n": 150,
+      "n": 144,
+      "n_records": 144,
+      "not_run": 6,
+      "correct": 128,
+      "quality": 0.8888888888888888,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 0.839700084722226,
+      "latency_p50_s": 1.1005726999999297,
+      "latency_p95_s": 1.5332469800001718,
+      "routes": {
+        "LOCAL_MODEL": 78,
+        "DETERMINISTIC_TOOL": 28,
+        "CLOUD_MODEL": 18,
+        "ASK_FOR_DATA": 20
+      },
+      "calls": {
+        "cloud": 18,
+        "local": 78,
+        "tool": 28
+      },
+      "abstentions": 0,
+      "cost_usd": {
+        "total": 0.00071031,
+        "coverage": 18
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 38379,
+            "coverage": 78
+          },
+          "completion_tokens": {
+            "total": 2584,
+            "coverage": 78
+          },
+          "total_tokens": {
+            "total": 40963,
+            "coverage": 78
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": 9669,
+            "coverage": 18
+          },
+          "completion_tokens": {
+            "total": 2157,
+            "coverage": 18
+          },
+          "total_tokens": {
+            "total": 11826,
+            "coverage": 18
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.28037350000022343,
+          "coverage": 78
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.28037350000022343,
+          "coverage": 78
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 47.88562613313187,
+          "coverage": 78
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "n": 40,
+          "correct": 36
+        },
+        "numeric": {
+          "n": 28,
+          "correct": 28
+        },
+        "missing_data": {
+          "n": 20,
+          "correct": 20
+        },
+        "tool_selection": {
+          "n": 18,
+          "correct": 17
+        },
+        "rule_interpretation": {
+          "n": 19,
+          "correct": 19
+        },
+        "compound_reasoning": {
+          "n": 19,
+          "correct": 8
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 72,
+          "correct": 63
+        },
+        "ru": {
+          "n": 72,
+          "correct": 65
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0145",
+        "home_final_20261001_0067",
+        "home_final_20261001_0096",
+        "home_final_20261001_0100",
+        "home_final_20261001_0127",
+        "home_final_20261001_0066"
+      ]
+    },
+    "offline": {
+      "target_n": 150,
+      "n": 144,
+      "n_records": 144,
+      "not_run": 6,
+      "correct": 111,
+      "quality": 0.7708333333333334,
+      "critical_errors": 0,
+      "error_decisions": 0,
+      "call_errors": 0,
+      "latency_mean_s": 0.6656329965277747,
+      "latency_p50_s": 1.0452900000000227,
+      "latency_p95_s": 1.4601908350002304,
+      "routes": {
+        "LOCAL_MODEL": 78,
+        "DETERMINISTIC_TOOL": 28,
+        "ABSTAIN": 18,
+        "ASK_FOR_DATA": 20
+      },
+      "calls": {
+        "cloud": 0,
+        "local": 78,
+        "tool": 28
+      },
+      "abstentions": 18,
+      "cost_usd": {
+        "total": null,
+        "coverage": 0
+      },
+      "cloud_unknown_cost_calls": 0,
+      "usage": {
+        "local": {
+          "prompt_tokens": {
+            "total": 38379,
+            "coverage": 78
+          },
+          "completion_tokens": {
+            "total": 2584,
+            "coverage": 78
+          },
+          "total_tokens": {
+            "total": 40963,
+            "coverage": 78
+          }
+        },
+        "cloud": {
+          "prompt_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "completion_tokens": {
+            "total": null,
+            "coverage": 0
+          },
+          "total_tokens": {
+            "total": null,
+            "coverage": 0
+          }
+        }
+      },
+      "client_timing": {
+        "first_nonempty_delta_s_client": {
+          "p50": 0.2791274000001067,
+          "coverage": 78
+        },
+        "first_answer_delta_s_client": {
+          "p50": 0.2791274000001067,
+          "coverage": 78
+        },
+        "completion_tokens_per_second_client_approx": {
+          "p50": 48.07584909765501,
+          "coverage": 78
+        }
+      },
+      "by_category": {
+        "extractive_qa": {
+          "n": 40,
+          "correct": 36
+        },
+        "numeric": {
+          "n": 28,
+          "correct": 28
+        },
+        "missing_data": {
+          "n": 20,
+          "correct": 20
+        },
+        "tool_selection": {
+          "n": 18,
+          "correct": 0
+        },
+        "rule_interpretation": {
+          "n": 19,
+          "correct": 19
+        },
+        "compound_reasoning": {
+          "n": 19,
+          "correct": 8
+        }
+      },
+      "by_language": {
+        "en": {
+          "n": 72,
+          "correct": 53
+        },
+        "ru": {
+          "n": 72,
+          "correct": 58
+        }
+      },
+      "unattempted_ids": [
+        "home_final_20261001_0145",
+        "home_final_20261001_0067",
+        "home_final_20261001_0096",
+        "home_final_20261001_0100",
+        "home_final_20261001_0127",
+        "home_final_20261001_0066"
+      ]
+    }
+  },
+  "resource_summary": {
+    "vram_mib_peak_sampled_total": 13758.0,
+    "ram_gib_peak_sampled_system_used": 24.754192352294922,
+    "resource_scope": "entire GPU / entire system; sampled about every 0.5s plus subprocess overhead",
+    "samples": 2660,
+    "resource_poll_errors": []
+  },
+  "segment_call_counts": {
+    "local": 300,
+    "cloud": 258
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "started_utc": "2026-10-03T22:15:26.289355+00:00",
+  "finished_utc": "2026-10-03T22:15:50.570257+00:00",
+  "exit_code": 0,
+  "command": ".venv/Scripts/python.exe -X utf8 -m pytest -q --basetemp=.runtime/session_20261004/pytest_final_host",
+  "environment": "Windows host; sandbox tempfile ACL failures bypassed by authorized elevated execution",
+  "summary": [
+    "846 passed in 23.72s"
+  ],
+  "log": "results/20261004_session/final_tests.txt",
+  "configured_secrets_redacted": true
+}

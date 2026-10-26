@@ -1,0 +1,86 @@
+{
+  "claims": [
+    {
+      "claim_id": "screen_software_baseline_tests_passed",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: baseline_tests_passed",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/baseline_tests_passed",
+      "value": 521,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_final_tests_passed",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: final_tests_passed",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/final_tests_passed",
+      "value": 633,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_new_tests",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: new_tests",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/new_tests",
+      "value": 112,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_final_failures",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: final_failures",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/final_failures",
+      "value": 0,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_final_errors",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: final_errors",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/final_errors",
+      "value": 0,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_private_test_run",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: private_test_run",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/private_test_run",
+      "value": false,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    },
+    {
+      "claim_id": "screen_software_figure_visually_inspected",
+      "statement": "Observed software/artifact validation, not agronomic confirmation: figure_visually_inspected",
+      "study_run_id": "20261003_screen_software_validation",
+      "data_path": "results/20261003_local_screen_session/software_validation_final.json",
+      "analysis_field": "/figure_visually_inspected",
+      "value": true,
+      "code_commit": "65e6f8491cf51346a97665ed870871d3a69fdcbf",
+      "data_sha256": "740cbbce01cccab18fa3c114a4e7f713f99ec3acb7fe3ea39bd1102b4d5c37c7",
+      "status": "DEV"
+    }
+  ],
+  "validation": {
+    "valid": true,
+    "claim_count": 7
+  },
+  "human_confirmation": "PENDING"
+}

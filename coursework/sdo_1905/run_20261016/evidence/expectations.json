@@ -1,0 +1,416 @@
+{
+  "recorded_at": "2026-10-16T07:20:05.580857+00:00",
+  "tests": [
+    {
+      "id": "T0",
+      "label": "Контрпример 0/0/0",
+      "rows": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M02",
+          "OP-102",
+          200.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ],
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M08",
+          "OP-106",
+          80.0,
+          "confirmed"
+        ],
+        [
+          "M09",
+          "OP-107",
+          30.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 810,
+      "expected_count": 8,
+      "expected_actions": [
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "НЕДОПУСТИМО",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ"
+      ],
+      "flags": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "T1",
+      "label": "Одна корректная M01",
+      "rows": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 100,
+      "expected_count": 1,
+      "expected_actions": [
+        "УЧЕСТЬ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T2",
+      "label": "M01 и точный повтор M03",
+      "rows": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 100,
+      "expected_count": 1,
+      "expected_actions": [
+        "УЧЕСТЬ",
+        "ПОВТОР"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T3",
+      "label": "M04 с пустым количеством",
+      "rows": [
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T4",
+      "label": "M06/M07 с конфликтом",
+      "rows": [
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T5",
+      "label": "Все девять строк",
+      "rows": [
+        [
+          "M01",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M02",
+          "OP-102",
+          200.0,
+          "confirmed"
+        ],
+        [
+          "M03",
+          "OP-101",
+          100.0,
+          "confirmed"
+        ],
+        [
+          "M04",
+          "OP-103",
+          null,
+          "confirmed"
+        ],
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ],
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M08",
+          "OP-106",
+          80.0,
+          "confirmed"
+        ],
+        [
+          "M09",
+          "OP-107",
+          30.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 410,
+      "expected_count": 4,
+      "expected_actions": [
+        "УЧЕСТЬ",
+        "УЧЕСТЬ",
+        "ПОВТОР",
+        "НЕДОПУСТИМО",
+        "ОЖИДАНИЕ",
+        "КОНФЛИКТ",
+        "КОНФЛИКТ",
+        "УЧЕСТЬ",
+        "УЧЕСТЬ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T6",
+      "label": "d=3, q=130, точный повтор",
+      "rows": [
+        [
+          "M-P1",
+          "OP-P",
+          130,
+          "confirmed"
+        ],
+        [
+          "M-P2",
+          "OP-P",
+          130,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 130,
+      "expected_count": 1,
+      "expected_actions": [
+        "УЧЕСТЬ",
+        "ПОВТОР"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T7",
+      "label": "d=3, q=130, конфликт 130/140",
+      "rows": [
+        [
+          "M-P1",
+          "OP-P",
+          130,
+          "confirmed"
+        ],
+        [
+          "M-P2",
+          "OP-P",
+          140,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T8",
+      "label": "Конфликт в обратном порядке",
+      "rows": [
+        [
+          "M07",
+          "OP-105",
+          130.0,
+          "confirmed"
+        ],
+        [
+          "M06",
+          "OP-105",
+          120.0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "КОНФЛИКТ",
+        "КОНФЛИКТ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T9",
+      "label": "Неизвестный статус",
+      "rows": [
+        [
+          "M-X",
+          "OP-X",
+          10,
+          "unknown"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T10",
+      "label": "Нулевое количество",
+      "rows": [
+        [
+          "M-X",
+          "OP-X",
+          0,
+          "confirmed"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "НЕДОПУСТИМО"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "T11",
+      "label": "Ожидание подтверждения",
+      "rows": [
+        [
+          "M05",
+          "OP-104",
+          50.0,
+          "pending"
+        ]
+      ],
+      "expected_sum": 0,
+      "expected_count": 0,
+      "expected_actions": [
+        "ОЖИДАНИЕ"
+      ],
+      "flags": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

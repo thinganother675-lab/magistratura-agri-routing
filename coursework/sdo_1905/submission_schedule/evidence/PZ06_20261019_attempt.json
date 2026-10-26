@@ -1,0 +1,22 @@
+{
+  "pz": 6,
+  "at": "2026-10-19T17:36:49.673699+03:00",
+  "activity_url": "https://sdo.timacad.ru/mod/assign/view.php?id=93656",
+  "observed_url": "https://sdo.timacad.ru/login/index.php",
+  "status": "blocked_login_required",
+  "reason": "Требуется вход пользователя в СДО.",
+  "files": [
+    {
+      "path": "C:\\sarychev\\Codex\\magistratura\\coursework\\sdo_1905\\run_20261016\\submission\\PZ06_Сарычев_ДЭ39-26.docx",
+      "sha256": "2faa25690ee6b3b389d6b82faab2fc21c3996e2a8a623e5bf147e19de439ad59",
+      "bytes": 82813
+    }
+  ],
+  "sha256_verified": true,
+  "file_uploaded": false,
+  "save_clicked": false,
+  "screenshot": null,
+  "screenshot_note": "Конечного статуса отправки нет; страница входа содержит чувствительные поля.",
+  "automation_id": "1905-4-6-19",
+  "automation_status": "PAUSED"
+}

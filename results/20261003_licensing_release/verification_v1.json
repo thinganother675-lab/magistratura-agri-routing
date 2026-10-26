@@ -1,0 +1,56 @@
+{
+  "status": "LOCAL_CANDIDATE_VERIFIED_NOT_PUBLISHED",
+  "candidate_tree": ".cache/public_release/v0.1.0-research",
+  "archive": ".cache/public_release/agro-route-v0.1.0-research.zip",
+  "archive_bytes": 122267,
+  "archive_sha256": "98484f87088e258860bce56d5aa44559d9e4158d2c9d50de4afb9a9314b2f787",
+  "archive_members": 47,
+  "payload_files": 46,
+  "candidate_tests": {
+    "passed": 189,
+    "seconds": 3.42,
+    "environment": "fresh Python3.12.12 virtualenv, checked24dependencylock, editablecandidateinstall"
+  },
+  "software_smoke": {
+    "correct": 8,
+    "total": 8,
+    "model_requests": 0,
+    "external_requests": 0
+  },
+  "retained_aggregate_replay": {
+    "rows": 750,
+    "cases": 150,
+    "groups": 25,
+    "policies": 5,
+    "metrics_per_policy": 13,
+    "tolerance": 1e-12,
+    "all_match": true,
+    "independent_gold_review": false
+  },
+  "historical_integrity": {
+    "protected_files": 796,
+    "all_sha256_match": true
+  },
+  "metadata": {
+    "cff_official_schema": "CFF1.2.0 Draft7 schema PASS",
+    "authors": [
+      "Antoniy Sarychev",
+      "Denis Shesternin"
+    ],
+    "license": "Apache-2.0"
+  },
+  "python_packaging": {
+    "wheel": "PASS",
+    "editable_install": "PASS"
+  },
+  "security": {
+    "manifest_hashes": "PASS",
+    "provenance": "PASS",
+    "patterns_and_configured_secret_exact_matches": "PASS",
+    "private_history_and_logs": "EXCLUDED",
+    "secrets_or_fingerprints_printed": false
+  },
+  "zip_repeat_bytes_identical": true,
+  "source_head": "a3a33b7cf94fe2ccbca1f344c1e0ae4c27ff4af1",
+  "source_state": "Working-tree additions identified by individual payload hashes; no public Git release/tag created"
+}
